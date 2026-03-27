@@ -29,23 +29,23 @@ Env vars:
 
 import os
 
-# Default model — Qwen 3 8B
-OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "qwen3:8b").strip() or "qwen3:8b"
+# Default model — Llama 3.1 8B Instruct
+OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "llama3.1:8b").strip() or "llama3.1:8b"
 
-# Fast model — defaults to Qwen 2.5 3B for intake/routing unless overridden.
-OLLAMA_MODEL_FAST = os.environ.get("OLLAMA_MODEL_FAST", "qwen2.5:3b").strip() or "qwen2.5:3b"
+# Fast model — defaults to Llama 3.2 3B for intake/routing unless overridden.
+OLLAMA_MODEL_FAST = os.environ.get("OLLAMA_MODEL_FAST", "llama3.2:3b").strip() or "llama3.2:3b"
 
-# Long-context model — same as default unless overridden in env
+# Long-context model — Llama 3.2 27B for prompts exceeding the threshold
 OLLAMA_MODEL_LONG_CONTEXT = os.environ.get(
-    "OLLAMA_MODEL_LONG_CONTEXT", "qwen3:8b"
-).strip() or "qwen3:8b"
+    "OLLAMA_MODEL_LONG_CONTEXT", "llama3.2:27b"
+).strip() or "llama3.2:27b"
 
-# Switch to long-context model when prompt exceeds this many characters (~30K tokens at ≈4 chars/token)
-_threshold = os.environ.get("LONG_CONTEXT_THRESHOLD", "120000").strip()
+# Switch to long-context model when prompt exceeds this many characters (~12.5K tokens at ≈4 chars/token)
+_threshold = os.environ.get("LONG_CONTEXT_THRESHOLD", "50000").strip()
 try:
     LONG_CONTEXT_THRESHOLD = int(_threshold)
 except ValueError:
-    LONG_CONTEXT_THRESHOLD = 120000
+    LONG_CONTEXT_THRESHOLD = 50000
 
 # CrewAI agents use default model (format: ollama/model_name)
 CREWAI_LLM = f"ollama/{OLLAMA_MODEL}"
@@ -73,10 +73,10 @@ OLLAMA_RETRIES_LONG = _int_env("OLLAMA_RETRIES_LONG", 1)
 OLLAMA_WARM_ANALYSIS_AT_STARTUP = _bool_env("OLLAMA_WARM_ANALYSIS_AT_STARTUP", False)
 
 # Display names for UI (e.g. "Qwen 3.5 9B")
-OLLAMA_MODEL_DISPLAY = os.environ.get("OLLAMA_MODEL_DISPLAY", "Qwen 3 8B").strip() or "Qwen 3 8B"
+OLLAMA_MODEL_DISPLAY = os.environ.get("OLLAMA_MODEL_DISPLAY", "Llama 3.1 8B").strip() or "Llama 3.1 8B"
 OLLAMA_MODEL_FAST_DISPLAY = os.environ.get(
-    "OLLAMA_MODEL_FAST_DISPLAY", "Qwen 2.5 3B"
-).strip() or "Qwen 2.5 3B"
+    "OLLAMA_MODEL_FAST_DISPLAY", "Llama 3.2 3B"
+).strip() or "Llama 3.2 3B"
 OLLAMA_MODEL_LONG_CONTEXT_DISPLAY = os.environ.get(
-    "OLLAMA_MODEL_LONG_CONTEXT_DISPLAY", "Qwen 3 8B"
-).strip() or "Qwen 3 8B"
+    "OLLAMA_MODEL_LONG_CONTEXT_DISPLAY", "Llama 3.2 27B"
+).strip() or "Llama 3.2 27B"

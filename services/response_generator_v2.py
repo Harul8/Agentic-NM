@@ -46,6 +46,7 @@ _ENABLE_CITATION_GRAPH_EXPANSION = os.environ.get("ENABLE_CITATION_GRAPH_EXPANSI
 _ENABLE_CASE_SUMMARY_LLM = os.environ.get("ENABLE_CASE_SUMMARY_LLM", "").lower() in ("1", "true", "yes")
 _ENABLE_BARE_ACT_LLM_FILTER = os.environ.get("ENABLE_BARE_ACT_LLM_FILTER", "").lower() in ("1", "true", "yes")
 _ENABLE_CASE_LAW_LLM_FILTER = os.environ.get("ENABLE_CASE_LAW_LLM_FILTER", "").lower() in ("1", "true", "yes")
+_ENABLE_RUNTIME_FEWSHOT = os.environ.get("ENABLE_RUNTIME_FEWSHOT", "1").lower() in ("1", "true", "yes")
 
 # Relevance and quality thresholds — keep only high-quality, recent materials
 MIN_RERANK_SCORE = 0.5  # Minimum score to include in pool. ms-marco cross-encoder logits:
@@ -2984,11 +2985,22 @@ def _generate_structured_opinion_by_dispute(
 
     from prompts.advocate_prompts import STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT
 
+    few_shot_block = ""
+    if _ENABLE_RUNTIME_FEWSHOT:
+        try:
+            from training.few_shot_retriever import get_opinion_example
+            few_shot_query = "\n".join(part for part in [facts_summary, additional_info] if part).strip()
+            packed = get_opinion_example(few_shot_query)
+            if packed:
+                few_shot_block = f"\n\n{packed}\n"
+        except Exception:
+            few_shot_block = ""
+
     prompt = STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT.format(
         dispute_facts=facts_summary[:1200],
         additional_info=(additional_info or "None provided").strip(),
         dispute_blocks_text=dispute_blocks_text,
-    )
+    ) + few_shot_block
     logger.info(
         "Final structured opinion prompt size: %d chars across %d dispute component(s)",
         len(prompt),
@@ -3070,6 +3082,16 @@ def _generate_legal_opinion(
     if not has_case_laws:
         case_array_note = "\n⚠️ NOTE: The CASE LAWS array above is EMPTY ([]). Do NOT create a 'Relevant Case Law' section."
 
+    few_shot_block = ""
+    if _ENABLE_RUNTIME_FEWSHOT:
+        try:
+            from training.few_shot_retriever import get_opinion_example
+            packed = get_opinion_example(facts)
+            if packed:
+                few_shot_block = f"\n\n{packed}\n"
+        except Exception:
+            few_shot_block = ""
+
     prompt = f"""{RELEVANCE_EXPLANATION_SYSTEM}
 
 CASE FACTS:
@@ -3093,7 +3115,7 @@ IMPORTANT:
   [LEGAL_PORTAL] for materials from legal portals
   [NEWS_REFERENCE] for newspaper articles (context only)
 - If no materials were retrieved (empty arrays), do NOT add any source tags.
-
+{few_shot_block}
 Generate the legal analysis:"""
 
     try:

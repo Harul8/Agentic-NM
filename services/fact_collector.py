@@ -331,12 +331,12 @@ def _run_compact_intake_state(conversation_history: list, user_message: str) -> 
     few_shot_block = ""
     if _ENABLE_INTAKE_FEWSHOT:
         try:
-            from training.few_shot_retriever import get_intake_example_pack
+            from training.few_shot_retriever import get_intake_state_example_pack
             full_query = " ".join(
                 [(m.get("content") or "").strip() for m in conversation_history if (m.get("content") or "").strip()]
                 + [(user_message or "").strip()]
             ).strip()
-            packed = get_intake_example_pack(full_query, max_examples=2)
+            packed = get_intake_state_example_pack(full_query, max_examples=1)
             if packed:
                 few_shot_block = f"\n\n{packed}\n"
         except Exception:
@@ -360,13 +360,13 @@ def _run_next_question_from_state(intake_state: dict, conversation_history: list
     few_shot_block = ""
     if _ENABLE_INTAKE_FEWSHOT:
         try:
-            from training.few_shot_retriever import get_intake_example_pack
+            from training.few_shot_retriever import get_intake_reply_example_pack
             query_parts = [
                 intake_state.get("facts_summary", ""),
                 " ".join(intake_state.get("known_facts", []) or []),
                 " ".join(intake_state.get("open_points", []) or []),
             ]
-            packed = get_intake_example_pack(" ".join([p for p in query_parts if p]).strip(), max_examples=2)
+            packed = get_intake_reply_example_pack(" ".join([p for p in query_parts if p]).strip(), max_examples=2)
             if packed:
                 few_shot_block = f"\n\n{packed}\n"
         except Exception:

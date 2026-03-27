@@ -587,6 +587,114 @@ function App() {
       : []
   ), [makeMessageId]);
 
+  const getConversationContent = useCallback((msg) => {
+    if (typeof msg?.content === "string") return msg.content;
+    if (msg?.content?.opinionText != null) return msg.content.opinionText || "";
+    return msg?.content?.text ?? msg?.content?.summary ?? "";
+  }, []);
+
+  const buildConversationFromMessages = useCallback((msgs) => (
+    Array.isArray(msgs)
+      ? msgs.map((m) => ({ role: m.role, content: getConversationContent(m) }))
+      : []
+  ), [getConversationContent]);
+
+  const deriveQaHistoryFromMessages = useCallback((msgs) => {
+    if (!Array.isArray(msgs) || msgs.length === 0) return [];
+    const out = [];
+    for (let i = 1; i < msgs.length - 1; i += 1) {
+      const questionMsg = msgs[i];
+      const answerMsg = msgs[i + 1];
+      if (
+        questionMsg?.role === "assistant" &&
+        typeof questionMsg?.content === "string" &&
+        answerMsg?.role === "user" &&
+        typeof answerMsg?.content === "string"
+      ) {
+        out.push({
+          question: questionMsg.content.trim(),
+          answer: answerMsg.content.trim(),
+        });
+        i += 1;
+      }
+    }
+    return out;
+  }, []);
+
+  const normalizeWorkflowState = useCallback((workflowState, msgs = []) => {
+    const normalizedMessages = Array.isArray(msgs) ? msgs : [];
+    const state = workflowState && typeof workflowState === "object" ? workflowState : {};
+    const firstUser = normalizedMessages.find((m) => m?.role === "user" && typeof m?.content === "string");
+    const lastAssistantQuestion = [...normalizedMessages]
+      .reverse()
+      .find((m) => m?.role === "assistant" && typeof m?.content === "string");
+    const qa =
+      Array.isArray(state.qaHistory) && state.qaHistory.length > 0
+        ? state.qaHistory
+            .map((item) => ({
+              question: typeof item?.question === "string" ? item.question.trim() : "",
+              answer: typeof item?.answer === "string" ? item.answer.trim() : "",
+            }))
+            .filter((item) => item.question || item.answer)
+        : deriveQaHistoryFromMessages(normalizedMessages);
+    const currentQuestion =
+      typeof state.currentQuestion === "string" && state.currentQuestion.trim()
+        ? state.currentQuestion.trim()
+        : "";
+    const endsOnAssistantQuestion =
+      normalizedMessages.length > 0 &&
+      normalizedMessages[normalizedMessages.length - 1]?.role === "assistant" &&
+      typeof normalizedMessages[normalizedMessages.length - 1]?.content === "string";
+    const inferredStage = currentQuestion || endsOnAssistantQuestion
+      ? "interview"
+      : normalizedMessages.length > 1
+      ? "done"
+      : "await_facts";
+    const stage = ["await_facts", "interview", "done"].includes(state.stage) ? state.stage : inferredStage;
+    return {
+      stage,
+      facts: typeof state.facts === "string" && state.facts.trim()
+        ? state.facts
+        : (typeof firstUser?.content === "string" ? firstUser.content : ""),
+      currentQuestion: stage === "interview"
+        ? (currentQuestion || (typeof lastAssistantQuestion?.content === "string" ? lastAssistantQuestion.content : ""))
+        : "",
+      qaHistory: qa,
+    };
+  }, [deriveQaHistoryFromMessages]);
+
+  const normalizeSavedChat = useCallback((chat) => {
+    const normalizedMessages = normalizeLoadedMessages(chat?.messages || []);
+    return {
+      ...chat,
+      messages: normalizedMessages,
+      opinionText: chat?.opinionText || "",
+      retrieved: Array.isArray(chat?.retrieved) ? chat.retrieved : [],
+      workflowState: normalizeWorkflowState(chat?.workflowState, normalizedMessages),
+      createdAt: chat?.createdAt || new Date().toISOString(),
+    };
+  }, [normalizeLoadedMessages, normalizeWorkflowState]);
+
+  const buildWorkflowState = useCallback((overrides = {}) => {
+    const nextMessages = Array.isArray(overrides.messages) ? overrides.messages : messages;
+    return normalizeWorkflowState(
+      {
+        stage,
+        facts,
+        currentQuestion,
+        qaHistory,
+        ...overrides,
+      },
+      nextMessages,
+    );
+  }, [currentQuestion, facts, messages, normalizeWorkflowState, qaHistory, stage]);
+
+  const resolveModelUsed = useCallback((data, fallback = "") => {
+    if (typeof data?.model_used === "string" && data.model_used.trim()) return data.model_used.trim();
+    if (fallback) return fallback;
+    return selectedModel && selectedModel !== "default" ? selectedModel : "runtime_fewshot";
+  }, [selectedModel]);
+
   const currentTurnLatencyMs = useCallback(() => {
     if (!turnStartedAtRef.current) return null;
     return Math.max(0, Date.now() - turnStartedAtRef.current);
@@ -685,7 +793,7 @@ function App() {
           return { chats: [] };
         }
       })
-      .then((data) => setSavedChats(Array.isArray(data.chats) ? data.chats : []))
+      .then((data) => setSavedChats(Array.isArray(data.chats) ? data.chats.map(normalizeSavedChat) : []))
       .catch(() => setSavedChats([]));
     // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional: run once on mount only
   }, []);
@@ -706,10 +814,11 @@ function App() {
         messages,
         opinionText,
         retrieved,
+        workflowState: buildWorkflowState(),
         createdAt: new Date().toISOString(),
       }),
     }).catch(() => {});
-  }, [messages, opinionText, retrieved, API_BASE]);
+  }, [API_BASE, buildWorkflowState, messages, opinionText, retrieved]);
 
   // Keep the "current" chat in the list in sync with messages/opinion/retrieved
   useEffect(() => {
@@ -717,11 +826,11 @@ function App() {
     setSavedChats((prev) =>
       prev.map((c) =>
         c.id == currentChatIdRef.current
-          ? { ...c, messages, opinionText, retrieved }
+          ? { ...c, messages, opinionText, retrieved, workflowState: buildWorkflowState() }
           : c
       )
     );
-  }, [messages, opinionText, retrieved]);
+  }, [buildWorkflowState, messages, opinionText, retrieved]);
 
   // Fetch Bare Acts once on mount (do not depend on API_BASE to avoid re-runs and 429).
   useEffect(() => {
@@ -993,41 +1102,49 @@ function App() {
   };
 
   // Save current conversation to savedChats (for sidebar list and persistence)
-  const saveCurrentChatToHistory = (msgs, opinion, retr) => {
+  const saveCurrentChatToHistory = (msgs, opinion, retr, workflowState) => {
     const firstUser = (msgs || []).find((m) => m.role === "user");
     const title =
       (typeof firstUser?.content === "string" && firstUser.content.trim()) ||
       `Chat ${new Date().toLocaleString()}`;
-    const chat = {
+    const chat = normalizeSavedChat({
       id: Date.now(),
       title: title.length > 50 ? title.slice(0, 50) + "…" : title,
       messages: msgs || [],
       opinionText: opinion || "",
       retrieved: Array.isArray(retr) ? retr : [],
+      workflowState: workflowState || buildWorkflowState({ messages: msgs || [] }),
       createdAt: new Date().toISOString(),
-    };
+    });
     setSavedChats((prev) => [chat, ...prev]);
     hasSavedCurrentChatRef.current = true;
   };
 
   // Open a saved chat in the chat window
   const handleLoadChat = (chat) => {
-    setMessages(normalizeLoadedMessages(chat.messages || []));
-    setOpinionText(chat.opinionText || "");
-    setRetrieved(chat.retrieved || []);
-    setStage("done");
-    const firstUser = (chat.messages || []).find((m) => m.role === "user");
-    setFacts(typeof firstUser?.content === "string" ? firstUser.content : "");
-    setCurrentQuestion("");
-    setQaHistory([]);
+    const normalizedChat = normalizeSavedChat(chat);
+    const workflowState = normalizedChat.workflowState || {};
+    setMessages(normalizedChat.messages || []);
+    setOpinionText(normalizedChat.opinionText || "");
+    setRetrieved(normalizedChat.retrieved || []);
+    setRawResponse("");
+    setError("");
+    setProgress(null);
+    setStreamingSteps([]);
+    setStreamingToken("");
+    setComposerResetSignal((prev) => prev + 1);
+    setStage(workflowState.stage || "done");
+    setFacts(workflowState.facts || "");
+    setCurrentQuestion(workflowState.currentQuestion || "");
+    setQaHistory(Array.isArray(workflowState.qaHistory) ? workflowState.qaHistory : []);
     hasSavedCurrentChatRef.current = true;
-    currentChatIdRef.current = chat.id;
+    currentChatIdRef.current = normalizedChat.id;
   };
 
   // New chat: save current if unsaved, then clear
   const handleNewChat = () => {
     if (messages.length > 0 && !hasSavedCurrentChatRef.current) {
-      saveCurrentChatToHistory(messages, opinionText, retrieved);
+      saveCurrentChatToHistory(messages, opinionText, retrieved, buildWorkflowState());
     }
     handleStartNewCase();
   };
@@ -1081,13 +1198,13 @@ function App() {
     try {
       const res = await fetch(`${API_BASE}/chats`, { method: "POST", headers, body: JSON.stringify({
         id: chat.id, title: next, messages: chat.messages || [], opinionText: chat.opinionText || "",
-        retrieved: chat.retrieved || [], createdAt: chat.createdAt || new Date().toISOString(),
+        retrieved: chat.retrieved || [], workflowState: chat.workflowState || {}, createdAt: chat.createdAt || new Date().toISOString(),
       }) });
       if (res.ok) {
         const listRes = await fetch(`${API_BASE}/chats`, { headers: token ? { Authorization: `Bearer ${token}` } : {} });
         if (listRes.ok) {
           const data = await listRes.json().catch(() => ({}));
-          setSavedChats(Array.isArray(data.chats) ? data.chats : []);
+          setSavedChats(Array.isArray(data.chats) ? data.chats.map(normalizeSavedChat) : []);
         }
       }
     } catch (_) {}
@@ -1110,7 +1227,7 @@ function App() {
         const listRes = await fetch(`${API_BASE}/chats`, { headers });
         if (listRes.ok) {
           const listData = await listRes.json().catch(() => ({}));
-          setSavedChats(Array.isArray(listData.chats) ? listData.chats : []);
+          setSavedChats(Array.isArray(listData.chats) ? listData.chats.map(normalizeSavedChat) : []);
           if (wasCurrent) handleStartNewCase();
           return;
         }
@@ -1119,6 +1236,58 @@ function App() {
     setSavedChats((prev) => prev.filter((c) => String(c.id) !== String(idToRemove)));
     if (wasCurrent) handleStartNewCase();
   };
+
+  const handleQuestionResponse = useCallback((data) => {
+    const nextQuestion = (data.next_question || data.message || "Please share one more important detail, or say 'proceed' if you want me to begin the legal analysis.").trim();
+    setCurrentQuestion(nextQuestion);
+    setStage("interview");
+    setMessages((prev) => [
+      ...prev,
+      makeAssistantMessage(nextQuestion, {
+        stage: "intake",
+        responseType: "intake_question",
+        modelUsed: resolveModelUsed(data),
+        latencyMs: currentTurnLatencyMs(),
+      }),
+    ]);
+    if (Array.isArray(data.retrieved)) setRetrieved(data.retrieved);
+  }, [currentTurnLatencyMs, makeAssistantMessage, resolveModelUsed]);
+
+  const handleDoneResponse = useCallback((data) => {
+    setStage("done");
+    setCurrentQuestion("");
+    const opinion = data.opinion_text || "";
+    const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
+    setOpinionText(opinion);
+    setRetrieved(retr);
+    if (data.progress) {
+      setProgress(data.progress);
+      const groups = (data.progress && data.progress.groups) || [];
+      if (groups.length > 0) {
+        setExpandedGroups((prev) => {
+          const next = { ...prev };
+          groups.forEach((g) => { if (g && g.name) next[g.name] = false; });
+          return next;
+        });
+      }
+    }
+    const newAssistantMsg = makeAssistantMessage({
+      type: "final_opinion",
+      response_type: data.response_type || "legal_opinion",
+      opinionText: opinion,
+      bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
+      case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
+      retrieved: retr,
+      progress: data.progress || null,
+      model_used: data.model_used || null,
+    }, {
+      stage: "analysis",
+      responseType: data.response_type || "legal_opinion",
+      modelUsed: resolveModelUsed(data),
+      latencyMs: currentTurnLatencyMs(),
+    });
+    setMessages((prev) => [...prev, newAssistantMsg]);
+  }, [currentTurnLatencyMs, makeAssistantMessage, resolveModelUsed]);
 
   // -------------------------
   // Core submit logic (adapted from snippet's handleSubmit, using existing 'input' state)
@@ -1148,14 +1317,20 @@ function App() {
     if (isFirstMessage) {
       const chatId = Date.now();
       const title = raw.trim().length > 50 ? raw.trim().slice(0, 50) + "…" : raw.trim();
-      const chat = {
+      const chat = normalizeSavedChat({
         id: chatId,
         title,
         messages: [userMsg],
         opinionText: "",
         retrieved: [],
+        workflowState: {
+          stage: "await_facts",
+          facts: raw,
+          currentQuestion: "",
+          qaHistory: [],
+        },
         createdAt: new Date().toISOString(),
-      };
+      });
       setSavedChats((prev) => [chat, ...prev]);
       currentChatIdRef.current = chatId;
       hasSavedCurrentChatRef.current = true;
@@ -1188,53 +1363,9 @@ function App() {
             setStreamingToken("");
             setRawResponse(JSON.stringify(data, null, 2));
             if (data.status === "question") {
-              const nextQuestion = (data.next_question || data.message || "Please share one more important detail, or say 'proceed' if you want me to begin the legal analysis.").trim();
-              setCurrentQuestion(nextQuestion);
-              setStage("interview");
-              setMessages((prev) => [
-                ...prev,
-                makeAssistantMessage(nextQuestion, {
-                  stage: "intake",
-                  responseType: "intake_question",
-                  modelUsed: "fast_intake_model",
-                  latencyMs: currentTurnLatencyMs(),
-                }),
-              ]);
-              if (Array.isArray(data.retrieved)) setRetrieved(data.retrieved);
+              handleQuestionResponse(data);
             } else if (data.status === "done") {
-              setStage("done");
-              setCurrentQuestion("");
-              const opinion = data.opinion_text || "";
-              const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
-              setOpinionText(opinion);
-              setRetrieved(retr);
-              if (data.progress) {
-                setProgress(data.progress);
-                const groups = (data.progress && data.progress.groups) || [];
-                if (groups.length > 0) {
-                  setExpandedGroups((prev) => {
-                    const next = { ...prev };
-                    groups.forEach((g) => { if (g && g.name) next[g.name] = false; });
-                    return next;
-                  });
-                }
-              }
-              const newAssistantMsg = makeAssistantMessage({
-                type: "final_opinion",
-                response_type: data.response_type || "legal_opinion",
-                opinionText: opinion,
-                bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
-                case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
-                retrieved: retr,
-                progress: data.progress || null,
-                model_used: data.model_used || null,
-              }, {
-                stage: "analysis",
-                responseType: data.response_type || "legal_opinion",
-                modelUsed: data.model_used || "",
-                latencyMs: currentTurnLatencyMs(),
-              });
-              setMessages((prev) => [...prev, newAssistantMsg]);
+              handleDoneResponse(data);
             } else {
               if (data.message) setError(data.message);
             }
@@ -1268,11 +1399,12 @@ function App() {
       ];
       setQaHistory(updatedHistory);
       setCurrentQuestion(""); // Clear current question after answering
+      const conversation = buildConversationFromMessages(messages);
 
       try {
         await consumeSSEStream(
-          `${API_BASE}/interview_step/stream`,
-          { facts, qa_history: updatedHistory, mode: chatMode, model_override: selectedModel === "default" ? "" : selectedModel },
+          `${API_BASE}/conversation/continue/stream`,
+          { conversation, message: raw, mode: chatMode, model_override: selectedModel === "default" ? "" : selectedModel },
           (progressPayload) => {
             setProgress(progressPayload);
             const groups = progressPayload.groups || [];
@@ -1289,53 +1421,9 @@ function App() {
             setStreamingToken("");
             setRawResponse(JSON.stringify(data, null, 2));
             if (data.status === "question") {
-              const nextQuestion = (data.next_question || data.message || "Please share one more important detail, or say 'proceed' if you want me to begin the legal analysis.").trim();
-              setCurrentQuestion(nextQuestion);
-              setStage("interview");
-              setMessages((prev) => [
-                ...prev,
-                makeAssistantMessage(nextQuestion, {
-                  stage: "intake",
-                  responseType: "intake_question",
-                  modelUsed: "fast_intake_model",
-                  latencyMs: currentTurnLatencyMs(),
-                }),
-              ]);
-              if (Array.isArray(data.retrieved)) setRetrieved(data.retrieved);
+              handleQuestionResponse(data);
             } else if (data.status === "done") {
-              setStage("done");
-              setCurrentQuestion("");
-              const opinion = data.opinion_text || "";
-              const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
-              setOpinionText(opinion);
-              setRetrieved(retr);
-              if (data.progress) {
-                setProgress(data.progress);
-                const groups = (data.progress && data.progress.groups) || [];
-                if (groups.length > 0) {
-                  setExpandedGroups((prev) => {
-                    const next = { ...prev };
-                    groups.forEach((g) => { if (g && g.name) next[g.name] = false; });
-                    return next;
-                  });
-                }
-              }
-              const newAssistantMsg = makeAssistantMessage({
-                type: "final_opinion",
-                response_type: data.response_type || "legal_opinion",
-                opinionText: opinion,
-                bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
-                case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
-                retrieved: retr,
-                progress: data.progress || null,
-                model_used: data.model_used || null,
-              }, {
-                stage: "analysis",
-                responseType: data.response_type || "legal_opinion",
-                modelUsed: data.model_used || "",
-                latencyMs: currentTurnLatencyMs(),
-              });
-              setMessages((prev) => [...prev, newAssistantMsg]);
+              handleDoneResponse(data);
             } else {
               if (data.message) setError(data.message);
             }
@@ -1344,7 +1432,7 @@ function App() {
           handleToken,
         );
       } catch (err) {
-        console.error("interview_step stream error:", err);
+        console.error("conversation continue stream error:", err);
         setError("Error during processing: " + (err.message || "Network or server error"));
         setRawResponse("Error: " + err.message);
       } finally {
@@ -1387,44 +1475,11 @@ function App() {
               setStreamingToken("");
               setRawResponse(JSON.stringify(data, null, 2));
               if (data.status === "question") {
-                const nextQuestion = (data.next_question || data.message || "Please share one more important detail, or say 'proceed' if you want me to begin the legal analysis.").trim();
                 setFacts(raw);
-                setCurrentQuestion(nextQuestion);
-                setStage("interview");
-                setMessages((prev) => [
-                  ...prev,
-                  makeAssistantMessage(nextQuestion, {
-                    stage: "intake",
-                    responseType: "intake_question",
-                    modelUsed: "fast_intake_model",
-                    latencyMs: currentTurnLatencyMs(),
-                  }),
-                ]);
-                if (Array.isArray(data.retrieved)) setRetrieved(data.retrieved);
+                handleQuestionResponse(data);
               } else if (data.status === "done") {
                 setFacts(raw);
-                setStage("done");
-                setCurrentQuestion("");
-                const opinion = data.opinion_text || "";
-                const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
-                setOpinionText(opinion);
-                setRetrieved(retr);
-                const newAssistantMsg = makeAssistantMessage({
-                  type: "final_opinion",
-                  response_type: data.response_type || "legal_opinion",
-                  opinionText: opinion,
-                  bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
-                  case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
-                  retrieved: retr,
-                  progress: data.progress || null,
-                  model_used: data.model_used || null,
-                }, {
-                  stage: "analysis",
-                  responseType: data.response_type || "legal_opinion",
-                  modelUsed: data.model_used || "",
-                  latencyMs: currentTurnLatencyMs(),
-                });
-                setMessages((prev) => [...prev, newAssistantMsg]);
+                handleDoneResponse(data);
               } else if (data.message) {
                 setError(data.message);
               }
@@ -1440,13 +1495,7 @@ function App() {
         return;
       }
 
-      const normalizeContent = (msg) => {
-        if (typeof msg.content === "string") return msg.content;
-        if (msg.content?.opinionText != null) return msg.content.opinionText || "";
-        return msg.content?.text ?? msg.content?.summary ?? "";
-      };
-      const previousMessages = messages.slice(0, -1);
-      const conversation = previousMessages.map((m) => ({ role: m.role, content: normalizeContent(m) }));
+      const conversation = buildConversationFromMessages(messages);
       try {
         await new Promise((r) => setTimeout(r, 0));
         await consumeSSEStream(
@@ -1466,50 +1515,9 @@ function App() {
           (data) => {
             const assistantContent = (data.next_question ?? data.message ?? "").trim();
             if (data.status === "question") {
-              setMessages((prev) => [
-                ...prev,
-                makeAssistantMessage(assistantContent || "Could you tell me more?", {
-                  stage: "intake",
-                  responseType: "intake_question",
-                  modelUsed: "fast_intake_model",
-                  latencyMs: currentTurnLatencyMs(),
-                }),
-              ]);
-              if (Array.isArray(data.retrieved)) setRetrieved(data.retrieved);
+              handleQuestionResponse(data);
             } else if (data.status === "done") {
-              const opinion = data.opinion_text || "Your request has been processed.";
-              const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
-              setOpinionText(opinion);
-              setRetrieved(retr);
-              if (data.progress) {
-                setProgress(data.progress);
-                const groups = (data.progress && data.progress.groups) || [];
-                if (groups.length > 0) {
-                  setExpandedGroups((prev) => {
-                    const next = { ...prev };
-                    groups.forEach((g) => { if (g && g.name) next[g.name] = false; });
-                    return next;
-                  });
-                }
-              }
-              setMessages((prev) => [
-                ...prev,
-                makeAssistantMessage({
-                  type: "final_opinion",
-                  response_type: data.response_type || "legal_opinion",
-                  opinionText: opinion,
-                  bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
-                  case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
-                  retrieved: retr,
-                  progress: data.progress || null,
-                  model_used: data.model_used || null,
-                }, {
-                  stage: "analysis",
-                  responseType: data.response_type || "legal_opinion",
-                  modelUsed: data.model_used || "",
-                  latencyMs: currentTurnLatencyMs(),
-                }),
-              ]);
+              handleDoneResponse(data);
             } else {
               const fallbackContent = assistantContent || data.opinion_text || data.summary || "Processing...";
               setMessages((prev) => [

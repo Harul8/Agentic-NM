@@ -1,128 +1,72 @@
-# Fine-Tuning the Interaction — Step by Step
+# Prompt and Few-Shot Guide
 
-Use this guide to change how the app behaves at each stage. Tell me **which step** and **how you want it**, and I’ll update the code.
+This folder controls Nyaymalaw's runtime behavior when using the base model.
+The app now relies on two things working together:
 
-All main text is in **`prompts/advocate_prompts.py`** unless noted.
+1. Light system prompts in `prompts/advocate_prompts.py`
+2. Small retrieved few-shot examples from `training/few_shot_retriever.py`
 
----
+The idea is simple: keep the prompts principle-driven, and let examples teach tone,
+flow, and output shape.
 
-## Step 1 — First message (greeting when user starts a chat)
+## Runtime layers
 
-**What it controls:** The first thing the user sees when they type their first message (e.g. “Describe your case…”).
+### 1. Intake state extraction
+What it does:
+- reads the current chat
+- decides whether this is greeting, generic chat, search, lookup, or legal intake
+- returns compact state only
 
-**Where to change:** **Frontend** — `Frontend/src/App.jsx`  
-Look for `firstReplyText` (or the greeting string shown before/after the first user message).  
-If you want the **backend** to supply the first question instead, we can change the flow so the first reply comes from the fact-collection prompt.
+Where to tune:
+- `INTAKE_STATE_UPDATE_SYSTEM`
+- few-shot source: `get_intake_state_example_pack()`
 
-**You tell me:** e.g. “Step 1: I want the first message to say [your exact text].”
+### 2. Next intake move
+What it does:
+- decides whether to ask the next question cluster or complete intake
+- keeps the conversation warm, purposeful, and non-repetitive
 
----
+Where to tune:
+- `NEXT_QUESTION_FROM_STATE_SYSTEM`
+- few-shot source: `get_intake_reply_example_pack()`
 
-## Step 2 — How the advocate asks questions during intake
+### 3. Bare-act follow-up
+What it does:
+- briefly explains the most relevant retrieved sections
+- asks for more facts only if one compact gap still matters materially
 
-**What it controls:** Tone, style, and order of questions while gathering facts (parties, dates, documents, relief, etc.).
+Where to tune:
+- `BARE_ACT_EXPLAIN_AND_FOLLOWUP_PROMPT`
 
-**Where to change:** `prompts/advocate_prompts.py` ? **`INTAKE_STATE_UPDATE_SYSTEM`** and **`NEXT_QUESTION_FROM_STATE_SYSTEM`**
+### 4. Final grounded opinion
+What it does:
+- writes the final opinion from retrieved materials only
+- uses short fact framing, grounded analysis, and practical guidance
 
-Current behaviour: senior advocate, one question at a time, logical order, no advice during intake.
+Where to tune:
+- `STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT`
+- `STRUCTURED_FINAL_OPINION_PROMPT`
+- `RELEVANCE_EXPLANATION_SYSTEM`
+- few-shot source: `get_opinion_example()`
 
-**You tell me:** e.g. “Step 2: I want questions to be more formal / in Hindi mix / shorter / to always ask X before Y.”
+## Few-shot data
 
----
+Default runtime few-shot examples are loaded from:
+- `training/runtime_fewshot/runtime_examples.jsonl`
 
-## Step 3 — When the user says “that’s all” or “proceed”
+You can override the source files with:
+- `NYAYMALAW_FEWSHOT_FILES`
 
-**What it controls:**  
-- What counts as “no more information” (so we stop asking and move to research).  
-- The exact phrases that trigger this.
+Use this when you want runtime prompting to read a different curated example set without
+changing code. The default runtime path now avoids the full training corpus.
 
-**Where to change:** `prompts/advocate_prompts.py` → **`STOP_PHRASES`** (list of phrases like "that's all", "no more", "proceed").
+## Runtime flags
 
-**You tell me:** e.g. “Step 3: Also treat ‘enough’ and ‘start research’ as stop phrases.”
+- `ENABLE_INTAKE_FEWSHOT=1` enables intake examples in `fact_collector.py`
+- `ENABLE_RUNTIME_FEWSHOT=1` enables final-opinion examples in `response_generator_v2.py`
 
----
+## Design rule
 
-## Step 4 — Message when moving from intake to research
-
-**What it controls:** The transition message shown when we stop asking questions and move from intake into final legal analysis. The primary transition is built in `_build_analysis_ready_prompt()` inside `services/interactive_chat.py`, and the move itself is driven by the compact intake prompts.
-
-**Where to change:** Edit `_build_analysis_ready_prompt()` in `services/interactive_chat.py` for the handoff message, and edit `INTAKE_STATE_UPDATE_SYSTEM` / `NEXT_QUESTION_FROM_STATE_SYSTEM` in `prompts/advocate_prompts.py` for the model-driven intake behavior.
-
-**You tell me:** e.g. "Step 4: I want the transition to always mention what topic was researched."
-
----
-
-## Step 5 — How we build the legal search (bare acts + case laws)
-
-**What it controls:** How the app turns the user’s facts into a search query (which acts, sections, and terms we look for).
-
-**Where to change:** `prompts/advocate_prompts.py` → **`EXPAND_LEGAL_QUERY_SYSTEM`**
-
-**You tell me:** e.g. “Step 5: Always prefer these acts first…” or “Include limitation and jurisdiction in every query.”
-
----
-
-## Step 6 — How we show bare act sections and case laws
-
-**What it controls:**  
-- Which parts of a bare act we extract and show.  
-- Which parts of a judgment we extract (ratio, holdings, etc.).
-
-**Where to change:**  
-- Bare acts: **`EXTRACT_BARE_ACT_PORTIONS_SYSTEM`**  
-- Case laws: **`EXTRACT_CASE_PORTIONS_SYSTEM`**
-
-**You tell me:** e.g. “Step 6: For bare acts always include section number and definition; for cases always give citation and ratio in one line.”
-
----
-
-## Step 7 — Structure and tone of the final legal opinion
-
-**What it controls:** Headings and flow of the final answer (e.g. Brief facts → Applicable law (Bare Acts) → Applicable law (Case law) → Analysis and conclusion).
-
-**Where to change:** `prompts/advocate_prompts.py` → **`RELEVANCE_EXPLANATION_SYSTEM`**
-
-**You tell me:** e.g. “Step 7: I want sections: Facts, Issues, Applicable Law, Analysis, Conclusion, and Next Steps.”
-
----
-
-## Step 8 — When no bare acts or case laws are found
-
-**What it controls:** The message shown when search returns nothing relevant.
-
-**Where to change:** `prompts/advocate_prompts.py` → **`RELEVANCE_EXPLANATION_NO_MATERIALS`**
-
-**You tell me:** e.g. “Step 8: I want it to say [your exact message].”
-
----
-
-## Step 9 — When we ask the user to confirm internet materials
-
-**What it controls:** The short intro and closing text when we show “materials from external sources” and ask the user to confirm before indexing.
-
-**Where to change:** `prompts/advocate_prompts.py` → **`SUMMARY_FOR_CONFIRMATION_HEAD`** and **`SUMMARY_FOR_CONFIRMATION_TAIL`**
-
-**You tell me:** e.g. “Step 9: Intro should say … and ending should say ….”
-
----
-
-## Step 10 — Other one-off messages (fallbacks)
-
-**What it controls:** Messages like “Please share any further details”, “Is there anything else…”, “Please confirm the materials above…”.
-
-**Where to change:**  
-- Some in `prompts/advocate_prompts.py` (if we move them there).  
-- Others in `services/interactive_chat.py` and `services/fact_collector.py` (fallback question when JSON fails).
-
-**You tell me:** e.g. “Step 10: When the model doesn’t understand, say [X].”
-
----
-
-## How to use this
-
-1. Pick a step (e.g. “Step 4”).
-2. Tell me exactly how you want that part to behave or what text you want.
-3. I’ll update the right place and confirm.
-4. Repeat for the next step whenever you’re ready.
-
-You can go in order (1 → 2 → …) or jump to any step. If you’re not sure which step something belongs to, describe what the user sees and I’ll map it to a step.
+Do not hard-code case-specific scripts into the system prompts.
+If you want the model to learn a style, a completion pattern, or a better handoff,
+put that behavior into the few-shot examples instead of bloating the prompt.

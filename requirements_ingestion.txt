@@ -1,14 +1,592 @@
-# Heavy ingestion-only dependencies (PDF/OCR pipeline)
+C:\Users\rahul\Nyaymalaw_Finetune\training\finetune_ready - can you acess this folder
 
-pymupdf==1.24.3          # fitz
-unstructured==0.15.7
-paddleocr==2.7.3
-# CPU-only PaddlePaddle; compatible with Python 3.11 on Windows
-paddlepaddle==3.3.0
 
-pdfplumber==0.11.0
-pypdf==4.2.0
+2 previous messages
+Yes, I can access it.
 
-pytesseract==0.3.10
-pillow==10.3.0
+I can see these files in C:\Users\rahul\Nyaymalaw_Finetune\training\finetune_ready:
+
+intake_finetune.jsonl
+opinion_finetune.jsonl
+train.jsonl
+val.jsonl
+If you want, I can next:
+
+validate the JSONL structure
+inspect a few samples for format quality
+check for fine-tuning issues like mixed schemas, broken JSON, or bad assistant targets
+
+train.jsonl
+val.jsonl
+
+these contrain all the examples I have prepared for finetuning .. now, I want to work with you to make them ready .. don't do any changes for now, just scan the jsons and identify issues, an tell me your suggestions, lets first agree on what updates we want to make, agree on the schema, few sample examples, once we are fully aligned, then you can go ahead and do bulk updates
+
+
+Worked for 1m 13s
+I scanned both train.jsonl and val.jsonl read-only. Structurally they’re in decent shape: every line parses as JSON, and every record has the same top-level keys: messages and _meta. The main work now is training-quality cleanup, not file repair.
+
+Findings
+
+You currently have two different tasks mixed together in the same train/val split:
+intake style: “senior advocate at Nyaymalaw… structured intake”
+mentoring style: “mentoring a junior colleague… highest-value question/action”
+The dominant schema is not yet aligned with the behavior we agreed on. A large share of intake examples still use the old format:
+### Enriched Intake Conversation
+### Decision-State Snapshot
+### Weakness Stress-Test
+### Intake-Layer Action Plan
+### Case-Strengthening Guidance
+### Potential Judgment / Outcome
+Grounded Advice Layer
+Placeholder leakage is very high. [RELEVANT_PRECEDENT] appears in 1084 / 1304 train rows and 121 / 145 val rows.
+Some records have invalid conversational shape for SFT:
+43 train rows and 4 val rows have role patterns like system, user, assistant, assistant, assistant
+2 train rows have system, user, assistant, assistant
+those should almost certainly be collapsed into a single final assistant turn or restructured into real multi-turn chat
+Many assistant targets are too long and too blended for a clean intake model:
+276 train rows and 30 val rows have an assistant message longer than 2500 chars
+they often mix intake, legal analysis, strategy, outcomes, and retrieval handoff in one target
+Some examples appear to contradict the prompt instruction:
+the intake prompt says “ask focused one-at-a-time questions”
+but many outputs do not ask clean follow-up questions at all, or they answer far beyond intake
+The mentoring examples often contain substantive law and precedent placeholders inside the assistant text, which is risky if the intended product behavior is “citations only via retrieval”
+Specific examples
+
+train.jsonl line 1 shows the old “Enriched Intake Conversation” pattern we discussed replacing.
+train.jsonl line 6 has three consecutive assistant messages in one record, which is not a good SFT shape.
+val.jsonl line 3 shows the “mentor a junior colleague” task mixed into the same dataset as intake.
+My suggestions before bulk edits
+
+Separate the corpus into at least these logical training layers:
+intake
+clarification_follow_up
+rag_grounded_final_answer
+optionally mentor_mode if you really want that behavior
+Do not keep intake and mentor-mode examples in the same training file unless you explicitly tag and train for both modes.
+Remove or rewrite all assistant outputs that contain:
+Enriched Intake Conversation
+Weakness Stress-Test
+Potential Judgment / Outcome
+Grounded Advice Layer
+raw [RELEVANT_PRECEDENT] placeholders
+Standardize the intake assistant target to:
+empathy
+brief explanation of why details matter
+2–3 closely related questions in one factual cluster
+one compact JSON snapshot
+Standardize the clarification target to:
+acknowledge new facts
+2–3 next related questions
+updated JSON snapshot
+Standardize the grounded-answer target to:
+answer only from retrieved materials
+no memory citations
+no intake-style questioning unless the retrieved material is insufficient
+Decide whether _meta should expand. Right now it only has:
+source_id
+domain
+client_type
+matter_shape
+est_tokens
+I strongly recommend adding at least:
+training_layer
+quality_level
+maybe schema_version
+Schema I’d propose
+For all records:
+
+{
+  "messages": [...],
+  "_meta": {
+    "source_id": "...",
+    "domain": "...",
+    "client_type": "...",
+    "matter_shape": "...",
+    "est_tokens": 0,
+    "training_layer": "intake|clarification_follow_up|rag_grounded_final_answer|mentor_mode",
+    "quality_level": "gold|silver",
+    "schema_version": "v2"
+  }
+}
+For intake and clarification_follow_up, the assistant content should end with one JSON block using a stable schema such as:
+
+{
+  "intake_stage": "initial|clarification",
+  "matter_type": "...",
+  "client_type": "...",
+  "urgency_level": "...",
+  "presenting_problem": "...",
+  "relief_sought": "...",
+  "known_facts": [],
+  "unknowns": [],
+  "legal_issues": [],
+  "evidence_posture": {
+    "materials_shared": [],
+    "support_level": "...",
+    "verification_gaps": []
+  },
+  "credibility_signals": {
+    "internal_consistency": "...",
+    "specificity_level": "...",
+    "requires_follow_up": true
+  },
+  "relief_assessment": {
+    "relief_sought": "...",
+    "appears_reasonable_on_current_facts": "...",
+    "why_more_detail_needed": "..."
+  },
+  "enough_to_advise": false,
+  "next_information_needed": "..."
+}
+My recommendation for next step
+Before I touch the files, let’s align on 4 decisions:
+
+Do you want mentor_mode kept at all, or removed from this fine-tune set?
+Do you want one combined dataset with training_layer tags, or separate files per layer?
+Do we adopt the v2 intake JSON schema above?
+Do we fully eliminate [RELEVANT_PRECEDENT] placeholders from train/val?
+Once we agree on those, I can sample 5-10 rows from each pattern and show you exactly how I’d transform them before doing bulk updates.
+
+
+optionally mentor_mode if you really want that behavior -- mentor is not required, its' just that if the user is an advocate, out model can talk in legal language, and for lay users, it should simple english without any legal jargon .. just keep this in mind
+
+That helps a lot. I would not keep mentor_mode as a separate training behavior then.
+
+What you want is not “mentor a junior lawyer.” What you want is:
+
+the same legal intake and analysis behavior
+but with audience-adaptive language
+advocate/professional user: can use tighter legal language
+lay client: should use plain English and minimal jargon
+So my recommendation is:
+
+remove true mentor_mode examples from this fine-tune set
+keep the model focused on your actual product behavior
+encode audience style as part of the system instruction and metadata
+A better approach is to add something like:
+
+_meta.audience_type: lay_user or legal_professional
+optionally _meta.communication_style: plain_english or legal_professional
+Then the system prompt can say, in effect:
+
+if the user appears to be a layperson, explain in simple language
+if the user appears to be an advocate or legally trained user, you may use more precise legal terminology, but stay clear and structured
+So instead of training_layer = mentor_mode, I’d propose:
+
+training_layer = intake
+training_layer = clarification_follow_up
+training_layer = rag_grounded_final_answer
+And independently:
+
+audience_type = lay_user | legal_professional
+My recommendation for schema now is:
+
+{
+  "messages": [...],
+  "_meta": {
+    "source_id": "...",
+    "domain": "...",
+    "client_type": "...",
+    "matter_shape": "...",
+    "est_tokens": 0,
+    "training_layer": "intake|clarification_follow_up|rag_grounded_final_answer",
+    "audience_type": "lay_user|legal_professional",
+    "quality_level": "gold|silver",
+    "schema_version": "v2"
+  }
+}
+And behaviorally:
+
+lay_user: short sentences, simple words, explain terms if needed
+legal_professional: more compact, more doctrinal precision, but still no unnecessary jargon inflation
+So the main cleanup decision I’d suggest is:
+
+drop mentor-mode as a separate task
+convert useful mentor examples into legal_professional audience examples
+discard the ones that are basically precedent lectures or placeholder-heavy doctrinal Q&A
+If you want, next I can give you a final agreed schema proposal and a mapping plan:
+
+what happens to old intake rows
+what happens to old mentor rows
+which rows should be deleted
+which rows can be auto-transformed
+
+Do you want one combined dataset with training_layer tags, or separate files per layer?  - do what is better for finetunig llama 3.1 8b model, or 14b or 27 models
+
+Do we adopt the v2 intake JSON schema above?  - you  decide what is best 
+
+Do we fully eliminate [RELEVANT_PRECEDENT] placeholders from train/val?  - do what is best for trainig quality 
+
+
+So the main cleanup decision I’d suggest is: I am ok with these 
+
+drop mentor-mode as a separate task
+convert useful mentor examples into legal_professional audience examples
+discard the ones that are basically precedent lectures or placeholder-heavy doctrinal Q&A
+
+If you want, next I can give you a final agreed schema proposal and a mapping plan: ok  
+
+what happens to old intake rows
+what happens to old mentor rows
+which rows should be deleted
+which rows can be auto-transformed
+
+For fine-tuning Llama 3.1 8B, 14B, or 27B, I’d use one combined dataset with a small number of clearly tagged behaviors, not separate unrelated files. The important part is not splitting files, it’s making the behavior boundaries clean. So my recommendation is:
+
+keep one master dataset
+tag each row with training_layer
+keep only these layers:
+intake
+clarification_follow_up
+rag_grounded_final_answer
+add audience_type:
+lay_user
+legal_professional
+That gives you enough variation for one fine-tune, while keeping the task family coherent.
+
+Yes, I recommend adopting a v2 schema, with one small adjustment: keep the JSON snapshot only for intake and clarification_follow_up, not for grounded final answers. And yes, we should fully eliminate [RELEVANT_PRECEDENT] placeholders from train and val. They teach the model to emit fake retrieval markers and low-quality scaffolding.
+
+Final schema proposal
+
+Top level:
+
+{
+  "messages": [...],
+  "_meta": {
+    "source_id": "...",
+    "domain": "...",
+    "client_type": "...",
+    "matter_shape": "...",
+    "est_tokens": 0,
+    "training_layer": "intake|clarification_follow_up|rag_grounded_final_answer",
+    "audience_type": "lay_user|legal_professional",
+    "quality_level": "gold|silver",
+    "schema_version": "v2"
+  }
+}
+For intake / clarification_follow_up, assistant text should follow:
+
+empathetic acknowledgment
+brief explanation of why the next details matter
+2-3 closely related questions from one factual cluster
+one JSON snapshot
+Recommended JSON snapshot:
+
+{
+  "intake_stage": "initial|clarification",
+  "matter_type": "...",
+  "client_type": "...",
+  "urgency_level": "...",
+  "presenting_problem": "...",
+  "relief_sought": "...",
+  "known_facts": [],
+  "unknowns": [],
+  "legal_issues": [],
+  "evidence_posture": {
+    "materials_shared": [],
+    "support_level": "...",
+    "verification_gaps": []
+  },
+  "credibility_signals": {
+    "internal_consistency": "...",
+    "specificity_level": "...",
+    "requires_follow_up": true
+  },
+  "relief_assessment": {
+    "relief_sought": "...",
+    "appears_reasonable_on_current_facts": "...",
+    "why_more_detail_needed": "..."
+  },
+  "enough_to_advise": false,
+  "next_information_needed": "..."
+}
+For rag_grounded_final_answer, assistant text should be:
+
+concise answer from retrieved materials only
+no placeholder tokens
+no invented citations
+no intake JSON block
+Mapping plan
+
+1. Old intake rows
+What happens:
+
+Keep the row if the core scenario is good.
+Rewrite the assistant answer into the new intake or clarification_follow_up style.
+Auto-transform candidates:
+
+rows with system,user,assistant
+rows where the assistant contains old headings like:
+Enriched Intake Conversation
+Decision-State Snapshot
+Weakness Stress-Test
+Intake-Layer Action Plan
+Case-Strengthening Guidance
+Potential Judgment / Outcome
+Grounded Advice Layer
+Transformation rule:
+
+preserve the user fact pattern
+replace the whole assistant content with:
+empathy
+transparent reason for asking
+2-3 related questions
+v2 JSON snapshot
+add _meta.training_layer = intake
+infer audience_type from wording:
+plain problem statement -> lay_user
+technical/legal framing -> legal_professional
+2. Old mentor rows
+What happens:
+
+Do not preserve them as “mentor mode”.
+Split them into two buckets:
+useful legal-professional examples that can be converted
+doctrinal/preachy/placeholder-heavy rows to delete
+Convert if:
+
+the scenario is realistic
+the user prompt can be reframed as a legal-professional intake or grounded analysis request
+the answer is not mainly a lecture on law from memory
+Delete if:
+
+the assistant is mostly precedent exposition
+it contains repeated [RELEVANT_PRECEDENT]
+it behaves like a tutoring script instead of product behavior
+it has multiple consecutive assistant turns with doctrinal monologues
+3. Which rows should be deleted
+Delete rows with any of these characteristics:
+
+system,user,assistant,assistant or system,user,assistant,assistant,assistant unless they can be cleanly merged into one coherent answer
+heavy [RELEVANT_PRECEDENT] scaffolding
+answer is mostly ungrounded legal doctrine from memory
+output predicts court result in intake mode
+output mixes intake + final opinion + strategy + precedent retrieval all at once
+assistant target is so malformed that rewriting would be less reliable than dropping it
+4. Which rows can be auto-transformed
+Strong auto-transform candidates:
+
+single-turn intake rows with a good factual scenario
+multi-turn rows where the user follow-up is coherent and the assistant can be rewritten into clarification_follow_up
+professional-user scenarios that can be retained but rewritten in legal_professional language
+Needs manual review:
+
+anomalous role patterns
+rows with multiple assistant messages
+rows with doctrinal or precedent-heavy content
+rows where the user prompt itself is really a research/opinion request, not intake
+My recommended cleanup sequence
+
+Classify every row into:
+keep_and_rewrite
+keep_with_minor_fix
+delete
+Standardize metadata to v2
+Rewrite intake rows
+Rewrite clarification rows
+Rewrite or drop legal-professional mentor-derived rows
+Remove all placeholder leakage
+Rebalance train/val after cleanup if needed
+Recommendation on training quality
+For these Llama-family models, quality improves more from:
+
+tighter behavioral consistency
+fewer mixed modes
+fewer fake placeholders
+shorter cleaner targets
+than from trying to preserve every old example.
+
+If you want, next I can do the read-only design step: I’ll sample a handful of real rows from train.jsonl, classify them into:
+
+auto-transform
+manual-review
+delete
+and show you exactly how I’d rewrite them before we make any bulk changes.
+
+
+give me a tabular summary of how many examples fall under which of the above categories,
+
+
+Worked for 48s
+Here’s the read-only heuristic classification summary for train.jsonl and val.jsonl.
+
+Summary Table
+
+Dataset	Total	Keep with Minor Fix	Keep and Rewrite	Manual Review	Delete Candidate
+Train	1304	0	861	131	312
+Val	145	0	96	12	37
+Combined	1449	0	957	143	349
+Bucket meaning
+
+Keep and Rewrite: good core scenario, but assistant output needs full conversion to the new v2 behavior/schema.
+Manual Review: likely usable, but needs case-by-case inspection because the structure/content is ambiguous.
+Delete Candidate: best to drop, mostly mentor/predecessor-style rows with heavy placeholder leakage.
+Keep with Minor Fix: already close to target shape. Right now, essentially none fall cleanly into this bucket.
+Subcategory Breakdown
+
+Category	Train	Val	Combined
+Rewrite old intake format	819	88	907
+Rewrite other intake rows	42	8	50
+Manual review	131	12	143
+Delete mentor placeholder rows	312	37	349
+A few notes on how to read this:
+
+This is a heuristic scan, not a final legal/manual judgment.
+The biggest block is the old intake format, which is good news: those are the easiest to bulk transform.
+The delete bucket is almost entirely the old mentor/predecessor examples with [RELEVANT_PRECEDENT], which aligns with the cleanup direction we agreed on.
+The manual_review bucket is where I’d expect weird role shapes, ambiguous multi-turn behavior, or rows that may still be salvageable after inspection.
+If you want, the next useful step is for me to produce one more table breaking the manual_review bucket into:
+
+weird role sequences
+multi-turn but salvageable
+long blended assistant answers
+ambiguous professional-user examples
+
+Delete mentor placeholder rows - can we do something about these, make just take the case facts and completely rewrite them.. they are there in the vector store also 
+
+Yes, we probably can salvage many of them, and that’s a better option than deleting them blindly.
+
+If those mentor examples are based on real case facts already present in your vector store, then the problem is usually not the scenario, it’s the target behavior:
+
+they are written like doctrinal tutoring
+they contain placeholder scaffolding like [RELEVANT_PRECEDENT]
+they often teach the model to lecture instead of do product-aligned reasoning
+So instead of deleting all 349 rows, I’d change the plan to:
+
+extract and retain the factual scenario
+discard the old assistant answer entirely
+rewrite the row into one of your approved behaviors
+Best rewrite target depends on the row:
+
+if the prompt is mainly a fact pattern with uncertainty: rewrite to intake
+if it’s a developed record with a professional user asking what matters next: rewrite to clarification_follow_up
+if you later attach retrieved materials: rewrite to rag_grounded_final_answer
+if the user is clearly an advocate, mark audience_type = legal_professional
+So yes, the revised plan should be:
+
+do not automatically delete all mentor-placeholder rows
+move them to salvage-by-rewrite
+only delete rows where the underlying scenario itself is too thin, too synthetic, or too lecture-shaped to recover
+That would likely change the buckets conceptually to:
+
+auto_rewrite_intake
+auto_rewrite_professional
+manual_review
+true_delete
+My expectation is:
+
+a meaningful share of those 349 “delete candidate” rows can be converted into legal_professional examples
+but we should first inspect a sample to see how often the user prompt itself is usable without the assistant lecture
+My recommendation:
+
+sample 20 mentor-placeholder rows
+classify them into:
+salvageable_as_legal_professional
+salvageable_as_intake
+true_delete
+from that sample, estimate how many of the 349 are worth rewriting
+That is the safest way to avoid throwing away useful data.
+
+If you want, I can do exactly that next, read-only:
+
+take a representative sample of mentor-placeholder rows
+classify them
+show you a table with projected salvageability before we make any edits
+
+ok
+
+
+I’m going to sample a set of the mentor-placeholder rows read-only, classify which ones are genuinely salvageable, and then I’ll give you a projection for the full bucket before we edit anything.
+
+Ran @' import json, random, textwrap random.seed(42) paths = [ ('train', r'C:\Users\rahul\Nyaymalaw_Finetune\training\finetune_ready\train.jsonl'), ('val', r'C:\Users\rahul\Nyaymalaw_Finetune\training\finetune_ready\val.jsonl') ] rows = [] for split, path in paths: with open(path, 'r', encoding='utf-8') as f: for i, line in enumerate(f, 1): obj = json.loads(line) msgs = obj['messages'] system = msgs[0].get('content','') if msgs else '' assistant_text = '\n'.join(m.get('content','') for m in msgs if m.get('role')=='assistant') if 'mentoring a junior colleague' in system.lower() and '[RELEVANT_PRECEDENT]' in assistant_text: user_text = next((m.get('content','') for m in msgs if m.get('role')=='user'), '') rows.append((split, i, user_text[:1600])) # stratified sample roughly proportional sample = random.sample(rows, 20) for split, i, user_text in sample: print(f'[{split}] LINE {i}') print(textwrap.shorten(user_text.replace('\n',' '), width=1200, placeholder=' ...')) print('---') '@ | python -
+
+
+Ran @' import json, collections paths = [ ('train', r'C:\Users\rahul\Nyaymalaw_Finetune\training\finetune_ready\train.jsonl'), ('val', r'C:\Users\rahul\Nyaymalaw_Finetune\training\finetune_ready\val.jsonl') ] counts = collections.Counter() for split, path in paths: with open(path, 'r', encoding='utf-8') as f: for i, line in enumerate(f, 1): obj = json.loads(line) msgs = obj['messages'] system = msgs[0].get('content','') if msgs else '' assistant_text = '\n'.join(m.get('content','') for m in msgs if m.get('role')=='assistant') if 'mentoring a junior colleague' in system.lower() and '[RELEVANT_PRECEDENT]' in assistant_text: roles = tuple(m.get('role') for m in msgs) counts[(split, roles)] += 1 print('ROLE SHAPES IN MENTOR PLACEHOLDER BUCKET:') for k, v in counts.most_common(): print(k, v) '@ | python -
+
+
+The first sample pass mostly worked, but one row hit a Windows encoding issue while printing. I’m rerunning the sample safely so I can give you a clean salvageability estimate instead of a partial one.
+
+Ran @' import json, random, textwrap, sys random.seed(42) paths = [ ('train', r'C:\Users\rahul\Nyaymalaw_Finetune\training\finetune_ready\train.jsonl'), ('val', r'C:\Users\rahul\Nyaymalaw_Finetune\training\finetune_ready\val.jsonl') ] rows = [] for split, path in paths: with open(path, 'r', encoding='utf-8') as f: for i, line in enumerate(f, 1): obj = json.loads(line) msgs = obj['messages'] system = msgs[0].get('content','') if msgs else '' assistant_text = '\n'.join(m.get('content','') for m in msgs if m.get('role')=='assistant') if 'mentoring a junior colleague' in system.lower() and '[RELEVANT_PRECEDENT]' in assistant_text: user_text = next((m.get('content','') for m in msgs if m.get('role')=='user'), '') rows.append((split, i, user_text)) sample = random.sample(rows, 20) for split, i, user_text in sample: safe = user_text.encode('ascii', 'replace').decode('ascii') print(f'[{split}] LINE {i}') print(textwrap.shorten(safe.replace('\n',' '), width=1000, placeholder=' ...')) print('---') '@ | python -
+
+
+Worked for 42s
+Yes, many of these look salvageable.
+
+From the sample I reviewed, the underlying fact patterns are often good, even though the current assistant targets are poor. A lot of them can be reused if we throw away the old mentor-style answer and rewrite them into your approved product behavior.
+
+Estimated salvage plan for the current “delete candidate” bucket
+
+Bucket	Train	Val	Combined	Recommendation
+Mentor placeholder rows previously marked delete	312	37	349	Re-review for salvage
+Likely salvageable as legal_professional	~230-260	~27-31	~257-291	Keep case facts, fully rewrite
+Likely salvageable as intake	~20-35	~2-4	~22-39	Reframe as user-intake examples
+Likely true delete	~35-60	~4-7	~39-67	Drop if too lecture-shaped or too thin
+Needs manual review before decision	~20-35	~2-4	~22-39	Inspect before transforming
+That estimate is based on:
+
+the sampled prompts being mostly usable legal scenarios
+the role-shape distribution in this bucket being mostly valid multi-turn shapes
+the main issue being the assistant answer, not the case facts
+Why I think many can be saved
+The sampled examples included strong factual scenarios like:
+
+undertrial over-detention
+adverse possession over government land
+departmental dismissal with undisclosed materials
+consumer defect and warranty limitation
+specific performance and inadequate consideration
+admissibility of WhatsApp/electronic evidence
+bias in a promotion committee
+bail in corruption matters
+dowry-death appeal
+easement of necessity
+hostile witnesses / retrial
+delayed investigation / oversight request
+Those are useful domains. They are not junk data. They’re just wrapped in the wrong training behavior.
+
+How I’d transform them
+
+If the prompt is framed by an advocate or legally trained user:
+keep audience_type = legal_professional
+rewrite into intake or clarification_follow_up
+use more precise but still controlled legal language
+If the prompt is more like a client narration:
+rewrite into intake
+simpler English
+If the prompt is really a developed legal question requiring retrieved authorities:
+consider converting to rag_grounded_final_answer later, but only if we have the retrieved materials bundled into the example
+If the prompt is too abstract, too doctrinal, or mostly a “teach me the law” prompt:
+drop it
+Important constraint
+We should not convert a precedent-lecture prompt into a fake grounded final answer unless the retrieval content is actually present in the row. Since right now these rows mostly just contain the scenario and the placeholder-heavy assistant, the safest salvage target is usually:
+
+intake
+clarification_follow_up
+legal_professional audience
+So the cleanup plan should now become:
+
+Original bucket	New action
+Old intake rows	Bulk rewrite to v2 intake / clarification_follow_up
+Mentor placeholder rows with good case facts	Salvage and rewrite
+Mentor rows that are mostly doctrinal lecture prompts	Drop
+Weird role-shape rows	Manual review, then merge/rewrite or drop
+My recommendation
+Do not treat all 349 as deletes anymore. Treat them as a salvage pool.
+
+A practical working estimate for the whole corpus after cleanup is:
+
+Final outcome class	Estimated count
+Bulk-rewritable intake/clarification rows	~907 existing intake + ~280 salvaged mentor rows = ~1187
+Manual review rows	~140-180
+True delete rows	~40-70
+That’s a much better place to be than throwing away 349 rows.
+
+If you want, the next best step is for me to produce a final action table for all current rows:
+
+bulk_rewrite
+salvage_rewrite
+manual_review
+drop
+with estimated counts for train and val separately.
+
 

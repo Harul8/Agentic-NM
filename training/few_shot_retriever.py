@@ -1,1088 +1,526 @@
 """
-Few-Shot Example Retriever for Nyaymalaw  (v1.1)
-=================================================
-Serves two purposes:
+Lightweight few-shot retriever for Nyaymalaw runtime prompting.
 
-1. FEW-SHOT LEARNING (immediate) — retrieves the most relevant training
-   example for a given client query and injects it into the LLM prompt
-   at inference time. The model sees what a perfect intake looks like for a
-   similar case type, including:
-     • contrastive turn annotations (ideal q / bad q / why bad loses)
-     • decision-state snapshot (schema in action)
-     • intake-layer action plan
-   without needing to carry all 97 examples in every prompt.
+The runtime uses the same ideas as the training data, but keeps prompts small:
+- intake-state examples for compact state extraction
+- intake-reply examples for the next intake move
+- final-opinion examples for grounded opinion style
 
-2. FINE-TUNING DATA (future) — same JSONL files are the training dataset
-   for Unsloth/LoRA fine-tuning. Use convert_to_finetune.py to export.
-
-Retrieval strategy
-------------------
-Keyword overlap + legal-domain detection + bare-act section number matching.
-Simple and fast — no embeddings needed for O(~100) examples.
-Upgrade to FAISS/ChromaDB if the store grows beyond ~500 examples.
-
-Source hierarchy (v1.1)
------------------------
-PRIMARY   nyaymalaw_training_examples.md  — v1.1 enriched blocks
-           • Enriched Intake Conversation with contrastive annotations
-           • Decision-State Snapshot (core runtime fields, compact JSON)
-           • Stop Policy Check (why intake stopped + counter-test)
-           • Intake-Layer Action Plan (what to do / not do today)
-           • Grounded Advice Layer reference (for opinion examples)
-
-FALLBACK   rich_training_records.jsonl + legacy JSONL files
-           • Used when MD block unavailable or MD not yet generated
-           • Formatted by the original _format_intake / _format_opinion logic
-
-Schema support
---------------
-Handles TWO record formats automatically:
-
-  OLD format  (intake_conversations.jsonl / final_opinions.jsonl)
-    keys: id, case_type, keywords, description, conversation / opinion_text
-
-  NEW format  (rich_cases/rich_training_records.jsonl)
-    keys: id, case_type, keywords, description, legal_domain, dispute_type,
-          relevant_bare_acts, client_scenario, intake_conversation,
-          advocate_reasoning, final_opinion
-
-Both are normalised into the same internal shape by _normalise().
+Primary sources are the repo-local training files. You can override them with
+NYAYMALAW_FEWSHOT_FILES using os.pathsep or comma-separated paths.
 """
 
 from __future__ import annotations
 
 import json
 import logging
+import os
 import re
 from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
-EXAMPLES_DIR = Path(__file__).parent / "examples"
-RICH_FILE    = EXAMPLES_DIR / "rich_cases" / "rich_training_records.jsonl"
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+_DEFAULT_FEWSHOT_FILES = [
+    PROJECT_ROOT / "training" / "runtime_fewshot" / "runtime_examples.jsonl",
+]
 
-# v1.1: enriched MD source — lives one level above the training package
-TRAINING_MD  = Path(__file__).parent.parent / "nyaymalaw_training_examples.md"
-
-# ── Cache ────────────────────────────────────────────────────────────────────
-_rich_cache:   list[dict] | None = None   # normalised rich records
-_legacy_cache: list[dict] | None = None   # normalised legacy records
-_md_cache:     dict[str, dict] | None = None  # keyed by record id e.g. "rich_001"
-_curated_cache: list[dict] | None = None  # curated_* few-shot blocks from MD
+_RUNTIME_EXAMPLES: list[dict] | None = None
 
 
-# ═════════════════════════════════════════════════════════════════════════════
-# MD BLOCK PARSER  (v1.1 primary source)
-# ═════════════════════════════════════════════════════════════════════════════
-
-def _extract_table_field(block_text: str, field_name: str) -> str:
-    """Return the value for a field in a markdown table row: | **Field** | value |"""
-    pattern = rf"\|\s*\*\*{re.escape(field_name)}\*\*\s*\|\s*([^|\n]+?)\s*\|"
-    m = re.search(pattern, block_text)
-    return m.group(1).strip() if m else ""
-
-
-def _extract_md_section(block_text: str, section_header: str,
-                         next_section_header: str | None) -> str:
-    """
-    Extract the content between two ### headers inside a case block.
-    Returns the raw markdown text (without the header line itself).
-    """
-    # Build start pattern — match the specific section header (level 3 ##)
-    start_pat = rf"###\s+{re.escape(section_header)}[^\n]*\n"
-    m_start = re.search(start_pat, block_text)
-    if not m_start:
-        return ""
-
-    content_start = m_start.end()
-
-    if next_section_header:
-        end_pat = rf"\n###\s+{re.escape(next_section_header)}"
-        m_end = re.search(end_pat, block_text[content_start:])
-        if m_end:
-            return block_text[content_start: content_start + m_end.start()].strip()
-
-    # No next header — read to the end of this case block (next ## or end of string)
-    m_end2 = re.search(r"\n## rich_", block_text[content_start:])
-    if m_end2:
-        return block_text[content_start: content_start + m_end2.start()].strip()
-
-    return block_text[content_start:].strip()
+def _split_env_paths(raw: str) -> list[Path]:
+    parts: list[str] = []
+    for chunk in re.split(r"[\n,]+", raw or ""):
+        chunk = chunk.strip()
+        if not chunk:
+            continue
+        parts.extend([p.strip() for p in chunk.split(os.pathsep) if p.strip()])
+    return [Path(p).expanduser() for p in parts]
 
 
-def _extract_loader_index() -> dict[str, dict]:
-    """
-    Parse the curated loader index from the training markdown.
-    Returns metadata keyed by curated id, e.g. "curated_01".
-    """
-    if not TRAINING_MD.exists():
-        return {}
+def _candidate_files() -> list[Path]:
+    env_paths = _split_env_paths(os.environ.get("NYAYMALAW_FEWSHOT_FILES", ""))
+    seen: set[str] = set()
+    ordered: list[Path] = []
+    for path in env_paths + _DEFAULT_FEWSHOT_FILES:
+        try:
+            resolved = str(path.resolve())
+        except Exception:
+            resolved = str(path)
+        if resolved in seen or not path.exists():
+            continue
+        seen.add(resolved)
+        ordered.append(path)
+    return ordered
 
-    content = TRAINING_MD.read_text(encoding="utf-8")
-    m = re.search(
-        r"### Curated Loader Index\s*\n(?P<body>.*?)(?:\n\*\*Loader hint:\*\*|\n### curated_01:)",
-        content,
-        flags=re.S,
+
+def _extract_json_block(text: str) -> dict | None:
+    text = (text or "").strip()
+    if not text:
+        return None
+    if "```json" in text:
+        candidate = text.split("```json", 1)[1].split("```", 1)[0].strip()
+        try:
+            return json.loads(candidate)
+        except json.JSONDecodeError:
+            return None
+    start = text.find("{")
+    end = text.rfind("}")
+    if start >= 0 and end > start:
+        try:
+            return json.loads(text[start : end + 1])
+        except json.JSONDecodeError:
+            return None
+    return None
+
+
+def _strip_json_block(text: str) -> str:
+    text = (text or "").strip()
+    if "```json" in text:
+        head = text.split("```json", 1)[0].strip()
+        tail = text.split("```", 2)[-1].strip() if text.count("```") >= 2 else ""
+        return "\n\n".join(part for part in [head, tail] if part).strip()
+    return text
+
+
+def _clean_reply_text(text: str) -> str:
+    text = " ".join((text or "").split())
+    boilerplate_prefixes = [
+        "That helps narrow the record. The next details will help me test whether the matter is ready to move forward on a stronger factual footing.",
+    ]
+    for prefix in boilerplate_prefixes:
+        if text.startswith(prefix):
+            text = text[len(prefix):].strip()
+    text = text.replace(
+        "The picture is becoming clearer, and the next details will help me understand how strong the record is. The factual record now seems complete enough for grounded legal analysis.",
+        "The factual record now seems complete enough for grounded legal analysis.",
     )
-    if not m:
-        return {}
-
-    meta: dict[str, dict] = {}
-    row_pat = re.compile(
-        r"^\|\s*`(?P<id>curated_\d+)`\s*\|\s*(?P<client>[^|]+?)\s*\|\s*(?P<outcome>[^|]+?)\s*\|\s*(?P<shape>[^|]+?)\s*\|\s*(?P<move>[^|]+?)\s*\|$",
-        flags=re.M,
-    )
-    for row in row_pat.finditer(m.group("body")):
-        meta[row.group("id")] = {
-            "client_type_tag": row.group("client").strip(),
-            "outcome_pattern": row.group("outcome").strip(),
-            "matter_shape": row.group("shape").strip(),
-            "primary_teaching_move": row.group("move").strip(),
-        }
-    return meta
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
 
 
-def _canonical_domain_from_text(text: str) -> str:
-    """
-    Best-effort mapping of a free-form domain label into the existing internal
-    canonical domain names used by the scorer.
-    """
-    norm = text.lower().replace("/", " ").replace("+", " ").replace("-", " ")
-    if "mixed" in norm or "multi" in norm:
-        return "mixed"
-
-    best_domain, best_hits = "", 0
-    for domain, signals in _DOMAIN_SIGNALS.items():
-        hits = sum(1 for sig in signals if sig in norm)
-        if hits > best_hits:
-            best_domain, best_hits = domain, hits
-
-    # Light alias support for labels that may not hit the signal list directly
-    aliases = {
-        "criminal fir challenge": "fir_quashing",
-        "criminal procedure fir registration": "criminal_general",
-        "criminal bail": "criminal_bail",
-        "administrative travel": "constitutional",
-        "notice review": "contract",
-        "rti information access": "constitutional",
-        "property injunction": "property",
-        "property partition": "property",
-        "labour termination": "labour",
-        "family protection": "matrimonial",
-        "banking recovery": "banking_recovery",
-    }
-    alias_key = " ".join(norm.split())
-    return aliases.get(alias_key, best_domain)
+def _tokenize(text: str) -> set[str]:
+    return set(re.findall(r"[a-z0-9_]+", (text or "").lower()))
 
 
-def _parse_curated_blocks() -> list[dict]:
-    """
-    Parse curated_* compact examples from the training markdown so they can be
-    used directly at inference time without requiring JSONL backing records.
-    """
-    global _curated_cache
-    if _curated_cache is not None:
-        return _curated_cache
-
-    if not TRAINING_MD.exists():
-        _curated_cache = []
-        return _curated_cache
-
-    content = TRAINING_MD.read_text(encoding="utf-8")
-    section_match = re.search(
-        r"## Curated Few-Shot Starter Pack \(Preferred\)\s*(?P<body>.*?)(?:\n## rich_|\Z)",
-        content,
-        flags=re.S,
-    )
-    if not section_match:
-        _curated_cache = []
-        return _curated_cache
-
-    curated_section = section_match.group("body")
-    parts = re.split(r"\n### (curated_\d+): ([^\n]+)\n", curated_section)
-    index_meta = _extract_loader_index()
-
-    blocks: list[dict] = []
-    i = 1
-    while i + 2 < len(parts):
-        rec_id = parts[i].strip()
-        rec_name = parts[i + 1].strip()
-        body = parts[i + 2].strip()
-
-        domain_raw = _extract_table_field(body, "Domain")
-        client_type = _extract_table_field(body, "Client Type")
-        urgency = _extract_table_field(body, "Urgency Level")
-        use_case = _extract_table_field(body, "Use Case")
-        meta = index_meta.get(rec_id, {})
-
-        blocks.append({
-            "id": rec_id,
-            "name": rec_name,
-            "description": use_case or rec_name,
-            "case_type": domain_raw,
-            "domain": domain_raw.lower().replace(" ", "_"),
-            "legal_domain": _canonical_domain_from_text(domain_raw),
-            "dispute_type": "",
-            "keywords": [rec_name, domain_raw, use_case, meta.get("primary_teaching_move", "")],
-            "bare_act_sections": [],
-            "client_type": client_type,
-            "urgency": urgency,
-            "intake_conv": body,
-            "source": "curated",
-            "outcome_pattern": meta.get("outcome_pattern", ""),
-            "matter_shape": meta.get("matter_shape", ""),
-            "primary_teaching_move": meta.get("primary_teaching_move", ""),
-        })
-        i += 3
-
-    _curated_cache = blocks
-    logger.info("Parsed %d curated few-shot blocks from %s", len(blocks), TRAINING_MD.name)
-    return _curated_cache
+def _trim_words(text: str, max_words: int) -> str:
+    words = (text or "").split()
+    if len(words) <= max_words:
+        return (text or "").strip()
+    return " ".join(words[:max_words]).strip() + " ..."
 
 
-def _parse_md_blocks() -> dict[str, dict]:
-    """
-    Parse nyaymalaw_training_examples.md into per-case blocks.
-    Returns a dict keyed by record id (e.g. "rich_001").
-
-    Each value contains:
-      id           str
-      name         str    Case name from the ## heading
-      domain       str    snake_case domain from metadata table
-      client_type  str    Lay Client / Junior Advocate
-      urgency      str    IMMEDIATE / HIGH / MEDIUM / LOW
-      intake_conv  str    ### Enriched Intake Conversation section
-      decision_snap str   ### Decision-State Snapshot section
-      stop_policy  str    ### Stop Policy Check section
-      weakness     str    ### Weakness Stress-Test section
-      commercial   str    ### Commercial Reality section
-      action_plan  str    ### Intake-Layer Action Plan section
-      grounded     str    ### Grounded Advice Layer section
-    """
-    global _md_cache
-    if _md_cache is not None:
-        return _md_cache
-
-    if not TRAINING_MD.exists():
-        logger.warning("Training MD not found: %s — falling back to JSONL-only formatting", TRAINING_MD)
-        _md_cache = {}
-        return _md_cache
-
-    content = TRAINING_MD.read_text(encoding="utf-8")
-
-    # Split on ## rich_NNN: headers; re.split includes capturing groups as elements
-    parts = re.split(r"\n## (rich_\d+): ([^\n]+)\n", content)
-    # parts = [preamble, id1, name1, body1, id2, name2, body2, ...]
-
-    blocks: dict[str, dict] = {}
-    i = 1
-    while i + 2 < len(parts):
-        rec_id   = parts[i].strip()
-        rec_name = parts[i + 1].strip()
-        body     = parts[i + 2]
-
-        domain_raw  = _extract_table_field(body, "Domain")
-        client_type = _extract_table_field(body, "Client Type")
-        urgency     = _extract_table_field(body, "Urgency Level")
-
-        blocks[rec_id] = {
-            "id":           rec_id,
-            "name":         rec_name,
-            "domain":       domain_raw.lower().replace(" ", "_"),
-            "client_type":  client_type,
-            "urgency":      urgency,
-            "intake_conv":  _extract_md_section(body, "Enriched Intake Conversation", "Decision-State Snapshot at Completion"),
-            "decision_snap": _extract_md_section(body, "Decision-State Snapshot at Completion", "Stop Policy Check"),
-            "stop_policy":  _extract_md_section(body, "Stop Policy Check", "Weakness Stress-Test"),
-            "weakness":     _extract_md_section(body, "Weakness Stress-Test", "Commercial Reality"),
-            "commercial":   _extract_md_section(body, "Commercial Reality", "Intake-Layer Action Plan"),
-            "action_plan":  _extract_md_section(body, "Intake-Layer Action Plan", "Grounded Advice Layer"),
-            "grounded":     _extract_md_section(body, "Grounded Advice Layer", None),
-        }
-        i += 3
-
-    _md_cache = blocks
-    logger.info("Parsed %d enriched MD blocks from %s", len(blocks), TRAINING_MD.name)
-    return blocks
-
-
-def _get_md_block(rec_id: str) -> dict | None:
-    """Return the parsed MD block for a record id, or None."""
-    blocks = _parse_md_blocks()
-    return blocks.get(rec_id)
-
-
-# ═════════════════════════════════════════════════════════════════════════════
-# JSONL SCHEMA NORMALISATION  (scoring metadata source)
-# ═════════════════════════════════════════════════════════════════════════════
-
-def _normalise(raw: dict) -> dict:
-    """
-    Convert any raw record (old or new schema) into a common internal dict:
-
-      id            str
-      case_type     str
-      keywords      list[str]
-      description   str
-      legal_domain  str   ("" for legacy records)
-      dispute_type  str   ("" for legacy records)
-      bare_act_sections  list[str]   e.g. ["Section 138", "Section 125"]
-      conversation  list[dict]   role/content turns
-      opinion_text  str
-      client_scenario dict  (empty dict for legacy records)
-      advocate_reasoning dict (empty dict for legacy records)
-    """
-    # ── Conversation turns ──────────────────────────────────────────────────
-    conversation = (
-        raw.get("intake_conversation", {}).get("conversation")
-        or raw.get("conversation")
-        or []
-    )
-
-    # ── Opinion text ────────────────────────────────────────────────────────
-    opinion_text = (
-        raw.get("final_opinion", {}).get("opinion_text")
-        or raw.get("opinion_text")
-        or ""
-    )
-
-    # ── Bare act section numbers ─────────────────────────────────────────────
-    bare_act_sections: list[str] = []
-    for ba in raw.get("relevant_bare_acts", []):
-        for sec in ba.get("sections", []):
-            bare_act_sections.append(sec.lower())
-
-    # ── Keywords: merge top-level keywords + intake_conversation.keywords ────
-    kws = list(raw.get("keywords", []))
-    ic_kws = raw.get("intake_conversation", {}).get("keywords", [])
-    for k in ic_kws:
-        if k not in kws:
-            kws.append(k)
-
-    return {
-        "id":               raw.get("id", ""),
-        "case_type":        raw.get("case_type", ""),
-        "keywords":         kws,
-        "description":      raw.get("description", ""),
-        "legal_domain":     raw.get("legal_domain", ""),
-        "dispute_type":     raw.get("dispute_type", ""),
-        "bare_act_sections": bare_act_sections,
-        "conversation":     conversation,
-        "opinion_text":     opinion_text,
-        "client_scenario":  raw.get("client_scenario", {}),
-        "advocate_reasoning": raw.get("advocate_reasoning", {}),
-        "case_analysis":    raw.get("case_analysis", {}),
-    }
-
-
-# ── Loaders ───────────────────────────────────────────────────────────────────
-
-def _load_file(path: Path) -> list[dict]:
-    if not path.exists():
-        logger.warning("Few-shot file not found: %s", path)
-        return []
-    out = []
-    with open(path, encoding="utf-8") as f:
-        for i, line in enumerate(f, 1):
-            line = line.strip()
-            if not line:
-                continue
-            try:
-                out.append(_normalise(json.loads(line)))
-            except (json.JSONDecodeError, Exception) as e:
-                logger.warning("Skipping line %d in %s: %s", i, path.name, e)
+def _sentences(text: str, limit: int = 4) -> list[str]:
+    out: list[str] = []
+    for part in re.split(r"(?<=[.!?])\s+|\n+", (text or "").strip()):
+        clean = part.strip(" -")
+        if len(clean) < 16:
+            continue
+        out.append(clean[:220])
+        if len(out) >= limit:
+            break
     return out
 
 
-def _rich_examples() -> list[dict]:
-    global _rich_cache
-    if _rich_cache is None:
-        _rich_cache = _load_file(RICH_FILE)
-        logger.info("Loaded %d rich training examples", len(_rich_cache))
-    return _rich_cache
+def _extract_client_objective(text: str) -> str:
+    text = (text or "").strip()
+    patterns = [
+        r"Prayer / Relief Sought:\s*(.+?)(?:\n|$)",
+        r"Relief Sought:\s*(.+?)(?:\n|$)",
+        r"Prayer:\s*(.+?)(?:\n|$)",
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, text, flags=re.I)
+        if match:
+            return match.group(1).strip()[:180]
+    return ""
 
 
-def _legacy_examples() -> list[dict]:
-    """Old 5+2 example files — used as additional pool if score > 0."""
-    global _legacy_cache
-    if _legacy_cache is None:
-        pool: list[dict] = []
-        for fname in ("intake_conversations.jsonl", "final_opinions.jsonl"):
-            pool.extend(_load_file(EXAMPLES_DIR / fname))
-        seen: set[str] = set()
-        uniq = []
-        for ex in pool:
-            if ex["id"] not in seen:
-                seen.add(ex["id"])
-                uniq.append(ex)
-        _legacy_cache = uniq
-        logger.info("Loaded %d legacy training examples", len(_legacy_cache))
-    return _legacy_cache
+def _flatten_opinion_text(text: str) -> str:
+    text = re.sub(r"^#{1,6}\s+", "", text or "", flags=re.M)
+    text = re.sub(r"^[-*]{3,}$", "", text, flags=re.M)
+    text = re.sub(r"^\*\*(.+?)\*\*$", r"\1", text, flags=re.M)
+    text = re.sub(r"[\u2500-\u257f]+", " ", text)
+    for label in ["Facts of the Case", "Disputes Identified", "Legal Protection", "Reliefs Sought & Assessment", "Next Steps & How to Strengthen Your Case", "Relevant precedents", "Judicial Precedents"]:
+        text = text.replace(label, "")
+    text = re.sub(r"\n{2,}", "\n\n", text)
+    paragraphs = [p.strip() for p in text.split("\n\n") if p.strip()]
+    return " ".join(paragraphs)
 
 
-def _all_examples() -> list[dict]:
-    return _parse_curated_blocks() + _rich_examples() + _legacy_examples()
+def _infer_prior_actions(text: str) -> list[str]:
+    low = (text or "").lower()
+    signals = [
+        (r"\bfir\b|police complaint|complaint filed", "police complaint or FIR mentioned"),
+        (r"legal notice|notice sent|show cause|demand notice", "notice or formal communication mentioned"),
+        (r"filed|petition|application|appeal|writ", "filing or court step mentioned"),
+        (r"hospital|clinic|medical treatment|medical examination", "medical visit or treatment mentioned"),
+        (r"representation|reply sent|responded", "reply or representation mentioned"),
+        (r"order passed|dismissed|terminated|assessment order", "adverse order or official action mentioned"),
+    ]
+    actions: list[str] = []
+    for pattern, label in signals:
+        if re.search(pattern, low):
+            actions.append(label)
+    return actions[:4]
 
 
-# ═════════════════════════════════════════════════════════════════════════════
-# SCORING
-# ═════════════════════════════════════════════════════════════════════════════
-
-_DOMAIN_SIGNALS: dict[str, list[str]] = {
-    "fir_quashing":     ["fir", "quash", "false case", "section 482", "chargesheet", "complaint registered"],
-    "criminal_bail":    ["bail", "anticipatory bail", "section 438", "section 439", "custody", "arrested"],
-    "criminal_arrest":  ["arrested", "police custody", "illegal arrest", "section 41", "d.k. basu", "handcuff"],
-    "criminal_general": ["conviction", "acquittal", "murder", "accused", "circumstantial", "sentence"],
-    "motor_accident":   ["accident", "mact", "motor", "compensation", "insurance", "death claim", "multiplier"],
-    "matrimonial":      ["maintenance", "divorce", "custody", "498a", "dowry", "domestic violence", "dv act", "cruelty", "wife", "husband"],
-    "cheque_bounce":    ["cheque", "dishonour", "section 138", "negotiable", "drawer", "bounce"],
-    "landlord_tenant":  ["tenant", "landlord", "eviction", "rent", "premises", "lease", "possession notice"],
-    "income_tax":       ["income tax", "it notice", "section 148", "assessment", "tds", "tax demand", "itr"],
-    "indirect_tax":     ["gst", "customs duty", "excise", "service tax", "import duty"],
-    "service_law":      ["government employee", "promotion", "seniority", "pension", "termination", "dismissal", "disciplinary", "compulsory retirement"],
-    "labour":           ["gratuity", "retrenchment", "pf", "epf", "esic", "workman", "factory", "labour", "regularisation"],
-    "property":         ["property", "sale deed", "encroachment", "title", "partition", "injunction", "possession", "7/12"],
-    "land_acquisition": ["land acquisition", "collector", "compensation award", "compulsory acquisition", "urgency clause",
-                          "acquired my land", "acquired my field", "acquired my plot", "acquired my farm",
-                          "government acquired", "government took my land", "compensation for land",
-                          "market value land", "enhanced compensation"],
-    "constitutional":   ["fundamental right", "article 14", "article 19", "article 21", "article 226", "article 32", "writ", "rti", "right to information"],
-    "contract":         ["contract", "dealership", "agreement", "breach", "specific performance", "arbitration"],
-    "medical_negligence": ["medical negligence", "doctor", "hospital", "surgery", "treatment", "malpractice", "patient"],
-    "banking_recovery": ["bank", "loan", "npa", "sarfaesi", "recovery", "mortgage", "debt", "default"],
-    "consumer":         ["consumer", "deficiency", "ncdrc", "district forum", "unfair trade"],
-}
+def _detect_audience(text: str, meta_audience: str = "") -> str:
+    if meta_audience in {"lay_user", "legal_professional"}:
+        return meta_audience
+    low = (text or "").lower()
+    if any(tok in low for tok in ["our client", "my client", "writ", "petitioner", "respondent", "article 14", "section "]):
+        return "legal_professional"
+    return "lay_user"
 
 
-def _tokenise(text: str) -> set[str]:
-    return set(re.findall(r"[a-z0-9\u0900-\u097f\u0c00-\u0c7f]+", text.lower()))
+def _snapshot_to_compact_state(snapshot: dict | None, user_turns: list[str]) -> dict | None:
+    if not snapshot:
+        return None
+    known_facts = [str(x).strip() for x in (snapshot.get("known_facts") or []) if str(x).strip()][:4]
+    open_points = [str(x).strip() for x in (snapshot.get("unknowns") or []) if str(x).strip()][:4]
+    relief = (
+        snapshot.get("relief_sought")
+        or snapshot.get("current_best_decision")
+        or snapshot.get("next_information_needed")
+        or ""
+    )
+    presenting = snapshot.get("presenting_problem") or (user_turns[0] if user_turns else "")
+    facts_summary = presenting.strip()
+    if relief:
+        facts_summary = f"{facts_summary} Relief focus: {relief}.".strip()
+    return {
+        "route": "legal_opinion",
+        "client_objective": str(relief).strip(),
+        "urgency_level": str(snapshot.get("urgency_level") or "unknown").strip() or "unknown",
+        "known_facts": known_facts,
+        "prior_actions_taken": _infer_prior_actions(" ".join(user_turns)),
+        "open_points": open_points,
+        "enough_to_proceed": bool(snapshot.get("enough_to_advise")),
+        "facts_summary": facts_summary[:320],
+    }
 
 
-def _detect_domain(query_lower: str) -> str:
-    best_domain, best_hits = "", 0
-    for domain, signals in _DOMAIN_SIGNALS.items():
-        hits = sum(1 for sig in signals if sig in query_lower)
-        if hits > best_hits:
-            best_hits, best_domain = hits, domain
-    return best_domain if best_hits >= 1 else ""
+def _normalise_runtime_record(raw: dict, origin: str) -> dict | None:
+    messages = raw.get("messages") or []
+    meta = raw.get("_meta") or {}
+    if not messages:
+        return None
+
+    layer = meta.get("training_layer") or ""
+    user_turns = [
+        (m.get("content") or "").strip()
+        for m in messages
+        if m.get("role") == "user" and (m.get("content") or "").strip()
+    ]
+    assistant_turns = [
+        (m.get("content") or "").strip()
+        for m in messages
+        if m.get("role") == "assistant" and (m.get("content") or "").strip()
+    ]
+    if not user_turns or not assistant_turns:
+        return None
+
+    final_assistant = assistant_turns[-1]
+    snapshot = _extract_json_block(final_assistant)
+    compact_state = _snapshot_to_compact_state(snapshot, user_turns)
+    reply_text = _clean_reply_text(_strip_json_block(final_assistant))
+
+    input_messages = messages[:-1] if messages[-1].get("role") == "assistant" else messages
+    input_tail = [
+        {
+            "role": m.get("role", ""),
+            "content": (m.get("content") or "").strip(),
+        }
+        for m in input_messages
+        if (m.get("content") or "").strip()
+    ][-4:]
+
+    query_text = " ".join(user_turns)
+    return {
+        "id": meta.get("source_id") or raw.get("id") or origin,
+        "layer": layer,
+        "audience": _detect_audience(query_text, meta.get("audience_type") or ""),
+        "domain": (meta.get("domain") or "").strip(),
+        "query_text": query_text,
+        "input_tail": input_tail,
+        "compact_state": compact_state,
+        "reply_text": reply_text,
+        "opinion_text": final_assistant if layer == "final_opinion" else "",
+        "origin": origin,
+    }
 
 
-def _score(example: dict, query_tokens: set[str], query_lower: str,
-           detected_domain: str) -> float:
-    score = 0.0
+def _normalise_legacy_record(raw: dict, origin: str) -> dict | None:
+    conversation = raw.get("conversation") or []
+    opinion_text = (raw.get("opinion_text") or "").strip()
+    if conversation:
+        user_turns = [
+            (m.get("content") or "").strip()
+            for m in conversation
+            if m.get("role") == "user" and (m.get("content") or "").strip()
+        ]
+        assistant_turns = [
+            (m.get("content") or "").strip()
+            for m in conversation
+            if m.get("role") == "assistant" and (m.get("content") or "").strip()
+        ]
+        if not user_turns or not assistant_turns:
+            return None
+        layer = "complete_intake" if len(user_turns) >= 3 else ("clarification_follow_up" if len(user_turns) >= 2 else "intake")
+        facts_summary = (raw.get("facts_summary") or "").strip() or _trim_words(" ".join(user_turns), 60)
+        client_objective = _extract_client_objective(facts_summary)
+        compact_state = {
+            "route": "legal_opinion",
+            "client_objective": client_objective,
+            "urgency_level": "high" if any(tok in facts_summary.lower() for tok in ["urgent", "scared", "arrest", "detained", "violence"]) else "medium",
+            "known_facts": _sentences(facts_summary, 4),
+            "prior_actions_taken": _infer_prior_actions(" ".join(user_turns)),
+            "open_points": [],
+            "enough_to_proceed": layer == "complete_intake",
+            "facts_summary": facts_summary[:320],
+        }
+        return {
+            "id": raw.get("id") or origin,
+            "layer": layer,
+            "audience": _detect_audience(" ".join(user_turns)),
+            "domain": raw.get("case_type") or raw.get("description") or "",
+            "query_text": " ".join(user_turns),
+            "input_tail": [{"role": m.get("role", ""), "content": (m.get("content") or "").strip()} for m in conversation[:-1]][-4:],
+            "compact_state": compact_state,
+            "reply_text": assistant_turns[-1],
+            "opinion_text": "",
+            "origin": origin,
+        }
+    if opinion_text:
+        facts = raw.get("description") or raw.get("case_type") or ""
+        return {
+            "id": raw.get("id") or origin,
+            "layer": "final_opinion",
+            "audience": _detect_audience(facts),
+            "domain": raw.get("case_type") or "",
+            "query_text": facts,
+            "input_tail": [{"role": "user", "content": facts}],
+            "compact_state": None,
+            "reply_text": "",
+            "opinion_text": opinion_text,
+            "origin": origin,
+        }
+    return None
 
-    if detected_domain and example.get("legal_domain") == detected_domain:
-        score += 3.0
-    elif detected_domain and example.get("legal_domain") == "mixed":
-        # Mixed examples should only win when there is enough signal they are relevant.
-        if sum(1 for sigs in _DOMAIN_SIGNALS.values() for sig in sigs if sig in query_lower) >= 2:
-            score += 1.5
 
-    ct_tokens = _tokenise(example.get("case_type", "").replace("_", " "))
-    if ct_tokens and ct_tokens.issubset(query_tokens):
-        score += 2.0
+def _load_examples() -> list[dict]:
+    global _RUNTIME_EXAMPLES
+    if _RUNTIME_EXAMPLES is not None:
+        return _RUNTIME_EXAMPLES
 
-    for sec in example.get("bare_act_sections", []):
-        nums = re.findall(r"\d+[a-z]?", sec)
-        for n in nums:
-            if re.search(r"\b" + re.escape(n) + r"\b", query_lower):
-                score += 1.5
+    examples: list[dict] = []
+    for path in _candidate_files():
+        loaded = 0
+        with path.open("r", encoding="utf-8") as handle:
+            for line_no, line in enumerate(handle, 1):
+                raw_line = line.strip()
+                if not raw_line:
+                    continue
+                try:
+                    raw = json.loads(raw_line)
+                except json.JSONDecodeError:
+                    logger.warning("Skipping invalid JSON in %s line %d", path.name, line_no)
+                    continue
+                origin = f"{path.name}:{line_no}"
+                if "messages" in raw:
+                    example = _normalise_runtime_record(raw, origin)
+                else:
+                    example = _normalise_legacy_record(raw, origin)
+                if example:
+                    examples.append(example)
+                    loaded += 1
+        logger.info("Loaded %d few-shot examples from %s", loaded, path.name)
 
-    for kw in example.get("keywords", []):
-        kw_tokens = _tokenise(kw)
-        if kw_tokens and kw_tokens.issubset(query_tokens):
-            score += 1.0
+    _RUNTIME_EXAMPLES = examples
+    return _RUNTIME_EXAMPLES
 
-    desc_tokens = _tokenise(example.get("description", ""))
-    score += len(desc_tokens & query_tokens) * 0.5
 
-    # Curated examples are the preferred intake source when they are relevant.
-    if example.get("source") == "curated":
+def _score(example: dict, query_tokens: set[str], query_lower: str, desired_layers: set[str], desired_audience: str) -> float:
+    layer = example.get("layer") or ""
+    if desired_layers and layer not in desired_layers:
+        return -1.0
+
+    example_tokens = _tokenize(example.get("query_text") or "")
+    domain_lower = (example.get("domain") or "").lower()
+    domain_tokens = _tokenize(example.get("domain") or "")
+
+    lexical = len(example_tokens & query_tokens) * 0.35
+    lexical += len(domain_tokens & query_tokens) * 0.5
+
+    topical = 0.0
+    topic_rules = [
+        ({"bail", "fir", "arrest", "detention", "custody", "habeas"}, {"criminal", "detention", "bail"}),
+        ({"maintenance", "divorce", "custody", "domestic", "matrimonial"}, {"family", "matrimonial", "domestic"}),
+        ({"tax", "assessment", "deduction", "tds", "royalty", "settlement"}, {"tax"}),
+        ({"property", "land", "title", "mutation", "deed", "forgery", "encroachment"}, {"property"}),
+        ({"accident", "injury", "insurer", "disability", "compensation"}, {"accident"}),
+        ({"salary", "wages", "termination", "overtime", "labour", "employee"}, {"labour", "employment"}),
+        ({"housing", "flat", "possession", "allotment", "seepage", "builder", "authority"}, {"housing", "consumer", "municipal"}),
+        ({"insolvency", "creditor", "creditors", "valuation", "auction", "sale"}, {"insolvency", "company"}),
+        ({"cheque", "cheques", "security", "notice", "lender", "loan"}, {"cheque", "commercial"}),
+        ({"recruitment", "selection", "viva", "interview", "bias", "candidate"}, {"recruitment", "service"}),
+        ({"demolition", "municipal", "encroachment", "shop"}, {"municipal", "public"}),
+    ]
+    for q_words, d_words in topic_rules:
+        if query_tokens & q_words and any(word in domain_lower for word in d_words):
+            topical += 0.9
+
+    if lexical <= 0 and topical <= 0:
+        return -1.0
+
+    score = lexical + topical
+
+    if desired_audience and example.get("audience") == desired_audience:
         score += 1.0
-        meta_tokens = _tokenise(
-            " ".join(
-                [
-                    example.get("matter_shape", ""),
-                    example.get("outcome_pattern", ""),
-                    example.get("primary_teaching_move", ""),
-                    example.get("intake_conv", "")[:1200],
-                ]
-            )
-        )
-        score += len(meta_tokens & query_tokens) * 0.15
-
-    # v1.1 bonus: prefer records that have an enriched MD block
-    if _get_md_block(example.get("id", "")):
-        score += 0.5
+    if layer == "complete_intake":
+        score += 0.2
+    if layer == "final_opinion":
+        score += 0.3
 
     return score
 
 
-def _best_match(examples: list[dict], query: str) -> dict | None:
-    if not examples:
-        return None
-    query_lower = query.lower()
-    query_tokens = _tokenise(query)
-    detected_domain = _detect_domain(query_lower)
-
-    scored = [
-        (ex, _score(ex, query_tokens, query_lower, detected_domain))
-        for ex in examples
-    ]
-    scored.sort(key=lambda x: x[1], reverse=True)
-    best, best_score = scored[0]
-    return best if best_score > 0.0 else None
+def _rank_examples(query: str, desired_layers: set[str]) -> list[dict]:
+    examples = _load_examples()
+    query_lower = (query or "").lower()
+    query_tokens = _tokenize(query or "")
+    desired_audience = _detect_audience(query or "")
+    ranked: list[tuple[float, dict]] = []
+    for example in examples:
+        score = _score(example, query_tokens, query_lower, desired_layers, desired_audience)
+        if score > 0:
+            ranked.append((score, example))
+    ranked.sort(key=lambda item: item[0], reverse=True)
+    return [example for _, example in ranked]
 
 
-def _rank_matches(examples: list[dict], query: str) -> list[tuple[dict, float]]:
-    """Return examples ranked by relevance score descending, dropping non-positive matches."""
-    if not examples:
-        return []
-    query_lower = query.lower()
-    query_tokens = _tokenise(query)
-    detected_domain = _detect_domain(query_lower)
-    scored = [
-        (ex, _score(ex, query_tokens, query_lower, detected_domain))
-        for ex in examples
-    ]
-    scored.sort(key=lambda x: x[1], reverse=True)
-    return [(ex, score) for ex, score in scored if score > 0.0]
-
-
-def _best_intake_match(query: str) -> dict | None:
-    """
-    Prefer curated compact examples for intake behavior. Fall back to the rich
-    / legacy pools only if no curated example scores positively.
-    """
-    curated_best = _best_match(_parse_curated_blocks(), query)
-    if curated_best:
-        return curated_best
-    return _best_match(_rich_examples() + _legacy_examples(), query)
-
-
-# ═════════════════════════════════════════════════════════════════════════════
-# FORMATTERS  (v1.1 — MD-primary, JSONL-fallback)
-# ═════════════════════════════════════════════════════════════════════════════
-
-def _sep(label: str) -> str:
-    return f"\n{'═' * 64}\n{label}\n{'═' * 64}"
-
-
-# ── Truncation helper ─────────────────────────────────────────────────────────
-
-def _truncate_words(text: str, max_words: int) -> str:
-    words = text.split()
-    if len(words) <= max_words:
-        return text
-    return " ".join(words[:max_words]) + "\n[…truncated…]"
-
-
-# ── MD-backed intake formatter ────────────────────────────────────────────────
-
-def _format_intake_from_md(ex: dict, block: dict) -> str:
-    """
-    Format a v1.1 enriched intake example from the parsed MD block.
-
-    Injects into the prompt:
-      • Domain / urgency / client-type header
-      • Client scenario (brief)
-      • Enriched intake conversation with contrastive turn annotations
-        — teaches: ideal question, plausible bad alternative, why bad loses
-      • Decision-state snapshot (compact JSON)
-      • Intake-layer action plan
-
-    Layer boundary respected: no section numbers in intake annotations.
-    """
-    rec_id      = ex.get("id", "")
-    rec_name    = block.get("name", "")
-    domain      = (block.get("domain") or ex.get("legal_domain", "")).replace("_", " ").title()
-    client_type = block.get("client_type") or ""
-    urgency     = block.get("urgency") or ""
-    description = ex.get("description", "")
-
-    heading = description or rec_name or f"{domain}"
-    lines   = [
-        _sep(f"REFERENCE EXAMPLE ({rec_id}) — {heading}"),
-        "",
-        "INSTRUCTION: Mirror the DECISION PATTERN of this intake — not the facts.",
-        "  • Replicate the question discipline: one focused question, or one compact cluster of 2-3 tightly related sub-questions, per turn",
-        "  • Note why each turn's question wins over the bad alternative",
-        "  • Follow the decision-state schema shown in the snapshot",
-        "  • Stop only when the three exit conditions are met (see Stop Policy)",
-        "",
-    ]
-
-    # ── Header metadata ──────────────────────────────────────────────────────
-    if domain or client_type or urgency:
-        lines.append(f"DOMAIN: {domain}  |  CLIENT TYPE: {client_type}  |  URGENCY: {urgency}")
-        lines.append("")
-
-    # ── Client scenario ───────────────────────────────────────────────────────
-    scenario = ex.get("client_scenario", {})
-    if scenario:
-        profile = scenario.get("client_profile", {})
-        state   = scenario.get("client_emotional_state", "")
-        problem = scenario.get("presenting_problem", "")
-        prayer  = scenario.get("prayer_stated", "")
-        if profile:
-            lines.append(
-                f"CLIENT: {profile.get('name', '?')}, {profile.get('age', '?')}, "
-                f"{profile.get('occupation', '?')}"
-            )
-        if state:
-            lines.append(f"EMOTIONAL STATE: {state}")
-        if problem:
-            lines.append(f"PRESENTING PROBLEM: {problem[:200]}")
-        if prayer:
-            lines.append(f"PRAYER: {prayer[:150]}")
-        lines.append("")
-
-    # ── Enriched intake conversation (core teaching signal) ───────────────────
-    intake_conv = block.get("intake_conv", "").strip()
-    if intake_conv:
-        lines.append("─── ENRICHED INTAKE CONVERSATION (with contrastive annotations) ───")
-        lines.append("")
-        # Cap at ~700 words to keep token use reasonable while keeping all turns
-        lines.append(_truncate_words(intake_conv, 700))
-        lines.append("")
-
-    # ── Decision-state snapshot ───────────────────────────────────────────────
-    decision_snap = block.get("decision_snap", "").strip()
-    if decision_snap:
-        lines.append("─── DECISION-STATE SNAPSHOT AT COMPLETION ───")
-        lines.append("")
-        lines.append(_truncate_words(decision_snap, 250))
-        lines.append("")
-
-    # ── Intake-layer action plan ──────────────────────────────────────────────
-    action_plan = block.get("action_plan", "").strip()
-    if action_plan:
-        lines.append("─── INTAKE-LAYER ACTION PLAN ───")
-        lines.append("")
-        lines.append(_truncate_words(action_plan, 200))
-        lines.append("")
-
-    lines.append("═" * 64)
+def _format_input_tail(input_tail: list[dict]) -> str:
+    lines: list[str] = []
+    for turn in input_tail:
+        role = "User" if turn.get("role") == "user" else "Assistant"
+        content = _trim_words(turn.get("content") or "", 80)
+        if content:
+            lines.append(f"{role}: {content}")
     return "\n".join(lines)
 
 
-def _format_intake_from_curated(block: dict) -> str:
-    """
-    Format a curated compact few-shot example. These examples are deliberately
-    shorter and more behaviorally varied than the legacy long-form blocks.
-    """
-    heading = block.get("description") or block.get("name") or block.get("id", "")
-    lines = [
-        _sep(f"CURATED REFERENCE EXAMPLE ({block.get('id', '')}) — {heading}"),
-        "",
-        "INSTRUCTION: Mirror the diagnostic move, not the facts.",
-        "  • Prefer the same question-selection discipline shown here",
-        "  • Respect the Stop / Continue signal",
-        "  • Preserve the intake-vs-grounded-advice boundary",
-        "",
-        f"DOMAIN: {(block.get('case_type') or '').strip()}  |  CLIENT TYPE: {block.get('client_type', '')}  |  URGENCY: {block.get('urgency', '')}",
-    ]
-
-    if block.get("outcome_pattern") or block.get("matter_shape"):
-        lines.append(
-            f"META: OUTCOME={block.get('outcome_pattern', '')}  |  MATTER SHAPE={block.get('matter_shape', '')}"
-        )
-    if block.get("primary_teaching_move"):
-        lines.append(f"PRIMARY MOVE: {block.get('primary_teaching_move')}")
-
-    lines.extend([
-        "",
-        "——— CURATED INTAKE EXAMPLE ——",
-        "",
-        _truncate_words(block.get("intake_conv", ""), 500),
-        "",
-        "═" * 64,
-    ])
-    return "\n".join(lines)
-
-
-# ── MD-backed opinion formatter ───────────────────────────────────────────────
-
-def _format_opinion_from_md(ex: dict, block: dict) -> str:
-    """
-    Format a v1.1 enriched opinion reference from the parsed MD block.
-    Shows the Grounded Advice Layer for structural and tonal guidance.
-    """
-    rec_id      = ex.get("id", "")
-    rec_name    = block.get("name", "")
-    domain      = (block.get("domain") or ex.get("legal_domain", "")).replace("_", " ").title()
-    description = ex.get("description", "")
-    grounded    = block.get("grounded", "").strip()
-
-    if not grounded:
+def _format_state_example(example: dict) -> str:
+    state = example.get("compact_state") or {}
+    if not state:
         return ""
-
-    heading = description or rec_name or domain
-    lines = [
-        _sep(f"REFERENCE EXAMPLE ({rec_id}) — {heading}"),
-        "",
-        "INSTRUCTION: Follow this STRUCTURE, TONE, and FORMAT exactly.",
-        "Replace ALL section numbers, case names, and facts with what is in",
-        "the RETRIEVED LEGAL MATERIALS above — never copy citations from here.",
-        "The sections and cases below are illustrative of FORMAT only.",
-        "",
-        "─── GROUNDED ADVICE LAYER ───",
-        "",
-        _truncate_words(grounded, 600),
-        "",
-        "═" * 64,
-    ]
-    return "\n".join(lines)
+    return "\n".join([
+        "REFERENCE STATE EXAMPLE - mirror the structure, not the facts.",
+        "Conversation:",
+        _format_input_tail(example.get("input_tail") or []),
+        "Target state:",
+        json.dumps(state, ensure_ascii=False),
+    ]).strip()
 
 
-# ── Legacy JSONL formatters (unchanged — used when MD block unavailable) ──────
-
-def _format_intake(ex: dict) -> str:
-    """
-    Format an intake example.
-    Uses enriched MD block when available; falls back to JSONL-based format.
-    """
-    # v1.1: prefer MD block
-    if ex.get("source") == "curated":
-        return _format_intake_from_curated(ex)
-
-    block = _get_md_block(ex.get("id", ""))
-    if block and (block.get("intake_conv") or block.get("action_plan")):
-        return _format_intake_from_md(ex, block)
-
-    # ── Legacy fallback ───────────────────────────────────────────────────────
-    description  = ex.get("description", "")
-    domain       = ex.get("legal_domain", "")
-    dispute_type = ex.get("dispute_type", "").replace("_", " ")
-    conversation = ex.get("conversation", [])
-
-    if not conversation:
+def _format_reply_example(example: dict) -> str:
+    state = example.get("compact_state") or {}
+    if not state:
         return ""
-
-    heading = description or f"{domain} / {dispute_type}"
-    lines = [
-        _sep(f"REFERENCE EXAMPLE — {heading}"),
-        "",
-        "INSTRUCTION: Mirror the STYLE and ARC of this conversation for the",
-        "current client. Do NOT copy the facts, names, or specific legal details.",
-        "Key behaviours to replicate:",
-        "  • Start with empathy — acknowledge what the client is feeling",
-        "  • Ask ONE focused question at a time",
-        "  • Elicit prayer/what the client wants if not yet stated",
-        "  • If a monetary amount is mentioned — probe WHY that amount and the",
-        "    other party's income before accepting it",
-        "  • Close with action:complete once you have enough for a legal opinion",
-        "",
-    ]
-
-    scenario = ex.get("client_scenario", {})
-    if scenario:
-        profile = scenario.get("client_profile", {})
-        problem = scenario.get("presenting_problem", "")
-        state   = scenario.get("client_emotional_state", "")
-        prayer  = scenario.get("prayer_stated", "")
-        if profile:
-            lines.append(
-                f"CLIENT: {profile.get('name','?')}, {profile.get('age','?')}, "
-                f"{profile.get('occupation','?')}, {profile.get('location','?')}"
-            )
-        if state:
-            lines.append(f"EMOTIONAL STATE: {state}")
-        if problem:
-            lines.append(f"PRESENTING PROBLEM: {problem[:200]}")
-        if prayer:
-            lines.append(f"PRAYER: {prayer[:150]}")
-        lines.append("")
-
-    lines.append("─── CONVERSATION ───")
-    lines.append("")
-    for turn in conversation:
-        role    = "Client" if turn.get("role") == "user" else "Advocate"
-        content = turn.get("content", "").strip()
-
-        if role == "Advocate":
-            try:
-                inner = json.loads(content)
-                action = inner.get("action", "")
-                if action == "ask":
-                    content = f'[asks] {inner.get("reply_to_client", content)}'
-                elif action == "complete":
-                    facts_s = inner.get("facts_summary", "")
-                    reply   = inner.get("reply_to_client", "")
-                    content = (
-                        f'[completes intake] {reply}\n'
-                        f'  FACTS CAPTURED: {facts_s[:300]}'
-                    )
-            except (json.JSONDecodeError, TypeError):
-                pass
-
-        lines.append(f"{role}: {content}")
-        lines.append("")
-
-    reasoning = ex.get("advocate_reasoning", {})
-    if reasoning:
-        assessment = reasoning.get("initial_assessment", "")
-        if assessment:
-            lines.append("─── ADVOCATE'S REASONING ───")
-            lines.append(f"{assessment[:300]}")
-            lines.append("")
-
-    lines.append("═" * 64)
-    return "\n".join(lines)
+    if example.get("layer") == "complete_intake":
+        target = {
+            "action": "complete",
+            "intent": "legal_opinion",
+            "facts_summary": state.get("facts_summary", ""),
+            "reply_to_client": _trim_words(example.get("reply_text") or "", 120),
+        }
+    else:
+        target = {
+            "action": "ask",
+            "reply_to_client": _trim_words(example.get("reply_text") or "", 120),
+        }
+    return "\n".join([
+        "REFERENCE NEXT-MOVE EXAMPLE - mirror the behavior, not the facts.",
+        "Compact case state:",
+        json.dumps(state, ensure_ascii=False),
+        "Target output:",
+        json.dumps(target, ensure_ascii=False),
+    ]).strip()
 
 
-def _format_opinion(ex: dict) -> str:
-    """
-    Format a final opinion example.
-    Uses enriched MD block when available; falls back to JSONL-based format.
-    """
-    # v1.1: prefer MD block
-    block = _get_md_block(ex.get("id", ""))
-    if block and block.get("grounded"):
-        return _format_opinion_from_md(ex, block)
-
-    # ── Legacy fallback ───────────────────────────────────────────────────────
-    description  = ex.get("description", "")
-    domain       = ex.get("legal_domain", "")
-    dispute_type = ex.get("dispute_type", "").replace("_", " ")
-    opinion_text = ex.get("opinion_text", "").strip()
-
-    if not opinion_text:
+def _format_opinion_example(example: dict) -> str:
+    opinion = _trim_words(_flatten_opinion_text(example.get("opinion_text") or ""), 220)
+    if not opinion:
         return ""
-
-    heading = description or f"{domain} / {dispute_type}"
-    lines = [
-        _sep(f"REFERENCE EXAMPLE — {heading}"),
-        "",
-        "INSTRUCTION: Follow this STRUCTURE, TONE, and FORMAT exactly.",
-        "Replace ALL section numbers, case names, and facts with what is in",
-        "the RETRIEVED LEGAL MATERIALS above — never copy citations from here.",
-        "The sections and cases below are illustrative of the FORMAT only.",
-        "",
-    ]
-
-    final_opinion = ex.get("final_opinion", {})
-    bare_acts = final_opinion.get("bare_acts_cited", [])
-    if bare_acts:
-        lines.append("─── STRUCTURE: BARE ACTS USED ───")
-        for ba in bare_acts[:3]:
-            act_s = ba.get("section", "")
-            rel   = ba.get("relevance", "")
-            lines.append(f"  • {act_s}: {rel}")
-        lines.append("")
-
-    case_laws = final_opinion.get("case_laws_cited", [])
-    if case_laws:
-        lines.append("─── STRUCTURE: CASE LAWS CITED ───")
-        for cl in case_laws[:2]:
-            name      = cl.get("case_name", "")
-            principle = cl.get("principle", "")[:120]
-            applied   = cl.get("how_applied", "")[:100]
-            lines.append(f"  • {name}: {principle}")
-            lines.append(f"    Applied: {applied}")
-        lines.append("")
-
-    lines.append("─── OPINION FORMAT TO FOLLOW ───")
-    lines.append("")
-    words = opinion_text.split()
-    if len(words) > 600:
-        opinion_text = " ".join(words[:600]) + "\n[…opinion continues…]"
-    lines.append(opinion_text)
-    lines.append("")
-    lines.append("═" * 64)
-    return "\n".join(lines)
+    facts = _trim_words(example.get("query_text") or "", 90)
+    return "\n".join([
+        "REFERENCE FINAL-OPINION EXAMPLE - mirror the structure and tone, not the facts or citations.",
+        f"Client record: {facts}",
+        "Opinion:",
+        opinion,
+    ]).strip()
 
 
-# ═════════════════════════════════════════════════════════════════════════════
-# PUBLIC API
-# ═════════════════════════════════════════════════════════════════════════════
+def _pick_unique(ranked: list[dict], max_examples: int) -> list[dict]:
+    chosen: list[dict] = []
+    seen_ids: set[str] = set()
+    for example in ranked:
+        ex_id = example.get("id") or example.get("origin")
+        if ex_id in seen_ids:
+            continue
+        seen_ids.add(ex_id)
+        chosen.append(example)
+        if len(chosen) >= max_examples:
+            break
+    return chosen
+
+
+def get_intake_state_example_pack(query: str, max_examples: int = 1) -> str | None:
+    ranked = _rank_examples(query, {"intake", "clarification_follow_up", "complete_intake"})
+    chosen = _pick_unique(ranked, max_examples)
+    rendered = [_format_state_example(example) for example in chosen]
+    rendered = [item for item in rendered if item]
+    return "\n\n".join(rendered) if rendered else None
+
+
+def get_intake_reply_example_pack(query: str, max_examples: int = 2) -> str | None:
+    ranked = _rank_examples(query, {"intake", "clarification_follow_up", "complete_intake"})
+    chosen = _pick_unique(ranked, max_examples)
+    rendered = [_format_reply_example(example) for example in chosen]
+    rendered = [item for item in rendered if item]
+    return "\n\n".join(rendered) if rendered else None
+
 
 def get_intake_example(query: str) -> str | None:
-    """
-    Return a formatted few-shot intake conversation relevant to the query,
-    or None if nothing relevant is found.
-
-    v1.1: Prefers the enriched MD block (contrastive annotations, decision-
-    state snapshot, intake-layer action plan). Falls back to JSONL formatting.
-
-    Inject the returned string at the END of the active intake system prompt,
-    preceded by two blank lines.
-
-    Args:
-        query: All user messages so far concatenated (used for matching).
-    """
-    ex = _best_intake_match(query)
-    if not ex or (not ex.get("conversation") and not _get_md_block(ex.get("id", ""))):
-        if not ex or ex.get("source") != "curated":
-            return None
-    try:
-        return _format_intake(ex)
-    except Exception as e:
-        logger.warning("Failed to format intake example: %s", e)
-        return None
+    return get_intake_reply_example_pack(query, max_examples=1)
 
 
 def get_intake_example_pack(query: str, max_examples: int = 2) -> str | None:
-    """
-    Return a tiny curated intake pack optimized for runtime prompting:
-    - strongest behavioral match
-    - optional complementary curated example with a different matter shape or
-      outcome pattern to reduce overfitting to one script
-    """
-    curated = _parse_curated_blocks()
-    ranked = _rank_matches(curated, query)
-    if not ranked:
-        single = get_intake_example(query)
-        return single
-
-    chosen: list[dict] = [ranked[0][0]]
-    if max_examples > 1:
-        first = chosen[0]
-        first_client = (first.get("client_type") or "").strip().lower()
-        first_shape = (first.get("matter_shape") or "").strip().lower()
-        first_outcome = (first.get("outcome_pattern") or "").strip().lower()
-
-        for ex, _score_val in ranked[1:]:
-            if ex.get("id") == first.get("id"):
-                continue
-            client = (ex.get("client_type") or "").strip().lower()
-            shape = (ex.get("matter_shape") or "").strip().lower()
-            outcome = (ex.get("outcome_pattern") or "").strip().lower()
-
-            same_client = bool(first_client) and client == first_client
-            complementary = (
-                (shape and shape != first_shape)
-                or (outcome and outcome != first_outcome)
-            )
-            if same_client and complementary:
-                chosen.append(ex)
-                break
-
-        if len(chosen) == 1:
-            for ex, _score_val in ranked[1:]:
-                if ex.get("id") != first.get("id"):
-                    chosen.append(ex)
-                    break
-
-    try:
-        rendered = [_format_intake(ex) for ex in chosen[:max_examples]]
-        rendered = [r for r in rendered if (r or "").strip()]
-        if not rendered:
-            return None
-        return "\n\n".join(rendered)
-    except Exception as e:
-        logger.warning("Failed to format intake example pack: %s", e)
-        return None
+    return get_intake_reply_example_pack(query, max_examples=max_examples)
 
 
 def get_opinion_example(query: str) -> str | None:
-    """
-    Return a formatted few-shot final opinion relevant to the query,
-    or None if nothing relevant is found.
-
-    v1.1: Prefers the enriched MD Grounded Advice Layer. Falls back to JSONL.
-
-    Inject the returned string AFTER STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT
-    and BEFORE the _allowlist_suffix.
-
-    Args:
-        query: The facts_summary or combined conversation text.
-    """
-    ex = _best_match(_rich_examples() or _all_examples(), query)
-    if not ex:
+    ranked = _rank_examples(query, {"final_opinion"})
+    chosen = _pick_unique(ranked, 1)
+    if not chosen:
         return None
-    try:
-        return _format_opinion(ex)
-    except Exception as e:
-        logger.warning("Failed to format opinion example: %s", e)
-        return None
+    return _format_opinion_example(chosen[0]) or None
 
 
 def preload_examples() -> None:
-    """Load and cache curated, MD-backed, rich, and legacy few-shot sources."""
-    _parse_curated_blocks()
-    _parse_md_blocks()
-    _rich_examples()
-    _legacy_examples()
-    logger.info(
-        "Few-shot examples preloaded (curated=%d, md=%d, rich=%d, legacy=%d)",
-        len(_curated_cache or []),
-        len(_md_cache or {}),
-        len(_rich_cache or []),
-        len(_legacy_cache or []),
-    )
+    _load_examples()
 
 
 def reload_examples() -> None:
-    """Force-reload all examples from disk (useful after adding new records)."""
-    global _rich_cache, _legacy_cache, _md_cache, _curated_cache
-    _rich_cache   = None
-    _legacy_cache = None
-    _md_cache     = None
-    _curated_cache = None
-    logger.info("Few-shot example cache cleared — will reload on next request")
+    global _RUNTIME_EXAMPLES
+    _RUNTIME_EXAMPLES = None
+    logger.info("Few-shot example cache cleared")
 
-
-# ═════════════════════════════════════════════════════════════════════════════
-# CLI SMOKE TEST
-# ═════════════════════════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
-
-    queries = [
-        ("matrimonial",      "My husband left me with two kids and is not paying maintenance. I want Rs 15000 per month."),
-        ("property",         "Neighbour built a wall inside my property boundary. I have registered sale deed and patta."),
-        ("cheque_bounce",    "My business partner gave me a cheque of Rs 3 lakh which bounced. Section 138 notice sent."),
-        ("criminal_arrest",  "My son was arrested under 498A IPC. Police have given Section 41A notice. Need anticipatory bail."),
-        ("fir_quashing",     "False FIR registered against me for cheating. I have evidence proving I am innocent."),
-        ("motor_accident",   "My husband died in a truck accident. He was 40 years old earning Rs 50000 per month. I want compensation."),
-        ("income_tax",       "Income tax department sent me a notice under section 148 to reopen my assessment for three years ago."),
-        ("labour",           "I worked for 7 years and was terminated without notice. Company is not paying gratuity."),
-        ("service_law",      "I am a government employee and was denied promotion despite having more seniority than my junior."),
-        ("land_acquisition", "Government acquired my 5 acres of agricultural land and gave only Rs 10 lakh. Market value is Rs 50 lakh."),
-    ]
-
-    # Pre-load caches
-    md_blocks = _parse_md_blocks()
-    rich      = _rich_examples()
-    legacy    = _legacy_examples()
-
-    print("\n" + "═" * 72)
-    print("  FEW-SHOT RETRIEVER v1.1 — SMOKE TEST")
-    print(f"  Rich examples : {len(rich):3d}  |  Legacy: {len(legacy):3d}  |  MD blocks: {len(md_blocks):3d}")
-    print("═" * 72)
-
-    all_ok = True
-    for expected_domain, q in queries:
-        examples = _all_examples()
-        q_lower  = q.lower()
-        q_tokens = _tokenise(q)
-        detected = _detect_domain(q_lower)
-
-        scored = [(ex, _score(ex, q_tokens, q_lower, detected)) for ex in examples]
-        scored.sort(key=lambda x: x[1], reverse=True)
-        best_ex, best_score = scored[0] if scored else (None, 0)
-
-        status = "PASS" if detected == expected_domain else f"WARN (detected={detected!r})"
-        md_hit = "MD✓" if (best_ex and _get_md_block(best_ex.get("id", ""))) else "MD✗"
-
-        print(f"\n[{status}] {md_hit}  QUERY: {q[:65]}")
-        print(f"  DOMAIN DETECTED : {detected}")
-        if best_ex:
-            print(f"  BEST MATCH      : {best_ex['id']} — {best_ex['description'][:55]}  (score={best_score:.1f})")
-
-        result = get_intake_example(q)
-        if result:
-            # Show first meaningful line to confirm MD vs legacy format
-            for ln in result.split("\n"):
-                if "REFERENCE EXAMPLE" in ln or "─── ENRICHED" in ln or "─── CONVERSATION" in ln:
-                    print(f"  FORMAT          : {ln.strip()[:70]}")
-                    break
-        else:
-            print(f"  FORMAT          : (no example returned)")
-            all_ok = False
-
-    print("\n" + "═" * 72)
-    print("ALL PASS" if all_ok else "SOME WARNINGS — review output above")
-    print("═" * 72 + "\n")
+    print(get_intake_state_example_pack("My husband threw me out and I need protection and maintenance.") or "<none>")
+    print("-" * 80)
+    print(get_intake_reply_example_pack("False FIR and need anticipatory bail") or "<none>")
+    print("-" * 80)
+    print(get_opinion_example("Road accident compensation dispute") or "<none>")

@@ -15,7 +15,7 @@ from typing import List, Optional
 from fastapi import BackgroundTasks, FastAPI, Query, HTTPException, Depends, Header, Request
 from fastapi.responses import FileResponse, JSONResponse, StreamingResponse, HTMLResponse
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
@@ -233,10 +233,19 @@ def _init_auth_db():
                 messages_json TEXT NOT NULL DEFAULT '[]',
                 opinion_text TEXT NOT NULL DEFAULT '',
                 retrieved_json TEXT NOT NULL DEFAULT '[]',
+                state_json TEXT NOT NULL DEFAULT '{}',
                 created_at TEXT NOT NULL,
                 updated_at TEXT NOT NULL DEFAULT (datetime('now'))
             );
         """)
+        existing_chat_columns = {
+            row[1]
+            for row in conn.execute("PRAGMA table_info(chats)").fetchall()
+        }
+        if "state_json" not in existing_chat_columns:
+            conn.execute(
+                "ALTER TABLE chats ADD COLUMN state_json TEXT NOT NULL DEFAULT '{}'"
+            )
         conn.commit()
         # Ensure anonymous user exists for no-login access
         cur = conn.execute("SELECT id FROM users WHERE email = ?", (_ANONYMOUS_EMAIL,))
@@ -352,10 +361,60 @@ class LoginRequest(BaseModel):
 class ChatPayload(BaseModel):
     id: Optional[int] = None
     title: str = ""
-    messages: list = []
+    messages: list = Field(default_factory=list)
     opinionText: str = ""
-    retrieved: list = []
+    retrieved: list = Field(default_factory=list)
     createdAt: str = ""
+    workflowState: dict = Field(default_factory=dict)
+
+
+def _normalize_workflow_state(raw_state: Optional[dict], messages: Optional[list] = None) -> dict:
+    state = raw_state if isinstance(raw_state, dict) else {}
+    msgs = messages if isinstance(messages, list) else []
+    first_user = next(
+        (
+            m for m in msgs
+            if isinstance(m, dict) and m.get("role") == "user" and isinstance(m.get("content"), str)
+        ),
+        None,
+    )
+
+    facts = state.get("facts")
+    if not isinstance(facts, str):
+        facts = first_user.get("content", "") if first_user else ""
+    facts = facts.strip()
+
+    stage = (state.get("stage") or "").strip().lower()
+    if stage not in {"await_facts", "interview", "done"}:
+        stage = "done" if msgs else "await_facts"
+
+    current_question = state.get("currentQuestion")
+    if not isinstance(current_question, str):
+        current_question = ""
+    current_question = current_question.strip()
+
+    qa_history = []
+    for qa in (state.get("qaHistory") or []):
+        if not isinstance(qa, dict):
+            continue
+        question = str(qa.get("question") or "").strip()
+        answer = str(qa.get("answer") or "").strip()
+        if question or answer:
+            qa_history.append({"question": question, "answer": answer})
+
+    return {
+        "stage": stage,
+        "facts": facts,
+        "currentQuestion": current_question,
+        "qaHistory": qa_history,
+    }
+
+
+def _safe_json_loads(raw_text: Optional[str], fallback):
+    try:
+        return json.loads(raw_text or "")
+    except Exception:
+        return fallback
 
 
 # ---------- Auth & Chat history (backend storage) ----------
@@ -426,17 +485,22 @@ def chats_list(user: dict = Depends(_user_from_token)):
     conn = _get_db()
     try:
         rows = conn.execute(
-            "SELECT id, title, messages_json, opinion_text, retrieved_json, created_at FROM chats WHERE user_id = ? ORDER BY created_at DESC",
+            "SELECT id, title, messages_json, opinion_text, retrieved_json, state_json, created_at FROM chats WHERE user_id = ? ORDER BY created_at DESC",
             (user["id"],),
         ).fetchall()
         out = []
         for r in rows:
+            messages = _safe_json_loads(r["messages_json"], [])
             out.append({
                 "id": r["id"],
                 "title": r["title"],
-                "messages": json.loads(r["messages_json"] or "[]"),
+                "messages": messages,
                 "opinionText": r["opinion_text"] or "",
-                "retrieved": json.loads(r["retrieved_json"] or "[]"),
+                "retrieved": _safe_json_loads(r["retrieved_json"], []),
+                "workflowState": _normalize_workflow_state(
+                    _safe_json_loads(r["state_json"], {}),
+                    messages,
+                ),
                 "createdAt": r["created_at"],
             })
         return {"chats": out}
@@ -461,9 +525,11 @@ def chats_upsert(payload: ChatPayload, user: dict = Depends(_user_from_token)):
     messages = payload.messages if isinstance(payload.messages, list) else []
     opinion_text = payload.opinionText or ""
     retrieved = payload.retrieved if isinstance(payload.retrieved, list) else []
+    workflow_state = _normalize_workflow_state(payload.workflowState, messages)
     created_at = payload.createdAt or __import__("datetime").datetime.utcnow().isoformat() + "Z"
     messages_json = json.dumps(messages)
     retrieved_json = json.dumps(retrieved)
+    state_json = json.dumps(workflow_state)
     payload_id = _coerce_chat_id(payload.id)
     conn = _get_db()
     try:
@@ -475,15 +541,15 @@ def chats_upsert(payload: ChatPayload, user: dict = Depends(_user_from_token)):
             existing = cur.fetchone()
             if existing:
                 conn.execute(
-                    "UPDATE chats SET title = ?, messages_json = ?, opinion_text = ?, retrieved_json = ?, updated_at = datetime('now') WHERE id = ? AND user_id = ?",
-                    (title, messages_json, opinion_text, retrieved_json, payload_id, user["id"]),
+                    "UPDATE chats SET title = ?, messages_json = ?, opinion_text = ?, retrieved_json = ?, state_json = ?, updated_at = datetime('now') WHERE id = ? AND user_id = ?",
+                    (title, messages_json, opinion_text, retrieved_json, state_json, payload_id, user["id"]),
                 )
                 conn.commit()
                 return {"id": payload_id, "title": title}
         chat_id = payload_id if payload_id is not None else int(conn.execute("SELECT COALESCE(MAX(id), 0) + 1 FROM chats").fetchone()[0])
         conn.execute(
-            "INSERT OR REPLACE INTO chats (id, user_id, title, messages_json, opinion_text, retrieved_json, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)",
-            (chat_id, user["id"], title, messages_json, opinion_text, retrieved_json, created_at),
+            "INSERT OR REPLACE INTO chats (id, user_id, title, messages_json, opinion_text, retrieved_json, state_json, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            (chat_id, user["id"], title, messages_json, opinion_text, retrieved_json, state_json, created_at),
         )
         conn.commit()
         return {"id": chat_id, "title": title}
@@ -496,17 +562,22 @@ def chat_get(chat_id: int, user: dict = Depends(_user_from_token)):
     conn = _get_db()
     try:
         row = conn.execute(
-            "SELECT id, title, messages_json, opinion_text, retrieved_json, created_at FROM chats WHERE id = ? AND user_id = ?",
+            "SELECT id, title, messages_json, opinion_text, retrieved_json, state_json, created_at FROM chats WHERE id = ? AND user_id = ?",
             (chat_id, user["id"]),
         ).fetchone()
         if not row:
             raise HTTPException(status_code=404, detail="Chat not found")
+        messages = _safe_json_loads(row["messages_json"], [])
         return {
             "id": row["id"],
             "title": row["title"],
-            "messages": json.loads(row["messages_json"] or "[]"),
+            "messages": messages,
             "opinionText": row["opinion_text"] or "",
-            "retrieved": json.loads(row["retrieved_json"] or "[]"),
+            "retrieved": _safe_json_loads(row["retrieved_json"], []),
+            "workflowState": _normalize_workflow_state(
+                _safe_json_loads(row["state_json"], {}),
+                messages,
+            ),
             "createdAt": row["created_at"],
         }
     finally:
@@ -978,6 +1049,7 @@ def _map_chat_result_to_ui(result: dict) -> dict:
             "status": "question",
             "next_question": next_q,
             "retrieved": result.get("response") or [],
+            "model_used": get_last_model_used(),
         }
     if phase == "done" and result.get("response"):
         resp = result["response"]
@@ -1002,7 +1074,7 @@ def _map_chat_result_to_ui(result: dict) -> dict:
             combined_text = greeting or explanation
         # Ensure we never send an empty or trivial intro (e.g. just "⚖")
         if not combined_text or len(combined_text.strip()) < 20:
-            combined_text = "Here’s what I found for your query. Below are the Supreme Court judgments and any relevant provisions."
+            combined_text = "I've prepared an initial response based on the information currently available."
         # If bare acts have nested case laws, don't return separate case_laws array to avoid duplicates
         # Case laws are now nested under bare_acts[].related_case_laws
         separate_case_laws = []
@@ -1039,6 +1111,7 @@ def _map_chat_result_to_ui(result: dict) -> dict:
         "status": "question",
         "next_question": next_q,
         "retrieved": result.get("response") or [],
+        "model_used": get_last_model_used(),
     }
 
 

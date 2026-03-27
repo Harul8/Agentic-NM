@@ -35,13 +35,3 @@ ddgs==9.11.4
 tqdm==4.66.4
 # Let CrewAI choose compatible python-dotenv version
 
-# Fine-tuning stack (Unsloth QLoRA training)
-transformers
-datasets
-trl
-accelerate
-peft
-bitsandbytes
-sentencepiece
-unsloth>=2026.3.10
-xformers

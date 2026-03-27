@@ -2,7 +2,7 @@
 node_modules/
 
 # Virtual environment
-ai-gpu/
+ai_gpu/
 
 # Data (vector store, chat history, etc.)
 data/
@@ -38,3 +38,7 @@ build/
 training/lora_model/
 training/merged_model/
 unsloth_compiled_cache/
+
+# Large model files
+*.gguf
+models/
