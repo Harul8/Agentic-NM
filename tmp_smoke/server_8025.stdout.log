@@ -1,0 +1,17 @@
+INFO:     127.0.0.1:62374 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60055 - "POST /submit_case/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60206 - "POST /conversation/continue/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60208 - "POST /conversation/continue/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60211 - "POST /conversation/continue/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64723 - "POST /conversation/continue/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59897 - "POST /submit_case/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59190 - "POST /conversation/continue/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59191 - "POST /conversation/continue/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59193 - "POST /conversation/continue/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58064 - "POST /conversation/continue/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58065 - "POST /submit_case/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58068 - "POST /conversation/continue/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58093 - "POST /conversation/continue/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56132 - "POST /conversation/continue/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55085 - "POST /conversation/continue/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51631 - "GET /health HTTP/1.1" 200 OK

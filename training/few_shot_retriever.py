@@ -99,8 +99,17 @@ def _clean_reply_text(text: str) -> str:
     return text
 
 
+_STOPWORDS = {
+    "a", "an", "and", "are", "as", "at", "be", "been", "being", "but", "by", "for", "from", "had", "has", "have",
+    "he", "her", "hers", "him", "his", "i", "if", "in", "into", "is", "it", "its", "me", "my", "of", "on", "or",
+    "our", "ours", "she", "that", "the", "their", "them", "they", "this", "to", "was", "we", "were", "what", "when",
+    "where", "which", "who", "why", "will", "with", "you", "your", "yours", "want", "help", "legal", "issue", "case"
+}
+
+
 def _tokenize(text: str) -> set[str]:
-    return set(re.findall(r"[a-z0-9_]+", (text or "").lower()))
+    tokens = re.findall(r"[a-z0-9_]+", (text or "").lower())
+    return {tok for tok in tokens if len(tok) > 2 and tok not in _STOPWORDS}
 
 
 def _trim_words(text: str, max_words: int) -> str:
@@ -346,44 +355,64 @@ def _score(example: dict, query_tokens: set[str], query_lower: str, desired_laye
     if desired_layers and layer not in desired_layers:
         return -1.0
 
-    example_tokens = _tokenize(example.get("query_text") or "")
+    example_text = " ".join([
+        str(example.get("query_text") or ""),
+        str(example.get("domain") or ""),
+        str(((example.get("compact_state") or {}).get("client_objective") or "")),
+        str(((example.get("compact_state") or {}).get("facts_summary") or "")),
+    ]).strip()
+    example_tokens = _tokenize(example_text)
     domain_lower = (example.get("domain") or "").lower()
-    domain_tokens = _tokenize(example.get("domain") or "")
 
-    lexical = len(example_tokens & query_tokens) * 0.35
-    lexical += len(domain_tokens & query_tokens) * 0.5
+    lexical_overlap = example_tokens & query_tokens
+    lexical = len(lexical_overlap) * 0.55
 
-    topical = 0.0
     topic_rules = [
-        ({"bail", "fir", "arrest", "detention", "custody", "habeas"}, {"criminal", "detention", "bail"}),
-        ({"maintenance", "divorce", "custody", "domestic", "matrimonial"}, {"family", "matrimonial", "domestic"}),
-        ({"tax", "assessment", "deduction", "tds", "royalty", "settlement"}, {"tax"}),
-        ({"property", "land", "title", "mutation", "deed", "forgery", "encroachment"}, {"property"}),
-        ({"accident", "injury", "insurer", "disability", "compensation"}, {"accident"}),
-        ({"salary", "wages", "termination", "overtime", "labour", "employee"}, {"labour", "employment"}),
-        ({"housing", "flat", "possession", "allotment", "seepage", "builder", "authority"}, {"housing", "consumer", "municipal"}),
-        ({"insolvency", "creditor", "creditors", "valuation", "auction", "sale"}, {"insolvency", "company"}),
-        ({"cheque", "cheques", "security", "notice", "lender", "loan"}, {"cheque", "commercial"}),
-        ({"recruitment", "selection", "viva", "interview", "bias", "candidate"}, {"recruitment", "service"}),
-        ({"demolition", "municipal", "encroachment", "shop"}, {"municipal", "public"}),
+        ("criminal", {"bail", "fir", "arrest", "detention", "custody", "habeas", "remand", "chargesheet", "crime", "complaint"}, {"criminal", "detention", "bail", "police"}),
+        ("domestic_family", {"husband", "wife", "marriage", "matrimonial", "domestic", "violence", "cruelty", "dowry", "maintenance", "498a", "assaulted", "bruises"}, {"family", "matrimonial", "domestic", "women", "maintenance"}),
+        ("tax", {"tax", "assessment", "deduction", "tds", "royalty", "withholding", "penalty"}, {"tax"}),
+        ("property", {"property", "land", "title", "mutation", "deed", "forgery", "encroachment", "possession"}, {"property"}),
+        ("accident", {"accident", "injury", "insurer", "disability", "compensation", "hospital", "medical"}, {"accident", "compensation", "insurance"}),
+        ("labour", {"salary", "wages", "termination", "overtime", "labour", "employee", "dismissal"}, {"labour", "employment", "service"}),
+        ("housing_consumer", {"housing", "flat", "allotment", "seepage", "builder", "authority", "defect", "defects", "demolition", "municipal"}, {"housing", "consumer", "municipal", "public"}),
+        ("insolvency", {"insolvency", "creditor", "creditors", "valuation", "auction", "sale", "revival"}, {"insolvency", "company"}),
+        ("commercial", {"cheque", "security", "notice", "lender", "loan", "bank", "recovery"}, {"cheque", "commercial", "banking", "finance"}),
+        ("recruitment", {"recruitment", "selection", "viva", "interview", "bias", "candidate", "reservation"}, {"recruitment", "service", "education"}),
     ]
-    for q_words, d_words in topic_rules:
-        if query_tokens & q_words and any(word in domain_lower for word in d_words):
-            topical += 0.9
 
+    active_topics = {name for name, q_words, _ in topic_rules if query_tokens & q_words}
+    topical = 0.0
+    mismatch_penalty = 0.0
+    for name, _q_words, d_words in topic_rules:
+        domain_match = any(word in domain_lower for word in d_words)
+        if name in active_topics and domain_match:
+            topical += 1.6
+        elif name in active_topics and not domain_match and any(word in example_tokens for word in d_words):
+            mismatch_penalty += 0.8
+
+    if "domestic_family" in active_topics:
+        if any(word in domain_lower for word in {"family", "matrimonial", "domestic", "women", "maintenance"}):
+            topical += 1.2
+        else:
+            mismatch_penalty += 1.1
+    if "housing_consumer" in active_topics and not any(word in domain_lower for word in {"housing", "consumer", "municipal", "public"}):
+        mismatch_penalty += 0.7
+
+    if active_topics and topical <= 0 and lexical < 0.6:
+        return -1.0
     if lexical <= 0 and topical <= 0:
         return -1.0
 
-    score = lexical + topical
+    score = lexical + topical - mismatch_penalty
 
     if desired_audience and example.get("audience") == desired_audience:
-        score += 1.0
+        score += 0.6
     if layer == "complete_intake":
-        score += 0.2
+        score += 0.1
     if layer == "final_opinion":
-        score += 0.3
+        score += 0.2
 
-    return score
+    return score if score > 0 else -1.0
 
 
 def _rank_examples(query: str, desired_layers: set[str]) -> list[dict]:

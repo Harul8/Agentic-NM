@@ -31,7 +31,7 @@ from services.response_feedback_store import (
 from llm.ollama_client import check_ollama_health, get_last_model_used, warmup_ollama_model
 from llm.config import OLLAMA_MODEL, OLLAMA_MODEL_FAST, OLLAMA_WARM_ANALYSIS_AT_STARTUP
 
-# Feedback logging (non-critical — import errors must not crash the server)
+# Feedback logging (non-critical â€” import errors must not crash the server)
 try:
     from services.feedback_logger import log_interaction as _log_interaction
     from services.ai_reviewer import run_ai_review as _run_ai_review
@@ -67,7 +67,7 @@ def _log_pipeline_step(step_name: str, elapsed_ms: float, extra: str = "") -> No
 # ---------------------------------------------------------------------------
 app = FastAPI(title="Nyaymalaw API", version="3.0.0")
 
-# CORS: environment-aware — set ALLOWED_ORIGINS env var for production
+# CORS: environment-aware â€” set ALLOWED_ORIGINS env var for production
 _cors_origins_env = os.environ.get("ALLOWED_ORIGINS", "").strip()
 _cors_origins = (
     [o.strip() for o in _cors_origins_env.split(",") if o.strip()]
@@ -138,19 +138,19 @@ async def log_requests(request: Request, call_next):
         response = await call_next(request)
         elapsed_ms = (time.perf_counter() - start) * 1000
         logger.info(
-            "%s %s → %d (%.0fms)", method, path, response.status_code, elapsed_ms
+            "%s %s â†’ %d (%.0fms)", method, path, response.status_code, elapsed_ms
         )
         return response
     except Exception as exc:
         elapsed_ms = (time.perf_counter() - start) * 1000
         logger.error(
-            "%s %s → 500 (%.0fms) %s", method, path, elapsed_ms, exc
+            "%s %s â†’ 500 (%.0fms) %s", method, path, elapsed_ms, exc
         )
         raise
 
 
 # ---------------------------------------------------------------------------
-# Global error handler — catch unhandled exceptions, return clean JSON
+# Global error handler â€” catch unhandled exceptions, return clean JSON
 # ---------------------------------------------------------------------------
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
@@ -169,7 +169,7 @@ async def global_exception_handler(request: Request, exc: Exception):
     )
 
 
-# Paths and DB (must be before auth routes) – use config for data root (e.g. Google Drive)
+# Paths and DB (must be before auth routes) â€“ use config for data root (e.g. Google Drive)
 from config import (
     CHAT_HISTORY_DIR as _CHAT_HISTORY_DIR,
     DB_PATH as _DB_PATH,
@@ -188,7 +188,7 @@ _BASE_DIR = os.path.dirname(os.path.abspath(os.path.normpath(__file__)))
 _LEGAL_DB_BAREACTS_DIR = os.path.join(_LEGAL_DB_JSON_OUTPUT, "BareActs")
 _LEGAL_DB_CASELAWS_DIR = os.path.join(_LEGAL_DB_JSON_OUTPUT, "caselaws")
 
-# ── In-memory cache for library endpoints ────────────────────────────────────
+# â”€â”€ In-memory cache for library endpoints â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 # _group_case_laws_by_court() opens every JSON file on disk; at 1000+ cases
 # this takes ~2 minutes on first load.  Cache the result after the first call.
 _caselaws_library_cache: dict[str, list[dict]] | None = None
@@ -403,11 +403,28 @@ def _normalize_workflow_state(raw_state: Optional[dict], messages: Optional[list
         if question or answer:
             qa_history.append({"question": question, "answer": answer})
 
+    analysis_stage = str(state.get("analysisStage") or "").strip().lower()
+    if not analysis_stage:
+        analysis_stage = "intake" if stage != "done" else ""
+
+    facts_summary = state.get("factsSummary")
+    if not isinstance(facts_summary, str):
+        facts_summary = ""
+    facts_summary = facts_summary.strip()
+
+    last_response_type = state.get("lastResponseType")
+    if not isinstance(last_response_type, str):
+        last_response_type = ""
+    last_response_type = last_response_type.strip()
+
     return {
         "stage": stage,
         "facts": facts,
         "currentQuestion": current_question,
         "qaHistory": qa_history,
+        "analysisStage": analysis_stage,
+        "factsSummary": facts_summary,
+        "lastResponseType": last_response_type,
     }
 
 
@@ -651,6 +668,7 @@ class ContinueChatRequest(BaseModel):
     message: str = ""
     mode: str | None = None  # "legal_opinion" | "legal_research" | "general"
     model_override: str | None = None
+    workflowState: dict = Field(default_factory=dict)
 
 
 def _build_conv(messages: list[ChatMessage] | None) -> list[dict]:
@@ -659,7 +677,7 @@ def _build_conv(messages: list[ChatMessage] | None) -> list[dict]:
     return [{"role": m.role, "content": _normalize_content(m.content)} for m in messages]
 
 
-# Path to vector store and BareActs directory – resolve from this file’s location
+# Path to vector store and BareActs directory â€“ resolve from this fileâ€™s location
 
 
 def _iter_bareacts_json_files():
@@ -947,7 +965,7 @@ def _fire_feedback_log(result: dict, facts: str, session_ref: str = "") -> None:
 
     bare_acts = resp.get("bare_act_sections") or []
     sections_list = [
-        f"{ba.get('act_name','?')} § {ba.get('section_number','?')}"
+        f"{ba.get('act_name','?')} Â§ {ba.get('section_number','?')}"
         for ba in bare_acts
     ]
 
@@ -985,15 +1003,15 @@ def _fire_feedback_log_research(result: dict, query: str, session_ref: str = "")
     """
     Log one feedback row for a raw /search (fusion research) call.
 
-    The research result has no 'phase' or AI-generated opinion — it is a pure
+    The research result has no 'phase' or AI-generated opinion â€” it is a pure
     retrieval result from fuse_bare_act_and_case_law.  We map its fields directly:
 
-      facts          → the search query string
-      disputes       → [query[:80]]  (no dispute extraction on raw search)
-      sections       → act_name § section_number  from bare_act_sections
-      case_laws      → case_name / citation  from case_laws list
-      legal_opinion  → ""  (raw retrieval, no opinion generated)
-      followup       → ""
+      facts          â†’ the search query string
+      disputes       â†’ [query[:80]]  (no dispute extraction on raw search)
+      sections       â†’ act_name Â§ section_number  from bare_act_sections
+      case_laws      â†’ case_name / citation  from case_laws list
+      legal_opinion  â†’ ""  (raw retrieval, no opinion generated)
+      followup       â†’ ""
     """
     if not _FEEDBACK_ENABLED or not _log_interaction:
         return
@@ -1001,7 +1019,7 @@ def _fire_feedback_log_research(result: dict, query: str, session_ref: str = "")
 
     bare_acts = result.get("bare_act_sections") or []
     sections_list = [
-        f"{ba.get('act_name', '?')} § {ba.get('section_number', '?')}"
+        f"{ba.get('act_name', '?')} Â§ {ba.get('section_number', '?')}"
         for ba in bare_acts
         if isinstance(ba, dict)
     ]
@@ -1036,12 +1054,14 @@ def _map_chat_result_to_ui(result: dict) -> dict:
     """Map process_chat result to the shape the frontend expects (status, next_question, etc.)."""
     phase = result.get("phase")
     response_type = result.get("response_type")  # "search_results", "lookup_results", "legal_opinion"
+    analysis_stage = result.get("analysis_stage") or ""
+    facts_summary = (result.get("facts_summary") or "").strip()
 
     def _safe_next_question(text: str) -> str:
         candidate = (text or "").strip()
         normalized = re.sub(r"[\s\W_]+", "", candidate)
         if len(normalized) < 6:
-            return "Please share one more important detail, or say 'proceed' if you want me to begin the legal analysis."
+            return "Please share one more important detail, or say 'proceed' if you want me to identify the applicable bare act sections."
         return candidate
 
     if phase == "fact_collection":
@@ -1051,6 +1071,8 @@ def _map_chat_result_to_ui(result: dict) -> dict:
             "next_question": next_q,
             "retrieved": result.get("response") or [],
             "model_used": get_last_model_used(),
+            "analysis_stage": analysis_stage,
+            "facts_summary": facts_summary,
         }
     if phase == "done" and result.get("response"):
         resp = result["response"]
@@ -1073,7 +1095,7 @@ def _map_chat_result_to_ui(result: dict) -> dict:
                 combined_text = f"{greeting}\n\n{explanation}"
         else:
             combined_text = greeting or explanation
-        # Ensure we never send an empty or trivial intro (e.g. just "⚖")
+        # Ensure we never send an empty or trivial intro (e.g. just "âš–")
         if not combined_text or len(combined_text.strip()) < 20:
             combined_text = "I've prepared an initial response based on the information currently available."
         # If bare acts have nested case laws, don't return separate case_laws array to avoid duplicates
@@ -1092,9 +1114,13 @@ def _map_chat_result_to_ui(result: dict) -> dict:
             "opinion_text": combined_text,
             "bare_acts": bare_acts,
             "case_laws": separate_case_laws,  # Empty if case laws are nested under bare acts
+            "next_steps": resp.get("next_steps") or [],
+            "next_steps_summary": (resp.get("next_steps_summary") or "").strip(),
             "retrieved": all_case_laws + bare_acts,
             "progress": resp.get("progress"),  # Include progress tracking data
             "model_used": get_last_model_used(),
+            "analysis_stage": analysis_stage,
+            "facts_summary": facts_summary,
         }
         return out
     if phase == "done":
@@ -1104,8 +1130,12 @@ def _map_chat_result_to_ui(result: dict) -> dict:
             "opinion_text": (result.get("message") or "").strip() or "Your request has been processed.",
             "bare_acts": [],
             "case_laws": [],
+            "next_steps": [],
+            "next_steps_summary": "",
             "retrieved": [],
             "model_used": get_last_model_used(),
+            "analysis_stage": analysis_stage,
+            "facts_summary": facts_summary,
         }
     next_q = _safe_next_question(result.get("message") or "")
     return {
@@ -1113,6 +1143,8 @@ def _map_chat_result_to_ui(result: dict) -> dict:
         "next_question": next_q,
         "retrieved": result.get("response") or [],
         "model_used": get_last_model_used(),
+        "analysis_stage": analysis_stage,
+        "facts_summary": facts_summary,
     }
 
 
@@ -1167,7 +1199,7 @@ def library_refresh_cache():
     global _caselaws_library_cache, _bareacts_library_cache
     _caselaws_library_cache = None
     _bareacts_library_cache = None
-    return {"status": "ok", "message": "Library caches cleared — will reload on next request"}
+    return {"status": "ok", "message": "Library caches cleared â€” will reload on next request"}
 
 
 @app.get("/bareacts/list")
@@ -1305,11 +1337,11 @@ def _format_legal_html(text: str, title: str, is_case: bool = False) -> str:
     body_parts: list[str] = []
 
     if is_case:
-        # ── Case law: render raw text as-is ─────────────────────────────────
+        # â”€â”€ Case law: render raw text as-is â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         body_parts.append(f'<pre class="case-raw">{_h.escape(text)}</pre>')
 
     else:
-        # ── Bare act: section-aware line-by-line parsing ────────────────────
+        # â”€â”€ Bare act: section-aware line-by-line parsing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         lines = [l.rstrip() for l in text.splitlines()]
 
         # Patterns
@@ -1333,7 +1365,7 @@ def _format_legal_html(text: str, title: str, is_case: bool = False) -> str:
                 i += 1
                 continue
 
-            # ── Section heading: "14." on its own line ───────────────────────
+            # â”€â”€ Section heading: "14." on its own line â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
             m = SEC_RE.match(line)
             if m:
                 num = m.group(1)
@@ -1348,7 +1380,7 @@ def _format_legal_html(text: str, title: str, is_case: bool = False) -> str:
                 i = j + 1 if j < len(lines) else i + 1
                 continue
 
-            # ── Subsection: "(1)" or "(a)" on its own line ───────────────────
+            # â”€â”€ Subsection: "(1)" or "(a)" on its own line â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
             m = SUB_RE.match(line)
             if m:
                 marker = m.group(1)
@@ -1362,19 +1394,19 @@ def _format_legal_html(text: str, title: str, is_case: bool = False) -> str:
                 i = j + 1 if j < len(lines) else i + 1
                 continue
 
-            # ── Part / Chapter / Schedule heading ────────────────────────────
+            # â”€â”€ Part / Chapter / Schedule heading â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
             if HEAD_RE.match(line) or (line.isupper() and 4 < len(line) < 80 and not BRACKET_LINE_RE.match(line)):
                 body_parts.append(f'<h2 class="chapter">{_h.escape(line)}</h2>')
                 i += 1
                 continue
 
-            # ── Editorial note in brackets ────────────────────────────────
+            # â”€â”€ Editorial note in brackets â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
             if BRACKET_LINE_RE.match(line):
                 body_parts.append(f'<p class="editorial">{_h.escape(line)}</p>')
                 i += 1
                 continue
 
-            # ── Plain paragraph ───────────────────────────────────────────
+            # â”€â”€ Plain paragraph â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
             body_parts.append(f'<p>{_h.escape(line)}</p>')
             i += 1
 
@@ -1491,7 +1523,7 @@ def _format_legal_html(text: str, title: str, is_case: bool = False) -> str:
 <body>
 <div id="dl-bar">
   <h1>{t}</h1>
-  <button id="pdf-btn" onclick="window.print()">⬇ Download PDF</button>
+  <button id="pdf-btn" onclick="window.print()">â¬‡ Download PDF</button>
 </div>
 {body_html}
 </body>
@@ -1558,8 +1590,8 @@ def bareacts_view(
 
         Normalises patterns where section / sub-section markers are on their own
         line and the substantive text starts on the next line, e.g.:
-          "11.\nGrant of probate..."   → "11. Grant of probate..."
-          "(a)\nany person appears..." → "(a) any person appears..."
+          "11.\nGrant of probate..."   â†’ "11. Grant of probate..."
+          "(a)\nany person appears..." â†’ "(a) any person appears..."
         """
         import re as _re
         t = text or ""
@@ -1664,7 +1696,7 @@ def bareacts_view(
     <h1>{_html_escape(title)}</h1>
     <div class="meta">
       Source: legal_database/json_output (bare act JSON)
-      {"&nbsp;•&nbsp;Year: " + _html_escape(str(year)) if year else ""}
+      {"&nbsp;â€¢&nbsp;Year: " + _html_escape(str(year)) if year else ""}
     </div>
     {sections_joined}
   </body>
@@ -1720,7 +1752,7 @@ def caselaws_view(
         body_html = _render_para_text(text)
         if not body_html:
             continue
-        label = f"¶ {pid}" if pid is not None else "¶"
+        label = f"Â¶ {pid}" if pid is not None else "Â¶"
         paras_html.append(
             f"<article class='case-paragraph'>"
             f"<div class='para-label'>{_html_escape(label)}</div>"
@@ -1994,7 +2026,7 @@ def caselaws_most_cited():
                 cells.append(
                     "<td class='col-long'>"
                     f"<div class='cell-text truncated' data-row='{idx}' data-col='{esc(col)}'>{text}</div>"
-                    f"<button type='button' class='expand-btn' data-row='{idx}' aria-label='Expand row'>⤢</button>"
+                    f"<button type='button' class='expand-btn' data-row='{idx}' aria-label='Expand row'>â¤¢</button>"
                     "</td>"
                 )
             else:
@@ -2111,7 +2143,7 @@ def caselaws_most_cited():
           }});
           const buttons = document.querySelectorAll(".expand-btn[data-row='" + rowId + "']");
           buttons.forEach((btn) => {{
-            btn.textContent = expand ? "⤡" : "⤢";
+            btn.textContent = expand ? "â¤¡" : "â¤¢";
           }});
         }}
         document.addEventListener("click", function (e) {{
@@ -2210,6 +2242,7 @@ def chat(request: ChatRequest):
             document_types=result.get("document_types", "both"),
             search_strategy=result.get("search_strategy", "local_then_web"),
             result_count=result.get("result_count"),
+            analysis_mode=result.get("analysis_mode"),
         )
         return resp_result
 
@@ -2255,6 +2288,7 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
                 result_count=result.get("result_count"),
                 chat_mode=mode,
                 model_override=model_override,
+                analysis_mode=result.get("analysis_mode"),
             )
         if result.get("phase") == "done":
             increment_query_count(user["id"])
@@ -2314,6 +2348,7 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
                 result_count=result.get("result_count"),
                 chat_mode=mode,
                 model_override=model_override,
+                analysis_mode=result.get("analysis_mode"),
             )
 
         if result.get("phase") == "done":
@@ -2346,6 +2381,7 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
             {"role": m.role, "content": _normalize_content(m.content)}
             for m in (request.conversation or [])
         ]
+        workflow_state = _normalize_workflow_state(request.workflowState, request.conversation)
         result = process_chat(
             conversation=conv,
             current_message=message,
@@ -2353,6 +2389,7 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
             facts_summary=None,
             chat_mode=mode,
             model_override=model_override,
+            workflow_state=workflow_state,
         )
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": result.get("message", "")}]
@@ -2367,6 +2404,8 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
                 result_count=result.get("result_count"),
                 chat_mode=mode,
                 model_override=model_override,
+                workflow_state=workflow_state,
+                analysis_mode=result.get("analysis_mode"),
             )
         if result.get("phase") == "done":
             increment_query_count(user["id"])
@@ -2376,10 +2415,10 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
         return _chat_error_fallback(str(e)[:200])
 
 
-def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, user_id: str, mode: str | None = None, model_override: str | None = None) -> None:
+def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, user_id: str, mode: str | None = None, model_override: str | None = None, workflow_state: dict | None = None) -> None:
     """Run the same logic as continue_chat, pushing progress to queue and finally the result."""
     try:
-        queue.put(("step", {"message": "Starting analysis of your latest message...", "icon": "⚡"}))
+        queue.put(("step", {"message": "Starting analysis of your latest message", "icon": ""}))
         def progress_callback(progress_snapshot: dict):
             queue.put(("progress", progress_snapshot))
         def step_callback(step_data: dict):
@@ -2397,6 +2436,7 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
             step_callback=step_callback,
             token_callback=token_callback,
             model_override=model_override,
+            workflow_state=workflow_state,
         )
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": result.get("message", "")}]
@@ -2414,6 +2454,8 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
                 step_callback=step_callback,
                 token_callback=token_callback,
                 model_override=model_override,
+                workflow_state=workflow_state,
+                analysis_mode=result.get("analysis_mode"),
             )
         if result.get("phase") == "done":
             increment_query_count(user_id)
@@ -2427,7 +2469,7 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
 def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: str | None = None, model_override: str | None = None) -> None:
     """Run submit_case logic with progress streaming."""
     try:
-        queue.put(("step", {"message": "Reviewing the facts you shared...", "icon": "⚡"}))
+        queue.put(("step", {"message": "Reviewing the facts you shared", "icon": ""}))
         def progress_callback(progress_snapshot: dict):
             queue.put(("progress", progress_snapshot))
         def step_callback(step_data: dict):
@@ -2463,6 +2505,7 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: 
                 step_callback=step_callback,
                 token_callback=token_callback,
                 model_override=model_override,
+                analysis_mode=result.get("analysis_mode"),
             )
         if result.get("phase") == "done":
             increment_query_count(user_id)
@@ -2477,7 +2520,7 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
     """Run interview_step logic with progress streaming."""
     try:
         t_total = time.perf_counter()
-        queue.put(("step", {"message": "Reviewing your latest answer...", "icon": "⚡"}))
+        queue.put(("step", {"message": "Reviewing your latest answer", "icon": ""}))
 
         def progress_callback(progress_snapshot: dict):
             queue.put(("progress", progress_snapshot))
@@ -2531,6 +2574,7 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
                 step_callback=step_callback,
                 token_callback=token_callback,
                 model_override=model_override,
+                analysis_mode=result.get("analysis_mode"),
             )
             _log_pipeline_step(
                 "interview_step.process_chat.response_generation",
@@ -2649,8 +2693,10 @@ async def continue_chat_stream(request: ContinueChatRequest, user: dict = Depend
     loop = asyncio.get_event_loop()
     user_id = user.get("id", _ANONYMOUS_EMAIL)
 
+    workflow_state = _normalize_workflow_state(request.workflowState, request.conversation)
+
     def run_in_thread():
-        _run_continue_chat_with_progress(conv, message, queue, user_id, mode, model_override)
+        _run_continue_chat_with_progress(conv, message, queue, user_id, mode, model_override, workflow_state)
 
     thread = __import__("threading").Thread(target=run_in_thread)
     thread.start()
@@ -2708,12 +2754,12 @@ def reset_rate_limit():
 
 
 # ---------------------------------------------------------------------------
-# Propose for Index — save web-sourced bare act sections to proposed_sections.json
+# Propose for Index â€” save web-sourced bare act sections to proposed_sections.json
 # The user can then run scripts/index_proposed.py to add them to the local index.
 # ---------------------------------------------------------------------------
 
 class ProposeIndexRequest(BaseModel):
-    section: dict   # Full bare-act section dict (act_name, section_number, full_text, url, …)
+    section: dict   # Full bare-act section dict (act_name, section_number, full_text, url, â€¦)
 
 @app.post("/propose_index")
 async def propose_index(req: ProposeIndexRequest):
@@ -2741,7 +2787,7 @@ async def propose_index(req: ProposeIndexRequest):
         proposals = []
 
     section = req.section
-    # Deduplicate by (act_name, section_number) — don't add the same section twice
+    # Deduplicate by (act_name, section_number) â€” don't add the same section twice
     act  = (section.get("act_name")     or "").strip().lower()
     sec  = (section.get("section_number") or "").strip().lower()
     already = any(
@@ -2750,7 +2796,7 @@ async def propose_index(req: ProposeIndexRequest):
         for p in proposals
     )
     if already:
-        return {"status": "already_proposed", "message": f"{section.get('act_name')} §{section.get('section_number')} already in proposal list"}
+        return {"status": "already_proposed", "message": f"{section.get('act_name')} Â§{section.get('section_number')} already in proposal list"}
 
     # Strip internal pipeline keys before saving
     clean = {k: v for k, v in section.items() if not k.startswith("_")}
@@ -2761,7 +2807,7 @@ async def propose_index(req: ProposeIndexRequest):
         proposed_path.parent.mkdir(parents=True, exist_ok=True)
         with open(proposed_path, "w", encoding="utf-8") as f:
             json.dump(proposals, f, ensure_ascii=False, indent=2)
-        logger.info("Proposed for index: %s §%s → %s", section.get("act_name"), section.get("section_number"), proposed_path)
+        logger.info("Proposed for index: %s Â§%s â†’ %s", section.get("act_name"), section.get("section_number"), proposed_path)
         return {
             "status": "proposed",
             "message": f"Saved to {proposed_path.name}. Run scripts/index_proposed.py to add to local index.",
@@ -2773,7 +2819,7 @@ async def propose_index(req: ProposeIndexRequest):
 
 
 # ---------------------------------------------------------------------------
-# Eval Files — serve eval JSON results for UI display
+# Eval Files â€” serve eval JSON results for UI display
 # ---------------------------------------------------------------------------
 
 EVAL_RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "eval", "results")
@@ -2845,7 +2891,7 @@ def eval_get_figure(path: str = Query(..., description="Figure filename (e.g. fi
 
 
 # ---------------------------------------------------------------------------
-# Docs — serve architecture markdown for UI
+# Docs â€” serve architecture markdown for UI
 # ---------------------------------------------------------------------------
 DOCS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs")
 ARCHITECTURE_MD = os.path.join(DOCS_DIR, "CREWAI_MULTI_AGENT_ARCHITECTURE.md")
@@ -2878,7 +2924,7 @@ def feedback_review(case_id: str, user: dict = Depends(_user_from_token)):
 
     Reads the row for case_id from the Feedback Log workbook, sends the
     model output to the configured LLM for review against the Golden Rules,
-    and writes results back into columns K–R and V–W.
+    and writes results back into columns Kâ€“R and Vâ€“W.
 
     Returns the review result as JSON.
     Requires authentication (any valid user token).
@@ -2913,7 +2959,7 @@ def feedback_status():
 
 
 # ---------------------------------------------------------------------------
-# Feedback Log Excel ↔ HTML sync
+# Feedback Log Excel â†” HTML sync
 # ---------------------------------------------------------------------------
 
 def _feedback_log_path():
@@ -2924,7 +2970,7 @@ def _feedback_log_path():
 @app.get("/feedback_log/data")
 def feedback_log_get_data():
     """
-    Return the Feedback Log Excel as JSON for HTML to load (Excel → HTML sync).
+    Return the Feedback Log Excel as JSON for HTML to load (Excel â†’ HTML sync).
     Rows are returned as arrays of cell values; first 3 rows are header/notes.
     """
     import pandas as pd
@@ -2965,8 +3011,8 @@ class ResponseFeedbackRequest(BaseModel):
 @app.post("/feedback_log/save")
 def feedback_log_save(request: FeedbackLogSaveRequest):
     """
-    Save table data from HTML to the Feedback Log Excel (HTML → Excel sync).
-    Expects rows: [ notes_row, data_row_1, ... ] (tbody only). Preserves Excel header rows 0–1.
+    Save table data from HTML to the Feedback Log Excel (HTML â†’ Excel sync).
+    Expects rows: [ notes_row, data_row_1, ... ] (tbody only). Preserves Excel header rows 0â€“1.
     """
     import pandas as pd
     path = _feedback_log_path()
@@ -3036,7 +3082,7 @@ def submit_response_feedback(request: ResponseFeedbackRequest, user: dict = Depe
 @app.get("/health")
 def health_check():
     """
-    Production health check — verifies Ollama, DB, and vector store.
+    Production health check â€” verifies Ollama, DB, and vector store.
     Returns 200 if all healthy, 503 if any critical service is down.
     """
     health = {"status": "healthy", "checks": {}}
@@ -3080,7 +3126,7 @@ def health_check():
 
 @app.on_event("startup")
 async def startup_validation():
-    """Run quick checks and launch the targeted interactive warmup in background."""
+    """Run startup checks, perform critical warmup, then launch background warmup."""
     logger.info("=" * 60)
     logger.info("Nyaymalaw API v3.0.0 starting up")
     logger.info("=" * 60)
@@ -3110,7 +3156,15 @@ async def startup_validation():
     logger.info("CORS origins: %s", _cors_origins)
 
     try:
-        from services.runtime_warmup import kickoff_runtime_warmup
+        from services.runtime_warmup import kickoff_runtime_warmup, run_critical_runtime_warmup
+        critical = run_critical_runtime_warmup("startup")
+        logger.info(
+            "Critical warmup: fewshot=%s fast_model=%s analysis_model=%s elapsed=%ss",
+            "yes" if critical.get("fewshot_ready") else "no",
+            "yes" if critical.get("fast_model_ready") else "no",
+            "yes" if critical.get("analysis_model_ready") else "no",
+            critical.get("elapsed_seconds", 0.0),
+        )
         kickoff_runtime_warmup("startup")
         logger.info("Startup checks complete; targeted runtime warmup launched")
     except Exception as e:
@@ -3123,13 +3177,158 @@ async def startup_validation():
         conn = _get_db()
         conn.execute("SELECT 1").fetchone()
         conn.close()
-        logger.info("âœ“ Database accessible at %s", _DB_PATH)
+        logger.info("Ã¢Å“â€œ Database accessible at %s", _DB_PATH)
     except Exception as e:
-        logger.warning("âš  Database error: %s", e)
+        logger.warning("Ã¢Å¡Â  Database error: %s", e)
 
     from config import DATA_ROOT, BARE_ACTS_DIR
     logger.info("Data root: %s (BareActs: %s)", DATA_ROOT, BARE_ACTS_DIR)
 
+    from config import VECTOR_STORE, BARE_INDEX_V2, CASE_INDEX_V2
+    if os.path.isdir(VECTOR_STORE):
+        bare_ok = os.path.isfile(BARE_INDEX_V2)
+        case_ok = os.path.isfile(CASE_INDEX_V2)
+        logger.info(
+            "Ã¢Å“â€œ Vector store at %s (bare_acts: %s, case_laws: %s)",
+            VECTOR_STORE, "Ã¢Å“â€œ" if bare_ok else "Ã¢Å“â€”", "Ã¢Å“â€œ" if case_ok else "Ã¢Å“â€”",
+        )
+    else:
+        logger.warning("Ã¢Å¡Â  Vector store directory not found: %s", VECTOR_STORE)
+
+    logger.info("CORS origins: %s", _cors_origins)
+
+    def _background_startup_tasks():
+        if os.environ.get("FEEDBACK_DISTILL_ON_STARTUP", "true").strip().lower() in ("1", "true", "yes", "on"):
+            try:
+                from services.feedback_learning_pipeline import run_daily_feedback_distillation
+                result = run_daily_feedback_distillation()
+                if result.get("status") == "processed":
+                    logger.info(
+                        "ÃƒÂ¢Ã…â€œÃ¢â‚¬Å“ Feedback distillation processed (%s feedback ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ %s training candidates, %s eval candidates)",
+                        result.get("feedback_records_total", 0),
+                        result.get("training_candidates_total", 0),
+                        result.get("eval_candidates_total", 0),
+                    )
+                else:
+                    logger.info("ÃƒÂ¢Ã…â€œÃ¢â‚¬Å“ Feedback distillation skipped (%s)", result.get("reason", "not_needed"))
+            except Exception as _feedback_distill_err:
+                logger.warning("ÃƒÂ¢Ã…Â¡Ã‚Â  Feedback distillation failed on startup: %s", _feedback_distill_err)
+
+        ollama = check_ollama_health()
+        if ollama.get("ollama_reachable") and ollama.get("model_loaded"):
+            logger.info("Ã¢Å“â€œ Ollama reachable, model '%s' loaded", ollama["model"])
+            if OLLAMA_MODEL_FAST:
+                if warmup_ollama_model(OLLAMA_MODEL_FAST):
+                    logger.info("Ã¢Å“â€œ Fast intake model '%s' warmed and kept alive", OLLAMA_MODEL_FAST)
+                else:
+                    logger.warning("Ã¢Å¡Â  Fast intake model '%s' could not be warmed at startup", OLLAMA_MODEL_FAST)
+            if OLLAMA_WARM_ANALYSIS_AT_STARTUP and OLLAMA_MODEL and OLLAMA_MODEL != OLLAMA_MODEL_FAST:
+                if warmup_ollama_model(OLLAMA_MODEL):
+                    logger.info("Ã¢Å“â€œ Analysis model '%s' warmed and kept alive", OLLAMA_MODEL)
+                else:
+                    logger.warning("Ã¢Å¡Â  Analysis model '%s' could not be warmed at startup", OLLAMA_MODEL)
+            elif not OLLAMA_WARM_ANALYSIS_AT_STARTUP:
+                logger.info("Ã¢Å“â€œ Skipping analysis-model warmup at startup; it will load on first final analysis")
+        elif ollama.get("ollama_reachable"):
+            logger.warning("Ã¢Å¡Â  Ollama reachable but model '%s' NOT found. Run: ollama pull %s", ollama["model"], ollama["model"])
+        else:
+            logger.warning("Ã¢Å¡Â  Ollama NOT reachable at localhost:11434. Start Ollama first.")
+
+        try:
+            from retrieval.hybrid_retriever import (
+                _get_cross_encoder_cpu,
+                _get_cross_encoder_gpu,
+                _get_embedder,
+            )
+            _get_embedder()
+            logger.info("Ã¢Å“â€œ Embedding model pre-loaded (warm)")
+            if _get_cross_encoder_gpu() is not None:
+                logger.info("Ã¢Å“â€œ Cross-encoder model pre-loaded on CUDA")
+            else:
+                _get_cross_encoder_cpu()
+                logger.info("Ã¢Å“â€œ Cross-encoder model pre-loaded on CPU")
+        except Exception as _warmup_err:
+            logger.warning("Ã¢Å¡Â  Model pre-load failed (will load on first request): %s", _warmup_err)
+
+        try:
+            from retrieval.hybrid_retriever import preload_all_indexes
+            preload_all_indexes()
+            logger.info("Ã¢Å“â€œ All indexes pre-loaded into RAM (queries will serve from cache)")
+        except Exception as _preload_err:
+            logger.warning("Ã¢Å¡Â  Index pre-load failed (will load on first request): %s", _preload_err)
+
+        try:
+            from training.few_shot_retriever import preload_examples
+            preload_examples()
+            logger.info("Ã¢Å“â€œ Few-shot examples pre-loaded into memory")
+        except Exception as _fewshot_err:
+            logger.warning("Ã¢Å¡Â  Few-shot pre-load failed (will load on first request): %s", _fewshot_err)
+
+        logger.info("=" * 60)
+
+    threading.Thread(
+        target=_background_startup_tasks,
+        name="nyaymalaw-startup-warmup",
+        daemon=True,
+    ).start()
+    logger.info("Ã¢Å“â€œ Startup checks complete; background warmup tasks launched")
+    return
+    """Log system status on startup â€” warns but does NOT block if services are down."""
+    if os.environ.get("FEEDBACK_DISTILL_ON_STARTUP", "true").strip().lower() in ("1", "true", "yes", "on"):
+        try:
+            from services.feedback_learning_pipeline import run_daily_feedback_distillation
+            result = run_daily_feedback_distillation()
+            if result.get("status") == "processed":
+                logger.info(
+                    "Ã¢Å“â€œ Feedback distillation processed (%s feedback Ã¢â€ â€™ %s training candidates, %s eval candidates)",
+                    result.get("feedback_records_total", 0),
+                    result.get("training_candidates_total", 0),
+                    result.get("eval_candidates_total", 0),
+                )
+            else:
+                logger.info("Ã¢Å“â€œ Feedback distillation skipped (%s)", result.get("reason", "not_needed"))
+        except Exception as _feedback_distill_err:
+            logger.warning("Ã¢Å¡Â  Feedback distillation failed on startup: %s", _feedback_distill_err)
+
+    logger.info("=" * 60)
+    logger.info("Nyaymalaw API v3.0.0 starting up")
+    logger.info("=" * 60)
+
+    # Check Ollama
+    ollama = check_ollama_health()
+    if ollama.get("ollama_reachable") and ollama.get("model_loaded"):
+        logger.info("âœ“ Ollama reachable, model '%s' loaded", ollama["model"])
+        if OLLAMA_MODEL_FAST:
+            if warmup_ollama_model(OLLAMA_MODEL_FAST):
+                logger.info("âœ“ Fast intake model '%s' warmed and kept alive", OLLAMA_MODEL_FAST)
+            else:
+                logger.warning("âš  Fast intake model '%s' could not be warmed at startup", OLLAMA_MODEL_FAST)
+        if OLLAMA_WARM_ANALYSIS_AT_STARTUP and OLLAMA_MODEL and OLLAMA_MODEL != OLLAMA_MODEL_FAST:
+            if warmup_ollama_model(OLLAMA_MODEL):
+                logger.info("âœ“ Analysis model '%s' warmed and kept alive", OLLAMA_MODEL)
+            else:
+                logger.warning("âš  Analysis model '%s' could not be warmed at startup", OLLAMA_MODEL)
+        elif not OLLAMA_WARM_ANALYSIS_AT_STARTUP:
+            logger.info("âœ“ Skipping analysis-model warmup at startup; it will load on first final analysis")
+    elif ollama.get("ollama_reachable"):
+        logger.warning("âš  Ollama reachable but model '%s' NOT found. Run: ollama pull %s", ollama["model"], ollama["model"])
+    else:
+        logger.warning("âš  Ollama NOT reachable at localhost:11434. Start Ollama first.")
+
+    # Check DB
+    try:
+        conn = _get_db()
+        conn.execute("SELECT 1").fetchone()
+        conn.close()
+        logger.info("âœ“ Database accessible at %s", _DB_PATH)
+    except Exception as e:
+        logger.warning("âš  Database error: %s", e)
+
+    # Data root (PDFs and indexes go here; must match NYAYMALAW_DATA_ROOT in .env)
+    from config import DATA_ROOT, BARE_ACTS_DIR
+    logger.info("Data root: %s (BareActs: %s)", DATA_ROOT, BARE_ACTS_DIR)
+
+    # Check vector store
     from config import VECTOR_STORE, BARE_INDEX_V2, CASE_INDEX_V2
     if os.path.isdir(VECTOR_STORE):
         bare_ok = os.path.isfile(BARE_INDEX_V2)
@@ -3143,155 +3342,10 @@ async def startup_validation():
 
     logger.info("CORS origins: %s", _cors_origins)
 
-    def _background_startup_tasks():
-        if os.environ.get("FEEDBACK_DISTILL_ON_STARTUP", "true").strip().lower() in ("1", "true", "yes", "on"):
-            try:
-                from services.feedback_learning_pipeline import run_daily_feedback_distillation
-                result = run_daily_feedback_distillation()
-                if result.get("status") == "processed":
-                    logger.info(
-                        "Ã¢Å“â€œ Feedback distillation processed (%s feedback Ã¢â€ â€™ %s training candidates, %s eval candidates)",
-                        result.get("feedback_records_total", 0),
-                        result.get("training_candidates_total", 0),
-                        result.get("eval_candidates_total", 0),
-                    )
-                else:
-                    logger.info("Ã¢Å“â€œ Feedback distillation skipped (%s)", result.get("reason", "not_needed"))
-            except Exception as _feedback_distill_err:
-                logger.warning("Ã¢Å¡Â  Feedback distillation failed on startup: %s", _feedback_distill_err)
-
-        ollama = check_ollama_health()
-        if ollama.get("ollama_reachable") and ollama.get("model_loaded"):
-            logger.info("âœ“ Ollama reachable, model '%s' loaded", ollama["model"])
-            if OLLAMA_MODEL_FAST:
-                if warmup_ollama_model(OLLAMA_MODEL_FAST):
-                    logger.info("âœ“ Fast intake model '%s' warmed and kept alive", OLLAMA_MODEL_FAST)
-                else:
-                    logger.warning("âš  Fast intake model '%s' could not be warmed at startup", OLLAMA_MODEL_FAST)
-            if OLLAMA_WARM_ANALYSIS_AT_STARTUP and OLLAMA_MODEL and OLLAMA_MODEL != OLLAMA_MODEL_FAST:
-                if warmup_ollama_model(OLLAMA_MODEL):
-                    logger.info("âœ“ Analysis model '%s' warmed and kept alive", OLLAMA_MODEL)
-                else:
-                    logger.warning("âš  Analysis model '%s' could not be warmed at startup", OLLAMA_MODEL)
-            elif not OLLAMA_WARM_ANALYSIS_AT_STARTUP:
-                logger.info("âœ“ Skipping analysis-model warmup at startup; it will load on first final analysis")
-        elif ollama.get("ollama_reachable"):
-            logger.warning("âš  Ollama reachable but model '%s' NOT found. Run: ollama pull %s", ollama["model"], ollama["model"])
-        else:
-            logger.warning("âš  Ollama NOT reachable at localhost:11434. Start Ollama first.")
-
-        try:
-            from retrieval.hybrid_retriever import (
-                _get_cross_encoder_cpu,
-                _get_cross_encoder_gpu,
-                _get_embedder,
-            )
-            _get_embedder()
-            logger.info("âœ“ Embedding model pre-loaded (warm)")
-            if _get_cross_encoder_gpu() is not None:
-                logger.info("âœ“ Cross-encoder model pre-loaded on CUDA")
-            else:
-                _get_cross_encoder_cpu()
-                logger.info("âœ“ Cross-encoder model pre-loaded on CPU")
-        except Exception as _warmup_err:
-            logger.warning("âš  Model pre-load failed (will load on first request): %s", _warmup_err)
-
-        try:
-            from retrieval.hybrid_retriever import preload_all_indexes
-            preload_all_indexes()
-            logger.info("âœ“ All indexes pre-loaded into RAM (queries will serve from cache)")
-        except Exception as _preload_err:
-            logger.warning("âš  Index pre-load failed (will load on first request): %s", _preload_err)
-
-        try:
-            from training.few_shot_retriever import preload_examples
-            preload_examples()
-            logger.info("âœ“ Few-shot examples pre-loaded into memory")
-        except Exception as _fewshot_err:
-            logger.warning("âš  Few-shot pre-load failed (will load on first request): %s", _fewshot_err)
-
-        logger.info("=" * 60)
-
-    threading.Thread(
-        target=_background_startup_tasks,
-        name="nyaymalaw-startup-warmup",
-        daemon=True,
-    ).start()
-    logger.info("âœ“ Startup checks complete; background warmup tasks launched")
-    return
-    """Log system status on startup — warns but does NOT block if services are down."""
-    if os.environ.get("FEEDBACK_DISTILL_ON_STARTUP", "true").strip().lower() in ("1", "true", "yes", "on"):
-        try:
-            from services.feedback_learning_pipeline import run_daily_feedback_distillation
-            result = run_daily_feedback_distillation()
-            if result.get("status") == "processed":
-                logger.info(
-                    "âœ“ Feedback distillation processed (%s feedback â†’ %s training candidates, %s eval candidates)",
-                    result.get("feedback_records_total", 0),
-                    result.get("training_candidates_total", 0),
-                    result.get("eval_candidates_total", 0),
-                )
-            else:
-                logger.info("âœ“ Feedback distillation skipped (%s)", result.get("reason", "not_needed"))
-        except Exception as _feedback_distill_err:
-            logger.warning("âš  Feedback distillation failed on startup: %s", _feedback_distill_err)
-
-    logger.info("=" * 60)
-    logger.info("Nyaymalaw API v3.0.0 starting up")
-    logger.info("=" * 60)
-
-    # Check Ollama
-    ollama = check_ollama_health()
-    if ollama.get("ollama_reachable") and ollama.get("model_loaded"):
-        logger.info("✓ Ollama reachable, model '%s' loaded", ollama["model"])
-        if OLLAMA_MODEL_FAST:
-            if warmup_ollama_model(OLLAMA_MODEL_FAST):
-                logger.info("✓ Fast intake model '%s' warmed and kept alive", OLLAMA_MODEL_FAST)
-            else:
-                logger.warning("⚠ Fast intake model '%s' could not be warmed at startup", OLLAMA_MODEL_FAST)
-        if OLLAMA_WARM_ANALYSIS_AT_STARTUP and OLLAMA_MODEL and OLLAMA_MODEL != OLLAMA_MODEL_FAST:
-            if warmup_ollama_model(OLLAMA_MODEL):
-                logger.info("✓ Analysis model '%s' warmed and kept alive", OLLAMA_MODEL)
-            else:
-                logger.warning("⚠ Analysis model '%s' could not be warmed at startup", OLLAMA_MODEL)
-        elif not OLLAMA_WARM_ANALYSIS_AT_STARTUP:
-            logger.info("✓ Skipping analysis-model warmup at startup; it will load on first final analysis")
-    elif ollama.get("ollama_reachable"):
-        logger.warning("⚠ Ollama reachable but model '%s' NOT found. Run: ollama pull %s", ollama["model"], ollama["model"])
-    else:
-        logger.warning("⚠ Ollama NOT reachable at localhost:11434. Start Ollama first.")
-
-    # Check DB
-    try:
-        conn = _get_db()
-        conn.execute("SELECT 1").fetchone()
-        conn.close()
-        logger.info("✓ Database accessible at %s", _DB_PATH)
-    except Exception as e:
-        logger.warning("⚠ Database error: %s", e)
-
-    # Data root (PDFs and indexes go here; must match NYAYMALAW_DATA_ROOT in .env)
-    from config import DATA_ROOT, BARE_ACTS_DIR
-    logger.info("Data root: %s (BareActs: %s)", DATA_ROOT, BARE_ACTS_DIR)
-
-    # Check vector store
-    from config import VECTOR_STORE, BARE_INDEX_V2, CASE_INDEX_V2
-    if os.path.isdir(VECTOR_STORE):
-        bare_ok = os.path.isfile(BARE_INDEX_V2)
-        case_ok = os.path.isfile(CASE_INDEX_V2)
-        logger.info(
-            "✓ Vector store at %s (bare_acts: %s, case_laws: %s)",
-            VECTOR_STORE, "✓" if bare_ok else "✗", "✓" if case_ok else "✗",
-        )
-    else:
-        logger.warning("⚠ Vector store directory not found: %s", VECTOR_STORE)
-
-    logger.info("CORS origins: %s", _cors_origins)
-
     # Pre-load ML models to eliminate cold-start latency on the first real request.
     # The embedder and cross-encoder are lazy-loaded on first use; calling them here
     # during startup ensures they are in memory before any user query arrives.
-    # Failure is non-fatal — models will still load on demand.
+    # Failure is non-fatal â€” models will still load on demand.
     try:
         from retrieval.hybrid_retriever import (
             _get_cross_encoder_cpu,
@@ -3299,37 +3353,38 @@ async def startup_validation():
             _get_embedder,
         )
         _get_embedder()
-        logger.info("✓ Embedding model pre-loaded (warm)")
+        logger.info("âœ“ Embedding model pre-loaded (warm)")
         if _get_cross_encoder_gpu() is not None:
-            logger.info("✓ Cross-encoder model pre-loaded on CUDA")
+            logger.info("âœ“ Cross-encoder model pre-loaded on CUDA")
         else:
             _get_cross_encoder_cpu()
-            logger.info("✓ Cross-encoder model pre-loaded on CPU")
+            logger.info("âœ“ Cross-encoder model pre-loaded on CPU")
     except Exception as _warmup_err:
-        logger.warning("⚠ Model pre-load failed (will load on first request): %s", _warmup_err)
+        logger.warning("âš  Model pre-load failed (will load on first request): %s", _warmup_err)
 
     # Pre-load all FAISS indexes, BM25 indexes, and chunk stores into RAM.
     # Without this, each query loads 5+ GB of data from disk, causing seconds of
     # I/O latency per request.  Preloading at startup means all queries serve from
-    # in-memory cache.  Failure is non-fatal — indexes will still load on demand.
+    # in-memory cache.  Failure is non-fatal â€” indexes will still load on demand.
     try:
         from retrieval.hybrid_retriever import preload_all_indexes
         preload_all_indexes()
-        logger.info("✓ All indexes pre-loaded into RAM (queries will serve from cache)")
+        logger.info("âœ“ All indexes pre-loaded into RAM (queries will serve from cache)")
     except Exception as _preload_err:
-        logger.warning("⚠ Index pre-load failed (will load on first request): %s", _preload_err)
+        logger.warning("âš  Index pre-load failed (will load on first request): %s", _preload_err)
 
     # Pre-load few-shot examples so the first intake request does not parse the
     # markdown corpus and JSONL files on the critical path.
     try:
         from training.few_shot_retriever import preload_examples
         preload_examples()
-        logger.info("✓ Few-shot examples pre-loaded into memory")
+        logger.info("âœ“ Few-shot examples pre-loaded into memory")
     except Exception as _fewshot_err:
-        logger.warning("⚠ Few-shot pre-load failed (will load on first request): %s", _fewshot_err)
+        logger.warning("âš  Few-shot pre-load failed (will load on first request): %s", _fewshot_err)
 
     logger.info("=" * 60)
 
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
+

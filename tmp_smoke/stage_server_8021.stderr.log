@@ -1,0 +1,133 @@
+2026-03-28 00:36:55 | INFO     | nyaymalaw.api | ============================================================
+2026-03-28 00:36:55 | INFO     | nyaymalaw.api | Nyaymalaw API v3.0.0 starting up
+2026-03-28 00:36:55 | INFO     | nyaymalaw.api | ============================================================
+2026-03-28 00:36:55 | INFO     | nyaymalaw.api | Database accessible at C:\Users\rahul\Nyaymalaw-5.0\legal_database\chat_history\app.db
+2026-03-28 00:36:55 | INFO     | nyaymalaw.api | Data root: C:\Users\rahul\Nyaymalaw-5.0\legal_database (BareActs: C:\Users\rahul\Nyaymalaw-5.0\legal_database\raw_data\BareActs)
+2026-03-28 00:36:55 | INFO     | nyaymalaw.api | Vector store at C:\Users\rahul\Nyaymalaw-5.0\legal_database\vector_store (bare_acts: yes, case_summaries: yes)
+2026-03-28 00:36:55 | INFO     | nyaymalaw.api | CORS origins: ['*']
+2026-03-28 00:36:55 | INFO     | training.few_shot_retriever | Loaded 37 few-shot examples from runtime_examples.jsonl
+2026-03-28 00:36:55 | INFO     | services.runtime_warmup | Critical runtime warmup: few-shot examples ready
+2026-03-28 00:36:58 | INFO     | nyaymalaw.api | Critical warmup: fewshot=yes fast_model=yes analysis_model=no elapsed=3.09s
+2026-03-28 00:36:58 | INFO     | services.runtime_warmup | Started runtime warmup thread (startup)
+2026-03-28 00:36:58 | INFO     | nyaymalaw.api | Startup checks complete; targeted runtime warmup launched
+2026-03-28 00:36:58 | INFO     | nyaymalaw.api | ============================================================
+2026-03-28 00:36:58 | INFO     | faiss.loader | Loading faiss with AVX2 support.
+2026-03-28 00:36:58 | INFO     | faiss.loader | Successfully loaded faiss with AVX2 support.
+2026-03-28 00:36:58 | INFO     | retrieval.hybrid_retriever | Preloaded FAISS [act_summaries]: 1705 vectors
+2026-03-28 00:36:58 | INFO     | retrieval.hybrid_retriever | Preloaded chunks [act_summaries]: 1705 chunks
+2026-03-28 00:36:58 | INFO     | retrieval.hybrid_retriever | Preloaded BM25 [act_summaries]: 1705 docs
+2026-03-28 00:36:58 | INFO     | retrieval.hybrid_retriever | Preloaded FAISS [bare_acts]: 80644 vectors
+2026-03-28 00:36:59 | INFO     | retrieval.hybrid_retriever | Preloaded chunks [bare_acts]: 80644 chunks
+2026-03-28 00:37:00 | INFO     | retrieval.hybrid_retriever | Preloaded BM25 [bare_acts]: 80644 docs
+2026-03-28 00:37:00 | INFO     | nyaymalaw.api | GET /health \u2192 200 (1173ms)
+2026-03-28 00:37:00 | INFO     | retrieval.hybrid_retriever | Preloaded FAISS [case_summaries]: 34037 vectors
+2026-03-28 00:37:01 | INFO     | retrieval.hybrid_retriever | Preloaded chunks [case_summaries]: 34037 chunks
+2026-03-28 00:37:02 | INFO     | retrieval.hybrid_retriever | Preloaded BM25 [case_summaries]: 34037 docs
+2026-03-28 00:37:02 | INFO     | retrieval.hybrid_retriever | Interactive index preload complete. Cache has 9 entries.
+2026-03-28 00:37:06 | INFO     | nyaymalaw.api | GET /health \u2192 200 (76ms)
+2026-03-28 00:37:10 | INFO     | retrieval.hybrid_retriever | Loading embedding model 'thenlper/gte-base' on cpu
+2026-03-28 00:37:10 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: thenlper/gte-base
+2026-03-28 00:37:12 | INFO     | retrieval.hybrid_retriever | Native SentenceTransformer load failed; building with explicit mean-pooling for 'thenlper/gte-base'
+2026-03-28 00:37:13 | WARNING  | services.runtime_warmup | Embedding warmup failed: The paging file is too small for this operation to complete. (os error 1455)
+2026-03-28 00:37:15 | WARNING  | services.runtime_warmup | Cross-encoder warmup failed: The paging file is too small for this operation to complete. (os error 1455)
+2026-03-28 00:37:15 | INFO     | retrieval.hybrid_retriever | Loading embedding model 'thenlper/gte-base' on cpu
+2026-03-28 00:37:15 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: thenlper/gte-base
+2026-03-28 00:37:16 | INFO     | retrieval.hybrid_retriever | Native SentenceTransformer load failed; building with explicit mean-pooling for 'thenlper/gte-base'
+2026-03-28 00:37:17 | ERROR    | retrieval.hybrid_retriever | FAISS search failed: The paging file is too small for this operation to complete. (os error 1455)
+2026-03-28 00:37:17 | INFO     | retrieval.hybrid_retriever | Hybrid search: 0 FAISS + 3 BM25 \u2192 3 RRF candidates (pool for re-rank)
+2026-03-28 00:37:18 | ERROR    | retrieval.hybrid_retriever | Cross-encoder re-ranking failed: The paging file is too small for this operation to complete. (os error 1455)
+2026-03-28 00:37:18 | INFO     | retrieval.hybrid_retriever | Loading embedding model 'thenlper/gte-base' on cpu
+2026-03-28 00:37:18 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: thenlper/gte-base
+2026-03-28 00:37:19 | INFO     | retrieval.hybrid_retriever | Native SentenceTransformer load failed; building with explicit mean-pooling for 'thenlper/gte-base'
+2026-03-28 00:37:20 | ERROR    | retrieval.hybrid_retriever | FAISS search failed: The paging file is too small for this operation to complete. (os error 1455)
+2026-03-28 00:37:21 | INFO     | retrieval.hybrid_retriever | Hybrid search: 0 FAISS + 6 BM25 \u2192 6 RRF candidates (pool for re-rank)
+2026-03-28 00:37:21 | INFO     | retrieval.hybrid_retriever | Act pre-filter (profile): BYPASSED — only 0 candidates after filter (< 5 min); proceeding with all 6 candidates. Check act profile coverage for this query.
+2026-03-28 00:37:22 | ERROR    | retrieval.hybrid_retriever | Cross-encoder re-ranking failed: The paging file is too small for this operation to complete. (os error 1455)
+2026-03-28 00:37:22 | INFO     | retrieval.hybrid_retriever | Loading embedding model 'thenlper/gte-base' on cpu
+2026-03-28 00:37:22 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: thenlper/gte-base
+2026-03-28 00:37:23 | INFO     | retrieval.hybrid_retriever | Native SentenceTransformer load failed; building with explicit mean-pooling for 'thenlper/gte-base'
+2026-03-28 00:37:24 | ERROR    | retrieval.hybrid_retriever | FAISS search failed: The paging file is too small for this operation to complete. (os error 1455)
+2026-03-28 00:37:24 | INFO     | retrieval.hybrid_retriever | Hybrid search: 0 FAISS + 8 BM25 \u2192 8 RRF candidates (pool for re-rank)
+2026-03-28 00:37:25 | ERROR    | retrieval.hybrid_retriever | Cross-encoder re-ranking failed: The paging file is too small for this operation to complete. (os error 1455)
+2026-03-28 00:37:25 | INFO     | retrieval.hybrid_retriever | Loading embedding model 'thenlper/gte-base' on cpu
+2026-03-28 00:37:25 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: thenlper/gte-base
+2026-03-28 00:37:26 | INFO     | retrieval.hybrid_retriever | Native SentenceTransformer load failed; building with explicit mean-pooling for 'thenlper/gte-base'
+2026-03-28 00:37:27 | ERROR    | retrieval.hybrid_retriever | FAISS search failed: The paging file is too small for this operation to complete. (os error 1455)
+2026-03-28 00:37:27 | INFO     | retrieval.hybrid_retriever | Hybrid search: 0 FAISS + 4 BM25 \u2192 4 RRF candidates (pool for re-rank)
+2026-03-28 00:37:28 | ERROR    | retrieval.hybrid_retriever | Cross-encoder re-ranking failed: The paging file is too small for this operation to complete. (os error 1455)
+2026-03-28 00:37:28 | INFO     | services.runtime_warmup | Interactive warmup: retrieval fast path primed
+2026-03-28 00:37:53 | WARNING  | llm.ollama_client | Ollama warmup failed for llama3.1:8b: HTTP 500 {"error":"llama runner process has terminated: error loading model: unable to allocate CUDA0 buffer"}
+2026-03-28 00:37:53 | INFO     | services.runtime_warmup | Runtime warmup completed in 55.4 s
+2026-03-28 00:38:10 | INFO     | nyaymalaw.api | POST /submit_case/stream \u2192 200 (12ms)
+2026-03-28 00:38:18 | INFO     | nyaymalaw.api | POST /conversation/continue/stream \u2192 200 (27ms)
+2026-03-28 00:38:22 | INFO     | nyaymalaw.api | POST /conversation/continue/stream \u2192 200 (5ms)
+2026-03-28 00:38:25 | INFO     | services.interactive_chat | Detected fresh case opening inside completed chat; re-entering intake with reset conversation
+2026-03-28 00:38:25 | INFO     | nyaymalaw.api | POST /conversation/continue/stream \u2192 200 (4ms)
+2026-03-28 00:38:29 | INFO     | services.interactive_chat | Detected fresh case opening inside completed chat; re-entering intake with reset conversation
+2026-03-28 00:38:29 | INFO     | nyaymalaw.api | POST /conversation/continue/stream \u2192 200 (7ms)
+2026-03-28 00:38:33 | INFO     | services.interactive_chat | Detected fresh case opening inside completed chat; re-entering intake with reset conversation
+2026-03-28 00:38:33 | INFO     | nyaymalaw.api | POST /conversation/continue/stream \u2192 200 (3ms)
+2026-03-28 00:42:36 | INFO     | nyaymalaw.api | GET /health \u2192 200 (138ms)
+2026-03-28 00:44:11 | INFO     | nyaymalaw.api | POST /submit_case \u2192 200 (3677ms)
+2026-03-28 00:44:14 | INFO     | nyaymalaw.api | POST /conversation/continue \u2192 200 (2945ms)
+2026-03-28 00:44:16 | INFO     | nyaymalaw.api | POST /conversation/continue \u2192 200 (2007ms)
+2026-03-28 00:44:17 | INFO     | services.response_generator_v2 | Expanded query(s): compensation for personal injury
+2026-03-28 00:44:17 | INFO     | services.response_generator_v2 | Bare-act query builder [d1]: legal_nature=mixed queries=['I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medical expenses, lost in', 'I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medical expenses, lost in', 'I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medical expenses, lost in']
+2026-03-28 00:44:17 | INFO     | retrieval.hybrid_retriever | Loading embedding model 'thenlper/gte-base' on cpu
+2026-03-28 00:44:17 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: thenlper/gte-base
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  2.48it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  2.37it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  1.10it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  1.08it/s]
+2026-03-28 00:44:20 | INFO     | retrieval.hybrid_retriever | Hybrid search: 3 FAISS + 3 BM25 \u2192 5 RRF candidates (pool for re-rank)
+2026-03-28 00:44:20 | INFO     | retrieval.hybrid_retriever | Cross-encoder loaded on CPU
+2026-03-28 00:44:21 | INFO     | retrieval.hybrid_retriever | Re-ranked to 1 results (top score: 1.388)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  1.16it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  1.12it/s]
+2026-03-28 00:44:32 | INFO     | retrieval.hybrid_retriever | Hybrid search: 6 FAISS + 6 BM25 \u2192 8 RRF candidates (pool for re-rank)
+2026-03-28 00:44:32 | INFO     | retrieval.hybrid_retriever | Act pre-filter (profile): BYPASSED — only 0 candidates after filter (< 5 min); proceeding with all 8 candidates. Check act profile coverage for this query.
+2026-03-28 00:44:33 | INFO     | retrieval.hybrid_retriever | Re-ranked to 4 results (top score: 2.577)
+2026-03-28 00:44:33 | ERROR    | services.interactive_chat | Response generation failed: '\n  "summary_text"'
+Traceback (most recent call last):
+  File "C:\Users\rahul\Nyaymalaw-5.0\services\interactive_chat.py", line 639, in process_chat
+    resp = generate_response(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rahul\Nyaymalaw-5.0\services\response_generator_v2.py", line 3079, in generate_response_v2
+    explanation, formatted_bare = _generate_bare_act_stage_text(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rahul\Nyaymalaw-5.0\services\response_generator_v2.py", line 3663, in _generate_bare_act_stage_text
+    prompt = BARE_ACT_STAGE_SUMMARY_PROMPT.format(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: '\n  "summary_text"'
+2026-03-28 00:44:33 | INFO     | nyaymalaw.api | POST /conversation/continue \u2192 200 (17479ms)
+2026-03-28 00:44:34 | INFO     | nyaymalaw.api | POST /conversation/continue \u2192 422 (18ms)
+2026-03-28 00:47:03 | INFO     | nyaymalaw.api | POST /submit_case \u2192 200 (4617ms)
+2026-03-28 00:47:08 | INFO     | nyaymalaw.api | POST /conversation/continue \u2192 200 (4956ms)
+2026-03-28 00:47:12 | INFO     | nyaymalaw.api | POST /conversation/continue \u2192 200 (3504ms)
+2026-03-28 00:47:15 | INFO     | services.response_generator_v2 | Expanded query(s): Section 166 of Motor Vehicles Act 1988
+2026-03-28 00:47:15 | INFO     | services.response_generator_v2 | Bare-act query builder [d1]: legal_nature=mixed queries=['I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medical expenses, lost in', 'I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medical expenses, lost in', 'I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medical expenses, lost in']
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  1.16it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  1.14it/s]
+2026-03-28 00:47:16 | INFO     | retrieval.hybrid_retriever | Hybrid search: 3 FAISS + 3 BM25 \u2192 5 RRF candidates (pool for re-rank)
+2026-03-28 00:47:16 | INFO     | retrieval.hybrid_retriever | Re-ranked to 1 results (top score: 1.388)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  1.12it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  1.10it/s]
+2026-03-28 00:47:26 | INFO     | retrieval.hybrid_retriever | Hybrid search: 6 FAISS + 6 BM25 \u2192 8 RRF candidates (pool for re-rank)
+2026-03-28 00:47:27 | INFO     | retrieval.hybrid_retriever | Act pre-filter (profile): BYPASSED — only 0 candidates after filter (< 5 min); proceeding with all 8 candidates. Check act profile coverage for this query.
+2026-03-28 00:47:28 | INFO     | retrieval.hybrid_retriever | Re-ranked to 4 results (top score: 2.577)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  1.96it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  1.96it/s]
+2026-03-28 00:47:35 | INFO     | retrieval.hybrid_retriever | Hybrid search: 4 FAISS + 4 BM25 \u2192 7 RRF candidates (pool for re-rank)
+2026-03-28 00:47:37 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  2.73it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  2.61it/s]
+2026-03-28 00:47:38 | INFO     | retrieval.hybrid_retriever | Hybrid search: 4 FAISS + 4 BM25 \u2192 7 RRF candidates (pool for re-rank)
+2026-03-28 00:47:39 | INFO     | retrieval.hybrid_retriever | Re-ranked to 3 results (top score: 4.320)
+2026-03-28 00:47:39 | INFO     | services.response_generator_v2 | Matched 2 case laws to 4 bare act sections via dispute-tag + text matching (0 cross-encoder calls; replaced O(sections×case_laws) scoring)
+2026-03-28 00:47:39 | WARNING  | services.response_generator_v2 | Blocked unsupported legal citations in generated output; returning local-only fallback
+2026-03-28 00:47:39 | WARNING  | nyaymalaw.api | Feedback log failed (non-critical): Excel feedback log not found: C:\Users\rahul\Nyaymalaw-5.0\Nyaymalaw_Feedback_Log_v3.xlsx
+2026-03-28 00:47:39 | INFO     | nyaymalaw.api | POST /conversation/continue \u2192 200 (27499ms)
+2026-03-28 00:47:42 | INFO     | nyaymalaw.api | POST /conversation/continue \u2192 200 (2817ms)
+2026-03-28 00:49:33 | INFO     | services.response_generator_v2 | Expanded query(s): car accident compensation
+2026-03-28 00:49:33 | INFO     | services.response_generator_v2 | Bare-act query builder [d1]: legal_nature=mixed queries=['I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medical expenses, lost in', 'I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medical expenses, lost in', 'I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medical expenses, lost in']
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  1.21it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  1.17it/s]
+2026-03-28 00:49:34 | INFO     | retrieval.hybrid_retriever | Hybrid search: 3 FAISS + 3 BM25 \u2192 5 RRF candidates (pool for re-rank)
+2026-03-28 00:49:35 | INFO     | retrieval.hybrid_retriever | Re-ranked to 1 results (top score: 1.388)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  2.40it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  2.40it/s]
+2026-03-28 00:49:44 | INFO     | retrieval.hybrid_retriever | Hybrid search: 6 FAISS + 6 BM25 \u2192 8 RRF candidates (pool for re-rank)
+2026-03-28 00:49:44 | INFO     | retrieval.hybrid_retriever | Act pre-filter (profile): BYPASSED — only 0 candidates after filter (< 5 min); proceeding with all 8 candidates. Check act profile coverage for this query.
+2026-03-28 00:49:46 | INFO     | retrieval.hybrid_retriever | Re-ranked to 4 results (top score: 2.577)
+2026-03-28 00:49:46 | INFO     | nyaymalaw.api | POST /chat \u2192 200 (13960ms)

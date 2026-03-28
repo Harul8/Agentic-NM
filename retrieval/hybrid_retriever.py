@@ -1255,6 +1255,23 @@ def _binding_authority_from_court(court: str) -> str:
     return "unknown"
 
 
+def _extract_query_act_mentions(query: str) -> frozenset[str]:
+    """
+    Extract explicit Act/Code mentions from the query so retrieval can honor
+    user- or model-specified statutes without hardcoding any domain.
+    """
+    mentions = re.findall(
+        r"\b([A-Z][A-Za-z0-9,&(). -]{0,100}\b(?:Act|Code|Rules|Regulation(?:s)?|Procedure)\b(?:,?\s*\d{4})?)",
+        query or "",
+    )
+    cleaned = []
+    for item in mentions:
+        value = " ".join((item or "").split()).strip(" ,.;:-()")
+        if value:
+            cleaned.append(value)
+    return frozenset(cleaned)
+
+
 def search_bare_acts_fast(query: str, top_k: int = 6) -> list:
     """
     Lower-latency bare-act search for interactive chat.
@@ -1271,7 +1288,8 @@ def search_bare_acts_fast(query: str, top_k: int = 6) -> list:
         BARE_BM25_INDEX,
     )
 
-    allowed_acts = None
+    explicit_query_acts = _extract_query_act_mentions(query)
+    allowed_acts = explicit_query_acts or None
     if os.path.isfile(ACT_SUMMARY_INDEX_V2) and os.path.isfile(ACT_SUMMARY_CHUNKS_V2):
         try:
             act_results = hybrid_search(
@@ -1288,7 +1306,9 @@ def search_bare_acts_fast(query: str, top_k: int = 6) -> list:
                 (r.get("act_name") or "").strip()
                 for r in act_results
                 if (r.get("act_name") or "").strip()
-            ) or None
+            ) or allowed_acts
+            if explicit_query_acts:
+                allowed_acts = explicit_query_acts
         except Exception as e:
             logger.debug("Fast act-summary prefilter failed: %s", e)
 
@@ -1303,19 +1323,35 @@ def search_bare_acts_fast(query: str, top_k: int = 6) -> list:
         min_rerank_score=0.0,
         allowed_acts=allowed_acts,
     )
-    if not results and allowed_acts:
-        logger.debug("Fast bare-act search returned no sections with act prefilter; retrying without act filter")
-        results = hybrid_search(
-            query=query,
-            faiss_index_path=BARE_INDEX_V2,
-            chunks_path=BARE_CHUNKS_V2,
-            bm25_index_path=BARE_BM25_INDEX,
-            faiss_top_k=6,
-            bm25_top_k=6,
-            rerank_top_k=min(top_k, 4),
-            min_rerank_score=0.0,
-            allowed_acts=None,
-        )
+    if allowed_acts:
+        best_score = max((float(r.get("_rerank_score", 0) or 0) for r in results), default=-999.0)
+        needs_broaden = not results or len(results) < min(2, max(1, top_k)) or best_score < 0.12
+        if needs_broaden:
+            logger.debug("Fast bare-act search looks sparse with act prefilter; retrying without act filter")
+            broader = hybrid_search(
+                query=query,
+                faiss_index_path=BARE_INDEX_V2,
+                chunks_path=BARE_CHUNKS_V2,
+                bm25_index_path=BARE_BM25_INDEX,
+                faiss_top_k=8,
+                bm25_top_k=8,
+                rerank_top_k=max(min(top_k, 5), 4),
+                min_rerank_score=0.0,
+                allowed_acts=None,
+            )
+            merged: dict[tuple[str, str], dict] = {}
+            for item in list(results) + list(broader):
+                key = (
+                    (item.get("act_name") or "").strip().lower(),
+                    (item.get("section_number") or "").strip().lower(),
+                )
+                if (item.get("_rerank_score", 0) or 0) > (merged.get(key) or {}).get("_rerank_score", -999):
+                    merged[key] = item
+            results = sorted(
+                merged.values(),
+                key=lambda item: float(item.get("_rerank_score", 0) or 0),
+                reverse=True,
+            )[: max(top_k, 4)]
     for r in results:
         r["source_tag"] = "LOCAL_DB"
         r["retrieval_profile"] = "interactive_fast"
@@ -1346,6 +1382,163 @@ def search_case_summaries_fast(query: str, top_k: int = 4) -> list:
         r["source_tag"] = "LOCAL_DB"
         r["retrieval_profile"] = "interactive_fast"
         r["is_case_summary"] = True
+        r["binding_authority"] = r.get("binding_authority") or _binding_authority_from_court(r.get("court"))
+        if not r.get("text"):
+            r["text"] = (r.get("full_text") or "").strip()
+    return results
+
+
+def search_bare_acts_runtime(query: str, top_k: int = 8, allow_legacy_fallback: bool = True) -> list:
+    """
+    Runtime rescue search for interactive chat.
+
+    This stays local-first but broadens more gracefully than the benchmark-style
+    auto path: direct v2 search with slightly wider candidate pools, then legacy
+    local fallback only if v2 yields nothing.
+    """
+    from config import BARE_INDEX_V2, BARE_CHUNKS_V2, BARE_BM25_INDEX
+
+    normalized = normalize_legal_query(query)
+    explicit_query_acts = _extract_query_act_mentions(normalized)
+    results: list = []
+    if os.path.isfile(BARE_INDEX_V2) and os.path.isfile(BARE_CHUNKS_V2):
+        results = hybrid_search(
+            query=normalized,
+            faiss_index_path=BARE_INDEX_V2,
+            chunks_path=BARE_CHUNKS_V2,
+            bm25_index_path=BARE_BM25_INDEX,
+            faiss_top_k=10,
+            bm25_top_k=10,
+            rerank_top_k=min(max(top_k, 6), 8),
+            min_rerank_score=0.0,
+            allowed_acts=explicit_query_acts or None,
+        )
+        if explicit_query_acts and (not results or len(results) < min(2, max(1, top_k // 2))):
+            broader = hybrid_search(
+                query=normalized,
+                faiss_index_path=BARE_INDEX_V2,
+                chunks_path=BARE_CHUNKS_V2,
+                bm25_index_path=BARE_BM25_INDEX,
+                faiss_top_k=10,
+                bm25_top_k=10,
+                rerank_top_k=min(max(top_k, 6), 8),
+                min_rerank_score=0.0,
+                allowed_acts=None,
+            )
+            merged: dict[tuple[str, str], dict] = {}
+            for item in list(results) + list(broader):
+                key = (
+                    (item.get("act_name") or "").strip().lower(),
+                    (item.get("section_number") or "").strip().lower(),
+                )
+                if (item.get("_rerank_score", 0) or 0) > (merged.get(key) or {}).get("_rerank_score", -999):
+                    merged[key] = item
+            results = sorted(
+                merged.values(),
+                key=lambda item: float(item.get("_rerank_score", 0) or 0),
+                reverse=True,
+            )[: max(top_k, 6)]
+    best_score = max((float(r.get("_rerank_score", 0) or 0) for r in results), default=-999.0)
+    if allow_legacy_fallback and (not results or len(results) < min(3, max(1, top_k // 2)) or best_score < 0.08):
+        logger.info("Runtime bare-act rescue: broadening to legacy local index for query '%s'", normalized[:120])
+        legacy_results = search_bare_acts_legacy(normalized, top_k=max(top_k * 2, 12), min_sim=0.25)
+        merged: dict[tuple[str, str], dict] = {}
+        for item in list(results) + list(legacy_results):
+            key = (
+                (item.get("act_name") or "").strip().lower(),
+                (item.get("section_number") or "").strip().lower(),
+            )
+            if (item.get("_rerank_score", 0) or 0) > (merged.get(key) or {}).get("_rerank_score", -999):
+                merged[key] = item
+        results = sorted(
+            merged.values(),
+            key=lambda item: float(item.get("_rerank_score", 0) or 0),
+            reverse=True,
+        )[: max(top_k, 6)]
+    for r in results:
+        r["source_tag"] = "LOCAL_DB"
+        r["retrieval_profile"] = "interactive_runtime_rescue"
+    return results
+
+
+def search_case_laws_runtime(query: str, top_k: int = 8, allow_legacy_fallback: bool = True) -> list:
+    """
+    Runtime rescue search for interactive case-law retrieval.
+
+    Uses a broader local summary/full-text search path and only falls back to the
+    legacy local index when the v2 runtime path returns nothing.
+    """
+    from config import (
+        CASE_SUMMARY_INDEX_V2,
+        CASE_SUMMARY_CHUNKS_V2,
+        CASE_SUMMARY_BM25_INDEX,
+        CASE_INDEX_V2,
+        CASE_CHUNKS_V2,
+        CASE_BM25_INDEX,
+    )
+
+    normalized = normalize_legal_query(query)
+    results: list = []
+    summary_results: list = []
+    if os.path.isfile(CASE_SUMMARY_INDEX_V2) and os.path.isfile(CASE_SUMMARY_CHUNKS_V2):
+        summary_results = hybrid_search(
+            query=normalized,
+            faiss_index_path=CASE_SUMMARY_INDEX_V2,
+            chunks_path=CASE_SUMMARY_CHUNKS_V2,
+            bm25_index_path=CASE_SUMMARY_BM25_INDEX,
+            faiss_top_k=8,
+            bm25_top_k=8,
+            rerank_top_k=min(max(top_k, 6), 8),
+            min_rerank_score=0.0,
+        )
+        for r in summary_results:
+            r["is_case_summary"] = True
+            r["binding_authority"] = r.get("binding_authority") or _binding_authority_from_court(r.get("court"))
+            if not r.get("text"):
+                r["text"] = (r.get("full_text") or "").strip()
+    results = list(summary_results)
+    best_summary_score = max((float(r.get("_rerank_score", 0) or 0) for r in summary_results), default=-999.0)
+    needs_full_text = not summary_results or len(summary_results) < min(2, max(1, top_k // 2)) or best_summary_score < 0.08
+    if needs_full_text and os.path.isfile(CASE_INDEX_V2) and os.path.isfile(CASE_CHUNKS_V2):
+        full_text_results = hybrid_search(
+            query=normalized,
+            faiss_index_path=CASE_INDEX_V2,
+            chunks_path=CASE_CHUNKS_V2,
+            bm25_index_path=CASE_BM25_INDEX,
+            faiss_top_k=10,
+            bm25_top_k=10,
+            rerank_top_k=min(max(top_k, 6), 8),
+            min_rerank_score=0.0,
+            allowed_cases=None,
+        )
+        merged: dict[str, dict] = {}
+        for item in list(summary_results) + list(full_text_results):
+            key = item.get("_chunk_key") or (
+                (item.get("case_name") or "").strip().lower() + "|" + (item.get("court") or "").strip().lower()
+            )
+            if (item.get("_rerank_score", 0) or 0) > (merged.get(key) or {}).get("_rerank_score", -999):
+                merged[key] = item
+        results = list(merged.values())
+    results = [r for r in results if _is_final_judgment_chunk(r)]
+    best_case_score = max((float(r.get("_rerank_score", 0) or 0) for r in results), default=-999.0)
+    if allow_legacy_fallback and (not results or len(results) < min(2, max(1, top_k // 2)) or best_case_score < 0.08):
+        logger.info("Runtime case-law rescue: broadening to legacy local index for query '%s'", normalized[:120])
+        legacy_results = [r for r in search_case_laws_legacy(normalized, top_k=max(top_k * 2, 12), min_sim=0.25) if _is_final_judgment_chunk(r)]
+        merged: dict[str, dict] = {}
+        for item in list(results) + list(legacy_results):
+            key = item.get("_chunk_key") or (
+                (item.get("case_name") or "").strip().lower() + "|" + (item.get("court") or "").strip().lower()
+            )
+            if (item.get("_rerank_score", 0) or 0) > (merged.get(key) or {}).get("_rerank_score", -999):
+                merged[key] = item
+        results = sorted(
+            merged.values(),
+            key=lambda item: float(item.get("_rerank_score", 0) or 0),
+            reverse=True,
+        )[: max(top_k, 6)]
+    for r in results:
+        r["source_tag"] = "LOCAL_DB"
+        r["retrieval_profile"] = "interactive_runtime_rescue"
         r["binding_authority"] = r.get("binding_authority") or _binding_authority_from_court(r.get("court"))
         if not r.get("text"):
             r["text"] = (r.get("full_text") or "").strip()

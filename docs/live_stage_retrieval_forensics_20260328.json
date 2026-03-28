@@ -1,0 +1,1190 @@
+[
+  {
+    "name": "Motor accident compensation",
+    "turns": [
+      {
+        "kind": "submit_case",
+        "user": "I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medical expenses, lost income, and bike damage.",
+        "total_s": 1.83,
+        "first_step_s": 0.015,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.015,
+            "message": "Reviewing the facts you shared...",
+            "icon": "⚡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "I am sorry you are dealing with this. The next details will help me assess immediate risk, available support, and what can be properly supported on the record. What steps have you already taken with police, medical care, family support, or any lawyer, and has any police complaint, medical examination, or other formal step already started after the incident?",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B"
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "I have the FIR number, wound certificate, discharge summary, X-ray reports, bike photographs, repair estimate, and two witnesses. I was admitted for two days and I have not filed a compensation claim yet.",
+        "total_s": 2.355,
+        "first_step_s": 0.023,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.023,
+            "message": "Starting analysis of your latest message...",
+            "icon": "⚡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "I have enough to begin the legal analysis. If you want, you can add any one last important fact now. Otherwise, just say 'proceed' and I will prepare the full legal opinion from the local legal database.",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B"
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "The other driver had insurance, I have salary slips and bank statements to show lost income, and I also have medicine bills and follow-up records.",
+        "total_s": 120.492,
+        "first_step_s": 0.009,
+        "first_token_s": 2.706,
+        "steps": [
+          {
+            "t": 0.009,
+            "message": "Starting analysis of your latest message...",
+            "icon": "⚡"
+          },
+          {
+            "t": 2.702,
+            "message": "Analysing your legal situation...",
+            "icon": "🔍"
+          },
+          {
+            "t": 2.705,
+            "message": "Preparing a fast grounded opinion from local materials...",
+            "icon": "⚡"
+          },
+          {
+            "t": 2.711,
+            "message": "[d1] Identifying legal provisions...",
+            "icon": "📖"
+          },
+          {
+            "t": 15.785,
+            "message": "[d1] No local bare act sections found",
+            "icon": "⚠️"
+          },
+          {
+            "t": 15.786,
+            "message": "[d1] Searching for judicial precedents...",
+            "icon": "⚖️"
+          },
+          {
+            "t": 120.364,
+            "message": "[d1] No judgements found in local database",
+            "icon": "ℹ️"
+          },
+          {
+            "t": 120.365,
+            "message": "Now I have everything I need — composing your legal analysis...",
+            "icon": "💡"
+          }
+        ],
+        "token_preview": "Reviewing the local statutory provisions and the strongest precedents for your facts.I searched the local vector store only and found no relevant bare act provisions or case laws. Try rephrasing with specific section numbers, Act names, or a different legal angle.",
+        "done": {
+          "status": "done",
+          "response_type": "legal_opinion",
+          "opinion_text": "I searched the local vector store only and found no relevant bare act provisions or case laws. Try rephrasing with specific section numbers, Act names, or a different legal angle.",
+          "bare_acts": [],
+          "case_laws": [],
+          "retrieved": [],
+          "progress": {
+            "start_time": "2026-03-28T06:36:10.232673Z",
+            "elapsed_seconds": 117.81,
+            "groups": [
+              {
+                "name": "Dispute Analysis",
+                "description": "Identifying distinct dispute components",
+                "steps": [
+                  {
+                    "timestamp": 0.03,
+                    "message": "Using fast interactive local profile",
+                    "metadata": {
+                      "disputes": 1
+                    }
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Research",
+                "description": "Retrieving bare acts and case laws for 1 dispute(s)",
+                "steps": [
+                  {
+                    "timestamp": 117.7,
+                    "message": "[d1] Retrieved 0 sections, 0 judgements",
+                    "metadata": {
+                      "dispute": "I was injured in a road accident six days ago when a car hit"
+                    }
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Response",
+                "description": "Formatting results and generating legal opinion",
+                "steps": [
+                  {
+                    "timestamp": 117.7,
+                    "message": "Formatting sections and matching case laws to bare acts...",
+                    "metadata": {}
+                  },
+                  {
+                    "timestamp": 117.7,
+                    "message": "Generating legal opinion...",
+                    "metadata": {}
+                  },
+                  {
+                    "timestamp": 117.81,
+                    "message": "Calling Llama 3.1 8B model, GPU: NVIDIA GeForce RTX 4060 Laptop GPU",
+                    "metadata": {}
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Debug pipeline",
+                "description": "Intermediate retrieval stages per dispute (acts, sections, case laws)",
+                "steps": [
+                  {
+                    "timestamp": 117.81,
+                    "message": "[d1] Dispute: I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medic",
+                    "metadata": {}
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              }
+            ]
+          },
+          "model_used": "Llama 3.2 3B"
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "proceed",
+        "total_s": 12.182,
+        "first_step_s": 0.049,
+        "first_token_s": 2.8,
+        "steps": [
+          {
+            "t": 0.049,
+            "message": "Starting analysis of your latest message...",
+            "icon": "⚡"
+          },
+          {
+            "t": 2.797,
+            "message": "Analysing your legal situation...",
+            "icon": "🔍"
+          },
+          {
+            "t": 2.799,
+            "message": "Preparing a fast grounded opinion from local materials...",
+            "icon": "⚡"
+          },
+          {
+            "t": 2.803,
+            "message": "[d1] Identifying legal provisions...",
+            "icon": "📖"
+          },
+          {
+            "t": 8.947,
+            "message": "[d1] Found 4 sections — The Motor Vehicles Act, 1988",
+            "icon": "✅"
+          },
+          {
+            "t": 8.95,
+            "message": "[d1] Searching for judicial precedents...",
+            "icon": "⚖️"
+          },
+          {
+            "t": 12.103,
+            "message": "[d1] Found 3 judgements (including 2 Supreme Court)",
+            "icon": "✅"
+          },
+          {
+            "t": 12.106,
+            "message": "Now I have everything I need — composing your legal analysis...",
+            "icon": "💡"
+          }
+        ],
+        "token_preview": "Reviewing the local statutory provisions and the strongest precedents for your facts.I found grounded statutory provisions and I am checking the closest precedents against them.I now have grounded precedent support as well and I am drafting the opinion.On the facts presently shared, the immediate issue is how the locally retrieved statutory materials and precedents bear on I was injured in a road accident six days ago when a car hit my motorcycle near ... The other driver had insurance, I have s",
+        "done": {
+          "status": "done",
+          "response_type": "legal_opinion",
+          "opinion_text": "On the facts presently shared, the closest grounded starting point in the local materials is the statutory position that appears most relevant to I was injured in a road accident six days ago when a car hit my motorcycle near ... The other driver had insurance, I have salary slips and bank statements to show lost income, and I also have medicine bills.\n\nThe Motor Vehicles Act, 1988, Section 161 (The Motor Vehicles Act, 1988 — Section 161 (Special provisions as t o compensation in case of hit and run motor accident)) points to Special provisions as t o compensation in case of hit and run motor accident. - 161. (1) Notwithstanding anything contained in any other law for the time being in force or any instrument having the force of law, the Cent The Motor Vehicles Act, 1988, Section 164B (The Motor Vehicles Act, 1988 — Section 164B (Motor Vehicle Accident Fund)) points to Motor Vehicle Accident Fund. - (1) The Central Government shall constitute a Fund to be called the Motor Vehicle Accident Fund and thereto shall be credited -  payment of a nature notified and approved by the Central Gov The Motor Vehicles Act, 1988, Section 164 (The Motor Vehicles Act, 1988 — Section 164 (Payment of compensation in case of death or grevious hurt, etc)) points to 164. Payment of compensation in case of death or grevious hurt, etc. - (1) Notwithstanding anything contained in this Act or in any other law for the time being in force or instrument having the force of law, the owner o\n\nThe next step is to test these local provisions against the notice position, possession facts, documents, and timeline already described so the opinion stays tightly grounded.",
+          "bare_acts": [
+            {
+              "source": "BareActs\\Union of India\\1989_0.txt",
+              "text": "Special provisions as t o compensation in case of hit and run motor accident. - 161. (1) Notwithstanding anything contained in any other law for the time being in force or any instrument having the force of law, the Central Government shall provide for paying in accordance with the provisions of this Act and the scheme made under sub-section (3), compensation in respect of the death of, or grievous hurt to, persons resulting from hit and run motor accidents.\n\nSubject to the provisions of this Act and the scheme made under sub-section (3), there shall be paid as compensation, -\n\nin respect of the death of any person resulting from a hit and run motor accident, a fixed sum of two lakh rupees or such higher amount as may be prescribed by the Central Government;\n\nin respect of grievous hurt to any person resulting from a hit and run motor accident, a fixed sum of fifty thousand rupees or such higher amount as may be prescribed by the Central Government.",
+              "act_name": "The Motor Vehicles Act, 1988",
+              "section_number": "161",
+              "title": "The Motor Vehicles Act, 1988 — Section 161 (Special provisions as t o compensation in case of hit and run motor accident)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Union%20of%20India/1989_0.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 4.924359321594238,
+              "_dispute_id": "d1",
+              "related_case_laws": [
+                {
+                  "source": "CaseLaws\\Supreme Court\\1988\\SC_1988_A_SECRETARY_REGIONAL_TRANSPORT_VS_DP_SHARMA_AND_OTHERS.txt",
+                  "text": "Case: A Secretary, Regional Transport ... vs D.P. Sharma And Others Court: Supreme Court of India Year: 1988 Cited by: 25 Issues: It is difficult to interpret clauses (i) and (ii) of section 3(g) as contemplating the issuance of a temporary permit or a special permit. as referred to therein before the coming into force of the Act. Merely because of the use of the words has been in clauses (i) and (ii) of section 3(g) , such an interpretation is n",
+                  "case_name": "A Secretary, Regional Transport ... vs D.P. Sharma And Others",
+                  "title": "A Secretary, Regional Transport ... vs D.P. Sharma And Others (Supreme Court of India, 1988)",
+                  "court": "Supreme Court of India",
+                  "year": "1988",
+                  "citation": "",
+                  "binding_authority": "supreme_court",
+                  "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/CaseLaws/CaseLaws/Supreme%20Court/1988/SC_1988_A_SECRETARY_REGIONAL_TRANSPORT_VS_DP_SHARMA_AND_OTHERS.txt",
+                  "source_tag": "LOCAL_DB",
+                  "signature": null,
+                  "_rerank_score": 4.309089660644531,
+                  "_dispute_id": "d1"
+                },
+                {
+                  "source": "CaseLaws\\Supreme Court\\2007\\SC_2007_GOTTUMUKKALA_APPALA_NARASIMHA_RAJU_VS_NATIONAL_INSURANCE_CO_LTD_ANR.txt",
+                  "text": "Case: Gottumukkala Appala Narasimha Raju & ... vs National Insurance Co. Ltd. & Anr Court: Supreme Court of India Year: 2007 Cited by: 59 Issues: CASE NO.: Appeal (civil) 856 of 2007 PETITIONER: Gottumukkala Appala Narasimha Raju & Ors RESPONDENT: National Insurance Co. Ltd. & Anr DATE OF JUDGMENT: 20/02/2007 BENCH: S.B. Sinha & Markandey Katju JUDGMENT: J U D G M E N T (Arising out of S.L.P. (C) No. 9771 of 2004) S.B. Sinha, J. Leave granted. In",
+                  "case_name": "Gottumukkala Appala Narasimha Raju & ... vs National Insurance Co. Ltd. & Anr",
+                  "title": "Gottumukkala Appala Narasimha Raju & ... vs National Insurance Co. Ltd. & Anr (Supreme Court of India, 2007)",
+                  "court": "Supreme Court of India",
+                  "year": "2007",
+                  "citation": "",
+                  "binding_authority": "supreme_court",
+                  "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/CaseLaws/CaseLaws/Supreme%20Court/2007/SC_2007_GOTTUMUKKALA_APPALA_NARASIMHA_RAJU_VS_NATIONAL_INSURANCE_CO_LTD_ANR.txt",
+                  "source_tag": "LOCAL_DB",
+                  "signature": null,
+                  "_rerank_score": 4.3014219284057615,
+                  "_dispute_id": "d1"
+                }
+              ]
+            },
+            {
+              "source": "BareActs\\Union of India\\1989_0.txt",
+              "text": "Motor Vehicle Accident Fund. - (1) The Central Government shall constitute a Fund to be called the Motor Vehicle Accident Fund and thereto shall be credited -\n\npayment of a nature notified and approved by the Central Government;\n\nany grant or loan made to the Fund by the Central Government;\n\nthe balance of the Fund created under scheme framed under section 163, as it stood immediately before the commencement of the Motor Vehicles (Amendment) Act, 2019; and\n\nany other source of income as may be prescribed by the Central Government.\n\nThe Fund shall be constituted for the purpose of providing compulsory insurance cover to all road users in the territory of India.\n\ntreatment of the persons injured in road accidents in accordance with the scheme framed by the Central Government under section 162;\n\ncompensation to representatives of a person who died in hit and run motor accident in accordance with schemes framed under section 161;\n\ncompensation to a person grievously hurt in a hit and run motor accident in accordance with schemes framed under section 161; and\n\ncompensation to such persons as may be prescribed by the Central Government.",
+              "act_name": "The Motor Vehicles Act, 1988",
+              "section_number": "164B",
+              "title": "The Motor Vehicles Act, 1988 — Section 164B (Motor Vehicle Accident Fund)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Union%20of%20India/1989_0.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 3.667416572570801,
+              "_dispute_id": "d1",
+              "related_case_laws": []
+            },
+            {
+              "source": "BareActs\\Union of India\\1989_0.txt",
+              "text": "164.\nPayment of compensation in case of death or grevious hurt, etc. - (1) Notwithstanding anything contained in this Act or in any other law for the time being in force or instrument having the force of law, the owner of the motor vehicle or the authorised insurer shall be liable to pay in the case of death or grievous hurt due to any accident arising out of the use of motor vehicle, a compensation, of a sum of five lakh rupees in case of death or of two and a half lakh rupees in case of grievous hurt to the legal heirs or the victim, as the case may be.\n(2)\nIn any claim for compensation under sub-section (1), the claimant shall not be required to plead or establish that the death or grievous hurt in respect of which the claim has been made was due to any wrongful act or neglect or default of the owner of the vehicle or of the vehicle concerned or of any other person.\n(3)\nWhere, in respect of death or grievous hurt due to an accident arising out of the use of motor vehicle, compensation has been paid under any other law for the time being in force, such amount of compensation shall be reduced from the amount of compensation payable under this section.",
+              "act_name": "The Motor Vehicles Act, 1988",
+              "section_number": "164",
+              "title": "The Motor Vehicles Act, 1988 — Section 164 (Payment of compensation in case of death or grevious hurt, etc)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Union%20of%20India/1989_0.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 2.7859253883361816,
+              "_dispute_id": "d1",
+              "related_case_laws": []
+            },
+            {
+              "source": "BareActs\\Union of India\\1989_0.txt",
+              "text": "[(5) Notwithstanding anything in this Act or any other law for the time being in force, the right of a person to claim compensation for injury in an accident shall, upon the death of the person injured, survive to his legal representatives, irrespective of whether the cause of death is relatable to or had any nexus with the injury or not.]",
+              "act_name": "The Motor Vehicles Act, 1988",
+              "section_number": "166",
+              "title": "The Motor Vehicles Act, 1988 — Section 166 (Application for compensation)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Union%20of%20India/1989_0.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 2.200019359588623,
+              "_dispute_id": "d1",
+              "related_case_laws": []
+            }
+          ],
+          "case_laws": [],
+          "retrieved": [
+            {
+              "source": "BareActs\\Union of India\\1989_0.txt",
+              "text": "Special provisions as t o compensation in case of hit and run motor accident. - 161. (1) Notwithstanding anything contained in any other law for the time being in force or any instrument having the force of law, the Central Government shall provide for paying in accordance with the provisions of this Act and the scheme made under sub-section (3), compensation in respect of the death of, or grievous hurt to, persons resulting from hit and run motor accidents.\n\nSubject to the provisions of this Act and the scheme made under sub-section (3), there shall be paid as compensation, -\n\nin respect of the death of any person resulting from a hit and run motor accident, a fixed sum of two lakh rupees or such higher amount as may be prescribed by the Central Government;\n\nin respect of grievous hurt to any person resulting from a hit and run motor accident, a fixed sum of fifty thousand rupees or such higher amount as may be prescribed by the Central Government.",
+              "act_name": "The Motor Vehicles Act, 1988",
+              "section_number": "161",
+              "title": "The Motor Vehicles Act, 1988 — Section 161 (Special provisions as t o compensation in case of hit and run motor accident)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Union%20of%20India/1989_0.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 4.924359321594238,
+              "_dispute_id": "d1",
+              "related_case_laws": [
+                {
+                  "source": "CaseLaws\\Supreme Court\\1988\\SC_1988_A_SECRETARY_REGIONAL_TRANSPORT_VS_DP_SHARMA_AND_OTHERS.txt",
+                  "text": "Case: A Secretary, Regional Transport ... vs D.P. Sharma And Others Court: Supreme Court of India Year: 1988 Cited by: 25 Issues: It is difficult to interpret clauses (i) and (ii) of section 3(g) as contemplating the issuance of a temporary permit or a special permit. as referred to therein before the coming into force of the Act. Merely because of the use of the words has been in clauses (i) and (ii) of section 3(g) , such an interpretation is n",
+                  "case_name": "A Secretary, Regional Transport ... vs D.P. Sharma And Others",
+                  "title": "A Secretary, Regional Transport ... vs D.P. Sharma And Others (Supreme Court of India, 1988)",
+                  "court": "Supreme Court of India",
+                  "year": "1988",
+                  "citation": "",
+                  "binding_authority": "supreme_court",
+                  "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/CaseLaws/CaseLaws/Supreme%20Court/1988/SC_1988_A_SECRETARY_REGIONAL_TRANSPORT_VS_DP_SHARMA_AND_OTHERS.txt",
+                  "source_tag": "LOCAL_DB",
+                  "signature": null,
+                  "_rerank_score": 4.309089660644531,
+                  "_dispute_id": "d1"
+                },
+                {
+                  "source": "CaseLaws\\Supreme Court\\2007\\SC_2007_GOTTUMUKKALA_APPALA_NARASIMHA_RAJU_VS_NATIONAL_INSURANCE_CO_LTD_ANR.txt",
+                  "text": "Case: Gottumukkala Appala Narasimha Raju & ... vs National Insurance Co. Ltd. & Anr Court: Supreme Court of India Year: 2007 Cited by: 59 Issues: CASE NO.: Appeal (civil) 856 of 2007 PETITIONER: Gottumukkala Appala Narasimha Raju & Ors RESPONDENT: National Insurance Co. Ltd. & Anr DATE OF JUDGMENT: 20/02/2007 BENCH: S.B. Sinha & Markandey Katju JUDGMENT: J U D G M E N T (Arising out of S.L.P. (C) No. 9771 of 2004) S.B. Sinha, J. Leave granted. In",
+                  "case_name": "Gottumukkala Appala Narasimha Raju & ... vs National Insurance Co. Ltd. & Anr",
+                  "title": "Gottumukkala Appala Narasimha Raju & ... vs National Insurance Co. Ltd. & Anr (Supreme Court of India, 2007)",
+                  "court": "Supreme Court of India",
+                  "year": "2007",
+                  "citation": "",
+                  "binding_authority": "supreme_court",
+                  "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/CaseLaws/CaseLaws/Supreme%20Court/2007/SC_2007_GOTTUMUKKALA_APPALA_NARASIMHA_RAJU_VS_NATIONAL_INSURANCE_CO_LTD_ANR.txt",
+                  "source_tag": "LOCAL_DB",
+                  "signature": null,
+                  "_rerank_score": 4.3014219284057615,
+                  "_dispute_id": "d1"
+                }
+              ]
+            },
+            {
+              "source": "BareActs\\Union of India\\1989_0.txt",
+              "text": "Motor Vehicle Accident Fund. - (1) The Central Government shall constitute a Fund to be called the Motor Vehicle Accident Fund and thereto shall be credited -\n\npayment of a nature notified and approved by the Central Government;\n\nany grant or loan made to the Fund by the Central Government;\n\nthe balance of the Fund created under scheme framed under section 163, as it stood immediately before the commencement of the Motor Vehicles (Amendment) Act, 2019; and\n\nany other source of income as may be prescribed by the Central Government.\n\nThe Fund shall be constituted for the purpose of providing compulsory insurance cover to all road users in the territory of India.\n\ntreatment of the persons injured in road accidents in accordance with the scheme framed by the Central Government under section 162;\n\ncompensation to representatives of a person who died in hit and run motor accident in accordance with schemes framed under section 161;\n\ncompensation to a person grievously hurt in a hit and run motor accident in accordance with schemes framed under section 161; and\n\ncompensation to such persons as may be prescribed by the Central Government.",
+              "act_name": "The Motor Vehicles Act, 1988",
+              "section_number": "164B",
+              "title": "The Motor Vehicles Act, 1988 — Section 164B (Motor Vehicle Accident Fund)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Union%20of%20India/1989_0.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 3.667416572570801,
+              "_dispute_id": "d1",
+              "related_case_laws": []
+            },
+            {
+              "source": "BareActs\\Union of India\\1989_0.txt",
+              "text": "164.\nPayment of compensation in case of death or grevious hurt, etc. - (1) Notwithstanding anything contained in this Act or in any other law for the time being in force or instrument having the force of law, the owner of the motor vehicle or the authorised insurer shall be liable to pay in the case of death or grievous hurt due to any accident arising out of the use of motor vehicle, a compensation, of a sum of five lakh rupees in case of death or of two and a half lakh rupees in case of grievous hurt to the legal heirs or the victim, as the case may be.\n(2)\nIn any claim for compensation under sub-section (1), the claimant shall not be required to plead or establish that the death or grievous hurt in respect of which the claim has been made was due to any wrongful act or neglect or default of the owner of the vehicle or of the vehicle concerned or of any other person.\n(3)\nWhere, in respect of death or grievous hurt due to an accident arising out of the use of motor vehicle, compensation has been paid under any other law for the time being in force, such amount of compensation shall be reduced from the amount of compensation payable under this section.",
+              "act_name": "The Motor Vehicles Act, 1988",
+              "section_number": "164",
+              "title": "The Motor Vehicles Act, 1988 — Section 164 (Payment of compensation in case of death or grevious hurt, etc)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Union%20of%20India/1989_0.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 2.7859253883361816,
+              "_dispute_id": "d1",
+              "related_case_laws": []
+            },
+            {
+              "source": "BareActs\\Union of India\\1989_0.txt",
+              "text": "[(5) Notwithstanding anything in this Act or any other law for the time being in force, the right of a person to claim compensation for injury in an accident shall, upon the death of the person injured, survive to his legal representatives, irrespective of whether the cause of death is relatable to or had any nexus with the injury or not.]",
+              "act_name": "The Motor Vehicles Act, 1988",
+              "section_number": "166",
+              "title": "The Motor Vehicles Act, 1988 — Section 166 (Application for compensation)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Union%20of%20India/1989_0.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 2.200019359588623,
+              "_dispute_id": "d1",
+              "related_case_laws": []
+            }
+          ],
+          "progress": {
+            "start_time": "2026-03-28T06:36:22.404540Z",
+            "elapsed_seconds": 9.35,
+            "groups": [
+              {
+                "name": "Dispute Analysis",
+                "description": "Identifying distinct dispute components",
+                "steps": [
+                  {
+                    "timestamp": 0.0,
+                    "message": "Using fast interactive local profile",
+                    "metadata": {
+                      "disputes": 1
+                    }
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Research",
+                "description": "Retrieving bare acts and case laws for 1 dispute(s)",
+                "steps": [
+                  {
+                    "timestamp": 9.3,
+                    "message": "[d1] Retrieved 4 sections, 3 judgements",
+                    "metadata": {
+                      "dispute": "I was injured in a road accident six days ago when a car hit"
+                    }
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Response",
+                "description": "Formatting results and generating legal opinion",
+                "steps": [
+                  {
+                    "timestamp": 9.3,
+                    "message": "Formatting sections and matching case laws to bare acts...",
+                    "metadata": {}
+                  },
+                  {
+                    "timestamp": 9.3,
+                    "message": "Generating legal opinion...",
+                    "metadata": {}
+                  },
+                  {
+                    "timestamp": 9.35,
+                    "message": "Calling Llama 3.1 8B model, GPU: NVIDIA GeForce RTX 4060 Laptop GPU",
+                    "metadata": {}
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Debug pipeline",
+                "description": "Intermediate retrieval stages per dispute (acts, sections, case laws)",
+                "steps": [
+                  {
+                    "timestamp": 9.35,
+                    "message": "[d1] Dispute: I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medic",
+                    "metadata": {}
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              }
+            ]
+          },
+          "model_used": "Llama 3.2 3B"
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "Yes, please find the relevant judicial precedents too.",
+        "total_s": 2.671,
+        "first_step_s": 0.008,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.008,
+            "message": "Starting analysis of your latest message...",
+            "icon": "⚡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "I understand why this is concerning. The next details will help me understand the situation properly and assess what can be supported from here. What exact relief do you want right now, what supporting material do you currently have, and what step has already been taken, if any?",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Landlord lockout and belongings inside",
+    "turns": [
+      {
+        "kind": "submit_case",
+        "user": "My landlord changed the lock while my belongings are still inside. I need urgent access back to the flat and protection against illegal eviction.",
+        "total_s": 1.864,
+        "first_step_s": 0.019,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.019,
+            "message": "Reviewing the facts you shared...",
+            "icon": "⚡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "I understand why this feels urgent. The next details will help me assess the immediate possession position, the urgency, and what can realistically be supported right now. Apart from the lock change, has any written notice, court order, police entry, or other formal step happened?",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B"
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "I have the rent agreement, rent payment proof, WhatsApp messages, and photos of the changed lock. No court order or written eviction notice was given.",
+        "total_s": 0.955,
+        "first_step_s": 0.019,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.019,
+            "message": "Starting analysis of your latest message...",
+            "icon": "⚡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "I understand why this feels urgent. The next details will help me assess the immediate possession position, the urgency, and what can realistically be supported right now. Are you still unable to enter the flat right now, and are your belongings still inside, and since the lock was changed, have you already approached the landlord, police, society office, or any lawyer?",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B"
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "I went to the police station and made a diary complaint, informed the housing society, and there are no rent arrears at all. I am still locked out and my belongings are inside.",
+        "total_s": 2.416,
+        "first_step_s": 0.009,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.009,
+            "message": "Starting analysis of your latest message...",
+            "icon": "⚡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "I understand why this feels urgent. The next details will help me assess the immediate possession position, the urgency, and what can realistically be supported right now. Right now, are you still locked out and are your belongings still inside the flat?",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B"
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "proceed",
+        "total_s": 9.379,
+        "first_step_s": 0.008,
+        "first_token_s": 2.805,
+        "steps": [
+          {
+            "t": 0.008,
+            "message": "Starting analysis of your latest message...",
+            "icon": "⚡"
+          },
+          {
+            "t": 2.8,
+            "message": "Analysing your legal situation...",
+            "icon": "🔍"
+          },
+          {
+            "t": 2.804,
+            "message": "Preparing a fast grounded opinion from local materials...",
+            "icon": "⚡"
+          },
+          {
+            "t": 2.808,
+            "message": "[d1] Identifying legal provisions...",
+            "icon": "📖"
+          },
+          {
+            "t": 6.514,
+            "message": "[d1] Found 2 sections — Telangana Buildings (Lease, Rent And Eviction) Control Act, 1960, Delhi And Ajmer Rent Control Act, 1952",
+            "icon": "✅"
+          },
+          {
+            "t": 6.517,
+            "message": "[d1] Searching for judicial precedents...",
+            "icon": "⚖️"
+          },
+          {
+            "t": 9.292,
+            "message": "[d1] Found 3 judgements (from High Courts)",
+            "icon": "✅"
+          },
+          {
+            "t": 9.297,
+            "message": "Now I have everything I need — composing your legal analysis...",
+            "icon": "💡"
+          }
+        ],
+        "token_preview": "Reviewing the local statutory provisions and the strongest precedents for your facts.I found grounded statutory provisions and I am checking the closest precedents against them.I now have grounded precedent support as well and I am drafting the opinion.On the facts presently shared, the immediate issue is how the locally retrieved statutory materials and precedents bear on My landlord changed the lock while my belongings are still ... I am still locked out and my belongings are. Telangana Buildi",
+        "done": {
+          "status": "done",
+          "response_type": "legal_opinion",
+          "opinion_text": "On the facts presently shared, the immediate issue is how the locally retrieved statutory materials and precedents bear on My landlord changed the lock while my belongings are still ... I am still locked out and my belongings are.\n\nTelangana Buildings (Lease, Rent And Eviction) Control Act, 1960, Section 3 points to Where the landlord fails to deliver possession of the building to the authorised officer within forty-eight hours of the receipt of the intimation that the building is required for any of the purposes, or for occupation  Delhi And Ajmer Rent Control Act, 1952, Section 13 points to Notwithstanding anything to the contrary contained in any other law or any contract, no decree or order for the recovery of possession of any premises shall be passed by any court in favour of the landlord against any te\n\nSuresh Gir vs K. Sahadev (High Court of Andhra Pradesh, 1994) supports the analysis through Case: Suresh Gir vs K. Sahadev Court: High Court of Andhra Pradesh Year: 1994 Cited by: 3 Issues: 2. Before the Rent Controller, in R.C. No. 773/-1993 an application under Section4 of the Andhra Pradesh Buildings (Lease, B. Ataullah vs K. Nisar Ahmed (High Court of Andhra Pradesh, 2001) supports the analysis through Case: B. Ataullah vs K. Nisar Ahmed Court: High Court of Andhra Pradesh Year: 2001 Cited by: 4 Issues: 3. The landlord filed RCC No.8 of 1996 on the file of the Principal District Munsif-cum-Rent Controller, Adoni claimi\n\nOn the present local record, the safest next step is to test these materials against the notice, communications, and timeline already mentioned before taking a firmer position.",
+          "bare_acts": [
+            {
+              "source": "BareActs\\Telangana\\1960_0.txt",
+              "text": "Where the landlord fails to deliver possession of the building to the authorised officer within forty-eight hours of the receipt of the intimation that the building is required for any of the purposes, or for occupation by any of the officers specified in sub-section (3) or within such further time as the authorised officer may by order in writing allow, the Government shall be deemed to be the tenant of the landlord only from the date on which he delivers possession;\n\nwhere owing to any omission or act or obstructive or preventive tactics on the part of the landlord, there has been delay in coming to a decision whether or not the building is required for any of the purposes, or for occupation by any of the officers specified in sub-section (3) the Government shall be deemed to be the tenant of the landlord only from such later date as may be fixed by the authorised officer having regard to the circumstances of each case;\n\nthe rent payable shall be the fair rent, if any, fixed for the building under the provisions of this Act ; and if no fair rent has been so fixed, such reasonable rent as the authorised officer may determine;",
+              "act_name": "Telangana Buildings (Lease, Rent And Eviction) Control Act, 1960",
+              "section_number": "3",
+              "title": "Telangana Buildings (Lease, Rent And Eviction) Control Act, 1960 — Section 3 (Notice of vacancy:)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Telangana/1960_0.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 2.510068893432617,
+              "_dispute_id": "d1",
+              "related_case_laws": [
+                {
+                  "source": "CaseLaws\\Telangana HC\\1994\\HC_1994_SURESH_GIR_VS_K_SAHADEV.txt",
+                  "text": "Case: Suresh Gir vs K. Sahadev Court: High Court of Andhra Pradesh Year: 1994 Cited by: 3 Issues: 2. Before the Rent Controller, in R.C. No. 773/-1993 an application under Section4 of the Andhra Pradesh Buildings (Lease, Rent and Eviction) Control Act, 1960 (hereinafter referred to as 'the A.P. Rent Control Act') was filed by the respondent-landlord seeking fixation of fair-rent for the demised premises. The matter was contested by the petitioner",
+                  "case_name": "Suresh Gir vs K. Sahadev",
+                  "title": "Suresh Gir vs K. Sahadev (High Court of Andhra Pradesh, 1994)",
+                  "court": "High Court of Andhra Pradesh",
+                  "year": "1994",
+                  "citation": "",
+                  "binding_authority": "high_court",
+                  "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/CaseLaws/CaseLaws/Telangana%20HC/1994/HC_1994_SURESH_GIR_VS_K_SAHADEV.txt",
+                  "source_tag": "LOCAL_DB",
+                  "signature": null,
+                  "_rerank_score": 6.42474250793457,
+                  "_dispute_id": "d1"
+                },
+                {
+                  "source": "CaseLaws\\Telangana HC\\2001\\HC_2001_B_ATAULLAH_VS_K_NISAR_AHMED.txt",
+                  "text": "Case: B. Ataullah vs K. Nisar Ahmed Court: High Court of Andhra Pradesh Year: 2001 Cited by: 4 Issues: 3. The landlord filed RCC No.8 of 1996 on the file of the Principal District Munsif-cum-Rent Controller, Adoni claiming the relief of eviction of the tenant under Section 10(3)(a)(iii) of A.P. Buildings (Lease, Rent and Eviction) Control Act, 1960 (for short \"the Rent Control Act \") on the ground of bona fide requirement. The dispute relates to ",
+                  "case_name": "B. Ataullah vs K. Nisar Ahmed",
+                  "title": "B. Ataullah vs K. Nisar Ahmed (High Court of Andhra Pradesh, 2001)",
+                  "court": "High Court of Andhra Pradesh",
+                  "year": "2001",
+                  "citation": "",
+                  "binding_authority": "high_court",
+                  "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/CaseLaws/CaseLaws/Telangana%20HC/2001/HC_2001_B_ATAULLAH_VS_K_NISAR_AHMED.txt",
+                  "source_tag": "LOCAL_DB",
+                  "signature": null,
+                  "_rerank_score": 5.508903312683105,
+                  "_dispute_id": "d1"
+                }
+              ]
+            },
+            {
+              "source": "BareActs\\Union of India\\1952_7.txt",
+              "text": "Notwithstanding anything to the contrary contained in any other law or any contract, no decree or order for the recovery of possession of any premises shall be passed by any court in favour of the landlord against any tenant (including a tenant whose tenancy is terminated):\n\nProvided that nothing in this sub-section shall apply to any suit or other proceeding for such recovery of possession if the court is satisfied-\n\nthat the tenant has neither paid nor tendered the whole of the arrears of rent due within one month of the date on which a notice of demand for the arrears of rent has been served on him by the landlord in the manner provided in section 106 of the Transfer of Property Act, 1882 (\n\nthat the tenant without obtaining the consent of the landlord in writing has, after the commencement of this Act,-\n\nsub-let, assigned or otherwise parted with the possession of, the whole or any part of the premises; or\n\nused the premises for a purpose other than that for which they were let; or\n\nthat the tenant, without obtaining the consent of the landlord had, before the commencement of this Act,-",
+              "act_name": "Delhi And Ajmer Rent Control Act, 1952",
+              "section_number": "13",
+              "title": "Delhi And Ajmer Rent Control Act, 1952 — Section 13 (Protection of a tenant against eviction)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Union%20of%20India/1952_7.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 2.2304131984710693,
+              "_dispute_id": "d1",
+              "related_case_laws": []
+            }
+          ],
+          "case_laws": [],
+          "retrieved": [
+            {
+              "source": "BareActs\\Telangana\\1960_0.txt",
+              "text": "Where the landlord fails to deliver possession of the building to the authorised officer within forty-eight hours of the receipt of the intimation that the building is required for any of the purposes, or for occupation by any of the officers specified in sub-section (3) or within such further time as the authorised officer may by order in writing allow, the Government shall be deemed to be the tenant of the landlord only from the date on which he delivers possession;\n\nwhere owing to any omission or act or obstructive or preventive tactics on the part of the landlord, there has been delay in coming to a decision whether or not the building is required for any of the purposes, or for occupation by any of the officers specified in sub-section (3) the Government shall be deemed to be the tenant of the landlord only from such later date as may be fixed by the authorised officer having regard to the circumstances of each case;\n\nthe rent payable shall be the fair rent, if any, fixed for the building under the provisions of this Act ; and if no fair rent has been so fixed, such reasonable rent as the authorised officer may determine;",
+              "act_name": "Telangana Buildings (Lease, Rent And Eviction) Control Act, 1960",
+              "section_number": "3",
+              "title": "Telangana Buildings (Lease, Rent And Eviction) Control Act, 1960 — Section 3 (Notice of vacancy:)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Telangana/1960_0.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 2.510068893432617,
+              "_dispute_id": "d1",
+              "related_case_laws": [
+                {
+                  "source": "CaseLaws\\Telangana HC\\1994\\HC_1994_SURESH_GIR_VS_K_SAHADEV.txt",
+                  "text": "Case: Suresh Gir vs K. Sahadev Court: High Court of Andhra Pradesh Year: 1994 Cited by: 3 Issues: 2. Before the Rent Controller, in R.C. No. 773/-1993 an application under Section4 of the Andhra Pradesh Buildings (Lease, Rent and Eviction) Control Act, 1960 (hereinafter referred to as 'the A.P. Rent Control Act') was filed by the respondent-landlord seeking fixation of fair-rent for the demised premises. The matter was contested by the petitioner",
+                  "case_name": "Suresh Gir vs K. Sahadev",
+                  "title": "Suresh Gir vs K. Sahadev (High Court of Andhra Pradesh, 1994)",
+                  "court": "High Court of Andhra Pradesh",
+                  "year": "1994",
+                  "citation": "",
+                  "binding_authority": "high_court",
+                  "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/CaseLaws/CaseLaws/Telangana%20HC/1994/HC_1994_SURESH_GIR_VS_K_SAHADEV.txt",
+                  "source_tag": "LOCAL_DB",
+                  "signature": null,
+                  "_rerank_score": 6.42474250793457,
+                  "_dispute_id": "d1"
+                },
+                {
+                  "source": "CaseLaws\\Telangana HC\\2001\\HC_2001_B_ATAULLAH_VS_K_NISAR_AHMED.txt",
+                  "text": "Case: B. Ataullah vs K. Nisar Ahmed Court: High Court of Andhra Pradesh Year: 2001 Cited by: 4 Issues: 3. The landlord filed RCC No.8 of 1996 on the file of the Principal District Munsif-cum-Rent Controller, Adoni claiming the relief of eviction of the tenant under Section 10(3)(a)(iii) of A.P. Buildings (Lease, Rent and Eviction) Control Act, 1960 (for short \"the Rent Control Act \") on the ground of bona fide requirement. The dispute relates to ",
+                  "case_name": "B. Ataullah vs K. Nisar Ahmed",
+                  "title": "B. Ataullah vs K. Nisar Ahmed (High Court of Andhra Pradesh, 2001)",
+                  "court": "High Court of Andhra Pradesh",
+                  "year": "2001",
+                  "citation": "",
+                  "binding_authority": "high_court",
+                  "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/CaseLaws/CaseLaws/Telangana%20HC/2001/HC_2001_B_ATAULLAH_VS_K_NISAR_AHMED.txt",
+                  "source_tag": "LOCAL_DB",
+                  "signature": null,
+                  "_rerank_score": 5.508903312683105,
+                  "_dispute_id": "d1"
+                }
+              ]
+            },
+            {
+              "source": "BareActs\\Union of India\\1952_7.txt",
+              "text": "Notwithstanding anything to the contrary contained in any other law or any contract, no decree or order for the recovery of possession of any premises shall be passed by any court in favour of the landlord against any tenant (including a tenant whose tenancy is terminated):\n\nProvided that nothing in this sub-section shall apply to any suit or other proceeding for such recovery of possession if the court is satisfied-\n\nthat the tenant has neither paid nor tendered the whole of the arrears of rent due within one month of the date on which a notice of demand for the arrears of rent has been served on him by the landlord in the manner provided in section 106 of the Transfer of Property Act, 1882 (\n\nthat the tenant without obtaining the consent of the landlord in writing has, after the commencement of this Act,-\n\nsub-let, assigned or otherwise parted with the possession of, the whole or any part of the premises; or\n\nused the premises for a purpose other than that for which they were let; or\n\nthat the tenant, without obtaining the consent of the landlord had, before the commencement of this Act,-",
+              "act_name": "Delhi And Ajmer Rent Control Act, 1952",
+              "section_number": "13",
+              "title": "Delhi And Ajmer Rent Control Act, 1952 — Section 13 (Protection of a tenant against eviction)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Union%20of%20India/1952_7.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 2.2304131984710693,
+              "_dispute_id": "d1",
+              "related_case_laws": []
+            }
+          ],
+          "progress": {
+            "start_time": "2026-03-28T06:36:39.687373Z",
+            "elapsed_seconds": 6.54,
+            "groups": [
+              {
+                "name": "Dispute Analysis",
+                "description": "Identifying distinct dispute components",
+                "steps": [
+                  {
+                    "timestamp": 0.0,
+                    "message": "Using fast interactive local profile",
+                    "metadata": {
+                      "disputes": 1
+                    }
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Research",
+                "description": "Retrieving bare acts and case laws for 1 dispute(s)",
+                "steps": [
+                  {
+                    "timestamp": 6.49,
+                    "message": "[d1] Retrieved 2 sections, 3 judgements",
+                    "metadata": {
+                      "dispute": "My landlord changed the lock while my belongings are still i"
+                    }
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Response",
+                "description": "Formatting results and generating legal opinion",
+                "steps": [
+                  {
+                    "timestamp": 6.49,
+                    "message": "Formatting sections and matching case laws to bare acts...",
+                    "metadata": {}
+                  },
+                  {
+                    "timestamp": 6.49,
+                    "message": "Generating legal opinion...",
+                    "metadata": {}
+                  },
+                  {
+                    "timestamp": 6.54,
+                    "message": "Calling Llama 3.1 8B model, GPU: NVIDIA GeForce RTX 4060 Laptop GPU",
+                    "metadata": {}
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Debug pipeline",
+                "description": "Intermediate retrieval stages per dispute (acts, sections, case laws)",
+                "steps": [
+                  {
+                    "timestamp": 6.54,
+                    "message": "[d1] Dispute: My landlord changed the lock while my belongings are still inside. I need urgent access back to the flat and protection ",
+                    "metadata": {}
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              }
+            ]
+          },
+          "model_used": "Llama 3.2 3B"
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "Yes, please find the relevant judicial precedents too.",
+        "total_s": 2.899,
+        "first_step_s": 0.008,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.008,
+            "message": "Starting analysis of your latest message...",
+            "icon": "⚡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "I have enough to begin the legal analysis. If you want, you can add any one last important fact now. Otherwise, just say 'proceed' and I will prepare the full legal opinion from the local legal database.",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Security cheque / cheque bounce dispute",
+    "turns": [
+      {
+        "kind": "submit_case",
+        "user": "A cheque I gave has been presented and I received a legal notice, but it was only a security cheque and the underlying business contract was never performed.",
+        "total_s": 1.832,
+        "first_step_s": 0.029,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.029,
+            "message": "Reviewing the facts you shared...",
+            "icon": "⚡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "I understand the issue. The next details will help me understand the situation properly and assess what can be supported from here. What is the present urgency or immediate position as of now, and what documents, messages, payment records, photos, medical papers, or witnesses do you currently have?",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B"
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "I have the contract, the legal notice, the bank return memo, and WhatsApp chats showing the promised supply never happened. No civil suit has been filed yet.",
+        "total_s": 2.531,
+        "first_step_s": 0.008,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.008,
+            "message": "Starting analysis of your latest message...",
+            "icon": "⚡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "I understand the issue. The next details will help me understand the situation properly and assess what can be supported from here. What exact relief do you want right now, what supporting material do you currently have, and what step has already been taken, if any?",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B"
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "I sent a lawyer reply to the notice, no goods were delivered, and I dispute the amount claimed because the underlying obligation never matured.",
+        "total_s": 1.457,
+        "first_step_s": 0.008,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.008,
+            "message": "Starting analysis of your latest message...",
+            "icon": "⚡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "I understand the issue. The next details will help me assess what relief is realistically supportable on the facts shared so far. Just to pin this down, what exact result do you want me to help you achieve first, and right now, what is the immediate practical problem or risk that still exists?",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B"
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "proceed",
+        "total_s": 10.425,
+        "first_step_s": 0.008,
+        "first_token_s": 2.123,
+        "steps": [
+          {
+            "t": 0.008,
+            "message": "Starting analysis of your latest message...",
+            "icon": "⚡"
+          },
+          {
+            "t": 2.121,
+            "message": "Analysing your legal situation...",
+            "icon": "🔍"
+          },
+          {
+            "t": 2.123,
+            "message": "Preparing a fast grounded opinion from local materials...",
+            "icon": "⚡"
+          },
+          {
+            "t": 2.126,
+            "message": "[d1] Identifying legal provisions...",
+            "icon": "📖"
+          },
+          {
+            "t": 7.483,
+            "message": "[d1] Found 2 sections — Telangana (Agricultural Produce And Livestock) Markets Rules, 1969, Telangana Civil Rules Of Practice And Circular Orders, 1980",
+            "icon": "✅"
+          },
+          {
+            "t": 7.485,
+            "message": "[d1] Searching for judicial precedents...",
+            "icon": "⚖️"
+          },
+          {
+            "t": 10.337,
+            "message": "[d1] Found 1 judgement (including 1 Supreme Court)",
+            "icon": "✅"
+          },
+          {
+            "t": 10.341,
+            "message": "Now I have everything I need — composing your legal analysis...",
+            "icon": "💡"
+          }
+        ],
+        "token_preview": "Reviewing the local statutory provisions and the strongest precedents for your facts.I found grounded statutory provisions and I am checking the closest precedents against them.I now have grounded precedent support as well and I am drafting the opinion.On the facts presently shared, the immediate issue is how the locally retrieved statutory materials and precedents bear on A cheque I gave has been presented and I received a legal notice, but it was only a security cheque and the underlying ... I",
+        "done": {
+          "status": "done",
+          "response_type": "legal_opinion",
+          "opinion_text": "On the facts presently shared, the immediate issue is how the locally retrieved statutory materials and precedents bear on A cheque I gave has been presented and I received a legal notice, but it was only a security cheque and the underlying ... I sent a lawyer reply to the notice, no goods were delivered, and I dispute the amount claimed because the underlying.\n\nTelangana (Agricultural Produce And Livestock) Markets Rules, 1969, Section 109 points to 109. Signing of cheques. - No cheque shall ordinarily be signed unless required for immediate delivery to the person to whom the money is to be paid. Telangana Civil Rules Of Practice And Circular Orders, 1980, Section 239 points to 239. Presentation of receipt: - The person making any such deposit as aforesaid shall present therewith a memo, in Form No. 61, headed with the cause-title of the suit, appeal or matter, and specifying the purpose for wh\n\nAgricultural Market Committee vs Shalimar Chemical Works Ltd (Supreme Court of India, 1997) supports the analysis through Case: Agricultural Market Committee vs Shalimar Chemical Works Ltd Court: Supreme Court of India Year: 1997 Cited by: 103 Issues: 6. In order to levy market fee on the transaction of sale and purchase by the respondent,\n\nOn the present local record, the safest next step is to test these materials against the notice, communications, and timeline already mentioned before taking a firmer position.",
+          "bare_acts": [
+            {
+              "source": "BareActs\\Telangana\\1969_0.txt",
+              "text": "109.\nSigning of cheques.\n- No cheque shall ordinarily be signed unless required for immediate delivery to the person to whom the money is to be paid.",
+              "act_name": "Telangana (Agricultural Produce And Livestock) Markets Rules, 1969",
+              "section_number": "109",
+              "title": "Telangana (Agricultural Produce And Livestock) Markets Rules, 1969 — Section 109 (Signing of cheques)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Telangana/1969_0.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 1.617302417755127,
+              "_dispute_id": "d1",
+              "related_case_laws": [
+                {
+                  "source": "CaseLaws\\Supreme Court\\1997\\SC_1997_AGRICULTURAL_MARKET_COMMITTEE_VS_SHALIMAR_CHEMICAL_WORKS_LTD.txt",
+                  "text": "Case: Agricultural Market Committee vs Shalimar Chemical Works Ltd Court: Supreme Court of India Year: 1997 Cited by: 103 Issues: 6. In order to levy market fee on the transaction of sale and purchase by the respondent, the Assessing Authority had relied upon Rule 74(2) of the Andhra Pradesh (Agricultural Produce and Livestock) Market Rules, 1969 (for short, 'Rules') and Explanation to Bye-law 24(5) of the Bye-laws of the Committee which containe",
+                  "case_name": "Agricultural Market Committee vs Shalimar Chemical Works Ltd",
+                  "title": "Agricultural Market Committee vs Shalimar Chemical Works Ltd (Supreme Court of India, 1997)",
+                  "court": "Supreme Court of India",
+                  "year": "1997",
+                  "citation": "",
+                  "binding_authority": "supreme_court",
+                  "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/CaseLaws/CaseLaws/Supreme%20Court/1997/SC_1997_AGRICULTURAL_MARKET_COMMITTEE_VS_SHALIMAR_CHEMICAL_WORKS_LTD.txt",
+                  "source_tag": "LOCAL_DB",
+                  "signature": null,
+                  "_rerank_score": 5.841738700866699,
+                  "_dispute_id": "d1"
+                }
+              ]
+            },
+            {
+              "source": "BareActs\\Telangana\\1983_1.txt",
+              "text": "239.\nPresentation of receipt:\n- The person making any such deposit as aforesaid shall present therewith a memo, in Form No. 61, headed with the cause-title of the suit, appeal or matter, and specifying the purpose for which the deposit is made, and a receipt shall be granted to the depositor.\n240.\nRepayment:\n(1)\nThe repayment of any cash, which has not been extended for the purpose for which the same deposited shall be made upon the production of the receipt and under the immediate superintendence of the Judge, who shall satisfy himself as to the identity of the person to whom such repayment is made and of his authority to receive it.\n(2)\nProvided that if the amount so deposited or the unexpended portion thereof has been sent by the Court to a Bank or Treasury Officer, Rules 231 to 236 inclusive, shall apply to an application for repayment.\n(3)\nIf the applicant is unable to produce receipt, he shall file an affidavit accounting for its non-production.\n241.\n[Arrest of public servant]\n[H.C. Cir. 1111/1907 and Dis. No.",
+              "act_name": "Telangana Civil Rules Of Practice And Circular Orders, 1980",
+              "section_number": "239",
+              "title": "Telangana Civil Rules Of Practice And Circular Orders, 1980 — Section 239 (Presentation of receipt:)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Telangana/1983_1.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 0.8807631134986877,
+              "_dispute_id": "d1",
+              "related_case_laws": []
+            }
+          ],
+          "case_laws": [],
+          "retrieved": [
+            {
+              "source": "BareActs\\Telangana\\1969_0.txt",
+              "text": "109.\nSigning of cheques.\n- No cheque shall ordinarily be signed unless required for immediate delivery to the person to whom the money is to be paid.",
+              "act_name": "Telangana (Agricultural Produce And Livestock) Markets Rules, 1969",
+              "section_number": "109",
+              "title": "Telangana (Agricultural Produce And Livestock) Markets Rules, 1969 — Section 109 (Signing of cheques)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Telangana/1969_0.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 1.617302417755127,
+              "_dispute_id": "d1",
+              "related_case_laws": [
+                {
+                  "source": "CaseLaws\\Supreme Court\\1997\\SC_1997_AGRICULTURAL_MARKET_COMMITTEE_VS_SHALIMAR_CHEMICAL_WORKS_LTD.txt",
+                  "text": "Case: Agricultural Market Committee vs Shalimar Chemical Works Ltd Court: Supreme Court of India Year: 1997 Cited by: 103 Issues: 6. In order to levy market fee on the transaction of sale and purchase by the respondent, the Assessing Authority had relied upon Rule 74(2) of the Andhra Pradesh (Agricultural Produce and Livestock) Market Rules, 1969 (for short, 'Rules') and Explanation to Bye-law 24(5) of the Bye-laws of the Committee which containe",
+                  "case_name": "Agricultural Market Committee vs Shalimar Chemical Works Ltd",
+                  "title": "Agricultural Market Committee vs Shalimar Chemical Works Ltd (Supreme Court of India, 1997)",
+                  "court": "Supreme Court of India",
+                  "year": "1997",
+                  "citation": "",
+                  "binding_authority": "supreme_court",
+                  "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/CaseLaws/CaseLaws/Supreme%20Court/1997/SC_1997_AGRICULTURAL_MARKET_COMMITTEE_VS_SHALIMAR_CHEMICAL_WORKS_LTD.txt",
+                  "source_tag": "LOCAL_DB",
+                  "signature": null,
+                  "_rerank_score": 5.841738700866699,
+                  "_dispute_id": "d1"
+                }
+              ]
+            },
+            {
+              "source": "BareActs\\Telangana\\1983_1.txt",
+              "text": "239.\nPresentation of receipt:\n- The person making any such deposit as aforesaid shall present therewith a memo, in Form No. 61, headed with the cause-title of the suit, appeal or matter, and specifying the purpose for which the deposit is made, and a receipt shall be granted to the depositor.\n240.\nRepayment:\n(1)\nThe repayment of any cash, which has not been extended for the purpose for which the same deposited shall be made upon the production of the receipt and under the immediate superintendence of the Judge, who shall satisfy himself as to the identity of the person to whom such repayment is made and of his authority to receive it.\n(2)\nProvided that if the amount so deposited or the unexpended portion thereof has been sent by the Court to a Bank or Treasury Officer, Rules 231 to 236 inclusive, shall apply to an application for repayment.\n(3)\nIf the applicant is unable to produce receipt, he shall file an affidavit accounting for its non-production.\n241.\n[Arrest of public servant]\n[H.C. Cir. 1111/1907 and Dis. No.",
+              "act_name": "Telangana Civil Rules Of Practice And Circular Orders, 1980",
+              "section_number": "239",
+              "title": "Telangana Civil Rules Of Practice And Circular Orders, 1980 — Section 239 (Presentation of receipt:)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Telangana/1983_1.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 0.8807631134986877,
+              "_dispute_id": "d1",
+              "related_case_laws": []
+            }
+          ],
+          "progress": {
+            "start_time": "2026-03-28T06:36:58.832527Z",
+            "elapsed_seconds": 8.27,
+            "groups": [
+              {
+                "name": "Dispute Analysis",
+                "description": "Identifying distinct dispute components",
+                "steps": [
+                  {
+                    "timestamp": 0.0,
+                    "message": "Using fast interactive local profile",
+                    "metadata": {
+                      "disputes": 1
+                    }
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Research",
+                "description": "Retrieving bare acts and case laws for 1 dispute(s)",
+                "steps": [
+                  {
+                    "timestamp": 8.22,
+                    "message": "[d1] Retrieved 2 sections, 1 judgements",
+                    "metadata": {
+                      "dispute": "A cheque I gave has been presented and I received a legal no"
+                    }
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Response",
+                "description": "Formatting results and generating legal opinion",
+                "steps": [
+                  {
+                    "timestamp": 8.22,
+                    "message": "Formatting sections and matching case laws to bare acts...",
+                    "metadata": {}
+                  },
+                  {
+                    "timestamp": 8.22,
+                    "message": "Generating legal opinion...",
+                    "metadata": {}
+                  },
+                  {
+                    "timestamp": 8.27,
+                    "message": "Calling Llama 3.1 8B model, GPU: NVIDIA GeForce RTX 4060 Laptop GPU",
+                    "metadata": {}
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Debug pipeline",
+                "description": "Intermediate retrieval stages per dispute (acts, sections, case laws)",
+                "steps": [
+                  {
+                    "timestamp": 8.27,
+                    "message": "[d1] Dispute: A cheque I gave has been presented and I received a legal notice, but it was only a security cheque and the underlying b",
+                    "metadata": {}
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              }
+            ]
+          },
+          "model_used": "Llama 3.2 3B"
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "Yes, please find the relevant judicial precedents too.",
+        "total_s": 3.286,
+        "first_step_s": 0.007,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.007,
+            "message": "Starting analysis of your latest message...",
+            "icon": "⚡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "I understand the issue. The next details will help me understand the situation properly and assess what can be supported from here. What exact relief do you want right now, what supporting material do you currently have, and what step has already been taken, if any?",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B"
+        }
+      }
+    ]
+  }
+]

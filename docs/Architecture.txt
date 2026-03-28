@@ -1,268 +1,503 @@
-### ARCHITECTURE (Historical + Needs Refresh) ###
+Nyaymalaw Architecture
+Current runtime architecture as of 2026-03-27
 
-Nyaymalaw 3.0 � Legal RAG: compact intake, proceed-to-analysis flow, hybrid retrieval, local-first grounding, and optional legacy search utilities.
-This file still contains some historical flow notes from older two-phase and fallback designs; treat the runtime code as the source of truth until this document is fully refreshed.
+This document describes the current production-oriented architecture in the
+C:\Users\rahul\Nyaymalaw-5.0 workspace. It replaces older notes that mixed
+historical flows with planned redesigns.
 
-Ref: api_server.py, services/interactive_chat.py, services/response_generator_v2.py,
-     services/fact_collector.py, retrieval/hybrid_retriever.py, Ingestion/smart_chunker.py.
+Primary source files:
+- api_server.py
+- Frontend\src\App.jsx
+- services\interactive_chat.py
+- services\fact_collector.py
+- services\response_generator_v2.py
+- services\runtime_warmup.py
+- retrieval\hybrid_retriever.py
+- training\few_shot_retriever.py
 
-Target behaviour (see docs/IMPROVEMENT_ROADMAP.md): three-tier retrieval, 3–6 s responses,
-legal query expansion, statute-anchored case retrieval, no synchronous web/indexing in request.
+==============================================================================
+1. System Goals
+==============================================================================
 
---------------------------------------------------------------------------------
-1. ENTRY POINTS (API)
---------------------------------------------------------------------------------
+Nyaymalaw runs a local-first legal chat system with:
+- streaming responses over SSE
+- structured fact collection before legal analysis
+- analysis-ready handoff that supports either "proceed" or one last material fact
+- grounded local retrieval from the vector store
+- deterministic fallback behavior when generation is weak or grounding fails
+- resumable chat state for mid-intake save and restore
 
-  FastAPI (api_server.py)
-       │
-       ├── POST /chat
-       │      → process_chat(phase=request.phase, conversation, current_message)
-       │      → Used by React UI for free-form chat (fact_collection or response_generation).
-       │
-       ├── POST /submit_case
-       │      → process_chat(phase="fact_collection") then, if complete,
-       │        process_chat(phase="response_generation") with facts_summary/intent.
-       │      → Returns next_question | bare_acts_presented | done (opinion).
-       │
-       ├── POST /interview_step
-       │      → Same as submit_case but with qa_history; supports bare_acts_review phase.
-       │
-       ├── POST /conversation/continue  [, /stream variants]
-       │      → process_chat(phase=fact_collection | response_generation) with full conversation.
-       │
-       ├── POST /search
-       │      → fuse_bare_act_and_case_law(issue) — agents/Legal_Research/act_case_fusion_agent.
-       │      → Uses hybrid_retriever.search_bare_acts_auto / search_case_laws_auto; web fallback.
-       │
-       ├── Case law discovery (case_law_discovery.routes)
-       │      → is_case_law_discovery_request(message) → run_case_law_discovery(message).
-       │      → Presents documents for user to Index or Clear; separate from main chat pipeline.
-       │
-       ├── POST /indexing/run
-       │      → index_new_bare_acts / index_new_case_laws (services) for selected pending items.
-       │
-       └── GET /health, /chats, /bareacts/list, /caselaws/list, /eval/*, /docs/architecture, etc.
+The main product behavior is:
+1. collect enough facts to understand the dispute
+2. ask another clustered question if needed
+3. once ready, move to grounded legal analysis
+4. stream progress and text so the experience feels live
 
---------------------------------------------------------------------------------
-2. CHAT PIPELINE (services/interactive_chat.process_chat)
---------------------------------------------------------------------------------
+==============================================================================
+1A. Conversation Principles
+==============================================================================
 
-  phase = "fact_collection"
-       │
-       ├── content_guard.check_query_safety(current_message) → block if unsafe.
-       │
-       ├── chat_mode = "general" → _run_generic_chat (no retrieval; LLM-only answer).
-       │
-       ├── chat_mode = "legal_research" → _run_search_or_lookup (single research query).
-       │
-       └── else → services/fact_collector.get_next_question_or_complete(conversation, current_message)
-                  │
-                  ├── is_greeting(msg) → return { action: "ask", question: ... }
-                  │                     TARGET: for messages in greeting set, return static template
-                  │                     (no LLM); only call generate_greeting_response when not in set.
-                  │                     Goal: greeting <0.2 s.
-                  ├── is_stop_signal(msg) → LLM summarise → complete.
-                  ├── Gate 1 (ROUTING_GATE1_SYSTEM): GREETING | LEGAL | GENERALIST
-                  │   → GREETING: ask with greeting reply.
-                  │   → GENERALIST (and not force_legal): complete with intent=generic_chat → _run_generic_chat.
-                  ├── Gate 2 (ROUTING_GATE2_SYSTEM), if LEGAL: search | lookup | legal_opinion | bulk_ingest
-                  │   → Parsed: facts_summary, intent, result_count, search_strategy, states.
-                  │   → Fallback: agents/orchestrator_agent.run_orchestrator.
-                  └── action = "complete" + intent = legal_opinion
-                        → _run_bare_acts_phase(facts, states)  [Phase A]
-                        → Returns phase="bare_acts_presented" (bare acts + optional followup question).
+Nyaymalaw should behave like a calm senior advocate doing real intake, not like
+a chatbot form and not like a law lecture.
 
-  phase = "response_generation"
-       │
-       └── services/response_generator_v2.generate_response_v2(...)
-             OR (if coming from bare_acts_presented) generate_final_opinion_with_case_laws(...)
-             → Hybrid retrieval, sufficiency, web fallback, final opinion with citations.
+Intake style:
+- begin with brief empathy or acknowledgment when the facts call for it
+- identify the issue in plain human language
+- explain why the next details matter
+- ask 2 to 3 closely related questions together when they belong to one factual
+  theme
+- avoid scattered or abstract questionnaires
+- move the case forward in small, meaningful factual clusters
 
-  phase = "bare_acts_review"
-       │
-       └── generate_final_opinion_with_case_laws(facts_summary, bare_acts, additional_info, states).
+What the intake should quietly assess:
+- whether the factual account is internally coherent
+- whether supporting material exists and what it currently proves
+- whether the requested relief is presently supportable
+- whether the urgency is real and what immediate posture exists
 
---------------------------------------------------------------------------------
-3. THREE-TIER RETRIEVAL (TARGET)
---------------------------------------------------------------------------------
+How that assessment should sound:
+- never accuse the user of dishonesty
+- never ask legal-conclusion questions back to the user
+- prefer language such as:
+  - these details will help me assess urgency
+  - this will help me understand what can be properly supported on the record
+  - I want to be careful not to overstate or understate the matter
 
-  TIER 1 — Fast local (during user request only, target <3 s)
-       │
-       ├── Intent extraction, dispute decomposition.
-       ├── Query expansion: up to 3 variants (base, legal synonym, statute-style; optional section-number).
-       ├── Hybrid retrieval (FAISS + BM25) per query → merge → dedupe → cross-encoder rerank.
-       ├── Section extraction from top bare-act results (act_name + section_number).
-       ├── Statute-anchored case retrieval: build case queries from sections, hybrid search, merge, rerank.
-       ├── Authority ranking (court-tier boost: e.g. Supreme Court +5, High Court +3).
-       └── Top passages → LLM answer → return response.
+Audience behavior:
+- lay users should get plain English with minimal jargon
+- legal professionals may get tighter legal phrasing, but still structured and clear
 
-  TIER 2 — Optional web discovery (asynchronous, does not block response)
-       │
-       └── If coverage weak (e.g. local result count < 3): run tiered_search in background;
-           surface "additional sources" when ready. User gets local answer first.
+What intake should not do:
+- cite statutes or case law from memory
+- ask the user to repeat the whole story
+- jump to final advice too early
+- keep looping on the same unresolved point in awkward phrasing
+- close randomly before the critical facts, evidence posture, and current stage
+  are sufficiently clear
 
-  TIER 3 — Index enrichment (offline / on demand)
-       │
-       └── Web or discovery finds document → add to pending_indexing only.
-           Chunking and indexing run only when user clicks Index (POST /indexing/run) or a
-           background job. auto_enricher must NOT run during the chat response (no download/
-           parse/chunk inside the request).
+Meaningful completion:
+- the intake should close only when the system has enough to move responsibly
+  into grounded legal analysis
+- if the user cannot add more on one final narrow point but the factual record is
+  otherwise strong, the system may proceed rather than loop indefinitely
 
-  Synchronous vs asynchronous:
-       • IN REQUEST: Tier 1 only (intent, dispute, 3-query expansion, hybrid, rerank, section
-         extraction, statute-anchored case retrieval, authority ranking, LLM).
-       • OUT OF REQUEST: tiered_search (when used), auto_enricher (download→chunk→index only
-         on Index or background job). Web search must not block the response.
+Final answer style:
+- short fact framing
+- grounded legal analysis
+- practical next-step guidance
+- flowing prose, not heading-heavy templated output
 
---------------------------------------------------------------------------------
-4. RESPONSE GENERATOR V2 (services/response_generator_v2)
---------------------------------------------------------------------------------
+==============================================================================
+2. Top-Level Runtime Flow
+==============================================================================
 
-  - retrieve_bare_acts_phase(facts_summary, states)
-        → expand_legal_query(facts) [TARGET: return up to 3 queries, not one string]
-        → dispute_decomposer.decompose(facts_summary) [disputes]
-        → Per dispute: hybrid retrieval (bare acts + case laws) via retrieval.hybrid_retriever
-        → Act-profile pre-filter (act_profile_index) when many acts
-        → Quality filters, MIN_RERANK_SCORE, diversity (max sections per dispute)
-        → Sufficiency check (_check_bare_act_sufficiency) → optional web tiered_search + auto_enricher
-        → TARGET: web only when local result count < N (not score threshold); auto_enricher only
-          adds to pending_indexing during request (no chunk/embed in request).
-        → Returns bare_acts, disputes, followup_question, intro_text
+Frontend
+  -> /submit_case/stream for the first user message
+  -> /conversation/continue/stream for every later user turn
+  -> /chats and /chats/{id} for save/load
 
-  - generate_response_v2(facts, intent, document_types, search_strategy, result_count)
-        → Same retrieval pipeline; single-shot full opinion (bare acts + case laws + explanation).
+Backend
+  -> api_server.py receives the request
+  -> services.interactive_chat.process_chat() orchestrates the phase
+  -> services.fact_collector decides:
+     - ask another intake question
+     - or hand off to analysis
+  -> services.response_generator_v2.generate_response() performs local retrieval
+     and builds the final grounded opinion
 
-  - generate_final_opinion_with_case_laws(facts_summary, bare_acts, additional_info, states)
-        → TARGET: section extraction from bare_acts; statute-anchored case queries; case hybrid
-          retrieval on those queries; authority ranking (court boost).
-        → Case-law retrieval aligned to disputes + bare sections; web fallback; LLM opinion.
+The active architecture is a two-phase loop:
 
-  Target retrieval path (see IMPROVEMENT_ROADMAP):
-        → facts → query expansion (3 variants) → hybrid per query → merge → dedupe → rerank
-        → section extraction → statute-anchored case retrieval → authority ranking → LLM.
-        → retrieval/hybrid_retriever.search_bare_acts_auto / search_case_laws_auto
-        → retrieval/tiered_search only when needed, and not blocking (or background).
-        → retrieval/auto_enricher only for indexing step (not during response).
-        → retrieval/indian_kanoon_client for Indian Kanoon API (citation boost).
-        → retrieval/sufficiency_analyzer (LLM) for gap analysis.
+1. fact_collection
+2. response_generation
 
---------------------------------------------------------------------------------
-5. RETRIEVAL (retrieval/)
---------------------------------------------------------------------------------
+==============================================================================
+3. Current Request Lifecycle
+==============================================================================
 
-  hybrid_retriever.py
-       │
-       ├── normalize_legal_query(query) — expand abbreviations (IPC→Indian Penal Code, BNS, TPA, …).
-       ├── FAISS (sentence-transformers / config.EMBEDDING_MODEL) — semantic search.
-       ├── BM25 (config.BARE_BM25_INDEX, CASE_BM25_INDEX) — keyword search.
-       ├── Merge candidates → cross-encoder (config.CROSS_ENCODER_MODEL) re-rank.
-       ├── search_bare_acts_auto(query, top_k), search_case_laws_auto(query, top_k).
-       └── safe_read_faiss, load_chunks, load_bm25_index; act_profile_index for act-level filter.
+3.1 New legal case
 
-  tiered_search.py      — Tiered web search (official courts → legal portals → news).
-                          TARGET: not run synchronously in request; run in background if coverage weak.
-  auto_enricher.py      — Fetch PDFs, save to Drive, index. TARGET: only run on Index action or
-                          background job; during response only add to pending_indexing (no chunk/embed).
-  indian_kanoon_client.py — Indian Kanoon API; citation-count boost (CITATION_BOOST_WEIGHT).
-  act_profile_index.py  — Act-level profiles for pre-filtering when index has many acts.
-  sufficiency_analyzer.py — LLM-driven sufficiency/gap analysis.
+User sends the first message.
 
-  Target limits (Tier 1): max_queries = 3, vector_candidates = 40, bm25_candidates = 40,
-  rerank_top = 8. Web only when local result count < 3 (not by score threshold).
+Frontend:
+- POST /submit_case/stream
 
---------------------------------------------------------------------------------
-6. DOCUMENT INGESTION (Ingestion/)
---------------------------------------------------------------------------------
+Backend:
+- api_server.py creates an SSE queue and worker thread
+- process_chat(..., phase="fact_collection")
+- fact_collector extracts a compact intake state
+- system either:
+  - returns the next clustered question
+  - or marks the matter analysis-ready
 
-  smart_chunker.py (v3)
-       │
-       ├── Bare acts: section-level chunking (_SECTION_PATTERNS, em-dash "NNN. Title.—");
-       │   sub-sections at (1)/(2), (a)/(b); Proviso/Explanation/Illustration as sub-chunks.
-       │   TARGET: strip editorial noise (Subs. by Act…, footnotes, page numbers) before chunking.
-       ├── Case laws: paragraph-level; _detect_case_metadata (case_name, court, year, citation).
-       │   TARGET: improve metadata parsing; add paragraph_type (facts/reasoning/ratio);
-       │   add sections_cited; strip OCR noise.
-       ├── process_bare_acts_directory, process_case_laws_directory → chunks with metadata.
-       └── Dedup case chunks (case_name, para_num, first-200-chars).
+If more facts are needed:
+- frontend displays the next question
+- workflow state remains in interview mode
 
-  build_v2_index.py
-       │
-       ├── Reads BARE_ACTS_DIR, CASELAW_DIR; runs smart_chunker.
-       ├── Embeds chunks (same EMBEDDING_MODEL as hybrid_retriever); builds FAISS index.
-       ├── Builds BM25 index (retrieval.hybrid_retriever.BM25).
-       └── Writes BARE_INDEX_V2, BARE_CHUNKS_V2, CASE_INDEX_V2, CASE_CHUNKS_V2,
-           BARE_BM25_INDEX, CASE_BM25_INDEX (config).
+If enough facts exist:
+- backend returns the analysis-ready handoff prompt
+- user may either say "proceed" or add one last material fact
 
-  Incremental indexing: services/bare_act_indexer_incremental, case_law_indexer_incremental
-       → Add new documents to v2 indexes without full rebuild.
+3.2 Follow-up user turns
 
-  Rebuild: required after ingestion logic changes (editorial noise strip, case metadata,
-  paragraph_type, sections_cited, OCR cleaning). See IMPROVEMENT_ROADMAP "Vector store: what
-  changes, and when to rebuild".
+Frontend:
+- POST /conversation/continue/stream
 
---------------------------------------------------------------------------------
-7. DATA & CONFIG (config.py)
---------------------------------------------------------------------------------
+Backend:
+- full conversation is passed into process_chat()
+- the system no longer relies on the old qa_history-only interview protocol
+- the same full-conversation path is used for both intake and post-intake turns
 
-  DATA_ROOT (env: NYAYMALAW_DATA_ROOT) → chat_history, vector_store, BareActs, CaseLaws.
-  Vector store v2: bareacts_v2.index, bareacts_v2_chunks.json; caselaws_v2.index, caselaws_v2_chunks.json.
-  BM25: bareacts_bm25.json, caselaws_bm25.json.
-  Act profiles: act_profiles_meta.json, act_profiles_bm25.json (optional).
-  EMBEDDING_MODEL, CROSS_ENCODER_MODEL; FEEDBACK_LOG_PATH; INDIAN_KANOON_API_TOKEN; etc.
+3.3 Analysis-ready handoff
 
---------------------------------------------------------------------------------
-8. SUPPORTING SERVICES
---------------------------------------------------------------------------------
+This is a critical path.
 
-  fact_collector.py    — Greeting detection, Gate 1/2 routing, get_next_question_or_complete.
-  content_guard.py    — check_query_safety, check_response_safety, sanitize_input.
-  feedback_logger.py  — log_interaction → Nyaymalaw_Feedback_Log_v3.xlsx/html.
-  ai_reviewer.py      — run_ai_review (citation/review rules).
-  progress_tracker.py  — Progress callbacks for UI.
-  dispute_decomposer.py — Decompose facts into disputes for per-dispute retrieval.
-  tier_manager.py     — User tier / rate limits (if enabled).
+If the immediately previous assistant turn is the analysis-ready prompt:
+- the user does not re-enter intake
+- the next user message is treated as either:
+  - a confirmation to proceed
+  - or one last material fact
 
---------------------------------------------------------------------------------
-9. AGENTS (CrewAI, optional)
---------------------------------------------------------------------------------
+The current implementation:
+- builds facts from the actual user-history turns
+- preserves the latest material fact in the analysis seed
+- bypasses the old failure mode where the last fact was clipped or treated as a
+  fresh case opening
 
-  agents/orchestrator_agent.py — Fallback when Gate 2 parsing fails; run_orchestrator(conversation, message).
-  agents/Legal_Research/act_case_fusion_agent.py — fuse_bare_act_and_case_law; used by POST /search.
-        → _search_bare_acts, _search_case_laws (hybrid_retriever); _web_fallback_bare_acts / case_laws.
+3.4 Final grounded opinion
 
---------------------------------------------------------------------------------
-10. LLM
---------------------------------------------------------------------------------
+Backend switches to:
+- phase="response_generation"
 
-  llm/ollama_client.py — ask_llm, streaming; get_model_display_for_prompt, get_gpu_info.
-  llm/config.py        — CREWAI_LLM for agents; model selection.
+Then:
+- generate_response() performs local retrieval
+- local bare acts and case materials are formatted
+- a grounded final answer is produced
+- if draft generation fails grounding, the system falls back to a deterministic
+  grounded response rather than a misleading empty result
 
---------------------------------------------------------------------------------
-11. HIGH-LEVEL FLOW (Legal Opinion) — TARGET
---------------------------------------------------------------------------------
+==============================================================================
+4. Frontend Architecture
+==============================================================================
 
-  User message
-       → process_chat(phase=fact_collection)
-       → fact_collector: greeting? → static template (<0.2 s). Else Gate 1 → Gate 2 → complete.
-       → _run_bare_acts_phase: 3-query expansion, decompose disputes, hybrid retrieval (bare + case),
-         rerank, section extraction, statute-anchored case retrieval, authority ranking;
-         no web/indexing in request; return bare_acts + followup.
-       → [User may add info and confirm]
-       → process_chat(phase=response_generation) or bare_acts_review with user's bare_acts
-       → generate_response_v2 / generate_final_opinion_with_case_laws: statute-anchored case
-         retrieval, LLM opinion with citations, indexing_candidates (pending only; no chunk in request).
-       → Response to UI; optional materials_to_confirm; feedback_logger, ai_reviewer.
+Primary UI file:
+- Frontend\src\App.jsx
 
-  Web search and auto_enricher (PDF download, chunking, indexing) do not run inside the request;
-  they run asynchronously or when the user clicks Index. Target response time: 3–6 s for full opinion.
+The frontend currently maintains:
+- messages
+- workflow stage
+- facts
+- currentQuestion
+- qaHistory
+- retrieved materials
+- opinion text
 
-  Search-only (POST /search): act_case_fusion_agent → hybrid_retriever → web fallback → fused results.
+Important current behavior:
+- the frontend uses streaming endpoints for live UX
+- the frontend saves workflow state, not just final messages
+- saved chats can now resume mid-intake rather than always reopening as "done"
 
---------------------------------------------------------------------------------
-12. REFERENCES
---------------------------------------------------------------------------------
+Displayed final answer shape:
+- main opinion text is shown as flowing prose
+- supporting bare acts and case laws are shown separately
 
-  For multi-agent routing and intent behaviour, see docs/CREWAI_MULTI_AGENT_ARCHITECTURE.md.
-  For latency diagnosis, three-tier design, legal query augmentation, statute-anchored retrieval,
-  vector store rebuild, and code checklist, see docs/IMPROVEMENT_ROADMAP.md.
+Implication for prompting:
+- final opinions should be concise narrative analysis
+- prompts should not depend on rigid visible section headings
 
+==============================================================================
+5. API Server Architecture
+==============================================================================
+
+Primary file:
+- api_server.py
+
+Main responsibilities:
+- request parsing
+- auth/user dependency
+- SSE event streaming
+- worker-thread orchestration
+- chat persistence
+- workflow state persistence
+
+Active streaming endpoints:
+- POST /submit_case/stream
+- POST /conversation/continue/stream
+
+Legacy endpoints still exist for compatibility:
+- /submit_case
+- /interview_step
+- /interview_step/stream
+- /conversation/continue
+
+The active frontend path should be considered:
+- /submit_case/stream
+- /conversation/continue/stream
+
+SSE behavior:
+- immediate step events
+- progress snapshots
+- token events during drafting
+- heartbeat comments
+- final done payload
+
+This is what makes the app feel real-time even when retrieval and drafting take
+several seconds.
+
+==============================================================================
+6. Chat Orchestrator
+==============================================================================
+
+Primary file:
+- services\interactive_chat.py
+
+This is the central runtime controller.
+
+Main responsibilities:
+- sanitize and safety-check user input
+- choose fact_collection or response_generation behavior
+- route general chat away from legal analysis
+- preserve context across turns
+- handle the analysis-ready branch correctly
+
+Important current rules:
+- legal_opinion mode keeps the system on the legal path
+- once the assistant has asked the analysis-ready prompt, the next user turn
+  goes directly into response_generation
+- "one last fact" is merged into the final facts summary rather than ignored
+
+Current helper concepts:
+- analysis-ready detection
+- new-case detection
+- user fact-history reconstruction
+- chat-window summary augmentation
+
+The biggest recent improvement in this file was:
+- analysis-ready acknowledgment is processed before fresh-case detection
+- base facts are rebuilt from user turns, not from assistant summaries
+
+==============================================================================
+7. Intake Engine
+==============================================================================
+
+Primary file:
+- services\fact_collector.py
+
+The intake engine is responsible for:
+- compact state extraction
+- legal vs generic routing
+- next-question selection
+- completion gating
+
+Current design intent:
+- one intake brain
+- one next-question brain
+- one completion rule
+- then a predictable handoff into grounded analysis
+
+Current intake behavior:
+- asks 2 to 3 closely related questions within one factual theme
+- tracks urgency, prior actions, evidence posture, and relief posture
+- avoids restarting the case mid-stream
+- filters noisy open points and low-quality questions
+
+Completion behavior:
+- complete when the normalized legal state is actually ready
+- or when the user explicitly chooses to stop and enough facts exist
+
+What the intake engine should not do:
+- cite law from memory
+- jump into final advice too early
+- ask the same question repeatedly
+- downgrade an ongoing legal matter into greeting or generic chat
+
+==============================================================================
+8. Response Generation
+==============================================================================
+
+Primary file:
+- services\response_generator_v2.py
+
+This module handles:
+- local retrieval
+- dispute construction for the fast path
+- local grounding
+- final opinion drafting
+- deterministic fallback when needed
+
+8.1 Interactive fast path
+
+The active legal-opinion experience defaults toward a fast local path:
+- local retrieval only
+- warmed indexes and models
+- compact grounded drafting
+- streaming token output
+
+The fast path now includes:
+- focused fact compression that preserves late facts
+- generic fact-alignment reranking of retrieved materials
+- local-only rescue search if the first fast retrieval is empty
+- safer grounded fallback when model output is rejected by the grounding guard
+
+8.2 What is generalized vs what is heuristic
+
+Generalized improvements:
+- preserve first facts plus latest material fact
+- score retrieved materials against the actual fact pattern
+- retry broader local retrieval before giving up
+- degrade to grounded fallback instead of false "no materials"
+
+Heuristic boosts still exist:
+- some dispute-pattern boosts for known failure modes
+- for example, landlord lockout and rent-default are separated so the fast path
+  does not over-collapse every tenancy dispute into rent arrears logic
+
+The architecture should be read as:
+- general retrieval path first
+- targeted heuristics only as secondary boosts
+
+8.3 Grounding guard
+
+Generated text is checked against locally retrieved materials.
+
+If the draft cites unsupported law:
+- the answer is rejected
+- the system now falls back to a deterministic grounded response based on local
+  materials instead of incorrectly pretending nothing was found
+
+==============================================================================
+9. Retrieval Architecture
+==============================================================================
+
+Primary file:
+- retrieval\hybrid_retriever.py
+
+The retrieval stack is local-first:
+- FAISS semantic search
+- BM25 lexical search
+- reciprocal-rank fusion
+- cross-encoder reranking
+
+Current fast-path optimizations:
+- preloaded indexes
+- preloaded embedder
+- preloaded reranker
+- smaller candidate pools for interactive chat
+- lower-latency fast search helpers:
+  - search_bare_acts_fast()
+  - search_case_summaries_fast()
+
+The runtime also supports broader local search helpers as a second chance when
+fast retrieval comes back thin.
+
+==============================================================================
+10. Runtime Few-Shot Layer
+==============================================================================
+
+Primary files:
+- training\few_shot_retriever.py
+- training\runtime_fewshot\runtime_examples.jsonl
+
+This is now a runtime few-shot layer, not a training-only artifact.
+
+Design:
+- prompts stay light
+- examples live outside the prompt strings
+- runtime retrieves a small curated pack of high-quality examples
+
+Used for:
+- intake state extraction
+- next-question behavior
+- final opinion style
+
+Important note:
+- runtime few-shot retrieval should point only to the curated runtime pack
+- it should not scan the full fine-tuning corpus during live requests
+
+==============================================================================
+11. Runtime Warmup
+==============================================================================
+
+Primary file:
+- services\runtime_warmup.py
+
+Warmup preloads:
+- FAISS and BM25 indexes
+- embedder
+- reranker
+- few-shot runtime pack
+
+This is essential for:
+- single-digit-second response targets
+- immediate streaming activity on first request
+
+==============================================================================
+12. Persistence and State
+==============================================================================
+
+Chat persistence lives in:
+- SQLite app database
+- api_server.py persistence helpers
+
+Saved state includes:
+- messages
+- opinion text
+- retrieved materials
+- workflow state
+
+Workflow state currently includes:
+- stage
+- facts
+- current question
+- qa history
+
+This enables:
+- save mid-intake
+- reload later
+- continue from the same question
+
+==============================================================================
+13. Current Production Expectations
+==============================================================================
+
+Expected behavior:
+- first streamed feedback should appear almost immediately
+- intake follow-up turns should feel live
+- final opinion turns should usually stay in single-digit seconds
+
+Current practical target:
+- immediate SSE step activity
+- fast legal-opinion path around high single-digit seconds in local runs
+
+==============================================================================
+14. Known Residual Quality Areas
+==============================================================================
+
+The system is materially better than the historical flow, but these remain the
+main quality levers:
+
+1. Intake quality
+- some edge cases can still drift or ask an awkward next cluster
+
+2. Retrieval relevance for niche possession / lockout disputes
+- local materials are grounded, but not always as sharp as the fact pattern
+
+3. Draft quality under grounding constraints
+- some model drafts still over-cite or cite unsupported sections, forcing a
+  deterministic fallback
+
+These are quality improvements, not architecture blockers.
+
+==============================================================================
+15. Source of Truth
+==============================================================================
+
+When this document and the code diverge, treat the code as authoritative.
+
+Most important runtime files:
+- C:\Users\rahul\Nyaymalaw-5.0\api_server.py
+- C:\Users\rahul\Nyaymalaw-5.0\Frontend\src\App.jsx
+- C:\Users\rahul\Nyaymalaw-5.0\services\interactive_chat.py
+- C:\Users\rahul\Nyaymalaw-5.0\services\fact_collector.py
+- C:\Users\rahul\Nyaymalaw-5.0\services\response_generator_v2.py
+- C:\Users\rahul\Nyaymalaw-5.0\retrieval\hybrid_retriever.py
+- C:\Users\rahul\Nyaymalaw-5.0\training\few_shot_retriever.py

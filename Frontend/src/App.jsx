@@ -1,8 +1,6 @@
 import { memo, useState, useRef, useEffect, useMemo, useCallback } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
-import jsPDF from "jspdf"; // npm install jspdf
-import * as XLSX from "xlsx";
 import "./App.css";
 
 const AUTH_TOKEN_KEY = "nyaymalaw_auth_token";
@@ -49,7 +47,30 @@ const RESPONSE_FEEDBACK_TAG_GROUPS = [
   },
 ];
 
-/** Splits opinion text into normal segments and quote blocks (content inside ┌─┐ │ ... │ └─┘). Returns [{ type: 'normal'|'quote', text }]. */
+/** Strip trailing "..." / ".." / "." from step messages so the UI can show a single animated ellipsis. */
+function stripTrailingStepEllipsis(msg) {
+  if (typeof msg !== "string") return msg;
+  return msg.replace(/\.{1,3}$/, "");
+}
+
+/** Single CTA below Next steps in bare-act guidance; must not be duplicated in summary body. */
+const JUDICIAL_PRECEDENT_CTA_OFFER =
+  "If you want, I can next look for the closest judicial precedents that support these statutory anchors.";
+
+const JUDICIAL_PRECEDENT_CTA_LINE_RE =
+  /^If you want, I can next look for the closest judicial precedents that support these (statutory anchors|disputes)\.?\s*$/i;
+
+function stripJudicialPrecedentCtaLines(text) {
+  if (!text || typeof text !== "string") return "";
+  return text
+    .split("\n")
+    .filter((line) => !JUDICIAL_PRECEDENT_CTA_LINE_RE.test(line.trim()))
+    .join("\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+/** Splits opinion text into normal segments and quote blocks (content inside â”Œâ”€â” â”‚ ... â”‚ â””â”€â”˜). Returns [{ type: 'normal'|'quote', text }]. */
 function parseOpinionWithQuotes(opinion) {
   if (!opinion || typeof opinion !== "string") return [{ type: "normal", text: "" }];
   const segments = [];
@@ -64,17 +85,17 @@ function parseOpinionWithQuotes(opinion) {
   };
   while (i < lines.length) {
     const line = lines[i];
-    if (/^┌─+┐\s*$/.test(line)) {
+    if (/^â”Œâ”€+â”\s*$/.test(line)) {
       flushNormal();
       const start = i;
       i += 1;
       const quoteLines = [];
-      while (i < lines.length && /^│\s*(.*)$/.test(lines[i])) {
-        const m = lines[i].match(/^│\s*(.*)$/);
+      while (i < lines.length && /^â”‚\s*(.*)$/.test(lines[i])) {
+        const m = lines[i].match(/^â”‚\s*(.*)$/);
         quoteLines.push((m[1] || "").trimEnd());
         i += 1;
       }
-      if (i < lines.length && /^└─+┘\s*$/.test(lines[i])) {
+      if (i < lines.length && /^â””â”€+â”˜\s*$/.test(lines[i])) {
         i += 1;
         segments.push({ type: "quote", text: quoteLines.join("\n") });
       } else {
@@ -102,10 +123,10 @@ function buildCitationMaps(bareActs, caseLaws) {
     const sec = String(ba.section_number ?? "").trim();
     const url = ba.url || ba.source_url || "";
     if (!url) return;
-    const key = `${normalize(act)}§${sec}`;
+    const key = `${normalize(act)}Â§${sec}`;
     if (!bareMap.has(key)) bareMap.set(key, url);
     if (act && sec) {
-      const key2 = `${normalize(act)}, § ${sec}`;
+      const key2 = `${normalize(act)}, Â§ ${sec}`;
       if (!bareMap.has(key2)) bareMap.set(key2, url);
     }
   }
@@ -129,7 +150,7 @@ function buildCitationMaps(bareActs, caseLaws) {
 function linkifyOpinionSegment(text, bareMap, caseMap) {
   if (!text || !bareMap || !caseMap) return [text];
   const parts = [];
-  // Match [...] that may be bare act (contains §) or case law (long hex)
+  // Match [...] that may be bare act (contains Â§) or case law (long hex)
   const bracketRe = /\[([^\]]+)\]/g;
   let lastEnd = 0;
   let m;
@@ -138,19 +159,19 @@ function linkifyOpinionSegment(text, bareMap, caseMap) {
     const inner = m[1].trim();
     if (lastEnd < m.index) parts.push(text.slice(lastEnd, m.index));
 
-    const isBare = /§/.test(inner);
+    const isBare = /Â§/.test(inner);
     const isCaseSig = /^[a-f0-9]{32,}$/i.test(inner);
     let url = null;
     if (isBare) {
       const norm = inner.toLowerCase().replace(/\s+/g, " ").trim();
-      url = bareMap.get(norm) ?? bareMap.get(norm.replace(/\s*§\s*/, "§"));
-      if (!url && inner.includes("§")) {
-        const secMatch = inner.match(/§\s*(\d+[A-Za-z]*)/);
-        const actPart = inner.replace(/\s*§\s*\d+[A-Za-z]*\s*[—\-–].*$/, "").replace(/^the\s+/i, "").trim();
+      url = bareMap.get(norm) ?? bareMap.get(norm.replace(/\s*Â§\s*/, "Â§"));
+      if (!url && inner.includes("Â§")) {
+        const secMatch = inner.match(/Â§\s*(\d+[A-Za-z]*)/);
+        const actPart = inner.replace(/\s*Â§\s*\d+[A-Za-z]*\s*[â€”\-â€“].*$/, "").replace(/^the\s+/i, "").trim();
         const actNorm = actPart.replace(/\s*,\s*(\d{4})\s*$/, " $1").toLowerCase().replace(/\s+/g, " ").trim();
         if (secMatch && actNorm) {
-          url = bareMap.get(`${actNorm}§${secMatch[1]}`);
-          if (!url) url = bareMap.get(actNorm + "§" + secMatch[1]);
+          url = bareMap.get(`${actNorm}Â§${secMatch[1]}`);
+          if (!url) url = bareMap.get(actNorm + "Â§" + secMatch[1]);
         }
       }
     }
@@ -389,6 +410,9 @@ function App() {
   const [facts, setFacts] = useState("");
   const [currentQuestion, setCurrentQuestion] = useState("");
   const [qaHistory, setQaHistory] = useState([]); // [{question, answer}]
+  const [analysisStage, setAnalysisStage] = useState("intake");
+  const [analysisFactsSummary, setAnalysisFactsSummary] = useState("");
+  const [lastResponseType, setLastResponseType] = useState("");
   const [opinionText, setOpinionText] = useState("");
   const [retrieved, setRetrieved] = useState([]);
   const [rawResponse, setRawResponse] = useState("");
@@ -398,6 +422,7 @@ function App() {
   const [progress, setProgress] = useState(null);
   const [elapsedTime, setElapsedTime] = useState(0);
   const [expandedGroups, setExpandedGroups] = useState({});
+  const PROGRESS_LIVE_KEY = "progress_live";
 
   // Streaming state: step timeline + live token text
   const [streamingSteps, setStreamingSteps] = useState([]); // [{message, icon, done}]
@@ -436,7 +461,7 @@ function App() {
     const startHeight = evalPaneHeight;
     const onMove = (moveEvent) => {
       const deltaY = moveEvent.clientY - startY;
-      // Drag cursor UP (negative deltaY) → increase pane height; DOWN → decrease (so movement follows cursor)
+      // Drag cursor UP (negative deltaY) â†’ increase pane height; DOWN â†’ decrease (so movement follows cursor)
       let next = startHeight - deltaY;
       if (next < EVAL_PANE_MIN_HEIGHT) next = EVAL_PANE_MIN_HEIGHT;
       const maxPx = typeof window !== "undefined" ? window.innerHeight * (EVAL_PANE_MAX_VH / 100) : 600;
@@ -651,6 +676,11 @@ function App() {
       ? "done"
       : "await_facts";
     const stage = ["await_facts", "interview", "done"].includes(state.stage) ? state.stage : inferredStage;
+    const analysisStage = typeof state.analysisStage === "string" && state.analysisStage.trim()
+      ? state.analysisStage.trim()
+      : (stage === "done" ? "" : "intake");
+    const factsSummary = typeof state.factsSummary === "string" ? state.factsSummary.trim() : "";
+    const lastResponseType = typeof state.lastResponseType === "string" ? state.lastResponseType.trim() : "";
     return {
       stage,
       facts: typeof state.facts === "string" && state.facts.trim()
@@ -660,6 +690,9 @@ function App() {
         ? (currentQuestion || (typeof lastAssistantQuestion?.content === "string" ? lastAssistantQuestion.content : ""))
         : "",
       qaHistory: qa,
+      analysisStage,
+      factsSummary,
+      lastResponseType,
     };
   }, [deriveQaHistoryFromMessages]);
 
@@ -683,11 +716,14 @@ function App() {
         facts,
         currentQuestion,
         qaHistory,
+        analysisStage,
+        factsSummary: analysisFactsSummary,
+        lastResponseType,
         ...overrides,
       },
       nextMessages,
     );
-  }, [currentQuestion, facts, messages, normalizeWorkflowState, qaHistory, stage]);
+  }, [analysisFactsSummary, analysisStage, currentQuestion, facts, lastResponseType, messages, normalizeWorkflowState, qaHistory, stage]);
 
   const resolveModelUsed = useCallback((data, fallback = "") => {
     if (typeof data?.model_used === "string" && data.model_used.trim()) return data.model_used.trim();
@@ -779,23 +815,115 @@ function App() {
     }
   }, [API_BASE, messages, normalizeAssistantText]);
 
-  // Load saved chats once on mount (do not depend on API_BASE to avoid re-runs and 429 from backend).
+  // Sidebar data: load chat history first, then bare acts, then case laws (sequential, one mount pass).
   useEffect(() => {
-    const token = localStorage.getItem(AUTH_TOKEN_KEY);
-    const headers = token ? { Authorization: `Bearer ${token}` } : {};
-    fetch(`${API_BASE}/chats`, { headers })
-      .then(async (res) => {
-        if (!res.ok) return { chats: [] }; // 429 or other error: don't parse body (may be HTML)
-        const text = await res.text();
-        try {
-          return text ? JSON.parse(text) : { chats: [] };
-        } catch {
-          return { chats: [] };
+    let cancelled = false;
+
+    const loadSidebarData = async () => {
+      const token = localStorage.getItem(AUTH_TOKEN_KEY);
+      const headers = token ? { Authorization: `Bearer ${token}` } : {};
+
+      try {
+        const res = await fetch(`${API_BASE}/chats`, { headers });
+        let data = { chats: [] };
+        if (res.ok) {
+          const text = await res.text();
+          try {
+            data = text ? JSON.parse(text) : { chats: [] };
+          } catch {
+            data = { chats: [] };
+          }
         }
-      })
-      .then((data) => setSavedChats(Array.isArray(data.chats) ? data.chats.map(normalizeSavedChat) : []))
-      .catch(() => setSavedChats([]));
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional: run once on mount only
+        if (!cancelled) {
+          setSavedChats(Array.isArray(data.chats) ? data.chats.map(normalizeSavedChat) : []);
+        }
+      } catch {
+        if (!cancelled) setSavedChats([]);
+      }
+
+      if (cancelled) return;
+
+      try {
+        const libRes = await fetch(`${API_BASE}/bareacts/library`);
+        if (libRes.ok) {
+          const libData = await libRes.json().catch(() => ({}));
+          const jurisdictions = Array.isArray(libData?.jurisdictions) ? libData.jurisdictions : [];
+          const normalized = jurisdictions
+            .map((j) => ({
+              name: (j?.name || "").trim() || "Bare Acts",
+              acts: Array.isArray(j?.acts) ? j.acts : [],
+            }))
+            .filter((j) => j.acts.length > 0);
+          if (normalized.length > 0) {
+            if (!cancelled) {
+              setBareActsLibrary(normalized);
+              setBareActs(normalized.flatMap((j) => j.acts.map((a) => (typeof a === "string" ? a : a.name))));
+              setBareActsJurisdictionOpen((prev) => prev ?? normalized[0]?.name ?? null);
+            }
+            return;
+          }
+        }
+
+        const res = await fetch(`${API_BASE}/bareacts/list`);
+        if (!cancelled) {
+          if (!res.ok) {
+            setBareActs(DEFAULT_BARE_ACTS);
+          } else {
+            const text = await res.text();
+            let data = {};
+            try {
+              data = text ? JSON.parse(text) : {};
+            } catch {
+              setBareActs(DEFAULT_BARE_ACTS);
+              return;
+            }
+            const acts = data.acts || [];
+            setBareActs(acts.length > 0 ? acts : DEFAULT_BARE_ACTS);
+          }
+        }
+      } catch (err) {
+        console.error("Error fetching bare acts:", err);
+        if (!cancelled) setBareActs(DEFAULT_BARE_ACTS);
+      }
+
+      if (cancelled) return;
+
+      try {
+        const libRes = await fetch(`${API_BASE}/caselaws/library`);
+        if (libRes.ok) {
+          const libData = await libRes.json().catch(() => ({}));
+          const courts = Array.isArray(libData?.courts) ? libData.courts : [];
+          const normalized = courts
+            .map((c) => ({
+              name: (c?.name || "").trim() || "Case laws",
+              cases: Array.isArray(c?.cases) ? c.cases : [],
+            }))
+            .filter((c) => c.cases.length > 0);
+          if (normalized.length > 0) {
+            if (!cancelled) {
+              setCaseLawsLibrary(normalized);
+              setCaseLawsList(normalized.flatMap((c) => c.cases.map((x) => (typeof x === "string" ? x : x.name))));
+              setCaseLawsCourtOpen((prev) => prev ?? normalized[0]?.name ?? null);
+            }
+            return;
+          }
+        }
+
+        const res = await fetch(`${API_BASE}/caselaws/list`);
+        if (!cancelled && res.ok) {
+          const data = await res.json().catch(() => ({}));
+          setCaseLawsList(Array.isArray(data.cases) ? data.cases : []);
+        }
+      } catch {
+        if (!cancelled) setCaseLawsList([]);
+      }
+    };
+
+    loadSidebarData();
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- mount only; chats first, then libraries
   }, []);
 
   // Persist current chat to backend when it changes (no auth: backend uses anonymous user)
@@ -831,95 +959,6 @@ function App() {
       )
     );
   }, [buildWorkflowState, messages, opinionText, retrieved]);
-
-  // Fetch Bare Acts once on mount (do not depend on API_BASE to avoid re-runs and 429).
-  useEffect(() => {
-    const fetchBareActs = async () => {
-      try {
-        // Prefer new grouped library endpoint that mirrors json_output/BareActs/<Jurisdiction>/...
-        const libRes = await fetch(`${API_BASE}/bareacts/library`);
-        if (libRes.ok) {
-          const libData = await libRes.json().catch(() => ({}));
-          const jurisdictions = Array.isArray(libData?.jurisdictions) ? libData.jurisdictions : [];
-          const normalized = jurisdictions
-            .map((j) => ({
-              name: (j?.name || "").trim() || "Bare Acts",
-              acts: Array.isArray(j?.acts) ? j.acts : [],
-            }))
-            .filter((j) => j.acts.length > 0);
-          if (normalized.length > 0) {
-            setBareActsLibrary(normalized);
-            // Keep flat list of names for retrieval (acts are now {name, file} objects).
-            setBareActs(normalized.flatMap((j) => j.acts.map((a) => (typeof a === "string" ? a : a.name))));
-            // Default to the first jurisdiction being expanded.
-            if (!bareActsJurisdictionOpen && normalized[0]?.name) {
-              setBareActsJurisdictionOpen(normalized[0].name);
-            }
-            return;
-          }
-        }
-
-        // Fallback: older API that returns a flat list.
-        const res = await fetch(`${API_BASE}/bareacts/list`);
-        if (!res.ok) {
-          setBareActs(DEFAULT_BARE_ACTS);
-          return;
-        }
-        const text = await res.text();
-        let data = {};
-        try {
-          data = text ? JSON.parse(text) : {};
-        } catch {
-          setBareActs(DEFAULT_BARE_ACTS);
-          return;
-        }
-        const acts = data.acts || [];
-        setBareActs(acts.length > 0 ? acts : DEFAULT_BARE_ACTS);
-      } catch (err) {
-        console.error("Error fetching bare acts:", err);
-        setBareActs(DEFAULT_BARE_ACTS);
-      }
-    };
-    fetchBareActs();
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional: run once on mount only
-  }, []);
-
-  // Fetch Case Laws list once on mount
-  useEffect(() => {
-    const fetchCaseLaws = async () => {
-      try {
-        // Prefer grouped library endpoint for courts (Supreme Court, Telangana HC, etc.).
-        const libRes = await fetch(`${API_BASE}/caselaws/library`);
-        if (libRes.ok) {
-          const libData = await libRes.json().catch(() => ({}));
-          const courts = Array.isArray(libData?.courts) ? libData.courts : [];
-          const normalized = courts
-            .map((c) => ({
-              name: (c?.name || "").trim() || "Case laws",
-              cases: Array.isArray(c?.cases) ? c.cases : [],
-            }))
-            .filter((c) => c.cases.length > 0);
-          if (normalized.length > 0) {
-            setCaseLawsLibrary(normalized);
-            setCaseLawsList(normalized.flatMap((c) => c.cases.map((x) => (typeof x === "string" ? x : x.name))));
-            if (!caseLawsCourtOpen && normalized[0]?.name) {
-              setCaseLawsCourtOpen(normalized[0].name);
-            }
-            return;
-          }
-        }
-
-        // Fallback: older API that returns a flat list.
-        const res = await fetch(`${API_BASE}/caselaws/list`);
-        if (!res.ok) return;
-        const data = await res.json().catch(() => ({}));
-        setCaseLawsList(Array.isArray(data.cases) ? data.cases : []);
-      } catch {
-        setCaseLawsList([]);
-      }
-    };
-    fetchCaseLaws();
-  }, [API_BASE]);
 
   // Scroll only the chat messages area to bottom (do not move browser window or input)
   useEffect(() => {
@@ -1094,6 +1133,9 @@ function App() {
     setComposerResetSignal((prev) => prev + 1);
     setCurrentQuestion("");
     setQaHistory([]);
+    setAnalysisStage("intake");
+    setAnalysisFactsSummary("");
+    setLastResponseType("");
     setOpinionText("");
     setRetrieved([]);
     setRawResponse("");
@@ -1109,7 +1151,7 @@ function App() {
       `Chat ${new Date().toLocaleString()}`;
     const chat = normalizeSavedChat({
       id: Date.now(),
-      title: title.length > 50 ? title.slice(0, 50) + "…" : title,
+      title: title.length > 50 ? title.slice(0, 50) + "â€¦" : title,
       messages: msgs || [],
       opinionText: opinion || "",
       retrieved: Array.isArray(retr) ? retr : [],
@@ -1137,6 +1179,9 @@ function App() {
     setFacts(workflowState.facts || "");
     setCurrentQuestion(workflowState.currentQuestion || "");
     setQaHistory(Array.isArray(workflowState.qaHistory) ? workflowState.qaHistory : []);
+    setAnalysisStage(workflowState.analysisStage || (workflowState.stage === "done" ? "" : "intake"));
+    setAnalysisFactsSummary(workflowState.factsSummary || "");
+    setLastResponseType(workflowState.lastResponseType || "");
     hasSavedCurrentChatRef.current = true;
     currentChatIdRef.current = normalizedChat.id;
   };
@@ -1238,9 +1283,12 @@ function App() {
   };
 
   const handleQuestionResponse = useCallback((data) => {
-    const nextQuestion = (data.next_question || data.message || "Please share one more important detail, or say 'proceed' if you want me to begin the legal analysis.").trim();
+    const nextQuestion = (data.next_question || data.message || "Please share one more important detail, or say 'proceed' if you want me to identify the applicable bare act sections.").trim();
     setCurrentQuestion(nextQuestion);
     setStage("interview");
+    setAnalysisStage((data.analysis_stage || "").trim() || "intake");
+    if (typeof data.facts_summary === "string" && data.facts_summary.trim()) setAnalysisFactsSummary(data.facts_summary.trim());
+    setLastResponseType("intake_question");
     setMessages((prev) => [
       ...prev,
       makeAssistantMessage(nextQuestion, {
@@ -1256,20 +1304,15 @@ function App() {
   const handleDoneResponse = useCallback((data) => {
     setStage("done");
     setCurrentQuestion("");
+    setAnalysisStage((data.analysis_stage || "").trim());
+    if (typeof data.facts_summary === "string") setAnalysisFactsSummary(data.facts_summary.trim());
+    setLastResponseType(data.response_type || "legal_opinion");
     const opinion = data.opinion_text || "";
     const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
     setOpinionText(opinion);
     setRetrieved(retr);
     if (data.progress) {
       setProgress(data.progress);
-      const groups = (data.progress && data.progress.groups) || [];
-      if (groups.length > 0) {
-        setExpandedGroups((prev) => {
-          const next = { ...prev };
-          groups.forEach((g) => { if (g && g.name) next[g.name] = false; });
-          return next;
-        });
-      }
     }
     const newAssistantMsg = makeAssistantMessage({
       type: "final_opinion",
@@ -1277,6 +1320,8 @@ function App() {
       opinionText: opinion,
       bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
       case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
+      next_steps: Array.isArray(data.next_steps) ? data.next_steps : [],
+      next_steps_summary: typeof data.next_steps_summary === "string" ? data.next_steps_summary : "",
       retrieved: retr,
       progress: data.progress || null,
       model_used: data.model_used || null,
@@ -1285,6 +1330,14 @@ function App() {
       responseType: data.response_type || "legal_opinion",
       modelUsed: resolveModelUsed(data),
       latencyMs: currentTurnLatencyMs(),
+    });
+    setExpandedGroups((prev) => {
+      const next = { ...prev, [`pt_${newAssistantMsg.id}`]: false };
+      const groups = (data.progress && data.progress.groups) || [];
+      groups.forEach((g) => {
+        if (g && g.name) next[g.name] = false;
+      });
+      return next;
     });
     setMessages((prev) => [...prev, newAssistantMsg]);
   }, [currentTurnLatencyMs, makeAssistantMessage, resolveModelUsed]);
@@ -1302,6 +1355,7 @@ function App() {
     setError("");
     setLoading(true);
     setProgress(null); // Reset progress
+    setExpandedGroups((prev) => ({ ...prev, [PROGRESS_LIVE_KEY]: true }));
     setStreamingSteps([]);
     setStreamingToken("");
     setElapsedTime(0); // Reset timer
@@ -1316,7 +1370,7 @@ function App() {
 
     if (isFirstMessage) {
       const chatId = Date.now();
-      const title = raw.trim().length > 50 ? raw.trim().slice(0, 50) + "…" : raw.trim();
+      const title = raw.trim().length > 50 ? raw.trim().slice(0, 50) + "â€¦" : raw.trim();
       const chat = normalizeSavedChat({
         id: chatId,
         title,
@@ -1404,7 +1458,7 @@ function App() {
       try {
         await consumeSSEStream(
           `${API_BASE}/conversation/continue/stream`,
-          { conversation, message: raw, mode: chatMode, model_override: selectedModel === "default" ? "" : selectedModel },
+          { conversation, message: raw, mode: chatMode, model_override: selectedModel === "default" ? "" : selectedModel, workflowState: buildWorkflowState() },
           (progressPayload) => {
             setProgress(progressPayload);
             const groups = progressPayload.groups || [];
@@ -1449,6 +1503,9 @@ function App() {
         setFacts("");
         setCurrentQuestion("");
         setQaHistory([]);
+        setAnalysisStage("intake");
+        setAnalysisFactsSummary("");
+        setLastResponseType("");
         setOpinionText("");
         setRetrieved([]);
         setRawResponse("");
@@ -1500,7 +1557,7 @@ function App() {
         await new Promise((r) => setTimeout(r, 0));
         await consumeSSEStream(
           `${API_BASE}/conversation/continue/stream`,
-          { conversation, message: raw, mode: chatMode, model_override: selectedModel === "default" ? "" : selectedModel },
+          { conversation, message: raw, mode: chatMode, model_override: selectedModel === "default" ? "" : selectedModel, workflowState: buildWorkflowState() },
           (progressPayload) => {
             setProgress(progressPayload);
             const groups = progressPayload.groups || [];
@@ -1553,13 +1610,13 @@ function App() {
   };
 
   // -------------------------
-  // Progress Display Component — single collapsible "Progress tracker" with all steps
+  // Progress Display Component â€” single collapsible "Progress tracker" with all steps
   // -------------------------
   const PROGRESS_TRACKER_KEY = "progress_tracker";
-  const ProgressDisplay = ({ progress, expandedGroups, setExpandedGroups }) => {
+  const ProgressDisplay = ({ progress, expandedGroups, setExpandedGroups, expandKey = PROGRESS_TRACKER_KEY, defaultOpen = true }) => {
     if (!progress || !progress.groups || progress.groups.length === 0) return null;
 
-    const isExpanded = expandedGroups[PROGRESS_TRACKER_KEY] !== undefined ? expandedGroups[PROGRESS_TRACKER_KEY] : true;
+    const isExpanded = expandedGroups[expandKey] !== undefined ? expandedGroups[expandKey] : defaultOpen;
     const allSteps = progress.groups.flatMap((g) => (g ? (g.steps || []).map((s) => ({ ...s, groupName: g.name })) : []));
     const totalStats = progress.groups.reduce(
       (acc, g) => {
@@ -1580,10 +1637,10 @@ function App() {
           onClick={(e) => {
             if (e.target.closest("summary")) {
               e.preventDefault();
-              setExpandedGroups((prev) => ({
-                ...prev,
-                [PROGRESS_TRACKER_KEY]: !(prev[PROGRESS_TRACKER_KEY] !== undefined ? prev[PROGRESS_TRACKER_KEY] : true),
-              }));
+              setExpandedGroups((prev) => {
+                const cur = prev[expandKey] !== undefined ? prev[expandKey] : defaultOpen;
+                return { ...prev, [expandKey]: !cur };
+              });
             }
           }}
         >
@@ -1630,7 +1687,7 @@ function App() {
                           <span className="progress-step-already-label">{alreadyTitles.length} already in library:</span>
                           <ul className="progress-step-already-list">
                             {alreadyTitles.slice(0, 20).map((t, i) => (
-                              <li key={i} title={t}>{t.length > 50 ? t.slice(0, 50) + "…" : t}</li>
+                              <li key={i} title={t}>{t.length > 50 ? t.slice(0, 50) + "â€¦" : t}</li>
                             ))}
                             {alreadyTitles.length > 20 && (
                               <li className="progress-step-already-more">+{alreadyTitles.length - 20} more</li>
@@ -1650,7 +1707,7 @@ function App() {
   };
 
   // -------------------------
-  // Eval Section — JSON as tables (see .cursor/rules/eval-json-ui-rendering.md)
+  // Eval Section â€” JSON as tables (see .cursor/rules/eval-json-ui-rendering.md)
   // - Metrics objects: rows = metric names, cols = mean, n, stdev, ci_95
   // - Aggregated-by-key: rows = outer keys (e.g. threshold), cols = inner keys
   // - Array of objects: flatten nested objects to sub-columns, arrays to length; no collapsibles
@@ -1670,8 +1727,9 @@ function App() {
     a.click();
     URL.revokeObjectURL(a.href);
   };
-  const downloadTableExcel = (headers, rows, filename) => {
+  const downloadTableExcel = async (headers, rows, filename) => {
     try {
+      const XLSX = await import("xlsx");
       const ws = XLSX.utils.aoa_to_sheet([headers, ...rows]);
       const wb = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
@@ -1696,7 +1754,7 @@ function App() {
   };
   const JsonToTable = ({ data, baseFilename = "eval-table" }) => {
     if (data == null) return null;
-    // Detect metrics object: { metric_name: { mean, n, stdev, ci_95 }, ... } → table with metrics as rows
+    // Detect metrics object: { metric_name: { mean, n, stdev, ci_95 }, ... } â†’ table with metrics as rows
     const isMetricsObject = (o) => {
       if (!o || typeof o !== "object" || Array.isArray(o)) return false;
       const entries = Object.entries(o);
@@ -1713,7 +1771,7 @@ function App() {
       const headers = ["metric", ...statKeys];
       const rows = Object.entries(data).map(([metric, stats]) => [
         metric,
-        ...statKeys.map((k) => (stats && stats[k] != null) ? (typeof stats[k] === "number" ? Number(stats[k]).toFixed(4) : String(stats[k])) : "—"),
+        ...statKeys.map((k) => (stats && stats[k] != null) ? (typeof stats[k] === "number" ? Number(stats[k]).toFixed(4) : String(stats[k])) : "â€”"),
       ]);
       return (
         <div className="eval-table-block">
@@ -1726,7 +1784,7 @@ function App() {
                   <tr key={metric}>
                     <td className="eval-metric-name">{metric}</td>
                     {statKeys.map((k) => (
-                      <td key={k}>{(stats && stats[k] != null) ? (typeof stats[k] === "number" ? Number(stats[k]).toFixed(4) : String(stats[k])) : "—"}</td>
+                      <td key={k}>{(stats && stats[k] != null) ? (typeof stats[k] === "number" ? Number(stats[k]).toFixed(4) : String(stats[k])) : "â€”"}</td>
                     ))}
                   </tr>
                 ))}
@@ -1736,7 +1794,7 @@ function App() {
         </div>
       );
     }
-    // Detect aggregated-by-key object (e.g. threshold_sweep aggregated): { "0.1": { mean_precision, mean_recall, ... }, ... } → rows = keys, columns = metric names
+    // Detect aggregated-by-key object (e.g. threshold_sweep aggregated): { "0.1": { mean_precision, mean_recall, ... }, ... } â†’ rows = keys, columns = metric names
     const isAggregatedTable = (o) => {
       if (!o || typeof o !== "object" || Array.isArray(o)) return false;
       const entries = Object.entries(o);
@@ -1760,7 +1818,7 @@ function App() {
         const row = data[rk] || {};
         return [rk, ...colKeys.map((k) => {
           const v = row[k];
-          return v != null ? (typeof v === "number" ? (Number.isInteger(v) ? String(v) : Number(v).toFixed(4)) : String(v)) : "—";
+          return v != null ? (typeof v === "number" ? (Number.isInteger(v) ? String(v) : Number(v).toFixed(4)) : String(v)) : "â€”";
         })];
       });
       return (
@@ -1777,7 +1835,7 @@ function App() {
                       <td className="eval-metric-name">{rk}</td>
                       {colKeys.map((k) => {
                         const v = row[k];
-                        const disp = v != null ? (typeof v === "number" ? (Number.isInteger(v) ? String(v) : Number(v).toFixed(4)) : String(v)) : "—";
+                        const disp = v != null ? (typeof v === "number" ? (Number.isInteger(v) ? String(v) : Number(v).toFixed(4)) : String(v)) : "â€”";
                         return <td key={k}>{disp}</td>;
                       })}
                     </tr>
@@ -1844,7 +1902,7 @@ function App() {
       const headers = keys;
       const rows = flattened.map((row) => keys.map((k) => {
         const v = row[k];
-        return v == null ? "" : typeof v === "string" && v.length > 150 ? v.slice(0, 150) + "…" : String(v);
+        return v == null ? "" : typeof v === "string" && v.length > 150 ? v.slice(0, 150) + "â€¦" : String(v);
       }));
       return (
         <div className="eval-table-block">
@@ -1857,7 +1915,7 @@ function App() {
                   <tr key={i}>
                     {keys.map((k) => {
                       const v = row[k];
-                      const s = v == null ? "" : typeof v === "string" && v.length > 150 ? v.slice(0, 150) + "…" : String(v);
+                      const s = v == null ? "" : typeof v === "string" && v.length > 150 ? v.slice(0, 150) + "â€¦" : String(v);
                       return <td key={k}>{s}</td>;
                     })}
                   </tr>
@@ -1951,7 +2009,7 @@ function App() {
             ))}
           </div>
         )}
-        {evalLoading && <p className="eval-loading">Loading…</p>}
+        {evalLoading && <p className="eval-loading">Loadingâ€¦</p>}
         {evalLoaded && !evalLoading && (
           <div className="eval-content">
             <h4 className="eval-file-title">{evalLoaded.path}</h4>
@@ -1996,7 +2054,7 @@ function App() {
         Architecture
       </summary>
       <div className="architecture-section-body">
-        {architectureLoading && <p className="architecture-loading">Loading…</p>}
+        {architectureLoading && <p className="architecture-loading">Loadingâ€¦</p>}
         {!architectureLoading && architectureContent && (
           <div className="architecture-content">
             <ReactMarkdown rehypePlugins={[rehypeRaw]}>{architectureContent}</ReactMarkdown>
@@ -2116,21 +2174,21 @@ function App() {
       if (data.response.bare_act_sections?.length > 0) {
         parts.push({
           type: "bare",
-          title: "📘 Bare Act Sections",
+          title: "ðŸ“˜ Bare Act Sections",
           items: data.response.bare_act_sections,
         });
       }
       if (data.response.case_laws?.length > 0) {
         parts.push({
           type: "case",
-          title: "📚 Case Laws (from database)",
+          title: "ðŸ“š Case Laws (from database)",
           items: data.response.case_laws,
         });
       }
       if (data.response.internet_case_laws?.length > 0) {
         parts.push({
           type: "internet_case",
-          title: "📚 Indiankanoon Fallback Results",
+          title: "ðŸ“š Indiankanoon Fallback Results",
           items: data.response.internet_case_laws,
         });
       }
@@ -2145,9 +2203,11 @@ function App() {
     return { type: "question", text: "How can I help?" };
   };
 
-  const renderAssistantContent = (content) => {
+  const renderAssistantContent = (content, options = {}) => {
+    const progressExpandKey = options.progressExpandKey ?? PROGRESS_TRACKER_KEY;
+    const progressDefaultOpen = options.progressDefaultOpen !== undefined ? options.progressDefaultOpen : false;
     if (content == null) return null;
-    const trimDots = (s) => (s || "").replace(/\n+\.\.\.\s*$/, " …").replace(/\n+$/, "");
+    const trimDots = (s) => (s || "").replace(/\n+\.\.\.\s*$/, " â€¦").replace(/\n+$/, "");
     if (typeof content === "string") {
       return <p className="message-text">{trimDots(content)}</p>;
     }
@@ -2165,151 +2225,524 @@ function App() {
       const responseType = content.response_type || "legal_opinion";
       const bareActs = content.bare_acts || [];
       const caseLaws = content.case_laws || [];
-      const messageProgress = content.progress || null; // Get progress from message content
+      const nextSteps = content.next_steps || [];
+      const nextStepsSummaryRaw = typeof content.next_steps_summary === "string" ? content.next_steps_summary : "";
+      const messageProgress = content.progress || null;
 
-      // Helper: render a single item row inside a grouped box
+      const cleanResultText = (rawText, isVerbatim = false) => {
+        const value = typeof rawText === "string" ? rawText : "";
+        if (!value.trim()) return "";
+        if (isVerbatim) return value.trim();
+        return value
+          .split(/[.\n]/)
+          .map((line) => line.trim())
+          .filter((line) => line.length > 20 && !/^(Skip|Search|Login|Menu|Toggle|Free|Premium|Print|Download|Pricing)/i.test(line))
+          .join('. ')
+          .trim();
+      };
+
+      const renderSourceLink = (url, label = "View original source") => (
+        url ? (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="result-item-source-link"
+            title="Opens in a new tab."
+          >
+            {label}
+          </a>
+        ) : null
+      );
+
+      const groupItemsByDispute = (items) => {
+        const groups = new Map();
+        (items || []).forEach((item) => {
+          const disputeId = item._dispute_id || "general";
+          const disputeLabel = item._dispute_label || `Issue ${groups.size + 1}`;
+          const disputeText = item._dispute_text || "";
+          const current = groups.get(disputeId) || {
+            id: disputeId,
+            label: disputeLabel,
+            text: disputeText,
+            items: [],
+            bestScore: -Infinity,
+          };
+          current.items.push(item);
+          current.bestScore = Math.max(current.bestScore, Number(item._sort_score ?? item._rerank_score ?? 0));
+          if (!current.text && disputeText) current.text = disputeText;
+          if (!current.label && disputeLabel) current.label = disputeLabel;
+          groups.set(disputeId, current);
+        });
+        return Array.from(groups.values())
+          .map((group) => ({
+            ...group,
+            items: [...group.items].sort((a, b) => Number(b._sort_score ?? b._rerank_score ?? 0) - Number(a._sort_score ?? a._rerank_score ?? 0)),
+          }))
+          .sort((a, b) => b.bestScore - a.bestScore);
+      };
+
+      const buildSectionLabel = (section) => {
+        const sectionNumber = `${section.section_number || ""}`.trim();
+        const sectionTitle = (section.section_title || "").trim();
+        if (sectionNumber && sectionTitle) return `Section ${sectionNumber} - ${sectionTitle}`;
+        if (sectionNumber) return `Section ${sectionNumber}`;
+        if (sectionTitle) return sectionTitle;
+        return section.title || "Key section";
+      };
+
+      const tryLeadingParagraphRefFromJudgmentText = (rawText) => {
+        const t = String(rawText || "").trim();
+        if (!t) return "";
+        const m = t.match(/^(?:[\[(]?\s*)?(\d{1,4})\s*[\])]?\s*[.):\-–—]\s+\S/);
+        if (m) return `Para. ${m[1]}`;
+        const m2 = t.match(/^Paragraphs?\s+([\d\s,\-–—]+?)(?:\s*[.:)\]]|\s+—|\s+–|\s+-\s|\n)/i);
+        if (m2) return `Paras. ${m2[1].trim()}`;
+        const m3 = t.match(/^¶\s*(\d{1,4})\b/);
+        if (m3) return `Para. ${m3[1]}`;
+        return "";
+      };
+
+      const formatJudgmentChunkHeading = (item) => {
+        if (!item || typeof item !== "object") return "";
+        const n = item.paragraph_num ?? item.paragraph_id ?? item.para_num ?? item.paragraph_number;
+        if (n !== undefined && n !== null && String(n).trim() !== "") {
+          const s = String(n).trim();
+          if (/^para(s)?\.?\s+/i.test(s)) return s.charAt(0).toUpperCase() + s.slice(1);
+          return `Para. ${s}`;
+        }
+        const multi = item.paragraph_numbers ?? item.paragraph_refs;
+        if (Array.isArray(multi) && multi.length > 0) {
+          const parts = multi.map((x) => String(x).trim()).filter(Boolean);
+          if (parts.length) return `Paras. ${parts.join(", ")}`;
+        }
+        const pl = String(item.paragraph_label || item.section_label || item.citation_anchor || "").trim();
+        if (pl) return pl;
+        const cite = String(item.citation || item.citation_label || item.neutral_citation || "").trim();
+        if (cite) return cite;
+        const subTitle = String(item.title || "").trim();
+        const caseNm = String(item.case_name || "").trim();
+        if (subTitle && caseNm && subTitle !== caseNm) {
+          return subTitle.length > 120 ? `${subTitle.slice(0, 117)}…` : subTitle;
+        }
+        const fromText = tryLeadingParagraphRefFromJudgmentText(item.text || item.full_text || "");
+        if (fromText) return fromText;
+        return "";
+      };
+
+      const mergeLegacyNextStepFields = (item) =>
+        [item.what_to_do, item.precautions, item.why_it_helps, item.challenge_to_watch, item.legal_protection]
+          .map((x) => String(x || "").trim())
+          .filter(Boolean)
+          .join(" ")
+          .trim();
+
+      const normalizeNextStepBullets = (items) => {
+        const out = [];
+        const seen = new Set();
+        (Array.isArray(items) ? items : []).forEach((item) => {
+          if (!item || typeof item !== "object") return;
+          const title = String(item.title || "").trim();
+          let summary = String(item.summary || "").trim();
+          if (!summary) summary = mergeLegacyNextStepFields(item);
+          if (!summary && title.length < 4) return;
+          if (!title && !summary) return;
+          const dedupeKey = `${(title || "step").toLowerCase()}|${(summary || title).slice(0, 100).toLowerCase()}`;
+          if (seen.has(dedupeKey)) return;
+          seen.add(dedupeKey);
+          out.push({
+            title: title || "Next step",
+            summary: summary || title,
+          });
+        });
+        return out;
+      };
+
+      const buildNextStepsBullets = (summaryRaw, items) => {
+        const bullets = normalizeNextStepBullets(items);
+        if (bullets.length > 0) return bullets;
+        const s = typeof summaryRaw === "string" ? summaryRaw.trim() : "";
+        if (s) return [{ title: "Recommended actions", summary: s }];
+        return [];
+      };
+
+      const groupBareActsByDisputeAndAct = (items) => {
+        return groupItemsByDispute(items).map((disputeGroup) => {
+          const acts = new Map();
+          disputeGroup.items.forEach((item) => {
+            const actName = item.act_name || item.source || item.title || "Applicable Act";
+            const actKey = actName.toLowerCase();
+            const current = acts.get(actKey) || {
+              id: actKey,
+              name: actName,
+              url: item.url || item.source_url || "",
+              sections: [],
+              bestScore: -Infinity,
+            };
+            current.sections.push(item);
+            current.bestScore = Math.max(current.bestScore, Number(item._sort_score ?? item._rerank_score ?? 0));
+            if (!current.url && (item.url || item.source_url)) current.url = item.url || item.source_url;
+            acts.set(actKey, current);
+          });
+          const rankedActs = Array.from(acts.values())
+            .map((act) => ({
+              ...act,
+              sections: [...act.sections].sort((a, b) => Number(b._sort_score ?? b._rerank_score ?? 0) - Number(a._sort_score ?? a._rerank_score ?? 0)),
+            }))
+            .sort((a, b) => b.bestScore - a.bestScore);
+          return {
+            ...disputeGroup,
+            acts: rankedActs,
+          };
+        });
+      };
+
       const renderResultItem = (item, idx) => {
         const title = item.title || item.act_name || item.source || `Result ${idx + 1}`;
-        const url = item.url || item.source_url || ""; // Check multiple URL fields
-        const rawText = item.text || "";
-        // Clean: remove very short fragments and navigation-like lines, but show full content
-        const cleanLines = rawText
-          .split(/[.\n]/)
-          .map(l => l.trim())
-          .filter(l => l.length > 20 && !/^(Skip|Search|Login|Menu|Toggle|Free|Premium|Print|Download|Pricing)/i.test(l));
-        const cleanedText = cleanLines.join(". ").trim();
+        const url = item.url || item.source_url || "";
+        const explanation = item.explanation || "";
+        const isVerbatim = Boolean(item.is_verbatim_excerpt);
+        const cleanedText = cleanResultText(item.text || "", isVerbatim);
         return (
-          <div key={idx} className="result-item-row">
+          <div key={idx} className="result-item-row staged-authority-card">
             <div className="result-item-header">
               <span className="result-item-number">{idx + 1}.</span>
               {url ? (
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="result-item-title-link"
-                  title="Opens in a new tab."
-                >
-                  {title}
-                </a>
+                <a href={url} target="_blank" rel="noopener noreferrer" className="result-item-title-link" title="Opens in a new tab.">{title}</a>
               ) : (
                 <span className="result-item-title">{title}</span>
               )}
             </div>
-            {cleanedText && <p className="result-item-full-text">{cleanedText}</p>}
-            {url && (
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="result-item-source-link"
-                title="Opens in a new tab."
-              >
-                View original source
-              </a>
+            {explanation && (
+              <div className="authority-summary-block">
+                <div className="authority-summary-label">Why this matters</div>
+                <p className="authority-summary-text">{explanation}</p>
+              </div>
             )}
+            {cleanedText && (
+              <div className="authority-verbatim-block">
+                <div className="authority-summary-label">Relevant text</div>
+                <p className="stage-verbatim-box" style={isVerbatim ? { whiteSpace: "pre-line" } : undefined}>{cleanedText}</p>
+              </div>
+            )}
+            {renderSourceLink(url)}
           </div>
         );
       };
 
-      // Helper: render bare act with nested case laws
+      const renderCaseLawItem = (caseLaw, idx) => {
+        const caseTitle = caseLaw.title || caseLaw.case_name || `Case ${idx + 1}`;
+        const caseUrl = caseLaw.url || caseLaw.source_url || "";
+        const caseExplanation = caseLaw.explanation || "";
+        const caseIsVerbatim = Boolean(caseLaw.is_verbatim_excerpt);
+        const caseText = cleanResultText(caseLaw.text || "", caseIsVerbatim);
+        const paraHeading = formatJudgmentChunkHeading(caseLaw);
+        return (
+          <div key={idx} className="related-case-law-item staged-precedent-card">
+            <div className="case-law-header">
+              {caseUrl ? (
+                <a href={caseUrl} target="_blank" rel="noopener noreferrer" className="case-law-title-link" title="Opens in a new tab.">{caseTitle}</a>
+              ) : (
+                <span className="case-law-title">{caseTitle}</span>
+              )}
+            </div>
+            {caseExplanation && (
+              <div className="authority-summary-block authority-summary-block--nested">
+                <div className="authority-summary-label">Why this precedent helps</div>
+                <p className="authority-summary-text">{caseExplanation}</p>
+              </div>
+            )}
+            {caseText && (
+              <div className="authority-verbatim-block authority-verbatim-block--nested">
+                {paraHeading ? <div className="staged-bare-act-section-bullet-label case-law-para-heading">{paraHeading}</div> : null}
+                <p className="stage-verbatim-box stage-verbatim-box--nested" style={caseIsVerbatim ? { whiteSpace: "pre-line" } : undefined}>{caseText}</p>
+              </div>
+            )}
+            {renderSourceLink(caseUrl, "View judgment")}
+          </div>
+        );
+      };
+
       const renderBareActWithCaseLaws = (bareAct, idx) => {
         const title = bareAct.title || bareAct.act_name || bareAct.source || `Bare Act ${idx + 1}`;
         const url = bareAct.url || bareAct.source_url || "";
-        const rawText = bareAct.text || "";
+        const explanation = bareAct.explanation || "";
+        const isVerbatim = Boolean(bareAct.is_verbatim_excerpt);
+        const cleanedText = cleanResultText(bareAct.text || "", isVerbatim);
         const relatedCaseLaws = bareAct.related_case_laws || [];
-        
-        // Clean text
-        const cleanLines = rawText
-          .split(/[.\n]/)
-          .map(l => l.trim())
-          .filter(l => l.length > 20 && !/^(Skip|Search|Login|Menu|Toggle|Free|Premium|Print|Download|Pricing)/i.test(l));
-        const cleanedText = cleanLines.join(". ").trim();
-        
         return (
-          <div key={idx} className="result-item-row bare-act-with-cases">
+          <div key={idx} className="result-item-row bare-act-with-cases staged-authority-card">
             <div className="result-item-header">
               <span className="result-item-number">{idx + 1}.</span>
               {url ? (
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="result-item-title-link"
-                  title="Opens in a new tab."
-                >
-                  {title}
-                </a>
+                <a href={url} target="_blank" rel="noopener noreferrer" className="result-item-title-link" title="Opens in a new tab.">{title}</a>
               ) : (
                 <span className="result-item-title">{title}</span>
               )}
             </div>
-            {cleanedText && <p className="result-item-full-text">{cleanedText}</p>}
-            {url && (
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="result-item-source-link"
-                title="Opens in a new tab."
-              >
-                View original source
-              </a>
+            {explanation && (
+              <div className="authority-summary-block">
+                <div className="authority-summary-label">Why this section matters</div>
+                <p className="authority-summary-text">{explanation}</p>
+              </div>
             )}
-            
-            {/* Related Case Laws */}
+            {cleanedText && (
+              <div className="authority-verbatim-block">
+                <div className="authority-summary-label">Relevant statutory text</div>
+                <p className="stage-verbatim-box" style={isVerbatim ? { whiteSpace: "pre-line" } : undefined}>{cleanedText}</p>
+              </div>
+            )}
+            {renderSourceLink(url)}
             {relatedCaseLaws.length > 0 && (
               <div className="related-case-laws">
-                <h5 className="related-case-laws-heading">Relevant Case Laws:</h5>
-                {relatedCaseLaws.map((caseLaw, clIdx) => {
-                  const caseTitle = caseLaw.title || caseLaw.case_name || "Unknown Case";
-                  const caseUrl = caseLaw.url || caseLaw.source_url || "";
-                  const caseText = caseLaw.text || "";
-                  const caseCleanLines = caseText
-                    .split(/[.\n]/)
-                    .map(l => l.trim())
-                    .filter(l => l.length > 20 && !/^(Skip|Search|Login|Menu|Toggle|Free|Premium|Print|Download|Pricing)/i.test(l));
-                  const caseCleanedText = caseCleanLines.join(". ").trim();
-                  
-                  return (
-                    <div key={clIdx} className="related-case-law-item">
-                      <div className="case-law-header">
-                        {caseUrl ? (
-                          <a
-                            href={caseUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="case-law-title-link"
-                            title="Opens in a new tab."
-                          >
-                            {caseTitle}
-                          </a>
-                        ) : (
-                          <span className="case-law-title">{caseTitle}</span>
-                        )}
-                      </div>
-                      {caseCleanedText && <p className="case-law-text">{caseCleanedText}</p>}
-                      {caseUrl && (
-                        <a
-                          href={caseUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="case-law-source-link"
-                          title="Opens in a new tab."
-                        >
-                          View judgment
-                        </a>
-                      )}
-                    </div>
-                  );
-                })}
+                <h5 className="related-case-laws-heading">Closest judicial support</h5>
+                {relatedCaseLaws.map((caseLaw, clIdx) => renderCaseLawItem(caseLaw, clIdx))}
               </div>
             )}
           </div>
         );
       };
 
-      // Helper: render a grouped box (one for bare acts, one for case laws)
+      const renderNextStepsBlock = (bullets) => {
+        if (!bullets || bullets.length === 0) return null;
+        return (
+          <div className="staged-next-steps-block">
+            <div className="authority-summary-label">Next steps</div>
+            <ul className="staged-next-steps-bullets">
+              {bullets.map((b, i) => (
+                <li key={`next-step-${i}-${b.title?.slice(0, 12) || i}`} className="staged-next-steps-bullet">
+                  <div className="staged-next-steps-line">
+                    Step {i + 1} — {b.title}
+                  </div>
+                  <p className="staged-next-steps-detail">{b.summary}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      };
+
+      /** Dedupe sections that appear under multiple disputes; keep highest retrieval score. */
+      const flattenBareActGuidanceRows = (groups) => {
+        const best = new Map();
+        for (const group of groups || []) {
+          for (const act of group.acts || []) {
+            const actName = act.name || "";
+            const url = act.url || "";
+            for (const section of act.sections || []) {
+              const key = `${actName.toLowerCase()}|${String(section.section_number || "").trim()}|${String(section.section_title || section.title || "").trim().toLowerCase()}`;
+              const score = Number(section._sort_score ?? section._rerank_score ?? 0);
+              const prev = best.get(key);
+              if (!prev || score > prev.score) {
+                best.set(key, { actName, url, section, score });
+              }
+            }
+          }
+        }
+        return Array.from(best.values())
+          .sort((a, b) => b.score - a.score)
+          .map(({ actName, url, section }) => ({ actName, url, section }));
+      };
+
+      const renderBareActsHierarchy = (groups) => {
+        const rows = flattenBareActGuidanceRows(groups);
+        if (rows.length === 0) return null;
+        const actBuckets = new Map();
+        for (const row of rows) {
+          const key = `${(row.actName || "").toLowerCase()}|${(row.url || "").trim()}`;
+          const score = Number(row.section?._sort_score ?? row.section?._rerank_score ?? 0);
+          let bucket = actBuckets.get(key);
+          if (!bucket) {
+            bucket = {
+              actName: row.actName || "Applicable Act",
+              url: row.url || "",
+              sections: [],
+              bestScore: -Infinity,
+            };
+            actBuckets.set(key, bucket);
+          }
+          bucket.sections.push(row.section);
+          bucket.bestScore = Math.max(bucket.bestScore, score);
+          if (!bucket.url && row.url) bucket.url = row.url;
+        }
+        const acts = Array.from(actBuckets.values()).sort((a, b) => b.bestScore - a.bestScore);
+        acts.forEach((a) => {
+          a.sections.sort(
+            (s1, s2) =>
+              Number(s2._sort_score ?? s2._rerank_score ?? 0) - Number(s1._sort_score ?? s1._rerank_score ?? 0),
+          );
+        });
+        return (
+          <div className="results-group-box staged-bare-acts-hierarchy">
+            <h4 className="results-group-heading">Applicable bare act sections</h4>
+            {acts.map((act, actIdx) => (
+              <div key={`${act.actName}-${actIdx}`} className="staged-bare-act-group">
+                <div className="staged-bare-act-group-heading">
+                  {act.url ? (
+                    <a
+                      href={act.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="staged-bare-act-group-title-link"
+                      title="Opens in a new tab."
+                    >
+                      {actIdx + 1}. {act.actName}
+                    </a>
+                  ) : (
+                    <span className="staged-bare-act-group-title">
+                      {actIdx + 1}. {act.actName}
+                    </span>
+                  )}
+                </div>
+                <ul className="staged-bare-act-section-bullets">
+                  {act.sections.map((section, secIdx) => {
+                    const explanation = (section.explanation || "").trim();
+                    const isVerbatim = Boolean(section.is_verbatim_excerpt);
+                    const cleanedText = cleanResultText(section.text || "", isVerbatim);
+                    const secLabel = buildSectionLabel(section);
+                    return (
+                      <li key={`${secLabel}-${secIdx}`} className="staged-bare-act-section-li">
+                        <div className="staged-bare-act-section-bullet-label">{secLabel}</div>
+                        {explanation ? <p className="authority-summary-text staged-bare-act-verbatim-note">{explanation}</p> : null}
+                        {cleanedText ? (
+                          <>
+                            <div className="authority-summary-label staged-relevant-extract-label">Relevant statutory text</div>
+                            <p
+                              className="stage-verbatim-box staged-bare-act-verbatim-quote"
+                              style={isVerbatim ? { whiteSpace: "pre-line" } : undefined}
+                            >
+                              {cleanedText}
+                            </p>
+                          </>
+                        ) : null}
+                      </li>
+                    );
+                  })}
+                </ul>
+                {renderSourceLink(act.url, "View original bare act")}
+              </div>
+            ))}
+          </div>
+        );
+      };
+
+      const collectPrecedentHierarchyRows = (bareActs, caseLaws) => {
+        const rows = [];
+        if (bareActs.length > 0) {
+          for (const ba of bareActs) {
+            for (const cl of Array.isArray(ba.related_case_laws) ? ba.related_case_laws : []) {
+              const caseTitle = String(cl.case_name || cl.title || "").trim() || "Judgment";
+              const url = cl.url || cl.source_url || "";
+              const score = Number(cl._sort_score ?? cl._rerank_score ?? 0);
+              rows.push({ caseTitle, url, item: cl, score });
+            }
+          }
+        }
+        if (rows.length === 0) {
+          for (const it of caseLaws || []) {
+            const caseTitle = String(it.case_name || it.title || it.act_name || "").trim() || "Judgment";
+            const url = it.url || it.source_url || "";
+            const score = Number(it._sort_score ?? it._rerank_score ?? 0);
+            rows.push({ caseTitle, url, item: it, score });
+          }
+        }
+        return rows;
+      };
+
+      const dedupePrecedentRows = (rows) => {
+        const best = new Map();
+        for (const row of rows) {
+          const it = row.item;
+          const excerptKey = String(it.text || "")
+            .slice(0, 160)
+            .toLowerCase()
+            .replace(/\s+/g, " ")
+            .trim();
+          const key = `${(row.caseTitle || "").toLowerCase()}|${(row.url || "").trim()}|${excerptKey}`;
+          const prev = best.get(key);
+          if (!prev || row.score > prev.score) best.set(key, row);
+        }
+        return Array.from(best.values()).sort((a, b) => b.score - a.score);
+      };
+
+      const renderJudicialPrecedentsHierarchy = (rows) => {
+        if (!rows.length) return null;
+        const buckets = new Map();
+        for (const row of rows) {
+          const key = `${(row.caseTitle || "").toLowerCase()}|${(row.url || "").trim()}`;
+          let bucket = buckets.get(key);
+          if (!bucket) {
+            bucket = {
+              caseTitle: row.caseTitle,
+              url: row.url || "",
+              items: [],
+              bestScore: -Infinity,
+            };
+            buckets.set(key, bucket);
+          }
+          bucket.items.push(row.item);
+          bucket.bestScore = Math.max(bucket.bestScore, row.score);
+          if (!bucket.url && row.url) bucket.url = row.url;
+        }
+        const cases = Array.from(buckets.values()).sort((a, b) => b.bestScore - a.bestScore);
+        cases.forEach((c) => {
+          c.items.sort(
+            (i1, i2) =>
+              Number(i2._sort_score ?? i2._rerank_score ?? 0) - Number(i1._sort_score ?? i1._rerank_score ?? 0),
+          );
+        });
+        return (
+          <div className="results-group-box staged-bare-acts-hierarchy staged-judicial-precedents-hierarchy">
+            <h4 className="results-group-heading">Relevant judicial precedents</h4>
+            {cases.map((c, cIdx) => (
+              <div key={`${c.caseTitle}-${cIdx}`} className="staged-bare-act-group">
+                <div className="staged-bare-act-group-heading">
+                  {c.url ? (
+                    <a
+                      href={c.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="staged-bare-act-group-title-link"
+                      title="Opens in a new tab."
+                    >
+                      {cIdx + 1}. {c.caseTitle}
+                    </a>
+                  ) : (
+                    <span className="staged-bare-act-group-title">
+                      {cIdx + 1}. {c.caseTitle}
+                    </span>
+                  )}
+                </div>
+                <ul className="staged-bare-act-section-bullets">
+                  {c.items.map((item, itemIdx) => {
+                    const explanation = String(item.explanation || "").trim();
+                    const isVerbatim = Boolean(item.is_verbatim_excerpt);
+                    const cleanedText = cleanResultText(item.text || "", isVerbatim);
+                    const chunkHeading = formatJudgmentChunkHeading(item);
+                    const liKey = `${chunkHeading || "chunk"}-${itemIdx}-${(item.text || "").slice(0, 24)}`;
+                    return (
+                      <li key={liKey} className="staged-bare-act-section-li">
+                        {chunkHeading ? <div className="staged-bare-act-section-bullet-label">{chunkHeading}</div> : null}
+                        {explanation ? <p className="authority-summary-text staged-bare-act-verbatim-note">{explanation}</p> : null}
+                        {cleanedText ? (
+                          <p
+                            className="stage-verbatim-box staged-bare-act-verbatim-quote"
+                            style={isVerbatim ? { whiteSpace: "pre-line" } : undefined}
+                          >
+                            {cleanedText}
+                          </p>
+                        ) : null}
+                      </li>
+                    );
+                  })}
+                </ul>
+                {renderSourceLink(c.url, "View judgment")}
+              </div>
+            ))}
+          </div>
+        );
+      };
+
       const renderGroupBox = (heading, items) => {
         if (!items || items.length === 0) return null;
         return (
@@ -2322,28 +2755,16 @@ function App() {
         );
       };
 
-      // ---------- search_results / lookup_results (conversational, like ChatGPT) ----------
       if (responseType === "search_results" || responseType === "lookup_results") {
         return (
           <div className="message-final-opinion message-search-results conversational-response">
-            {/* High-level summary always comes first */}
             {opinion && (
               <div className="conversational-summary-block">
-                {opinion.split("\n").filter(l => l.trim()).map((para, i) => (
+                {opinion.split("\n").filter((line) => line.trim()).map((para, i) => (
                   <p key={i} className="conversational-summary-para">{para}</p>
                 ))}
               </div>
             )}
-
-            {/* Progress display */}
-            {messageProgress && (
-              <ProgressDisplay 
-                progress={messageProgress} 
-                expandedGroups={expandedGroups}
-                setExpandedGroups={setExpandedGroups}
-              />
-            )}
-            {/* Bare Acts with nested Case Laws */}
             {bareActs.length > 0 ? (
               <div className="results-group-box">
                 <h4 className="results-group-heading">Relevant Bare Acts</h4>
@@ -2352,17 +2773,87 @@ function App() {
                 </div>
               </div>
             ) : (
-              caseLaws.length > 0 && renderGroupBox("Supreme Court Judgments", caseLaws)
+              caseLaws.length > 0 && renderGroupBox("Relevant Case Laws", caseLaws)
             )}
-            
             {bareActs.length === 0 && caseLaws.length === 0 && (
               <p className="search-empty">No results were found. Try refining your query with more specific legal terms.</p>
+            )}
+            {messageProgress && (
+              <ProgressDisplay
+                progress={messageProgress}
+                expandedGroups={expandedGroups}
+                setExpandedGroups={setExpandedGroups}
+                expandKey={progressExpandKey}
+                defaultOpen={progressDefaultOpen}
+              />
             )}
           </div>
         );
       }
 
-      // ---------- legal_opinion: no header/title, no standalone download button ----------
+      if (responseType === "bare_act_guidance") {
+        const groups = groupBareActsByDisputeAndAct(bareActs);
+        const verbatimRows = flattenBareActGuidanceRows(groups);
+        const nextStepsBullets = buildNextStepsBullets(nextStepsSummaryRaw, nextSteps);
+        const opinionDisplay = stripJudicialPrecedentCtaLines(opinion);
+        return (
+          <div className="message-final-opinion message-staged-guidance">
+            {opinionDisplay && (
+              <div className="conversational-summary-block stage-summary-block bare-act-guidance-summary">
+                <div className="authority-summary-label">Summary</div>
+                {opinionDisplay.split("\n").filter((line) => line.trim()).map((para, i) => (
+                  <p key={i} className="conversational-summary-para">{para}</p>
+                ))}
+              </div>
+            )}
+            {renderBareActsHierarchy(groups)}
+            {renderNextStepsBlock(nextStepsBullets)}
+            <p className="conversational-summary-para staged-judicial-precedent-cta">{JUDICIAL_PRECEDENT_CTA_OFFER}</p>
+            {verbatimRows.length === 0 && bareActs.length === 0 && (
+              <p className="search-empty">No grounded bare act sections were available for display.</p>
+            )}
+            {messageProgress && (
+              <ProgressDisplay
+                progress={messageProgress}
+                expandedGroups={expandedGroups}
+                setExpandedGroups={setExpandedGroups}
+                expandKey={progressExpandKey}
+                defaultOpen={progressDefaultOpen}
+              />
+            )}
+          </div>
+        );
+      }
+
+      if (responseType === "precedent_support") {
+        const precedentRows = dedupePrecedentRows(collectPrecedentHierarchyRows(bareActs, caseLaws));
+        return (
+          <div className="message-final-opinion message-staged-guidance">
+            {opinion && (
+              <div className="conversational-summary-block stage-summary-block bare-act-guidance-summary">
+                <div className="authority-summary-label">Summary</div>
+                {opinion.split("\n").filter((line) => line.trim()).map((para, i) => (
+                  <p key={i} className="conversational-summary-para">{para}</p>
+                ))}
+              </div>
+            )}
+            {renderJudicialPrecedentsHierarchy(precedentRows)}
+            {precedentRows.length === 0 && (
+              <p className="search-empty">No grounded precedents were available for display.</p>
+            )}
+            {messageProgress && (
+              <ProgressDisplay
+                progress={messageProgress}
+                expandedGroups={expandedGroups}
+                setExpandedGroups={setExpandedGroups}
+                expandKey={progressExpandKey}
+                defaultOpen={progressDefaultOpen}
+              />
+            )}
+          </div>
+        );
+      }
+
       if (responseType === "legal_opinion") {
         const { bareMap, caseMap } = buildCitationMaps(bareActs, caseLaws);
         return (
@@ -2387,10 +2878,12 @@ function App() {
               </div>
             )}
             {messageProgress && (
-              <ProgressDisplay 
-                progress={messageProgress} 
+              <ProgressDisplay
+                progress={messageProgress}
                 expandedGroups={expandedGroups}
                 setExpandedGroups={setExpandedGroups}
+                expandKey={progressExpandKey}
+                defaultOpen={progressDefaultOpen}
               />
             )}
           </div>
@@ -2407,13 +2900,6 @@ function App() {
               ))}
             </div>
           )}
-          {messageProgress && (
-            <ProgressDisplay 
-              progress={messageProgress} 
-              expandedGroups={expandedGroups}
-              setExpandedGroups={setExpandedGroups}
-            />
-          )}
           {bareActs.length > 0 ? (
             <div className="results-group-box">
               <h4 className="results-group-heading">Relevant Bare Acts</h4>
@@ -2426,6 +2912,15 @@ function App() {
           )}
           {bareActs.length === 0 && caseLaws.length === 0 && opinion && (
             <p className="search-empty">No supporting materials were retrieved for this query.</p>
+          )}
+          {messageProgress && (
+            <ProgressDisplay
+              progress={messageProgress}
+              expandedGroups={expandedGroups}
+              setExpandedGroups={setExpandedGroups}
+              expandKey={progressExpandKey}
+              defaultOpen={progressDefaultOpen}
+            />
           )}
         </div>
       );
@@ -2511,7 +3006,7 @@ function App() {
   // -------------------------
   // Download PDF handler (matches on-screen: quotes in grey box, dispute headings in blue)
   // -------------------------
-  const handleDownloadPdf = (opinionOverride) => {
+  const handleDownloadPdf = async (opinionOverride) => {
     const raw = (opinionOverride != null ? opinionOverride : opinionText) || "";
     const trimmedOpinion = raw.trim();
     if (!trimmedOpinion) {
@@ -2523,7 +3018,7 @@ function App() {
     let lines = trimmedOpinion.split("\n").filter((line) => !/^%+\s*$/.test(line.trim()));
     let endIndex = lines.length;
     for (let i = 0; i < lines.length; i++) {
-      if (/^─+$/.test(lines[i].trim())) {
+      if (/^â”€+$/.test(lines[i].trim())) {
         endIndex = i;
         break;
       }
@@ -2534,6 +3029,7 @@ function App() {
       return;
     }
 
+    const { default: jsPDF } = await import("jspdf");
     const doc = new jsPDF({ unit: "pt", format: "a4" });
     const marginLeft = 40;
     const pageWidth = doc.internal.pageSize.getWidth();
@@ -2621,7 +3117,7 @@ function App() {
     >
       {/* Two-pane layout: Left (sidebar) and Right (chat) */}
       <div className="main-content-wrapper">
-        {/* LEFT PANE – New chat, Bare Acts, Case Laws, Chat history (fixed order) */}
+        {/* LEFT PANE â€“ New chat, Chat history, Bare Acts, Case Laws */}
         <div
           className={`left-column${sidebarCollapsed ? " left-column--collapsed" : ""}`}
           style={sidebarCollapsed ? undefined : { width: leftColumnWidth, minWidth: leftColumnWidth, maxWidth: leftColumnWidth }}
@@ -2633,7 +3129,7 @@ function App() {
                 onClick={handleNewChat}
                 className="chat-history-new-btn"
               >
-                ＋ New chat
+                {"+ New chat"}
               </button>
               <button
                 type="button"
@@ -2642,8 +3138,103 @@ function App() {
                 aria-label="Collapse sidebar"
                 title="Collapse sidebar"
               >
-                ‹
+                {"\u2039"}
               </button>
+            </div>
+            <div className={`chat-history-section sidebar-section${sidebarExpandedSection === "chat_history" ? " sidebar-section--active" : ""}`}>
+              <details
+                className="chat-history-collapsible"
+                open={sidebarExpandedSection === "chat_history"}
+                onClick={(e) => {
+                  if (e.target.closest("summary")) {
+                    e.preventDefault();
+                    toggleSidebarSection("chat_history");
+                  }
+                }}
+              >
+                <summary className="chat-history-collapsible-summary sidebar-collapsible-summary">
+                  <span>Chat history ({savedChats.length})</span>
+                </summary>
+                {savedChats.length > 0 ? (
+                  <>
+                    <input
+                      type="text"
+                      placeholder="Search chat history..."
+                      value={chatHistoryFilter}
+                      onChange={(e) => setChatHistoryFilter(e.target.value)}
+                      className="sidebar-search-input"
+                      aria-label="Filter chat history"
+                    />
+                    <div className="chat-history-groups" onMouseDown={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
+                    {chatGroups.map(({ groupLabel, chats }) => (
+                      <div key={groupLabel} className="chat-history-group">
+                        <div className="chat-history-group-label">{groupLabel}</div>
+                        <ul className="chat-history-list">
+                          {chats.map((chat) => (
+                            <li key={chat.id} className="chat-history-item">
+                              {editingChatId == chat.id ? (
+                                <div className="chat-history-rename-row">
+                                  <input
+                                    ref={editInputRef}
+                                    type="text"
+                                    value={editingTitle}
+                                    onChange={(e) => setEditingTitle(e.target.value)}
+                                    onKeyDown={(e) => {
+                                      if (e.key === "Enter") saveRenameChat();
+                                      if (e.key === "Escape") cancelRenameChat();
+                                    }}
+                                    onBlur={saveRenameChat}
+                                    className="chat-history-rename-input"
+                                    aria-label="Rename chat"
+                                  />
+                                </div>
+                              ) : (
+                                <>
+                                  <button
+                                    type="button"
+                                    onClick={() => handleLoadChat(chat)}
+                                    className="chat-history-link"
+                                    title={chat.title}
+                                  >
+                                    {chat.title}
+                                  </button>
+                                  <div className="chat-history-hover-actions" aria-hidden="true">
+                                    <button
+                                      type="button"
+                                      onClick={(e) => { e.stopPropagation(); startRenamingChat(chat); }}
+                                      className="chat-history-icon-btn"
+                                      title="Rename chat"
+                                      aria-label="Rename chat"
+                                    >
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z" />
+                                      </svg>
+                                    </button>
+                                    <button
+                                      type="button"
+                                      onClick={(e) => { e.stopPropagation(); handleDeleteChat(chat); }}
+                                      className="chat-history-icon-btn chat-history-icon-btn--danger"
+                                      title="Delete chat"
+                                      aria-label="Delete chat"
+                                    >
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fillRule="evenodd" d="M8.75 2a.75.75 0 00-.75.75V3H5.5a.75.75 0 000 1.5h.443l.664 9.298A2.25 2.25 0 008.85 15.9h2.3a2.25 2.25 0 002.243-2.102l.664-9.298h.443a.75.75 0 000-1.5H12V2.75A.75.75 0 0011.25 2h-2.5zM9.5 3v-.25h1V3h-1zm-.75 4.25a.75.75 0 011.5 0v4.5a.75.75 0 01-1.5 0v-4.5zm3 0a.75.75 0 011.5 0v4.5a.75.75 0 01-1.5 0v-4.5z" clipRule="evenodd" />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                </>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                    </div>
+                  </>
+                ) : (
+                  <p className="chat-history-empty">No previous chats.</p>
+                )}
+              </details>
             </div>
             <details
               className={`bare-acts-collapsible sidebar-section${sidebarExpandedSection === "bare_acts" ? " sidebar-section--active" : ""}`}
@@ -2767,7 +3358,7 @@ function App() {
               )}
             </details>
 
-            {/* Case Laws – below Bare Acts, same functionality */}
+            {/* Case Laws â€“ below Bare Acts, same functionality */}
             <details
               className={`case-laws-collapsible sidebar-section${sidebarExpandedSection === "case_laws" ? " sidebar-section--active" : ""}`}
               open={sidebarExpandedSection === "case_laws"}
@@ -2787,7 +3378,7 @@ function App() {
               </summary>
               {caseLawsList.length ? (
                 <>
-                  {/* Most cited – single HTML table with top 200 cases */}
+                  {/* Most cited â€“ single HTML table with top 200 cases */}
                   <div className="sidebar-section-link-row">
                     {(() => {
                       const useRelative =
@@ -2919,103 +3510,6 @@ function App() {
               )}
             </details>
 
-            {/* Saved chats – below Case Laws */}
-            <div className={`chat-history-section sidebar-section${sidebarExpandedSection === "chat_history" ? " sidebar-section--active" : ""}`}>
-              <details
-                className="chat-history-collapsible"
-                open={sidebarExpandedSection === "chat_history"}
-                onClick={(e) => {
-                  if (e.target.closest("summary")) {
-                    e.preventDefault();
-                    toggleSidebarSection("chat_history");
-                  }
-                }}
-              >
-                <summary className="chat-history-collapsible-summary sidebar-collapsible-summary">
-                  <span>Chat history ({savedChats.length})</span>
-                </summary>
-                {savedChats.length > 0 ? (
-                  <>
-                    <input
-                      type="text"
-                      placeholder="Search chat history..."
-                      value={chatHistoryFilter}
-                      onChange={(e) => setChatHistoryFilter(e.target.value)}
-                      className="sidebar-search-input"
-                      aria-label="Filter chat history"
-                    />
-                    <div className="chat-history-groups" onMouseDown={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
-                    {chatGroups.map(({ groupLabel, chats }) => (
-                      <div key={groupLabel} className="chat-history-group">
-                        <div className="chat-history-group-label">{groupLabel}</div>
-                        <ul className="chat-history-list">
-                          {chats.map((chat) => (
-                            <li key={chat.id} className="chat-history-item">
-                              {editingChatId == chat.id ? (
-                                <div className="chat-history-rename-row">
-                                  <input
-                                    ref={editInputRef}
-                                    type="text"
-                                    value={editingTitle}
-                                    onChange={(e) => setEditingTitle(e.target.value)}
-                                    onKeyDown={(e) => {
-                                      if (e.key === "Enter") saveRenameChat();
-                                      if (e.key === "Escape") cancelRenameChat();
-                                    }}
-                                    onBlur={saveRenameChat}
-                                    className="chat-history-rename-input"
-                                    aria-label="Rename chat"
-                                  />
-                                </div>
-                              ) : (
-                                <>
-                                  <button
-                                    type="button"
-                                    onClick={() => handleLoadChat(chat)}
-                                    className="chat-history-link"
-                                    title={chat.title}
-                                  >
-                                    {chat.title}
-                                  </button>
-                                  <div className="chat-history-hover-actions" aria-hidden="true">
-                                    <button
-                                      type="button"
-                                      onClick={(e) => { e.stopPropagation(); startRenamingChat(chat); }}
-                                      className="chat-history-icon-btn"
-                                      title="Rename chat"
-                                      aria-label="Rename chat"
-                                    >
-                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z" />
-                                      </svg>
-                                    </button>
-                                    <button
-                                      type="button"
-                                      onClick={(e) => { e.stopPropagation(); handleDeleteChat(chat); }}
-                                      className="chat-history-icon-btn chat-history-icon-btn--danger"
-                                      title="Delete chat"
-                                      aria-label="Delete chat"
-                                    >
-                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fillRule="evenodd" d="M8.75 2a.75.75 0 00-.75.75V3H5.5a.75.75 0 000 1.5h.443l.664 9.298A2.25 2.25 0 008.85 15.9h2.3a2.25 2.25 0 002.243-2.102l.664-9.298h.443a.75.75 0 000-1.5H12V2.75A.75.75 0 0011.25 2h-2.5zM9.5 3v-.25h1V3h-1zm-.75 4.25a.75.75 0 011.5 0v4.5a.75.75 0 01-1.5 0v-4.5zm3 0a.75.75 0 011.5 0v4.5a.75.75 0 01-1.5 0v-4.5z" clipRule="evenodd" />
-                                      </svg>
-                                    </button>
-                                  </div>
-                                </>
-                              )}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                    </div>
-                  </>
-                ) : (
-                  <p className="chat-history-empty">No previous chats.</p>
-                )}
-              </details>
-            </div>
-
             </div>
         </div>
         {!sidebarCollapsed && (
@@ -3028,7 +3522,7 @@ function App() {
           />
         )}
 
-        {/* RIGHT PANE – Title at top, then chat area */}
+        {/* RIGHT PANE â€“ Title at top, then chat area */}
         <div className={`right-content-wrapper${messages.some((m) => m.role === "user") ? " chat-mode" : ""}`}>
           {sidebarCollapsed && (
             <button
@@ -3038,13 +3532,13 @@ function App() {
               aria-label="Expand sidebar"
               title="Expand sidebar"
             >
-              ›
+              {"\u203A"}
             </button>
           )}
           {/* Title at top left of right pane */}
           <div className="right-pane-header">
             <h1 className="main-title">
-              ⚖ Nyaymalaw
+              {"\u2696 Nyaymalaw"}
             </h1>
             <div className="header-user">
               <span className="header-email" title={currentUser || "Guest"}>{currentUser || "Guest"}</span>
@@ -3107,7 +3601,7 @@ function App() {
                           </svg>
                         </span>
                       ) : (
-                        <span className="avatar-ai">⚖</span>
+                        <span className="avatar-ai">{"\u2696"}</span>
                       )}
                     </div>
                     <div className="message-content">
@@ -3165,7 +3659,10 @@ function App() {
                       ) : (
                         <div className="message-bubble message-bubble--assistant">
                           <div className="message-bubble-inner">
-                            {renderAssistantContent(msg.content)}
+                            {renderAssistantContent(msg.content, {
+                              progressExpandKey: msg.id != null ? `pt_${msg.id}` : PROGRESS_TRACKER_KEY,
+                              progressDefaultOpen: false,
+                            })}
                             <div className="message-bubble-actions">
                               <button
                                 type="button"
@@ -3217,24 +3714,39 @@ function App() {
                 {loading && (
                   <div className="message message--assistant">
                     <div className="message-avatar">
-                      <span className="avatar-ai">⚖</span>
+                      <span className="avatar-ai">{"\u2696"}</span>
                     </div>
                     <div className="message-content">
-                      {/* Step timeline — shows while no tokens yet */}
+                      {/* Step timeline â€” shows while no tokens yet */}
                       {streamingSteps.length > 0 && !streamingToken && (
                         <div className="streaming-steps">
-                          {streamingSteps.map((s, i) => (
-                            <div key={i} className={`streaming-step ${s.done ? "streaming-step--done" : "streaming-step--active"}`}>
-                              <span className="streaming-step-icon">{s.icon || "•"}</span>
-                              <span className="streaming-step-msg">{s.message}</span>
-                              {!s.done && i === streamingSteps.length - 1 && (
-                                <span className="streaming-step-pulse" />
-                              )}
-                            </div>
-                          ))}
+                          {streamingSteps.map((s, i) => {
+                            const isActiveProcessing = !s.done && i === streamingSteps.length - 1;
+                            return (
+                              <div key={i} className={`streaming-step ${s.done ? "streaming-step--done" : "streaming-step--active"}`}>
+                                {s.icon ? <span className="streaming-step-icon">{s.icon}</span> : null}
+                                <span
+                                  className={
+                                    isActiveProcessing
+                                      ? "streaming-step-msg streaming-step-msg--processing"
+                                      : "streaming-step-msg"
+                                  }
+                                >
+                                  {isActiveProcessing ? (
+                                    <>
+                                      {stripTrailingStepEllipsis(s.message)}
+                                      <span className="streaming-processing-ellipsis">...</span>
+                                    </>
+                                  ) : (
+                                    s.message
+                                  )}
+                                </span>
+                              </div>
+                            );
+                          })}
                         </div>
                       )}
-                      {/* Streaming token text — shows as LLM generates */}
+                      {/* Streaming token text â€” shows as LLM generates */}
                       {streamingToken && (
                         <div className="message-bubble message-bubble--assistant streaming-response">
                           {/* Compact step summary above streaming text */}
@@ -3245,7 +3757,7 @@ function App() {
                               ))}
                             </div>
                           )}
-                          <div className="streaming-text">{streamingToken}<span className="streaming-cursor">▋</span></div>
+                          <div className="streaming-text">{streamingToken}<span className="streaming-cursor">{"\u258B"}</span></div>
                         </div>
                       )}
                       {/* Fallback typing indicator when nothing is streaming yet */}
@@ -3269,6 +3781,8 @@ function App() {
                           progress={progress}
                           expandedGroups={expandedGroups}
                           setExpandedGroups={setExpandedGroups}
+                          expandKey={PROGRESS_LIVE_KEY}
+                          defaultOpen={true}
                         />
                       )}
                     </div>
@@ -3302,7 +3816,7 @@ function App() {
 
                 {error && (
                   <div className="chat-error">
-                    <span>⚠</span> {error}
+                    <span>{"\u26A0"}</span> {error}
                   </div>
                 )}
               </>
@@ -3337,3 +3851,4 @@ function App() {
 }
 
 export default App;
+

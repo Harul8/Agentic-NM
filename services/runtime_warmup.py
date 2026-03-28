@@ -19,6 +19,7 @@ _warmup_completed = False
 _warmup_error = ""
 _warmup_started_at = 0.0
 _warmup_finished_at = 0.0
+_critical_warmup_completed = False
 
 
 def _set_status(started: bool | None = None, completed: bool | None = None, error: str | None = None):
@@ -45,11 +46,70 @@ def get_runtime_warmup_status() -> dict:
         "completed": _warmup_completed,
         "error": _warmup_error,
         "elapsed_seconds": round(elapsed, 2),
+        "critical_ready": _critical_warmup_completed,
     }
+
+
+def run_critical_runtime_warmup(reason: str = "startup") -> dict:
+    """
+    Perform only the small synchronous warmup steps that most directly affect the
+    first live request: few-shot example loading and fast-model keep-alive.
+
+    This keeps startup predictable while still shrinking first-turn latency.
+    """
+    global _critical_warmup_completed
+    started_at = time.perf_counter()
+    status = {
+        "reason": reason,
+        "fewshot_ready": False,
+        "fast_model_ready": False,
+        "analysis_model_ready": False,
+        "elapsed_seconds": 0.0,
+    }
+
+    with _warmup_lock:
+        if _critical_warmup_completed:
+            status["fewshot_ready"] = True
+            status["fast_model_ready"] = True
+            status["elapsed_seconds"] = round(max(0.0, time.perf_counter() - started_at), 2)
+            return status
+
+        try:
+            from llm.config import OLLAMA_MODEL, OLLAMA_MODEL_FAST, OLLAMA_WARM_ANALYSIS_AT_STARTUP
+            from llm.ollama_client import warmup_ollama_model
+            from training.few_shot_retriever import preload_examples
+
+            try:
+                preload_examples()
+                status["fewshot_ready"] = True
+                logger.info("Critical runtime warmup: few-shot examples ready")
+            except Exception as exc:
+                logger.warning("Critical warmup could not preload few-shot examples: %s", exc)
+
+            try:
+                if OLLAMA_MODEL_FAST:
+                    status["fast_model_ready"] = bool(warmup_ollama_model(OLLAMA_MODEL_FAST, timeout=90))
+            except Exception as exc:
+                logger.warning("Critical warmup could not warm fast model: %s", exc)
+
+            try:
+                if OLLAMA_WARM_ANALYSIS_AT_STARTUP and OLLAMA_MODEL and OLLAMA_MODEL != OLLAMA_MODEL_FAST:
+                    status["analysis_model_ready"] = bool(warmup_ollama_model(OLLAMA_MODEL, timeout=180))
+            except Exception as exc:
+                logger.warning("Critical warmup could not warm analysis model: %s", exc)
+
+            _critical_warmup_completed = status["fewshot_ready"] and (
+                not OLLAMA_MODEL_FAST or status["fast_model_ready"]
+            )
+        finally:
+            status["elapsed_seconds"] = round(max(0.0, time.perf_counter() - started_at), 2)
+
+    return status
 
 
 def _warmup_once():
     try:
+        run_critical_runtime_warmup("background")
         from llm.config import OLLAMA_MODEL, OLLAMA_MODEL_FAST
         from llm.ollama_client import warmup_ollama_model
         from retrieval.hybrid_retriever import (
@@ -60,8 +120,6 @@ def _warmup_once():
             search_bare_acts_fast,
             search_case_summaries_fast,
         )
-        from training.few_shot_retriever import preload_examples
-
         try:
             preload_interactive_indexes()
         except Exception as e:
@@ -88,12 +146,6 @@ def _warmup_once():
             logger.info("Interactive warmup: retrieval fast path primed")
         except Exception as e:
             logger.warning("Retrieval fast-path warmup failed: %s", e)
-
-        try:
-            preload_examples()
-            logger.info("Interactive warmup: few-shot examples ready")
-        except Exception as e:
-            logger.warning("Few-shot warmup failed: %s", e)
 
         try:
             if OLLAMA_MODEL_FAST:

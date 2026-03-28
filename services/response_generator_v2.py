@@ -36,6 +36,9 @@ from prompts.advocate_prompts import (
     CASE_LAW_DISPUTE_ORDER_SUMMARY,
     STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT,
     FAST_INTERACTIVE_OPINION_PROMPT,
+    BARE_ACT_STAGE_SUMMARY_PROMPT,
+    BARE_ACT_NEXT_STEPS_REPAIR_PROMPT,
+    PRECEDENT_STAGE_SUMMARY_PROMPT,
     ACT_SELECTION_PROMPT,
     BARE_ACT_SECTION_RELEVANCE_PROMPT,
     CASE_LAW_RELEVANCE_PROMPT,
@@ -54,6 +57,7 @@ _FAST_BARE_QUERY_LIMIT = 3
 _FAST_CASE_QUERY_LIMIT = 2
 _FAST_BARE_TOP_K = 5
 _FAST_CASE_TOP_K = 4
+INTERACTIVE_MIN_RERANK_SCORE = 0.15
 
 # Relevance and quality thresholds — keep only high-quality, recent materials
 MIN_RERANK_SCORE = 0.5  # Minimum score to include in pool. ms-marco cross-encoder logits:
@@ -76,7 +80,7 @@ FLEXIBLE_MIN_FALLBACK = 10  # Minimum results to show when no user limit and not
 
 # Section caps — keep retrieval focused while still allowing connected statutory provisions
 # to appear together in the final opinion for one dispute.
-MAX_SECTIONS_PER_DISPUTE_TOTAL = 5  # Hard cap per dispute after local+web+xref merge (top N by score)
+MAX_SECTIONS_PER_DISPUTE_TOTAL = 9  # Hard cap per dispute after local+web+xref merge (top N by score)
 MAX_BARE_ACTS_OVERALL = 12          # Safety cap on total sections sent to UI across all disputes
 MAX_SECTIONS_PER_DISPUTE_FOR_OPINION = 3
 MAX_CASE_LAWS_PER_DISPUTE = 3
@@ -151,6 +155,69 @@ def _detect_new_criminal_codes(dispute_text: str, legal_nature: str) -> dict:
     result["bnss"] = any(kw in text_lower for kw in _BNSS_KEYWORDS)
     result["bsa"]  = any(kw in text_lower for kw in _BSA_KEYWORDS)
     return result
+
+
+_PROCEDURAL_CRIMINAL_TERMS: frozenset = frozenset({
+    "complaint", "police", "fir", "investigation", "arrest", "custody", "bail",
+    "chargesheet", "charge sheet", "summons", "warrant", "trial", "offence",
+    "accused", "prosecution", "detention", "magistrate",
+})
+
+_PROCEDURAL_CIVIL_TERMS: frozenset = frozenset({
+    "civil", "suit", "injunction", "interim relief", "declaration", "recovery",
+    "damages", "compensation", "specific performance", "partition", "possession",
+    "eviction", "tenancy", "lease", "property", "contract", "agreement",
+    "notice", "decree", "execution", "maintenance", "custody", "residence",
+    "tribunal", "petition",
+})
+
+_PROCEDURAL_EVIDENCE_TERMS: frozenset = frozenset({
+    "evidence", "proof", "prove", "witness", "statement", "document", "documents",
+    "record", "records", "electronic", "digital", "whatsapp", "email", "message",
+    "audio", "video", "photograph", "photo", "medical record", "injury report",
+    "admission", "confession", "presumption", "burden", "signature", "forensic",
+})
+
+
+def _build_dispute_context_text(dispute: dict) -> str:
+    parts = [
+        str(dispute.get("dispute") or ""),
+        " ".join(str(k or "") for k in (dispute.get("keywords") or [])),
+        " ".join(str(k or "") for k in (dispute.get("legal_concepts") or [])),
+        " ".join(str(k or "") for k in (dispute.get("search_angles") or [])),
+    ]
+    return " ".join(part.strip() for part in parts if str(part or "").strip()).lower()
+
+
+def _derive_procedural_companion_acts(dispute: dict) -> list[dict]:
+    """Suggest general procedural/evidentiary companion Acts for one dispute."""
+    legal_nature = str(dispute.get("legal_nature") or "").strip().lower()
+    context = _build_dispute_context_text(dispute)
+    companions: list[dict] = []
+    seen: set[str] = set()
+
+    def _has_any(terms: frozenset) -> bool:
+        return any(term in context for term in terms)
+
+    def _add(act_name: str, reason: str) -> None:
+        key = act_name.strip().lower()
+        if not key or key in seen:
+            return
+        seen.add(key)
+        companions.append({"act_name": act_name, "reason": reason})
+
+    has_criminal_signal = legal_nature in {"criminal", "both"} or _has_any(_PROCEDURAL_CRIMINAL_TERMS)
+    has_civil_signal = legal_nature == "civil" or (_has_any(_PROCEDURAL_CIVIL_TERMS) and legal_nature in {"civil", "both", "mixed", ""})
+    has_evidence_signal = _has_any(_PROCEDURAL_EVIDENCE_TERMS)
+
+    if has_criminal_signal:
+        _add("Bharatiya Nagarik Suraksha Sanhita, 2023", "criminal procedure and immediate process protection")
+    if has_evidence_signal or has_criminal_signal:
+        _add("Bharatiya Sakshya Adhiniyam, 2023", "proof, documents, witnesses, and evidentiary support")
+    if has_civil_signal:
+        _add("Code of Civil Procedure, 1908", "civil court procedure, interim relief, and enforceable process")
+
+    return companions
 
 
 def _is_quality_bare_act(section: dict) -> bool:
@@ -325,7 +392,7 @@ _FAST_ALIGNMENT_STOPWORDS = frozenset({
 
 def _extract_salient_terms(text: str, limit: int = 8) -> list[str]:
     """Simple lexical term extractor for fast-path fact alignment."""
-    tokens = re.findall(r"\b[a-z][a-z0-9_-]{3,}\b", (text or "").lower())
+    tokens = re.findall(r"[a-z][a-z0-9_-]{3,}", (text or "").lower())
     ranked: list[str] = []
     seen: set[str] = set()
     for tok in tokens:
@@ -338,59 +405,167 @@ def _extract_salient_terms(text: str, limit: int = 8) -> list[str]:
     return ranked
 
 
-def _apply_fact_alignment_sort(items: list, facts_summary: str, cap: int | None = None) -> list:
-    """
-    Re-rank already-retrieved items by combining model score with lexical overlap
-    against the current fact pattern. This is intentionally generic and applies
-    across domains, including when a late-turn fact materially changes the issue.
-    """
+def _material_family_key(item: dict) -> str:
+    raw = " ".join(
+        str(item.get(k) or "")
+        for k in ("act_name", "title", "case_name")
+    ).lower()
+    if not raw:
+        return ""
+    raw = re.sub(r"\d{4}", " ", raw)
+    tokens = [
+        tok for tok in re.findall(r"[a-z][a-z0-9_-]{3,}", raw)
+        if tok not in _FAST_ALIGNMENT_STOPWORDS and tok not in {"section", "sections", "act", "code", "rule", "rules", "law", "laws", "judgment", "judgement", "court"}
+    ]
+    return " ".join(tokens[:4]).strip()
+
+
+def _short_dispute_label(text: str, max_words: int = 8) -> str:
+    cleaned = " ".join((text or "").split()).strip(" .:;,-")
+    if not cleaned:
+        return "Dispute"
+    first = re.split(r"(?<=[.!?])\s+|;|:", cleaned, maxsplit=1)[0].strip(" .:;,-")
+    words = first.split()
+    if len(words) > max_words:
+        first = " ".join(words[:max_words]).strip(" .:;,-") + "?"
+    return first or "Dispute"
+
+
+def _best_alignment_score(item: dict) -> float:
+    if not isinstance(item, dict):
+        return 0.0
+    candidates = (
+        "_case_aligned_score",
+        "_family_aligned_score",
+        "_fact_alignment_score",
+        "_case_support_score",
+        "_rerank_score",
+    )
+    best = 0.0
+    for field in candidates:
+        try:
+            best = max(best, float(item.get(field, 0) or 0))
+        except Exception:
+            continue
+    return best
+
+
+def _apply_family_consensus_sort(items: list, base_field: str, cap: int | None = None) -> list:
     if not items:
         return []
-    fact_terms = _extract_salient_terms(_build_focus_fact_text(facts_summary, max_chars=520), limit=10)
-    if not fact_terms:
-        ranked = sorted(items, key=lambda x: x.get("_rerank_score", 0), reverse=True)
-        return ranked[:cap] if cap else ranked
+
+    family_totals: dict[str, float] = {}
+    for idx, item in enumerate(items):
+        family = _material_family_key(item)
+        if not family:
+            continue
+        weight = float(item.get(base_field, item.get("_rerank_score", 0)) or 0)
+        family_totals[family] = family_totals.get(family, 0.0) + weight + max(0.0, 0.18 - (idx * 0.02))
 
     rescored: list[dict] = []
     for item in items:
-        blob = " ".join(
-            str(item.get(k) or "")
-            for k in ("act_name", "title", "section_title", "case_name", "court", "text", "full_text", "search_text")
-        ).lower()
-        overlap = sum(1 for term in fact_terms if term in blob)
         clone = dict(item)
-        clone["_fact_alignment_overlap"] = overlap
-        clone["_fact_alignment_score"] = float(clone.get("_rerank_score", 0) or 0) + min(overlap * 0.18, 0.9)
+        family = _material_family_key(item)
+        clone["_material_family"] = family
+        consensus = family_totals.get(family, 0.0) if family else 0.0
+        clone["_family_consensus_score"] = consensus
+        clone["_family_aligned_score"] = float(clone.get(base_field, clone.get("_rerank_score", 0)) or 0) + min(consensus * 0.12, 1.35)
         rescored.append(clone)
 
     rescored.sort(
         key=lambda x: (
-            x.get("_fact_alignment_score", 0),
+            x.get("_family_aligned_score", 0),
+            x.get(base_field, 0),
             x.get("_rerank_score", 0),
-            x.get("_fact_alignment_overlap", 0),
         ),
         reverse=True,
     )
     return rescored[:cap] if cap else rescored
 
 
+def _apply_fact_alignment_sort(items: list, facts_summary: str, cap: int | None = None) -> list:
+    """
+    Re-rank already-retrieved items by combining model score with lexical overlap
+    against the current fact pattern and then applying a generic family-consensus
+    pass so one clearly matching statute family can outrank stray lookalikes.
+    """
+    if not items:
+        return []
+    focus_text = _build_focus_fact_text(facts_summary, max_chars=520)
+    fact_terms = _extract_salient_terms(focus_text, limit=12)
+    if not fact_terms:
+        ranked = sorted(items, key=lambda x: _best_alignment_score(x), reverse=True)
+        return ranked[:cap] if cap else ranked
+
+    leading_segments = _split_fact_segments(focus_text)[:3]
+    rescored: list[dict] = []
+    for item in items:
+        title_blob = " ".join(
+            str(item.get(k) or "")
+            for k in ("act_name", "title", "section_title", "case_name", "court")
+        ).lower()
+        body_blob = " ".join(
+            str(item.get(k) or "")
+            for k in ("text", "full_text", "search_text")
+        ).lower()
+        blob = (title_blob + " " + body_blob).strip()
+        overlap = sum(1 for term in fact_terms if term in blob)
+        early_hits = sum(1 for term in fact_terms[:4] if term in blob)
+        title_hits = sum(1 for term in fact_terms[:6] if term in title_blob)
+        phrase_hits = 0
+        for seg in leading_segments:
+            norm = (seg or "").lower().strip()
+            if not norm:
+                continue
+            short = norm[:90]
+            if short and short in body_blob:
+                phrase_hits += 1
+            elif short and short in title_blob:
+                phrase_hits += 1
+        clone = dict(item)
+        base = float(clone.get("_rerank_score", 0) or 0)
+        clone["_fact_alignment_overlap"] = overlap
+        clone["_title_alignment_hits"] = title_hits
+        clone["_fact_alignment_score"] = (
+            base
+            + min(overlap * 0.15, 0.9)
+            + min(early_hits * 0.12, 0.36)
+            + min(title_hits * 0.18, 0.54)
+            + min(phrase_hits * 0.24, 0.48)
+        )
+        rescored.append(clone)
+
+    rescored.sort(
+        key=lambda x: (
+            x.get("_fact_alignment_score", 0),
+            x.get("_title_alignment_hits", 0),
+            x.get("_rerank_score", 0),
+            x.get("_fact_alignment_overlap", 0),
+        ),
+        reverse=True,
+    )
+    rescored = _apply_family_consensus_sort(rescored, "_fact_alignment_score", cap=None)
+    return rescored[:cap] if cap else rescored
+
+
 def _build_single_dispute_from_facts(facts_summary: str) -> dict:
-    """Use the entire fact pattern as one dispute component for the fast chat path."""
+    """Use the full fact pattern as one dispute component for the fast chat path."""
     text = _build_focus_fact_text(facts_summary, max_chars=700) or _normalize_fact_text(facts_summary)
-    lower = text.lower()
-    keywords: list[str] = []
+    segments = _split_fact_segments(facts_summary)
+    keywords = _extract_salient_terms(text, limit=8)
     search_angles: list[str] = []
 
-    if any(p in lower for p in ("changed the lock", "locked out", "lockout", "forcible dispossession", "dispossess", "belongings are still inside", "belongings inside")):
-        keywords.extend(["lockout", "possession", "belongings inside"])
-        search_angles.extend([
-            "landlord changed lock tenant locked out belongings inside no notice no court order",
-            "forcible dispossession restoration of possession injunction against landlord",
-        ])
-    if any(p in lower for p in ("no written notice", "no notice", "no court order", "without court order", "without notice")):
-        keywords.extend(["no notice", "no court order"])
-    if any(p in lower for p in ("rent agreement", "lease agreement", "payment proof", "bank transfer proof", "whatsapp messages", "photos", "witness")):
-        keywords.extend(["rent agreement", "payment proof", "messages", "photos", "witness"])
+    for candidate in (
+        text,
+        " ".join(segments[:2]).strip(),
+        " ".join([segments[0], segments[-1]]).strip() if len(segments) >= 2 else "",
+        " ".join(keywords[:6]).strip(),
+    ):
+        normalized = " ".join((candidate or "").split()).strip()[:420]
+        if normalized and normalized not in search_angles:
+            search_angles.append(normalized)
+        if len(search_angles) >= 3:
+            break
 
     return {
         "id": "d1",
@@ -403,40 +578,213 @@ def _build_single_dispute_from_facts(facts_summary: str) -> dict:
     }
 
 
+def _build_runtime_rescue_queries(facts_summary: str, limit: int = 2) -> list[str]:
+    """Use model-backed query expansion only as a rescue when the first local pass is thin."""
+    queries: list[str] = []
+    seen: set[str] = set()
+
+    def _add(value: str) -> None:
+        q = " ".join((value or "").split()).strip()[:420]
+        if not q:
+            return
+        key = q.lower()
+        if key in seen:
+            return
+        seen.add(key)
+        queries.append(q)
+
+    _add(_build_focus_fact_text(facts_summary, max_chars=520) or facts_summary[:420])
+    try:
+        for query in expand_legal_query(facts_summary)[: max(1, limit + 1)]:
+            _add(query)
+    except Exception as e:
+        logger.debug("Interactive rescue query expansion failed: %s", e)
+    return queries[: max(1, limit)]
+
+
+def _select_interactive_grounded_results(
+    raw_results: list,
+    facts_summary: str,
+    *,
+    quality_fn,
+    cap: int,
+    min_score: float = INTERACTIVE_MIN_RERANK_SCORE,
+) -> list:
+    """
+    Generalized runtime selector for interactive retrieval.
+
+    Keep clearly relevant results first, but when the local corpus is sparse do
+    not collapse to zero merely because the reranker score is borderline.
+    """
+    aligned = _apply_fact_alignment_sort(raw_results or [], facts_summary)
+    quality_items = [item for item in aligned if quality_fn(item)]
+    if not quality_items:
+        return []
+
+    strong = [
+        item for item in quality_items
+        if max(float(item.get("_rerank_score", 0) or 0), float(item.get("_fact_alignment_score", 0) or 0))
+        >= min_score
+    ]
+    if strong:
+        return strong[:cap]
+
+    softened = [
+        item for item in quality_items
+        if (item.get("_fact_alignment_overlap", 0) or 0) > 0 or float(item.get("_rerank_score", 0) or 0) >= 0.0
+    ]
+    return softened[: min(cap, 3)]
+
+
+def _align_bare_acts_with_case_support(bare_acts: list, case_laws: list, facts_summary: str, cap: int) -> list:
+    """
+    Use retrieved precedent text as an additional general relevance signal.
+
+    If multiple case laws repeatedly reference one statute family, that act
+    should outrank one-off sections from unrelated statutes.
+    """
+    if not bare_acts:
+        return []
+    if not case_laws:
+        return _apply_fact_alignment_sort(bare_acts, facts_summary, cap=cap)
+
+    case_blob = " ".join(
+        " ".join(
+            str(item.get(field) or "") for field in ("title", "case_name", "text", "full_text")
+        )
+        for item in (case_laws or [])
+    ).lower()
+
+    rescored = []
+    for item in bare_acts:
+        clone = dict(item)
+        act_name = (item.get("act_name") or "").strip().lower()
+        sec = str(item.get("section_number") or "").strip().lower()
+        support_hits = 0
+        if act_name and act_name in case_blob:
+            support_hits += 2
+        if sec and re.search(rf"\bsection\s+{re.escape(sec)}\b", case_blob):
+            support_hits += 1
+        clone["_case_support_hits"] = support_hits
+        clone["_case_aligned_score"] = float(clone.get("_fact_alignment_score", clone.get("_rerank_score", 0)) or 0) + (support_hits * 1.25)
+        rescored.append(clone)
+
+    rescored.sort(
+        key=lambda item: (
+            item.get("_case_aligned_score", 0),
+            item.get("_fact_alignment_score", 0),
+            item.get("_rerank_score", 0),
+        ),
+        reverse=True,
+    )
+    rescored = _apply_family_consensus_sort(rescored, "_case_aligned_score", cap=None)
+    return rescored[:cap]
+
+
+def _align_case_laws_with_statute_support(case_laws: list, bare_acts: list, facts_summary: str, cap: int) -> list:
+    """
+    Re-rank case laws using the statute shortlist and factual overlap.
+
+    This is domain-agnostic: cases that clearly discuss the shortlisted Act or
+    sections and still overlap with the fact pattern should beat generic but
+    weakly related precedents.
+    """
+    if not case_laws:
+        return []
+
+    fact_terms = set(_extract_salient_terms(facts_summary or "", limit=12))
+    act_names = [(ba.get("act_name") or "").strip().lower() for ba in (bare_acts or []) if (ba.get("act_name") or "").strip()]
+    section_numbers = [str(ba.get("section_number") or "").strip().lower() for ba in (bare_acts or []) if str(ba.get("section_number") or "").strip()]
+    authority_bonus = {"supreme_court": 0.35, "high_court": 0.18, "tribunal": 0.08}
+
+    rescored = []
+    for item in case_laws:
+        clone = dict(item)
+        blob = " ".join(
+            str(item.get(field) or "")
+            for field in ("title", "case_name", "text", "full_text", "search_text")
+        ).lower()
+        act_hits = sum(1 for act_name in act_names[:3] if act_name and act_name in blob)
+        section_hits = sum(1 for sec in section_numbers[:3] if sec and re.search(rf"\bsection\s+{re.escape(sec)}\b", blob))
+        fact_overlap = sum(1 for term in fact_terms if term and term in blob)
+        bonus = (act_hits * 0.9) + (section_hits * 0.45) + min(fact_overlap * 0.08, 0.48)
+        bonus += authority_bonus.get((item.get("binding_authority") or "").strip().lower(), 0.0)
+        clone["_statute_case_support"] = round(bonus, 3)
+        clone["_case_support_score"] = float(clone.get("_rerank_score", 0) or 0) + bonus
+        rescored.append(clone)
+
+    rescored.sort(
+        key=lambda item: (
+            item.get("_case_support_score", 0),
+            item.get("_statute_case_support", 0),
+            item.get("_rerank_score", 0),
+        ),
+        reverse=True,
+    )
+    rescored = _apply_family_consensus_sort(rescored, "_case_support_score", cap=None)
+    return rescored[:cap]
+
+
 def _build_grounded_bare_act_fallback(formatted_bare: list, facts_summary: str = "") -> str:
     """
     Deterministic grounded fallback when we have local statutory material but the
     model output is unusable or too slow to rely on.
+
+    Returns clean framing prose only — section labels (Act + Section + title) but NO
+    raw section text. Embedding raw section text produces garbled output because the
+    DB text already begins with the section number itself, e.g.:
+      "Section 18 supports protection through 18. Protection orders. The Magistrate may..."
+    The full section text is shown separately in bare_act_sections cards.
     """
     if not formatted_bare:
         return _local_only_no_materials_message()
 
-    top = formatted_bare[:3]
-    fact_line = _build_focus_fact_text(facts_summary, max_chars=260) or "the facts presently shared"
-    lead = (
-        f"On the facts presently shared, the closest grounded starting point in the local materials is the statutory position "
-        f"that appears most relevant to {fact_line}."
-    )
-    body_parts = []
-    for ba in top:
-        act = (ba.get("act_name") or ba.get("title") or "the retrieved statute").strip()
-        sec = str(ba.get("section_number") or "").strip()
-        title = (ba.get("section_title") or ba.get("title") or "").strip()
-        text = (ba.get("text") or "").strip().replace("\n", " ")
-        snippet = text[:220].strip()
-        label = f"{act}, Section {sec}" if sec else act
-        if title and title not in label:
-            label = f"{label} ({title})"
-        if snippet:
-            body_parts.append(f"{label} points to {snippet}")
-        else:
-            body_parts.append(f"{label} appears to be one of the key local provisions for this issue.")
+    stage_bare = _prepare_bare_act_stage_entries(formatted_bare, facts_summary=facts_summary)
+    if not stage_bare:
+        stage_bare = _prepare_bare_act_stage_entries(formatted_bare)
 
-    close = (
-        "The next step is to test these local provisions against the notice position, possession facts, documents, and timeline "
-        "already described so the opinion stays tightly grounded."
+    # Group sections by Act name
+    act_groups: dict[str, list[dict]] = {}
+    for ba in stage_bare:
+        act_name = (ba.get("act_name") or ba.get("title") or "the retrieved statute").strip() or "the retrieved statute"
+        act_groups.setdefault(act_name, []).append(ba)
+
+    parts: list[str] = []
+    parts.append(
+        "On the facts presently shared, the locally retrieved statutory materials "
+        "point to a supportable legal position on the record."
     )
-    return "\n\n".join([lead, " ".join(body_parts), close]).strip()
+
+    body_parts = []
+    for act_name, sections in list(act_groups.items())[:3]:
+        # Reference sections by label (number + title) only — text is in cards
+        section_labels = []
+        for ba in sections[:3]:
+            sec = str(ba.get("section_number") or "").strip()
+            title = (ba.get("section_title") or "").strip()
+            if sec and title:
+                section_labels.append(f"Section {sec} ({title})")
+            elif sec:
+                section_labels.append(f"Section {sec}")
+        if section_labels:
+            body_parts.append(
+                f"{act_name}: the most directly applicable provisions are {', '.join(section_labels)}."
+            )
+        else:
+            body_parts.append(
+                f"{act_name} appears to be one of the most material retrieved Acts for this dispute."
+            )
+
+    if body_parts:
+        parts.append("\n".join(body_parts))
+
+    parts.append(
+        "The full text of each provision is set out in the cards below. "
+        "The safest next step is to test these materials against the notice, "
+        "communications, and timeline already mentioned before taking a firmer position."
+    )
+
+    return "\n\n".join(parts).strip()
 
 
 def _build_grounded_interactive_fallback(
@@ -445,10 +793,14 @@ def _build_grounded_interactive_fallback(
     formatted_case: list,
 ) -> str:
     """
-    Deterministic grounded opinion for the fast interactive lane.
+    Deterministic grounded opinion_text for the fast interactive lane.
 
-    This keeps latency low and avoids spending 10-20 seconds on an LLM draft that
-    may later be rejected by the local-grounding guard.
+    Returns clean framing prose only (2-4 sentences). Section text is shown in
+    bare_act_sections cards and must NOT be embedded here — embedding truncated
+    section text (which starts with its own section number) produces garbled output
+    like "Section 18 points to 18. Protection orders. The Magistrate may..." because
+    the DB text already begins with the section number. Case law text truncated at
+    220 characters also reads as mid-sentence fragments.
     """
     local_bare, local_case = _filter_materials_to_local_db(formatted_bare, formatted_case)
     if not local_bare and not local_case:
@@ -456,49 +808,57 @@ def _build_grounded_interactive_fallback(
     if local_bare and not local_case:
         return _build_grounded_bare_act_fallback(local_bare, facts_summary=facts_summary)
 
-    fact_line = _build_focus_fact_text(facts_summary, max_chars=260)
-    fact_line = fact_line[:260] if fact_line else "the facts shared"
-
-    lead = (
-        f"On the facts presently shared, the immediate issue is how the locally retrieved statutory materials "
-        f"and precedents bear on {fact_line}."
-    )
-
-    bare_parts = []
-    for ba in local_bare[:2]:
+    # Build section labels (act + section number + title where available).
+    # Do NOT embed raw section text — it belongs in the bare_act_sections cards.
+    bare_labels: list[str] = []
+    for ba in local_bare[:3]:
         act = (ba.get("act_name") or ba.get("title") or "the retrieved statute").strip()
         sec = str(ba.get("section_number") or "").strip()
-        text = " ".join((ba.get("text") or "").split()).strip()[:220]
-        label = f"{act}, Section {sec}" if sec else act
-        if text:
-            bare_parts.append(f"{label} points to {text}")
+        title = (ba.get("section_title") or "").strip()
+        if sec and title:
+            bare_labels.append(f"{act}, Section {sec} ({title})")
+        elif sec:
+            bare_labels.append(f"{act}, Section {sec}")
         else:
-            bare_parts.append(f"{label} appears to be one of the key local statutory provisions.")
-    statutory = " ".join(bare_parts).strip()
+            bare_labels.append(act)
 
-    case_parts = []
+    # Build case labels (name + court).
+    # Do NOT embed raw case text — truncated text reads as fragments.
+    case_labels: list[str] = []
     for cl in local_case[:2]:
         name = (cl.get("title") or cl.get("case_name") or cl.get("source") or "the retrieved case").strip()
         court = (cl.get("court") or "").strip()
-        text = " ".join((cl.get("text") or "").split()).strip()[:220]
-        label = f"{name} ({court})" if court and court not in name else name
-        if text:
-            case_parts.append(f"{label} supports the analysis through {text}")
-        else:
-            case_parts.append(f"{label} is one of the strongest locally retrieved precedents on this issue.")
-    precedent = " ".join(case_parts).strip()
+        case_labels.append(f"{name} ({court})" if court and court not in name else name)
 
-    close = (
-        "On the present local record, the safest next step is to test these materials against the notice, "
+    parts: list[str] = []
+
+    # Opening framing — reference the type of dispute, not raw facts_summary which
+    # may contain backtick-wrapped chat history or scaffold markers.
+    parts.append(
+        "On the facts presently shared, the locally retrieved materials point to a "
+        "supportable legal position on the record."
+    )
+
+    if bare_labels:
+        if len(bare_labels) == 1:
+            parts.append(f"The principal statutory provision retrieved is {bare_labels[0]}.")
+        else:
+            joined = ", ".join(bare_labels[:-1]) + f", and {bare_labels[-1]}"
+            parts.append(f"The primary statutory provisions retrieved are {joined}.")
+
+    if case_labels:
+        if len(case_labels) == 1:
+            parts.append(f"The strongest locally retrieved precedent is {case_labels[0]}.")
+        else:
+            joined = " and ".join(case_labels)
+            parts.append(f"The locally retrieved precedents include {joined}.")
+
+    parts.append(
+        "The full text of these provisions and cases is set out in the cards below. "
+        "The safest next step is to test these materials against the notice, "
         "communications, and timeline already mentioned before taking a firmer position."
     )
 
-    parts = [lead]
-    if statutory:
-        parts.append(statutory)
-    if precedent:
-        parts.append(precedent)
-    parts.append(close)
     return "\n\n".join(parts).strip()
 
 
@@ -703,6 +1063,19 @@ def _reorder_bare_acts_for_rent_disputes(bare_acts: list, dispute: dict) -> list
     return sorted(bare_acts, key=_act_priority)
 
 
+def _reorder_bare_acts_for_rent_disputes(bare_acts: list, dispute: dict) -> list:
+    """
+    Backward-compatible hook kept for older call sites.
+
+    The live path is now domain-agnostic: rank by fact alignment rather than by
+    scenario-specific act preferences.
+    """
+    if not bare_acts:
+        return bare_acts
+    dispute_text = (dispute.get("dispute") or "").strip()
+    return _apply_fact_alignment_sort(bare_acts, dispute_text, cap=len(bare_acts))
+
+
 def expand_legal_query(facts: str, intent: dict = None) -> list[str]:
     """
     Convert plain-language facts to 1–3 legal research queries (roadmap: multi-query retrieval).
@@ -761,22 +1134,20 @@ def expand_legal_query(facts: str, intent: dict = None) -> list[str]:
 
     queries = []
     normalized_facts = _normalize_fact_query(facts)
-    has_explicit_legal_reference = bool(_RE_EXPLICIT_LEGAL_REFERENCE.search(normalized_facts))
 
-    if has_explicit_legal_reference:
-        prompt = f"""{EXPAND_LEGAL_QUERY_SYSTEM}
+    prompt = f"""{EXPAND_LEGAL_QUERY_SYSTEM}
 {intent_block}
 
 FACTS:
 {facts[:2000]}
 
 Query:"""
-        try:
-            base = ask_llm(prompt, task_hint="fast").strip()[:500]
-            if base:
-                queries.append(base)
-        except Exception:
-            pass
+    try:
+        base = ask_llm(prompt, task_hint="fast").strip()[:500]
+        if base:
+            queries.append(base)
+    except Exception:
+        pass
     if not queries:
         queries.append(normalized_facts)
 
@@ -787,7 +1158,7 @@ Query:"""
         queries.append(syn[:500])
         existing_lower.append(syn.lower())
 
-    if len(queries) < 3 and not has_explicit_legal_reference:
+    if len(queries) < 3:
         plain_variant = _build_plain_language_variant(normalized_facts)
         if plain_variant and plain_variant.lower() not in existing_lower:
             queries.append(plain_variant)
@@ -798,6 +1169,117 @@ Query:"""
         statute_style = queries[0].replace("not paid", "default in payment").replace("did not pay", "default in payment")
         if statute_style != queries[0] and statute_style.lower() not in existing_lower:
             queries.append(statute_style[:500])
+
+    return queries[:3]
+
+
+def expand_legal_query(facts: str, intent: dict = None) -> list[str]:
+    """
+    Convert plain-language facts to 1-3 legal research queries.
+
+    Primary path is model-led so retrieval stays fact-sensitive and general across
+    domains. Heuristic fallbacks are only used when the model fails entirely.
+    """
+    from prompts.advocate_prompts import EXPAND_LEGAL_QUERY_SYSTEM, EXPAND_LEGAL_QUERY_INTENT_BLOCK
+
+    def _normalize_fact_query(text: str) -> str:
+        cleaned = re.sub(r"\s+", " ", (text or "").strip())
+        cleaned = re.sub(r"[\"'`]+", "", cleaned)
+        return cleaned[:420]
+
+    fact_tokens = {
+        tok for tok in re.findall(r"[a-zA-Z]{4,}", (facts or "").lower())
+        if tok not in {"with", "from", "that", "this", "have", "there", "their", "about", "which", "would", "could"}
+    }
+    fact_mentions_statute = bool(re.search(r"\b(act|code|rules|regulation|regulations|section)\b", (facts or "").lower()))
+
+    def _is_grounded_query(query_text: str) -> bool:
+        low = (query_text or "").lower()
+        if not low:
+            return False
+        if any(marker in low for marker in ("case law search", "bare act search", "search query", "query:", "search:")):
+            return False
+        query_tokens = {
+            tok for tok in re.findall(r"[a-zA-Z]{4,}", low)
+            if tok not in {"with", "from", "that", "this", "have", "there", "their", "about", "which", "would", "could"}
+        }
+        overlap = len(query_tokens & fact_tokens)
+        act_mentions = re.findall(
+            r"\b[A-Z][A-Za-z0-9,&(). -]{0,80}\b(?:Act|Code|Rules|Regulation(?:s)?|Procedure)\b(?:,?\s*\d{4})?",
+            query_text,
+        )
+        distinct_acts = {item.strip().lower() for item in act_mentions if item.strip()}
+        if not fact_mentions_statute and len(distinct_acts) > 1:
+            return False
+        if (query_text.count("+") >= 1 or query_text.count(";") >= 2) and len(distinct_acts) > 1:
+            return False
+        if fact_tokens and len(fact_tokens) >= 5 and overlap < 2 and len(query_tokens) >= 4:
+            return False
+        return True
+
+    def _extract_model_queries(raw: str) -> list[str]:
+        if not raw:
+            return []
+        candidates: list[str] = []
+        candidate_keys: set[str] = set()
+        text = raw.strip()
+        possible_chunks = [text]
+        match = re.search(r"\{.*\}", text, flags=re.DOTALL)
+        if match:
+            possible_chunks.insert(0, match.group(0))
+        for chunk in possible_chunks:
+            try:
+                parsed = json.loads(chunk)
+                values = parsed.get("queries") if isinstance(parsed, dict) else parsed if isinstance(parsed, list) else []
+                for value in values or []:
+                    normalized = _normalize_fact_query(str(value))
+                    key = normalized.lower()
+                    if normalized and key not in candidate_keys and _is_grounded_query(normalized):
+                        candidate_keys.add(key)
+                        candidates.append(normalized)
+            except Exception:
+                continue
+            if candidates:
+                return candidates[:3]
+        for part in re.split(r"[\r\n]+|;\s*", text):
+            normalized = _normalize_fact_query(part.lstrip("-*0123456789. ").strip())
+            key = normalized.lower()
+            if normalized and key not in candidate_keys and _is_grounded_query(normalized):
+                candidate_keys.add(key)
+                candidates.append(normalized)
+            if len(candidates) >= 3:
+                break
+        return candidates[:3]
+
+    intent_block = ""
+    if intent and isinstance(intent, dict) and (intent.get("states") or intent.get("domains") or intent.get("topics")):
+        intent_block = EXPAND_LEGAL_QUERY_INTENT_BLOCK.format(intent_json=json.dumps(intent, indent=0))
+
+    queries: list[str] = []
+    normalized_facts = _normalize_fact_query(facts)
+    focus_query = _normalize_fact_query(_build_focus_fact_text(facts, max_chars=420) or normalized_facts)
+
+    prompt = f"""{EXPAND_LEGAL_QUERY_SYSTEM}
+{intent_block}
+
+FACTS:
+{facts[:2000]}
+
+Return JSON only:"""
+    try:
+        queries = _extract_model_queries(ask_llm(prompt, task_hint="fast").strip())
+    except Exception:
+        queries = []
+
+    if not queries:
+        queries.append(normalized_facts)
+
+    existing_lower = {q.lower() for q in queries}
+    if focus_query and focus_query.lower() not in existing_lower:
+        queries.append(focus_query)
+        existing_lower.add(focus_query.lower())
+    if normalized_facts and normalized_facts.lower() not in existing_lower:
+        queries.append(normalized_facts)
 
     return queries[:3]
 
@@ -822,6 +1304,33 @@ def _summarize_bare_acts_brief(bare_acts: list) -> str:
             entry += f" — {title}"
         lines.append(entry)
     return "\n".join(lines)
+
+
+def _extract_json(raw: str):
+    text = (raw or "").strip()
+    if not text:
+        raise ValueError("Empty JSON payload")
+
+    try:
+        return json.loads(text)
+    except Exception:
+        pass
+
+    decoder = json.JSONDecoder()
+    for idx, ch in enumerate(text):
+        if ch not in '{[':
+            continue
+        try:
+            parsed, _ = decoder.raw_decode(text[idx:])
+            return parsed
+        except Exception:
+            continue
+
+    fenced = re.search(r"```(?:json)?\s*(\{.*?\}|\[.*?\])\s*```", text, re.S | re.I)
+    if fenced:
+        return json.loads(fenced.group(1))
+
+    raise ValueError("No JSON object found in model output")
 
 
 def _check_bare_act_sufficiency(dispute_text: str, bare_acts: list, llm_fn=None) -> bool:
@@ -962,10 +1471,17 @@ def _build_bare_act_queries(dispute: dict) -> list[str]:
             seen.add(norm)
             queries.append(q)
 
-    # Q0: legal concepts (structured lookup — concept terms as queries, e.g. "criminal intimidation")
+    # Q0: legal_concepts + dispute text — contextual queries that carry the relational
+    # domain (e.g. "domestic violence marital cruelty wife husband protection") rather
+    # than surface-act words alone. Each concept is joined with the dispute text so the
+    # vector search retrieves from the correct statutory domain, not just surface keywords.
     for c in legal_concepts[:2]:
         if c and isinstance(c, str):
+            # Concept alone (structured lookup — e.g. "criminal intimidation")
             _add(c.strip())
+            # Concept + dispute text (domain-anchored query — surfaces correct Act family)
+            concept_anchored = f"{c.strip()} {dispute_text}".strip()
+            _add(concept_anchored[:400])
 
     # Q1: full dispute + keywords (broadest, catches anything related)
     # Use only the user's own language — no LLM-knowledge BNS/IPC enrichment
@@ -986,52 +1502,6 @@ def _build_bare_act_queries(dispute: dict) -> list[str]:
 
     # Q4: dispute text only (no keywords — helps when keywords are too noisy)
     _add(dispute_text)
-
-    # Q4b: deterministic statute-style injections for common criminal-code disputes.
-    # This strengthens local retrieval when the user describes facts in plain language
-    # ("beat me", "threatened to break my knees") but the indexed act is stored under
-    # formal statute names like Bharatiya Nyaya Sanhita, 2023.
-    legal_nature = str(dispute.get("legal_nature", "both")).lower()
-    new_codes = _detect_new_criminal_codes(dispute_text, legal_nature)
-    concept_text = " ".join(
-        [str(x).strip() for x in (legal_concepts or []) + (keywords or []) if str(x).strip()]
-    ).lower()
-    text_lower = dispute_text.lower()
-
-    def _has_any(text: str, phrases: list[str]) -> bool:
-        return any(p in text for p in phrases)
-
-    bns_terms: list[str] = []
-    if _has_any(concept_text + " " + text_lower, ["criminal intimidation", "threat", "threatened", "threat of injury"]):
-        bns_terms.append("criminal intimidation")
-    if _has_any(concept_text + " " + text_lower, ["assault", "attack", "beat", "beaten", "physical harm", "injury", "hurt", "metal rod"]):
-        bns_terms.append("hurt assault physical harm")
-    if new_codes.get("bns"):
-        primary_bns = " ".join(dict.fromkeys(bns_terms)) if bns_terms else "criminal intimidation hurt assault"
-        _add(f"Bharatiya Nyaya Sanhita 2023 {primary_bns}")
-        _add(f"BNS 2023 {primary_bns}")
-    if new_codes.get("bnss"):
-        _add("Bharatiya Nagarik Suraksha Sanhita 2023 FIR complaint investigation")
-    if new_codes.get("bsa"):
-        _add("Bharatiya Sakshya Adhiniyam 2023 evidence witness electronic record")
-
-    # Q4c: deterministic tenancy/rent injections for local act retrieval.
-    # Keep these narrow: they should fire for rent-default / lease-termination
-    # disputes, not every landlord-tenant lockout or possession complaint.
-    if _is_rent_eviction_dispute(dispute) and _has_rent_default_signal(dispute):
-        _add("Transfer of Property Act lease forfeiture non payment of rent eviction")
-        _add("rent tenancy eviction non payment of rent lease agreement landlord tenant")
-        if _has_any(text_lower, ["written agreement", "lease agreement", "vacating the property", "vacate the property"]):
-            _add("lease agreement forfeiture termination of lease non payment of rent")
-
-    # Q4d: deterministic lockout / dispossession injections for landlord-tenant
-    # disputes where the user describes being denied access or dispossessed,
-    # especially when there is no notice or court order.
-    if _is_forced_lockout_dispute(dispute):
-        _add("landlord changed lock tenant locked out belongings inside no notice no court order")
-        _add("forcible dispossession restoration of possession injunction against landlord")
-        if _has_any(text_lower, ["police", "society", "neighbour", "neighbor", "witness", "messages", "photos"]):
-            _add("illegal lockout possession restoration police complaint messages photos witness")
 
     # Q5: If we still have < 3 queries, generate via LLM
     if len(queries) < 3:
@@ -1603,9 +2073,11 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
     # on which acts apply — a strong signal for targeted tuning of either the
     # decomposer prompts or the act profile vocabulary.
     bare_act_hints = dispute.get("bare_act_hints", [])
+    procedural_companion_acts = _derive_procedural_companion_acts(dispute)
     if debug_entry is not None:
         debug_entry["bm25_acts"] = sorted(list(allowed_acts))
         debug_entry["bare_act_hints"] = list(bare_act_hints)
+        debug_entry["procedural_companion_acts"] = [item.get("act_name") for item in procedural_companion_acts]
     if bare_act_hints and allowed_acts:
         hints_lower = {h.strip().lower() for h in bare_act_hints}
         acts_lower  = {a.strip().lower() for a in allowed_acts}
@@ -1616,48 +2088,10 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
                 dispute_id, list(bare_act_hints)[:3], sorted(allowed_acts),
             )
 
-    # LLM refinement: unify BM25-identified acts and decomposer hints, then let the LLM
-    # rate relevance per Act for THIS dispute (high/medium/low) in a domain-agnostic way.
-    candidate_acts = []
-    seen_act_names = set()
-    for name in sorted(allowed_acts):
-        n = (name or "").strip()
-        if n and n.lower() not in seen_act_names:
-            candidate_acts.append({"act_name": n, "source": "profile", "note": ""})
-            seen_act_names.add(n.lower())
-    for hint in bare_act_hints:
-        n = str(hint or "").strip()
-        if n and n.lower() not in seen_act_names:
-            candidate_acts.append({"act_name": n, "source": "hint", "note": ""})
-            seen_act_names.add(n.lower())
-
-    if candidate_acts:
-        try:
-            prompt = ACT_SELECTION_PROMPT.format(
-                dispute=dispute_text[:400],
-                candidate_acts_json=json.dumps(candidate_acts, ensure_ascii=False),
-            )
-            resp = ask_llm(prompt, task_hint="fast")
-            data = json.loads(resp)
-            refined = [
-                (a.get("act_name") or "").strip()
-                for a in (data.get("acts") or [])
-                if (a.get("relevance") or "").strip().lower() in ("high", "medium")
-            ]
-            refined = [n for n in refined if n]
-            if refined:
-                allowed_acts = frozenset(refined)
-                logger.info(
-                    "[%s] Act refinement via LLM: %d high/medium acts → %s",
-                    dispute_id, len(allowed_acts), sorted(allowed_acts),
-                )
-                if debug_entry is not None:
-                    debug_entry["llm_acts"] = sorted(list(allowed_acts))
-        except Exception as e:
-            logger.warning(
-                "[%s] Act-selection LLM refinement failed: %s",
-                dispute_id, e,
-            )
+    # Early LLM act refinement removed.
+    # Act profile index was deleted; allowed_acts stays frozenset() and queries run
+    # unfiltered. LLM act refinement now runs AFTER cross-encoder retrieval (below)
+    # so it can contextually filter whatever the retriever actually surfaced.
 
     # Build diverse query set
     queries = _build_bare_act_queries(dispute)
@@ -1697,55 +2131,116 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
     # Indian Succession Act ...) before the score-threshold filter runs.
     top_acts = _select_top_acts(all_local)
 
-    # Secondary guard: if LLM already identified relevant acts (allowed_acts), drop any
-    # reranker-selected act that is NOT a fuzzy substring match of a LLM-allowed act.
-    # This prevents false positives like Telangana Excise Act sneaking through because
-    # its drunkenness provisions scored well on a domestic violence query.
-    if top_acts and allowed_acts:
-        def _act_in_llm_list(act: str, llm_acts: frozenset) -> bool:
-            al = act.lower()
-            for la in llm_acts:
-                la_l = la.lower()
-                # 1. Direct substring match (original check)
-                if la_l in al or al in la_l:
-                    return True
-                # 2. Word-overlap match — catches aliases like "Land Acquisition Act 1894"
-                #    vs "...Land Acquisition...Rules 2014".  Strip stop-words by requiring
-                #    4+ character words so "act", "the", "and" don't create false positives.
-                al_words = set(re.findall(r'\b[a-z]{4,}\b', al))
-                la_words = set(re.findall(r'\b[a-z]{4,}\b', la_l))
-                if len(al_words & la_words) >= 1:
-                    return True
-            return False
-        llm_intersect = {a for a in top_acts if _act_in_llm_list(a, allowed_acts)}
-        if llm_intersect:
-            dropped = top_acts - llm_intersect
-            if dropped:
-                logger.info(
-                    "[%s] LLM-act guard: dropped %s (not in LLM-identified acts %s)",
-                    dispute_id, list(dropped), list(allowed_acts),
-                )
-            top_acts = llm_intersect
-        else:
-            # llm_intersect empty: LLM-identified act (e.g. "Land Acquisition Act 1894")
-            # is not indexed locally. Log it so we can investigate, but don't silently
-            # keep all reranker acts — that allows completely unrelated acts (Prisons,
-            # HMDA) to slip through. Fall back to the top 1 reranker act only.
-            best_act = max(top_acts, key=lambda a: max(
-                (c.get("_rerank_score", 0) for c in all_local if (c.get("act_name") or "").strip() == a),
-                default=0,
-            ))
-            logger.info(
-                "[%s] LLM-act guard: no word-overlap match found — LLM acts=%s; "
-                "falling back to top reranker act '%s' only (was: %s)",
-                dispute_id, list(allowed_acts), best_act, list(top_acts),
+    # ── Always-on LLM act refinement (post-retrieval) ────────────────────────
+    # Build candidates from three sources (priority order):
+    #   1. "hint"      — Acts the decomposer identified from dispute context
+    #   2. "procedural_companion" — procedural Acts (BNSS, CPC, BSA) auto-injected
+    #   3. "retrieved" — Acts the cross-encoder surfaced from the index
+    # The LLM then rates each candidate "high", "medium", or "low" against the
+    # FULL dispute context (text + legal_concepts). This eliminates surface-word
+    # false positives (e.g. POCSO for a marital assault query) without any
+    # hardcoded domain heuristics.
+    candidate_acts = []
+    seen_act_names: set = set()
+
+    def _add_candidate(act_name: str, source: str, note: str = "") -> None:
+        n = (act_name or "").strip()
+        if n and n.lower() not in seen_act_names:
+            candidate_acts.append({"act_name": n, "source": source, "note": note})
+            seen_act_names.add(n.lower())
+
+    for hint in bare_act_hints:
+        _add_candidate(str(hint or ""), "hint")
+    for companion in procedural_companion_acts:
+        _add_candidate(
+            str(companion.get("act_name") or ""),
+            "procedural_companion",
+            str(companion.get("reason") or ""),
+        )
+    for act_name in sorted(top_acts):
+        _add_candidate(act_name, "retrieved")
+
+    if candidate_acts:
+        try:
+            # Pass dispute text enriched with legal_concepts so the LLM can use
+            # relational/domain context (not just surface words) to judge relevance.
+            legal_concepts = dispute.get("legal_concepts", [])
+            dispute_context = dispute_text
+            if legal_concepts:
+                dispute_context += f"\nLegal concepts: {', '.join(legal_concepts)}"
+            prompt = ACT_SELECTION_PROMPT.format(
+                dispute=dispute_context[:600],
+                candidate_acts_json=json.dumps(candidate_acts, ensure_ascii=False),
             )
-            top_acts = {best_act}
+            resp = ask_llm(prompt, task_hint="fast")
+            data = json.loads(resp)
+            refined = [
+                (a.get("act_name") or "").strip()
+                for a in (data.get("acts") or [])
+                if (a.get("relevance") or "").strip().lower() in ("high", "medium")
+            ]
+            refined = [n for n in refined if n]
+            if refined:
+                top_acts = set(refined)
+                logger.info(
+                    "[%s] LLM act refinement (post-retrieval): %d high/medium acts → %s",
+                    dispute_id, len(top_acts), sorted(top_acts),
+                )
+                if debug_entry is not None:
+                    debug_entry["llm_acts"] = sorted(list(top_acts))
+            else:
+                logger.warning(
+                    "[%s] LLM act refinement returned no high/medium acts — keeping cross-encoder top_acts %s",
+                    dispute_id, sorted(top_acts),
+                )
+        except Exception as e:
+            logger.warning(
+                "[%s] LLM act refinement failed: %s — keeping cross-encoder top_acts",
+                dispute_id, e,
+            )
 
     if top_acts:
+        # Use word-overlap fuzzy match instead of exact string equality.
+        # LLM-returned act names and index act names often differ in punctuation,
+        # year format, or short-name variants (e.g. "BNS 2023" vs "Bharatiya Nyaya
+        # Sanhita, 2023"). Requiring ≥1 meaningful word overlap (4+ chars, non-stopword)
+        # handles these variants without hardcoded aliases.
+        def _act_matches_refined(indexed_name: str, refined_set: set) -> bool:
+            il = indexed_name.lower()
+            # Use 5+ char words: drops short connectors ('from', 'that', 'with', 'act')
+            # while keeping domain-specific identifiers ('bharatiya', 'sanhita',
+            # 'domestic', 'violence', 'sakshya', 'criminal', 'protection', etc.).
+            # Require ≥2 such words to match, so single shared generic words like
+            # "protection" (in both PWDVA and POCSO) don't create false positives.
+            il_words = set(re.findall(r'\b[a-z]{5,}\b', il))
+            for r in refined_set:
+                rl = r.lower()
+                # Exact substring match handles perfect name/alias hits
+                if rl in il or il in rl:
+                    return True
+                rl_words = set(re.findall(r'\b[a-z]{5,}\b', rl))
+                if len(il_words & rl_words) >= 2:
+                    return True
+            return False
+
         before = len(all_local)
-        all_local = [ba for ba in all_local if (ba.get("act_name") or "").strip() in top_acts]
-        logger.info("[%s] Act pre-filter: %d → %d sections (kept acts: %s)", dispute_id, before, len(all_local), list(top_acts))
+        filtered = [
+            ba for ba in all_local
+            if _act_matches_refined((ba.get("act_name") or "").strip(), top_acts)
+        ]
+        # Safety: if fuzzy filter drops everything (e.g. hint-only acts not yet indexed),
+        # keep all_local unfiltered so retrieval doesn't silently return zero sections.
+        if filtered:
+            all_local = filtered
+            logger.info(
+                "[%s] Act pre-filter: %d → %d sections (kept acts: %s)",
+                dispute_id, before, len(all_local), sorted(top_acts),
+            )
+        else:
+            logger.warning(
+                "[%s] Act pre-filter produced 0 matches (refined=%s) — keeping all %d sections unfiltered",
+                dispute_id, sorted(top_acts), before,
+            )
 
     local_results = [
         ba for ba in all_local
@@ -1878,14 +2373,18 @@ def _build_fast_case_queries(dispute: dict, bare_act_sections: list) -> list[str
     return queries[:_FAST_CASE_QUERY_LIMIT]
 
 
-def _select_top_acts(bare_acts: list, max_acts: int = 2) -> set[str]:
+def _select_top_acts(bare_acts: list, max_acts: int = 4) -> set[str]:
     """
-    Keep only the strongest act clusters for one dispute.
+    Keep the strongest act clusters for one dispute, as candidates for LLM refinement.
 
     Acts are ranked by:
     1. best section rerank score
     2. number of supporting sections
-    This trims noisy cross-act spillover without requiring hardcoded act lists.
+
+    max_acts is raised to 4 (from 2) so the always-on LLM refinement receives
+    enough candidates to surface the contextually correct Act even when it is not
+    the single highest cross-encoder scorer (e.g. PWDVA 2005 behind BNS for a
+    marital assault query). The LLM then narrows these to high/medium relevance.
     """
     act_scores: dict[str, dict] = {}
     for ba in bare_acts or []:
@@ -2003,6 +2502,13 @@ def retrieve_case_laws_for_dispute(dispute: dict, bare_act_sections: list, full_
         cl for cl in local_raw
         if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_case_law(cl)
     ]
+    if local_results:
+        local_results = _align_case_laws_with_statute_support(
+            local_results,
+            bare_act_sections,
+            full_query,
+            cap=max(len(local_results), MAX_CASE_LAWS_PER_DISPUTE),
+        )
     limited = _apply_dispute_case_law_limit(local_results, num_sections=len(bare_act_sections))
     logger.info("[%s] Case laws Round 1 local: %d after filter, %d after limit", dispute_id, len(local_results), len(limited))
 
@@ -2013,6 +2519,12 @@ def retrieve_case_laws_for_dispute(dispute: dict, bare_act_sections: list, full_
     if local_results:
         logger.info("[%s] Case laws Round 1 returning %d local result(s); no external fallback needed.", dispute_id, len(limited))
         llm_filtered = _filter_case_laws_with_llm(dispute, bare_act_sections, local_results, debug)
+        llm_filtered = _align_case_laws_with_statute_support(
+            llm_filtered,
+            bare_act_sections,
+            full_query,
+            cap=max(len(llm_filtered), MAX_CASE_LAWS_PER_DISPUTE),
+        )
         return _apply_dispute_case_law_limit(llm_filtered, num_sections=len(bare_act_sections))
 
     logger.info("[%s] Case laws Round 1 found no relevant local judgments.", dispute_id)
@@ -2282,6 +2794,7 @@ def generate_response_v2(
     step_callback=None,
     token_callback=None,
     model_override: str | None = None,
+    analysis_mode: str = "full_opinion",
 ) -> dict:
     """
     Full legal research pipeline — dispute-first approach.
@@ -2351,9 +2864,14 @@ def generate_response_v2(
 
     # Step 1: Query expansion (returns 1–3 queries for multi-query retrieval)
     fast_query_seed = _build_focus_fact_text(facts_summary, max_chars=520) or _strip_chat_window_summary(facts_summary)
-    legal_queries = [fast_query_seed[:400]] if interactive_fast_path else expand_legal_query(facts_summary, intent=research_intent)
+    if interactive_fast_path:
+        legal_queries = expand_legal_query(fast_query_seed[:400], intent=research_intent) or [fast_query_seed[:400]]
+    else:
+        legal_queries = expand_legal_query(facts_summary, intent=research_intent)
     legal_query = legal_queries[0] if legal_queries else facts_summary[:300]
     logger.info("Expanded query(s): %s", legal_query[:200] if legal_query else "none")
+
+    analysis_mode = (analysis_mode or "full_opinion").strip().lower() or "full_opinion"
 
     # What to retrieve (acts vs case laws vs both)
     retrieve_acts = (
@@ -2366,6 +2884,12 @@ def generate_response_v2(
         or document_types == "case_laws_only"
         or (intent == "legal_opinion" and document_types != "acts_only")
     )
+    if analysis_mode == "bare_acts_only":
+        retrieve_acts = True
+        retrieve_case_laws_flag = False
+    elif analysis_mode == "precedents_only":
+        retrieve_acts = True
+        retrieve_case_laws_flag = True
     if not retrieve_acts and not retrieve_case_laws_flag:
         retrieve_acts = retrieve_case_laws_flag = True
 
@@ -2435,7 +2959,7 @@ def generate_response_v2(
         bare_d = []
         if retrieve_acts:
             if interactive_fast_path:
-                from retrieval.hybrid_retriever import search_bare_acts_fast, search_bare_acts_auto
+                from retrieval.hybrid_retriever import search_bare_acts_fast, search_bare_acts_runtime
                 queries_ba = (_build_bare_act_queries(dispute) or [d_text or facts_summary[:300]])[:_FAST_BARE_QUERY_LIMIT]
                 seen_ba: dict = {}
                 for _q_ba in queries_ba:
@@ -2451,11 +2975,17 @@ def generate_response_v2(
                     if found_for_query:
                         break
                 raw = list(seen_ba.values())
-                bare_d = [ba for ba in raw if ba.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_bare_act(ba)]
+                bare_d = _select_interactive_grounded_results(
+                    raw,
+                    facts_summary,
+                    quality_fn=_is_quality_bare_act,
+                    cap=MAX_SECTIONS_PER_DISPUTE_TOTAL,
+                )
                 if not bare_d:
-                    logger.info("[%s] Interactive fast bare-act rescue: retrying broader local search", d_id)
-                    for _q_ba in queries_ba[:2]:
-                        for _ba in search_bare_acts_auto(_q_ba, top_k=10):
+                    logger.info("[%s] Interactive fast bare-act rescue: broadening local search", d_id)
+                    rescue_queries = _build_runtime_rescue_queries(facts_summary, limit=2)
+                    for _q_ba in rescue_queries:
+                        for _ba in search_bare_acts_runtime(_q_ba, top_k=8):
                             _key = (
                                 (_ba.get("act_name") or "").strip().lower(),
                                 (_ba.get("section_number") or "").strip().lower(),
@@ -2463,8 +2993,25 @@ def generate_response_v2(
                             if _ba.get("_rerank_score", 0) > (seen_ba.get(_key) or {}).get("_rerank_score", -999):
                                 seen_ba[_key] = _ba
                     raw = list(seen_ba.values())
-                    bare_d = [ba for ba in raw if ba.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_bare_act(ba)]
-                bare_d = _apply_fact_alignment_sort(bare_d, facts_summary, cap=MAX_SECTIONS_PER_DISPUTE_TOTAL)
+                    bare_d = _select_interactive_grounded_results(
+                        raw,
+                        facts_summary,
+                        quality_fn=_is_quality_bare_act,
+                        cap=MAX_SECTIONS_PER_DISPUTE_TOTAL,
+                    )
+                if bare_d:
+                    bare_d = _apply_fact_alignment_sort(
+                        _filter_bare_acts_with_llm(dispute, bare_d, _local_debug),
+                        facts_summary,
+                        cap=MAX_SECTIONS_PER_DISPUTE_TOTAL,
+                    )
+                    top_acts = _select_top_acts(bare_d, max_acts=3)
+                    if top_acts:
+                        bare_d = _apply_fact_alignment_sort(
+                            [ba for ba in bare_d if (ba.get("act_name") or "").strip() in top_acts],
+                            facts_summary,
+                            cap=MAX_SECTIONS_PER_DISPUTE_TOTAL,
+                        )
             elif search_strategy == "local_only":
                 from retrieval.hybrid_retriever import search_bare_acts_auto
                 # Multi-query: run all _build_bare_act_queries and merge by best score per section.
@@ -2510,7 +3057,7 @@ def generate_response_v2(
         if retrieve_case_laws_flag:
             _emit_step(f"[{d_id}] Searching for judicial precedents...", "⚖️")
             if interactive_fast_path:
-                from retrieval.hybrid_retriever import search_case_summaries_fast, search_case_laws_auto
+                from retrieval.hybrid_retriever import search_case_summaries_fast, search_case_laws_runtime
                 _queries_cl = _build_fast_case_queries(dispute, bare_d)
                 seen_cl: dict = {}
                 for _q_cl in _queries_cl:
@@ -2521,25 +3068,42 @@ def generate_response_v2(
                         if _cl.get("_rerank_score", 0) > (seen_cl.get(_ck) or {}).get("_rerank_score", -999):
                             seen_cl[_ck] = _cl
                 raw_cl = list(seen_cl.values())
-                case_d = _apply_dispute_case_law_limit(
-                    [cl for cl in raw_cl if cl.get("_rerank_score", 0) >= 0.0 and _is_quality_case_law(cl)],
-                    num_sections=len(bare_d),
+                initial_case = _select_interactive_grounded_results(
+                    raw_cl,
+                    facts_summary,
+                    quality_fn=_is_quality_case_law,
+                    cap=MAX_CASE_LAWS_PER_DISPUTE,
+                    min_score=0.0,
                 )
+                case_d = _apply_dispute_case_law_limit(initial_case, num_sections=len(bare_d))
                 if not case_d:
-                    logger.info("[%s] Interactive fast case-law rescue: retrying broader local case search", d_id)
-                    for _q_cl in _queries_cl[:2]:
-                        for _cl in search_case_laws_auto(_q_cl, top_k=12):
+                    logger.info("[%s] Interactive fast case-law rescue: broadening local case search", d_id)
+                    rescue_queries = _build_runtime_rescue_queries(facts_summary, limit=2)
+                    for _q_cl in rescue_queries:
+                        for _cl in search_case_laws_runtime(_q_cl, top_k=8):
                             _ck = _cl.get("_chunk_key") or (
                                 (_cl.get("case_name") or "").lower() + "|" + (_cl.get("full_text", "")[:100])
                             )
                             if _cl.get("_rerank_score", 0) > (seen_cl.get(_ck) or {}).get("_rerank_score", -999):
                                 seen_cl[_ck] = _cl
                     raw_cl = list(seen_cl.values())
+                    rescued_case = _select_interactive_grounded_results(
+                        raw_cl,
+                        facts_summary,
+                        quality_fn=_is_quality_case_law,
+                        cap=MAX_CASE_LAWS_PER_DISPUTE,
+                    )
+                    case_d = _apply_dispute_case_law_limit(rescued_case, num_sections=len(bare_d))
+                if case_d:
                     case_d = _apply_dispute_case_law_limit(
-                        [cl for cl in raw_cl if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_case_law(cl)],
+                        _filter_case_laws_with_llm(dispute, bare_d, case_d, _local_debug),
                         num_sections=len(bare_d),
                     )
-                case_d = _apply_fact_alignment_sort(case_d, facts_summary, cap=MAX_CASE_LAWS_PER_DISPUTE)
+                case_d = _apply_fact_alignment_sort(
+                    case_d,
+                    facts_summary,
+                    cap=max(len(case_d), MAX_CASE_LAWS_PER_DISPUTE),
+                )
             elif search_strategy == "local_only":
                 from retrieval.hybrid_retriever import search_case_laws_auto
                 # Multi-query: base dispute query + up to 2 section-anchored queries, merge best per chunk.
@@ -2568,6 +3132,21 @@ def generate_response_v2(
                         _rr = dict(_r)
                         _rr["_fallback_kind"] = "case_law"
                         _external_results.append(_rr)
+
+            if case_d:
+                case_cap = max(len(case_d), MAX_CASE_LAWS_PER_DISPUTE)
+                case_d = _apply_fact_alignment_sort(case_d, facts_summary, cap=case_cap)
+                if bare_d:
+                    case_d = _align_case_laws_with_statute_support(case_d, bare_d, facts_summary, cap=case_cap)
+                    case_d = _apply_dispute_case_law_limit(case_d, num_sections=len(bare_d))
+                    bare_d = _align_bare_acts_with_case_support(
+                        bare_d,
+                        case_d,
+                        facts_summary,
+                        cap=MAX_SECTIONS_PER_DISPUTE_TOTAL,
+                    )
+                else:
+                    case_d = case_d[:MAX_CASE_LAWS_PER_DISPUTE]
 
             # Citation graph expansion: boost recall by fetching chunks for cases
             # that the retrieved cases cite (forward) or that cite them (backward).
@@ -2620,11 +3199,16 @@ def generate_response_v2(
             else:
                 _emit_step(f"[{d_id}] No judgements found in local database", "ℹ️")
 
-        # Tag with dispute ID before returning
+        # Tag with dispute metadata before returning
+        dispute_label = _short_dispute_label(d_text)
         for _ba in bare_d:
             _ba.setdefault("_dispute_id", d_id)
+            _ba.setdefault("_dispute_label", dispute_label)
+            _ba.setdefault("_dispute_text", d_text)
         for _cl in case_d:
             _cl.setdefault("_dispute_id", d_id)
+            _cl.setdefault("_dispute_label", dispute_label)
+            _cl.setdefault("_dispute_text", d_text)
 
         return {
             "dispute": dispute,
@@ -2676,21 +3260,30 @@ def generate_response_v2(
     if confirmed_materials:
         all_bare_raw, all_case_raw = _add_confirmed_materials(confirmed_materials, all_bare_raw, all_case_raw)
 
-    # Step 5: Format sections, match case laws, generate opinion
-    progress.start_group("Response", "Formatting results and generating legal opinion")
-    progress.add_step("Formatting sections and matching case laws to bare acts...")
+    # Step 5: Format sections, match case laws, and prepare the staged response
+    progress.start_group("Response", "Formatting grounded materials for the next legal stage")
+    if analysis_mode == "bare_acts_only":
+        progress.add_step("Formatting applicable bare act sections...")
+    elif analysis_mode == "precedents_only":
+        progress.add_step("Formatting dispute-wise sections and precedents...")
+    else:
+        progress.add_step("Formatting sections and matching case laws to bare acts...")
     _emit_progress()
 
     all_case_raw_div = _diversify_case_laws_by_case(
         all_case_raw, max_chunks_per_case=3, max_total=max(len(all_bare_raw) * 4, 18),
     )
     formatted_bare = _format_bare_acts(all_bare_raw)
-    formatted_case = _format_case_laws(all_case_raw_div, user_query=facts_summary)
+    if analysis_mode == "precedents_only":
+        formatted_case = _format_case_law_excerpts(all_case_raw_div)
+    elif retrieve_case_laws_flag:
+        formatted_case = _format_case_laws(all_case_raw_div, user_query=facts_summary)
+    else:
+        formatted_case = []
     formatted_bare = _match_case_laws_to_bare_acts(formatted_bare, formatted_case)
     formatted_bare, _ = _filter_materials_to_local_db(formatted_bare, None)
     local_dispute_results = _filter_dispute_results_to_local_db(dispute_results)
 
-    # Search-only: wrap case laws in a bare-act shell so UI renders them
     if intent == "search" and not formatted_bare and formatted_case:
         limit = max(1, result_count) if result_count else max(FLEXIBLE_MIN_FALLBACK, len(formatted_case))
         formatted_bare = [{
@@ -2701,13 +3294,19 @@ def generate_response_v2(
             "source_tag": "LOCAL_DB",
         }]
 
-    # Step 6: LLM opinion / summary
+    # Step 6: Stage-specific response drafting
     if intent in ("search", "lookup"):
         progress.add_step("Generating search summary...")
-        _emit_step("Now I have everything I need — composing your summary...", "💡")
+        _emit_step("Now I have everything I need ? composing your summary...", "??")
+    elif analysis_mode == "bare_acts_only":
+        progress.add_step("Preparing applicable bare act sections...")
+        _emit_step("I have identified the grounded bare act sections that appear most relevant here.", "??")
+    elif analysis_mode == "precedents_only":
+        progress.add_step("Preparing precedent support...")
+        _emit_step("I am matching the strongest local precedents to the disputes already identified.", "??")
     else:
         progress.add_step("Generating legal opinion...")
-        _emit_step("Now I have everything I need — composing your legal analysis...", "💡")
+        _emit_step("Now I have everything I need ? composing your legal analysis...", "??")
     _emit_progress()
 
     flattened_case_laws = []
@@ -2716,12 +3315,8 @@ def generate_response_v2(
     if interactive_fast_path and not flattened_case_laws and formatted_case:
         flattened_case_laws = [cl for cl in formatted_case if _is_local_db_source(cl)]
 
-    # Determine whether we have any grounded materials at all. If both bare acts
-    # and case laws are empty, we must NOT generate a substantive legal opinion
-    # from the model's prior training — only a truthful "no materials" message.
     has_materials = bool(formatted_bare or flattened_case_laws)
 
-    # Model display step (before blocking on LLM call)
     _ctx = (facts_summary or "")[:1500]
     _ctx += json.dumps([{"t": b.get("title", ""), "x": (b.get("text") or "")[:250]} for b in formatted_bare[:8]])[:1800]
     _ctx += json.dumps([{"t": c.get("title", ""), "x": (c.get("text") or "")[:220]} for c in flattened_case_laws[:8]])[:1800]
@@ -2735,16 +3330,16 @@ def generate_response_v2(
         progress.add_step(_msg)
         _emit_progress()
 
-    # Sufficiency is satisfied by design (each dispute ran its own rounds)
     sufficiency = {
         "overall_sufficient": bool(formatted_bare),
         "gaps": [],
         "aspects": [],
         "confidence": "medium",
     }
+    next_steps: list = []
+    next_steps_summary: str = ""
 
     if not has_materials:
-        # Hard stop: no sections or case laws → do not fabricate a legal opinion.
         fallback_stats = None
         if external_fallback_results:
             fallback_stats = {
@@ -2761,6 +3356,23 @@ def generate_response_v2(
                 facts_summary, formatted_bare, flattened_case_laws, intent=intent,
                 token_callback=token_callback, model_override=model_override,
             )
+        elif analysis_mode == "bare_acts_only":
+            explanation, formatted_bare, next_steps, next_steps_summary = _generate_bare_act_stage_text(
+                facts_summary,
+                local_dispute_results,
+                formatted_bare,
+                model_override=model_override,
+                token_callback=token_callback,
+            )
+            flattened_case_laws = []
+        elif analysis_mode == "precedents_only":
+            explanation, formatted_bare, flattened_case_laws = _generate_precedent_stage_text(
+                facts_summary,
+                formatted_bare,
+                formatted_case,
+                model_override=model_override,
+                token_callback=token_callback,
+            )
         else:
             if interactive_fast_path:
                 explanation = _generate_interactive_fast_opinion(
@@ -2771,7 +3383,6 @@ def generate_response_v2(
                     model_override=model_override,
                 )
             else:
-                # Legal opinion: structured by dispute (Dispute Summary → Section + why + precedents per component → Legal Position)
                 explanation = _generate_structured_opinion_by_dispute(
                     facts_summary, local_dispute_results, additional_info="",
                     token_callback=token_callback, model_override=model_override,
@@ -2785,11 +3396,16 @@ def generate_response_v2(
             explanation = "Here's what I found for your query. Below are the relevant legal provisions with related case laws."
         if explanation and "I don't have any data" in explanation:
             explanation = _format_no_materials_message(search_strategy, None)
-        grounded_explanation = _enforce_local_grounding(explanation, formatted_bare)
+        if analysis_mode == "precedents_only":
+            grounded_explanation = (explanation or "").strip()
+        else:
+            grounded_explanation = _enforce_local_grounding(explanation, formatted_bare)
         if grounded_explanation == _local_only_no_materials_message():
-            if formatted_bare:
+            if analysis_mode == "bare_acts_only" and formatted_bare:
                 grounded_explanation = _build_grounded_bare_act_fallback(formatted_bare, facts_summary=facts_summary)
-            elif flattened_case_laws:
+            elif analysis_mode == "precedents_only" and flattened_case_laws:
+                grounded_explanation = _build_precedent_only_fallback(facts_summary, flattened_case_laws)
+            elif formatted_bare or flattened_case_laws:
                 grounded_explanation = _build_grounded_interactive_fallback(
                     facts_summary,
                     formatted_bare,
@@ -2858,6 +3474,8 @@ def generate_response_v2(
         "internet_case_laws": external_fallback_results,
         "progress": progress.get_progress(),
         "indexing_candidates": [],
+        "next_steps": next_steps,
+        "next_steps_summary": next_steps_summary,
         "dispute_breakdown": [
             {
                 "dispute_id": dr["dispute"].get("id"),
@@ -2962,17 +3580,60 @@ def _match_case_laws_to_bare_acts(bare_acts: list, case_laws: list, max_per_sect
     for cl in case_laws:
         cl_by_dispute[cl.get("_dispute_id") or _GLOBAL].append(cl)
 
-    # ── Step 2: Text-based matching within each dispute group ────────────────
+    # ── Step 2: Text-based matching with proximity-weighted holding score ────
+    def _holding_proximity_score(cl_text_lower: str, sec_num: str, window: int = 300) -> float:
+        """
+        Score how 'legally operative' the section-number mention is.
+        Finds all positions where sec_num appears, then counts holding-signal
+        words/phrases within ±window chars around each hit. Returns the max
+        score across all positions, so a single strong hit is enough.
+        """
+        if not sec_num:
+            return 0.0
+        score = 0.0
+        start = 0
+        while True:
+            pos = cl_text_lower.find(sec_num, start)
+            if pos == -1:
+                break
+            window_text = cl_text_lower[max(0, pos - window): pos + len(sec_num) + window]
+            hit_score = 0.0
+            for phrase in _LEGAL_HOLDING_SIGNALS_PHRASE:
+                if phrase in window_text:
+                    hit_score += 0.35
+            for word in _LEGAL_HOLDING_SIGNALS_WORD:
+                if word in window_text:
+                    hit_score += 0.15
+            score = max(score, hit_score)
+            start = pos + 1
+        return score
+
     def _text_match_group(ba_group: list, cl_group: list) -> list:
-        """Assign case laws in cl_group to sections in ba_group; return unmatched."""
+        """
+        Assign case laws in cl_group to sections in ba_group; return unmatched.
+
+        Matching logic (in priority order):
+        1. Section number must appear in case law text AND at least one act keyword
+           matches — same as before.
+        2. Among all qualifying bare act sections for a case law, prefer the one
+           where the section-number mention is closest to holding-signal language
+           (_holding_proximity_score). This avoids attaching a case law to a section
+           it merely mentioned in narration vs. one it actually decided.
+        3. Very low-scored case laws (below INTERACTIVE_MIN_RERANK_SCORE) are skipped
+           in the unmatched fallback — don't pollute sections with noise.
+        """
         unmatched = []
         for cl in cl_group:
+            # Use para_texts[0] if available (full raw para, not collapsed summary)
+            para_texts = cl.get("para_texts") or []
+            raw_text = para_texts[0] if para_texts else (cl.get("text") or cl.get("full_text") or "")
             cl_text = (
-                (cl.get("text") or cl.get("full_text") or "") + " " +
+                raw_text + " " +
                 (cl.get("case_name") or cl.get("title") or "")
             ).lower()
 
-            placed = False
+            # Find all qualifying bare act sections for this case law
+            candidates = []
             for ba in ba_group:
                 if len(ba.get("related_case_laws", [])) >= max_per_section:
                     continue
@@ -2981,15 +3642,17 @@ def _match_case_laws_to_bare_acts(bare_acts: list, case_laws: list, max_per_sect
                     w for w in (ba.get("act_name") or "").lower().split()
                     if len(w) > 3 and w not in ("the", "and", "of", "for", "act,", "act")
                 ]
-                # Section number must appear in the case law text AND at least
-                # one act keyword must match (guards against false hits on common
-                # numbers like "10" or "2" that appear in many unrelated judgments).
                 if sec_num and sec_num in cl_text:
                     if not act_keywords or any(w in cl_text for w in act_keywords[:3]):
-                        ba["related_case_laws"].append(cl)
-                        placed = True
-                        break
-            if not placed:
+                        proximity = _holding_proximity_score(cl_text, sec_num)
+                        candidates.append((proximity, ba.get("_rerank_score", 0), ba))
+
+            if candidates:
+                # Pick the section with the highest proximity score; break ties by rerank_score
+                candidates.sort(key=lambda x: (x[0], x[1]), reverse=True)
+                best_ba = candidates[0][2]
+                best_ba["related_case_laws"].append(cl)
+            else:
                 unmatched.append(cl)
         return unmatched
 
@@ -3011,20 +3674,26 @@ def _match_case_laws_to_bare_acts(bare_acts: list, case_laws: list, max_per_sect
 
         unmatched = _text_match_group(ba_group, cl_group)
 
-        # Fallback: assign unmatched to the highest-scored section in this group
+        # Fallback: assign unmatched to the highest-scored section in this group.
+        # Only attach case laws that clear INTERACTIVE_MIN_RERANK_SCORE — do not
+        # let very low-scored (noise) case laws pollute sections they didn't match.
         if unmatched and ba_group:
             top_ba = ba_group[0]
             for cl in unmatched:
+                if cl.get("_rerank_score", 0) < INTERACTIVE_MIN_RERANK_SCORE:
+                    continue
                 if len(top_ba.get("related_case_laws", [])) < max_per_section:
                     top_ba["related_case_laws"].append(cl)
 
     # ── Step 4: Global fallback for orphaned case laws ───────────────────────
     if orphan_case_laws:
         remaining = _text_match_group(bare_acts, orphan_case_laws)
-        # Anything still unmatched goes to the overall top section
+        # Anything still unmatched goes to the overall top section (score-filtered)
         if remaining and bare_acts:
             top_ba = bare_acts[0]
             for cl in remaining:
+                if cl.get("_rerank_score", 0) < INTERACTIVE_MIN_RERANK_SCORE:
+                    continue
                 if len(top_ba.get("related_case_laws", [])) < max_per_section:
                     top_ba["related_case_laws"].append(cl)
 
@@ -3164,18 +3833,889 @@ def _format_bare_acts(bare_acts: list) -> list:
             "text": text,
             "act_name": act_name,
             "section_number": section,
+            "section_title": title,
             "title": display_title,
             "url": url,
             "source_tag": ba.get("source_tag", "LOCAL_DB"),
             "_rerank_score": ba.get("_rerank_score", 0),
+            "_sort_score": _best_alignment_score(ba),
             # Preserve dispute tag so _match_case_laws_to_bare_acts() can group
             # by dispute instead of re-scoring pairs with the cross-encoder.
             "_dispute_id": ba.get("_dispute_id", ""),
+            "_dispute_label": ba.get("_dispute_label", ""),
+            "_dispute_text": ba.get("_dispute_text", ""),
         })
 
-    # Sort by relevance score
-    formatted.sort(key=lambda x: x.get("_rerank_score", 0), reverse=True)
+    # Sort by the strongest aligned score available, falling back to rerank score.
+    formatted.sort(key=lambda x: (x.get("_sort_score", 0), x.get("_rerank_score", 0)), reverse=True)
     return formatted
+
+
+def _extract_verbatim_display_excerpt(text: str, max_lines: int = 4, max_chars: int = 650, focus_terms: list[str] | None = None) -> str:
+    raw = (text or "").replace("\r\n", "\n").strip()
+    if not raw:
+        return ""
+    lines = [ln.strip() for ln in raw.split("\n") if ln.strip()]
+    if len(lines) >= 2:
+        units = lines
+        joiner = "\n"
+    else:
+        units = [s.strip() for s in re.split(r"(?<=[.!?])\s+", raw) if s.strip()]
+        joiner = " "
+    if not units:
+        return raw[:max_chars].strip()
+
+    scored = []
+    for idx, unit in enumerate(units):
+        compact = unit.strip()
+        if not compact:
+            continue
+        score = _stage_text_priority_score(compact, extra_terms=focus_terms)
+        if compact.lower().startswith("section "):
+            score += 0.12
+        if len(compact) >= 48:
+            score += 0.03
+        scored.append((score, idx, compact))
+
+    if scored and max(item[0] for item in scored) > 0:
+        chosen = sorted(
+            sorted(scored, key=lambda item: (item[0], -item[1]), reverse=True)[:max_lines],
+            key=lambda item: item[1],
+        )
+        excerpt = joiner.join(item[2] for item in chosen)
+    else:
+        excerpt = joiner.join(units[:max_lines])
+
+    excerpt = excerpt[:max_chars].strip()
+    return excerpt or raw[:max_chars].strip()
+
+
+_STAGE_PROTECTION_PRIORITY_TERMS = (
+    "urgent", "immediate", "interim", "protection", "protect", "protective", "relief", "restrain",
+    "prohibit", "injunction", "residence", "reside", "shelter", "medical", "hospital", "complaint",
+    "police", "custody", "maintenance", "compensation", "damages", "access", "return", "restore",
+    "liberty", "rights", "fundamental", "safety", "violence", "abuse", "harassment", "assistance",
+    "order", "magistrate", "court", "support", "aid", "monetary", "injury", "proof", "evidence",
+    "document", "record", "witness", "notice", "summons", "investigation", "jurisdiction", "injunction",
+)
+
+_STAGE_PROCEDURAL_DOWNWEIGHT_TERMS = (
+    "short title", "commencement", "extent", "definition", "definitions", "form", "forms", "schedule",
+    "annexure", "appendix", "instruction", "instructions", "application under", "prescribed form",
+    "fees", "fee", "format", "register", "registers",
+)
+
+# Holding/ratio signals — multi-word phrases that mark operative legal text in Indian SC/HC judgments.
+# Multi-word phrases score higher than single-word signals to reduce false positives.
+_LEGAL_HOLDING_SIGNALS_PHRASE = (
+    "we hold", "it is held", "the court holds", "accordingly held", "it is therefore held",
+    "it is directed", "we direct", "the court directs", "it is hereby directed",
+    "it is observed", "we observe", "the court observed", "the court notes",
+    "ratio decidendi", "the ratio", "the legal principle",
+    "is entitled to", "shall be entitled", "are entitled to",
+    "for the foregoing reasons", "in the result", "in the circumstances",
+    "the appeal is allowed", "the appeal is dismissed", "the petition is allowed",
+    "the petition is dismissed", "is set aside", "is quashed", "are quashed",
+    "it is well settled", "settled law", "settled position", "the law is well settled",
+    "must be read", "ought to be", "is bound to",
+    "we allow", "we dismiss", "we set aside", "we quash",
+    "accordingly ordered", "accordingly directed",
+    "the impugned", "impugned order", "impugned judgment",
+    "this court holds", "this court finds", "this court directs",
+    "the high court erred", "the tribunal erred",
+    "the accused is", "the respondent is", "the appellant is",
+    "conviction is", "sentence is", "bail is",
+    "interim relief", "stay granted", "stay refused",
+)
+
+_LEGAL_HOLDING_SIGNALS_WORD = (
+    "accordingly", "consequently", "therefore", "thus", "hence",
+    "held", "directed", "ordered", "decreed", "allowed", "dismissed",
+    "entitled", "liable", "convicted", "acquitted",
+)
+
+
+def _stage_text_priority_score(text: str, extra_terms: list[str] | None = None) -> float:
+    low = " ".join((text or "").lower().split())
+    if not low:
+        return 0.0
+    score = 0.0
+    protection_hits = 0
+    procedural_hits = 0
+    holding_hits = 0
+    for term in _STAGE_PROTECTION_PRIORITY_TERMS:
+        if term in low:
+            protection_hits += 1
+            score += 0.12 if " " in term else 0.05
+    for term in _STAGE_PROCEDURAL_DOWNWEIGHT_TERMS:
+        if term in low:
+            procedural_hits += 1
+            score -= 0.2 if " " in term else 0.08
+    if procedural_hits and not protection_hits:
+        score -= 0.55 + min(procedural_hits * 0.08, 0.32)
+    # Holding signal boost — multi-word phrases score higher than single words
+    for phrase in _LEGAL_HOLDING_SIGNALS_PHRASE:
+        if phrase in low:
+            holding_hits += 1
+            score += 0.35
+    for word in _LEGAL_HOLDING_SIGNALS_WORD:
+        if word in low:
+            holding_hits += 1
+            score += 0.15
+    for term in (extra_terms or []):
+        t = str(term or "").strip().lower()
+        if t and t in low:
+            score += 0.06
+    return score
+
+
+def _extract_holding_lines(text: str, max_lines: int = 5) -> str:
+    """
+    From a case law paragraph (or bare act section), extract the most legally
+    operative lines using holding-signal scoring.
+
+    Rules:
+    - If the text has ≤ 8 lines: return it unchanged (no extraction needed).
+    - Otherwise: score each line, pick the top `max_lines` by score,
+      re-sort them into their original reading order, and join with ' ... '.
+    - No character cap is applied — lines are returned as-is.
+    - Sentence splits are used when natural line breaks are absent.
+    """
+    raw = (text or "").replace("\r\n", "\n").strip()
+    if not raw:
+        return ""
+
+    # Split into units (prefer natural line breaks, fall back to sentences)
+    lines = [ln.strip() for ln in raw.split("\n") if ln.strip()]
+    if len(lines) < 2:
+        lines = [s.strip() for s in re.split(r"(?<=[.!?])\s+", raw) if s.strip()]
+
+    # Short text — return as-is
+    if len(lines) <= 8:
+        return raw
+
+    # Score each line; track original index to restore reading order
+    scored = []
+    for idx, line in enumerate(lines):
+        if not line:
+            continue
+        s = _stage_text_priority_score(line)
+        scored.append((s, idx, line))
+
+    # Take top max_lines, restore original order
+    top = sorted(scored, key=lambda x: -x[0])[:max_lines]
+    top_in_order = sorted(top, key=lambda x: x[1])
+
+    # If all scores are the same (no signal found), just return first max_lines lines
+    if len(set(round(x[0], 4) for x in top_in_order)) == 1:
+        return "\n".join(lines[:max_lines])
+
+    return " ... ".join(x[2] for x in top_in_order)
+
+
+def _stage_material_impact_score(item: dict, focus_terms: list[str] | None = None) -> float:
+    if not isinstance(item, dict):
+        return 0.0
+    base = float(item.get("_sort_score") or item.get("_rerank_score") or 0.0)
+    text = " ".join(
+        str(item.get(key) or "")
+        for key in ("act_name", "section_title", "title", "text", "full_text")
+    )
+    return base + _stage_text_priority_score(text, extra_terms=focus_terms)
+
+
+def _prepare_bare_act_stage_entries(
+    formatted_bare: list,
+    facts_summary: str = "",
+    max_acts_per_dispute: int = 3,
+    max_sections_per_act: int = 4,
+) -> list:
+    prepared_rows = []
+    focus_terms = _extract_salient_terms(_build_focus_fact_text(facts_summary, max_chars=420), limit=10)
+    for ba in formatted_bare or []:
+        clone = dict(ba)
+        # Keep full section text for both LLM reasoning and UI display.
+        # No truncation — the section/subsection text is shown in its entirety.
+        clone["is_verbatim_excerpt"] = True
+        clone["_stage_score"] = _stage_material_impact_score(clone, focus_terms=focus_terms)
+        prepared_rows.append(clone)
+
+    grouped: dict[str, dict[str, dict]] = {}
+    for item in prepared_rows:
+        dispute_id = str(item.get("_dispute_id") or "general").strip() or "general"
+        act_name = str(item.get("act_name") or item.get("source") or item.get("title") or "Applicable Act").strip() or "Applicable Act"
+        act_key = act_name.lower()
+        dispute_bucket = grouped.setdefault(dispute_id, {})
+        act_bucket = dispute_bucket.setdefault(
+            act_key,
+            {"act_name": act_name, "score": float("-inf"), "items": []},
+        )
+        act_bucket["items"].append(item)
+        act_bucket["score"] = max(act_bucket["score"], item.get("_stage_score", 0))
+
+    selected: list[dict] = []
+    for _dispute_id, act_map in grouped.items():
+        ranked_acts = sorted(act_map.values(), key=lambda bucket: bucket.get("score", 0), reverse=True)[:max_acts_per_dispute]
+        for act_bucket in ranked_acts:
+            act_items = sorted(
+                act_bucket.get("items", []),
+                key=lambda item: (item.get("_stage_score", 0), item.get("_sort_score", 0), item.get("_rerank_score", 0)),
+                reverse=True,
+            )
+            kept = []
+            seen_sections: set[tuple[str, str]] = set()
+            for item in act_items:
+                section_key = (
+                    str(item.get("section_number") or "").strip().lower(),
+                    str(item.get("title") or "").strip().lower(),
+                )
+                if section_key in seen_sections:
+                    continue
+                if item.get("_stage_score", 0) < 0 and kept:
+                    continue
+                seen_sections.add(section_key)
+                kept.append(item)
+                if len(kept) >= max_sections_per_act:
+                    break
+            selected.extend(kept)
+
+    selected.sort(
+        key=lambda item: (
+            str(item.get("_dispute_id") or "general"),
+            -(item.get("_stage_score", 0)),
+            -(item.get("_sort_score", 0)),
+            -(item.get("_rerank_score", 0)),
+        )
+    )
+    for item in selected:
+        item.pop("_stage_score", None)
+    return selected
+
+
+def _format_case_law_excerpts(case_laws: list) -> list:
+    groups = {}
+    for cl in case_laws:
+        if not _is_quality_case_law(cl):
+            continue
+        text = (cl.get("full_text") or cl.get("text") or "").strip()
+        if not text or len(text) < 30:
+            continue
+        case_name = cl.get("case_name", cl.get("source", ""))
+        court = cl.get("court", "")
+        year = cl.get("year", "")
+        group_key = (case_name or "", court, str(year or ""), cl.get("source", ""))
+        groups.setdefault(group_key, []).append({
+            "cl": cl,
+            "text": text,
+            "score": cl.get("_rerank_score", 0),
+        })
+
+    formatted = []
+    for group_key, chunks in groups.items():
+        case_name, court, year, _ = group_key
+        chunks.sort(key=lambda x: -x["score"])
+        first = chunks[0]["cl"]
+        citation = first.get("citation", "")
+        fallback_title = case_name or first.get("source", "Unknown")
+        if court:
+            fallback_title += f" ({court}"
+            if year:
+                fallback_title += f", {year}"
+            fallback_title += ")"
+        elif citation:
+            fallback_title += f" [{citation}]"
+
+        url = first.get("url") or first.get("source_url") or ""
+        if not url:
+            src_file = first.get("source_file") or first.get("source") or ""
+            if src_file:
+                file_path = Path(CASELAW_DIR) / src_file
+                url = file_path.as_uri()
+            if not url:
+                url = GOOGLE_DRIVE_CASE_LAWS_FOLDER_URL
+
+        excerpt = _extract_verbatim_display_excerpt(chunks[0]["text"], max_lines=5, max_chars=760)
+        para_num = first.get("paragraph_num")
+        para_id = first.get("paragraph_id")
+        formatted.append({
+            "source": first.get("source_file", first.get("source", "")),
+            "text": excerpt,
+            "case_name": case_name,
+            "title": fallback_title,
+            "court": court,
+            "year": year,
+            "citation": citation,
+            "binding_authority": first.get("binding_authority", ""),
+            "url": url,
+            "source_tag": first.get("source_tag", "LOCAL_DB"),
+            "signature": (first.get("signature") or "").strip() or None,
+            "paragraph_num": para_num,
+            "paragraph_id": para_id,
+            "_rerank_score": chunks[0]["score"],
+            "_sort_score": _best_alignment_score(first),
+            "_year": _case_year_for_sort(first),
+            "_dispute_id": first.get("_dispute_id", ""),
+            "_dispute_label": first.get("_dispute_label", ""),
+            "_dispute_text": first.get("_dispute_text", ""),
+            "is_verbatim_excerpt": True,
+        })
+
+    authority_order = {"supreme_court": 0, "high_court": 1, "tribunal": 2, "district_court": 3}
+    formatted.sort(
+        key=lambda x: (
+            authority_order.get(x.get("binding_authority", ""), 5),
+            0 if x.get("_year", 0) >= MIN_CASE_YEAR else 1,
+            -x.get("_sort_score", x.get("_rerank_score", 0)),
+        )
+    )
+    for x in formatted:
+        x.pop("_year", None)
+    return formatted
+
+
+
+def _build_bare_act_stage_dispute_blocks(dispute_results: list) -> str:
+    blocks = []
+    for dr in dispute_results or []:
+        dispute = dr.get("dispute", {}) or {}
+        d_id = dispute.get("id", "?")
+        d_text = (dispute.get("dispute") or "").strip()
+        d_label = _short_dispute_label(d_text)
+        blocks.append(f"DISPUTE [{d_id}] {d_label}: {d_text}")
+        bare = _prepare_bare_act_stage_entries(_format_bare_acts(dr.get("bare_acts") or []))
+        if not bare:
+            blocks.append("(No local bare act sections were retrieved for this dispute.)")
+            continue
+        for ba in bare[:8]:
+            label = ba.get("title") or ba.get("act_name") or "Bare Act"
+            # Pass full section text to LLM — no truncation.
+            excerpt = (ba.get("text") or "").strip()
+            blocks.append(f"- {label}: {excerpt}")
+        blocks.append("")
+    return "\n".join(blocks).strip()
+
+
+
+def _build_precedent_stage_compact_context(linked: list) -> str:
+    """Precedent-only cues for the LLM: no dispute headers, no bare-act anchors.
+
+    Uses _extract_holding_lines on para_texts (the preserved list of top-3 raw
+    paragraphs from _format_case_laws) so the LLM sees operative holding lines,
+    not a truncated or collapsed summary. For short paragraphs, the full text
+    is passed through unchanged.
+    """
+    lines: list[str] = []
+    n = 0
+    for ba in linked or []:
+        for cl in ba.get("related_case_laws") or []:
+            n += 1
+            title = str(cl.get("title") or cl.get("case_name") or "Judgment").strip()
+            lines.append(f"[{n}] {title}")
+
+            # Prefer para_texts (list of raw paras preserved from _format_case_laws).
+            # Use the highest-scored para (index 0 — already sorted by score desc).
+            # Fall back to cl["text"] if para_texts is absent (web fallback rows etc.)
+            para_texts = cl.get("para_texts") or []
+            if para_texts:
+                best_para = para_texts[0]
+            else:
+                best_para = cl.get("text") or ""
+
+            if best_para:
+                cue = _extract_holding_lines(best_para, max_lines=5)
+                if cue:
+                    lines.append(f"    Holding/operative paragraph: {cue}")
+
+    return "\n".join(lines).strip() or "(No retrieved precedent paragraphs.)"
+
+
+def _build_precedent_only_fallback(facts_summary: str, case_rows: list) -> str:
+    """Grounding fallback for precedents_only: no statutory repetition."""
+    rows = [c for c in (case_rows or []) if isinstance(c, dict)]
+    if not rows:
+        return _local_only_no_materials_message()
+    fact_line = _build_focus_fact_text(facts_summary, max_chars=260) or "the facts shared"
+    lead = (
+        f"Based on the retrieved judgments, here is how the closest local precedents bear on {fact_line}. "
+        "The judgment extracts are listed below for your review."
+    )
+    parts: list[str] = []
+    for cl in rows[:5]:
+        name = (cl.get("title") or cl.get("case_name") or "Judgment").strip()
+        text = " ".join((cl.get("text") or "").split()).strip()[:220]
+        if text:
+            parts.append(f"{name} highlights, on this record, that {text}")
+        else:
+            parts.append(f"{name} is among the strongest locally retrieved precedents here.")
+    return "\n\n".join([lead, " ".join(parts)]).strip()
+
+
+
+def _build_stage_retained_sections_text(stage_bare: list) -> str:
+    grouped: dict[str, dict] = {}
+    for item in stage_bare or []:
+        dispute_id = str(item.get("_dispute_id") or "general").strip() or "general"
+        bucket = grouped.setdefault(
+            dispute_id,
+            {
+                "label": str(item.get("_dispute_label") or "").strip(),
+                "text": str(item.get("_dispute_text") or "").strip(),
+                "items": [],
+            },
+        )
+        bucket["items"].append(item)
+
+    blocks: list[str] = []
+    for dispute_id, bucket in grouped.items():
+        dispute_text = bucket.get("text") or ""
+        dispute_label = bucket.get("label") or _short_dispute_label(dispute_text)
+        blocks.append(f"DISPUTE [{dispute_id}] {dispute_label}: {dispute_text}".strip())
+        for item in bucket.get("items", [])[:12]:
+            act_name = str(item.get("act_name") or item.get("source") or "Applicable Act").strip()
+            section_number = str(item.get("section_number") or "").strip()
+            section_title = str(item.get("section_title") or "").strip()
+            explanation = str(item.get("explanation") or "").strip()
+            excerpt = " ".join(str(item.get("text") or "").split())[:380]
+            label = act_name
+            if section_number:
+                label += f" - Section {section_number}"
+            if section_title:
+                label += f" ({section_title})"
+            line = f"- {label}"
+            if explanation:
+                line += f": {explanation}"
+            elif excerpt:
+                line += f": {excerpt}"
+            blocks.append(line)
+            if explanation and excerpt:
+                blocks.append(f"  Excerpt: {excerpt}")
+        blocks.append("")
+    return "\n".join(blocks).strip()
+
+
+
+def _merge_next_step_granular_fields(item: dict) -> str:
+    parts: list[str] = []
+    for key in ("what_to_do", "precautions", "why_it_helps", "challenge_to_watch", "legal_protection"):
+        t = str(item.get(key) or "").strip()
+        if t:
+            parts.append(t)
+    return " ".join(parts).strip()
+
+
+def _flatten_structured_next_steps_to_paragraph(steps: list | None) -> str:
+    """Plain-text fallback from structured next steps (e.g. for legacy clients)."""
+    if not steps:
+        return ""
+    chunks: list[str] = []
+    for item in steps:
+        if not isinstance(item, dict):
+            continue
+        title = str(item.get("title") or "").strip()
+        summary = str(item.get("summary") or "").strip()
+        if not summary:
+            summary = _merge_next_step_granular_fields(item)
+        if title and summary:
+            chunks.append(f"{title} {summary}".strip())
+        elif title:
+            chunks.append(title)
+        elif summary:
+            chunks.append(summary)
+    return " ".join(chunks).strip()
+
+
+def _derive_next_steps_summary(
+    parsed: dict | None,
+    steps: list,
+    repair_summary: str = "",
+) -> str:
+    if isinstance(parsed, dict):
+        s = str(parsed.get("next_steps_summary") or "").strip()
+        if s:
+            return s
+    rs = (repair_summary or "").strip()
+    if rs:
+        return rs
+    return _flatten_structured_next_steps_to_paragraph(steps)
+
+
+def _normalize_stage_next_steps(items: list) -> list[dict]:
+    """Each item: title + summary (preferred), or legacy granular fields merged into summary."""
+    normalized: list[dict] = []
+    seen: set[tuple[str, str]] = set()
+    for item in items or []:
+        if not isinstance(item, dict):
+            continue
+        title = str(item.get("title") or "").strip()
+        summary = str(item.get("summary") or "").strip()
+        what_to_do = str(item.get("what_to_do") or "").strip()
+        precautions = str(item.get("precautions") or "").strip()
+        why_it_helps = str(item.get("why_it_helps") or "").strip()
+        challenge_to_watch = str(item.get("challenge_to_watch") or "").strip()
+        legal_protection = str(item.get("legal_protection") or "").strip()
+
+        if summary and len(title) >= 4:
+            dedupe_key = (title.lower(), summary[:160].lower())
+            if dedupe_key in seen:
+                continue
+            seen.add(dedupe_key)
+            normalized.append({
+                "title": title,
+                "summary": summary,
+                "what_to_do": "",
+                "precautions": "",
+                "why_it_helps": "",
+                "challenge_to_watch": "",
+                "legal_protection": "",
+            })
+            continue
+
+        if len(title) < 6:
+            continue
+        if not any([what_to_do, precautions, why_it_helps, challenge_to_watch, legal_protection]):
+            continue
+        merged = _merge_next_step_granular_fields(item)
+        dedupe_key = (title.lower(), merged[:160].lower())
+        if dedupe_key in seen:
+            continue
+        seen.add(dedupe_key)
+        normalized.append({
+            "title": title,
+            "summary": merged,
+            "what_to_do": what_to_do,
+            "precautions": precautions,
+            "why_it_helps": why_it_helps,
+            "challenge_to_watch": challenge_to_watch,
+            "legal_protection": legal_protection,
+        })
+    return normalized[:12]
+
+
+
+def _build_bare_act_next_steps_fallback(stage_bare: list, facts_summary: str = "") -> list:
+    ranked_items = sorted(
+        [item for item in (stage_bare or []) if isinstance(item, dict)],
+        key=lambda item: (
+            float(item.get("_sort_score") or item.get("_rerank_score") or 0.0),
+            len(str(item.get("explanation") or item.get("text") or "")),
+        ),
+        reverse=True,
+    )[:6]
+    if not ranked_items:
+        return []
+
+    focus_terms = _extract_salient_terms(_build_focus_fact_text(facts_summary, max_chars=360), limit=8)
+    act_names = list(
+        dict.fromkeys(
+            str(item.get("act_name") or "Applicable Act").strip()
+            for item in ranked_items
+            if str(item.get("act_name") or "").strip()
+        )
+    )
+    section_labels = [
+        label for label in [
+            (
+                f"Section {str(item.get('section_number') or '').strip()}"
+                + (f" of {str(item.get('act_name') or '').strip()}" if str(item.get('act_name') or '').strip() else "")
+            ).strip()
+            for item in ranked_items
+        ]
+        if label
+    ]
+    explanation_snippets = [
+        str(item.get("explanation") or "").strip()
+        for item in ranked_items
+        if str(item.get("explanation") or "").strip()
+    ]
+    dispute_labels = list(
+        dict.fromkeys(
+            str(item.get("_dispute_label") or "").strip()
+            for item in ranked_items
+            if str(item.get("_dispute_label") or "").strip()
+        )
+    )
+
+    act_phrase = ", ".join(act_names[:3]) if act_names else "the retrieved Acts"
+    section_phrase = ", ".join(section_labels[:4]) if section_labels else "the strongest retained sections"
+    focus_hint = ", ".join(focus_terms[:3]) if focus_terms else ", ".join(dispute_labels[:2]) or "the present case"
+    precaution_focus = ", ".join(focus_terms[:4]) if focus_terms else "documents, messages, records, and timelines"
+
+    s1_body = " ".join(
+        [
+            f"Bring together the records that best connect your facts to {section_phrase} under {act_phrase}, keep the chronology clear, and organise the materials likely to matter in the first authority or court-facing step.",
+            f"Keep the supporting record on {precaution_focus} intact, avoid altering originals, and preserve the timeline exactly as it presently stands.",
+            explanation_snippets[0] if explanation_snippets else f"The retained sections are most useful when the facts, timing, and supporting record line up clearly on the present case.",
+            f"The other side may dispute the factual sequence, urgency, or sufficiency of the current record relating to {focus_hint}.",
+            f"The retained provisions under {act_phrase} provide the clearest presently available statutory footing for the next formal step if the record is presented carefully.",
+        ]
+    )
+    s2_body = " ".join(
+        [
+            f"Use the retained sections to identify the first filing, complaint, application, police-facing step, magistrate-facing step, or court-facing step that the present record can responsibly support, and move promptly where delay may weaken urgency.",
+            "Before filing, check that the immediate relief sought matches the current facts and that the most relevant documents for jurisdiction, notice, injury, possession, payment, communication, or proof are ready.",
+            explanation_snippets[1] if len(explanation_snippets) > 1 else f"The strongest retained sections appear to support not just the substantive right but also the immediate route to seek protection or relief.",
+            "The first forum or authority may examine urgency, maintainability, and whether the relief sought is broader than the present record can presently justify.",
+            f"The retained statutory scheme helps frame both the immediate remedy and the procedural route, especially where the present facts already engage {section_phrase}.",
+        ]
+    )
+    steps = [
+        {"title": "Preserve and organise the strongest supporting record", "summary": s1_body},
+        {"title": "Take the first procedural step without delay", "summary": s2_body},
+    ]
+    return _normalize_stage_next_steps(steps)
+
+
+def _repair_bare_act_next_steps(
+    facts_summary: str, stage_bare: list, model_override: str | None = None
+) -> tuple[list, str]:
+    if not stage_bare:
+        return [], ""
+    retained_sections_text = _build_stage_retained_sections_text(stage_bare)
+    prompt = BARE_ACT_NEXT_STEPS_REPAIR_PROMPT.format(
+        facts_summary=(facts_summary or "").strip()[:1400],
+        retained_sections_text=retained_sections_text[:9000],
+    )
+    try:
+        if model_override:
+            raw = ask_llm(prompt, model=model_override)
+        else:
+            raw = ask_llm(prompt, task_hint="fast")
+        parsed = _extract_json(raw)
+        if not isinstance(parsed, dict):
+            raise ValueError("No valid JSON returned for bare-act next-step repair")
+        summary = str(parsed.get("next_steps_summary") or "").strip()
+        steps = _normalize_stage_next_steps(parsed.get("next_steps") or [])
+        return steps, summary
+    except Exception as exc:
+        logger.warning("Bare-act next-step repair failed: %s", exc)
+        return [], ""
+
+
+
+_BARE_ACT_LLM_MAX_ATTEMPTS = 3  # 1 initial + 2 retries
+
+
+def _is_llm_transient_error(exc: Exception) -> bool:
+    """True when the error is likely a timeout or connectivity issue worth retrying."""
+    msg = str(exc).lower()
+    return any(k in msg for k in ("timeout", "timed out", "unreachable", "connection", "connect"))
+
+
+def _generate_bare_act_stage_text(
+    facts_summary: str,
+    dispute_results: list,
+    formatted_bare: list,
+    model_override: str | None = None,
+    token_callback=None,
+) -> tuple[str, list, list, str]:
+    """
+    Generate the bare-act stage summary, per-section explanations, and next steps.
+
+    Retries the LLM call up to _BARE_ACT_LLM_MAX_ATTEMPTS times total.
+    On a transient failure (timeout / unreachable) a short message is streamed
+    to the UI so the user knows what is happening.  After all attempts are
+    exhausted the deterministic fallback is returned instead.
+    """
+    if not formatted_bare:
+        return _local_only_no_materials_message(), [], [], ""
+
+    stage_bare = _prepare_bare_act_stage_entries(formatted_bare, facts_summary=facts_summary)
+    dispute_blocks_text = _build_bare_act_stage_dispute_blocks(dispute_results)
+    prompt = BARE_ACT_STAGE_SUMMARY_PROMPT.format(
+        facts_summary=(facts_summary or "").strip()[:1400],
+        dispute_blocks_text=dispute_blocks_text[:9000],
+    )
+
+    last_exc: Exception | None = None
+    for attempt in range(_BARE_ACT_LLM_MAX_ATTEMPTS):
+        try:
+            raw = ask_llm(prompt, model=model_override)
+            parsed = _extract_json(raw)
+            if not isinstance(parsed, dict):
+                raise ValueError("No valid JSON returned for bare-act stage")
+
+            explanation_map = {
+                (
+                    str(item.get("act_name") or "").strip().lower(),
+                    str(item.get("section_number") or "").strip(),
+                ): str(item.get("explanation") or "").strip()
+                for item in (parsed.get("section_explanations") or [])
+                if isinstance(item, dict)
+            }
+            enriched = []
+            for ba in stage_bare:
+                key = (
+                    str(ba.get("act_name") or "").strip().lower(),
+                    str(ba.get("section_number") or "").strip(),
+                )
+                clone = dict(ba)
+                clone["explanation"] = explanation_map.get(key, "")
+                enriched.append(clone)
+
+            if not any(str(item.get("explanation") or "").strip() for item in enriched):
+                try:
+                    repaired = _explain_sections_and_get_followup(
+                        (facts_summary or "").strip()[:1200],
+                        [dict(item) for item in stage_bare],
+                    )
+                    repaired_map = {
+                        (
+                            str(item.get("act_name") or "").strip().lower(),
+                            str(item.get("section_number") or "").strip(),
+                        ): str(item.get("explanation") or "").strip()
+                        for item in (repaired.get("bare_acts") or [])
+                        if isinstance(item, dict)
+                    }
+                    for clone in enriched:
+                        if str(clone.get("explanation") or "").strip():
+                            continue
+                        key = (
+                            str(clone.get("act_name") or "").strip().lower(),
+                            str(clone.get("section_number") or "").strip(),
+                        )
+                        clone["explanation"] = repaired_map.get(key, "")
+                except Exception as repair_exc:
+                    logger.warning("Bare-act stage explanation repair failed: %s", repair_exc)
+
+            repair_summary = ""
+            next_steps = _normalize_stage_next_steps(parsed.get("next_steps") or [])
+            if not next_steps:
+                next_steps, repair_summary = _repair_bare_act_next_steps(
+                    facts_summary, enriched, model_override=model_override
+                )
+            if not next_steps:
+                next_steps = _build_bare_act_next_steps_fallback(enriched, facts_summary=facts_summary)
+            next_steps_summary = _derive_next_steps_summary(parsed, next_steps, repair_summary=repair_summary)
+            summary_text = str(parsed.get("summary_text") or "").strip()
+            if not summary_text:
+                raise ValueError("Empty bare-act stage summary")
+
+            _stream_precomposed_text(summary_text, token_callback=token_callback)
+            return summary_text, enriched, next_steps, next_steps_summary
+
+        except Exception as exc:
+            last_exc = exc
+            is_last_attempt = attempt == _BARE_ACT_LLM_MAX_ATTEMPTS - 1
+            is_transient = _is_llm_transient_error(exc)
+            logger.warning(
+                "Bare-act stage LLM attempt %d/%d failed%s: %s",
+                attempt + 1,
+                _BARE_ACT_LLM_MAX_ATTEMPTS,
+                " (transient)" if is_transient else "",
+                exc,
+            )
+            if not is_last_attempt:
+                # Surface the retry to the user so they know the model is slow
+                retry_msg = (
+                    f"The model is taking longer than expected "
+                    f"(attempt {attempt + 1} of {_BARE_ACT_LLM_MAX_ATTEMPTS} did not complete). "
+                    f"Retrying now\u2026 "
+                )
+                _stream_precomposed_text(retry_msg, token_callback=token_callback)
+                logger.info("Retrying bare-act stage LLM call (attempt %d)", attempt + 2)
+
+    # All attempts exhausted — surface the final error and return the deterministic fallback
+    logger.error(
+        "Bare-act stage summary generation failed after %d attempts: %s",
+        _BARE_ACT_LLM_MAX_ATTEMPTS,
+        last_exc,
+    )
+    error_notice = (
+        "The model did not respond in time after multiple attempts. "
+        "Showing the grounded statutory summary from the local database instead.\n\n"
+    )
+    _stream_precomposed_text(error_notice, token_callback=token_callback)
+    fallback = _build_grounded_bare_act_fallback(stage_bare, facts_summary=facts_summary)
+    next_steps, repair_summary = _repair_bare_act_next_steps(
+        facts_summary, stage_bare, model_override=model_override
+    )
+    if not next_steps:
+        next_steps = _build_bare_act_next_steps_fallback(stage_bare, facts_summary=facts_summary)
+    next_steps_summary = _derive_next_steps_summary(None, next_steps, repair_summary=repair_summary)
+    _stream_precomposed_text(fallback, token_callback=token_callback)
+    return fallback, stage_bare, next_steps, next_steps_summary
+
+
+
+def _repair_case_explanation_gaps(facts_summary: str, linked: list) -> list:
+    repaired = []
+    for ba in linked or []:
+        clone_ba = dict(ba)
+        repaired_cases = []
+        for cl in (ba.get("related_case_laws") or []):
+            clone_cl = dict(cl)
+            if not str(clone_cl.get("explanation") or "").strip():
+                case_label = clone_cl.get("title") or clone_cl.get("case_name") or "Case law"
+                _, summary_body = _summarize_case_paragraphs(
+                    facts_summary or "",
+                    case_label,
+                    [clone_cl.get("text") or ""],
+                )
+                summary_body = (summary_body or "").strip()
+                low = summary_body.lower()
+                if (not summary_body) or low in {"i don't have any data", "i do not have any data", "no data", "no information available", "insufficient information"} or len(summary_body) < 24:
+                    summary_body = _build_case_summary_from_paragraphs([clone_cl.get("text") or ""], max_chars=320).strip()
+                clone_cl["explanation"] = summary_body[:700]
+            repaired_cases.append(clone_cl)
+        clone_ba["related_case_laws"] = repaired_cases
+        repaired.append(clone_ba)
+    return repaired
+
+
+def _generate_precedent_stage_text(facts_summary: str, formatted_bare: list, formatted_case: list, model_override: str | None = None, token_callback=None) -> tuple[str, list, list]:
+    stage_bare = _prepare_bare_act_stage_entries(formatted_bare)
+    stage_case = [dict(c) for c in (formatted_case or [])]
+    linked = _match_case_laws_to_bare_acts([dict(b) for b in stage_bare], [dict(c) for c in stage_case], max_per_section=2)
+    flattened = []
+    for ba in linked:
+        flattened.extend(ba.get("related_case_laws") or [])
+    if not flattened:
+        message = (
+            "I reviewed the local precedents as the next step, but I did not find a closely matching local judicial extract strong enough to present as grounded precedent support on the present record. "
+            "The statutory protections already shown remain the clearest grounded starting point unless we broaden the search or refine the facts further."
+        )
+        _stream_precomposed_text(message, token_callback=token_callback)
+        return message, linked, []
+
+    precedent_extracts_text = _build_precedent_stage_compact_context(linked)
+    prompt = PRECEDENT_STAGE_SUMMARY_PROMPT.format(
+        facts_summary=(facts_summary or "").strip()[:1400],
+        precedent_extracts_text=precedent_extracts_text[:12000],
+    )
+    try:
+        raw = ask_llm(prompt, model=model_override)
+        parsed = _extract_json(raw)
+        if not isinstance(parsed, dict):
+            raise ValueError("No valid JSON returned for precedent stage")
+        explanation_map = {
+            str(item.get("title") or "").strip().lower(): str(item.get("explanation") or "").strip()
+            for item in (parsed.get("case_explanations") or [])
+            if isinstance(item, dict)
+        }
+        for ba in linked:
+            enriched_cases = []
+            for cl in (ba.get("related_case_laws") or []):
+                clone = dict(cl)
+                t_key = str(clone.get("title") or "").strip().lower()
+                cn_key = str(clone.get("case_name") or "").strip().lower()
+                clone["explanation"] = (
+                    explanation_map.get(t_key, "")
+                    or explanation_map.get(cn_key, "")
+                )
+                enriched_cases.append(clone)
+            ba["related_case_laws"] = enriched_cases
+        linked = _repair_case_explanation_gaps(facts_summary, linked)
+        summary_text = str(parsed.get("summary_text") or "").strip()
+        if not summary_text:
+            raise ValueError("Empty precedent stage summary")
+        _stream_precomposed_text(summary_text, token_callback=token_callback)
+        return summary_text, linked, flattened
+    except Exception as exc:
+        logger.warning("Precedent stage summary generation failed: %s", exc)
+        linked = _repair_case_explanation_gaps(facts_summary, linked)
+        fallback = _build_precedent_only_fallback(facts_summary, flattened)
+        _stream_precomposed_text(fallback, token_callback=token_callback)
+        return fallback, linked, flattened
 
 
 def _summarize_case_paragraphs(
@@ -3291,9 +4831,19 @@ def _format_case_citation(case_law: dict) -> str:
 
 def _format_case_laws(case_laws: list, user_query: str = "") -> list:
     """
-    Group case law chunks by case, take top 3 most relevant paragraphs per case,
-    and replace raw text with a 150-200 word summary in the model's own words.
-    Returns one row per case.
+    Group case law chunks by case, take top 3 most relevant paragraphs per case.
+
+    Key change: we no longer collapse para_texts into a single summary_body
+    before selection. Instead:
+    - para_texts (list of up to 3 raw paragraph texts) is preserved on the
+      formatted dict so downstream stages (_build_precedent_stage_compact_context,
+      _match_case_laws_to_bare_acts) can work on real content.
+    - 'text' is set to the holding-extracted lines of the highest-scored para
+      via _extract_holding_lines — so even the display text reflects operative
+      legal content rather than the first/second paragraph blindly.
+    - If _ENABLE_CASE_SUMMARY_LLM is on, the LLM summary path runs in addition
+      and its output is stored as 'summary_text' for any UI component that wants
+      the full prose version. It does NOT replace 'text'.
     """
     # Group chunks by case (same judgment = same case_name + source)
     groups = {}
@@ -3337,20 +4887,25 @@ def _format_case_laws(case_laws: list, user_query: str = "") -> list:
         elif citation:
             fallback_title += f" [{citation}]"
 
+        # Preserve all top-3 para texts for downstream reasoning stages.
         paragraph_texts = [c["text"] for c in top3]
-        parties_line = ""
-        summary_body = ""
+
+        # Primary display text: holding-extracted lines from the highest-scored para.
+        # For short paras (≤ 8 lines), _extract_holding_lines returns the full text.
+        # For long paras, it surfaces the most operative 5 lines.
+        display_text = _extract_holding_lines(top3[0]["text"], max_lines=5)
+        if not display_text:
+            display_text = top3[0]["text"]
+
+        # Optional LLM summary (only when enabled) — stored separately, does NOT
+        # replace display_text. UI can use summary_text for a "read more" / prose view.
+        summary_text = ""
         if user_query.strip() and _ENABLE_CASE_SUMMARY_LLM and not uses_pre_summarized_chunks:
-            parties_line, summary_body = _summarize_case_paragraphs(
+            _, summary_text = _summarize_case_paragraphs(
                 user_query, fallback_title, paragraph_texts
             )
-        if not summary_body:
-            summary_body = _build_case_summary_from_paragraphs(paragraph_texts, max_chars=450)
-        if not summary_body:
-            summary_body = paragraph_texts[0][:700] if paragraph_texts else ""
 
-        # Vector store already provides clean case names; `fallback_title` is constructed with court/year details.
-        # We keep `parties_line` only for the LLM summary context, not for the UI title prefixing.
+        # Vector store already provides clean case names; fallback_title adds court/year.
         display_title = fallback_title
 
         # Use web URL if present; else file:// link to local/Drive PDF so hyperlinks always work
@@ -3365,7 +4920,12 @@ def _format_case_laws(case_laws: list, user_query: str = "") -> list:
 
         formatted.append({
             "source": first.get("source_file", first.get("source", "")),
-            "text": summary_body,
+            # 'text' = holding-extracted lines of the top-scored para (not a collapsed summary)
+            "text": display_text,
+            # 'para_texts' = all top-3 raw para texts, kept alive for downstream stages
+            "para_texts": paragraph_texts,
+            # 'summary_text' = LLM prose summary if enabled, else empty
+            "summary_text": summary_text,
             "case_name": case_name,
             "title": display_title,
             "court": court,
@@ -3517,12 +5077,18 @@ def _generate_interactive_fast_opinion(
             for token in ask_llm_stream(prompt, model=model_override):
                 token_callback(token)
                 full_text += token
-            return _enforce_local_grounding(full_text.strip(), local_bare)
-        return _enforce_local_grounding(ask_llm(prompt, model=model_override).strip(), local_bare)
+            grounded = _enforce_local_grounding(full_text.strip(), local_bare)
+            if grounded == _local_only_no_materials_message():
+                return _build_grounded_interactive_fallback(facts_summary, local_bare, local_case)
+            return grounded
+        grounded = _enforce_local_grounding(ask_llm(prompt, model=model_override).strip(), local_bare)
+        if grounded == _local_only_no_materials_message():
+            return _build_grounded_interactive_fallback(facts_summary, local_bare, local_case)
+        return grounded
     except Exception as e:
         logger.error("Interactive fast opinion generation failed: %s", e)
-        if local_bare:
-            return _build_grounded_bare_act_fallback(local_bare, facts_summary=facts_summary)
+        if local_bare or local_case:
+            return _build_grounded_interactive_fallback(facts_summary, local_bare, local_case)
         return _local_only_no_materials_message()
 
 

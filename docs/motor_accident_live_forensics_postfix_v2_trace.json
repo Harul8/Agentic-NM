@@ -1,0 +1,1817 @@
+[
+  {
+    "turn": 1,
+    "user": "I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medical expenses, lost income, and bike damage.",
+    "elapsed_s": 37.734,
+    "first_token_s": null,
+    "done": {
+      "status": "question",
+      "next_question": "I'm sorry to hear you were injured six days ago. The next details matter because we need clear evidence and timeline for medical treatment, lost income, and bike damage. Can you tell me what steps you've taken so far and any documents or records you have regarding the accident, injury, or your claim?",
+      "retrieved": [],
+      "model_used": "Llama 3.1 8B"
+    },
+    "events": [
+      {
+        "event": "step",
+        "elapsed_s": 0.0,
+        "data": {
+          "message": "Reviewing the facts you shared...",
+          "icon": "⚡"
+        }
+      },
+      {
+        "event": "done",
+        "elapsed_s": 37.717,
+        "data": {
+          "status": "question",
+          "next_question": "I'm sorry to hear you were injured six days ago. The next details matter because we need clear evidence and timeline for medical treatment, lost income, and bike damage. Can you tell me what steps you've taken so far and any documents or records you have regarding the accident, injury, or your claim?",
+          "retrieved": [],
+          "model_used": "Llama 3.1 8B"
+        }
+      }
+    ]
+  },
+  {
+    "turn": 2,
+    "user": "I have the FIR number, hospital discharge summary, X-ray report, repair estimate for the bike, the vehicle registration number, and the police recorded the car driver as rash and negligent.",
+    "elapsed_s": 17.648,
+    "first_token_s": null,
+    "done": {
+      "status": "question",
+      "next_question": "I am sorry you are going through this. The next details matter because compensation cases become much stronger when the accident, treatment, disability, and income record all support each other. Do you have the accident papers, what treatment and disability records are already available, and what documents best show your work and income before the accident?",
+      "retrieved": [],
+      "model_used": "Llama 3.2 3B"
+    },
+    "events": [
+      {
+        "event": "step",
+        "elapsed_s": 0.0,
+        "data": {
+          "message": "Starting analysis of your latest message...",
+          "icon": "⚡"
+        }
+      },
+      {
+        "event": "done",
+        "elapsed_s": 17.608,
+        "data": {
+          "status": "question",
+          "next_question": "I am sorry you are going through this. The next details matter because compensation cases become much stronger when the accident, treatment, disability, and income record all support each other. Do you have the accident papers, what treatment and disability records are already available, and what documents best show your work and income before the accident?",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B"
+        }
+      }
+    ]
+  },
+  {
+    "turn": 3,
+    "user": "The driver had insurance, I missed six days of work, my employer can confirm my salary and absence, and I also have pharmacy bills and bank statements.",
+    "elapsed_s": 110.054,
+    "first_token_s": null,
+    "done": {
+      "status": "question",
+      "next_question": "The next details matter because compensation cases become much stronger when the accident, treatment, disability, and income record all support each other. Do you have the hospital discharge summary, X-ray report, and any pharmacy bills to show your medical expenses and injury?",
+      "retrieved": [],
+      "model_used": "Llama 3.2 3B"
+    },
+    "events": [
+      {
+        "event": "step",
+        "elapsed_s": 0.0,
+        "data": {
+          "message": "Starting analysis of your latest message...",
+          "icon": "⚡"
+        }
+      },
+      {
+        "event": "done",
+        "elapsed_s": 110.014,
+        "data": {
+          "status": "question",
+          "next_question": "The next details matter because compensation cases become much stronger when the accident, treatment, disability, and income record all support each other. Do you have the hospital discharge summary, X-ray report, and any pharmacy bills to show your medical expenses and injury?",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B"
+        }
+      }
+    ]
+  },
+  {
+    "turn": 4,
+    "user": "proceed",
+    "elapsed_s": 24.32,
+    "first_token_s": 4.162,
+    "done": {
+      "status": "done",
+      "response_type": "legal_opinion",
+      "opinion_text": "On the facts presently shared, the immediate issue is how the locally retrieved statutory materials and precedents bear on I was injured in a road accident six days ago when a car hit my motorcycle near ... The driver had insurance, I missed six days of work, my employer can confirm my salary and absence, and I also have pharmacy.\n\nThe National Green Tribunal Act, 2010, Section 38 points to HEADS UNDER WHICH COMPENSATION OR RELIEF FOR DAMAGE MAY BE CLAIMED Permanent, temporary, total or partial disability or other injury or sickness; Loss of wages due to total or partial disability or permanent or temporary The National Environment Tribunal Act, 1995, Section 31 points to The Central Government may, by notification, make rules for carrying out the purposes of this Act. In particular, and without prejudice to the generality of the foregoing power, such rules may pro HEADS UNDER WHICH COMPE\n\nIn Re : T.N. Godavarman Thirumulpad vs Union Of India (Supreme Court of India, 2025) supports the analysis through Case: In Re : T.N. Godavarman Thirumulpad vs Union Of India Court: Supreme Court of India Year: 2025 Cited by: 0 Issues: 38. Adopting a restitutive approach has in fact been statutorily mandated under Section 15(4) of th\n\nOn the present local record, the safest next step is to test these materials against the notice, communications, and timeline already mentioned before taking a firmer position.",
+      "bare_acts": [
+        {
+          "source": "BareActs\\Union of India\\1980_14.txt",
+          "text": "HEADS UNDER WHICH COMPENSATION OR RELIEF FOR DAMAGE MAY BE CLAIMED\n\nPermanent, temporary, total or partial disability or other injury or sickness;\n\nLoss of wages due to total or partial disability or permanent or temporary disability;\n\nMedical expenses incurred for treatment of injuries or sickness;\n\nExpenses incurred by the Government or any local authority in providing relief, aid and rehabilitation to the affected persons;\n\nExpenses incurred by the Government for any administrative or legal action or to cope with any harm or damage, including compensation for environmental degradation and restoration of the quality of environment;\n\nLoss to the Government or local authority arising out of, or connected with, the activity causing any damage;\n\nClaims on account of any harm, damage or destruction to the fauna including milch and draught animals and aquatic fauna;\n\nClaims on account of any harm, damage or destruction to flora including aquatic flora, crops, vegetables, trees and orchards;\n\nClaims including cost of restoration on account of any harm or damage to environment including pollution of soil, air, water, land and eco-systems;",
+          "act_name": "The National Green Tribunal Act, 2010",
+          "section_number": "38",
+          "title": "The National Green Tribunal Act, 2010 — Section 38 (Repeal and savings)",
+          "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Union%20of%20India/1980_14.txt",
+          "source_tag": "LOCAL_DB",
+          "_rerank_score": 0.7178924083709717,
+          "_dispute_id": "d1",
+          "related_case_laws": [
+            {
+              "source": "CaseLaws\\Supreme Court\\2025\\2025_NOV_20_SC_IN_RE_T.N._GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA.txt",
+              "text": "Case: In Re : T.N. Godavarman Thirumulpad vs Union Of India Court: Supreme Court of India Year: 2025 Cited by: 0 Issues: 38. Adopting a restitutive approach has in fact been statutorily mandated under Section 15(4) of the National Green Tribunals Act, 2010 where the Tribunal is directed to provide relief regarding “restitution of the damaged property or environment”. This statutory duty of the Courts also flows from Article 21 , 48A and 51A(g) of",
+              "case_name": "In Re : T.N. Godavarman Thirumulpad vs Union Of India",
+              "title": "In Re : T.N. Godavarman Thirumulpad vs Union Of India (Supreme Court of India, 2025)",
+              "court": "Supreme Court of India",
+              "year": "2025",
+              "citation": "2025 INSC 1325",
+              "binding_authority": "supreme_court",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/CaseLaws/CaseLaws/Supreme%20Court/2025/2025_NOV_20_SC_IN_RE_T.N._GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA.txt",
+              "source_tag": "LOCAL_DB",
+              "signature": null,
+              "_rerank_score": 5.348691940307617,
+              "_dispute_id": "d1"
+            }
+          ]
+        },
+        {
+          "source": "BareActs\\Union of India\\1995_4.txt",
+          "text": "The Central Government may, by notification, make rules for carrying out the purposes of this Act.\n\nIn particular, and without prejudice to the generality of the foregoing power, such rules may pro HEADS UNDER WHICH COMPENSATION FOR DAMAGES MAY BE CLAIMED\n\nPermanent, temporary, total or partial disability or other injury or sickness;\n\nLoss of wages due to total or partial disability or permanent or temporary disability;\n\nMedical expenses incurred for treatment of injuries or sickness;\n\nExpenses incurred by the Government or any local authority in providing relief, aid and rehabilitation to the affected persons;\n\nExpenses incurred by Government for any administrative or legal action or to cope with any harm or damage, including compensation for environmental degradation and restoration of the quality of environment;\n\nLoss to Government or local authority arising out of, or connected with, the activity causing any damage;\n\nClaims on account of any harm, damage or destruction to the fauna including milch and draught animals and aquatic fauna;\n\nClaims on account of any harm, damage or destruction to flora including aquatic flora, crops, vegetables, trees and orchards; tc\"",
+          "act_name": "The National Environment Tribunal Act, 1995",
+          "section_number": "31",
+          "title": "The National Environment Tribunal Act, 1995 — Section 31 (Power to make rules)",
+          "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Union%20of%20India/1995_4.txt",
+          "source_tag": "LOCAL_DB",
+          "_rerank_score": 0.194129079580307,
+          "_dispute_id": "d1",
+          "related_case_laws": []
+        }
+      ],
+      "case_laws": [],
+      "retrieved": [
+        {
+          "source": "BareActs\\Union of India\\1980_14.txt",
+          "text": "HEADS UNDER WHICH COMPENSATION OR RELIEF FOR DAMAGE MAY BE CLAIMED\n\nPermanent, temporary, total or partial disability or other injury or sickness;\n\nLoss of wages due to total or partial disability or permanent or temporary disability;\n\nMedical expenses incurred for treatment of injuries or sickness;\n\nExpenses incurred by the Government or any local authority in providing relief, aid and rehabilitation to the affected persons;\n\nExpenses incurred by the Government for any administrative or legal action or to cope with any harm or damage, including compensation for environmental degradation and restoration of the quality of environment;\n\nLoss to the Government or local authority arising out of, or connected with, the activity causing any damage;\n\nClaims on account of any harm, damage or destruction to the fauna including milch and draught animals and aquatic fauna;\n\nClaims on account of any harm, damage or destruction to flora including aquatic flora, crops, vegetables, trees and orchards;\n\nClaims including cost of restoration on account of any harm or damage to environment including pollution of soil, air, water, land and eco-systems;",
+          "act_name": "The National Green Tribunal Act, 2010",
+          "section_number": "38",
+          "title": "The National Green Tribunal Act, 2010 — Section 38 (Repeal and savings)",
+          "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Union%20of%20India/1980_14.txt",
+          "source_tag": "LOCAL_DB",
+          "_rerank_score": 0.7178924083709717,
+          "_dispute_id": "d1",
+          "related_case_laws": [
+            {
+              "source": "CaseLaws\\Supreme Court\\2025\\2025_NOV_20_SC_IN_RE_T.N._GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA.txt",
+              "text": "Case: In Re : T.N. Godavarman Thirumulpad vs Union Of India Court: Supreme Court of India Year: 2025 Cited by: 0 Issues: 38. Adopting a restitutive approach has in fact been statutorily mandated under Section 15(4) of the National Green Tribunals Act, 2010 where the Tribunal is directed to provide relief regarding “restitution of the damaged property or environment”. This statutory duty of the Courts also flows from Article 21 , 48A and 51A(g) of",
+              "case_name": "In Re : T.N. Godavarman Thirumulpad vs Union Of India",
+              "title": "In Re : T.N. Godavarman Thirumulpad vs Union Of India (Supreme Court of India, 2025)",
+              "court": "Supreme Court of India",
+              "year": "2025",
+              "citation": "2025 INSC 1325",
+              "binding_authority": "supreme_court",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/CaseLaws/CaseLaws/Supreme%20Court/2025/2025_NOV_20_SC_IN_RE_T.N._GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA.txt",
+              "source_tag": "LOCAL_DB",
+              "signature": null,
+              "_rerank_score": 5.348691940307617,
+              "_dispute_id": "d1"
+            }
+          ]
+        },
+        {
+          "source": "BareActs\\Union of India\\1995_4.txt",
+          "text": "The Central Government may, by notification, make rules for carrying out the purposes of this Act.\n\nIn particular, and without prejudice to the generality of the foregoing power, such rules may pro HEADS UNDER WHICH COMPENSATION FOR DAMAGES MAY BE CLAIMED\n\nPermanent, temporary, total or partial disability or other injury or sickness;\n\nLoss of wages due to total or partial disability or permanent or temporary disability;\n\nMedical expenses incurred for treatment of injuries or sickness;\n\nExpenses incurred by the Government or any local authority in providing relief, aid and rehabilitation to the affected persons;\n\nExpenses incurred by Government for any administrative or legal action or to cope with any harm or damage, including compensation for environmental degradation and restoration of the quality of environment;\n\nLoss to Government or local authority arising out of, or connected with, the activity causing any damage;\n\nClaims on account of any harm, damage or destruction to the fauna including milch and draught animals and aquatic fauna;\n\nClaims on account of any harm, damage or destruction to flora including aquatic flora, crops, vegetables, trees and orchards; tc\"",
+          "act_name": "The National Environment Tribunal Act, 1995",
+          "section_number": "31",
+          "title": "The National Environment Tribunal Act, 1995 — Section 31 (Power to make rules)",
+          "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Union%20of%20India/1995_4.txt",
+          "source_tag": "LOCAL_DB",
+          "_rerank_score": 0.194129079580307,
+          "_dispute_id": "d1",
+          "related_case_laws": []
+        }
+      ],
+      "progress": {
+        "start_time": "2026-03-27T18:11:39.769115Z",
+        "elapsed_seconds": 21.41,
+        "groups": [
+          {
+            "name": "Dispute Analysis",
+            "description": "Identifying distinct dispute components",
+            "steps": [
+              {
+                "timestamp": 1.29,
+                "message": "Using fast interactive local profile",
+                "metadata": {
+                  "disputes": 1
+                }
+              }
+            ],
+            "stats": {
+              "total_searched": 0,
+              "passed_threshold": 0,
+              "included": 0,
+              "ignored": 0
+            }
+          },
+          {
+            "name": "Research",
+            "description": "Retrieving bare acts and case laws for 1 dispute(s)",
+            "steps": [
+              {
+                "timestamp": 21.32,
+                "message": "[d1] Retrieved 2 sections, 1 judgements",
+                "metadata": {
+                  "dispute": "I was injured in a road accident six days ago when a car hit"
+                }
+              }
+            ],
+            "stats": {
+              "total_searched": 0,
+              "passed_threshold": 0,
+              "included": 0,
+              "ignored": 0
+            }
+          },
+          {
+            "name": "Response",
+            "description": "Formatting results and generating legal opinion",
+            "steps": [
+              {
+                "timestamp": 21.33,
+                "message": "Formatting sections and matching case laws to bare acts...",
+                "metadata": {}
+              },
+              {
+                "timestamp": 21.33,
+                "message": "Generating legal opinion...",
+                "metadata": {}
+              },
+              {
+                "timestamp": 21.41,
+                "message": "Calling Llama 3.1 8B model, GPU: NVIDIA GeForce RTX 4060 Laptop GPU",
+                "metadata": {}
+              }
+            ],
+            "stats": {
+              "total_searched": 0,
+              "passed_threshold": 0,
+              "included": 0,
+              "ignored": 0
+            }
+          },
+          {
+            "name": "Debug pipeline",
+            "description": "Intermediate retrieval stages per dispute (acts, sections, case laws)",
+            "steps": [
+              {
+                "timestamp": 21.41,
+                "message": "[d1] Dispute: I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medic",
+                "metadata": {}
+              }
+            ],
+            "stats": {
+              "total_searched": 0,
+              "passed_threshold": 0,
+              "included": 0,
+              "ignored": 0
+            }
+          }
+        ]
+      },
+      "model_used": "Llama 3.2 3B"
+    },
+    "events": [
+      {
+        "event": "step",
+        "elapsed_s": 0.0,
+        "data": {
+          "message": "Starting analysis of your latest message...",
+          "icon": "⚡"
+        }
+      },
+      {
+        "event": "step",
+        "elapsed_s": 4.158,
+        "data": {
+          "message": "Analysing your legal situation...",
+          "icon": "🔍"
+        }
+      },
+      {
+        "event": "progress",
+        "elapsed_s": 4.159,
+        "data": {
+          "start_time": "2026-03-27T18:11:19.655087Z",
+          "elapsed_seconds": 1.29,
+          "groups": [
+            {
+              "name": "Dispute Analysis",
+              "description": "Identifying distinct dispute components",
+              "steps": [],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "event": "step",
+        "elapsed_s": 4.162,
+        "data": {
+          "message": "Preparing a fast grounded opinion from local materials...",
+          "icon": "⚡"
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 4.162,
+        "data": {
+          "content": "Reviewing the "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 4.166,
+        "data": {
+          "content": "local statutory "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 4.166,
+        "data": {
+          "content": "provisions and "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 4.166,
+        "data": {
+          "content": "the strongest "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 4.167,
+        "data": {
+          "content": "precedents for "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 4.167,
+        "data": {
+          "content": "your facts."
+        }
+      },
+      {
+        "event": "progress",
+        "elapsed_s": 4.168,
+        "data": {
+          "start_time": "2026-03-27T18:11:19.655087Z",
+          "elapsed_seconds": 1.29,
+          "groups": [
+            {
+              "name": "Dispute Analysis",
+              "description": "Identifying distinct dispute components",
+              "steps": [
+                {
+                  "timestamp": 1.29,
+                  "message": "Using fast interactive local profile",
+                  "metadata": {
+                    "disputes": 1
+                  }
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "event": "progress",
+        "elapsed_s": 4.168,
+        "data": {
+          "start_time": "2026-03-27T18:11:19.655087Z",
+          "elapsed_seconds": 1.29,
+          "groups": [
+            {
+              "name": "Dispute Analysis",
+              "description": "Identifying distinct dispute components",
+              "steps": [
+                {
+                  "timestamp": 1.29,
+                  "message": "Using fast interactive local profile",
+                  "metadata": {
+                    "disputes": 1
+                  }
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "event": "progress",
+        "elapsed_s": 4.169,
+        "data": {
+          "start_time": "2026-03-27T18:11:19.655087Z",
+          "elapsed_seconds": 1.29,
+          "groups": [
+            {
+              "name": "Dispute Analysis",
+              "description": "Identifying distinct dispute components",
+              "steps": [
+                {
+                  "timestamp": 1.29,
+                  "message": "Using fast interactive local profile",
+                  "metadata": {
+                    "disputes": 1
+                  }
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            },
+            {
+              "name": "Research",
+              "description": "Retrieving bare acts and case laws for 1 dispute(s)",
+              "steps": [],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "event": "step",
+        "elapsed_s": 4.169,
+        "data": {
+          "message": "[d1] Identifying legal provisions...",
+          "icon": "📖"
+        }
+      },
+      {
+        "event": "step",
+        "elapsed_s": 21.417,
+        "data": {
+          "message": "[d1] Found 2 sections — The National Green Tribunal Act, 2010, The National Environment Tribunal Act, 1995",
+          "icon": "✅"
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 21.417,
+        "data": {
+          "content": "I found "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 21.418,
+        "data": {
+          "content": "grounded statutory "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 21.418,
+        "data": {
+          "content": "provisions and "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 21.419,
+        "data": {
+          "content": "I am "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 21.419,
+        "data": {
+          "content": "checking the "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 21.419,
+        "data": {
+          "content": "closest precedents "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 21.42,
+        "data": {
+          "content": "against them."
+        }
+      },
+      {
+        "event": "step",
+        "elapsed_s": 21.42,
+        "data": {
+          "message": "[d1] Searching for judicial precedents...",
+          "icon": "⚖️"
+        }
+      },
+      {
+        "event": "step",
+        "elapsed_s": 24.19,
+        "data": {
+          "message": "[d1] Found 1 judgement (including 1 Supreme Court)",
+          "icon": "✅"
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.19,
+        "data": {
+          "content": "I now "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.191,
+        "data": {
+          "content": "have grounded "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.191,
+        "data": {
+          "content": "precedent support "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.191,
+        "data": {
+          "content": "as well "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.192,
+        "data": {
+          "content": "and I "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.192,
+        "data": {
+          "content": "am drafting "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.192,
+        "data": {
+          "content": "the opinion."
+        }
+      },
+      {
+        "event": "progress",
+        "elapsed_s": 24.193,
+        "data": {
+          "start_time": "2026-03-27T18:11:39.687543Z",
+          "elapsed_seconds": 21.32,
+          "groups": [
+            {
+              "name": "Dispute Analysis",
+              "description": "Identifying distinct dispute components",
+              "steps": [
+                {
+                  "timestamp": 1.29,
+                  "message": "Using fast interactive local profile",
+                  "metadata": {
+                    "disputes": 1
+                  }
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            },
+            {
+              "name": "Research",
+              "description": "Retrieving bare acts and case laws for 1 dispute(s)",
+              "steps": [
+                {
+                  "timestamp": 21.32,
+                  "message": "[d1] Retrieved 2 sections, 1 judgements",
+                  "metadata": {
+                    "dispute": "I was injured in a road accident six days ago when a car hit"
+                  }
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "event": "progress",
+        "elapsed_s": 24.193,
+        "data": {
+          "start_time": "2026-03-27T18:11:39.687543Z",
+          "elapsed_seconds": 21.33,
+          "groups": [
+            {
+              "name": "Dispute Analysis",
+              "description": "Identifying distinct dispute components",
+              "steps": [
+                {
+                  "timestamp": 1.29,
+                  "message": "Using fast interactive local profile",
+                  "metadata": {
+                    "disputes": 1
+                  }
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            },
+            {
+              "name": "Research",
+              "description": "Retrieving bare acts and case laws for 1 dispute(s)",
+              "steps": [
+                {
+                  "timestamp": 21.32,
+                  "message": "[d1] Retrieved 2 sections, 1 judgements",
+                  "metadata": {
+                    "dispute": "I was injured in a road accident six days ago when a car hit"
+                  }
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "event": "progress",
+        "elapsed_s": 24.193,
+        "data": {
+          "start_time": "2026-03-27T18:11:39.687543Z",
+          "elapsed_seconds": 21.33,
+          "groups": [
+            {
+              "name": "Dispute Analysis",
+              "description": "Identifying distinct dispute components",
+              "steps": [
+                {
+                  "timestamp": 1.29,
+                  "message": "Using fast interactive local profile",
+                  "metadata": {
+                    "disputes": 1
+                  }
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            },
+            {
+              "name": "Research",
+              "description": "Retrieving bare acts and case laws for 1 dispute(s)",
+              "steps": [
+                {
+                  "timestamp": 21.32,
+                  "message": "[d1] Retrieved 2 sections, 1 judgements",
+                  "metadata": {
+                    "dispute": "I was injured in a road accident six days ago when a car hit"
+                  }
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            },
+            {
+              "name": "Response",
+              "description": "Formatting results and generating legal opinion",
+              "steps": [
+                {
+                  "timestamp": 21.33,
+                  "message": "Formatting sections and matching case laws to bare acts...",
+                  "metadata": {}
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "event": "step",
+        "elapsed_s": 24.193,
+        "data": {
+          "message": "Now I have everything I need — composing your legal analysis...",
+          "icon": "💡"
+        }
+      },
+      {
+        "event": "progress",
+        "elapsed_s": 24.194,
+        "data": {
+          "start_time": "2026-03-27T18:11:39.688093Z",
+          "elapsed_seconds": 21.33,
+          "groups": [
+            {
+              "name": "Dispute Analysis",
+              "description": "Identifying distinct dispute components",
+              "steps": [
+                {
+                  "timestamp": 1.29,
+                  "message": "Using fast interactive local profile",
+                  "metadata": {
+                    "disputes": 1
+                  }
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            },
+            {
+              "name": "Research",
+              "description": "Retrieving bare acts and case laws for 1 dispute(s)",
+              "steps": [
+                {
+                  "timestamp": 21.32,
+                  "message": "[d1] Retrieved 2 sections, 1 judgements",
+                  "metadata": {
+                    "dispute": "I was injured in a road accident six days ago when a car hit"
+                  }
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            },
+            {
+              "name": "Response",
+              "description": "Formatting results and generating legal opinion",
+              "steps": [
+                {
+                  "timestamp": 21.33,
+                  "message": "Formatting sections and matching case laws to bare acts...",
+                  "metadata": {}
+                },
+                {
+                  "timestamp": 21.33,
+                  "message": "Generating legal opinion...",
+                  "metadata": {}
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "event": "progress",
+        "elapsed_s": 24.27,
+        "data": {
+          "start_time": "2026-03-27T18:11:39.767108Z",
+          "elapsed_seconds": 21.41,
+          "groups": [
+            {
+              "name": "Dispute Analysis",
+              "description": "Identifying distinct dispute components",
+              "steps": [
+                {
+                  "timestamp": 1.29,
+                  "message": "Using fast interactive local profile",
+                  "metadata": {
+                    "disputes": 1
+                  }
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            },
+            {
+              "name": "Research",
+              "description": "Retrieving bare acts and case laws for 1 dispute(s)",
+              "steps": [
+                {
+                  "timestamp": 21.32,
+                  "message": "[d1] Retrieved 2 sections, 1 judgements",
+                  "metadata": {
+                    "dispute": "I was injured in a road accident six days ago when a car hit"
+                  }
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            },
+            {
+              "name": "Response",
+              "description": "Formatting results and generating legal opinion",
+              "steps": [
+                {
+                  "timestamp": 21.33,
+                  "message": "Formatting sections and matching case laws to bare acts...",
+                  "metadata": {}
+                },
+                {
+                  "timestamp": 21.33,
+                  "message": "Generating legal opinion...",
+                  "metadata": {}
+                },
+                {
+                  "timestamp": 21.41,
+                  "message": "Calling Llama 3.1 8B model, GPU: NVIDIA GeForce RTX 4060 Laptop GPU",
+                  "metadata": {}
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.271,
+        "data": {
+          "content": "On the facts "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.272,
+        "data": {
+          "content": "presently shared, the "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.272,
+        "data": {
+          "content": "immediate issue is "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.273,
+        "data": {
+          "content": "how the locally "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.274,
+        "data": {
+          "content": "retrieved statutory materials "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.275,
+        "data": {
+          "content": "and precedents bear "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.275,
+        "data": {
+          "content": "on I was "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.276,
+        "data": {
+          "content": "injured in a "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.276,
+        "data": {
+          "content": "road accident six "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.277,
+        "data": {
+          "content": "days ago when "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.277,
+        "data": {
+          "content": "a car hit "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.277,
+        "data": {
+          "content": "my motorcycle near "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.278,
+        "data": {
+          "content": "... The driver "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.278,
+        "data": {
+          "content": "had insurance, I "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.278,
+        "data": {
+          "content": "missed six days "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.279,
+        "data": {
+          "content": "of work, my "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.279,
+        "data": {
+          "content": "employer can confirm "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.279,
+        "data": {
+          "content": "my salary and "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.28,
+        "data": {
+          "content": "absence, and I "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.28,
+        "data": {
+          "content": "also have pharmacy. "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.28,
+        "data": {
+          "content": "The National Green "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.281,
+        "data": {
+          "content": "Tribunal Act, 2010, "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.282,
+        "data": {
+          "content": "Section 38 points "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.282,
+        "data": {
+          "content": "to HEADS UNDER "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.282,
+        "data": {
+          "content": "WHICH COMPENSATION OR "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.282,
+        "data": {
+          "content": "RELIEF FOR DAMAGE "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.283,
+        "data": {
+          "content": "MAY BE CLAIMED "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.283,
+        "data": {
+          "content": "Permanent, temporary, total "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.283,
+        "data": {
+          "content": "or partial disability "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.283,
+        "data": {
+          "content": "or other injury "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.283,
+        "data": {
+          "content": "or sickness; Loss "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.284,
+        "data": {
+          "content": "of wages due "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.284,
+        "data": {
+          "content": "to total or "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.284,
+        "data": {
+          "content": "partial disability or "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.284,
+        "data": {
+          "content": "permanent or temporary "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.284,
+        "data": {
+          "content": "The National Environment "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.285,
+        "data": {
+          "content": "Tribunal Act, 1995, "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.285,
+        "data": {
+          "content": "Section 31 points "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.285,
+        "data": {
+          "content": "to The Central "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.285,
+        "data": {
+          "content": "Government may, by "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.286,
+        "data": {
+          "content": "notification, make rules "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.286,
+        "data": {
+          "content": "for carrying out "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.286,
+        "data": {
+          "content": "the purposes of "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.286,
+        "data": {
+          "content": "this Act. In "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.287,
+        "data": {
+          "content": "particular, and without "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.287,
+        "data": {
+          "content": "prejudice to the "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.287,
+        "data": {
+          "content": "generality of the "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.287,
+        "data": {
+          "content": "foregoing power, such "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.288,
+        "data": {
+          "content": "rules may pro "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.288,
+        "data": {
+          "content": "HEADS UNDER WHICH "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.289,
+        "data": {
+          "content": "COMPE In Re "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.289,
+        "data": {
+          "content": ": T.N. Godavarman "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.289,
+        "data": {
+          "content": "Thirumulpad vs Union "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.29,
+        "data": {
+          "content": "Of India (Supreme "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.291,
+        "data": {
+          "content": "Court of India, "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.291,
+        "data": {
+          "content": "2025) supports the "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.291,
+        "data": {
+          "content": "analysis through Case: "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.291,
+        "data": {
+          "content": "In Re : "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.292,
+        "data": {
+          "content": "T.N. Godavarman Thirumulpad "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.292,
+        "data": {
+          "content": "vs Union Of "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.292,
+        "data": {
+          "content": "India Court: Supreme "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.293,
+        "data": {
+          "content": "Court of India "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.293,
+        "data": {
+          "content": "Year: 2025 Cited "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.293,
+        "data": {
+          "content": "by: 0 Issues: "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.293,
+        "data": {
+          "content": "38. Adopting a "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.294,
+        "data": {
+          "content": "restitutive approach has "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.294,
+        "data": {
+          "content": "in fact been "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.294,
+        "data": {
+          "content": "statutorily mandated under "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.295,
+        "data": {
+          "content": "Section 15(4) of "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.295,
+        "data": {
+          "content": "th On the "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.295,
+        "data": {
+          "content": "present local record, "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.295,
+        "data": {
+          "content": "the safest next "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.296,
+        "data": {
+          "content": "step is to "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.296,
+        "data": {
+          "content": "test these materials "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.296,
+        "data": {
+          "content": "against the notice, "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.296,
+        "data": {
+          "content": "communications, and timeline "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.297,
+        "data": {
+          "content": "already mentioned before "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.297,
+        "data": {
+          "content": "taking a firmer "
+        }
+      },
+      {
+        "event": "token",
+        "elapsed_s": 24.297,
+        "data": {
+          "content": "position."
+        }
+      },
+      {
+        "event": "progress",
+        "elapsed_s": 24.297,
+        "data": {
+          "start_time": "2026-03-27T18:11:39.769115Z",
+          "elapsed_seconds": 21.41,
+          "groups": [
+            {
+              "name": "Dispute Analysis",
+              "description": "Identifying distinct dispute components",
+              "steps": [
+                {
+                  "timestamp": 1.29,
+                  "message": "Using fast interactive local profile",
+                  "metadata": {
+                    "disputes": 1
+                  }
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            },
+            {
+              "name": "Research",
+              "description": "Retrieving bare acts and case laws for 1 dispute(s)",
+              "steps": [
+                {
+                  "timestamp": 21.32,
+                  "message": "[d1] Retrieved 2 sections, 1 judgements",
+                  "metadata": {
+                    "dispute": "I was injured in a road accident six days ago when a car hit"
+                  }
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            },
+            {
+              "name": "Response",
+              "description": "Formatting results and generating legal opinion",
+              "steps": [
+                {
+                  "timestamp": 21.33,
+                  "message": "Formatting sections and matching case laws to bare acts...",
+                  "metadata": {}
+                },
+                {
+                  "timestamp": 21.33,
+                  "message": "Generating legal opinion...",
+                  "metadata": {}
+                },
+                {
+                  "timestamp": 21.41,
+                  "message": "Calling Llama 3.1 8B model, GPU: NVIDIA GeForce RTX 4060 Laptop GPU",
+                  "metadata": {}
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "event": "progress",
+        "elapsed_s": 24.298,
+        "data": {
+          "start_time": "2026-03-27T18:11:39.769115Z",
+          "elapsed_seconds": 21.41,
+          "groups": [
+            {
+              "name": "Dispute Analysis",
+              "description": "Identifying distinct dispute components",
+              "steps": [
+                {
+                  "timestamp": 1.29,
+                  "message": "Using fast interactive local profile",
+                  "metadata": {
+                    "disputes": 1
+                  }
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            },
+            {
+              "name": "Research",
+              "description": "Retrieving bare acts and case laws for 1 dispute(s)",
+              "steps": [
+                {
+                  "timestamp": 21.32,
+                  "message": "[d1] Retrieved 2 sections, 1 judgements",
+                  "metadata": {
+                    "dispute": "I was injured in a road accident six days ago when a car hit"
+                  }
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            },
+            {
+              "name": "Response",
+              "description": "Formatting results and generating legal opinion",
+              "steps": [
+                {
+                  "timestamp": 21.33,
+                  "message": "Formatting sections and matching case laws to bare acts...",
+                  "metadata": {}
+                },
+                {
+                  "timestamp": 21.33,
+                  "message": "Generating legal opinion...",
+                  "metadata": {}
+                },
+                {
+                  "timestamp": 21.41,
+                  "message": "Calling Llama 3.1 8B model, GPU: NVIDIA GeForce RTX 4060 Laptop GPU",
+                  "metadata": {}
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            },
+            {
+              "name": "Debug pipeline",
+              "description": "Intermediate retrieval stages per dispute (acts, sections, case laws)",
+              "steps": [
+                {
+                  "timestamp": 21.41,
+                  "message": "[d1] Dispute: I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medic",
+                  "metadata": {}
+                }
+              ],
+              "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "event": "done",
+        "elapsed_s": 24.298,
+        "data": {
+          "status": "done",
+          "response_type": "legal_opinion",
+          "opinion_text": "On the facts presently shared, the immediate issue is how the locally retrieved statutory materials and precedents bear on I was injured in a road accident six days ago when a car hit my motorcycle near ... The driver had insurance, I missed six days of work, my employer can confirm my salary and absence, and I also have pharmacy.\n\nThe National Green Tribunal Act, 2010, Section 38 points to HEADS UNDER WHICH COMPENSATION OR RELIEF FOR DAMAGE MAY BE CLAIMED Permanent, temporary, total or partial disability or other injury or sickness; Loss of wages due to total or partial disability or permanent or temporary The National Environment Tribunal Act, 1995, Section 31 points to The Central Government may, by notification, make rules for carrying out the purposes of this Act. In particular, and without prejudice to the generality of the foregoing power, such rules may pro HEADS UNDER WHICH COMPE\n\nIn Re : T.N. Godavarman Thirumulpad vs Union Of India (Supreme Court of India, 2025) supports the analysis through Case: In Re : T.N. Godavarman Thirumulpad vs Union Of India Court: Supreme Court of India Year: 2025 Cited by: 0 Issues: 38. Adopting a restitutive approach has in fact been statutorily mandated under Section 15(4) of th\n\nOn the present local record, the safest next step is to test these materials against the notice, communications, and timeline already mentioned before taking a firmer position.",
+          "bare_acts": [
+            {
+              "source": "BareActs\\Union of India\\1980_14.txt",
+              "text": "HEADS UNDER WHICH COMPENSATION OR RELIEF FOR DAMAGE MAY BE CLAIMED\n\nPermanent, temporary, total or partial disability or other injury or sickness;\n\nLoss of wages due to total or partial disability or permanent or temporary disability;\n\nMedical expenses incurred for treatment of injuries or sickness;\n\nExpenses incurred by the Government or any local authority in providing relief, aid and rehabilitation to the affected persons;\n\nExpenses incurred by the Government for any administrative or legal action or to cope with any harm or damage, including compensation for environmental degradation and restoration of the quality of environment;\n\nLoss to the Government or local authority arising out of, or connected with, the activity causing any damage;\n\nClaims on account of any harm, damage or destruction to the fauna including milch and draught animals and aquatic fauna;\n\nClaims on account of any harm, damage or destruction to flora including aquatic flora, crops, vegetables, trees and orchards;\n\nClaims including cost of restoration on account of any harm or damage to environment including pollution of soil, air, water, land and eco-systems;",
+              "act_name": "The National Green Tribunal Act, 2010",
+              "section_number": "38",
+              "title": "The National Green Tribunal Act, 2010 — Section 38 (Repeal and savings)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Union%20of%20India/1980_14.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 0.7178924083709717,
+              "_dispute_id": "d1",
+              "related_case_laws": [
+                {
+                  "source": "CaseLaws\\Supreme Court\\2025\\2025_NOV_20_SC_IN_RE_T.N._GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA.txt",
+                  "text": "Case: In Re : T.N. Godavarman Thirumulpad vs Union Of India Court: Supreme Court of India Year: 2025 Cited by: 0 Issues: 38. Adopting a restitutive approach has in fact been statutorily mandated under Section 15(4) of the National Green Tribunals Act, 2010 where the Tribunal is directed to provide relief regarding “restitution of the damaged property or environment”. This statutory duty of the Courts also flows from Article 21 , 48A and 51A(g) of",
+                  "case_name": "In Re : T.N. Godavarman Thirumulpad vs Union Of India",
+                  "title": "In Re : T.N. Godavarman Thirumulpad vs Union Of India (Supreme Court of India, 2025)",
+                  "court": "Supreme Court of India",
+                  "year": "2025",
+                  "citation": "2025 INSC 1325",
+                  "binding_authority": "supreme_court",
+                  "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/CaseLaws/CaseLaws/Supreme%20Court/2025/2025_NOV_20_SC_IN_RE_T.N._GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA.txt",
+                  "source_tag": "LOCAL_DB",
+                  "signature": null,
+                  "_rerank_score": 5.348691940307617,
+                  "_dispute_id": "d1"
+                }
+              ]
+            },
+            {
+              "source": "BareActs\\Union of India\\1995_4.txt",
+              "text": "The Central Government may, by notification, make rules for carrying out the purposes of this Act.\n\nIn particular, and without prejudice to the generality of the foregoing power, such rules may pro HEADS UNDER WHICH COMPENSATION FOR DAMAGES MAY BE CLAIMED\n\nPermanent, temporary, total or partial disability or other injury or sickness;\n\nLoss of wages due to total or partial disability or permanent or temporary disability;\n\nMedical expenses incurred for treatment of injuries or sickness;\n\nExpenses incurred by the Government or any local authority in providing relief, aid and rehabilitation to the affected persons;\n\nExpenses incurred by Government for any administrative or legal action or to cope with any harm or damage, including compensation for environmental degradation and restoration of the quality of environment;\n\nLoss to Government or local authority arising out of, or connected with, the activity causing any damage;\n\nClaims on account of any harm, damage or destruction to the fauna including milch and draught animals and aquatic fauna;\n\nClaims on account of any harm, damage or destruction to flora including aquatic flora, crops, vegetables, trees and orchards; tc\"",
+              "act_name": "The National Environment Tribunal Act, 1995",
+              "section_number": "31",
+              "title": "The National Environment Tribunal Act, 1995 — Section 31 (Power to make rules)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Union%20of%20India/1995_4.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 0.194129079580307,
+              "_dispute_id": "d1",
+              "related_case_laws": []
+            }
+          ],
+          "case_laws": [],
+          "retrieved": [
+            {
+              "source": "BareActs\\Union of India\\1980_14.txt",
+              "text": "HEADS UNDER WHICH COMPENSATION OR RELIEF FOR DAMAGE MAY BE CLAIMED\n\nPermanent, temporary, total or partial disability or other injury or sickness;\n\nLoss of wages due to total or partial disability or permanent or temporary disability;\n\nMedical expenses incurred for treatment of injuries or sickness;\n\nExpenses incurred by the Government or any local authority in providing relief, aid and rehabilitation to the affected persons;\n\nExpenses incurred by the Government for any administrative or legal action or to cope with any harm or damage, including compensation for environmental degradation and restoration of the quality of environment;\n\nLoss to the Government or local authority arising out of, or connected with, the activity causing any damage;\n\nClaims on account of any harm, damage or destruction to the fauna including milch and draught animals and aquatic fauna;\n\nClaims on account of any harm, damage or destruction to flora including aquatic flora, crops, vegetables, trees and orchards;\n\nClaims including cost of restoration on account of any harm or damage to environment including pollution of soil, air, water, land and eco-systems;",
+              "act_name": "The National Green Tribunal Act, 2010",
+              "section_number": "38",
+              "title": "The National Green Tribunal Act, 2010 — Section 38 (Repeal and savings)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Union%20of%20India/1980_14.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 0.7178924083709717,
+              "_dispute_id": "d1",
+              "related_case_laws": [
+                {
+                  "source": "CaseLaws\\Supreme Court\\2025\\2025_NOV_20_SC_IN_RE_T.N._GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA.txt",
+                  "text": "Case: In Re : T.N. Godavarman Thirumulpad vs Union Of India Court: Supreme Court of India Year: 2025 Cited by: 0 Issues: 38. Adopting a restitutive approach has in fact been statutorily mandated under Section 15(4) of the National Green Tribunals Act, 2010 where the Tribunal is directed to provide relief regarding “restitution of the damaged property or environment”. This statutory duty of the Courts also flows from Article 21 , 48A and 51A(g) of",
+                  "case_name": "In Re : T.N. Godavarman Thirumulpad vs Union Of India",
+                  "title": "In Re : T.N. Godavarman Thirumulpad vs Union Of India (Supreme Court of India, 2025)",
+                  "court": "Supreme Court of India",
+                  "year": "2025",
+                  "citation": "2025 INSC 1325",
+                  "binding_authority": "supreme_court",
+                  "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/CaseLaws/CaseLaws/Supreme%20Court/2025/2025_NOV_20_SC_IN_RE_T.N._GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA.txt",
+                  "source_tag": "LOCAL_DB",
+                  "signature": null,
+                  "_rerank_score": 5.348691940307617,
+                  "_dispute_id": "d1"
+                }
+              ]
+            },
+            {
+              "source": "BareActs\\Union of India\\1995_4.txt",
+              "text": "The Central Government may, by notification, make rules for carrying out the purposes of this Act.\n\nIn particular, and without prejudice to the generality of the foregoing power, such rules may pro HEADS UNDER WHICH COMPENSATION FOR DAMAGES MAY BE CLAIMED\n\nPermanent, temporary, total or partial disability or other injury or sickness;\n\nLoss of wages due to total or partial disability or permanent or temporary disability;\n\nMedical expenses incurred for treatment of injuries or sickness;\n\nExpenses incurred by the Government or any local authority in providing relief, aid and rehabilitation to the affected persons;\n\nExpenses incurred by Government for any administrative or legal action or to cope with any harm or damage, including compensation for environmental degradation and restoration of the quality of environment;\n\nLoss to Government or local authority arising out of, or connected with, the activity causing any damage;\n\nClaims on account of any harm, damage or destruction to the fauna including milch and draught animals and aquatic fauna;\n\nClaims on account of any harm, damage or destruction to flora including aquatic flora, crops, vegetables, trees and orchards; tc\"",
+              "act_name": "The National Environment Tribunal Act, 1995",
+              "section_number": "31",
+              "title": "The National Environment Tribunal Act, 1995 — Section 31 (Power to make rules)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Union%20of%20India/1995_4.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 0.194129079580307,
+              "_dispute_id": "d1",
+              "related_case_laws": []
+            }
+          ],
+          "progress": {
+            "start_time": "2026-03-27T18:11:39.769115Z",
+            "elapsed_seconds": 21.41,
+            "groups": [
+              {
+                "name": "Dispute Analysis",
+                "description": "Identifying distinct dispute components",
+                "steps": [
+                  {
+                    "timestamp": 1.29,
+                    "message": "Using fast interactive local profile",
+                    "metadata": {
+                      "disputes": 1
+                    }
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Research",
+                "description": "Retrieving bare acts and case laws for 1 dispute(s)",
+                "steps": [
+                  {
+                    "timestamp": 21.32,
+                    "message": "[d1] Retrieved 2 sections, 1 judgements",
+                    "metadata": {
+                      "dispute": "I was injured in a road accident six days ago when a car hit"
+                    }
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Response",
+                "description": "Formatting results and generating legal opinion",
+                "steps": [
+                  {
+                    "timestamp": 21.33,
+                    "message": "Formatting sections and matching case laws to bare acts...",
+                    "metadata": {}
+                  },
+                  {
+                    "timestamp": 21.33,
+                    "message": "Generating legal opinion...",
+                    "metadata": {}
+                  },
+                  {
+                    "timestamp": 21.41,
+                    "message": "Calling Llama 3.1 8B model, GPU: NVIDIA GeForce RTX 4060 Laptop GPU",
+                    "metadata": {}
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Debug pipeline",
+                "description": "Intermediate retrieval stages per dispute (acts, sections, case laws)",
+                "steps": [
+                  {
+                    "timestamp": 21.41,
+                    "message": "[d1] Dispute: I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medic",
+                    "metadata": {}
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              }
+            ]
+          },
+          "model_used": "Llama 3.2 3B"
+        }
+      }
+    ]
+  }
+]

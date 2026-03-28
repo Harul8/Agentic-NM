@@ -28,6 +28,7 @@ export default defineConfig({
     include: ["core-js"],
   },
   build: {
+    chunkSizeWarningLimit: 600,
     commonjsOptions: {
       include: [/core-js/, /node_modules/],
       transformMixedEsModules: true,
@@ -36,6 +37,17 @@ export default defineConfig({
     },
     rollupOptions: {
       plugins: [stripCommonJsExternal()],
+      output: {
+        manualChunks(id) {
+          if (!id || !id.includes("node_modules")) return null;
+          if (id.includes("react-dom") || id.includes("react/")) return "vendor-react";
+          if (id.includes("jspdf") || id.includes("html2canvas")) return "vendor-export";
+          if (id.includes("xlsx")) return "vendor-xlsx";
+          if (id.includes("react-markdown") || id.includes("rehype") || id.includes("parse5")) return "vendor-markdown";
+          if (id.includes("core-js")) return "vendor-corejs";
+          return null;
+        },
+      },
     },
   },
   server: {

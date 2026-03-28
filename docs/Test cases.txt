@@ -1,0 +1,135 @@
+Test these, focusing on:
+- does intake ask the right next cluster
+- does “one last fact” change the final opinion
+- does retrieval stay on-topic
+- does output stay grounded and not generic
+
+**1. Landlord Lockout vs Rent Default**
+Initial:
+`My landlord changed the lock while my belongings are still inside. I need urgent access back to the flat.`
+Follow-up:
+`I have the rent agreement, payment proof, WhatsApp messages, and photos of the lock. No court order or written notice was given.`
+Last fact:
+`There are no rent arrears at all.`
+
+Watch for:
+- should not drift into generic non-payment eviction
+- final opinion should react to `no rent arrears`
+
+**2. Real Rent Default Case**
+Initial:
+`My landlord is trying to evict me because I have not paid rent for four months.`
+Follow-up:
+`I received a written notice, and I admit the arrears, but I want time to pay.`
+Last fact:
+`I can pay the full arrears within a week.`
+
+Watch for:
+- here rent-default logic actually should activate
+- should differ clearly from the lockout scenario
+
+**3. Domestic Violence with Delayed Medical Record**
+Initial:
+`My husband assaulted me two days ago and I want legal help.`
+Follow-up:
+`I have bruises, photos, WhatsApp messages, and my sister saw me immediately after. I have not gone to the hospital yet.`
+Last fact:
+`I went for medical treatment today and now have a clinic record.`
+
+Watch for:
+- last fact should strengthen evidence posture
+- final answer should materially change, not just repeat itself
+
+**4. Cheque Bounce but Security Cheque Defense**
+Initial:
+`A cheque I gave has been presented and I received a legal notice.`
+Follow-up:
+`The cheque was given during a business deal, but I dispute the amount claimed.`
+Last fact:
+`It was only a security cheque and the underlying contract was never performed.`
+
+Watch for:
+- last fact should shift the legal framing
+- should not stay generic “dishonoured cheque” only
+
+**5. Property Sale Fraud**
+Initial:
+`Someone sold family property using forged papers and I want to stop further transactions.`
+Follow-up:
+`I have copies of the sale deed, older title records, and signatures that look different.`
+Last fact:
+`The mutation has not yet been completed.`
+
+Watch for:
+- last fact should affect urgency and relief posture
+- retrieval should stay in property/fraud/civil-protection lane
+
+**6. Job Termination with One Crucial Procedural Fact**
+Initial:
+`I was dismissed from service after a departmental inquiry.`
+Follow-up:
+`I received a charge sheet and replied, but the findings were against me.`
+Last fact:
+`The inquiry officer relied on witness statements that were never supplied to me.`
+
+Watch for:
+- final answer should become more procedural-fairness focused
+- last fact should clearly matter
+
+**7. Preventive Detention / Custody**
+Initial:
+`My brother has been detained and we are struggling to understand what can be done.`
+Follow-up:
+`The detention order was served, but the family did not receive all supporting papers immediately.`
+Last fact:
+`Some relied-on documents were given only after several days.`
+
+Watch for:
+- system should pick up procedural delay significance
+- should not stay vague/general
+
+**8. Motor Accident Claim with Liability Shift**
+Initial:
+`I was injured in a road accident and want compensation.`
+Follow-up:
+`I have medical records, FIR details, and repair bills.`
+Last fact:
+`The other driver did not have valid insurance on the date of the accident.`
+
+Watch for:
+- final answer should change meaningfully
+- retrieval should remain accident/compensation focused
+
+**9. Consumer Defect vs Warranty Expiry**
+Initial:
+`A machine I bought stopped working and the seller is refusing help.`
+Follow-up:
+`I have invoices, service chats, and a technician message saying the defect was likely present from the start.`
+Last fact:
+`The warranty expired one week before the breakdown.`
+
+Watch for:
+- answer should incorporate the timing nuance
+- should not collapse into “warranty over, no claim”
+
+**10. Police Inaction**
+Initial:
+`Police are refusing to register my complaint even though I have evidence.`
+Follow-up:
+`I have messages, photos, and witness details, and I visited the station twice.`
+Last fact:
+`I also sent a written complaint by email and speed post.`
+
+Watch for:
+- last fact should strengthen prior-actions posture
+- final answer should respond to escalation-ready facts
+
+Best way to test:
+1. run the normal intake
+2. get to the “one last fact / proceed” prompt
+3. test both:
+   - `proceed`
+   - a real last fact
+4. compare whether the final opinion changes in a meaningful, grounded way
+
+If you want, I can also give you a **10-case test sheet** in a neat table with expected behavior per case.

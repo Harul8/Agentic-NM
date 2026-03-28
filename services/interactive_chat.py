@@ -1,4 +1,4 @@
-﻿"""
+"""
 Interactive Chat Orchestrator â€” Handles multi-phase legal chat flow:
 1. Fact collection (professional advocate intake) with intent detection
 2. Response generation (bare acts + case laws + structured opinion)
@@ -64,14 +64,14 @@ def _ensure_message(msg: str, facts: str, intent: str) -> str:
         return "Thank you for sharing the details. I've researched the applicable bare acts and case laws. Here's my analysis."
 
 
-_ANALYSIS_READY_PREFIX = "I have enough to begin the legal analysis"
+_ANALYSIS_READY_PREFIX = "I have enough to identify the applicable bare act sections"
 
 
 def _build_analysis_ready_prompt() -> str:
     return (
-        "I have enough to begin the legal analysis. "
-        "If you want, you can add any one last important fact now. "
-        "Otherwise, just say 'proceed' and I will prepare the full legal opinion from the local legal database."
+        "I have enough to identify the applicable bare act sections for the dispute or disputes that emerge from what you have shared. "
+        "If you want, you can add one last important fact now. "
+        "Otherwise, just say 'proceed' and I will first show the relevant bare act sections from the local legal database."
     )
 
 
@@ -95,6 +95,45 @@ def _last_assistant_is_analysis_ready(conversation: list) -> bool:
             return False
     return False
 
+
+
+def _get_analysis_stage(workflow_state: dict | None) -> str:
+    if not isinstance(workflow_state, dict):
+        return "intake"
+    stage = str(workflow_state.get("analysisStage") or "").strip().lower()
+    return stage or "intake"
+
+
+def _get_stored_facts_summary(workflow_state: dict | None) -> str:
+    if not isinstance(workflow_state, dict):
+        return ""
+    return str(workflow_state.get("factsSummary") or "").strip()
+
+
+def _user_requests_precedents(text: str) -> bool:
+    low = (text or "").strip().lower()
+    if not low:
+        return False
+    precedent_terms = (
+        "precedent", "precedents", "case law", "case laws", "case-law",
+        "judgment", "judgments", "judgement", "judgements",
+        "authority", "authorities", "citation", "citations",
+    )
+    if any(term in low for term in precedent_terms):
+        return True
+    if low in {"yes", "yes please", "ok", "okay", "sure", "go ahead", "please do", "proceed", "continue"}:
+        return True
+    tokens = set(low.replace("?", " ").replace("!", " ").split())
+    return len(tokens) <= 4 and bool(tokens & {"yes", "ok", "okay", "sure", "proceed"})
+
+
+def _user_declines_precedents(text: str) -> bool:
+    low = (text or "").strip().lower()
+    if not low:
+        return False
+    if low in {"no", "no thanks", "not now", "later", "skip", "not needed", "no need", "leave it"}:
+        return True
+    return low.startswith("no ") or low.startswith("not now")
 
 
 def _looks_like_new_case_opening(current_message: str, conversation: list) -> bool:
@@ -343,6 +382,8 @@ def process_chat(
     step_callback=None,
     token_callback=None,
     model_override: str | None = None,
+    workflow_state: dict | None = None,
+    analysis_mode: str | None = None,
 ) -> dict:
     """
     Process a chat message and return the appropriate response.
@@ -409,6 +450,61 @@ def process_chat(
                 model_override=model_override,
             )
 
+        analysis_stage = _get_analysis_stage(workflow_state)
+
+        if analysis_stage == "await_precedent_confirmation":
+            stored_facts = _get_stored_facts_summary(workflow_state) or _build_user_fact_history(conversation)
+            if _user_requests_precedents(current_message):
+                _log_step("fact_collection PRECEDENT_STAGE_ACK", (time.perf_counter() - t_pipeline_start) * 1000)
+                return {
+                    "phase": "response_generation",
+                    "message": "",
+                    "facts_summary": stored_facts,
+                    "intent": "legal_opinion",
+                    "document_types": "both",
+                    "search_strategy": "local_only",
+                    "result_count": None,
+                    "response": None,
+                    "response_type": None,
+                    "materials_to_confirm": None,
+                    "indexed": False,
+                    "analysis_stage": "precedent_generation",
+                    "analysis_mode": "precedents_only",
+                }
+            if _user_declines_precedents(current_message):
+                return {
+                    "phase": "done",
+                    "message": "Understood. If you later want supporting judicial precedents for these disputes, just ask for the relevant case laws and I will continue from here.",
+                    "facts_summary": stored_facts,
+                    "response": None,
+                    "response_type": "bare_act_guidance",
+                    "materials_to_confirm": None,
+                    "indexed": False,
+                    "analysis_stage": "await_precedent_confirmation",
+                }
+            if not _looks_like_new_case_opening(current_message, conversation):
+                merged_facts = _augment_facts_with_chat_summary(
+                    stored_facts,
+                    conversation,
+                    current_message=current_message,
+                )
+                _log_step("fact_collection BARE_ACT_REFRESH", (time.perf_counter() - t_pipeline_start) * 1000)
+                return {
+                    "phase": "response_generation",
+                    "message": "",
+                    "facts_summary": merged_facts,
+                    "intent": "legal_opinion",
+                    "document_types": "acts_only",
+                    "search_strategy": "local_only",
+                    "result_count": None,
+                    "response": None,
+                    "response_type": None,
+                    "materials_to_confirm": None,
+                    "indexed": False,
+                    "analysis_stage": "bare_acts_only",
+                    "analysis_mode": "bare_acts_only",
+                }
+
         # If the immediately previous assistant turn was the analysis-ready handoff,
         # the user is either confirming to proceed or giving one last material fact.
         # In either case, do not re-enter intake.
@@ -425,13 +521,15 @@ def process_chat(
                 "message": "",
                 "facts_summary": merged_facts,
                 "intent": "legal_opinion",
-                "document_types": "both",
+                "document_types": "acts_only",
                 "search_strategy": "local_only",
                 "result_count": None,
                 "response": None,
                 "response_type": None,
                 "materials_to_confirm": None,
                 "indexed": False,
+                "analysis_stage": "bare_acts_only",
+                "analysis_mode": "bare_acts_only",
             }
         if _looks_like_new_case_opening(current_message, conversation):
             logger.info("Detected fresh case opening inside completed chat; re-entering intake with reset conversation")
@@ -485,6 +583,7 @@ def process_chat(
                     "response_type": None,
                     "materials_to_confirm": None,
                     "indexed": False,
+                "analysis_stage": "ready_for_bare_acts",
                 }
 
             _log_step(
@@ -534,6 +633,7 @@ def process_chat(
         use_document_types = document_types or "both"
         use_search_strategy = _default_search_strategy_for_intent(use_intent, search_strategy)
         use_result_count = result_count
+        use_analysis_mode = (analysis_mode or "full_opinion").strip().lower() or "full_opinion"
         t_before_gen = time.perf_counter()
         try:
             resp = generate_response(
@@ -547,6 +647,7 @@ def process_chat(
                 step_callback=step_callback,
                 token_callback=token_callback,
                 model_override=model_override,
+                analysis_mode=use_analysis_mode,
             )
         except Exception as e:
             logger.error("Response generation failed: %s", e, exc_info=True)
@@ -558,11 +659,10 @@ def process_chat(
                 "response_type": "legal_opinion",
                 "materials_to_confirm": None,
                 "indexed": False,
+                "analysis_stage": _get_analysis_stage(workflow_state),
             }
         _log_step("generate_response (retrieval+LLM)", (time.perf_counter() - t_before_gen) * 1000)
 
-
-        # Full response ready â€” check output safety
         explanation = (resp.get("explanation") or "").strip()
         if explanation:
             resp_safety = check_response_safety(explanation)
@@ -570,21 +670,34 @@ def process_chat(
                 logger.warning("Unsafe LLM output blocked")
                 explanation = "I was unable to generate a safe response for this query. Please try rephrasing."
 
+        if use_analysis_mode == "bare_acts_only":
+            response_type = "bare_act_guidance"
+            next_analysis_stage = "await_precedent_confirmation"
+        elif use_analysis_mode == "precedents_only":
+            response_type = "precedent_support"
+            next_analysis_stage = "precedents_ready"
+        else:
+            response_type = "legal_opinion"
+            next_analysis_stage = "precedents_ready"
+
         return {
             "phase": "done",
-            "message": "",  # transition text only â€” explanation goes in response.explanation
+            "message": "",
             "facts_summary": facts,
             "response": {
                 "bare_act_sections": resp.get("bare_act_sections", []),
                 "case_laws": resp.get("case_laws", []),
                 "internet_case_laws": resp.get("internet_case_laws", []),
+                "next_steps": resp.get("next_steps", []),
+                "next_steps_summary": (resp.get("next_steps_summary") or "").strip(),
                 "explanation": explanation,
                 "progress": resp.get("progress"),
                 "indexing_candidates": resp.get("indexing_candidates", []),
             },
-            "response_type": "legal_opinion",
+            "response_type": response_type,
             "materials_to_confirm": None,
             "indexed": False,
+            "analysis_stage": next_analysis_stage,
         }
 
 

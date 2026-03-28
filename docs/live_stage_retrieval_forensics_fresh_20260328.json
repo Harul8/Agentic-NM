@@ -1,0 +1,966 @@
+[
+  {
+    "name": "Motor accident compensation",
+    "turns": [
+      {
+        "kind": "submit_case",
+        "user": "I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medical expenses, lost income, and bike damage.",
+        "total_s": 14.967,
+        "first_step_s": 0.048,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.048,
+            "message": "Reviewing the facts you shared...",
+            "icon": "âš¡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "I am sorry you are going through this. The next details matter because compensation cases become much stronger when the accident, treatment, disability, and income record all support each other. Do you have the accident papers, what treatment and disability records are already available, and what documents best show your work and income before the accident?",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B",
+          "analysis_stage": "",
+          "facts_summary": ""
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "I have the FIR number, wound certificate, discharge summary, X-ray reports, bike photographs, repair estimate, and two witnesses. I was admitted for two days and I have not filed a compensation claim yet.",
+        "total_s": 6.002,
+        "first_step_s": 0.034,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.034,
+            "message": "Starting analysis of your latest message...",
+            "icon": "âš¡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "What is the current status of my bike repair estimate and can I provide any supporting witness statements?",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B",
+          "analysis_stage": "",
+          "facts_summary": ""
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "The other driver had insurance, I have salary slips and bank statements to show lost income, and I also have medicine bills and follow-up records.",
+        "total_s": 4.47,
+        "first_step_s": 0.06,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.06,
+            "message": "Starting analysis of your latest message...",
+            "icon": "âš¡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "I have enough to identify the applicable bare act sections for the dispute or disputes that emerge from what you have shared. If you want, you can add one last important fact now. Otherwise, just say 'proceed' and I will first show the relevant bare act sections from the local legal database.",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B",
+          "analysis_stage": "ready_for_bare_acts",
+          "facts_summary": "I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medical expenses, lost income, and bike damage.\nI have the FIR number, wound certificate, discharge summary, X-ray reports, bike photographs, repair estimate, and two witnesses. I was admitted for two days and I have not filed a compensation claim yet.\nThe other driver had insurance, I have salary slips and bank statements to show lost income, and I also have medicine bills and follow-up records.\n\nCHAT WINDOW SUMMARY\nUser facts and statements:\n1. I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medical expenses, lost income, and bike damage.\n2. I have the FIR number, wound certificate, discharge summary, X-ray reports, bike photographs, repair estimate, and two witnesses. I was admitted for two days and I have not filed a compensation claim yet.\n3. The other driver had insurance, I have salary slips and bank statements to show lost income, and I also have medicine bills and follow-up records.\nQuestions already asked in this chat:\n1. I am sorry you are going through this. The next details matter because compensation cases become much stronger when the accident, treatment, disability, and income record all support each other. Do you have the accident \n2. What is the current status of my bike repair estimate and can I provide any supporting witness statements?"
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "proceed",
+        "total_s": 101.358,
+        "first_step_s": 0.042,
+        "first_token_s": 2.58,
+        "steps": [
+          {
+            "t": 0.042,
+            "message": "Starting analysis of your latest message...",
+            "icon": "âš¡"
+          },
+          {
+            "t": 2.578,
+            "message": "Analysing your legal situation...",
+            "icon": "🔍"
+          },
+          {
+            "t": 2.58,
+            "message": "Preparing a fast grounded opinion from local materials...",
+            "icon": "⚡"
+          },
+          {
+            "t": 2.604,
+            "message": "[d1] Identifying legal provisions...",
+            "icon": "📖"
+          },
+          {
+            "t": 61.86,
+            "message": "[d1] No local bare act sections found",
+            "icon": "⚠️"
+          },
+          {
+            "t": 61.862,
+            "message": "[d1] Searching for judicial precedents...",
+            "icon": "⚖️"
+          },
+          {
+            "t": 101.133,
+            "message": "[d1] Found 3 judgements (including 1 Supreme Court)",
+            "icon": "✅"
+          },
+          {
+            "t": 101.153,
+            "message": "Now I have everything I need ? composing your legal analysis...",
+            "icon": "??"
+          }
+        ],
+        "token_preview": "Reviewing the local statutory provisions and the strongest precedents for your facts.I now have grounded precedent support as well and I am drafting the opinion.On the facts presently shared, the immediate issue is how the locally retrieved statutory materials and precedents bear on I was injured in a road accident six days ago when a car hit my motorcycle near ... The other driver had insurance, I have salary slips and bank statements to show lost income, and I also have medicine bills. Rathnas",
+        "done": {
+          "status": "done",
+          "response_type": "legal_opinion",
+          "opinion_text": "On the facts presently shared, the immediate issue is how the locally retrieved statutory materials and precedents bear on I was injured in a road accident six days ago when a car hit my motorcycle near ... The other driver had insurance, I have salary slips and bank statements to show lost income, and I also have medicine bills.\n\nRathnashalvan vs State Of Karnataka (Supreme Court of India, 2007) supports the analysis through Case: Rathnashalvan vs State Of Karnataka Court: Supreme Court of India Year: 2007 Cited by: 435 Issues: 5. Learned counsel for the State on the other hand supported the order passed by the courts below. Ratio: 6. Coming B.H. Nagarathana (Smt.) & Ors. vs Kanataka State Road Transport ... (High Court of Andhra Pradesh, 1998) supports the analysis through Case: B.H. Nagarathana (Smt.) & Ors. vs Kanataka State Road Transport ... Court: High Court of Andhra Pradesh Year: 1998 Cited by: 4 Issues: 1. This appeal is directed against award in MV OP No.682 of 1994 decided by the\n\nOn the present local record, the safest next step is to test these materials against the notice, communications, and timeline already mentioned before taking a firmer position.",
+          "bare_acts": [],
+          "case_laws": [],
+          "retrieved": [],
+          "progress": {
+            "start_time": "2026-03-28T06:48:11.360289Z",
+            "elapsed_seconds": 100.04,
+            "groups": [
+              {
+                "name": "Dispute Analysis",
+                "description": "Identifying distinct dispute components",
+                "steps": [
+                  {
+                    "timestamp": 1.39,
+                    "message": "Using fast interactive local profile",
+                    "metadata": {
+                      "disputes": 1
+                    }
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Research",
+                "description": "Retrieving bare acts and case laws for 1 dispute(s)",
+                "steps": [
+                  {
+                    "timestamp": 99.92,
+                    "message": "[d1] Retrieved 0 sections, 3 judgements",
+                    "metadata": {
+                      "dispute": "I was injured in a road accident six days ago when a car hit"
+                    }
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Response",
+                "description": "Formatting grounded materials for the next legal stage",
+                "steps": [
+                  {
+                    "timestamp": 99.93,
+                    "message": "Formatting sections and matching case laws to bare acts...",
+                    "metadata": {}
+                  },
+                  {
+                    "timestamp": 99.94,
+                    "message": "Generating legal opinion...",
+                    "metadata": {}
+                  },
+                  {
+                    "timestamp": 100.04,
+                    "message": "Calling Llama 3.1 8B model, GPU: NVIDIA GeForce RTX 4060 Laptop GPU",
+                    "metadata": {}
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Debug pipeline",
+                "description": "Intermediate retrieval stages per dispute (acts, sections, case laws)",
+                "steps": [
+                  {
+                    "timestamp": 100.04,
+                    "message": "[d1] Dispute: I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medic",
+                    "metadata": {}
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              }
+            ]
+          },
+          "model_used": "Llama 3.2 3B",
+          "analysis_stage": "precedents_ready",
+          "facts_summary": "I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medical expenses, lost income, and bike damage.\nI have the FIR number, wound certificate, discharge summary, X-ray reports, bike photographs, repair estimate, and two witnesses. I was admitted for two days and I have not filed a compensation claim yet.\nThe other driver had insurance, I have salary slips and bank statements to show lost income, and I also have medicine bills and follow-up records.\nproceed\n\nCHAT WINDOW SUMMARY\nUser facts and statements:\n1. I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medical expenses, lost income, and bike damage.\n2. I have the FIR number, wound certificate, discharge summary, X-ray reports, bike photographs, repair estimate, and two witnesses. I was admitted for two days and I have not filed a compensation claim yet.\n3. The other driver had insurance, I have salary slips and bank statements to show lost income, and I also have medicine bills and follow-up records.\n4. proceed\nQuestions already asked in this chat:\n1. I am sorry you are going through this. The next details matter because compensation cases become much stronger when the accident, treatment, disability, and income record all support each other. Do you have the accident \n2. What is the current status of my bike repair estimate and can I provide any supporting witness statements?"
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "Yes, please find the relevant judicial precedents too.",
+        "total_s": 4.746,
+        "first_step_s": 0.041,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.041,
+            "message": "Starting analysis of your latest message...",
+            "icon": "âš¡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "I am sorry you are going through this. The next details matter because compensation cases become much stronger when the accident, treatment, disability, and income record all support each other. Do you have the accident papers, what treatment and disability records are already available, and what documents best show your work and income before the accident?",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B",
+          "analysis_stage": "",
+          "facts_summary": ""
+        }
+      }
+    ]
+  },
+  {
+    "name": "Landlord lockout and belongings inside",
+    "turns": [
+      {
+        "kind": "submit_case",
+        "user": "My landlord changed the lock while my belongings are still inside. I need urgent access back to the flat and protection against illegal eviction.",
+        "total_s": 5.121,
+        "first_step_s": 0.03,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.03,
+            "message": "Reviewing the facts you shared...",
+            "icon": "âš¡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "Can you confirm whether the change of lock occurred during a planned maintenance window or unexpectedly?",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B",
+          "analysis_stage": "",
+          "facts_summary": ""
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "I have the rent agreement, rent payment proof, WhatsApp messages, and photos of the changed lock. No court order or written eviction notice was given.",
+        "total_s": 3.201,
+        "first_step_s": 0.03,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.03,
+            "message": "Starting analysis of your latest message...",
+            "icon": "âš¡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "I have enough to identify the applicable bare act sections for the dispute or disputes that emerge from what you have shared. If you want, you can add one last important fact now. Otherwise, just say 'proceed' and I will first show the relevant bare act sections from the local legal database.",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B",
+          "analysis_stage": "ready_for_bare_acts",
+          "facts_summary": "My landlord changed the lock while my belongings are still inside. I need urgent access back to the flat and protection against illegal eviction.\nI have the rent agreement, rent payment proof, WhatsApp messages, and photos of the changed lock. No court order or written eviction notice was given.\n\nCHAT WINDOW SUMMARY\nUser facts and statements:\n1. My landlord changed the lock while my belongings are still inside. I need urgent access back to the flat and protection against illegal eviction.\n2. I have the rent agreement, rent payment proof, WhatsApp messages, and photos of the changed lock. No court order or written eviction notice was given.\nQuestions already asked in this chat:\n1. Can you confirm whether the change of lock occurred during a planned maintenance window or unexpectedly?"
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "I went to the police station and made a diary complaint, informed the housing society, and there are no rent arrears at all. I am still locked out and my belongings are inside.",
+        "total_s": 4.326,
+        "first_step_s": 0.033,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.033,
+            "message": "Starting analysis of your latest message...",
+            "icon": "âš¡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "Can you provide more details about the specific stage or notice that triggered your complaint, and what led you to file a police station complaint initially?",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B",
+          "analysis_stage": "",
+          "facts_summary": ""
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "proceed",
+        "total_s": 28.407,
+        "first_step_s": 0.029,
+        "first_token_s": 3.932,
+        "steps": [
+          {
+            "t": 0.029,
+            "message": "Starting analysis of your latest message...",
+            "icon": "âš¡"
+          },
+          {
+            "t": 3.928,
+            "message": "Analysing your legal situation...",
+            "icon": "🔍"
+          },
+          {
+            "t": 3.93,
+            "message": "Preparing a fast grounded opinion from local materials...",
+            "icon": "⚡"
+          },
+          {
+            "t": 3.958,
+            "message": "[d1] Identifying legal provisions...",
+            "icon": "📖"
+          },
+          {
+            "t": 17.393,
+            "message": "[d1] Found 2 sections — Telangana Buildings (Lease, Rent And Eviction) Control Act, 1960, Delhi And Ajmer Rent Control Act, 1952",
+            "icon": "✅"
+          },
+          {
+            "t": 17.415,
+            "message": "[d1] Searching for judicial precedents...",
+            "icon": "⚖️"
+          },
+          {
+            "t": 28.23,
+            "message": "[d1] Found 3 judgements (from High Courts)",
+            "icon": "✅"
+          },
+          {
+            "t": 28.245,
+            "message": "Now I have everything I need ? composing your legal analysis...",
+            "icon": "??"
+          }
+        ],
+        "token_preview": "Reviewing the local statutory provisions and the strongest precedents for your facts.I found grounded statutory provisions and I am checking the closest precedents against them.I now have grounded precedent support as well and I am drafting the opinion.On the facts presently shared, the immediate issue is how the locally retrieved statutory materials and precedents bear on My landlord changed the lock while my belongings are still ... I am still locked out and my belongings are. Telangana Buildi",
+        "done": {
+          "status": "done",
+          "response_type": "legal_opinion",
+          "opinion_text": "On the facts presently shared, the immediate issue is how the locally retrieved statutory materials and precedents bear on My landlord changed the lock while my belongings are still ... I am still locked out and my belongings are.\n\nTelangana Buildings (Lease, Rent And Eviction) Control Act, 1960, Section 3 points to where the landlord fails to deliver possession of the building to the authorised officer, within forty-eight hours of the receipt of the intimation that the building is required for any of the purposes, or for occupation Delhi And Ajmer Rent Control Act, 1952, Section 13 points to Notwithstanding anything to the contrary contained in any other law or any contract, no decree or order for the recovery of possession of any premises shall be passed by any court in favour of the landlord against any te\n\nSuresh Gir vs K. Sahadev (High Court of Andhra Pradesh, 1994) supports the analysis through Case: Suresh Gir vs K. Sahadev Court: High Court of Andhra Pradesh Year: 1994 Cited by: 3 Issues: 2. Before the Rent Controller, in R.C. No. 773/-1993 an application under Section4 of the Andhra Pradesh Buildings (Lease, B. Ataullah vs K. Nisar Ahmed (High Court of Andhra Pradesh, 2001) supports the analysis through Case: B. Ataullah vs K. Nisar Ahmed Court: High Court of Andhra Pradesh Year: 2001 Cited by: 4 Issues: 3. The landlord filed RCC No.8 of 1996 on the file of the Principal District Munsif-cum-Rent Controller, Adoni claimi\n\nOn the present local record, the safest next step is to test these materials against the notice, communications, and timeline already mentioned before taking a firmer position.",
+          "bare_acts": [
+            {
+              "source": "BareActs\\Telangana\\2016_11.txt",
+              "text": "where the landlord fails to deliver possession of the building to the authorised officer, within forty-eight hours of the receipt of the intimation that the building is required for any of the purposes, or for occupation by any of the officers specified in sub-section (3) or within such further time as the authorised officer may by order in writing allow, the Government shall be deemed to be the tenant of the landlord only from the date on which he delivers possession;\n\nwhere owing to any omission or act or obstructive or preventive tactics on the part of the landlord there has been delay in coming to a decision whether or not the building is required for any of the purposes, or for occupation by any of the officers specified in sub-section (3), the Government shall be deemed to be the tenant of the landlord only from such later date as may be fixed by the authorised officer having regard to the circumstances of each case;\n\nthe rent payable shall be the fair rent, if any, fixed for the building under the provisions of this Act; and if no fair rent has been so fixed, such reasonable rent as the authorised officer may determine;",
+              "act_name": "Telangana Buildings (Lease, Rent And Eviction) Control Act, 1960",
+              "section_number": "3",
+              "section_title": "Notice of vacancy",
+              "title": "Telangana Buildings (Lease, Rent And Eviction) Control Act, 1960 — Section 3 (Notice of vacancy)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Telangana/2016_11.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 0.8859917521476746,
+              "_sort_score": 0.8859917521476746,
+              "_dispute_id": "d1",
+              "_dispute_label": "My landlord changed the lock while my belongings?",
+              "_dispute_text": "My landlord changed the lock while my belongings are still inside. I need urgent access back to the flat and protection against illegal eviction. I went to the police station and made a diary complaint, informed the housing society, and there are no rent arrears at all. I am still locked out and my belongings are inside.",
+              "related_case_laws": [
+                {
+                  "source": "CaseLaws\\Telangana HC\\1994\\HC_1994_SURESH_GIR_VS_K_SAHADEV.txt",
+                  "text": "Case: Suresh Gir vs K. Sahadev Court: High Court of Andhra Pradesh Year: 1994 Cited by: 3 Issues: 2. Before the Rent Controller, in R.C. No. 773/-1993 an application under Section4 of the Andhra Pradesh Buildings (Lease, Rent and Eviction) Control Act, 1960 (hereinafter referred to as 'the A.P. Rent Control Act') was filed by the respondent-landlord seeking fixation of fair-rent for the demised premises. The matter was contested by the petitioner",
+                  "case_name": "Suresh Gir vs K. Sahadev",
+                  "title": "Suresh Gir vs K. Sahadev (High Court of Andhra Pradesh, 1994)",
+                  "court": "High Court of Andhra Pradesh",
+                  "year": "1994",
+                  "citation": "",
+                  "binding_authority": "high_court",
+                  "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/CaseLaws/CaseLaws/Telangana%20HC/1994/HC_1994_SURESH_GIR_VS_K_SAHADEV.txt",
+                  "source_tag": "LOCAL_DB",
+                  "signature": null,
+                  "_rerank_score": 6.42474250793457,
+                  "_dispute_id": "d1"
+                },
+                {
+                  "source": "CaseLaws\\Telangana HC\\2001\\HC_2001_B_ATAULLAH_VS_K_NISAR_AHMED.txt",
+                  "text": "Case: B. Ataullah vs K. Nisar Ahmed Court: High Court of Andhra Pradesh Year: 2001 Cited by: 4 Issues: 3. The landlord filed RCC No.8 of 1996 on the file of the Principal District Munsif-cum-Rent Controller, Adoni claiming the relief of eviction of the tenant under Section 10(3)(a)(iii) of A.P. Buildings (Lease, Rent and Eviction) Control Act, 1960 (for short \"the Rent Control Act \") on the ground of bona fide requirement. The dispute relates to ",
+                  "case_name": "B. Ataullah vs K. Nisar Ahmed",
+                  "title": "B. Ataullah vs K. Nisar Ahmed (High Court of Andhra Pradesh, 2001)",
+                  "court": "High Court of Andhra Pradesh",
+                  "year": "2001",
+                  "citation": "",
+                  "binding_authority": "high_court",
+                  "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/CaseLaws/CaseLaws/Telangana%20HC/2001/HC_2001_B_ATAULLAH_VS_K_NISAR_AHMED.txt",
+                  "source_tag": "LOCAL_DB",
+                  "signature": null,
+                  "_rerank_score": 5.508903312683105,
+                  "_dispute_id": "d1"
+                }
+              ]
+            },
+            {
+              "source": "BareActs\\Union of India\\1952_7.txt",
+              "text": "Notwithstanding anything to the contrary contained in any other law or any contract, no decree or order for the recovery of possession of any premises shall be passed by any court in favour of the landlord against any tenant (including a tenant whose tenancy is terminated):\n\nProvided that nothing in this sub-section shall apply to any suit or other proceeding for such recovery of possession if the court is satisfied-\n\nthat the tenant has neither paid nor tendered the whole of the arrears of rent due within one month of the date on which a notice of demand for the arrears of rent has been served on him by the landlord in the manner provided in section 106 of the Transfer of Property Act, 1882 (\n\nthat the tenant without obtaining the consent of the landlord in writing has, after the commencement of this Act,-\n\nsub-let, assigned or otherwise parted with the possession of, the whole or any part of the premises; or\n\nused the premises for a purpose other than that for which they were let; or\n\nthat the tenant, without obtaining the consent of the landlord had, before the commencement of this Act,-",
+              "act_name": "Delhi And Ajmer Rent Control Act, 1952",
+              "section_number": "13",
+              "section_title": "Protection of a tenant against eviction",
+              "title": "Delhi And Ajmer Rent Control Act, 1952 — Section 13 (Protection of a tenant against eviction)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Union%20of%20India/1952_7.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 0.7311499714851379,
+              "_sort_score": 0.7311499714851379,
+              "_dispute_id": "d1",
+              "_dispute_label": "My landlord changed the lock while my belongings?",
+              "_dispute_text": "My landlord changed the lock while my belongings are still inside. I need urgent access back to the flat and protection against illegal eviction. I went to the police station and made a diary complaint, informed the housing society, and there are no rent arrears at all. I am still locked out and my belongings are inside.",
+              "related_case_laws": []
+            }
+          ],
+          "case_laws": [],
+          "retrieved": [
+            {
+              "source": "BareActs\\Telangana\\2016_11.txt",
+              "text": "where the landlord fails to deliver possession of the building to the authorised officer, within forty-eight hours of the receipt of the intimation that the building is required for any of the purposes, or for occupation by any of the officers specified in sub-section (3) or within such further time as the authorised officer may by order in writing allow, the Government shall be deemed to be the tenant of the landlord only from the date on which he delivers possession;\n\nwhere owing to any omission or act or obstructive or preventive tactics on the part of the landlord there has been delay in coming to a decision whether or not the building is required for any of the purposes, or for occupation by any of the officers specified in sub-section (3), the Government shall be deemed to be the tenant of the landlord only from such later date as may be fixed by the authorised officer having regard to the circumstances of each case;\n\nthe rent payable shall be the fair rent, if any, fixed for the building under the provisions of this Act; and if no fair rent has been so fixed, such reasonable rent as the authorised officer may determine;",
+              "act_name": "Telangana Buildings (Lease, Rent And Eviction) Control Act, 1960",
+              "section_number": "3",
+              "section_title": "Notice of vacancy",
+              "title": "Telangana Buildings (Lease, Rent And Eviction) Control Act, 1960 — Section 3 (Notice of vacancy)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Telangana/2016_11.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 0.8859917521476746,
+              "_sort_score": 0.8859917521476746,
+              "_dispute_id": "d1",
+              "_dispute_label": "My landlord changed the lock while my belongings?",
+              "_dispute_text": "My landlord changed the lock while my belongings are still inside. I need urgent access back to the flat and protection against illegal eviction. I went to the police station and made a diary complaint, informed the housing society, and there are no rent arrears at all. I am still locked out and my belongings are inside.",
+              "related_case_laws": [
+                {
+                  "source": "CaseLaws\\Telangana HC\\1994\\HC_1994_SURESH_GIR_VS_K_SAHADEV.txt",
+                  "text": "Case: Suresh Gir vs K. Sahadev Court: High Court of Andhra Pradesh Year: 1994 Cited by: 3 Issues: 2. Before the Rent Controller, in R.C. No. 773/-1993 an application under Section4 of the Andhra Pradesh Buildings (Lease, Rent and Eviction) Control Act, 1960 (hereinafter referred to as 'the A.P. Rent Control Act') was filed by the respondent-landlord seeking fixation of fair-rent for the demised premises. The matter was contested by the petitioner",
+                  "case_name": "Suresh Gir vs K. Sahadev",
+                  "title": "Suresh Gir vs K. Sahadev (High Court of Andhra Pradesh, 1994)",
+                  "court": "High Court of Andhra Pradesh",
+                  "year": "1994",
+                  "citation": "",
+                  "binding_authority": "high_court",
+                  "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/CaseLaws/CaseLaws/Telangana%20HC/1994/HC_1994_SURESH_GIR_VS_K_SAHADEV.txt",
+                  "source_tag": "LOCAL_DB",
+                  "signature": null,
+                  "_rerank_score": 6.42474250793457,
+                  "_dispute_id": "d1"
+                },
+                {
+                  "source": "CaseLaws\\Telangana HC\\2001\\HC_2001_B_ATAULLAH_VS_K_NISAR_AHMED.txt",
+                  "text": "Case: B. Ataullah vs K. Nisar Ahmed Court: High Court of Andhra Pradesh Year: 2001 Cited by: 4 Issues: 3. The landlord filed RCC No.8 of 1996 on the file of the Principal District Munsif-cum-Rent Controller, Adoni claiming the relief of eviction of the tenant under Section 10(3)(a)(iii) of A.P. Buildings (Lease, Rent and Eviction) Control Act, 1960 (for short \"the Rent Control Act \") on the ground of bona fide requirement. The dispute relates to ",
+                  "case_name": "B. Ataullah vs K. Nisar Ahmed",
+                  "title": "B. Ataullah vs K. Nisar Ahmed (High Court of Andhra Pradesh, 2001)",
+                  "court": "High Court of Andhra Pradesh",
+                  "year": "2001",
+                  "citation": "",
+                  "binding_authority": "high_court",
+                  "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/CaseLaws/CaseLaws/Telangana%20HC/2001/HC_2001_B_ATAULLAH_VS_K_NISAR_AHMED.txt",
+                  "source_tag": "LOCAL_DB",
+                  "signature": null,
+                  "_rerank_score": 5.508903312683105,
+                  "_dispute_id": "d1"
+                }
+              ]
+            },
+            {
+              "source": "BareActs\\Union of India\\1952_7.txt",
+              "text": "Notwithstanding anything to the contrary contained in any other law or any contract, no decree or order for the recovery of possession of any premises shall be passed by any court in favour of the landlord against any tenant (including a tenant whose tenancy is terminated):\n\nProvided that nothing in this sub-section shall apply to any suit or other proceeding for such recovery of possession if the court is satisfied-\n\nthat the tenant has neither paid nor tendered the whole of the arrears of rent due within one month of the date on which a notice of demand for the arrears of rent has been served on him by the landlord in the manner provided in section 106 of the Transfer of Property Act, 1882 (\n\nthat the tenant without obtaining the consent of the landlord in writing has, after the commencement of this Act,-\n\nsub-let, assigned or otherwise parted with the possession of, the whole or any part of the premises; or\n\nused the premises for a purpose other than that for which they were let; or\n\nthat the tenant, without obtaining the consent of the landlord had, before the commencement of this Act,-",
+              "act_name": "Delhi And Ajmer Rent Control Act, 1952",
+              "section_number": "13",
+              "section_title": "Protection of a tenant against eviction",
+              "title": "Delhi And Ajmer Rent Control Act, 1952 — Section 13 (Protection of a tenant against eviction)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Union%20of%20India/1952_7.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 0.7311499714851379,
+              "_sort_score": 0.7311499714851379,
+              "_dispute_id": "d1",
+              "_dispute_label": "My landlord changed the lock while my belongings?",
+              "_dispute_text": "My landlord changed the lock while my belongings are still inside. I need urgent access back to the flat and protection against illegal eviction. I went to the police station and made a diary complaint, informed the housing society, and there are no rent arrears at all. I am still locked out and my belongings are inside.",
+              "related_case_laws": []
+            }
+          ],
+          "progress": {
+            "start_time": "2026-03-28T06:48:57.172327Z",
+            "elapsed_seconds": 25.75,
+            "groups": [
+              {
+                "name": "Dispute Analysis",
+                "description": "Identifying distinct dispute components",
+                "steps": [
+                  {
+                    "timestamp": 1.39,
+                    "message": "Using fast interactive local profile",
+                    "metadata": {
+                      "disputes": 1
+                    }
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Research",
+                "description": "Retrieving bare acts and case laws for 1 dispute(s)",
+                "steps": [
+                  {
+                    "timestamp": 25.68,
+                    "message": "[d1] Retrieved 2 sections, 3 judgements",
+                    "metadata": {
+                      "dispute": "My landlord changed the lock while my belongings are still i"
+                    }
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Response",
+                "description": "Formatting grounded materials for the next legal stage",
+                "steps": [
+                  {
+                    "timestamp": 25.68,
+                    "message": "Formatting sections and matching case laws to bare acts...",
+                    "metadata": {}
+                  },
+                  {
+                    "timestamp": 25.69,
+                    "message": "Generating legal opinion...",
+                    "metadata": {}
+                  },
+                  {
+                    "timestamp": 25.75,
+                    "message": "Calling Llama 3.1 8B model, GPU: NVIDIA GeForce RTX 4060 Laptop GPU",
+                    "metadata": {}
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Debug pipeline",
+                "description": "Intermediate retrieval stages per dispute (acts, sections, case laws)",
+                "steps": [
+                  {
+                    "timestamp": 25.75,
+                    "message": "[d1] Dispute: My landlord changed the lock while my belongings are still inside. I need urgent access back to the flat and protection ",
+                    "metadata": {}
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              }
+            ]
+          },
+          "model_used": "Llama 3.2 3B",
+          "analysis_stage": "precedents_ready",
+          "facts_summary": "My landlord changed the lock while my belongings are still inside. I need urgent access back to the flat and protection against illegal eviction.\nI have the rent agreement, rent payment proof, WhatsApp messages, and photos of the changed lock. No court order or written eviction notice was given.\nI went to the police station and made a diary complaint, informed the housing society, and there are no rent arrears at all. I am still locked out and my belongings are inside.\nproceed\n\nCHAT WINDOW SUMMARY\nUser facts and statements:\n1. My landlord changed the lock while my belongings are still inside. I need urgent access back to the flat and protection against illegal eviction.\n2. I have the rent agreement, rent payment proof, WhatsApp messages, and photos of the changed lock. No court order or written eviction notice was given.\n3. I went to the police station and made a diary complaint, informed the housing society, and there are no rent arrears at all. I am still locked out and my belongings are inside.\n4. proceed\nQuestions already asked in this chat:\n1. Can you confirm whether the change of lock occurred during a planned maintenance window or unexpectedly?\n2. Can you provide more details about the specific stage or notice that triggered your complaint, and what led you to file a police station complaint initially?"
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "Yes, please find the relevant judicial precedents too.",
+        "total_s": 3.906,
+        "first_step_s": 0.032,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.032,
+            "message": "Starting analysis of your latest message...",
+            "icon": "âš¡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "I have enough to identify the applicable bare act sections for the dispute or disputes that emerge from what you have shared. If you want, you can add one last important fact now. Otherwise, just say 'proceed' and I will first show the relevant bare act sections from the local legal database.",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B",
+          "analysis_stage": "ready_for_bare_acts",
+          "facts_summary": "My landlord changed the lock while my belongings are still inside. I need urgent access back to the flat and protection against illegal eviction.\nI have the rent agreement, rent payment proof, WhatsApp messages, and photos of the changed lock. No court order or written eviction notice was given.\nI went to the police station and made a diary complaint, informed the housing society, and there are no rent arrears at all. I am still locked out and my belongings are inside.\nproceed\nYes, please find the relevant judicial precedents too.\n\nCHAT WINDOW SUMMARY\nUser facts and statements:\n1. My landlord changed the lock while my belongings are still inside. I need urgent access back to the flat and protection against illegal eviction.\n2. I have the rent agreement, rent payment proof, WhatsApp messages, and photos of the changed lock. No court order or written eviction notice was given.\n3. I went to the police station and made a diary complaint, informed the housing society, and there are no rent arrears at all. I am still locked out and my belongings are inside.\n4. proceed\n5. Yes, please find the relevant judicial precedents too.\nQuestions already asked in this chat:\n1. Can you confirm whether the change of lock occurred during a planned maintenance window or unexpectedly?\n2. Can you provide more details about the specific stage or notice that triggered your complaint, and what led you to file a police station complaint initially?"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Security cheque / cheque bounce dispute",
+    "turns": [
+      {
+        "kind": "submit_case",
+        "user": "A cheque I gave has been presented and I received a legal notice, but it was only a security cheque and the underlying business contract was never performed.",
+        "total_s": 6.78,
+        "first_step_s": 0.052,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.052,
+            "message": "Reviewing the facts you shared...",
+            "icon": "âš¡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "That gives the defence more shape. If the cheques were issued as security and the underlying account was later settled or materially reduced, the complaint has to be tested against the real liability position rather than against the cheque in isolation. The next details will help me judge how strong that defence really is. Do you have the financing papers, the best repayment or ledger trail, and any notice reply or message where the security-cheque understanding or settlement position was clearly stated?",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B",
+          "analysis_stage": "",
+          "facts_summary": ""
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "I have the contract, the legal notice, the bank return memo, and WhatsApp chats showing the promised supply never happened. No civil suit has been filed yet.",
+        "total_s": 5.65,
+        "first_step_s": 0.044,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.044,
+            "message": "Starting analysis of your latest message...",
+            "icon": "âš¡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "I have enough to identify the applicable bare act sections for the dispute or disputes that emerge from what you have shared. If you want, you can add one last important fact now. Otherwise, just say 'proceed' and I will first show the relevant bare act sections from the local legal database.",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B",
+          "analysis_stage": "ready_for_bare_acts",
+          "facts_summary": "A cheque I gave has been presented and I received a legal notice, but it was only a security cheque and the underlying business contract was never performed.\nI have the contract, the legal notice, the bank return memo, and WhatsApp chats showing the promised supply never happened. No civil suit has been filed yet.\n\nCHAT WINDOW SUMMARY\nUser facts and statements:\n1. A cheque I gave has been presented and I received a legal notice, but it was only a security cheque and the underlying business contract was never performed.\n2. I have the contract, the legal notice, the bank return memo, and WhatsApp chats showing the promised supply never happened. No civil suit has been filed yet.\nQuestions already asked in this chat:\n1. That gives the defence more shape. If the cheques were issued as security and the underlying account was later settled or materially reduced, the complaint has to be tested against the real liability position rather than"
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "I sent a lawyer reply to the notice, no goods were delivered, and I dispute the amount claimed because the underlying obligation never matured.",
+        "total_s": 23.228,
+        "first_step_s": 0.058,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.058,
+            "message": "Starting analysis of your latest message...",
+            "icon": "âš¡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "I understand why this is concerning. The next details will help me understand the situation properly and assess what can be supported from here. Right now, what is the current position on the present control over the account or property?",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B",
+          "analysis_stage": "",
+          "facts_summary": ""
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "proceed",
+        "total_s": 31.41,
+        "first_step_s": 0.029,
+        "first_token_s": 3.973,
+        "steps": [
+          {
+            "t": 0.029,
+            "message": "Starting analysis of your latest message...",
+            "icon": "âš¡"
+          },
+          {
+            "t": 3.965,
+            "message": "Analysing your legal situation...",
+            "icon": "🔍"
+          },
+          {
+            "t": 3.972,
+            "message": "Preparing a fast grounded opinion from local materials...",
+            "icon": "⚡"
+          },
+          {
+            "t": 3.988,
+            "message": "[d1] Identifying legal provisions...",
+            "icon": "📖"
+          },
+          {
+            "t": 20.503,
+            "message": "[d1] Found 2 sections — Telangana (Agricultural Produce And Livestock) Markets Rules, 1969, Telangana Civil Rules Of Practice And Circular Orders, 1980",
+            "icon": "✅"
+          },
+          {
+            "t": 20.526,
+            "message": "[d1] Searching for judicial precedents...",
+            "icon": "⚖️"
+          },
+          {
+            "t": 31.177,
+            "message": "[d1] Found 1 judgement (including 1 Supreme Court)",
+            "icon": "✅"
+          },
+          {
+            "t": 31.194,
+            "message": "Now I have everything I need ? composing your legal analysis...",
+            "icon": "??"
+          }
+        ],
+        "token_preview": "Reviewing the local statutory provisions and the strongest precedents for your facts.I found grounded statutory provisions and I am checking the closest precedents against them.I now have grounded precedent support as well and I am drafting the opinion.On the facts presently shared, the immediate issue is how the locally retrieved statutory materials and precedents bear on A cheque I gave has been presented and I received a legal notice, but it was only a security cheque and the underlying ... I",
+        "done": {
+          "status": "done",
+          "response_type": "legal_opinion",
+          "opinion_text": "On the facts presently shared, the immediate issue is how the locally retrieved statutory materials and precedents bear on A cheque I gave has been presented and I received a legal notice, but it was only a security cheque and the underlying ... I sent a lawyer reply to the notice, no goods were delivered, and I dispute the amount claimed because the underlying.\n\nTelangana (Agricultural Produce And Livestock) Markets Rules, 1969, Section 109 points to 109. Signing of cheques. - No cheque shall ordinarily be signed unless required for immediate delivery to the person to whom the money is to be paid. Telangana Civil Rules Of Practice And Circular Orders, 1980, Section 239 points to 239. Presentation of receipt: - The person making any such deposit as aforesaid shall present therewith a memo, in Form No. 61, headed with the cause-title of the suit, appeal or matter, and specifying the purpose for wh\n\nAgricultural Market Committee vs Shalimar Chemical Works Ltd (Supreme Court of India, 1997) supports the analysis through Case: Agricultural Market Committee vs Shalimar Chemical Works Ltd Court: Supreme Court of India Year: 1997 Cited by: 103 Issues: 6. In order to levy market fee on the transaction of sale and purchase by the respondent,\n\nOn the present local record, the safest next step is to test these materials against the notice, communications, and timeline already mentioned before taking a firmer position.",
+          "bare_acts": [
+            {
+              "source": "BareActs\\Telangana\\1969_0.txt",
+              "text": "109.\nSigning of cheques.\n- No cheque shall ordinarily be signed unless required for immediate delivery to the person to whom the money is to be paid.",
+              "act_name": "Telangana (Agricultural Produce And Livestock) Markets Rules, 1969",
+              "section_number": "109",
+              "section_title": "Signing of cheques",
+              "title": "Telangana (Agricultural Produce And Livestock) Markets Rules, 1969 — Section 109 (Signing of cheques)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Telangana/1969_0.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 1.617302417755127,
+              "_sort_score": 1.617302417755127,
+              "_dispute_id": "d1",
+              "_dispute_label": "A cheque I gave has been presented and?",
+              "_dispute_text": "A cheque I gave has been presented and I received a legal notice, but it was only a security cheque and the underlying business contract was never performed. I have the contract, the legal notice, the bank return memo, and WhatsApp chats showing the promised supply never happened. No civil suit has been filed yet. I sent a lawyer reply to the notice, no goods were delivered, and I dispute the amount claimed because the underlying obligation never matured.",
+              "related_case_laws": [
+                {
+                  "source": "CaseLaws\\Supreme Court\\1997\\SC_1997_AGRICULTURAL_MARKET_COMMITTEE_VS_SHALIMAR_CHEMICAL_WORKS_LTD.txt",
+                  "text": "Case: Agricultural Market Committee vs Shalimar Chemical Works Ltd Court: Supreme Court of India Year: 1997 Cited by: 103 Issues: 6. In order to levy market fee on the transaction of sale and purchase by the respondent, the Assessing Authority had relied upon Rule 74(2) of the Andhra Pradesh (Agricultural Produce and Livestock) Market Rules, 1969 (for short, 'Rules') and Explanation to Bye-law 24(5) of the Bye-laws of the Committee which containe",
+                  "case_name": "Agricultural Market Committee vs Shalimar Chemical Works Ltd",
+                  "title": "Agricultural Market Committee vs Shalimar Chemical Works Ltd (Supreme Court of India, 1997)",
+                  "court": "Supreme Court of India",
+                  "year": "1997",
+                  "citation": "",
+                  "binding_authority": "supreme_court",
+                  "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/CaseLaws/CaseLaws/Supreme%20Court/1997/SC_1997_AGRICULTURAL_MARKET_COMMITTEE_VS_SHALIMAR_CHEMICAL_WORKS_LTD.txt",
+                  "source_tag": "LOCAL_DB",
+                  "signature": null,
+                  "_rerank_score": 5.841738700866699,
+                  "_dispute_id": "d1"
+                }
+              ]
+            },
+            {
+              "source": "BareActs\\Telangana\\1983_1.txt",
+              "text": "239.\nPresentation of receipt:\n- The person making any such deposit as aforesaid shall present therewith a memo, in Form No. 61, headed with the cause-title of the suit, appeal or matter, and specifying the purpose for which the deposit is made, and a receipt shall be granted to the depositor.\n240.\nRepayment:\n(1)\nThe repayment of any cash, which has not been extended for the purpose for which the same deposited shall be made upon the production of the receipt and under the immediate superintendence of the Judge, who shall satisfy himself as to the identity of the person to whom such repayment is made and of his authority to receive it.\n(2)\nProvided that if the amount so deposited or the unexpended portion thereof has been sent by the Court to a Bank or Treasury Officer, Rules 231 to 236 inclusive, shall apply to an application for repayment.\n(3)\nIf the applicant is unable to produce receipt, he shall file an affidavit accounting for its non-production.\n241.\n[Arrest of public servant]\n[H.C. Cir. 1111/1907 and Dis. No.",
+              "act_name": "Telangana Civil Rules Of Practice And Circular Orders, 1980",
+              "section_number": "239",
+              "section_title": "Presentation of receipt:",
+              "title": "Telangana Civil Rules Of Practice And Circular Orders, 1980 — Section 239 (Presentation of receipt:)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Telangana/1983_1.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 0.8807631134986877,
+              "_sort_score": 0.8807631134986877,
+              "_dispute_id": "d1",
+              "_dispute_label": "A cheque I gave has been presented and?",
+              "_dispute_text": "A cheque I gave has been presented and I received a legal notice, but it was only a security cheque and the underlying business contract was never performed. I have the contract, the legal notice, the bank return memo, and WhatsApp chats showing the promised supply never happened. No civil suit has been filed yet. I sent a lawyer reply to the notice, no goods were delivered, and I dispute the amount claimed because the underlying obligation never matured.",
+              "related_case_laws": []
+            }
+          ],
+          "case_laws": [],
+          "retrieved": [
+            {
+              "source": "BareActs\\Telangana\\1969_0.txt",
+              "text": "109.\nSigning of cheques.\n- No cheque shall ordinarily be signed unless required for immediate delivery to the person to whom the money is to be paid.",
+              "act_name": "Telangana (Agricultural Produce And Livestock) Markets Rules, 1969",
+              "section_number": "109",
+              "section_title": "Signing of cheques",
+              "title": "Telangana (Agricultural Produce And Livestock) Markets Rules, 1969 — Section 109 (Signing of cheques)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Telangana/1969_0.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 1.617302417755127,
+              "_sort_score": 1.617302417755127,
+              "_dispute_id": "d1",
+              "_dispute_label": "A cheque I gave has been presented and?",
+              "_dispute_text": "A cheque I gave has been presented and I received a legal notice, but it was only a security cheque and the underlying business contract was never performed. I have the contract, the legal notice, the bank return memo, and WhatsApp chats showing the promised supply never happened. No civil suit has been filed yet. I sent a lawyer reply to the notice, no goods were delivered, and I dispute the amount claimed because the underlying obligation never matured.",
+              "related_case_laws": [
+                {
+                  "source": "CaseLaws\\Supreme Court\\1997\\SC_1997_AGRICULTURAL_MARKET_COMMITTEE_VS_SHALIMAR_CHEMICAL_WORKS_LTD.txt",
+                  "text": "Case: Agricultural Market Committee vs Shalimar Chemical Works Ltd Court: Supreme Court of India Year: 1997 Cited by: 103 Issues: 6. In order to levy market fee on the transaction of sale and purchase by the respondent, the Assessing Authority had relied upon Rule 74(2) of the Andhra Pradesh (Agricultural Produce and Livestock) Market Rules, 1969 (for short, 'Rules') and Explanation to Bye-law 24(5) of the Bye-laws of the Committee which containe",
+                  "case_name": "Agricultural Market Committee vs Shalimar Chemical Works Ltd",
+                  "title": "Agricultural Market Committee vs Shalimar Chemical Works Ltd (Supreme Court of India, 1997)",
+                  "court": "Supreme Court of India",
+                  "year": "1997",
+                  "citation": "",
+                  "binding_authority": "supreme_court",
+                  "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/CaseLaws/CaseLaws/Supreme%20Court/1997/SC_1997_AGRICULTURAL_MARKET_COMMITTEE_VS_SHALIMAR_CHEMICAL_WORKS_LTD.txt",
+                  "source_tag": "LOCAL_DB",
+                  "signature": null,
+                  "_rerank_score": 5.841738700866699,
+                  "_dispute_id": "d1"
+                }
+              ]
+            },
+            {
+              "source": "BareActs\\Telangana\\1983_1.txt",
+              "text": "239.\nPresentation of receipt:\n- The person making any such deposit as aforesaid shall present therewith a memo, in Form No. 61, headed with the cause-title of the suit, appeal or matter, and specifying the purpose for which the deposit is made, and a receipt shall be granted to the depositor.\n240.\nRepayment:\n(1)\nThe repayment of any cash, which has not been extended for the purpose for which the same deposited shall be made upon the production of the receipt and under the immediate superintendence of the Judge, who shall satisfy himself as to the identity of the person to whom such repayment is made and of his authority to receive it.\n(2)\nProvided that if the amount so deposited or the unexpended portion thereof has been sent by the Court to a Bank or Treasury Officer, Rules 231 to 236 inclusive, shall apply to an application for repayment.\n(3)\nIf the applicant is unable to produce receipt, he shall file an affidavit accounting for its non-production.\n241.\n[Arrest of public servant]\n[H.C. Cir. 1111/1907 and Dis. No.",
+              "act_name": "Telangana Civil Rules Of Practice And Circular Orders, 1980",
+              "section_number": "239",
+              "section_title": "Presentation of receipt:",
+              "title": "Telangana Civil Rules Of Practice And Circular Orders, 1980 — Section 239 (Presentation of receipt:)",
+              "url": "file:///C:/Users/rahul/Nyaymalaw-5.0/legal_database/raw_data/BareActs/BareActs/Telangana/1983_1.txt",
+              "source_tag": "LOCAL_DB",
+              "_rerank_score": 0.8807631134986877,
+              "_sort_score": 0.8807631134986877,
+              "_dispute_id": "d1",
+              "_dispute_label": "A cheque I gave has been presented and?",
+              "_dispute_text": "A cheque I gave has been presented and I received a legal notice, but it was only a security cheque and the underlying business contract was never performed. I have the contract, the legal notice, the bank return memo, and WhatsApp chats showing the promised supply never happened. No civil suit has been filed yet. I sent a lawyer reply to the notice, no goods were delivered, and I dispute the amount claimed because the underlying obligation never matured.",
+              "related_case_laws": []
+            }
+          ],
+          "progress": {
+            "start_time": "2026-03-28T06:50:08.116767Z",
+            "elapsed_seconds": 29.21,
+            "groups": [
+              {
+                "name": "Dispute Analysis",
+                "description": "Identifying distinct dispute components",
+                "steps": [
+                  {
+                    "timestamp": 1.91,
+                    "message": "Using fast interactive local profile",
+                    "metadata": {
+                      "disputes": 1
+                    }
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Research",
+                "description": "Retrieving bare acts and case laws for 1 dispute(s)",
+                "steps": [
+                  {
+                    "timestamp": 29.11,
+                    "message": "[d1] Retrieved 2 sections, 1 judgements",
+                    "metadata": {
+                      "dispute": "A cheque I gave has been presented and I received a legal no"
+                    }
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Response",
+                "description": "Formatting grounded materials for the next legal stage",
+                "steps": [
+                  {
+                    "timestamp": 29.11,
+                    "message": "Formatting sections and matching case laws to bare acts...",
+                    "metadata": {}
+                  },
+                  {
+                    "timestamp": 29.13,
+                    "message": "Generating legal opinion...",
+                    "metadata": {}
+                  },
+                  {
+                    "timestamp": 29.21,
+                    "message": "Calling Llama 3.1 8B model, GPU: NVIDIA GeForce RTX 4060 Laptop GPU",
+                    "metadata": {}
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              },
+              {
+                "name": "Debug pipeline",
+                "description": "Intermediate retrieval stages per dispute (acts, sections, case laws)",
+                "steps": [
+                  {
+                    "timestamp": 29.21,
+                    "message": "[d1] Dispute: A cheque I gave has been presented and I received a legal notice, but it was only a security cheque and the underlying b",
+                    "metadata": {}
+                  }
+                ],
+                "stats": {
+                  "total_searched": 0,
+                  "passed_threshold": 0,
+                  "included": 0,
+                  "ignored": 0
+                }
+              }
+            ]
+          },
+          "model_used": "Llama 3.2 3B",
+          "analysis_stage": "precedents_ready",
+          "facts_summary": "A cheque I gave has been presented and I received a legal notice, but it was only a security cheque and the underlying business contract was never performed.\nI have the contract, the legal notice, the bank return memo, and WhatsApp chats showing the promised supply never happened. No civil suit has been filed yet.\nI sent a lawyer reply to the notice, no goods were delivered, and I dispute the amount claimed because the underlying obligation never matured.\nproceed\n\nCHAT WINDOW SUMMARY\nUser facts and statements:\n1. A cheque I gave has been presented and I received a legal notice, but it was only a security cheque and the underlying business contract was never performed.\n2. I have the contract, the legal notice, the bank return memo, and WhatsApp chats showing the promised supply never happened. No civil suit has been filed yet.\n3. I sent a lawyer reply to the notice, no goods were delivered, and I dispute the amount claimed because the underlying obligation never matured.\n4. proceed\nQuestions already asked in this chat:\n1. That gives the defence more shape. If the cheques were issued as security and the underlying account was later settled or materially reduced, the complaint has to be tested against the real liability position rather than\n2. I understand why this is concerning. The next details will help me understand the situation properly and assess what can be supported from here. Right now, what is the current position on the present control over the acc"
+        }
+      },
+      {
+        "kind": "continue",
+        "user": "Yes, please find the relevant judicial precedents too.",
+        "total_s": 5.48,
+        "first_step_s": 0.039,
+        "first_token_s": null,
+        "steps": [
+          {
+            "t": 0.039,
+            "message": "Starting analysis of your latest message...",
+            "icon": "âš¡"
+          }
+        ],
+        "token_preview": "",
+        "done": {
+          "status": "question",
+          "next_question": "I have enough to identify the applicable bare act sections for the dispute or disputes that emerge from what you have shared. If you want, you can add one last important fact now. Otherwise, just say 'proceed' and I will first show the relevant bare act sections from the local legal database.",
+          "retrieved": [],
+          "model_used": "Llama 3.2 3B",
+          "analysis_stage": "ready_for_bare_acts",
+          "facts_summary": "A cheque I gave has been presented and I received a legal notice, but it was only a security cheque and the underlying business contract was never performed.\nI have the contract, the legal notice, the bank return memo, and WhatsApp chats showing the promised supply never happened. No civil suit has been filed yet.\nI sent a lawyer reply to the notice, no goods were delivered, and I dispute the amount claimed because the underlying obligation never matured.\nproceed\nYes, please find the relevant judicial precedents too.\n\nCHAT WINDOW SUMMARY\nUser facts and statements:\n1. A cheque I gave has been presented and I received a legal notice, but it was only a security cheque and the underlying business contract was never performed.\n2. I have the contract, the legal notice, the bank return memo, and WhatsApp chats showing the promised supply never happened. No civil suit has been filed yet.\n3. I sent a lawyer reply to the notice, no goods were delivered, and I dispute the amount claimed because the underlying obligation never matured.\n4. proceed\n5. Yes, please find the relevant judicial precedents too.\nQuestions already asked in this chat:\n1. That gives the defence more shape. If the cheques were issued as security and the underlying account was later settled or materially reduced, the complaint has to be tested against the real liability position rather than\n2. I understand why this is concerning. The next details will help me understand the situation properly and assess what can be supported from here. Right now, what is the current position on the present control over the acc"
+        }
+      }
+    ]
+  }
+]
