@@ -85,6 +85,16 @@ MAX_BARE_ACTS_OVERALL = 12          # Safety cap on total sections sent to UI ac
 MAX_SECTIONS_PER_DISPUTE_FOR_OPINION = 3
 MAX_CASE_LAWS_PER_DISPUTE = 3
 
+# Retrieved text budget — how many characters of a chunk to send to the LLM.
+# Local Llama (8K–16K context) needed aggressive truncation; API models have 200K+
+# context windows and must receive full chunks to reason correctly over legal text.
+# Indian bare act sections and case law chunks are stored at ≤2000 chars each.
+# Set to a large value so full chunks always pass through; override at call site
+# only if a specific prompt has its own hard size limit.
+_MAX_SECTION_TEXT = 2000    # chars per bare act section
+_MAX_CASE_TEXT    = 2000    # chars per case law chunk
+_MAX_JSON_PAYLOAD = 60_000  # chars for JSON-serialised payload (replaces old 2000/3000 caps)
+
 # Act-level pre-filter (for 100+ act indexes)
 # An act qualifies if its highest-scoring section clears this threshold.
 # ms-marco cross-encoder logits: 5.0 captures the "correct act, right domain" range
@@ -2605,7 +2615,7 @@ def _explain_sections_and_get_followup(dispute_text: str, bare_acts: list, conve
     # Build a concise list — cap at 10 sections to keep prompt manageable
     lines = []
     for ba in bare_acts[:10]:
-        section_text = (ba.get("full_text") or ba.get("text") or "")[:250]
+        section_text = (ba.get("full_text") or ba.get("text") or "")[:_MAX_SECTION_TEXT]
         lines.append(
             f"- {ba.get('act_name', 'Unknown Act')} § {ba.get('section_number', '?')} "
             f"({ba.get('section_title', '')}): {section_text}"
@@ -4492,13 +4502,27 @@ def _repair_bare_act_next_steps(
 
 
 
-_BARE_ACT_LLM_MAX_ATTEMPTS = 3  # 1 initial + 2 retries
+_BARE_ACT_LLM_MAX_ATTEMPTS = 10   # max retries for transient errors (timeouts / connectivity)
+_BARE_ACT_PARSE_RETRY_MAX  = 3    # max retries for JSON parse / schema failures
 
 
 def _is_llm_transient_error(exc: Exception) -> bool:
     """True when the error is likely a timeout or connectivity issue worth retrying."""
     msg = str(exc).lower()
     return any(k in msg for k in ("timeout", "timed out", "unreachable", "connection", "connect"))
+
+
+# Appended to the prompt on parse-failure retries so the model understands why it is being retried.
+_BARE_ACT_JSON_REPAIR_HINT = """
+
+IMPORTANT — your previous response could not be parsed as valid JSON.
+Return ONLY a single valid JSON object with no prose, no markdown, no code fences, no explanation.
+The object must have exactly these top-level keys:
+  "summary_text"         — string, 3-6 sentences of flowing prose
+  "section_explanations" — array of {act_name, section_number, explanation}
+  "next_steps"           — array of {title, summary}
+  "next_steps_summary"   — string
+Start your response with { and end with }. Nothing before or after the JSON object."""
 
 
 def _generate_bare_act_stage_text(
@@ -4527,9 +4551,13 @@ def _generate_bare_act_stage_text(
     )
 
     last_exc: Exception | None = None
-    for attempt in range(_BARE_ACT_LLM_MAX_ATTEMPTS):
+    transient_attempts = 0   # how many times we retried due to timeout/connectivity
+    parse_attempts     = 0   # how many times we retried due to JSON parse / schema failure
+    current_prompt     = prompt  # may grow a JSON repair hint on parse failures
+
+    while True:
         try:
-            raw = ask_llm(prompt, model=model_override)
+            raw = ask_llm(current_prompt, model=model_override)
             parsed = _extract_json(raw)
             if not isinstance(parsed, dict):
                 raise ValueError("No valid JSON returned for bare-act stage")
@@ -4595,36 +4623,55 @@ def _generate_bare_act_stage_text(
 
         except Exception as exc:
             last_exc = exc
-            is_last_attempt = attempt == _BARE_ACT_LLM_MAX_ATTEMPTS - 1
             is_transient = _is_llm_transient_error(exc)
-            logger.warning(
-                "Bare-act stage LLM attempt %d/%d failed%s: %s",
-                attempt + 1,
-                _BARE_ACT_LLM_MAX_ATTEMPTS,
-                " (transient)" if is_transient else "",
-                exc,
-            )
-            if not is_last_attempt:
-                # Surface the retry to the user so they know the model is slow
+
+            if is_transient:
+                # ── Timeout / connectivity issue ─────────────────────────────
+                transient_attempts += 1
+                logger.warning(
+                    "Bare-act stage LLM attempt %d/%d failed (transient): %s",
+                    transient_attempts, _BARE_ACT_LLM_MAX_ATTEMPTS, exc,
+                )
+                if transient_attempts >= _BARE_ACT_LLM_MAX_ATTEMPTS:
+                    break  # exhausted transient budget → fall through to deterministic fallback
+                # Tell the user the model is slow — they can see the wait is real
                 retry_msg = (
                     f"The model is taking longer than expected "
-                    f"(attempt {attempt + 1} of {_BARE_ACT_LLM_MAX_ATTEMPTS} did not complete). "
+                    f"(attempt {transient_attempts} of {_BARE_ACT_LLM_MAX_ATTEMPTS} did not complete). "
                     f"Retrying now\u2026 "
                 )
                 _stream_precomposed_text(retry_msg, token_callback=token_callback)
-                logger.info("Retrying bare-act stage LLM call (attempt %d)", attempt + 2)
+                # Retry with the same prompt — connectivity may recover
+                current_prompt = prompt
 
-    # All attempts exhausted — surface the final error and return the deterministic fallback
+            else:
+                # ── Parse / schema failure — model responded but output was wrong ─
+                parse_attempts += 1
+                logger.warning(
+                    "Bare-act stage LLM parse failure %d/%d: %s",
+                    parse_attempts, _BARE_ACT_PARSE_RETRY_MAX, exc,
+                )
+                if parse_attempts >= _BARE_ACT_PARSE_RETRY_MAX:
+                    break  # exhausted parse budget → fall through to deterministic fallback
+                # Silent retry — user does not need to see JSON format errors.
+                # Append the repair hint so the model understands what went wrong.
+                current_prompt = prompt + _BARE_ACT_JSON_REPAIR_HINT
+
+    # All attempts exhausted — surface the final error and return the deterministic fallback.
+    # Only show a UI message for transient failures (model was unreachable).
+    # Parse failures are silent from the user's perspective — just show the fallback content.
     logger.error(
-        "Bare-act stage summary generation failed after %d attempts: %s",
-        _BARE_ACT_LLM_MAX_ATTEMPTS,
-        last_exc,
+        "Bare-act stage summary generation failed (transient_attempts=%d, parse_attempts=%d): %s",
+        transient_attempts, parse_attempts, last_exc,
     )
-    error_notice = (
-        "The model did not respond in time after multiple attempts. "
-        "Showing the grounded statutory summary from the local database instead.\n\n"
-    )
-    _stream_precomposed_text(error_notice, token_callback=token_callback)
+    if transient_attempts > 0:
+        # Model was genuinely unreachable — tell the user
+        error_notice = (
+            "The model did not respond in time after multiple attempts. "
+            "Showing the grounded statutory summary from the local database instead.\n\n"
+        )
+        _stream_precomposed_text(error_notice, token_callback=token_callback)
+    # For parse failures only: fall through silently — the fallback content is streamed below
     fallback = _build_grounded_bare_act_fallback(stage_bare, facts_summary=facts_summary)
     next_steps, repair_summary = _repair_bare_act_next_steps(
         facts_summary, stage_bare, model_override=model_override
@@ -4988,7 +5035,7 @@ def _build_dispute_blocks_text(dispute_results: list) -> str:
             title = ba.get("title", ba.get("section_title", ""))
             verbatim_text = (ba.get("text") or ba.get("full_text") or "").strip()
             # Provide enough for verbatim quoting (up to 600 chars per section)
-            verbatim_snippet = verbatim_text[:180] if verbatim_text else ""
+            verbatim_snippet = verbatim_text[:_MAX_SECTION_TEXT] if verbatim_text else ""
             lines.append(f"\n**{act}, Section {sec}** — {title}")
             lines.append(f"Section text excerpt:\n{verbatim_snippet}")
             related = ba.get("related_case_laws") or []
@@ -4996,7 +5043,7 @@ def _build_dispute_blocks_text(dispute_results: list) -> str:
                 lines.append("Case laws under this section (explain what parts apply and how):")
                 for cl in related[:2]:
                     name = _format_case_citation(cl)
-                    snippet = (cl.get("text") or cl.get("full_text") or "")[:120]
+                    snippet = (cl.get("text") or cl.get("full_text") or "")[:_MAX_CASE_TEXT]
                     lines.append(f"- {name}: {snippet}")
         blocks.append("\n".join(lines))
 
@@ -5034,7 +5081,7 @@ def _generate_interactive_fast_opinion(
         [
             {
                 "title": ba.get("title", ""),
-                "text": (ba.get("text") or "")[:450],
+                "text": (ba.get("text") or "")[:_MAX_SECTION_TEXT],
             }
             for ba in local_bare[:3]
         ],
@@ -5194,16 +5241,16 @@ def _generate_legal_opinion(
 {_local_only_no_materials_message()}"""
 
     bare_text = json.dumps(
-        [{"title": b.get("title"), "text": b.get("text", "")[:500], "source_tag": b.get("source_tag")}
+        [{"title": b.get("title"), "text": b.get("text", "")[:_MAX_SECTION_TEXT], "source_tag": b.get("source_tag")}
          for b in bare_acts[:15]],
         indent=2,
-    )[:3000]
+    )[:_MAX_JSON_PAYLOAD]
 
     case_text = json.dumps(
-        [{"title": c.get("title"), "text": c.get("text", "")[:500], "source_tag": c.get("source_tag")}
+        [{"title": c.get("title"), "text": c.get("text", "")[:_MAX_CASE_TEXT], "source_tag": c.get("source_tag")}
          for c in case_laws[:15]],
         indent=2,
-    )[:3000]
+    )[:_MAX_JSON_PAYLOAD]
 
     confidence = sufficiency.get("confidence", "medium")
     
@@ -5292,16 +5339,16 @@ def _generate_conversational_summary(
         return _local_only_no_materials_message()
 
     bare_text = json.dumps(
-        [{"title": b.get("title"), "text": b.get("text", "")[:300]}
+        [{"title": b.get("title"), "text": b.get("text", "")[:_MAX_SECTION_TEXT]}
          for b in bare_acts[:10]],
         indent=2,
-    )[:2000]
+    )[:_MAX_JSON_PAYLOAD]
 
     case_text = json.dumps(
-        [{"title": c.get("title"), "text": c.get("text", "")[:300]}
+        [{"title": c.get("title"), "text": c.get("text", "")[:_MAX_CASE_TEXT]}
          for c in case_laws[:10]],
         indent=2,
-    )[:2000]
+    )[:_MAX_JSON_PAYLOAD]
 
     # --- Anti-hallucination: build explicit citation allowlists ---
     section_allowlist = []

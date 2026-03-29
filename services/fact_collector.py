@@ -70,30 +70,34 @@ def is_greeting(msg: str, conversation_history: list = None) -> bool:
     """
     True if the message is a greeting / small talk with no legal content.
     Uses the expanded GREETING_PHRASES list (English + Indian languages).
-    
-    If conversation_history exists and has legal content, short answers are NOT greetings
-    (they're follow-up answers to questions).
+
+    IMPORTANT: legal-context check runs FIRST.
+    If the conversation already contains legal content, any short answer ("no", "I don't know",
+    "I have taken care of it") must be treated as a follow-up reply, never as a greeting.
     """
     m = (msg or "").strip().lower()
     if len(m) > 100:
-        return False  # Long messages are substantive
+        return False  # Long messages are always substantive
 
-    # Exact match → static template (no LLM); target <100 ms
+    # ── STEP 1: legal context guard (runs before any phrase match) ──────────
+    # If there is conversation history that contains legal keywords, this is
+    # a live legal conversation. Short follow-up answers must never be
+    # misclassified as greetings regardless of what phrase they match.
+    if conversation_history:
+        has_legal_context = any(
+            any(kw in (turn.get("content", "") or "").lower() for kw in _LEGAL_KEYWORDS)
+            for turn in conversation_history
+            if turn.get("role") == "user"
+        )
+        if has_legal_context:
+            return False  # Active legal conversation — never a greeting
+
+    # ── STEP 2: exact phrase match (only if no legal context above) ─────────
     cleaned = m.rstrip("!?.,;:")
     if cleaned in GREETING_PHRASES:
         return True
 
-    # If there's conversation history with legal keywords, short answers are likely follow-ups, not greetings
-    if conversation_history:
-        has_legal_context = any(
-            any(kw in (m.get("content", "") or "").lower() for kw in _LEGAL_KEYWORDS)
-            for m in conversation_history
-            if m.get("role") == "user"
-        )
-        if has_legal_context:
-            return False  # Short answer in legal conversation = follow-up, not greeting
-
-    # Short message with no legal keywords (only if no prior legal context)
+    # ── STEP 3: short, non-legal message with no prior legal context ─────────
     if len(m) < 30 and not any(kw in m for kw in _LEGAL_KEYWORDS):
         return True
 
@@ -586,6 +590,58 @@ def _topic_already_asked(point: str, asked_questions: list[str]) -> bool:
     return False
 
 
+def _topic_already_answered(point: str, conversation_history: list) -> bool:
+    """
+    Return True if the user has already provided substantive information about this topic
+    in their replies — regardless of whether the question was explicitly asked.
+
+    This prevents the fallback from repeatedly asking about topics the user already addressed
+    (e.g. safety position: "I am living in constant fear" answers "present urgency / current position").
+    """
+    low = (point or "").lower()
+    # Signals that appear in USER replies indicate the topic was addressed
+    answer_signals: dict[str, tuple[str, ...]] = {
+        "client objective / relief sought": (
+            "want", "need", "hope", "wish", "protect", "protection", "stop", "leave",
+            "relief", "outcome", "seeking", "focus on", "priority",
+        ),
+        "present urgency / current position": (
+            "fear", "afraid", "scared", "safe", "unsafe", "living in", "constant",
+            "danger", "risk", "currently", "right now", "at present", "immediate",
+            "still at", "staying at", "returned", "left home", "fled",
+        ),
+        "prior actions already taken": (
+            "filed", "complained", "went to", "called police", "called the police",
+            "fir", "report", "reported", "contacted", "hired", "lawyer", "advocate",
+            "notice", "sent a notice", "already done", "already filed", "applied",
+        ),
+        "documents / messages / witnesses currently available": (
+            "photo", "photos", "picture", "screenshot", "message", "messages",
+            "whatsapp", "text", "email", "video", "recording", "document",
+            "certificate", "report", "witness", "witnesses", "neighbour", "neighbor",
+            "medical", "hospital record", "evidence",
+        ),
+        "current stage / notice / immediate trigger": (
+            "notice", "received a notice", "order", "court date", "hearing",
+            "deadline", "eviction", "served", "today", "yesterday", "last week",
+            "recently", "just happened", "triggered", "started",
+        ),
+    }
+    signals = answer_signals.get(low)
+    if signals is None:
+        # For custom open points, use the point tokens themselves as signals
+        signals = tuple(tok for tok in re.split(r"[\s/]+", low) if len(tok) > 4)
+    if not signals:
+        return False
+    for msg in conversation_history or []:
+        if msg.get("role") != "user":
+            continue
+        content = (msg.get("content") or "").lower()
+        if any(sig in content for sig in signals):
+            return True
+    return False
+
+
 def _question_content_tokens(text: str) -> set[str]:
     return {
         tok
@@ -833,18 +889,105 @@ def _can_proceed_with_partial_record(intake_state: dict, conversation_history: l
     return _has_analysis_ready_record(intake_state, conversation_history, user_message)
 
 
-def _is_low_quality_next_question(reply: str) -> bool:
+def _is_hard_reject(reply: str, intake_state: dict) -> tuple[bool, str]:
+    """
+    Hard rejection — reply must NEVER be shown to the user.
+    Only catches genuinely unusable or actively harmful output.
+
+    Returns (True, reason) to block, (False, "") to allow.
+
+    Hard failures:
+    - Empty / null output — nothing to show
+    - No "?" — not even attempting a question
+    - Too short (<20 chars) — obviously malformed
+    - Role-inverted — actively harmful (tells a victim they are the aggressor)
+    """
     low = (reply or "").strip().lower()
+
+    if not low:
+        return True, "Empty reply — nothing to show."
     if len(low) < 20:
-        return True
+        return True, "Reply too short to be a useful intake question."
     if "?" not in low:
-        return True
-    banned_fragments = (
-        "hello!", "hi!", "tell me what happened", "tell me more", "start from the beginning",
-        "what happened", "share your facts", "landlord and tenant act", "section ", "under the act",
-        "supreme court", "high court", "article ",
+        return True, "Reply contains no question mark — not asking a question."
+    if _is_role_inverted(reply, intake_state):
+        return True, (
+            "Reply reverses the client's role — describes them as the aggressor when the facts "
+            "say they are the victim. Rewrite starting with 'What you have described is...' "
+            "and ensure the client is the person on the receiving end of the harm."
+        )
+
+    return False, ""
+
+
+def _soft_issues(reply: str, intake_state: dict, asked_questions: list[str]) -> list[str]:
+    """
+    Soft issues — reply is imperfect but still usable.
+    These trigger a retry-for-improvement, but do NOT block the reply from being used.
+    If the retry also has soft issues, the retry's output is used anyway (LLM > fallback).
+
+    Soft issues:
+    - Generic opener ("tell me what happened", "tell me more")
+    - Law citation in intake (section + numeral, named statute, court judgment cite)
+    - Duplicate question (same topic already covered)
+    - Not grounded in current intake state
+    """
+    issues: list[str] = []
+    low = (reply or "").strip().lower()
+
+    # Generic opener — model is being lazy instead of case-specific
+    _GENERIC_OPENERS = (
+        "tell me what happened",
+        "tell me more",
+        "tell me more about",
+        "share your facts",
+        "start from the beginning",
+        "share everything that happened",
     )
-    return any(fragment in low for fragment in banned_fragments)
+    if any(low.startswith(phrase) or f". {phrase}" in low for phrase in _GENERIC_OPENERS):
+        issues.append(
+            "The question is too generic. Ask a specific, case-grounded follow-up — not a broad 'tell me more' prompt."
+        )
+
+    # Law citation — model is citing statute instead of asking about facts
+    if re.search(r"\bsection\s+\d", low) or re.search(r"\barticle\s+\d", low):
+        issues.append(
+            "The reply cites a statute or article number. During intake, ask about facts only — "
+            "never introduce section numbers or statutory labels."
+        )
+    _STATUTE_PHRASES = (
+        "landlord and tenant act", "under the act", "under this act",
+        "domestic violence act", "protection of women", "negotiable instruments act",
+    )
+    if any(phrase in low for phrase in _STATUTE_PHRASES):
+        issues.append(
+            "The reply names a specific statute. During intake, focus on the client's facts — "
+            "do not reference Act names or legal labels."
+        )
+    _COURT_CITE = re.compile(r"\b(supreme court|high court)\b.*\b(held|ruled|decided|said|observed)\b")
+    if _COURT_CITE.search(low):
+        issues.append(
+            "The reply cites a court ruling. Intake questions should be about the client's facts, not case law."
+        )
+
+    # Duplicate
+    _reply_sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", reply) if s.strip()]
+    _question_sentences = [s for s in _reply_sentences if "?" in s and len(s) > 12]
+    _check_texts = _question_sentences if _question_sentences else [reply]
+    if any(_is_duplicate_question(t, asked_questions) for t in _check_texts):
+        issues.append(
+            "The reply substantially repeats a question already asked. "
+            "Pick a different open point or tighten the angle on the same topic."
+        )
+
+    # Grounding
+    if not _question_is_grounded_in_state(reply, intake_state):
+        issues.append(
+            "The reply is not grounded in the current intake state or open points. "
+            "Ask about a fact that directly advances the record."
+        )
+
+    return issues
 
 
 def _question_is_grounded_in_state(reply: str, intake_state: dict) -> bool:
@@ -867,14 +1010,42 @@ def _question_is_grounded_in_state(reply: str, intake_state: dict) -> bool:
     return False
 
 
+# ---------------------------------------------------------------------------
+# Legacy wrapper — preserved for smoke-test backward compatibility.
+# New code should call _is_hard_reject / _soft_issues directly.
+# ---------------------------------------------------------------------------
+def _is_low_quality_next_question(reply: str) -> bool:
+    """Legacy: True if reply would be a hard reject (empty/no ?/too short) OR has law-citation soft issues."""
+    hard, _ = _is_hard_reject(reply, {})  # role check skipped — no state available
+    if hard:
+        return True
+    # Expose the law-citation soft issues via this legacy path for backward compat
+    low = (reply or "").strip().lower()
+    _GENERIC_OPENERS = (
+        "tell me what happened", "tell me more", "tell me more about",
+        "share your facts", "start from the beginning", "share everything that happened",
+    )
+    if any(low.startswith(p) or f". {p}" in low for p in _GENERIC_OPENERS):
+        return True
+    if re.search(r"\bsection\s+\d", low) or re.search(r"\barticle\s+\d", low):
+        return True
+    _STATUTE_PHRASES = (
+        "landlord and tenant act", "under the act", "under this act",
+        "domestic violence act", "protection of women", "negotiable instruments act",
+    )
+    if any(phrase in low for phrase in _STATUTE_PHRASES):
+        return True
+    _COURT_CITE = re.compile(r"\b(supreme court|high court)\b.*\b(held|ruled|decided|said|observed)\b")
+    if _COURT_CITE.search(low):
+        return True
+    return False
+
+
 def _join_question_fragments(fragments: list[str]) -> str:
+    """Always ask exactly ONE question per fallback turn — never combine multiple fragments."""
     if not fragments:
         return ""
-    if len(fragments) == 1:
-        return f"{fragments[0]}?"
-    if len(fragments) == 2:
-        return f"{fragments[0]}, and {fragments[1]}?"
-    return f"{fragments[0]}, {fragments[1]}, and {fragments[2]}?"
+    return f"{fragments[0]}?"
 
 
 def _custom_open_point_to_fragment(point: str) -> str:
@@ -905,18 +1076,50 @@ def _custom_open_point_to_fragment(point: str) -> str:
 
 
 
+def _build_fallback_issue_sentence(intake_state: dict) -> str:
+    """
+    Build a one-sentence plain-language ISSUE framing from facts_summary.
+    Begins with "What you have described is..." to mirror the LLM prompt convention.
+    Returns empty string if there is not enough information.
+    """
+    facts = (intake_state.get("facts_summary") or "").strip()
+    if not facts or len(facts) < 20:
+        return ""
+    # Truncate to the core of the summary (first sentence or ~120 chars)
+    sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", facts) if s.strip()]
+    core = sentences[0] if sentences else facts[:120]
+    # Don't double-wrap if it already starts that way
+    if core.lower().startswith("what you have described"):
+        return core if core.endswith(".") else core + "."
+    return f"What you have described is: {core.rstrip('.')}."
+
+
 def _build_fallback_next_question(intake_state: dict, conversation_history: list) -> str:
     asked_questions = _extract_asked_questions(conversation_history)
     open_points = list(intake_state.get("open_points") or [])
-    missing_points = []
+
+    # Filter to points that are still genuinely open:
+    # skip points whose topic the user has ALREADY ANSWERED in their replies,
+    # or which are canonical catch-all placeholders that were never specific.
+    unanswered_points = []
     for point in open_points:
+        if _topic_already_answered(point, conversation_history):
+            # User addressed this topic — no need to ask again
+            continue
         if point in _CANONICAL_OPEN_POINTS:
-            missing_points.append(point)
+            unanswered_points.append(point)
             continue
         if not _topic_already_asked(point, asked_questions):
-            missing_points.append(point)
-    if not missing_points:
-        missing_points = open_points
+            unanswered_points.append(point)
+    # If everything was filtered out, fall back to full open_points list
+    # but still respect "already answered" filter to avoid repeating answered topics
+    if not unanswered_points:
+        unanswered_points = [
+            p for p in open_points
+            if not _topic_already_answered(p, conversation_history)
+        ]
+    if not unanswered_points:
+        unanswered_points = open_points
 
     facts_blob = _state_text_blob(intake_state)
     tone_profile = _infer_tone_profile(facts_blob)
@@ -946,30 +1149,38 @@ def _build_fallback_next_question(intake_state: dict, conversation_history: list
         "current stage / notice / immediate trigger": f"apart from what you have already mentioned, {stage_fragment}",
     }
 
-    fragments: list[str] = []
-    for point in missing_points:
+    # Build exactly ONE question fragment — never combine multiple
+    chosen_fragment: str = ""
+    for point in unanswered_points:
         already_asked = _topic_already_asked(point, asked_questions)
         fragment = repeat_fragment_map.get(point) if already_asked else fragment_map.get(point)
         if not fragment:
             fragment = _custom_open_point_to_fragment(point)
-        if fragment and fragment not in fragments:
-            fragments.append(fragment)
-        if len(fragments) >= 3:
-            break
-    if not fragments:
-        fragments = [
-            "what immediate result do you want me to focus on first",
-            "what supporting material can you presently rely on",
-            "what step has already been taken, if any",
-        ]
-    if fragments:
-        fragments[0] = fragments[0][:1].upper() + fragments[0][1:]
-    opening = _build_intake_opening(tone_profile, professional, conversation_history, missing_points)
-    reason = _build_intake_reason(tone_profile, missing_points, professional, conversation_history)
+        if fragment:
+            chosen_fragment = fragment
+            break  # Stop after the first valid fragment — one question per turn
+
+    if not chosen_fragment:
+        chosen_fragment = "what immediate result do you want me to focus on first"
+
+    chosen_fragment = chosen_fragment[:1].upper() + chosen_fragment[1:]
+
+    opening = _build_intake_opening(tone_profile, professional, conversation_history, unanswered_points)
+    reason = _build_intake_reason(tone_profile, unanswered_points, professional, conversation_history)
+
+    # Add ISSUE sentence framing (empathy → issue → question) if we have enough facts
+    issue_sentence = _build_fallback_issue_sentence(intake_state)
+    if issue_sentence:
+        return (
+            f"{opening} "
+            f"{issue_sentence} "
+            f"{reason} "
+            f"{_join_question_fragments([chosen_fragment])}"
+        )
     return (
         f"{opening} "
         f"{reason} "
-        f"{_join_question_fragments(fragments)}"
+        f"{_join_question_fragments([chosen_fragment])}"
     )
 
 
@@ -1142,28 +1353,83 @@ def _is_duplicate_question(proposed: str, asked_questions: list[str]) -> bool:
     return False
 
 
-def _assess_model_next_reply(reply: str, intake_state: dict, asked_questions: list[str]) -> tuple[bool, list[str]]:
-    reasons: list[str] = []
+_VICTIM_SIGNALS = (
+    "assaulted me", "hit me", "beat me", "beat me up", "slapped me", "kicked me",
+    "pushed me", "threw", "attacked me", "hurt me", "harassed me", "threatened me",
+    "stalked me", "abused me", "choked me", "tortured me", "molested me",
+    "terminated me", "dismissed me", "evicted me", "cheated me", "defrauded me",
+    "did not pay me", "withheld my salary", "withheld my wages",
+    "he assaulted", "she assaulted", "husband assaulted", "wife assaulted",
+    "employer terminated", "landlord evicted",
+)
+_AGGRESSOR_MISLABELS = (
+    "you filed an assault", "you caused harm", "you hurt", "you attacked",
+    "you have a history of violence", "you have a history of physical",
+    "an assault case against you", "a case was filed against you by your",
+    "you have been accused",
+)
+
+
+def _is_role_inverted(reply: str, intake_state: dict) -> bool:
+    """
+    Return True if the reply appears to have swapped the client's role — describing
+    the client as the aggressor or the defendant when the facts indicate they are the
+    victim or complainant.
+
+    Mechanism:
+    - Look for victim-framing signals in facts_summary (client describes harm done to them)
+    - If found, check whether the reply uses aggressor-mislabels that put the client
+      in the position of the perpetrator or the defendant.
+
+    This catches the failure mode where the LLM sees "assault" and produces
+    "The husband filed an assault case against you" instead of
+    "What you have described is a physical assault by your husband."
+    """
     if not reply:
-        reasons.append("No usable reply was produced.")
-        return False, reasons
-    if _is_low_quality_next_question(reply):
-        reasons.append("The reply was too generic, malformed, or not phrased as a concrete intake question.")
-    # Extract question sentences from the reply before duplicate-checking.
-    # Passing the full reply (with empathy preamble) into _is_duplicate_question
-    # dilutes token similarity: the preamble tokens lower the Jaccard score below
-    # the 0.85 threshold, so an identical question slips through as "not a duplicate".
-    # Splitting on sentence boundaries and checking only the question sentences
-    # avoids this false negative.
-    _reply_sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", reply) if s.strip()]
-    _question_sentences = [s for s in _reply_sentences if "?" in s and len(s) > 12]
-    _check_texts = _question_sentences if _question_sentences else [reply]
-    _is_dup = any(_is_duplicate_question(t, asked_questions) for t in _check_texts)
-    if _is_dup:
-        reasons.append("The reply substantially repeated a question that was already asked.")
-    if not _question_is_grounded_in_state(reply, intake_state):
-        reasons.append("The reply was not tightly grounded in the current intake state or open points.")
-    return len(reasons) == 0, reasons
+        return False
+    facts = (
+        (intake_state.get("facts_summary") or "")
+        + " "
+        + " ".join(intake_state.get("known_facts") or [])
+    ).lower()
+    reply_lower = reply.lower()
+
+    client_is_victim = any(sig in facts for sig in _VICTIM_SIGNALS)
+    if not client_is_victim:
+        return False
+
+    return any(mislabel in reply_lower for mislabel in _AGGRESSOR_MISLABELS)
+
+
+def _assess_model_next_reply(reply: str, intake_state: dict, asked_questions: list[str]) -> tuple[bool, list[str]]:
+    """
+    Legacy quality gate wrapper — now delegates to the two-tier system.
+
+    Returns (True, []) if the reply passes hard AND soft checks (i.e. is ideal).
+    Returns (False, reasons) if the reply has any hard or soft issues.
+
+    New calling code should use _is_hard_reject / _soft_issues directly instead
+    of treating any failure as a reason to bypass the LLM.
+    """
+    if not reply:
+        return False, ["No usable reply was produced."]
+
+    hard, hard_reason = _is_hard_reject(reply, intake_state)
+    if hard:
+        logger.info("QUALITY_GATE hard_reject | reason=%s | reply[:80]=%s", hard_reason[:60], reply[:80])
+        return False, [hard_reason]
+
+    issues = _soft_issues(reply, intake_state, asked_questions)
+    if issues:
+        logger.info(
+            "QUALITY_GATE soft_issues (%d) | %s | reply[:80]=%s",
+            len(issues),
+            "; ".join(i[:50] for i in issues),
+            reply[:80],
+        )
+        return False, issues
+
+    return True, []
 
 
 def _build_next_question_feedback(reasons: list[str], intake_state: dict) -> str:
@@ -1619,23 +1885,50 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
         return _enrich_facts_summary(_normalize_completion_payload(parsed, user_message), conversation_history, user_message)
 
     asked_questions = _extract_asked_questions(conversation_history)
+
+    # ── Attempt 1: 3B fast model ─────────────────────────────────────────────
+    # Philosophy: the LLM owns the response. The two-tier gate decides:
+    #   PASS        → use directly, no retry (3B was enough)
+    #   SOFT issues → escalate to 8B for retry; use whichever output is less bad
+    #   HARD reject → escalate to 8B for retry; fallback only if 8B also hard-rejects
+    # The deterministic fallback is a circuit-breaker of last resort, not a quality policy.
     t_next = time.perf_counter()
     model_next = _run_next_question_from_state(legal_state, conversation_history, task_hint="fast")
+    # task_hint="fast" → OLLAMA_MODEL_FAST (3B). Retry uses task_hint=None → OLLAMA_MODEL (8B).
     _log_fc_step(
         "legal_intake_model_next",
         (time.perf_counter() - t_next) * 1000,
         f"action={model_next.get('action') if model_next else 'None'}",
     )
-    retry_feedback = ""
+
+    attempt1_reply: str = ""
+    attempt1_hard: bool = False
+    attempt1_issues: list[str] = []
+    retry_feedback: str = ""
+
     if model_next:
         if model_next.get("action") == "ask":
-            reply = (model_next.get("question") or model_next.get("reply_to_client") or "").strip()
-            acceptable, reasons = _assess_model_next_reply(reply, legal_state, asked_questions)
-            if acceptable:
-                _log_fc_step("legal_intake_ask_model", (time.perf_counter() - t_start) * 1000)
-                return {"action": "ask", "question": reply}
-            if reasons:
-                retry_feedback = _build_next_question_feedback(reasons, legal_state)
+            attempt1_reply = (model_next.get("question") or model_next.get("reply_to_client") or "").strip()
+            hard, hard_reason = _is_hard_reject(attempt1_reply, legal_state)
+            attempt1_hard = hard
+            if hard:
+                # Hard reject — retry with specific correction guidance
+                retry_feedback = _build_next_question_feedback([hard_reason], legal_state)
+                logger.info("INTAKE attempt1 hard_reject | %s | reply[:60]=%s", hard_reason[:60], attempt1_reply[:60])
+            else:
+                issues = _soft_issues(attempt1_reply, legal_state, asked_questions)
+                attempt1_issues = issues
+                if not issues:
+                    # Clean pass — use immediately
+                    _log_fc_step("legal_intake_ask_model", (time.perf_counter() - t_start) * 1000)
+                    return {"action": "ask", "question": attempt1_reply}
+                # Soft issues — schedule a retry to get a better answer, but keep attempt1 as backup
+                retry_feedback = _build_next_question_feedback(issues, legal_state)
+                logger.info(
+                    "INTAKE attempt1 soft_issues (%d) | retry scheduled | reply[:60]=%s",
+                    len(issues), attempt1_reply[:60],
+                )
+
         elif model_next.get("action") == "complete":
             if _should_complete_legal_intake(
                 legal_state,
@@ -1658,26 +1951,60 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
                 "- Return valid JSON only.\n"
             )
     else:
+        # LLM returned nothing (parse failure) — retry
         retry_feedback = (
             "REPAIR FEEDBACK:\n"
             "- Return valid JSON only.\n"
             "- Ask one fresh, case-specific follow-up grounded in the current intake state.\n"
             "- Do not repeat earlier phrasing.\n"
         )
+        attempt1_hard = True  # treat parse failure as hard reject
 
+    # ── Attempt 2: LLM retry with feedback (8B model) ───────────────────────
+    # Attempt 1 used the fast 3B model. When it produces a hard reject or soft
+    # issues, we escalate to the full 8B model for the retry — better instruction
+    # following, better empathy framing, better grounding. The fallback only fires
+    # if the 8B also hard-rejects.
     if retry_feedback:
+        logger.info(
+            "INTAKE escalating to 8B model for retry | reason=%s",
+            retry_feedback.split("\n")[1][:60] if "\n" in retry_feedback else retry_feedback[:60],
+        )
         retry_next = _run_next_question_from_state(
             legal_state,
             conversation_history,
-            task_hint="fast",
+            task_hint=None,  # None → OLLAMA_MODEL (8B), not OLLAMA_MODEL_FAST (3B)
             feedback=retry_feedback,
         )
+
         if retry_next and retry_next.get("action") == "ask":
             retry_reply = (retry_next.get("question") or retry_next.get("reply_to_client") or "").strip()
-            retry_ok, _ = _assess_model_next_reply(retry_reply, legal_state, asked_questions)
-            if retry_ok:
+            retry_hard, _ = _is_hard_reject(retry_reply, legal_state)
+
+            if not retry_hard:
+                # Retry is usable (pass or soft issues) — always prefer over fallback
                 _log_fc_step("legal_intake_ask_model_retry", (time.perf_counter() - t_start) * 1000)
+                retry_issues = _soft_issues(retry_reply, legal_state, asked_questions)
+                if retry_issues:
+                    logger.info(
+                        "INTAKE retry has soft_issues (%d) — using anyway (LLM > fallback) | reply[:60]=%s",
+                        len(retry_issues), retry_reply[:60],
+                    )
                 return {"action": "ask", "question": retry_reply}
+
+            # Retry also hard-rejected.
+            if not attempt1_hard and attempt1_reply:
+                # Original attempt had only soft issues — it's better than the fallback
+                logger.info(
+                    "INTAKE retry hard_reject; using attempt1 (soft issues only) | reply[:60]=%s",
+                    attempt1_reply[:60],
+                )
+                _log_fc_step("legal_intake_ask_model_softpass", (time.perf_counter() - t_start) * 1000)
+                return {"action": "ask", "question": attempt1_reply}
+
+            # Both attempts hard-rejected — fall through to deterministic fallback
+            logger.info("INTAKE both attempts hard_rejected — using deterministic fallback")
+
         elif retry_next and retry_next.get("action") == "complete" and _should_complete_legal_intake(
             legal_state,
             conversation_history,
@@ -1693,6 +2020,13 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
             _log_fc_step("legal_intake_complete_model_retry", (time.perf_counter() - t_start) * 1000)
             return _enrich_facts_summary(_normalize_completion_payload(retry_next, user_message), conversation_history, user_message)
 
+        elif not retry_next and not attempt1_hard and attempt1_reply:
+            # Retry returned nothing (parse failure) but attempt1 was soft-issues only — use it
+            logger.info("INTAKE retry parse failure; using attempt1 (soft issues) | reply[:60]=%s", attempt1_reply[:60])
+            _log_fc_step("legal_intake_ask_model_softpass", (time.perf_counter() - t_start) * 1000)
+            return {"action": "ask", "question": attempt1_reply}
+
+    # ── Deterministic fallback — last resort only ───────────────────────────
     fallback_question = _build_fallback_next_question(legal_state, conversation_history)
     if fallback_question:
         _log_fc_step("legal_intake_ask_fallback", (time.perf_counter() - t_start) * 1000)

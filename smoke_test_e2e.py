@@ -72,6 +72,7 @@ section("A–C: Intake layer (fact_collector)")
 from services.fact_collector import (
     _is_duplicate_question,
     _assess_model_next_reply,
+    _is_role_inverted,
 )
 from training.few_shot_retriever import _rank_examples
 
@@ -154,6 +155,68 @@ try:
           f"Reasons: {reasons}")
 except Exception as e:
     check("[C] Quality gate", False, traceback.format_exc())
+
+
+# ──────────────────────────────────────────────
+# [K] Role-inversion quality gate
+# ──────────────────────────────────────────────
+section("K: Role-inversion quality gate")
+
+_dv_victim_state = {
+    "facts_summary": (
+        "Client's husband assaulted her two days ago. She has bruises, photos, "
+        "WhatsApp messages, and her sister as a witness. Has not filed a police complaint yet."
+    ),
+    "known_facts": [
+        "husband assaulted client two days ago",
+        "has bruises and photos",
+        "has WhatsApp messages",
+        "sister is a witness",
+        "no police complaint filed yet",
+    ],
+    "open_points": ["whether client has filed a police complaint"],
+    "client_objective": "protection and legal action against husband",
+    "urgency_level": "high",
+}
+
+try:
+    # Should flag — LLM reversed roles (client described as having filed a case)
+    inverted_reply = (
+        "I see you have a history of physical violence, which is deeply concerning. "
+        "Issue in plain language: The husband filed an assault case against you without prior warning, causing physical harm. "
+        "Why this matters: I need to understand what actions you have taken. "
+        "What specific actions have you taken so far regarding the police complaint?"
+    )
+    is_inv = _is_role_inverted(inverted_reply, _dv_victim_state)
+    check("[K1] Role-inverted reply correctly detected", is_inv,
+          f"reply[:120]: {inverted_reply[:120]}")
+
+    # Should NOT flag — correct victim framing
+    correct_reply = (
+        "I understand how frightening this must have been. "
+        "What you have described is a physical assault by your husband two days ago, with photographic and witness evidence. "
+        "The next detail will help me assess what immediate protection is available. "
+        "Have you or a family member been able to speak to a police officer, even informally, since the incident?"
+    )
+    is_inv_correct = _is_role_inverted(correct_reply, _dv_victim_state)
+    check("[K2] Correctly framed reply NOT flagged as role-inverted", not is_inv_correct,
+          f"reply[:120]: {correct_reply[:120]}")
+
+    # Full quality gate — inverted reply must fail _assess_model_next_reply
+    ok_inv, reasons_inv = _assess_model_next_reply(inverted_reply, _dv_victim_state, [])
+    check("[K3] Role-inverted reply rejected by _assess_model_next_reply",
+          not ok_inv, f"reasons: {reasons_inv}")
+    role_reason_present = any("role" in r.lower() or "aggressor" in r.lower() for r in reasons_inv)
+    check("[K4] Rejection reason mentions role reversal", role_reason_present,
+          f"reasons: {reasons_inv}")
+
+    # Full quality gate — correct reply must pass
+    ok_correct, reasons_correct = _assess_model_next_reply(correct_reply, _dv_victim_state, [])
+    check("[K5] Correctly framed reply passes _assess_model_next_reply", ok_correct,
+          f"reasons: {reasons_correct}")
+
+except Exception as e:
+    check("[K] Role-inversion gate", False, traceback.format_exc())
 
 
 # ──────────────────────────────────────────────
@@ -521,6 +584,286 @@ try:
 
 except Exception as e:
     check("[J] Retry logic", False, traceback.format_exc())
+
+
+# ──────────────────────────────────────────────
+# [L] Deterministic fallback fixes
+# ──────────────────────────────────────────────
+section("L: Deterministic fallback question fixes")
+
+from services.fact_collector import (
+    _join_question_fragments,
+    _topic_already_answered,
+    _build_fallback_next_question,
+    _build_fallback_issue_sentence,
+)
+
+# [L1] _join_question_fragments only returns one question
+try:
+    one = _join_question_fragments(["what is your immediate safety concern"])
+    two = _join_question_fragments(["what is your immediate safety concern", "have you filed a police complaint"])
+    three = _join_question_fragments(["what is your safety concern", "have you filed a complaint", "do you have evidence"])
+
+    no_and_in_two = " and " not in two or two.count("?") == 1
+    no_and_in_three = " and " not in three or three.count("?") == 1
+    ends_question_mark = two.endswith("?") and three.endswith("?")
+
+    check("[L1] _join_question_fragments always returns exactly one question",
+          no_and_in_two and no_and_in_three and ends_question_mark,
+          f"one='{one}' two='{two}' three='{three}'")
+except Exception as e:
+    check("[L1] _join_question_fragments", False, traceback.format_exc())
+
+# [L2] _topic_already_answered correctly detects user replies that address a topic
+try:
+    history_with_safety_answer = [
+        {"role": "assistant", "content": "Can you tell me about your situation?"},
+        {"role": "user", "content": "My husband assaulted me and I am living in constant fear right now."},
+    ]
+    history_without_safety_answer = [
+        {"role": "assistant", "content": "Can you tell me about your situation?"},
+        {"role": "user", "content": "My husband assaulted me."},
+    ]
+    # "present urgency / current position" should be answered when user says "living in constant fear right now"
+    answered = _topic_already_answered("present urgency / current position", history_with_safety_answer)
+    not_answered = _topic_already_answered("present urgency / current position", history_without_safety_answer)
+
+    check("[L2a] Topic 'present urgency / current position' detected as answered when user states fear/safety",
+          answered, f"answered={answered}")
+    check("[L2b] Topic 'present urgency / current position' NOT detected as answered when user only mentions incident",
+          not not_answered, f"not_answered={not_answered}")
+except Exception as e:
+    check("[L2] _topic_already_answered", False, traceback.format_exc())
+
+# [L3] _build_fallback_next_question skips topics already answered by user
+try:
+    state_with_urgency_answered = {
+        "facts_summary": "Client's husband assaulted her two days ago. She is living in constant fear.",
+        "known_facts": ["husband assaulted client", "client living in fear"],
+        "open_points": [
+            "present urgency / current position",   # already answered by user reply below
+            "prior actions already taken",
+        ],
+        "client_objective": "protection",
+        "urgency_level": "high",
+        "enough_to_proceed": False,
+    }
+    history_urgency_answered = [
+        {"role": "assistant", "content": "Tell me about your situation."},
+        {"role": "user", "content": "My husband assaulted me. I am living in constant fear right now."},
+        {"role": "assistant", "content": "I understand. Right now, what is the current position on your immediate safety and risk position, and has any notice, order, complaint, filing, hearing, or deadline already started?"},
+        {"role": "user", "content": "I am living in constant fear."},  # urgency re-stated
+    ]
+    fallback_q = _build_fallback_next_question(state_with_urgency_answered, history_urgency_answered)
+
+    # Should NOT repeat the safety/urgency question since user already answered it
+    repeats_urgency = "immediate safety and risk position" in fallback_q.lower()
+    check("[L3] Fallback skips 'present urgency' topic already answered by user",
+          not repeats_urgency,
+          f"fallback_q='{fallback_q}'")
+except Exception as e:
+    check("[L3] Fallback topic-skip", False, traceback.format_exc())
+
+# [L4] _build_fallback_next_question asks only ONE question
+try:
+    state_two_open = {
+        "facts_summary": "Client's husband assaulted her. No police complaint. Has photos and WhatsApp messages.",
+        "known_facts": ["husband assaulted client", "has photos", "has WhatsApp messages"],
+        "open_points": [
+            "present urgency / current position",
+            "prior actions already taken",
+            "documents / messages / witnesses currently available",
+        ],
+        "client_objective": "protection",
+        "urgency_level": "high",
+        "enough_to_proceed": False,
+    }
+    history_fresh = [
+        {"role": "assistant", "content": "Tell me about your situation."},
+        {"role": "user", "content": "My husband assaulted me two days ago. I have bruises."},
+    ]
+    fallback_single = _build_fallback_next_question(state_two_open, history_fresh)
+
+    # Must end with exactly one "?"
+    q_count = fallback_single.count("?")
+    check("[L4] Fallback question contains exactly one question mark",
+          q_count == 1,
+          f"q_count={q_count} fallback='{fallback_single}'")
+
+    # Must NOT contain " and " joining two question fragments
+    has_dual_and = bool(re.search(r",\s+and\s+has\s+any\s+notice", fallback_single, re.IGNORECASE))
+    check("[L4b] Fallback does NOT join two fragments with ', and'",
+          not has_dual_and,
+          f"fallback='{fallback_single}'")
+except Exception as e:
+    check("[L4] Fallback single-question", False, traceback.format_exc())
+
+# [L5] ISSUE sentence present in fallback when facts_summary is populated
+try:
+    state_with_facts = {
+        "facts_summary": "client's husband has been physically assaulting her for six months",
+        "known_facts": ["ongoing physical violence by husband"],
+        "open_points": ["prior actions already taken"],
+        "client_objective": "protection",
+        "urgency_level": "high",
+        "enough_to_proceed": False,
+    }
+    issue = _build_fallback_issue_sentence(state_with_facts)
+    starts_correctly = issue.lower().startswith("what you have described")
+    check("[L5a] _build_fallback_issue_sentence returns 'What you have described...' framing",
+          starts_correctly, f"issue='{issue}'")
+
+    history_for_issue = [
+        {"role": "assistant", "content": "Tell me about your situation."},
+        {"role": "user", "content": "My husband assaulted me."},
+    ]
+    fallback_with_issue = _build_fallback_next_question(state_with_facts, history_for_issue)
+    has_issue_framing = "what you have described" in fallback_with_issue.lower()
+    check("[L5b] Full fallback output includes ISSUE sentence framing",
+          has_issue_framing,
+          f"fallback='{fallback_with_issue[:250]}'")
+except Exception as e:
+    check("[L5] ISSUE sentence in fallback", False, traceback.format_exc())
+
+# ──────────────────────────────────────────────
+# [M] Quality gate — banned fragment precision
+# ──────────────────────────────────────────────
+section("M: Quality gate banned fragment precision")
+
+from services.fact_collector import _is_low_quality_next_question
+
+_QG_STATE = {
+    "facts_summary": "Client's husband assaulted her two days ago. FIR filed. Has photos and WhatsApp messages.",
+    "known_facts": ["husband assaulted client", "FIR filed", "has photos"],
+    "open_points": ["prior actions already taken", "documents / messages / witnesses currently available"],
+    "client_objective": "protection",
+    "urgency_level": "high",
+    "enough_to_proceed": False,
+}
+
+try:
+    # --- Replies that SHOULD pass (not low quality) ---
+    good_replies = [
+        # "what happened" as embedded substring is now allowed in specific follow-up questions
+        (
+            "I understand this has been difficult. "
+            "What happened when you went to the police station after the incident — did they record a complaint?",
+            "Specific follow-up with 'what happened' embedded substring"
+        ),
+        (
+            "I can hear how distressing this has been. "
+            "What you have described is a physical assault. "
+            "The next detail will help me assess the record. "
+            "Have you or anyone on your behalf filed a formal police complaint, and if so, do you have the FIR number?",
+            "Well-formed 4-part reply with no banned patterns"
+        ),
+        (
+            "I understand this must be very frightening. "
+            "What you have described is ongoing violence at home. "
+            "I want to understand the evidence position carefully. "
+            "What medical papers, photos, or WhatsApp messages can you currently access?",
+            "Reply asking about evidence — no banned patterns"
+        ),
+        (
+            "I am sorry you are dealing with this. "
+            "Have you approached any authority — the police, a family court, or a protection officer — since the incident?",
+            "Question mentioning high court/police without citing case law"
+        ),
+        (
+            "I can see this is urgent. "
+            "Is the respondent currently living in the same house as you, or have you been able to find a safe place to stay?",
+            "Safety/urgency question — no banned patterns"
+        ),
+    ]
+
+    for reply_text, label in good_replies:
+        is_low = _is_low_quality_next_question(reply_text)
+        check(f"[M1] SHOULD PASS: {label}",
+              not is_low,
+              f"Wrongly flagged as low quality: {reply_text[:100]}")
+
+    # --- Replies that SHOULD fail (low quality) ---
+    bad_replies = [
+        (
+            "Tell me what happened in detail?",
+            "Generic opener 'tell me what happened'"
+        ),
+        (
+            "Tell me more about the situation?",
+            "Generic opener 'tell me more'"
+        ),
+        (
+            "Start from the beginning and share everything?",
+            "Generic restarter"
+        ),
+        (
+            "Does section 498A apply to your case?",
+            "Model citing section + numeral"
+        ),
+        (
+            "Under article 21 of the Constitution, you have the right — do you know this?",
+            "Model citing article + numeral"
+        ),
+        (
+            "The Supreme Court has held that domestic violence is cognisable — are you aware of this?",
+            "Model citing court judgment in intake"
+        ),
+        (
+            "This falls under the Protection of Women from Domestic Violence Act — have you filed?",
+            "Model naming statute in intake"
+        ),
+        (
+            "ok",
+            "Too short (<20 chars)"
+        ),
+        (
+            "I understand your situation.",
+            "No question mark"
+        ),
+    ]
+
+    for reply_text, label in bad_replies:
+        is_low = _is_low_quality_next_question(reply_text)
+        check(f"[M2] SHOULD FAIL: {label}",
+              is_low,
+              f"Wrongly passed as acceptable: {reply_text[:100]}")
+
+    # --- Full quality gate on good 4-part reply ---
+    good_full_reply = (
+        "I understand this has been frightening. "
+        "What you have described is an assault by your husband two days ago, with an FIR already on record. "
+        "The next detail will help me assess what evidence posture you are currently in. "
+        "What happened when you went to the police — did the station record the complaint formally, "
+        "and do you have the FIR copy or number with you?"
+    )
+    ok_full, reasons_full = _assess_model_next_reply(good_full_reply, _QG_STATE, [])
+    check("[M3] Well-formed 4-part DV reply passes full quality gate",
+          ok_full, f"reasons: {reasons_full}")
+
+    # --- Quality gate rejects a reply with statute citation ---
+    statute_reply = (
+        "I understand your concern. "
+        "Under the Protection of Women from Domestic Violence Act, you have certain rights. "
+        "Have you filed a complaint?"
+    )
+    ok_statute, _ = _assess_model_next_reply(statute_reply, _QG_STATE, [])
+    check("[M4] Reply naming statute during intake rejected by quality gate",
+          not ok_statute,
+          f"Was wrongly accepted: {statute_reply[:100]}")
+
+    # --- Quality gate rejects a reply with section citation ---
+    section_reply = (
+        "I understand you are in distress. "
+        "Under section 498A, your husband can be prosecuted. "
+        "Have you filed a complaint?"
+    )
+    ok_section, _ = _assess_model_next_reply(section_reply, _QG_STATE, [])
+    check("[M5] Reply citing section number during intake rejected by quality gate",
+          not ok_section,
+          f"Was wrongly accepted: {section_reply[:100]}")
+
+except Exception as e:
+    check("[M] Quality gate precision", False, traceback.format_exc())
 
 
 # ──────────────────────────────────────────────

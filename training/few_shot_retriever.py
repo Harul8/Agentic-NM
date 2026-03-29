@@ -183,6 +183,47 @@ def _detect_audience(text: str, meta_audience: str = "") -> str:
     return "lay_user"
 
 
+# ---------------------------------------------------------------------------
+# Client-side / orientation detection — victim vs. accused/defence
+# Used to prevent a defence-side DV/matrimonial example being shown for a
+# victim-side DV query (and vice versa).
+# ---------------------------------------------------------------------------
+
+_VICTIM_SIDE_SIGNALS = (
+    # First-person victim phrasing: "my husband assaulted me", "I was beaten", etc.
+    r"\bmy (husband|wife|partner|spouse|boyfriend|girlfriend)\b.{0,60}(assault|beat|hit|kick|hurt|threaten|abuse|harass|slap|push|throw)",
+    r"\b(i was|i have been|i am being) (beaten|assaulted|attacked|threatened|abused|harassed|hurt|injured)\b",
+    r"\bi need (protection|a protection order|immediate safety)\b",
+    r"\b(he|she) (beat|hit|slap|assault|hurt|threaten|abuse|harass)s? me\b",
+    r"\bi am (scared|afraid|in danger|unsafe|living in fear)\b",
+    r"\bbruises?\b.{0,40}\bphotos?\b",  # "I have bruises, photos"
+    r"\bhe threw me out\b",
+)
+
+_ACCUSED_SIDE_SIGNALS = (
+    # Third-person defence / accused phrasing
+    r"\b(our clients?|my clients?)\b.{0,80}(named|accused|facing|implicated|charged)",
+    r"\b(parents?-in-law|in-laws?|relatives?)\b.{0,60}(named|accused|facing|implicated|FIR|complaint)",
+    r"\bfalse (FIR|case|complaint|allegation)\b",
+    r"\banticipatory bail\b",
+    r"\bprotective strateg",  # typical defence counsel language
+    r"\blimited interaction with the complainant\b",
+    r"\bresidence proof showing.{0,40}lived separately\b",
+)
+
+
+def _detect_client_side(text: str) -> str:
+    """Return 'victim', 'accused', or '' (unknown)."""
+    low = (text or "").lower()
+    victim_score = sum(1 for pat in _VICTIM_SIDE_SIGNALS if re.search(pat, low))
+    accused_score = sum(1 for pat in _ACCUSED_SIDE_SIGNALS if re.search(pat, low))
+    if victim_score > accused_score:
+        return "victim"
+    if accused_score > victim_score:
+        return "accused"
+    return ""
+
+
 def _snapshot_to_compact_state(snapshot: dict | None, user_turns: list[str]) -> dict | None:
     if not snapshot:
         return None
@@ -251,6 +292,7 @@ def _normalise_runtime_record(raw: dict, origin: str) -> dict | None:
         "layer": layer,
         "audience": _detect_audience(query_text, meta.get("audience_type") or ""),
         "domain": (meta.get("domain") or "").strip(),
+        "client_side": _detect_client_side(query_text + " " + reply_text),
         "query_text": query_text,
         "input_tail": input_tail,
         "compact_state": compact_state,
@@ -289,12 +331,14 @@ def _normalise_legacy_record(raw: dict, origin: str) -> dict | None:
             "enough_to_proceed": layer == "complete_intake",
             "facts_summary": facts_summary[:320],
         }
+        query_text_leg = " ".join(user_turns)
         return {
             "id": raw.get("id") or origin,
             "layer": layer,
-            "audience": _detect_audience(" ".join(user_turns)),
+            "audience": _detect_audience(query_text_leg),
             "domain": raw.get("case_type") or raw.get("description") or "",
-            "query_text": " ".join(user_turns),
+            "client_side": _detect_client_side(query_text_leg + " " + (assistant_turns[-1] if assistant_turns else "")),
+            "query_text": query_text_leg,
             "input_tail": [{"role": m.get("role", ""), "content": (m.get("content") or "").strip()} for m in conversation[:-1]][-4:],
             "compact_state": compact_state,
             "reply_text": assistant_turns[-1],
@@ -350,10 +394,18 @@ def _load_examples() -> list[dict]:
     return _RUNTIME_EXAMPLES
 
 
-def _score(example: dict, query_tokens: set[str], query_lower: str, desired_layers: set[str], desired_audience: str) -> float:
+def _score(example: dict, query_tokens: set[str], query_lower: str, desired_layers: set[str], desired_audience: str, query_client_side: str = "") -> float:
     layer = example.get("layer") or ""
     if desired_layers and layer not in desired_layers:
         return -1.0
+
+    # ── Orientation guard: victim-side query must never match accused/defence example ──
+    # This prevents a defence-side DV/matrimonial example (e.g. 498A accused family)
+    # from being retrieved for a victim-side DV query, and vice versa.
+    if query_client_side:
+        example_side = example.get("client_side") or ""
+        if example_side and example_side != query_client_side:
+            return -1.0  # hard block — opposite orientation
 
     example_text = " ".join([
         str(example.get("query_text") or ""),
@@ -420,9 +472,10 @@ def _rank_examples(query: str, desired_layers: set[str]) -> list[dict]:
     query_lower = (query or "").lower()
     query_tokens = _tokenize(query or "")
     desired_audience = _detect_audience(query or "")
+    query_client_side = _detect_client_side(query or "")
     ranked: list[tuple[float, dict]] = []
     for example in examples:
-        score = _score(example, query_tokens, query_lower, desired_layers, desired_audience)
+        score = _score(example, query_tokens, query_lower, desired_layers, desired_audience, query_client_side)
         if score > 0:
             ranked.append((score, example))
     ranked.sort(key=lambda item: item[0], reverse=True)
