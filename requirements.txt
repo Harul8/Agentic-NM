@@ -13,6 +13,7 @@ apscheduler==3.10.4
 
 # HTTP
 requests==2.32.3
+tiktoken
 # Let FastAPI / CrewAI pull a compatible httpx/httpcore/h11 trio
 
 # Vector search & embeddings
