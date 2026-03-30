@@ -1286,14 +1286,26 @@ def _run_next_question_from_state(
                 few_shot_block = f"\n\n{packed}\n"
         except Exception:
             few_shot_block = ""
+    def _clean(text: str) -> str:
+        """Strip backtick markers that the state extractor sometimes wraps around values.
+        If left in, the model quotes them verbatim in its 'What you have described is:'
+        sentence, producing ugly inline-code fragments in the reply."""
+        return re.sub(r"`+", "", (text or "")).strip()
+
+    # conversation_turn = number of prior advocate replies.
+    # 0 means this is the first response — model should use full "What you have described is..."
+    # 1+ means subsequent response — model should use brief acknowledgment only.
+    conversation_turn = sum(1 for m in (conversation_history or []) if m.get("role") == "assistant")
+
     state_json = json.dumps({
-        "client_objective": intake_state.get("client_objective", ""),
+        "conversation_turn": conversation_turn,
+        "client_objective": _clean(intake_state.get("client_objective", "")),
         "urgency_level": intake_state.get("urgency_level", "unknown"),
-        "known_facts": intake_state.get("known_facts", []),
-        "prior_actions_taken": intake_state.get("prior_actions_taken", []),
-        "open_points": intake_state.get("open_points", []),
+        "known_facts": [_clean(f) for f in (intake_state.get("known_facts") or [])],
+        "prior_actions_taken": [_clean(a) for a in (intake_state.get("prior_actions_taken") or [])],
+        "open_points": [_clean(p) for p in (intake_state.get("open_points") or [])],
         "enough_to_proceed": intake_state.get("enough_to_proceed", False),
-        "facts_summary": intake_state.get("facts_summary", ""),
+        "facts_summary": _clean(intake_state.get("facts_summary", "")),
     }, ensure_ascii=False)
     asked_json = json.dumps(asked_questions, ensure_ascii=False)
     prompt = (
@@ -1884,154 +1896,78 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
         _log_fc_step("legal_intake_complete", (time.perf_counter() - t_start) * 1000)
         return _enrich_facts_summary(_normalize_completion_payload(parsed, user_message), conversation_history, user_message)
 
-    asked_questions = _extract_asked_questions(conversation_history)
-
-    # ── Attempt 1: 3B fast model ─────────────────────────────────────────────
-    # Philosophy: the LLM owns the response. The two-tier gate decides:
-    #   PASS        → use directly, no retry (3B was enough)
-    #   SOFT issues → escalate to 8B for retry; use whichever output is less bad
-    #   HARD reject → escalate to 8B for retry; fallback only if 8B also hard-rejects
-    # The deterministic fallback is a circuit-breaker of last resort, not a quality policy.
+    # ── Attempt 1: no-think (fast) ───────────────────────────────────────────
+    # Philosophy: the model owns the response entirely.
+    # No quality gate. No heuristic overrides. If the model returns a valid
+    # reply_to_client we use it immediately — no second-guessing.
+    # Attempt 2 (thinking mode) only fires on a hard technical failure:
+    # the model returned nothing parseable or returned no reply_to_client.
     t_next = time.perf_counter()
     model_next = _run_next_question_from_state(legal_state, conversation_history, task_hint="fast")
-    # task_hint="fast" → OLLAMA_MODEL_FAST (3B). Retry uses task_hint=None → OLLAMA_MODEL (8B).
     _log_fc_step(
         "legal_intake_model_next",
         (time.perf_counter() - t_next) * 1000,
         f"action={model_next.get('action') if model_next else 'None'}",
     )
 
-    attempt1_reply: str = ""
-    attempt1_hard: bool = False
-    attempt1_issues: list[str] = []
-    retry_feedback: str = ""
+    def _handle_complete(payload: dict) -> dict | None:
+        """Validate a complete action and return the normalized payload, or None if too early."""
+        if _should_complete_legal_intake(
+            legal_state, conversation_history, user_message, stop_requested=stop_requested,
+        ):
+            payload.setdefault("intent", "legal_opinion")
+            payload.setdefault("document_types", "both")
+            payload.setdefault("search_strategy", _default_search_strategy_for_intent("legal_opinion", user_message))
+            payload.setdefault("result_count", None)
+            if not (payload.get("facts_summary") or "").strip():
+                payload["facts_summary"] = legal_state.get("facts_summary") or user_message
+            return _enrich_facts_summary(_normalize_completion_payload(payload, user_message), conversation_history, user_message)
+        return None  # not ready to complete yet → fall through to attempt 2
 
     if model_next:
         if model_next.get("action") == "ask":
-            attempt1_reply = (model_next.get("question") or model_next.get("reply_to_client") or "").strip()
-            hard, hard_reason = _is_hard_reject(attempt1_reply, legal_state)
-            attempt1_hard = hard
-            if hard:
-                # Hard reject — retry with specific correction guidance
-                retry_feedback = _build_next_question_feedback([hard_reason], legal_state)
-                logger.info("INTAKE attempt1 hard_reject | %s | reply[:60]=%s", hard_reason[:60], attempt1_reply[:60])
-            else:
-                issues = _soft_issues(attempt1_reply, legal_state, asked_questions)
-                attempt1_issues = issues
-                if not issues:
-                    # Clean pass — use immediately
-                    _log_fc_step("legal_intake_ask_model", (time.perf_counter() - t_start) * 1000)
-                    return {"action": "ask", "question": attempt1_reply}
-                # Soft issues — schedule a retry to get a better answer, but keep attempt1 as backup
-                retry_feedback = _build_next_question_feedback(issues, legal_state)
-                logger.info(
-                    "INTAKE attempt1 soft_issues (%d) | retry scheduled | reply[:60]=%s",
-                    len(issues), attempt1_reply[:60],
-                )
+            reply = (model_next.get("reply_to_client") or model_next.get("question") or "").strip()
+            if reply:
+                _log_fc_step("legal_intake_ask_model", (time.perf_counter() - t_start) * 1000)
+                return {"action": "ask", "question": reply}
+            # reply_to_client was empty — fall through to attempt 2
+            logger.info("INTAKE attempt1 returned empty reply_to_client — escalating to thinking mode")
 
         elif model_next.get("action") == "complete":
-            if _should_complete_legal_intake(
-                legal_state,
-                conversation_history,
-                user_message,
-                stop_requested=stop_requested,
-            ):
-                model_next.setdefault("intent", "legal_opinion")
-                model_next.setdefault("document_types", "both")
-                model_next.setdefault("search_strategy", _default_search_strategy_for_intent("legal_opinion", user_message))
-                model_next.setdefault("result_count", None)
-                if not (model_next.get("facts_summary") or "").strip():
-                    model_next["facts_summary"] = legal_state.get("facts_summary") or user_message
+            result = _handle_complete(model_next)
+            if result is not None:
                 _log_fc_step("legal_intake_complete_model", (time.perf_counter() - t_start) * 1000)
-                return _enrich_facts_summary(_normalize_completion_payload(model_next, user_message), conversation_history, user_message)
-            retry_feedback = (
-                "REPAIR FEEDBACK:\n"
-                "- Do not complete yet.\n"
-                "- Ask the strongest remaining factual follow-up needed before analysis.\n"
-                "- Return valid JSON only.\n"
-            )
+                return result
+            logger.info("INTAKE attempt1 wanted to complete too early — escalating to thinking mode")
+
     else:
-        # LLM returned nothing (parse failure) — retry
-        retry_feedback = (
-            "REPAIR FEEDBACK:\n"
-            "- Return valid JSON only.\n"
-            "- Ask one fresh, case-specific follow-up grounded in the current intake state.\n"
-            "- Do not repeat earlier phrasing.\n"
-        )
-        attempt1_hard = True  # treat parse failure as hard reject
+        logger.info("INTAKE attempt1 parse failure — escalating to thinking mode")
 
-    # ── Attempt 2: LLM retry with feedback (8B model) ───────────────────────
-    # Attempt 1 used the fast 3B model. When it produces a hard reject or soft
-    # issues, we escalate to the full 8B model for the retry — better instruction
-    # following, better empathy framing, better grounding. The fallback only fires
-    # if the 8B also hard-rejects.
-    if retry_feedback:
-        logger.info(
-            "INTAKE escalating to 8B model for retry | reason=%s",
-            retry_feedback.split("\n")[1][:60] if "\n" in retry_feedback else retry_feedback[:60],
-        )
-        retry_next = _run_next_question_from_state(
-            legal_state,
-            conversation_history,
-            task_hint=None,  # None → OLLAMA_MODEL (8B), not OLLAMA_MODEL_FAST (3B)
-            feedback=retry_feedback,
-        )
+    # ── Attempt 2: fast/no-think retry (only on technical failure above) ────
+    # Keep attempt 2 on the same fast route; this is a technical retry only.
+    retry_next = _run_next_question_from_state(
+        legal_state,
+        conversation_history,
+        task_hint="fast",  # fast/no-think retry
+    )
 
-        if retry_next and retry_next.get("action") == "ask":
-            retry_reply = (retry_next.get("question") or retry_next.get("reply_to_client") or "").strip()
-            retry_hard, _ = _is_hard_reject(retry_reply, legal_state)
-
-            if not retry_hard:
-                # Retry is usable (pass or soft issues) — always prefer over fallback
+    if retry_next:
+        if retry_next.get("action") == "ask":
+            reply = (retry_next.get("reply_to_client") or retry_next.get("question") or "").strip()
+            if reply:
                 _log_fc_step("legal_intake_ask_model_retry", (time.perf_counter() - t_start) * 1000)
-                retry_issues = _soft_issues(retry_reply, legal_state, asked_questions)
-                if retry_issues:
-                    logger.info(
-                        "INTAKE retry has soft_issues (%d) — using anyway (LLM > fallback) | reply[:60]=%s",
-                        len(retry_issues), retry_reply[:60],
-                    )
-                return {"action": "ask", "question": retry_reply}
+                return {"action": "ask", "question": reply}
 
-            # Retry also hard-rejected.
-            if not attempt1_hard and attempt1_reply:
-                # Original attempt had only soft issues — it's better than the fallback
-                logger.info(
-                    "INTAKE retry hard_reject; using attempt1 (soft issues only) | reply[:60]=%s",
-                    attempt1_reply[:60],
-                )
-                _log_fc_step("legal_intake_ask_model_softpass", (time.perf_counter() - t_start) * 1000)
-                return {"action": "ask", "question": attempt1_reply}
+        elif retry_next.get("action") == "complete":
+            result = _handle_complete(retry_next)
+            if result is not None:
+                _log_fc_step("legal_intake_complete_model_retry", (time.perf_counter() - t_start) * 1000)
+                return result
 
-            # Both attempts hard-rejected — fall through to deterministic fallback
-            logger.info("INTAKE both attempts hard_rejected — using deterministic fallback")
-
-        elif retry_next and retry_next.get("action") == "complete" and _should_complete_legal_intake(
-            legal_state,
-            conversation_history,
-            user_message,
-            stop_requested=stop_requested,
-        ):
-            retry_next.setdefault("intent", "legal_opinion")
-            retry_next.setdefault("document_types", "both")
-            retry_next.setdefault("search_strategy", _default_search_strategy_for_intent("legal_opinion", user_message))
-            retry_next.setdefault("result_count", None)
-            if not (retry_next.get("facts_summary") or "").strip():
-                retry_next["facts_summary"] = legal_state.get("facts_summary") or user_message
-            _log_fc_step("legal_intake_complete_model_retry", (time.perf_counter() - t_start) * 1000)
-            return _enrich_facts_summary(_normalize_completion_payload(retry_next, user_message), conversation_history, user_message)
-
-        elif not retry_next and not attempt1_hard and attempt1_reply:
-            # Retry returned nothing (parse failure) but attempt1 was soft-issues only — use it
-            logger.info("INTAKE retry parse failure; using attempt1 (soft issues) | reply[:60]=%s", attempt1_reply[:60])
-            _log_fc_step("legal_intake_ask_model_softpass", (time.perf_counter() - t_start) * 1000)
-            return {"action": "ask", "question": attempt1_reply}
-
-    # ── Deterministic fallback — last resort only ───────────────────────────
-    fallback_question = _build_fallback_next_question(legal_state, conversation_history)
-    if fallback_question:
-        _log_fc_step("legal_intake_ask_fallback", (time.perf_counter() - t_start) * 1000)
-        return {"action": "ask", "question": fallback_question}
-
+    # ── Both attempts produced nothing usable — complete and proceed ─────────
+    # This should be extremely rare (both no-think and thinking mode failed to
+    # parse). Rather than showing a broken reply, move to analysis on what we have.
+    logger.warning("INTAKE both attempts failed — completing on available facts")
     parsed = {
         "action": "complete",
         "intent": "legal_opinion",

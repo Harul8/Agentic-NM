@@ -6,8 +6,9 @@ fastapi==0.111.0
 email-validator==2.1.1
 
 # CrewAI agents + LLM resolution
-crewai==1.10.1
-litellm==1.35.3
+# Install CrewAI with LiteLLM extra so provider-style models
+# (e.g. ollama/...) initialize reliably.
+crewai[litellm]==1.10.1
 apscheduler==3.10.4
 
 # HTTP

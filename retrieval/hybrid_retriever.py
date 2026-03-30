@@ -49,6 +49,8 @@ _ce_init_lock = threading.Lock()
 #       ("chunks",path) → dict
 # ---------------------------------------------------------------------------
 _index_cache: dict = {}
+_faiss_gpu_lock = threading.Lock()
+_faiss_gpu_resources = None
 
 
 # ---------------------------------------------------------------------------
@@ -686,6 +688,41 @@ def safe_read_faiss(index_path: str):
         return None, False
 
 
+def _get_faiss_search_index(index_path: str, cpu_index):
+    """
+    Prefer a GPU FAISS index for ANN search, with CPU fallback.
+    Returns (index_to_search, using_gpu: bool).
+    """
+    if cpu_index is None:
+        return None, False
+
+    # If faiss-gpu is not available (e.g. faiss-cpu wheel), keep CPU path.
+    if not hasattr(faiss, "StandardGpuResources") or not hasattr(faiss, "index_cpu_to_gpu"):
+        return cpu_index, False
+
+    # Cache GPU clone separately to avoid repeated CPU→GPU conversions.
+    gpu_key = ("faiss_gpu", index_path)
+    cached_gpu = _index_cache.get(gpu_key)
+    if cached_gpu is not None:
+        return cached_gpu, True
+
+    global _faiss_gpu_resources
+    with _faiss_gpu_lock:
+        cached_gpu = _index_cache.get(gpu_key)
+        if cached_gpu is not None:
+            return cached_gpu, True
+        try:
+            if _faiss_gpu_resources is None:
+                _faiss_gpu_resources = faiss.StandardGpuResources()
+            gpu_index = faiss.index_cpu_to_gpu(_faiss_gpu_resources, 0, cpu_index)
+            _index_cache[gpu_key] = gpu_index
+            logger.info("FAISS GPU index enabled for %s (%d vectors)", index_path, cpu_index.ntotal)
+            return gpu_index, True
+        except Exception as e:
+            logger.warning("FAISS GPU fallback to CPU for %s: %s", index_path, e)
+            return cpu_index, False
+
+
 def safe_write_faiss(index, path: str) -> bool:
     """Write FAISS index. Returns True on success."""
     try:
@@ -760,22 +797,24 @@ def hybrid_search(
     # faiss_ranked: {chunk_key: rank}  (rank 0 = most similar)
     faiss_ranked: dict = {}
     faiss_index, ok = safe_read_faiss(faiss_index_path)
+    using_gpu = False
     if ok and faiss_index:
         try:
             embedder = _get_embedder()
             query_vec = embedder.encode(
                 query, convert_to_numpy=True, normalize_embeddings=True
             )
-            k = min(faiss_top_k, faiss_index.ntotal)
+            search_index, using_gpu = _get_faiss_search_index(faiss_index_path, faiss_index)
+            k = min(faiss_top_k, search_index.ntotal)
             if k > 0:
-                distances, indices = faiss_index.search(
+                distances, indices = search_index.search(
                     np.array([query_vec], dtype="float32"), k
                 )
                 for rank, idx in enumerate(indices[0]):
                     if idx >= 0 and str(idx) in chunks:
                         faiss_ranked[str(idx)] = rank
         except Exception as e:
-            logger.error(f"FAISS search failed: {e}")
+            logger.error(f"FAISS search failed (gpu_first={using_gpu}): {e}")
 
     # --- Stage 2: BM25 keyword search (ranked) ---
     # bm25_ranked: {chunk_key: rank}  (rank 0 = highest BM25 score)
