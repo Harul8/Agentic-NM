@@ -4,6 +4,9 @@ node_modules/
 # Virtual environment
 ai_gpu/
 
+# Environment variables
+.env
+
 # Data (vector store, chat history, etc.)
 data/
 vector_store/

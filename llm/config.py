@@ -6,7 +6,7 @@ import os
 
 # LLM provider selection:
 # - "ollama" (default): local Ollama models
-# - "openai": API-backed models (e.g. gpt-5.1)
+# - "openai": API-backed models (e.g. gpt-5-mini)
 LLM_PROVIDER = os.environ.get("LLM_PROVIDER", "ollama").strip().lower() or "ollama"
 
 # Default model — legal analysis (thinking mode).
@@ -67,14 +67,14 @@ OLLAMA_MODEL_LONG_CONTEXT_DISPLAY = os.environ.get(
 ).strip() or "Qwen 3 8B"
 
 # OpenAI/API model mapping (used when LLM_PROVIDER=openai).
-OPENAI_MODEL = os.environ.get("OPENAI_MODEL", "gpt-5.1").strip() or "gpt-5.1"
-OPENAI_MODEL_FAST = os.environ.get("OPENAI_MODEL_FAST", "gpt-5.1-mini").strip() or "gpt-5.1-mini"
+OPENAI_MODEL = os.environ.get("OPENAI_MODEL", "gpt-5-mini").strip() or "gpt-5-mini"
+OPENAI_MODEL_FAST = os.environ.get("OPENAI_MODEL_FAST", "gpt-5-nano").strip() or "gpt-5-nano"
 OPENAI_MODEL_LONG_CONTEXT = os.environ.get("OPENAI_MODEL_LONG_CONTEXT", OPENAI_MODEL).strip() or OPENAI_MODEL
 
-OPENAI_MODEL_DISPLAY = os.environ.get("OPENAI_MODEL_DISPLAY", "GPT-5.1").strip() or "GPT-5.1"
+OPENAI_MODEL_DISPLAY = os.environ.get("OPENAI_MODEL_DISPLAY", "GPT-5 mini").strip() or "GPT-5 mini"
 OPENAI_MODEL_FAST_DISPLAY = os.environ.get(
-    "OPENAI_MODEL_FAST_DISPLAY", "GPT-5.1 mini"
-).strip() or "GPT-5.1 mini"
+    "OPENAI_MODEL_FAST_DISPLAY", "GPT-5 nano"
+).strip() or "GPT-5 nano"
 OPENAI_MODEL_LONG_CONTEXT_DISPLAY = os.environ.get(
     "OPENAI_MODEL_LONG_CONTEXT_DISPLAY", OPENAI_MODEL_DISPLAY
 ).strip() or OPENAI_MODEL_DISPLAY

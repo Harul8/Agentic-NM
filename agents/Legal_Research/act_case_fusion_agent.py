@@ -10,8 +10,10 @@ This module is used by:
 - mcp_server.py legal_research tool
 """
 
-from crewai import Agent
-from crewai.tools import tool
+Agent = None
+
+def tool(fn):
+    return fn
 
 from llm.config import CREWAI_LLM
 
@@ -128,15 +130,21 @@ def fuse_bare_act_and_case_law(issue: str):
     return result
 
 
-act_case_fusion_agent = Agent(
-    role="Legal Research Synthesizer",
-    goal="Combine Bare Act provisions and Case Laws into a single structured legal context",
-    backstory=(
-        "You strictly aggregate authoritative legal material. "
-        "You never reason, interpret, retry, or invent. "
-        "If data is missing, you return empty sections."
-    ),
-    llm=CREWAI_LLM,
-    tools=[fuse_bare_act_and_case_law],
-    verbose=True
-)
+if Agent is None:
+    act_case_fusion_agent = None
+else:
+    try:
+        act_case_fusion_agent = Agent(
+            role="Legal Research Synthesizer",
+            goal="Combine Bare Act provisions and Case Laws into a single structured legal context",
+            backstory=(
+                "You strictly aggregate authoritative legal material. "
+                "You never reason, interpret, retry, or invent. "
+                "If data is missing, you return empty sections."
+            ),
+            llm=CREWAI_LLM,
+            tools=[fuse_bare_act_and_case_law],
+            verbose=True
+        )
+    except Exception:
+        act_case_fusion_agent = None

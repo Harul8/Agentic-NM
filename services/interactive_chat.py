@@ -315,7 +315,12 @@ def _default_search_strategy_for_intent(intent: str | None, requested_strategy: 
     return "local_then_web"
 
 
-def _run_generic_chat(conversation: list, current_message: str, token_callback=None) -> dict:
+def _run_generic_chat(
+    conversation: list,
+    current_message: str,
+    token_callback=None,
+    model_override: str | None = None,
+) -> dict:
     """Generalist Agent: handle any query not covered by legal agents (search, lookup, legal_opinion). Answers like ChatGPT/Perplexity; no legal retrieval."""
     try:
         context = "\n".join(
@@ -326,12 +331,12 @@ def _run_generic_chat(conversation: list, current_message: str, token_callback=N
         if token_callback:
             from llm.ollama_client import ask_llm_stream
             parts = []
-            for tok in ask_llm_stream(prompt, task_hint="fast"):
+            for tok in ask_llm_stream(prompt, task_hint="fast", model=model_override):
                 token_callback(tok)
                 parts.append(tok)
             reply = "".join(parts).strip()
         else:
-            reply = ask_llm(prompt, task_hint="fast").strip()
+            reply = ask_llm(prompt, task_hint="fast", model=model_override).strip()
         if not reply:
             reply = "I'm not sure how to answer that. Could you rephrase or ask something else?"
     except Exception as e:
@@ -431,7 +436,9 @@ def process_chat(
     if phase == "fact_collection":
         # Manual override: general chat â†’ skip legal routing entirely
         if mode == "general":
-            return _run_generic_chat(conversation, current_message, token_callback=token_callback)
+            return _run_generic_chat(
+                conversation, current_message, token_callback=token_callback, model_override=model_override
+            )
 
         # Manual override: direct legal research (search-style workflow)
         if mode == "legal_research":
@@ -539,7 +546,13 @@ def process_chat(
         # so Gate 1 can never downgrade to GENERALIST when the user chose legal mode.
         force_legal = mode == "legal_opinion"
         t_before_fact = time.perf_counter()
-        result = get_next_question_or_complete(conversation, current_message, force_legal=force_legal, token_callback=token_callback)
+        result = get_next_question_or_complete(
+            conversation,
+            current_message,
+            force_legal=force_legal,
+            token_callback=token_callback,
+            model_override=model_override,
+        )
         _log_step("get_next_question_or_complete", (time.perf_counter() - t_before_fact) * 1000, f"action={result.get('action')}")
 
         if result.get("action") == "complete":
@@ -566,10 +579,14 @@ def process_chat(
 
             if intent == "bulk_ingest":
                 # Bulk ingest removed; treat as generic chat
-                return _run_generic_chat(conversation, current_message, token_callback=token_callback)
+                return _run_generic_chat(
+                    conversation, current_message, token_callback=token_callback, model_override=model_override
+                )
 
             if intent == "generic_chat":
-                return _run_generic_chat(conversation, current_message, token_callback=token_callback)
+                return _run_generic_chat(
+                    conversation, current_message, token_callback=token_callback, model_override=model_override
+                )
 
             # Keep intake fast: once enough facts exist, ask for confirmation to proceed
             # to full research instead of launching retrieval in the same turn.

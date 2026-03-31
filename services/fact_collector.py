@@ -57,6 +57,7 @@ _LEGAL_KEYWORDS = (
     "threat", "threaten", "terrorise", "terrorize", "injury", "injured",
     "husband", "wife", "children", "child", "daughter", "son", "dowry",
     "separate", "separation", "protection",
+    "woman", "women", "cruelty", "cruelyty", "define", "definition", "meaning",
 )
 
 
@@ -78,6 +79,11 @@ def is_greeting(msg: str, conversation_history: list = None) -> bool:
     m = (msg or "").strip().lower()
     if len(m) > 100:
         return False  # Long messages are always substantive
+
+    # Legal definition-style prompts are substantive even if short.
+    definition_prefixes = ("define ", "meaning of ", "what is ", "explain ")
+    if any(m.startswith(prefix) for prefix in definition_prefixes):
+        return False
 
     # ── STEP 1: legal context guard (runs before any phrase match) ──────────
     # If there is conversation history that contains legal keywords, this is
@@ -1217,7 +1223,11 @@ def _needs_more_intake_clarification(intake_state: dict, conversation_history: l
     return False
 
 
-def _run_compact_intake_state(conversation_history: list, user_message: str) -> dict | None:
+def _run_compact_intake_state(
+    conversation_history: list,
+    user_message: str,
+    model_override: str | None = None,
+) -> dict | None:
     """Small model call: extract route + compact legal intake state."""
     context_block = _build_compact_intake_state_context(conversation_history, user_message)
     few_shot_block = ""
@@ -1251,7 +1261,7 @@ def _run_compact_intake_state(conversation_history: list, user_message: str) -> 
     ]
     for hint, suffix in attempt_specs:
         try:
-            response = ask_llm(f"{prompt}{suffix}", task_hint=hint).strip()
+            response = ask_llm(f"{prompt}{suffix}", task_hint=hint, model=model_override).strip()
             parsed = _parse_intake_state(response)
             if parsed:
                 return parsed
@@ -1266,6 +1276,7 @@ def _run_next_question_from_state(
     *,
     task_hint: str | None = None,
     feedback: str = "",
+    model_override: str | None = None,
 ) -> dict | None:
     """Small model call: choose one next question or complete from compact state."""
     asked_questions = _extract_asked_questions(conversation_history)[-5:]
@@ -1320,7 +1331,7 @@ def _run_next_question_from_state(
         f"Output one line of valid JSON only."
     )
     try:
-        response = ask_llm(prompt, task_hint=task_hint).strip()
+        response = ask_llm(prompt, task_hint=task_hint, model=model_override).strip()
         return _parse_llm_response(response, intake_state.get("facts_summary", ""))
     except Exception:
         return None
@@ -1500,6 +1511,11 @@ def _is_low_value_timing_followup(proposed: str, intake_state: dict, asked_quest
 def _detect_intent_from_keywords(msg: str) -> str | None:
     """Keyword-based intent detection as a safety net."""
     m = msg.lower()
+    command_prefixes = (
+        "define ", "meaning of ", "what is ", "explain ",
+        "find ", "fetch ", "get ", "show ", "list ", "search ", "pull ",
+    )
+    has_command_prefix = any(m.startswith(prefix) for prefix in command_prefixes)
     search_signals = [
         "case law", "case laws", "caselaws", "judgment", "judgement",
         "judgments", "judgements", "ruling", "rulings", "verdict",
@@ -1512,7 +1528,13 @@ def _detect_intent_from_keywords(msg: str) -> str | None:
         "bare act", "section of", "sections of", "provisions of",
         "which section", "ipc section", "crpc section", "cpc section",
         "bnss section", "bns section",
+        "define", "definition", "meaning of", "what is", "explain",
+        "cruelty", "cruelyty", "dowry",
     ]
+    if has_command_prefix and any(s in m for s in lookup_signals):
+        return "lookup"
+    if has_command_prefix and any(kw in m for kw in _LEGAL_KEYWORDS):
+        return "search"
     if any(s in m for s in lookup_signals):
         return "lookup"
     # If message contains both "case" and "bare act" or "section", prefer search
@@ -1796,7 +1818,13 @@ def _normalize_completion_payload(parsed: dict, user_message: str) -> dict:
 # Main entry point
 # ---------------------------------------------------------------------------
 
-def get_next_question_or_complete(conversation_history: list, user_message: str, force_legal: bool = False, token_callback=None) -> dict:
+def get_next_question_or_complete(
+    conversation_history: list,
+    user_message: str,
+    force_legal: bool = False,
+    token_callback=None,
+    model_override: str | None = None,
+) -> dict:
     """
     Returns:
     - {"action": "ask", "question": "..."} — follow-up for the user
@@ -1821,12 +1849,29 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
         _log_fc_step("greeting_response", (time.perf_counter() - t_before) * 1000)
         return out
 
+    # Direct research route: command-style legal asks should skip intake Q/A.
+    direct_intent = _detect_intent_from_keywords(user_message)
+    if direct_intent in ("search", "lookup"):
+        parsed = {
+            "action": "complete",
+            "intent": direct_intent,
+            "result_count": _extract_result_count(user_message),
+            "facts_summary": user_message,
+            "message": "",
+            "document_types": "acts_only" if direct_intent == "lookup" else "case_laws_only",
+            "search_strategy": _default_search_strategy_for_intent(direct_intent, user_message),
+        }
+        _log_fc_step("direct_research_route", (time.perf_counter() - t_start) * 1000, f"intent={direct_intent}")
+        return _normalize_completion_payload(parsed, user_message)
+
     stop_requested = is_stop_signal(user_message)
     legal_context = _has_legal_context(conversation_history, user_message, force_legal=force_legal)
 
     # --- Compact intake state: the single routing and state brain ---
     t_compact = time.perf_counter()
-    raw_intake_state = _run_compact_intake_state(conversation_history, user_message)
+    raw_intake_state = _run_compact_intake_state(
+        conversation_history, user_message, model_override=model_override
+    )
     _log_fc_step(
         "compact_intake_state",
         (time.perf_counter() - t_compact) * 1000,
@@ -1903,7 +1948,9 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
     # Attempt 2 (thinking mode) only fires on a hard technical failure:
     # the model returned nothing parseable or returned no reply_to_client.
     t_next = time.perf_counter()
-    model_next = _run_next_question_from_state(legal_state, conversation_history, task_hint="fast")
+    model_next = _run_next_question_from_state(
+        legal_state, conversation_history, task_hint="fast", model_override=model_override
+    )
     _log_fc_step(
         "legal_intake_model_next",
         (time.perf_counter() - t_next) * 1000,
@@ -1949,6 +1996,7 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
         legal_state,
         conversation_history,
         task_hint="fast",  # fast/no-think retry
+        model_override=model_override,
     )
 
     if retry_next:

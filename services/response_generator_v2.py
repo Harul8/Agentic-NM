@@ -329,7 +329,19 @@ def _strip_chat_window_summary(text: str) -> str:
 
 def _normalize_fact_text(text: str) -> str:
     """Collapse repeated whitespace while preserving the user's actual facts."""
-    return " ".join(_strip_chat_window_summary(text).split()).strip()
+    normalized = " ".join(_strip_chat_window_summary(text).split()).strip()
+    inlaws = " inlaws "
+    typo_fixes = {
+        " inalws ": inlaws,
+        " inlawas ": inlaws,
+        " in laws ": inlaws,
+        " dowary ": " dowry ",
+        " haras ": " harass ",
+    }
+    padded = f" {normalized.lower()} "
+    for wrong, fixed in typo_fixes.items():
+        padded = padded.replace(wrong, fixed)
+    return " ".join(padded.split()).strip()
 
 
 def _split_fact_segments(text: str) -> list[str]:
@@ -588,7 +600,11 @@ def _build_single_dispute_from_facts(facts_summary: str) -> dict:
     }
 
 
-def _build_runtime_rescue_queries(facts_summary: str, limit: int = 2) -> list[str]:
+def _build_runtime_rescue_queries(
+    facts_summary: str,
+    limit: int = 2,
+    bare_act_sections: list | None = None,
+) -> list[str]:
     """Use model-backed query expansion only as a rescue when the first local pass is thin."""
     queries: list[str] = []
     seen: set[str] = set()
@@ -603,10 +619,18 @@ def _build_runtime_rescue_queries(facts_summary: str, limit: int = 2) -> list[st
         seen.add(key)
         queries.append(q)
 
-    _add(_build_focus_fact_text(facts_summary, max_chars=520) or facts_summary[:420])
+    _add(_build_focus_fact_text(facts_summary, max_chars=360) or facts_summary[:320])
+    if bare_act_sections:
+        for ba in (bare_act_sections or [])[:2]:
+            act = (ba.get("act_name") or "").strip()
+            sec = str(ba.get("section_number") or "").strip()
+            if act and sec:
+                _add(f"Section {sec} {act} interpretation judgment India")
+            elif act:
+                _add(f"{act} interpretation judgment India")
     try:
         for query in expand_legal_query(facts_summary)[: max(1, limit + 1)]:
-            _add(query)
+            _add(query[:320])
     except Exception as e:
         logger.debug("Interactive rescue query expansion failed: %s", e)
     return queries[: max(1, limit)]
@@ -706,6 +730,7 @@ def _align_case_laws_with_statute_support(case_laws: list, bare_acts: list, fact
     act_names = [(ba.get("act_name") or "").strip().lower() for ba in (bare_acts or []) if (ba.get("act_name") or "").strip()]
     section_numbers = [str(ba.get("section_number") or "").strip().lower() for ba in (bare_acts or []) if str(ba.get("section_number") or "").strip()]
     authority_bonus = {"supreme_court": 0.35, "high_court": 0.18, "tribunal": 0.08}
+    paragraph_bonus = {"ratio": 0.40, "reasoning": 0.28, "order": 0.12, "arguments": 0.08, "facts": -0.08, "unknown": -0.06}
 
     rescored = []
     for item in case_laws:
@@ -717,14 +742,21 @@ def _align_case_laws_with_statute_support(case_laws: list, bare_acts: list, fact
         act_hits = sum(1 for act_name in act_names[:3] if act_name and act_name in blob)
         section_hits = sum(1 for sec in section_numbers[:3] if sec and re.search(rf"\bsection\s+{re.escape(sec)}\b", blob))
         fact_overlap = sum(1 for term in fact_terms if term and term in blob)
+        paragraph_type = (item.get("paragraph_type") or "unknown").strip().lower()
+        para_boost = paragraph_bonus.get(paragraph_type, paragraph_bonus["unknown"])
+        para_num_raw = str(item.get("paragraph_num") or "").strip()
+        first_para_penalty = -0.12 if para_num_raw in {"1", "2"} and paragraph_type in {"unknown", "facts"} else 0.0
         bonus = (act_hits * 0.9) + (section_hits * 0.45) + min(fact_overlap * 0.08, 0.48)
         bonus += authority_bonus.get((item.get("binding_authority") or "").strip().lower(), 0.0)
+        bonus += para_boost + first_para_penalty
         clone["_statute_case_support"] = round(bonus, 3)
         clone["_case_support_score"] = float(clone.get("_rerank_score", 0) or 0) + bonus
+        clone["_paragraph_precision_score"] = clone["_case_support_score"]
         rescored.append(clone)
 
     rescored.sort(
         key=lambda item: (
+            item.get("_paragraph_precision_score", 0),
             item.get("_case_support_score", 0),
             item.get("_statute_case_support", 0),
             item.get("_rerank_score", 0),
@@ -2416,17 +2448,24 @@ def _select_top_acts(bare_acts: list, max_acts: int = 4) -> set[str]:
 
 def _apply_dispute_case_law_limit(case_laws: list, num_sections: int = 1) -> list:
     """
-    Threshold-based limit for per-dispute case laws:
-      • If there is one main section: keep up to 3 strongest cases.
-      • If there are multiple connected sections: keep up to 5 strongest cases so they
-        can be distributed across sections in the final opinion.
-      • Prefer high-quality cases first; otherwise fall back to top relevant cases.
+    Threshold-based limit for per-dispute case laws.
+    Always keep a tight cap of 3 strongest paragraphs for consistency.
     Input must already be quality-filtered.
     """
     if not case_laws:
         return []
-    cap = 5 if int(num_sections or 1) > 1 else 3
-    sorted_cls = sorted(case_laws, key=lambda x: x.get("_rerank_score", 0), reverse=True)
+    _ = num_sections
+    cap = 3
+    sorted_cls = sorted(
+        case_laws,
+        key=lambda x: (
+            x.get("_paragraph_precision_score", 0),
+            x.get("_case_support_score", 0),
+            x.get("_fact_alignment_score", 0),
+            x.get("_rerank_score", 0),
+        ),
+        reverse=True,
+    )
     high_quality = [cl for cl in sorted_cls if cl.get("_rerank_score", 0) > HIGH_QUALITY_SCORE]
     if high_quality:
         return high_quality[:cap]
@@ -2993,7 +3032,7 @@ def generate_response_v2(
                 )
                 if not bare_d:
                     logger.info("[%s] Interactive fast bare-act rescue: broadening local search", d_id)
-                    rescue_queries = _build_runtime_rescue_queries(facts_summary, limit=2)
+                    rescue_queries = _build_runtime_rescue_queries(facts_summary, limit=2, bare_act_sections=bare_d)
                     for _q_ba in rescue_queries:
                         for _ba in search_bare_acts_runtime(_q_ba, top_k=8):
                             _key = (
@@ -3088,7 +3127,7 @@ def generate_response_v2(
                 case_d = _apply_dispute_case_law_limit(initial_case, num_sections=len(bare_d))
                 if not case_d:
                     logger.info("[%s] Interactive fast case-law rescue: broadening local case search", d_id)
-                    rescue_queries = _build_runtime_rescue_queries(facts_summary, limit=2)
+                    rescue_queries = _build_runtime_rescue_queries(facts_summary, limit=2, bare_act_sections=bare_d)
                     for _q_cl in rescue_queries:
                         for _cl in search_case_laws_runtime(_q_cl, top_k=8):
                             _ck = _cl.get("_chunk_key") or (

@@ -14,10 +14,12 @@ import os
 import subprocess
 import threading
 import time
+from datetime import datetime, timedelta
 
 import requests
 from requests.adapters import HTTPAdapter
 from openai import OpenAI
+import tiktoken
 
 from llm.config import (
     LLM_PROVIDER,
@@ -45,6 +47,13 @@ from llm.config import (
 )
 
 logger = logging.getLogger(__name__)
+OPENAI_ANALYSIS_SWITCH_INPUT_TOKENS = 6000
+OPENAI_INPUT_TOKEN_LIMIT = 10000
+OPENAI_OUTPUT_TOKEN_LIMIT = 5000
+OPENAI_FAST_INPUT_TOKEN_LIMIT = 5000
+OPENAI_FAST_OUTPUT_TOKEN_LIMIT = 2000
+OPENAI_HOURLY_INPUT_TOKEN_LIMIT = 500000
+OPENAI_HOURLY_OUTPUT_TOKEN_LIMIT = 5000
 
 _session_lock = threading.Lock()
 _session = None
@@ -52,10 +61,23 @@ _session = None
 # Thread-local: model name used by the last ask_llm call in this thread (for API to include in response)
 _last_model_used = threading.local()
 _openai_client = None
+_openai_budget_lock = threading.Lock()
+_openai_budget_window_start = datetime.utcnow()
+_openai_hourly_input_used = 0
+_openai_hourly_output_used = 0
 
 
 def _is_openai_provider() -> bool:
     return LLM_PROVIDER == "openai"
+
+
+def _is_openai_request(explicit_model: str | None = None, chosen_model: str | None = None) -> bool:
+    if _is_openai_provider():
+        return True
+    explicit = (explicit_model or "").strip().lower()
+    if explicit in ("provider:openai", "openai"):
+        return True
+    return chosen_model in {OPENAI_MODEL, OPENAI_MODEL_FAST, OPENAI_MODEL_LONG_CONTEXT}
 
 
 def _get_openai_client() -> OpenAI:
@@ -83,6 +105,66 @@ def _trim_prompt_for_context(prompt: str) -> str:
     return p[:LONG_CONTEXT_THRESHOLD]
 
 
+def _count_tokens(text: str, model_name: str) -> int:
+    try:
+        enc = tiktoken.encoding_for_model(model_name or OPENAI_MODEL)
+    except Exception:
+        enc = tiktoken.get_encoding("o200k_base")
+    return len(enc.encode(text or ""))
+
+
+def _openai_limits(chosen_model: str, task_hint: str | None) -> tuple[int, int]:
+    if task_hint == "fast" or chosen_model == OPENAI_MODEL_FAST:
+        return OPENAI_FAST_INPUT_TOKEN_LIMIT, OPENAI_FAST_OUTPUT_TOKEN_LIMIT
+    return OPENAI_INPUT_TOKEN_LIMIT, OPENAI_OUTPUT_TOKEN_LIMIT
+
+
+def _truncate_openai_input(prompt: str, chosen_model: str, task_hint: str | None) -> str:
+    p = prompt or ""
+    input_limit, _ = _openai_limits(chosen_model, task_hint)
+    try:
+        enc = tiktoken.encoding_for_model(chosen_model or OPENAI_MODEL)
+    except Exception:
+        enc = tiktoken.get_encoding("o200k_base")
+    tokens = enc.encode(p)
+    if len(tokens) <= input_limit:
+        return p
+    logger.warning("OpenAI input exceeds hard limit (%d > %d); truncating", len(tokens), input_limit)
+    return enc.decode(tokens[:input_limit])
+
+
+def _reset_openai_budget_window_if_needed() -> None:
+    global _openai_budget_window_start, _openai_hourly_input_used, _openai_hourly_output_used
+    now = datetime.utcnow()
+    if now - _openai_budget_window_start >= timedelta(hours=1):
+        _openai_budget_window_start = now
+        _openai_hourly_input_used = 0
+        _openai_hourly_output_used = 0
+
+
+def _allow_openai_budget(input_tokens: int, reserved_output_tokens: int) -> bool:
+    global _openai_hourly_input_used, _openai_hourly_output_used
+    with _openai_budget_lock:
+        _reset_openai_budget_window_if_needed()
+        next_input = _openai_hourly_input_used + max(0, input_tokens)
+        next_output = _openai_hourly_output_used + max(0, reserved_output_tokens)
+        if next_input > OPENAI_HOURLY_INPUT_TOKEN_LIMIT or next_output > OPENAI_HOURLY_OUTPUT_TOKEN_LIMIT:
+            return False
+        _openai_hourly_input_used = next_input
+        _openai_hourly_output_used = next_output
+        return True
+
+
+def _refund_openai_output_budget(reserved: int, actual: int) -> None:
+    global _openai_hourly_output_used
+    refund = max(0, reserved - max(0, actual))
+    if refund <= 0:
+        return
+    with _openai_budget_lock:
+        _reset_openai_budget_window_if_needed()
+        _openai_hourly_output_used = max(0, _openai_hourly_output_used - refund)
+
+
 def _get_model_for_prompt(
     prompt: str,
     explicit_model: str = None,
@@ -99,13 +181,26 @@ def _get_model_for_prompt(
     so we stay on a single default model for both normal and long requests.
     """
     if explicit_model:
+        normalized = explicit_model.strip().lower()
+        if normalized in ("provider:openai", "openai"):
+            if task_hint == "fast":
+                return OPENAI_MODEL_FAST
+            if task_hint == "long_context":
+                return OPENAI_MODEL_LONG_CONTEXT
+            input_tokens = _count_tokens(prompt, OPENAI_MODEL)
+            return OPENAI_MODEL if input_tokens > OPENAI_ANALYSIS_SWITCH_INPUT_TOKENS else OPENAI_MODEL_FAST
+        if normalized in ("provider:qwen", "qwen", "default"):
+            if task_hint == "fast":
+                return OLLAMA_MODEL_FAST
+            return OLLAMA_MODEL
         return explicit_model
     if _is_openai_provider():
         if task_hint == "fast":
             return OPENAI_MODEL_FAST
         if task_hint == "long_context":
             return OPENAI_MODEL_LONG_CONTEXT
-        return OPENAI_MODEL
+        input_tokens = _count_tokens(prompt, OPENAI_MODEL)
+        return OPENAI_MODEL if input_tokens > OPENAI_ANALYSIS_SWITCH_INPUT_TOKENS else OPENAI_MODEL_FAST
     if task_hint == "fast":
         return OLLAMA_MODEL_FAST
     return OLLAMA_MODEL
@@ -226,6 +321,109 @@ def _extract_text(data: dict) -> str:
     return ""
 
 
+def _extract_openai_text(resp) -> str:
+    """
+    Robustly extract text from OpenAI Responses API objects.
+    Handles both output_text convenience field and nested output content parts.
+    """
+    def _read(obj, key, default=None):
+        if isinstance(obj, dict):
+            return obj.get(key, default)
+        return getattr(obj, key, default)
+
+    def _stringify_text_like(value) -> str:
+        """
+        Normalize SDK text payloads into a plain string.
+        Handles plain strings and structured text objects/dicts
+        that store actual text under keys like 'value' or 'text'.
+        """
+        if isinstance(value, str):
+            return value.strip()
+        if isinstance(value, dict):
+            for key in ("text", "value", "output_text", "content"):
+                v = value.get(key)
+                if isinstance(v, str) and v.strip():
+                    return v.strip()
+                if isinstance(v, list):
+                    joined = " ".join(
+                        str(item).strip()
+                        for item in v
+                        if isinstance(item, str) and item.strip()
+                    ).strip()
+                    if joined:
+                        return joined
+        return ""
+
+    out = _stringify_text_like(_read(resp, "output_text", ""))
+    if out:
+        return out
+
+    # Some SDK responses expose dict-like data via model_dump()
+    payload = resp
+    try:
+        if hasattr(resp, "model_dump"):
+            payload = resp.model_dump()
+    except Exception:
+        payload = resp
+
+    parts: list[str] = []
+    for item in (_read(payload, "output", []) or []):
+        # Some responses may carry only reasoning summaries with no message/output_text.
+        if (_read(item, "type", "") or "").strip().lower() == "reasoning":
+            for s in (_read(item, "summary", []) or []):
+                s_txt = _stringify_text_like(_read(s, "text", None))
+                if s_txt:
+                    parts.append(s_txt)
+
+        for content in (_read(item, "content", []) or []):
+            text_val = _stringify_text_like(_read(content, "text", None))
+            if text_val:
+                parts.append(text_val)
+            # Chat-style content entries sometimes come as {"type":"output_text","text":"..."}
+            if isinstance(content, dict):
+                maybe_text = _stringify_text_like(content.get("text") or content.get("output_text"))
+                if maybe_text:
+                    parts.append(maybe_text)
+                # Some shapes include refusal text instead of output_text
+                refusal_text = _stringify_text_like(content.get("refusal"))
+                if refusal_text:
+                    parts.append(refusal_text)
+
+    # Fallback for chat-completions-like shape
+    if not parts:
+        choices = _read(payload, "choices", []) or []
+        for ch in choices:
+            msg = _read(ch, "message", {}) or {}
+            content = _read(msg, "content", "")
+            if isinstance(content, str) and content.strip():
+                parts.append(content.strip())
+            elif isinstance(content, list):
+                for block in content:
+                    txt = _stringify_text_like(_read(block, "text", None))
+                    if txt:
+                        parts.append(txt)
+
+    if not parts:
+        # Diagnostic metadata only; avoids leaking prompt/response body content.
+        try:
+            output_items = _read(payload, "output", []) or []
+            output_types = []
+            for item in output_items:
+                item_type = _read(item, "type", None)
+                if item_type:
+                    output_types.append(str(item_type))
+            logger.warning(
+                "OpenAI response had no extractable text; top_keys=%s output_items=%d output_types=%s",
+                list(payload.keys())[:12] if isinstance(payload, dict) else type(payload).__name__,
+                len(output_items),
+                output_types[:8],
+            )
+        except Exception:
+            pass
+
+    return "\n".join(parts).strip()
+
+
 import re as _re
 _THINK_BLOCK_RE = _re.compile(r"<think>.*?</think>", _re.DOTALL | _re.IGNORECASE)
 
@@ -308,13 +506,15 @@ def ask_llm_stream(
             full += token
         return full.strip()
     """
-    chosen = _get_model_for_prompt(prompt, model, task_hint)
+    requested_model = model
+    chosen = _get_model_for_prompt(prompt, requested_model, task_hint)
+    use_openai = _is_openai_request(requested_model, chosen)
     try:
         _last_model_used.value = chosen
     except Exception:
         pass
     timeout, _ = _resolve_timeout_and_retries(prompt, chosen, task_hint, timeout)
-    if _is_openai_provider():
+    if use_openai:
         text = ask_llm(prompt, model=chosen, timeout=timeout, task_hint=task_hint)
         for i in range(0, len(text), 24):
             yield text[i:i + 24]
@@ -373,42 +573,72 @@ def ask_llm(
     and OLLAMA_MODEL_LONG_CONTEXT (e.g. Llama 3.1 8B) when prompt length exceeds
     LONG_CONTEXT_THRESHOLD or task_hint is "long_context". Retries on connection/timeout only.
     """
-    chosen = _get_model_for_prompt(prompt, model, task_hint)
+    requested_model = model
+    chosen = _get_model_for_prompt(prompt, requested_model, task_hint)
+    use_openai = _is_openai_request(requested_model, chosen)
     trimmed_prompt = _trim_prompt_for_context(prompt)
     try:
         _last_model_used.value = chosen
     except Exception:
         pass
     model = chosen
-    if _is_openai_provider():
-        timeout, max_retries = _resolve_timeout_and_retries(prompt, chosen, task_hint, timeout)
-        last_exc = None
-        for attempt in range(1 + max_retries):
-            try:
-                resp = _get_openai_client().responses.create(
-                    model=model,
-                    input=prompt,
-                    timeout=timeout,
-                )
-                out = (getattr(resp, "output_text", "") or "").strip()
-                if out:
-                    return out
-                raise RuntimeError("Empty response from OpenAI API")
-            except Exception as exc:
-                last_exc = exc
-                if attempt < max_retries:
-                    wait = RETRY_BACKOFF_BASE * (2 ** attempt)
-                    logger.warning(
-                        "OpenAI request failed (attempt %d/%d), retrying in %ds: %s",
-                        attempt + 1, 1 + max_retries, wait, exc,
+    if use_openai:
+        prompt = _truncate_openai_input(prompt, chosen, task_hint)
+        _, max_output_tokens = _openai_limits(chosen, task_hint)
+        input_tokens = _count_tokens(prompt, chosen)
+        if not _allow_openai_budget(input_tokens, max_output_tokens):
+            logger.warning("OpenAI hourly limit breached; falling back to Qwen")
+            chosen = _get_model_for_prompt(prompt, "provider:qwen", task_hint)
+            model = chosen
+            use_openai = False
+        else:
+            timeout, max_retries = _resolve_timeout_and_retries(prompt, chosen, task_hint, timeout)
+            last_exc = None
+            for attempt in range(1 + max_retries):
+                try:
+                    request_kwargs = {
+                        "model": model,
+                        "input": prompt,
+                        "timeout": timeout,
+                        "max_output_tokens": max_output_tokens,
+                        # Force plain-text response mode to avoid reasoning-only payloads.
+                        "text": {"format": {"type": "text"}},
+                    }
+                    resp = _get_openai_client().responses.create(
+                        **request_kwargs
                     )
-                    time.sleep(wait)
-                else:
-                    logger.error(
-                        "OpenAI request failed after %d attempts: %s",
-                        1 + max_retries, exc,
-                    )
-        raise RuntimeError(f"OpenAI request failed: {last_exc}")
+                    out = _extract_openai_text(resp)
+                    if not out:
+                        # If no message text came back, make one immediate retry with
+                        # explicit final-answer instruction before failing this attempt.
+                        retry_kwargs = dict(request_kwargs)
+                        retry_kwargs["input"] = (
+                            f"{prompt}\n\n"
+                            "IMPORTANT: Return only the final answer text. "
+                            "Do not return reasoning metadata."
+                        )
+                        resp_retry = _get_openai_client().responses.create(**retry_kwargs)
+                        out = _extract_openai_text(resp_retry)
+                    _refund_openai_output_budget(max_output_tokens, _count_tokens(out, chosen) if out else 0)
+                    if out:
+                        return out
+                    raise RuntimeError("Empty response from OpenAI API")
+                except Exception as exc:
+                    last_exc = exc
+                    if attempt < max_retries:
+                        wait = RETRY_BACKOFF_BASE * (2 ** attempt)
+                        logger.warning(
+                            "OpenAI request failed (attempt %d/%d), retrying in %ds: %s",
+                            attempt + 1, 1 + max_retries, wait, exc,
+                        )
+                        time.sleep(wait)
+                    else:
+                        _refund_openai_output_budget(max_output_tokens, 0)
+                        logger.error(
+                            "OpenAI request failed after %d attempts: %s",
+                            1 + max_retries, exc,
+                        )
+            raise RuntimeError(f"OpenAI request failed: {last_exc}")
     timeout, max_retries = _resolve_timeout_and_retries(trimmed_prompt, chosen, task_hint, timeout)
     payload = {
         "model": model,

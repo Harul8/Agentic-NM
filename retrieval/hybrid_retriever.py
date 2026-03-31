@@ -1412,9 +1412,10 @@ def search_case_summaries_fast(query: str, top_k: int = 4) -> list:
         faiss_index_path=CASE_SUMMARY_INDEX_V2,
         chunks_path=CASE_SUMMARY_CHUNKS_V2,
         bm25_index_path=CASE_SUMMARY_BM25_INDEX,
-        faiss_top_k=4,
-        bm25_top_k=4,
-        rerank_top_k=min(top_k, 3),
+        faiss_top_k=12,
+        bm25_top_k=12,
+        # Keep final re-ranked summary candidates tight for interactive precision.
+        rerank_top_k=min(max(1, top_k), 3),
         min_rerank_score=0.0,
     )
     for r in results:
@@ -1525,9 +1526,9 @@ def search_case_laws_runtime(query: str, top_k: int = 8, allow_legacy_fallback: 
             faiss_index_path=CASE_SUMMARY_INDEX_V2,
             chunks_path=CASE_SUMMARY_CHUNKS_V2,
             bm25_index_path=CASE_SUMMARY_BM25_INDEX,
-            faiss_top_k=8,
-            bm25_top_k=8,
-            rerank_top_k=min(max(top_k, 6), 8),
+            faiss_top_k=18,
+            bm25_top_k=18,
+            rerank_top_k=3,
             min_rerank_score=0.0,
         )
         for r in summary_results:
@@ -1544,9 +1545,9 @@ def search_case_laws_runtime(query: str, top_k: int = 8, allow_legacy_fallback: 
             faiss_index_path=CASE_INDEX_V2,
             chunks_path=CASE_CHUNKS_V2,
             bm25_index_path=CASE_BM25_INDEX,
-            faiss_top_k=10,
-            bm25_top_k=10,
-            rerank_top_k=min(max(top_k, 6), 8),
+            faiss_top_k=20,
+            bm25_top_k=20,
+            rerank_top_k=3,
             min_rerank_score=0.0,
             allowed_cases=None,
         )

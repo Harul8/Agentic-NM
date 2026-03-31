@@ -281,9 +281,8 @@ const ChatComposer = memo(function ChatComposer({
           onChange={(e) => onModelChange(e.target.value)}
           disabled={loading}
         >
-          <option value="default">Default (Qwen 3 8B)</option>
-          <option value="qwen3:8b">Qwen 3 8B</option>
-          <option value="qwen3.5:9b">Qwen 3.5 9B</option>
+          <option value="qwen">Qwen</option>
+          <option value="openai">OpenAI</option>
         </select>
       </div>
       {showDisclaimer && (
@@ -448,7 +447,7 @@ function App() {
 
   // Manual mode selection: "legal_opinion" (default), "legal_research", "general"
   const [chatMode, setChatMode] = useState("legal_opinion");
-  const [selectedModel, setSelectedModel] = useState("default");
+  const [selectedModel, setSelectedModel] = useState("qwen");
 
   // Bottom pane: single accordion (Eval | Architecture | Updates Tracker). Default: minimal strip at bottom; can extend up to 75% of viewport.
   const [bottomExpandedSection, setBottomExpandedSection] = useState(null); // "eval" | "architecture" | "updates" | null
@@ -728,8 +727,13 @@ function App() {
   const resolveModelUsed = useCallback((data, fallback = "") => {
     if (typeof data?.model_used === "string" && data.model_used.trim()) return data.model_used.trim();
     if (fallback) return fallback;
-    return selectedModel && selectedModel !== "default" ? selectedModel : "runtime_fewshot";
+    if (selectedModel === "openai") return "OpenAI";
+    return "Qwen";
   }, [selectedModel]);
+
+  const getModelOverridePayload = useCallback(() => (
+    selectedModel === "openai" ? "provider:openai" : "provider:qwen"
+  ), [selectedModel]);
 
   const currentTurnLatencyMs = useCallback(() => {
     if (!turnStartedAtRef.current) return null;
@@ -860,25 +864,24 @@ function App() {
               setBareActs(normalized.flatMap((j) => j.acts.map((a) => (typeof a === "string" ? a : a.name))));
               setBareActsJurisdictionOpen((prev) => prev ?? normalized[0]?.name ?? null);
             }
-            return;
-          }
-        }
-
-        const res = await fetch(`${API_BASE}/bareacts/list`);
-        if (!cancelled) {
-          if (!res.ok) {
-            setBareActs(DEFAULT_BARE_ACTS);
           } else {
-            const text = await res.text();
-            let data = {};
-            try {
-              data = text ? JSON.parse(text) : {};
-            } catch {
-              setBareActs(DEFAULT_BARE_ACTS);
-              return;
+            const res = await fetch(`${API_BASE}/bareacts/list`);
+            if (!cancelled) {
+              if (!res.ok) {
+                setBareActs(DEFAULT_BARE_ACTS);
+              } else {
+                const text = await res.text();
+                let data = {};
+                try {
+                  data = text ? JSON.parse(text) : {};
+                } catch {
+                  setBareActs(DEFAULT_BARE_ACTS);
+                  return;
+                }
+                const acts = data.acts || [];
+                setBareActs(acts.length > 0 ? acts : DEFAULT_BARE_ACTS);
+              }
             }
-            const acts = data.acts || [];
-            setBareActs(acts.length > 0 ? acts : DEFAULT_BARE_ACTS);
           }
         }
       } catch (err) {
@@ -1400,7 +1403,7 @@ function App() {
       try {
         await consumeSSEStream(
           `${API_BASE}/submit_case/stream`,
-          { text: raw, mode: chatMode, model_override: selectedModel === "default" ? "" : selectedModel },
+          { text: raw, mode: chatMode, model_override: getModelOverridePayload() },
           (progressPayload) => {
             setProgress(progressPayload);
             const groups = progressPayload.groups || [];
@@ -1458,7 +1461,7 @@ function App() {
       try {
         await consumeSSEStream(
           `${API_BASE}/conversation/continue/stream`,
-          { conversation, message: raw, mode: chatMode, model_override: selectedModel === "default" ? "" : selectedModel, workflowState: buildWorkflowState() },
+          { conversation, message: raw, mode: chatMode, model_override: getModelOverridePayload(), workflowState: buildWorkflowState() },
           (progressPayload) => {
             setProgress(progressPayload);
             const groups = progressPayload.groups || [];
@@ -1515,7 +1518,7 @@ function App() {
         try {
           await consumeSSEStream(
             `${API_BASE}/submit_case/stream`,
-            { text: raw, mode: chatMode, model_override: selectedModel === "default" ? "" : selectedModel },
+            { text: raw, mode: chatMode, model_override: getModelOverridePayload() },
             (progressPayload) => {
               setProgress(progressPayload);
               const groups = progressPayload.groups || [];
@@ -1557,7 +1560,7 @@ function App() {
         await new Promise((r) => setTimeout(r, 0));
         await consumeSSEStream(
           `${API_BASE}/conversation/continue/stream`,
-          { conversation, message: raw, mode: chatMode, model_override: selectedModel === "default" ? "" : selectedModel, workflowState: buildWorkflowState() },
+          { conversation, message: raw, mode: chatMode, model_override: getModelOverridePayload(), workflowState: buildWorkflowState() },
           (progressPayload) => {
             setProgress(progressPayload);
             const groups = progressPayload.groups || [];
