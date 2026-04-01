@@ -15,7 +15,7 @@ import re
 import time
 
 from llm.config import OLLAMA_MODEL, OLLAMA_MODEL_FAST
-from llm.ollama_client import ask_llm
+from llm.ollama_client import ask_llm, set_request_model_override
 from prompts.advocate_prompts import (
     GREETING_PHRASES,
     INTAKE_STATE_UPDATE_SYSTEM,
@@ -43,22 +43,35 @@ def _log_fc_step(step_name: str, elapsed_ms: float, extra: str = "") -> None:
         logger.info(msg)
 
 
-# Legal keywords used to distinguish greetings from legal queries
-_LEGAL_KEYWORDS = (
-    "law", "act", "section", "case", "court", "judgment", "judgement",
-    "legal", "advice", "sue", "file", "right", "compensation", "land",
-    "property", "contract", "agreement", "bail", "fir", "police",
-    "divorce", "custody", "maintenance", "tenant", "landlord", "eviction",
-    "cheque", "bounce", "fraud", "theft", "murder", "ipc", "crpc", "cpc",
-    "bnss", "bns", "bsa",  # new criminal codes
-    "petition", "writ", "appeal", "tribunal", "arbitration",
-    # Plain-language legal distress terms that often appear before formal legal words
-    "harass", "harassment", "beat", "beating", "abuse", "assault", "violence",
-    "threat", "threaten", "terrorise", "terrorize", "injury", "injured",
-    "husband", "wife", "children", "child", "daughter", "son", "dowry",
-    "separate", "separation", "protection",
-    "woman", "women", "cruelty", "cruelyty", "define", "definition", "meaning",
-)
+def _llm_classify_greeting(msg: str, conversation_history: list | None = None) -> bool:
+    """
+    Decide whether a message is a social greeting/small-talk vs legal content.
+    Uses fast LLM classification instead of static legal keyword lists.
+    """
+    history_tail = []
+    for turn in (conversation_history or [])[-6:]:
+        role = (turn.get("role") or "").strip().lower()
+        content = (turn.get("content") or "").strip()
+        if role in ("user", "assistant") and content:
+            history_tail.append({"role": role, "content": content[:220]})
+
+    prompt = (
+        "Classify the user's latest message.\n"
+        "Return ONLY JSON: {\"is_greeting\": true/false}\n"
+        "is_greeting=true ONLY for social greeting/small-talk without legal issue.\n"
+        "If user asks legal meaning/definition or states legal harm, return false.\n\n"
+        f"Conversation tail: {json.dumps(history_tail, ensure_ascii=False)}\n"
+        f"Latest user message: {msg}\n"
+    )
+    try:
+        raw = (ask_llm(prompt, task_hint="fast") or "").strip()
+        if "{" in raw and "}" in raw:
+            raw = raw[raw.find("{"): raw.rfind("}") + 1]
+        data = json.loads(raw)
+        return bool(data.get("is_greeting", False))
+    except Exception:
+        # Minimal safety fallback for LLM/parser failures.
+        return (msg or "").strip().lower().rstrip("!?.,;:") in {"hi", "hello", "hey"}
 
 
 def is_stop_signal(user_message: str) -> bool:
@@ -80,34 +93,13 @@ def is_greeting(msg: str, conversation_history: list = None) -> bool:
     if len(m) > 100:
         return False  # Long messages are always substantive
 
-    # Legal definition-style prompts are substantive even if short.
-    definition_prefixes = ("define ", "meaning of ", "what is ", "explain ")
-    if any(m.startswith(prefix) for prefix in definition_prefixes):
-        return False
-
-    # ── STEP 1: legal context guard (runs before any phrase match) ──────────
-    # If there is conversation history that contains legal keywords, this is
-    # a live legal conversation. Short follow-up answers must never be
-    # misclassified as greetings regardless of what phrase they match.
-    if conversation_history:
-        has_legal_context = any(
-            any(kw in (turn.get("content", "") or "").lower() for kw in _LEGAL_KEYWORDS)
-            for turn in conversation_history
-            if turn.get("role") == "user"
-        )
-        if has_legal_context:
-            return False  # Active legal conversation — never a greeting
-
-    # ── STEP 2: exact phrase match (only if no legal context above) ─────────
+    # Keep exact greeting phrases as hard true positives for speed.
     cleaned = m.rstrip("!?.,;:")
     if cleaned in GREETING_PHRASES:
         return True
 
-    # ── STEP 3: short, non-legal message with no prior legal context ─────────
-    if len(m) < 30 and not any(kw in m for kw in _LEGAL_KEYWORDS):
-        return True
-
-    return False
+    # Otherwise let the LLM classify greeting vs legal intent.
+    return _llm_classify_greeting(m, conversation_history)
 
 
 def generate_greeting_response(user_message: str) -> str:
@@ -407,18 +399,34 @@ def _combine_user_messages(conversation_history: list, user_message: str) -> str
 def _has_legal_context(conversation_history: list, user_message: str, force_legal: bool = False) -> bool:
     if force_legal:
         return True
-    blob_parts = []
-    for msg in conversation_history or []:
-        if msg.get("role") in ("user", "assistant"):
-            blob_parts.append((msg.get("content") or "").strip().lower())
-    blob_parts.append((user_message or "").strip().lower())
-    blob = " ".join(part for part in blob_parts if part)
-    return any(kw in blob for kw in _LEGAL_KEYWORDS)
+    history_tail = []
+    for turn in (conversation_history or [])[-8:]:
+        role = (turn.get("role") or "").strip().lower()
+        content = (turn.get("content") or "").strip()
+        if role in ("user", "assistant") and content:
+            history_tail.append({"role": role, "content": content[:240]})
+    prompt = (
+        "Classify whether the latest user turn is part of a legal context.\n"
+        "Return ONLY JSON: {\"legal_context\": true/false}\n"
+        "Set true when the user asks legal meaning, legal rights/remedies, legal process, "
+        "or describes a legal dispute/situation.\n"
+        "Set false for pure casual chat with no legal intent.\n\n"
+        f"Conversation tail: {json.dumps(history_tail, ensure_ascii=False)}\n"
+        f"Latest user message: {user_message}\n"
+    )
+    try:
+        raw = (ask_llm(prompt, task_hint="fast") or "").strip()
+        if "{" in raw and "}" in raw:
+            raw = raw[raw.find("{"): raw.rfind("}") + 1]
+        data = json.loads(raw)
+        return bool(data.get("legal_context", False))
+    except Exception:
+        return False
 
 
 def _normalize_intake_route(route: str | None, conversation_history: list, user_message: str, force_legal: bool = False) -> str:
     route = (route or "").strip().lower()
-    explicit_intent = _detect_intent_from_keywords(user_message)
+    explicit_intent = _detect_intent_from_keywords(user_message, conversation_history)
     legal_context = _has_legal_context(conversation_history, user_message, force_legal=force_legal)
     if explicit_intent in ("search", "lookup"):
         return explicit_intent
@@ -813,48 +821,54 @@ def _build_intake_opening(tone_profile: str, professional: bool, conversation_hi
 def _build_intake_reason(tone_profile: str, missing_points: list[str], professional: bool, conversation_history: list) -> str:
     low_points = {str(p).strip().lower() for p in (missing_points or []) if str(p).strip()}
     index = _conversation_variation_index(conversation_history, tone_profile, missing_points, professional)
-    if "documents / messages / witnesses currently available" in low_points and "prior actions already taken" in low_points:
-        options = (
-            "The next details will help me assess the present record and what can be pursued responsibly from here.",
-            "The next details will help me understand what has already been done and what material presently supports the matter.",
-            "The next details will help me judge the current record and what step is realistically supportable now.",
-        )
-        return _pick_variant(options, index)
-    if "present urgency / current position" in low_points and tone_profile == "urgent":
-        return _pick_variant((
-            "The next details will help me assess the immediate position, the urgency, and what can realistically be supported right now.",
-            "The next details will help me understand the present risk and what immediate step may actually be supportable.",
-            "The next details will help me judge the current practical position and what can responsibly be pursued right away.",
-        ), index)
-    if tone_profile == "sensitive":
-        return _pick_variant((
-            "The next details will help me assess immediate risk, available support, and what can be properly supported on the record.",
-            "The next details will help me understand the immediate safety position, the available support, and the record that already exists.",
-            "The next details will help me assess immediate protection needs and what can be responsibly supported on the material available right now.",
-        ), index)
+    topics: list[str] = []
+    if "present urgency / current position" in low_points:
+        topics.append("the immediate position and urgency")
+    if "documents / messages / witnesses currently available" in low_points:
+        topics.append("what supporting material is currently available")
+    if "prior actions already taken" in low_points:
+        topics.append("what steps have already been taken")
     if "current stage / notice / immediate trigger" in low_points:
-        return _pick_variant((
-            "The next details will help me assess where the matter presently stands and what legal path is realistically open.",
-            "The next details will help me understand the current stage and what route is genuinely open from here.",
-            "The next details will help me assess the present procedural position and what can responsibly be pursued next.",
-        ), index)
+        topics.append("the current procedural stage")
     if "client objective / relief sought" in low_points:
-        return _pick_variant((
-            "The next details will help me assess what relief is realistically supportable on the facts shared so far.",
-            "The next details will help me pin down what outcome is realistically supportable on the present record.",
-            "The next details will help me assess what relief can be responsibly pursued on the facts you have shared.",
-        ), index)
-    if professional:
-        return _pick_variant((
-            "The next details will help me assess urgency, evidentiary support, and what is presently supportable.",
-            "The next details will help me assess the present record, the urgency, and what is realistically supportable from here.",
-            "The next details will help me judge urgency, supportability, and the present evidentiary position.",
-        ), index)
-    return _pick_variant((
-        "The next details will help me understand the situation properly and assess what can be supported from here.",
-        "The next details will help me understand the position more clearly and assess what can realistically be supported.",
-        "The next details will help me see the situation more clearly and judge what can responsibly be pursued from here.",
-    ), index)
+        topics.append("the specific outcome to prioritize")
+
+    if not topics:
+        topics.append("the current position and what can be pursued responsibly")
+
+    if len(topics) == 1:
+        topic_phrase = topics[0]
+    elif len(topics) == 2:
+        topic_phrase = f"{topics[0]} and {topics[1]}"
+    else:
+        topic_phrase = ", ".join(topics[:-1]) + f", and {topics[-1]}"
+
+    lead_opts = (
+        "This helps me understand",
+        "This gives me clarity on",
+        "This lets me evaluate",
+    )
+    tail_opts = (
+        "so I can guide you on the next legally supportable step.",
+        "so I can advise what is realistically supportable right now.",
+        "so I can suggest the most practical next legal move.",
+    )
+    if tone_profile == "sensitive":
+        lead_opts = (
+            "This helps me protect your immediate position by clarifying",
+            "This helps me carefully understand",
+            "This lets me assess",
+        )
+    elif professional:
+        tail_opts = (
+            "so I can advise the strongest supportable route.",
+            "so I can assess supportability before recommending the next step.",
+            "so I can identify the most defensible next action.",
+        )
+
+    lead = _pick_variant(lead_opts, index)
+    tail = _pick_variant(tail_opts, index)
+    return f"{lead} {topic_phrase}, {tail}"
 
 
 def _is_low_information_reply(user_message: str) -> bool:
@@ -919,8 +933,8 @@ def _is_hard_reject(reply: str, intake_state: dict) -> tuple[bool, str]:
     if _is_role_inverted(reply, intake_state):
         return True, (
             "Reply reverses the client's role — describes them as the aggressor when the facts "
-            "say they are the victim. Rewrite starting with 'What you have described is...' "
-            "and ensure the client is the person on the receiving end of the harm."
+            "say they are the victim. Rewrite with correct role framing so the client remains "
+            "the person on the receiving end of the harm."
         )
 
     return False, ""
@@ -1085,7 +1099,7 @@ def _custom_open_point_to_fragment(point: str) -> str:
 def _build_fallback_issue_sentence(intake_state: dict) -> str:
     """
     Build a one-sentence plain-language ISSUE framing from facts_summary.
-    Begins with "What you have described is..." to mirror the LLM prompt convention.
+    Avoid fixed lead-ins to prevent repetitive stock phrasing.
     Returns empty string if there is not enough information.
     """
     facts = (intake_state.get("facts_summary") or "").strip()
@@ -1094,10 +1108,7 @@ def _build_fallback_issue_sentence(intake_state: dict) -> str:
     # Truncate to the core of the summary (first sentence or ~120 chars)
     sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", facts) if s.strip()]
     core = sentences[0] if sentences else facts[:120]
-    # Don't double-wrap if it already starts that way
-    if core.lower().startswith("what you have described"):
-        return core if core.endswith(".") else core + "."
-    return f"What you have described is: {core.rstrip('.')}."
+    return core if core.endswith(".") else core.rstrip(".") + "."
 
 
 def _build_fallback_next_question(intake_state: dict, conversation_history: list) -> str:
@@ -1404,9 +1415,8 @@ def _is_role_inverted(reply: str, intake_state: dict) -> bool:
     - If found, check whether the reply uses aggressor-mislabels that put the client
       in the position of the perpetrator or the defendant.
 
-    This catches the failure mode where the LLM sees "assault" and produces
-    "The husband filed an assault case against you" instead of
-    "What you have described is a physical assault by your husband."
+    This catches the failure mode where the LLM sees "assault" and describes
+    the client as the aggressor instead of the victim.
     """
     if not reply:
         return False
@@ -1505,42 +1515,35 @@ def _is_low_value_timing_followup(proposed: str, intake_state: dict, asked_quest
 
 
 # ---------------------------------------------------------------------------
-# Intent detection (keyword safety net when LLM gets it wrong)
+# Intent detection (LLM-based routing helper)
 # ---------------------------------------------------------------------------
 
-def _detect_intent_from_keywords(msg: str) -> str | None:
-    """Keyword-based intent detection as a safety net."""
-    m = msg.lower()
-    command_prefixes = (
-        "define ", "meaning of ", "what is ", "explain ",
-        "find ", "fetch ", "get ", "show ", "list ", "search ", "pull ",
+def _detect_intent_from_keywords(msg: str, conversation_history: list | None = None) -> str | None:
+    """LLM-based direct intent detection (search/lookup) for routing."""
+    history_tail = []
+    for turn in (conversation_history or [])[-8:]:
+        role = (turn.get("role") or "").strip().lower()
+        content = (turn.get("content") or "").strip()
+        if role in ("user", "assistant") and content:
+            history_tail.append({"role": role, "content": content[:220]})
+    prompt = (
+        "Classify the user's latest legal routing intent.\n"
+        "Return ONLY JSON: {\"intent\": \"lookup|search|none\"}\n"
+        "- lookup: provision/section/definition/concept-focused request.\n"
+        "- search: precedent/judgment/case-law focused request.\n"
+        "- none: situation/intake narrative or unclear retrieval intent.\n\n"
+        f"Conversation tail: {json.dumps(history_tail, ensure_ascii=False)}\n"
+        f"Latest user message: {msg}\n"
     )
-    has_command_prefix = any(m.startswith(prefix) for prefix in command_prefixes)
-    search_signals = [
-        "case law", "case laws", "caselaws", "judgment", "judgement",
-        "judgments", "judgements", "ruling", "rulings", "verdict",
-        "pull", "find me", "search for", "get me", "show me",
-        "pull three", "pull 3", "find three", "get three",  # explicit count requests
-    ]
-    if any(s in m for s in search_signals):
-        return "search"
-    lookup_signals = [
-        "bare act", "section of", "sections of", "provisions of",
-        "which section", "ipc section", "crpc section", "cpc section",
-        "bnss section", "bns section",
-        "define", "definition", "meaning of", "what is", "explain",
-        "cruelty", "cruelyty", "dowry",
-    ]
-    if has_command_prefix and any(s in m for s in lookup_signals):
-        return "lookup"
-    if has_command_prefix and any(kw in m for kw in _LEGAL_KEYWORDS):
-        return "search"
-    if any(s in m for s in lookup_signals):
-        return "lookup"
-    # If message contains both "case" and "bare act" or "section", prefer search
-    if ("case" in m or "judgment" in m) and ("bare act" in m or "section" in m):
-        return "search"  # "pull case laws and bare act sections" → search
-    return None
+    try:
+        raw = (ask_llm(prompt, task_hint="fast") or "").strip()
+        if "{" in raw and "}" in raw:
+            raw = raw[raw.find("{"): raw.rfind("}") + 1]
+        data = json.loads(raw)
+        intent = (data.get("intent") or "").strip().lower()
+        return intent if intent in ("search", "lookup") else None
+    except Exception:
+        return None
 
 
 def _detect_search_strategy_from_keywords(msg: str) -> str | None:
@@ -1553,6 +1556,106 @@ def _detect_search_strategy_from_keywords(msg: str) -> str | None:
     if any(p in m for p in local_only_phrases):
         return "local_only"
     return None
+
+
+def _is_short_lookup_style_query(user_message: str, conversation_history: list) -> bool:
+    """
+    Detect very short, fresh legal concept queries that should skip intake and
+    go directly to lookup (bare-act-first retrieval).
+
+    Keeps this conservative so normal follow-up answers in active intake are not
+    mis-routed.
+    """
+    msg = (user_message or "").strip()
+    if not msg:
+        return False
+    low = msg.lower().strip("!?.,;:")
+    tokens = [t for t in re.split(r"\s+", low) if t]
+    if len(tokens) > 4:
+        return False
+    if any(ch in msg for ch in ".:"):
+        return False
+    if is_stop_signal(msg):
+        return False
+
+    # If intake is already underway (assistant asked a question), do not force lookup.
+    for turn in reversed(conversation_history or []):
+        if (turn.get("role") or "").strip().lower() == "assistant":
+            content = (turn.get("content") or "").strip()
+            if "?" in content:
+                return False
+            break
+
+    # Fresh short utterance with legal context → treat as lookup.
+    return _has_legal_context(conversation_history, user_message)
+
+
+def _is_short_lookup_confirmation_prompt(text: str) -> bool:
+    low = (text or "").strip().lower()
+    return (
+        "definition/meaning" in low
+        and "punishment range" in low
+        and "key legal elements" in low
+        and "is this what you want" in low
+    )
+
+
+def _is_brief_affirmative_reply(text: str) -> bool:
+    low = (text or "").strip().lower().strip("!?.,;:")
+    return low in {
+        "yes", "yes please", "y", "ok", "okay", "sure", "proceed", "go ahead", "continue",
+        "haan", "ha", "theek", "thik", "done",
+    }
+
+
+def _last_user_topic_before_confirmation(conversation_history: list) -> str:
+    """
+    Return the most recent substantive user message before a short-lookup
+    confirmation turn.
+    """
+    users = [m.get("content", "").strip() for m in (conversation_history or []) if m.get("role") == "user"]
+    for content in reversed(users):
+        if not content:
+            continue
+        if _is_brief_affirmative_reply(content):
+            continue
+        return content
+    return ""
+
+
+def _build_short_lookup_confirmation_question(user_message: str, conversation_history: list) -> str:
+    """
+    Generate a short dynamic confirmation question for keyword-style legal queries.
+    Keeps retrieval gated until the user confirms focus.
+    """
+    tail = []
+    for turn in (conversation_history or [])[-6:]:
+        role = (turn.get("role") or "").strip().lower()
+        content = (turn.get("content") or "").strip()
+        if role in ("user", "assistant") and content:
+            tail.append({"role": role, "content": content[:220]})
+    prompt = (
+        "You are a legal assistant.\n"
+        "The user gave a very short legal term/phrase.\n"
+        "Write ONE short, natural follow-up question that does NOT provide legal analysis yet.\n"
+        "Goal: ask whether they want a quick overview (definition/meaning, punishment range, key legal elements) "
+        "or a specific focus.\n"
+        "Keep it under 30 words. No bullets. No legal conclusions.\n\n"
+        f"Conversation tail: {json.dumps(tail, ensure_ascii=False)}\n"
+        f"Latest user message: {user_message}\n"
+    )
+    try:
+        out = (ask_llm(prompt, task_hint="fast") or "").strip()
+        if out:
+            out = re.sub(r"\s+", " ", out).strip().strip('"')
+            if len(out) >= 12 and len(out.split()) <= 35 and "?" in out:
+                return out
+    except Exception:
+        pass
+    return (
+        "I can give a quick overview (definition, punishment range, and key legal elements), "
+        "or focus on one specific aspect. What would you like?"
+    )
 
 
 def _default_search_strategy_for_intent(
@@ -1636,8 +1739,8 @@ def _parse_llm_response(response: str, user_message: str) -> dict | None:
         if intent not in ("search", "lookup", "legal_opinion", "chat", "greeting", "generic_chat"):
             intent = "legal_opinion"
 
-        # Keyword-based intent from explicit retrieval phrases in the user's message.
-        # This is the ONLY signal that may safely upgrade legal_opinion → search/lookup.
+        # LLM-inferred retrieval intent from the user's latest message.
+        # This can safely upgrade legal_opinion → search/lookup when explicit.
         keyword_intent = _detect_intent_from_keywords(user_message)
 
         # If the LLM suggested search/lookup but the user did NOT use any explicit
@@ -1660,7 +1763,7 @@ def _parse_llm_response(response: str, user_message: str) -> dict | None:
         # Safety net: if user message is clearly greeting (and no prior legal context), don't run research
         # Don't check conversation_history here since we're inside _parse_llm_response which doesn't have it
         # The fast-path check at the top of get_next_question_or_complete already handles this
-        if len(user_message.strip()) < 30 and not any(kw in user_message.lower() for kw in _LEGAL_KEYWORDS) and intent == "legal_opinion":
+        if len(user_message.strip()) < 30 and intent == "legal_opinion":
             # Only treat as greeting if it's an exact match to greeting phrases
             cleaned = user_message.strip().lower().rstrip("!?.,;:")
             if cleaned in GREETING_PHRASES:
@@ -1834,6 +1937,9 @@ def get_next_question_or_complete(
     ensuring their request is never lost.
     """
     t_start = time.perf_counter()
+    # Ensure all helper ask_llm() calls in this request (including nested
+    # classifiers that don't pass explicit model) follow UI-selected provider/model.
+    set_request_model_override(model_override)
 
     # --- Fast path: greetings don't need the full LLM pipeline ---
     # Pass conversation_history so short follow-ups (e.g. "telangana") aren't misclassified as greetings
@@ -1849,8 +1955,60 @@ def get_next_question_or_complete(
         _log_fc_step("greeting_response", (time.perf_counter() - t_before) * 1000)
         return out
 
+    # Confirm-first path for short legal keyword/phrase queries:
+    # ask the user what focus they want before triggering retrieval.
+    last_assistant_msg = ""
+    for _m in reversed(conversation_history or []):
+        if (_m.get("role") or "").strip().lower() == "assistant":
+            last_assistant_msg = (_m.get("content") or "").strip()
+            break
+    if _is_short_lookup_confirmation_prompt(last_assistant_msg):
+        base_topic = _last_user_topic_before_confirmation(conversation_history)
+        if _is_brief_affirmative_reply(user_message):
+            follow_query = base_topic or user_message
+        else:
+            follow_query = f"{base_topic}. Focus: {user_message}".strip(". ") if base_topic else user_message
+
+        # Let the second user reply decide the downstream flow.
+        chosen_intent = None
+        keyword_intent = _detect_intent_from_keywords(user_message, conversation_history) or _detect_intent_from_keywords(follow_query, conversation_history)
+        if keyword_intent in ("search", "lookup"):
+            chosen_intent = keyword_intent
+        elif _is_brief_affirmative_reply(user_message):
+            # Bare confirmation after keyword-query prompt -> keep quick lookup path.
+            chosen_intent = "lookup"
+        else:
+            try:
+                follow_state = _run_compact_intake_state(
+                    conversation_history, follow_query, model_override=model_override
+                ) or {}
+                follow_route = _normalize_intake_route(
+                    follow_state.get("route"), conversation_history, follow_query, force_legal=force_legal
+                )
+                if follow_route in ("search", "lookup", "legal_opinion"):
+                    chosen_intent = follow_route
+                else:
+                    chosen_intent = "legal_opinion"
+            except Exception:
+                chosen_intent = "legal_opinion"
+
+        parsed = {
+            "action": "complete",
+            "intent": chosen_intent,
+            "result_count": _extract_result_count(user_message),
+            "facts_summary": follow_query,
+            "message": "",
+            "document_types": (
+                "acts_only" if chosen_intent == "lookup"
+                else ("case_laws_only" if chosen_intent == "search" else "both")
+            ),
+            "search_strategy": _default_search_strategy_for_intent(chosen_intent, follow_query),
+        }
+        _log_fc_step("short_lookup_confirmed", (time.perf_counter() - t_start) * 1000, f"intent={chosen_intent}")
+        return _normalize_completion_payload(parsed, user_message)
+
     # Direct research route: command-style legal asks should skip intake Q/A.
-    direct_intent = _detect_intent_from_keywords(user_message)
+    direct_intent = _detect_intent_from_keywords(user_message, conversation_history)
     if direct_intent in ("search", "lookup"):
         parsed = {
             "action": "complete",
@@ -1880,6 +2038,14 @@ def get_next_question_or_complete(
 
     intake_state = dict(raw_intake_state or {})
     route = _normalize_intake_route(intake_state.get("route"), conversation_history, user_message, force_legal=force_legal)
+
+    # Hard override: short, fresh legal keyword/phrase queries should not enter
+    # the full intake loop. First ask what focus the user wants.
+    if route == "legal_opinion" and _is_short_lookup_style_query(user_message, conversation_history):
+        return {
+            "action": "ask",
+            "question": _build_short_lookup_confirmation_question(user_message, conversation_history),
+        }
 
     if route == "greeting" and not legal_context:
         cleaned = user_message.strip().lower().rstrip("!?.,;:")

@@ -3,7 +3,7 @@ node_modules/
 
 # Virtual environment
 ai_gpu/
-
+.venv/
 # Environment variables
 .env
 

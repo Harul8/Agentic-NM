@@ -51,6 +51,7 @@ _ce_init_lock = threading.Lock()
 _index_cache: dict = {}
 _faiss_gpu_lock = threading.Lock()
 _faiss_gpu_resources = None
+_runtime_mode_logged_for_index: set[str] = set()
 
 
 # ---------------------------------------------------------------------------
@@ -798,6 +799,22 @@ def hybrid_search(
     faiss_ranked: dict = {}
     faiss_index, ok = safe_read_faiss(faiss_index_path)
     using_gpu = False
+    if ok and faiss_index and faiss_index_path not in _runtime_mode_logged_for_index:
+        try:
+            embedder = _get_embedder()
+            embedder_device = str(getattr(embedder, "device", "unknown"))
+        except Exception:
+            embedder_device = "unknown"
+        ce_gpu_ready = _get_cross_encoder_gpu() is not None
+        # Probe FAISS search mode once; this may initialize and cache the GPU clone.
+        _probe_search_index, _probe_using_gpu = _get_faiss_search_index(faiss_index_path, faiss_index)
+        logger.info(
+            "Retrieval runtime mode: embedder=%s, cross_encoder=%s, faiss_search=%s",
+            embedder_device,
+            "GPU" if ce_gpu_ready else "CPU",
+            "GPU" if _probe_using_gpu else "CPU",
+        )
+        _runtime_mode_logged_for_index.add(faiss_index_path)
     if ok and faiss_index:
         try:
             embedder = _get_embedder()

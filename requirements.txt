@@ -21,9 +21,18 @@ faiss-cpu==1.8.0
 numpy==1.26.4
 sentence-transformers==2.7.0
 huggingface-hub>=0.34,<1.0
-torch>=2.6,<2.7
-torchvision>=0.21,<0.22
-torchaudio>=2.6,<2.7
+
+# CUDA-enabled PyTorch defaults for Linux/WSL.
+# pip will use this wheel index for packages not found on PyPI.
+--extra-index-url https://download.pytorch.org/whl/cu124
+torch==2.6.0+cu124; platform_system == "Linux"
+torchvision==0.21.0+cu124; platform_system == "Linux"
+torchaudio==2.6.0+cu124; platform_system == "Linux"
+
+# Non-Linux fallback (Windows/macOS/other).
+torch>=2.6,<2.7; platform_system != "Linux"
+torchvision>=0.21,<0.22; platform_system != "Linux"
+torchaudio>=2.6,<2.7; platform_system != "Linux"
 
 # PDF processing (lightweight runtime helpers)
 # Let CrewAI / ingestion stack control pdfplumber version

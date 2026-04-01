@@ -14,6 +14,8 @@ import os
 import subprocess
 import threading
 import time
+import contextvars
+from contextlib import contextmanager
 from datetime import datetime, timedelta
 
 import requests
@@ -65,6 +67,7 @@ _openai_budget_lock = threading.Lock()
 _openai_budget_window_start = datetime.utcnow()
 _openai_hourly_input_used = 0
 _openai_hourly_output_used = 0
+_request_model_override = contextvars.ContextVar("request_model_override", default=None)
 
 
 def _is_openai_provider() -> bool:
@@ -74,6 +77,17 @@ def _is_openai_provider() -> bool:
 def _is_openai_request(explicit_model: str | None = None, chosen_model: str | None = None) -> bool:
     if _is_openai_provider():
         return True
+    explicit = (explicit_model or "").strip().lower()
+    if explicit in ("provider:openai", "openai"):
+        return True
+    return chosen_model in {OPENAI_MODEL, OPENAI_MODEL_FAST, OPENAI_MODEL_LONG_CONTEXT}
+
+
+def _is_openai_forced(explicit_model: str | None = None, chosen_model: str | None = None) -> bool:
+    """
+    True when this request is explicitly pinned to OpenAI (via provider override
+    or OpenAI model selection), so local-model fallback must never be used.
+    """
     explicit = (explicit_model or "").strip().lower()
     if explicit in ("provider:openai", "openai"):
         return True
@@ -180,6 +194,11 @@ def _get_model_for_prompt(
     Long prompts are trimmed to LONG_CONTEXT_THRESHOLD before request dispatch,
     so we stay on a single default model for both normal and long requests.
     """
+    # Request-scoped override (set by API flow) so helper calls without explicit_model
+    # still follow the frontend-selected provider/model.
+    if not explicit_model:
+        explicit_model = _request_model_override.get()
+
     if explicit_model:
         normalized = explicit_model.strip().lower()
         if normalized in ("provider:openai", "openai"):
@@ -204,6 +223,28 @@ def _get_model_for_prompt(
     if task_hint == "fast":
         return OLLAMA_MODEL_FAST
     return OLLAMA_MODEL
+
+
+@contextmanager
+def use_request_model_override(model_override: str | None):
+    """
+    Request-scoped model override for all ask_llm() calls in the current context.
+    Useful when helper functions don't pass explicit_model but should follow
+    frontend-selected provider/model (e.g. OpenAI).
+    """
+    token = _request_model_override.set(model_override)
+    try:
+        yield
+    finally:
+        _request_model_override.reset(token)
+
+
+def set_request_model_override(model_override: str | None) -> None:
+    """
+    Set request-scoped model override for current context.
+    Next call can overwrite/clear by passing another value (including None).
+    """
+    _request_model_override.set(model_override)
 
 
 def get_gpu_info() -> list:
@@ -268,7 +309,7 @@ def get_last_model_used() -> str:
     except Exception:
         return ""
 
-OLLAMA_BASE_URL = "http://localhost:11434"
+OLLAMA_BASE_URL = (os.environ.get("OLLAMA_BASE_URL") or "http://localhost:11434").strip()
 OLLAMA_GENERATE_URL = f"{OLLAMA_BASE_URL}/api/generate"
 
 RETRY_BACKOFF_BASE = 2  # seconds; doubles each retry (2s, 4s)
@@ -576,6 +617,7 @@ def ask_llm(
     requested_model = model
     chosen = _get_model_for_prompt(prompt, requested_model, task_hint)
     use_openai = _is_openai_request(requested_model, chosen)
+    openai_forced = _is_openai_forced(requested_model, chosen)
     trimmed_prompt = _trim_prompt_for_context(prompt)
     try:
         _last_model_used.value = chosen
@@ -587,6 +629,9 @@ def ask_llm(
         _, max_output_tokens = _openai_limits(chosen, task_hint)
         input_tokens = _count_tokens(prompt, chosen)
         if not _allow_openai_budget(input_tokens, max_output_tokens):
+            if openai_forced:
+                logger.error("OpenAI hourly limit breached; OpenAI is forced for this request, skipping local fallback")
+                raise RuntimeError("OpenAI hourly budget limit reached for this request")
             logger.warning("OpenAI hourly limit breached; falling back to Qwen")
             chosen = _get_model_for_prompt(prompt, "provider:qwen", task_hint)
             model = chosen

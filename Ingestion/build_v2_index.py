@@ -16,6 +16,9 @@ import os
 import sys
 import json
 import logging
+import time
+import shutil
+import math
 
 # Setup path for imports
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -88,6 +91,7 @@ def build_index(
     embedder,
     batch_size: int = None,
     append: bool = False,
+    resume_embeddings: bool = False,
 ):
     """Build (or extend) FAISS + BM25 indexes from a list of chunks.
 
@@ -128,33 +132,194 @@ def build_index(
     stored_chunks = [{k: v for k, v in c.items() if k != "search_text"} for c in chunks]
 
     # ── 2. Batch-size selection ────────────────────────────────────────────────
+    on_gpu = False
+    cuda_available = False
+    embedder_device = str(getattr(embedder, "device", "unknown")).lower()
+    try:
+        import torch
+        cuda_available = bool(torch.cuda.is_available())
+        on_gpu = ("cuda" in embedder_device) or cuda_available
+    except Exception as e:
+        logger.warning("Could not evaluate CUDA availability cleanly: %s", e)
+
     if batch_size is None:
         try:
-            import torch
-            on_gpu = (
-                (getattr(embedder, "device", None) and "cuda" in str(embedder.device))
-                or torch.cuda.is_available()
+            # Tuned for higher throughput; can be overridden via env vars.
+            default_gpu_bs = int(os.getenv("INDEX_EMBED_BATCH_GPU", "192"))
+            default_cpu_bs = int(os.getenv("INDEX_EMBED_BATCH_CPU", "32"))
+            batch_size = default_gpu_bs if on_gpu else default_cpu_bs
+        except Exception as e:
+            logger.warning(
+                "Batch-size env parsing failed (%s); falling back to CPU-safe batch_size=32",
+                e,
             )
-            batch_size = 128 if on_gpu else 32
-        except Exception:
             batch_size = 32
+
+    logger.info(
+        "Embedding backend check: embedder_device=%s, torch_cuda_available=%s, on_gpu=%s",
+        embedder_device, cuda_available, on_gpu,
+    )
 
     # ── 3. Embed new chunks ────────────────────────────────────────────────────
     logger.info("Embedding %d chunks (batch_size=%d)...", len(embed_texts), batch_size)
-    embeddings = embedder.encode(
-        embed_texts,
-        batch_size=batch_size,
-        convert_to_numpy=True,
-        normalize_embeddings=True,
-        show_progress_bar=True,
-    )
+    t_embed_start = time.perf_counter()
+
+    encode_kwargs = {
+        "batch_size": batch_size,
+        "convert_to_numpy": True,
+        "normalize_embeddings": True,
+        "show_progress_bar": True,
+    }
+    if on_gpu:
+        # fp16 materially improves embedding throughput on most CUDA GPUs.
+        encode_kwargs["precision"] = "float16"
+
+    def _encode_once(texts: list, kwargs: dict):
+        while True:
+            try:
+                return embedder.encode(texts, **kwargs)
+            except ValueError as e:
+                # sentence-transformers 2.7.0 does not support float16 via the
+                # `precision` arg (it is for quantized output modes only).
+                if "Precision float16 is not supported" in str(e) and "precision" in kwargs:
+                    logger.warning(
+                        "encode(precision='float16') unsupported in this "
+                        "sentence-transformers version; retrying without precision override."
+                    )
+                    kwargs.pop("precision", None)
+                    continue
+                raise
+            except RuntimeError as e:
+                is_oom = "out of memory" in str(e).lower()
+                cur_bs = int(kwargs["batch_size"])
+                if not (is_oom and cur_bs > 16):
+                    raise
+                new_bs = max(16, cur_bs // 2)
+                logger.warning(
+                    "Embedding OOM at batch_size=%d; retrying with batch_size=%d",
+                    cur_bs, new_bs,
+                )
+                kwargs["batch_size"] = new_bs
+                try:
+                    import torch
+                    if torch.cuda.is_available():
+                        torch.cuda.empty_cache()
+                except Exception:
+                    pass
+
+    if resume_embeddings:
+        ckpt_dir = f"{faiss_path}.embed_ckpt"
+        os.makedirs(ckpt_dir, exist_ok=True)
+        state_path = os.path.join(ckpt_dir, "state.json")
+        # Avoid noisy per-window 25/25 bars; we log cumulative progress ourselves.
+        encode_kwargs["show_progress_bar"] = False
+
+        state = {"completed": 0, "batch_size": int(encode_kwargs["batch_size"])}
+        if os.path.exists(state_path):
+            try:
+                with open(state_path, encoding="utf-8") as f:
+                    state = json.load(f)
+                logger.info(
+                    "Resuming embeddings from checkpoint: %d/%d done",
+                    int(state.get("completed", 0)), len(embed_texts),
+                )
+            except Exception:
+                logger.warning("Checkpoint state unreadable; starting embedding from scratch.")
+                state = {"completed": 0, "batch_size": int(encode_kwargs["batch_size"])}
+
+        start_idx = int(state.get("completed", 0))
+        all_parts = []
+        if start_idx > 0:
+            # Load already embedded shard files in order.
+            for i in range(0, start_idx):
+                shard = os.path.join(ckpt_dir, f"emb_{i:08d}.npy")
+                if os.path.exists(shard):
+                    all_parts.append(np.load(shard))
+            loaded = sum(len(p) for p in all_parts) if all_parts else 0
+            if loaded != start_idx:
+                logger.warning("Checkpoint shards incomplete (%d/%d). Restarting embeddings.", loaded, start_idx)
+                start_idx = 0
+                all_parts = []
+
+        cur = start_idx
+        resume_window_batches = int(os.getenv("INDEX_EMBED_RESUME_WINDOW_BATCHES", "25"))
+        resume_window_batches = max(1, resume_window_batches)
+        batch_for_progress = int(encode_kwargs["batch_size"])
+        total_batches = max(1, math.ceil(len(embed_texts) / batch_for_progress))
+        logger.info(
+            "Resume embedding progress will be reported as cumulative batches (window=%d, total=%d)",
+            resume_window_batches, total_batches,
+        )
+        while cur < len(embed_texts):
+            bs = int(encode_kwargs["batch_size"])
+            # Process multiple mini-batches per encode() call so progress bars are meaningful.
+            end = min(cur + (bs * resume_window_batches), len(embed_texts))
+            part = _encode_once(embed_texts[cur:end], encode_kwargs)
+            part = np.array(part, dtype="float32")
+            np.save(os.path.join(ckpt_dir, f"emb_{cur:08d}.npy"), part)
+            all_parts.append(part)
+            cur = end
+            with open(state_path, "w", encoding="utf-8") as f:
+                json.dump({"completed": cur, "batch_size": int(encode_kwargs["batch_size"])}, f)
+            done_batches = min(total_batches, math.ceil(cur / batch_for_progress))
+            logger.info(
+                "Embedding progress: %d/%d batches (%.1f%%)",
+                done_batches, total_batches, (done_batches * 100.0) / total_batches,
+            )
+        embeddings = np.vstack(all_parts) if all_parts else np.empty((0, 0), dtype="float32")
+    else:
+        embeddings = _encode_once(embed_texts, encode_kwargs)
+
+    t_embed_end = time.perf_counter()
+    logger.info("Embedding complete in %.2fs", t_embed_end - t_embed_start)
+    if resume_embeddings:
+        try:
+            shutil.rmtree(f"{faiss_path}.embed_ckpt", ignore_errors=True)
+        except Exception:
+            logger.warning("Could not clean embedding checkpoint directory for %s", faiss_path)
 
     # ── 4. FAISS: append or fresh build ───────────────────────────────────────
+    # GPU support: use faiss-gpu if available. GPU IndexFlatIP is used for
+    # vector insertion (supports GPU .add()), then converted back to CPU before
+    # saving (GPU indexes cannot be written to disk directly).
+    # Note: IndexHNSWFlat has no GPU variant — on GPU we use IndexFlatIP which
+    # gives exact cosine search and is fast enough at typical bare-act scales.
+    _gpu_count = faiss.get_num_gpus() if hasattr(faiss, "get_num_gpus") else 0
+    _use_gpu   = _gpu_count > 0
+    if _use_gpu:
+        logger.info("FAISS GPU detected (%d device(s)) — building on GPU.", _gpu_count)
+    else:
+        logger.info("No FAISS GPU detected — building on CPU.")
+
+    def _make_cpu_index(dim: int) -> faiss.Index:
+        """Create a fresh CPU index. IndexFlatIP on GPU path, HNSW on CPU path."""
+        if _use_gpu:
+            # Exact inner-product search; GPU-compatible
+            return faiss.IndexFlatIP(dim)
+        else:
+            idx = faiss.IndexHNSWFlat(dim, 32)
+            idx.hnsw.efConstruction = 200
+            return idx
+
+    def _add_to_index(index: faiss.Index, vecs: np.ndarray) -> faiss.Index:
+        """Add vectors, offloading to GPU when available."""
+        if _use_gpu:
+            _ = faiss.StandardGpuResources()
+            gpu_index = faiss.index_cpu_to_all_gpus(index)
+            gpu_index.add(vecs)
+            return faiss.index_gpu_to_cpu(gpu_index)
+        else:
+            index.add(vecs)
+            return index
+
+    vecs = np.array(embeddings, dtype="float32")
+
+    t_faiss_start = time.perf_counter()
     if append and os.path.exists(faiss_path) and os.path.exists(chunks_path):
         logger.info("Append mode — loading existing FAISS index: %s", faiss_path)
         index = faiss.read_index(faiss_path)
         offset = index.ntotal          # new chunks start at this position
-        index.add(np.array(embeddings, dtype="float32"))
+        index = _add_to_index(index, vecs)
         faiss.write_index(index, faiss_path)
         logger.info(
             "FAISS index extended: %s  (%d → %d vectors, +%d new)",
@@ -183,27 +348,38 @@ def build_index(
                 "building fresh index.", faiss_path,
             )
         dim = embeddings.shape[1]
-        index = faiss.IndexHNSWFlat(dim, 32)   # M=32 neighbours per node
-        index.hnsw.efConstruction = 200         # build-time accuracy vs speed
-        index.add(np.array(embeddings, dtype="float32"))
+        index = _make_cpu_index(dim)
+        index = _add_to_index(index, vecs)
         faiss.write_index(index, faiss_path)
-        logger.info("FAISS HNSW index saved: %s (%d vectors)", faiss_path, index.ntotal)
+        logger.info(
+            "FAISS index saved (%s): %s (%d vectors)",
+            "GPU→FlatIP" if _use_gpu else "CPU→HNSW",
+            faiss_path, index.ntotal,
+        )
 
         chunk_store = {str(i): chunk for i, chunk in enumerate(stored_chunks)}
         # BM25 texts for fresh build: use full_text (raw paragraph text, not metadata-polluted search_text)
         bm25_texts = [c.get("full_text") or c.get("text") or "" for c in stored_chunks]
+    t_faiss_end = time.perf_counter()
+    logger.info("FAISS stage complete in %.2fs", t_faiss_end - t_faiss_start)
 
     # ── 5. Save / overwrite chunks JSON ───────────────────────────────────────
+    t_chunks_start = time.perf_counter()
     with open(chunks_path, "w", encoding="utf-8") as f:
         json.dump(chunk_store, f, ensure_ascii=False)
     logger.info("Chunks JSON saved: %s (%d chunks)", chunks_path, len(chunk_store))
+    t_chunks_end = time.perf_counter()
+    logger.info("Chunk JSON write complete in %.2fs", t_chunks_end - t_chunks_start)
 
     # ── 6. Build BM25 from the full accumulated corpus ─────────────────────────
+    t_bm25_start = time.perf_counter()
     logger.info("Fitting BM25 on %d documents...", len(bm25_texts))
     bm25 = BM25()
     bm25.fit(bm25_texts)
     save_bm25_index(bm25, bm25_path)
     logger.info("BM25 index saved: %s", bm25_path)
+    t_bm25_end = time.perf_counter()
+    logger.info("BM25 stage complete in %.2fs", t_bm25_end - t_bm25_start)
 
 
 def main():

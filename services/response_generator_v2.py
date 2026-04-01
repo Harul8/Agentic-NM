@@ -25,7 +25,13 @@ from config import (
     GOOGLE_DRIVE_BARE_ACTS_FOLDER_URL,
     GOOGLE_DRIVE_CASE_LAWS_FOLDER_URL,
 )
-from llm.ollama_client import ask_llm, ask_llm_stream, get_model_display_for_prompt, get_gpu_info
+from llm.ollama_client import (
+    ask_llm,
+    ask_llm_stream,
+    get_model_display_for_prompt,
+    get_gpu_info,
+    set_request_model_override,
+)
 from prompts.advocate_prompts import (
     EXPAND_LEGAL_QUERY_SYSTEM,
     CASE_SUMMARY_SYSTEM,
@@ -2874,6 +2880,9 @@ def generate_response_v2(
         search_strategy:     "local_then_web" | "local_only" | "web_only"
     """
     progress = ProgressTracker()
+    # Ensure helper LLM calls (intent extraction/query expansion/etc.) follow
+    # the frontend-selected model/provider for this request context.
+    set_request_model_override(model_override)
 
     def _emit_progress():
         if progress_callback:
@@ -2908,6 +2917,14 @@ def generate_response_v2(
         try:
             from services.intent_extractor import extract_research_intent
             research_intent = extract_research_intent(facts_summary)
+            if research_intent:
+                _emit_step(
+                    "Intent parsed: "
+                    f"docs={research_intent.get('document_types', 'both')}, "
+                    f"strategy={research_intent.get('search_strategy', search_strategy)}, "
+                    f"scope={research_intent.get('scope', 'specific')}",
+                    "🧭",
+                )
         except Exception as e:
             logger.debug("Intent extraction skipped: %s", e)
 
@@ -2919,6 +2936,10 @@ def generate_response_v2(
         legal_queries = expand_legal_query(facts_summary, intent=research_intent)
     legal_query = legal_queries[0] if legal_queries else facts_summary[:300]
     logger.info("Expanded query(s): %s", legal_query[:200] if legal_query else "none")
+    _emit_step(
+        f"Query expansion complete: {len(legal_queries)} retrieval quer{'y' if len(legal_queries) == 1 else 'ies'}",
+        "🔎",
+    )
 
     analysis_mode = (analysis_mode or "full_opinion").strip().lower() or "full_opinion"
 
@@ -2941,6 +2962,12 @@ def generate_response_v2(
         retrieve_case_laws_flag = True
     if not retrieve_acts and not retrieve_case_laws_flag:
         retrieve_acts = retrieve_case_laws_flag = True
+    _flow = (
+        f"Flow selected: intent={intent}, mode={analysis_mode}, "
+        f"retrieve_acts={retrieve_acts}, retrieve_case_laws={retrieve_case_laws_flag}, "
+        f"strategy={search_strategy}"
+    )
+    _emit_step(_flow, "⚙️")
 
     # Step 2: Dispute decomposition
     _emit_step("Analysing your legal situation...", "🔍")
@@ -2950,11 +2977,9 @@ def generate_response_v2(
     if intent in ("search", "lookup"):
         # Direct search/lookup — no decomposition needed
         disputes = [{"id": "d1", "dispute": facts_summary[:300], "legal_nature": "both", "keywords": []}]
-        progress.add_step("Direct search/lookup — treating as single query", {"disputes": 1})
         _emit_step("Searching legal database...", "🔎")
     elif interactive_fast_path:
         disputes = [_build_single_dispute_from_facts(facts_summary)]
-        progress.add_step("Using fast interactive local profile", {"disputes": 1})
         _emit_step("Preparing a fast grounded opinion from local materials...", "⚡")
         _emit_live_token(
             "analysis_start",
@@ -2965,11 +2990,19 @@ def generate_response_v2(
         from services.dispute_decomposer import decompose_disputes
         disputes = decompose_disputes(facts_summary)
         labels = [d.get("dispute", "")[:60] for d in disputes]
-        progress.add_step(
-            f"Identified {len(disputes)} dispute component(s)",
-            {"count": len(disputes), "disputes": labels},
-        )
         logger.info("Disputes identified: %s", labels)
+        for _d in disputes[:6]:
+            _did = _d.get("id", "?")
+            _dtext = (_d.get("dispute") or "").strip()
+            if len(_dtext) > 140:
+                _dtext = _dtext[:137] + "..."
+            _nature = _d.get("legal_nature", "both")
+            _emit_step(f"[{_did}] Decomposition: {_dtext} (nature: {_nature})", "🧩")
+        if len(disputes) > 6:
+            _emit_step(
+                f"...and {len(disputes) - 6} more decomposition item(s)",
+                "🧩",
+            )
         _emit_step(
             f"Broken down into {len(disputes)} legal dispute component{'s' if len(disputes) != 1 else ''}",
             "📋",
@@ -3345,17 +3378,17 @@ def generate_response_v2(
 
     # Step 6: Stage-specific response drafting
     if intent in ("search", "lookup"):
-        progress.add_step("Generating search summary...")
-        _emit_step("Now I have everything I need ? composing your summary...", "??")
+        progress.add_step("Generating search summary for retrieved materials...")
+        _emit_step("Switching to summary generation for search/lookup results...", "🧠")
     elif analysis_mode == "bare_acts_only":
-        progress.add_step("Preparing applicable bare act sections...")
-        _emit_step("I have identified the grounded bare act sections that appear most relevant here.", "??")
+        progress.add_step("Preparing grounded bare-act-only analysis...")
+        _emit_step("Switching to bare-act-only legal drafting...", "🧠")
     elif analysis_mode == "precedents_only":
-        progress.add_step("Preparing precedent support...")
-        _emit_step("I am matching the strongest local precedents to the disputes already identified.", "??")
+        progress.add_step("Preparing precedent-focused analysis...")
+        _emit_step("Switching to precedent-focused legal drafting...", "🧠")
     else:
-        progress.add_step("Generating legal opinion...")
-        _emit_step("Now I have everything I need ? composing your legal analysis...", "??")
+        progress.add_step("Generating full legal opinion...")
+        _emit_step("Switching to full legal-opinion drafting...", "🧠")
     _emit_progress()
 
     flattened_case_laws = []
@@ -3442,7 +3475,9 @@ def generate_response_v2(
                     )
 
         if not (explanation or "").strip():
-            explanation = "Here's what I found for your query. Below are the relevant legal provisions with related case laws."
+            explanation = (
+                "I reviewed the strongest local materials and summarized the key provisions and supporting precedents below."
+            )
         if explanation and "I don't have any data" in explanation:
             explanation = _format_no_materials_message(search_strategy, None)
         if analysis_mode == "precedents_only":

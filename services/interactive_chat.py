@@ -14,10 +14,12 @@ Phase 2 cleanup:
 import logging
 import os
 import time
+import hashlib
 
 from llm.ollama_client import ask_llm
 from services.fact_collector import get_next_question_or_complete, is_stop_signal
-from services.runtime_warmup import kickoff_runtime_warmup
+from services.memory_guard import guard_activity
+from services.runtime_warmup import kickoff_runtime_warmup, kickoff_ollama_warmup_if_qwen
 from services.response_generator_v2 import (
     generate_response_v2 as generate_response,
 )
@@ -55,30 +57,53 @@ def _ensure_message(msg: str, facts: str, intent: str) -> str:
         if len(words) >= 3:
             return msg
 
-    # Generate contextual default based on intent
+    # Generate a contextual fallback without forcing one fixed template.
+    seed = f"{intent}|{(facts or '')[:120]}"
+    idx = int(hashlib.md5(seed.encode("utf-8")).hexdigest(), 16) % 3
     if intent == "search":
-        return "I've searched for relevant case laws and judgments for your query. Here's what I found."
-    elif intent == "lookup":
-        return "I've looked up the relevant bare act provisions for your query. Here's what I found."
-    else:
-        return "Thank you for sharing the details. I've researched the applicable bare acts and case laws. Here's my analysis."
-
-
-_ANALYSIS_READY_PREFIX = "I have enough to identify the applicable bare act sections"
-
-
-def _build_analysis_ready_prompt() -> str:
-    return (
-        "I have enough to identify the applicable bare act sections for the dispute or disputes that emerge from what you have shared. "
-        "If you want, you can add one last important fact now. "
-        "Otherwise, just say 'proceed' and I will first show the relevant bare act sections from the local legal database."
+        opts = (
+            "I checked the most relevant local materials and will walk you through the strongest results.",
+            "I pulled the strongest matched materials for your query and will summarize them clearly.",
+            "I reviewed the top matching materials and will now explain the key points.",
+        )
+        return opts[idx]
+    if intent == "lookup":
+        opts = (
+            "I located the most relevant provisions and will explain what is most useful here.",
+            "I found the key statutory materials for this query and will summarize them briefly.",
+            "I retrieved the strongest provision-level matches and will now explain their relevance.",
+        )
+        return opts[idx]
+    opts = (
+        "I have enough to begin grounded analysis and will now explain the strongest legal points.",
+        "I can now proceed with a grounded legal view based on the materials available.",
+        "I am ready to provide a grounded analysis from the current factual record and retrieved materials.",
     )
+    return opts[idx]
+
+
+_ANALYSIS_READY_MARKERS = (
+    "say 'proceed'",
+    "add one last important fact",
+    "from the local legal database",
+)
+
+
+def _build_analysis_ready_prompt(conversation: list) -> str:
+    idx = len([m for m in (conversation or []) if m.get("role") == "assistant"]) % 3
+    opts = (
+        "I can start grounded legal analysis now. If there is one crucial fact still missing, share it now; otherwise say 'proceed' and I will begin with the most relevant local bare-act sections.",
+        "The record is sufficient to move into legal analysis. You may add one final key fact, or say 'proceed' and I will present the strongest local bare-act sections first.",
+        "We can now proceed to grounded analysis on local materials. If you want to add one last important detail, do it now; otherwise say 'proceed' and I will start with the relevant bare-act sections.",
+    )
+    return opts[idx]
 
 
 def _analysis_confirmation_already_asked(conversation: list) -> bool:
     for msg in reversed(conversation or []):
         if msg.get("role") == "assistant":
-            return _ANALYSIS_READY_PREFIX.lower() in (msg.get("content") or "").lower()
+            low = (msg.get("content") or "").lower()
+            return all(marker in low for marker in _ANALYSIS_READY_MARKERS)
     return False
 
 
@@ -90,7 +115,8 @@ def _last_assistant_is_analysis_ready(conversation: list) -> bool:
         if not content:
             continue
         if role == "assistant":
-            return _ANALYSIS_READY_PREFIX.lower() in content.lower()
+            low = content.lower()
+            return all(marker in low for marker in _ANALYSIS_READY_MARKERS)
         if role == "user":
             return False
     return False
@@ -168,7 +194,11 @@ def _looks_like_new_case_opening(current_message: str, conversation: list) -> bo
         for msg in (conversation or [])
         if msg.get("role") == "assistant"
     )
-    return _ANALYSIS_READY_PREFIX.lower() in assistant_text or "legal opinion" in assistant_text or "applicable laws" in assistant_text
+    return (
+        all(marker in assistant_text for marker in _ANALYSIS_READY_MARKERS)
+        or "legal opinion" in assistant_text
+        or "applicable laws" in assistant_text
+    )
 def _build_chat_window_summary(conversation: list, current_message: str = "") -> str:
     """Deterministic summary of the current chat window for downstream analysis."""
     user_points: list[str] = []
@@ -281,7 +311,7 @@ def _run_search_or_lookup(
     response_type = "search_results" if intent == "search" else "lookup_results"
     explanation = (resp.get("explanation") or "").strip()
     if not explanation:
-        explanation = "Here's what I found for your query."
+        explanation = _ensure_message("", facts_summary, intent)
 
     return {
         "phase": "done",
@@ -409,6 +439,11 @@ def process_chat(
     try:
         if phase == "fact_collection" and (chat_mode or "").strip().lower() != "general":
             kickoff_runtime_warmup("intake")
+            # Do not warm Ollama at startup/background; warm only if UI selected
+            # Qwen and this is the first user turn.
+            prior_user_turns = sum(1 for m in (conversation or []) if m.get("role") == "user")
+            if prior_user_turns == 0:
+                kickoff_ollama_warmup_if_qwen(model_override, "first_qwen_message")
     except Exception:
         pass
 
@@ -436,26 +471,28 @@ def process_chat(
     if phase == "fact_collection":
         # Manual override: general chat â†’ skip legal routing entirely
         if mode == "general":
-            return _run_generic_chat(
-                conversation, current_message, token_callback=token_callback, model_override=model_override
-            )
+            with guard_activity("fact_collection:generic_chat"):
+                return _run_generic_chat(
+                    conversation, current_message, token_callback=token_callback, model_override=model_override
+                )
 
         # Manual override: direct legal research (search-style workflow)
         if mode == "legal_research":
             # Treat message as a single research query; no multi-step interview.
             msg = _ensure_message("", current_message, intent="search")
-            return _run_search_or_lookup(
-                current_message,
-                intent="search",
-                msg=msg,
-                result_count=None,
-                progress_callback=progress_callback,
-                # Use local-first retrieval with Indiankanoon fallback only when local retrieval is empty.
-                search_strategy="local_then_web",
-                step_callback=step_callback,
-                token_callback=token_callback,
-                model_override=model_override,
-            )
+            with guard_activity("fact_collection:legal_research_search"):
+                return _run_search_or_lookup(
+                    current_message,
+                    intent="search",
+                    msg=msg,
+                    result_count=None,
+                    progress_callback=progress_callback,
+                    # Use local-first retrieval with Indiankanoon fallback only when local retrieval is empty.
+                    search_strategy="local_then_web",
+                    step_callback=step_callback,
+                    token_callback=token_callback,
+                    model_override=model_override,
+                )
 
         analysis_stage = _get_analysis_stage(workflow_state)
 
@@ -546,13 +583,14 @@ def process_chat(
         # so Gate 1 can never downgrade to GENERALIST when the user chose legal mode.
         force_legal = mode == "legal_opinion"
         t_before_fact = time.perf_counter()
-        result = get_next_question_or_complete(
-            conversation,
-            current_message,
-            force_legal=force_legal,
-            token_callback=token_callback,
-            model_override=model_override,
-        )
+        with guard_activity("fact_collection:get_next_question_or_complete"):
+            result = get_next_question_or_complete(
+                conversation,
+                current_message,
+                force_legal=force_legal,
+                token_callback=token_callback,
+                model_override=model_override,
+            )
         _log_step("get_next_question_or_complete", (time.perf_counter() - t_before_fact) * 1000, f"action={result.get('action')}")
 
         if result.get("action") == "complete":
@@ -565,28 +603,31 @@ def process_chat(
                 count = result.get("result_count")
                 strategy = result.get("search_strategy", "local_then_web")
                 _log_step("FACT_COLLECTION â†’ retrieval (search/lookup)", (time.perf_counter() - t_pipeline_start) * 1000, f"facts_len={len(facts or '')}")
-                return _run_search_or_lookup(
-                    facts,
-                    intent,
-                    msg,
-                    result_count=count,
-                    progress_callback=progress_callback,
-                    search_strategy=strategy,
-                    step_callback=step_callback,
-                    token_callback=token_callback,
-                    document_types=result.get("document_types", "both"),
-                )
+                with guard_activity(f"fact_collection:run_{intent}"):
+                    return _run_search_or_lookup(
+                        facts,
+                        intent,
+                        msg,
+                        result_count=count,
+                        progress_callback=progress_callback,
+                        search_strategy=strategy,
+                        step_callback=step_callback,
+                        token_callback=token_callback,
+                        document_types=result.get("document_types", "both"),
+                    )
 
             if intent == "bulk_ingest":
                 # Bulk ingest removed; treat as generic chat
-                return _run_generic_chat(
-                    conversation, current_message, token_callback=token_callback, model_override=model_override
-                )
+                with guard_activity("fact_collection:bulk_ingest_to_generic_chat"):
+                    return _run_generic_chat(
+                        conversation, current_message, token_callback=token_callback, model_override=model_override
+                    )
 
             if intent == "generic_chat":
-                return _run_generic_chat(
-                    conversation, current_message, token_callback=token_callback, model_override=model_override
-                )
+                with guard_activity("fact_collection:intent_generic_chat"):
+                    return _run_generic_chat(
+                        conversation, current_message, token_callback=token_callback, model_override=model_override
+                    )
 
             # Keep intake fast: once enough facts exist, ask for confirmation to proceed
             # to full research instead of launching retrieval in the same turn.
@@ -594,7 +635,7 @@ def process_chat(
                 _log_step("fact_collection ANALYSIS_READY", (time.perf_counter() - t_pipeline_start) * 1000)
                 return {
                     "phase": "fact_collection",
-                    "message": _build_analysis_ready_prompt(),
+                    "message": _build_analysis_ready_prompt(conversation),
                     "facts_summary": facts,
                     "response": None,
                     "response_type": None,
@@ -653,19 +694,20 @@ def process_chat(
         use_analysis_mode = (analysis_mode or "full_opinion").strip().lower() or "full_opinion"
         t_before_gen = time.perf_counter()
         try:
-            resp = generate_response(
-                facts,
-                jurisdiction_state="",
-                intent=use_intent,
-                progress_callback=progress_callback,
-                document_types=use_document_types,
-                search_strategy=use_search_strategy,
-                result_count=use_result_count,
-                step_callback=step_callback,
-                token_callback=token_callback,
-                model_override=model_override,
-                analysis_mode=use_analysis_mode,
-            )
+            with guard_activity("response_generation:generate_response"):
+                resp = generate_response(
+                    facts,
+                    jurisdiction_state="",
+                    intent=use_intent,
+                    progress_callback=progress_callback,
+                    document_types=use_document_types,
+                    search_strategy=use_search_strategy,
+                    result_count=use_result_count,
+                    step_callback=step_callback,
+                    token_callback=token_callback,
+                    model_override=model_override,
+                    analysis_mode=use_analysis_mode,
+                )
         except Exception as e:
             logger.error("Response generation failed: %s", e, exc_info=True)
             return {
