@@ -56,6 +56,10 @@ from prompts.advocate_prompts import (
     ISSUE_CATEGORY_DETECT_SYSTEM,
     STAGE1_CONFIRM_AND_FOLLOWUP_SYSTEM,
     STAGE1_READINESS_CHECK_SYSTEM,
+    STAGE1_SAFETY_FIRST_SYSTEM,
+    STAGE1_VETTING_QUESTION_SYSTEM,
+    STAGE4_REMEDY_ASSESSMENT_SYSTEM,
+    PRE_DRAFT_SUMMARY_SYSTEM,
     STAGE1_INTAKE_STATE_SCHEMA,
     LEGAL_ISSUE_CATEGORIES,
 )
@@ -162,9 +166,8 @@ def _detect_category(client_message: str, conversation_context: str) -> dict:
     """
     Run the LLM category classifier on the client's message.
 
-    Returns a dict with keys: category, confidence, issue_summary,
-    jurisdiction_hint, urgency_signal, client_role, other_party.
-    Falls back to 'general' on failure.
+    Returns a dict with primary_category, secondary_categories, and all
+    new anchor / risk fields.  Falls back to safe defaults on failure.
     """
     t0 = time.perf_counter()
 
@@ -177,13 +180,20 @@ def _detect_category(client_message: str, conversation_context: str) -> dict:
     )
 
     _DEFAULT = {
-        "category": "general",
-        "confidence": "low",
-        "issue_summary": "",
-        "jurisdiction_hint": "unknown",
-        "urgency_signal": "unknown",
-        "client_role": "unknown",
-        "other_party": "unknown",
+        "primary_category":          "general",
+        "secondary_categories":      [],
+        "confidence":                "low",
+        "issue_summary":             "",
+        "jurisdiction":              "unknown",
+        "urgency_signal":            "unknown",
+        "risk_flags":                [],
+        "client_role":               "unknown",
+        "other_party":               "unknown",
+        "relationship_to_other_party": "unknown",
+        "timeframe_status":          "unknown",
+        "client_goal_initial":       None,
+        "immediate_need":            "unknown",
+        "emotional_ask":             "unknown",
     }
 
     try:
@@ -193,11 +203,19 @@ def _detect_category(client_message: str, conversation_context: str) -> dict:
         if not out or not isinstance(out, dict):
             return _DEFAULT
 
-        # Validate category
         valid_cats = set(LEGAL_ISSUE_CATEGORIES.keys())
-        cat = str(out.get("category") or "general").strip().lower()
-        if cat not in valid_cats:
-            cat = "general"
+
+        # Primary category
+        primary = str(out.get("primary_category") or "general").strip().lower()
+        if primary not in valid_cats:
+            primary = "general"
+
+        # Secondary categories (up to 2, valid only)
+        raw_secondary = out.get("secondary_categories") or []
+        secondary = [
+            c.strip().lower() for c in raw_secondary
+            if isinstance(c, str) and c.strip().lower() in valid_cats and c.strip().lower() != primary
+        ][:2]
 
         confidence = str(out.get("confidence") or "low").strip().lower()
         if confidence not in ("high", "medium", "low"):
@@ -207,14 +225,33 @@ def _detect_category(client_message: str, conversation_context: str) -> dict:
         if urgency not in ("immediate", "near_term", "no_urgency", "unknown"):
             urgency = "unknown"
 
+        risk_flags = [str(f).strip() for f in (out.get("risk_flags") or []) if str(f).strip()]
+
+        timeframe = str(out.get("timeframe_status") or "unknown").strip().lower()
+        if timeframe not in ("ongoing", "recent", "historical", "unknown"):
+            timeframe = "unknown"
+
+        immediate_need = str(out.get("immediate_need") or "unknown").strip().lower()
+        if immediate_need not in ("safety", "shelter", "protection_order", "bail", "stay_order", "money", "none", "unknown"):
+            immediate_need = "unknown"
+
+        client_goal = str(out.get("client_goal_initial") or "").strip()[:200] or None
+
         return {
-            "category":        cat,
-            "confidence":      confidence,
-            "issue_summary":   str(out.get("issue_summary") or "").strip()[:300],
-            "jurisdiction":    str(out.get("jurisdiction_hint") or "unknown").strip(),
-            "urgency_signal":  urgency,
-            "client_role":     str(out.get("client_role") or "unknown").strip(),
-            "other_party":     str(out.get("other_party") or "unknown").strip()[:120],
+            "primary_category":          primary,
+            "secondary_categories":      secondary,
+            "confidence":                confidence,
+            "issue_summary":             str(out.get("issue_summary") or "").strip()[:300],
+            "jurisdiction":              str(out.get("jurisdiction_hint") or "unknown").strip(),
+            "urgency_signal":            urgency,
+            "risk_flags":                risk_flags,
+            "client_role":               str(out.get("client_role") or "unknown").strip(),
+            "other_party":               str(out.get("other_party") or "unknown").strip()[:120],
+            "relationship_to_other_party": str(out.get("relationship_to_other_party") or "unknown").strip(),
+            "timeframe_status":          timeframe,
+            "client_goal_initial":       client_goal,
+            "immediate_need":            immediate_need,
+            "emotional_ask":             str(out.get("emotional_ask") or "unknown").strip(),
         }
 
     except Exception as exc:
@@ -232,11 +269,18 @@ def _next_question_hint(intake_state: dict) -> str:
     the AI should ask next. Picks the first still-open critical fact from
     the category's key_facts_needed list.
     """
-    category = intake_state.get("category") or "general"
+    category = intake_state.get("primary_issue_cluster") or "general"
     cat_cfg  = LEGAL_ISSUE_CATEGORIES.get(category, LEGAL_ISSUE_CATEGORIES["general"])
-    key_facts = cat_cfg.get("key_facts_needed", [])
+    # Merge key_facts_needed from secondary clusters so mixed matters are fully covered
+    key_facts = list(cat_cfg.get("key_facts_needed", []))
+    for sec_cat in (intake_state.get("secondary_issue_clusters") or []):
+        sec_cfg = LEGAL_ISSUE_CATEGORIES.get(sec_cat, {})
+        for kf in sec_cfg.get("key_facts_needed", []):
+            if kf not in key_facts:
+                key_facts.append(kf)
+    # Build known blob from fact text regardless of whether facts are strings or dicts
     known_blob = " ".join([
-        str(x).lower()
+        (str(x.get("fact", "")) if isinstance(x, dict) else str(x)).lower()
         for x in (intake_state.get("known_facts") or [])
     ])
 
@@ -294,6 +338,130 @@ def _next_question_hint(intake_state: dict) -> str:
 
 
 # ===========================================================================
+# Internal: remedy assessment (Stage 4)
+# ===========================================================================
+
+def _assess_remedy(intake_state: dict) -> None:
+    """
+    Populate stated_remedy and assessed_remedy when client_goal_initial is known
+    and assessed_remedy has not yet been set.  Runs silently in the background —
+    does not block the reply generation path.
+    """
+    if intake_state.get("assessed_remedy"):
+        return  # Already done
+    goal = intake_state.get("client_goal_initial") or ""
+    if not goal:
+        return
+
+    # stated_remedy = what the client said
+    intake_state["stated_remedy"] = goal
+
+    facts_list = intake_state.get("known_facts") or []
+    facts_blob = "; ".join([
+        (f.get("fact", "") if isinstance(f, dict) else str(f))
+        for f in facts_list[:8]
+    ])
+
+    prompt = (
+        STAGE4_REMEDY_ASSESSMENT_SYSTEM
+        .replace("{primary_category}", intake_state.get("primary_issue_cluster") or "general")
+        .replace("{facts_summary}", facts_blob[:600] or "(facts not yet gathered)")
+        .replace("{stated_remedy}", goal[:200])
+        .replace("{urgency_signal}", intake_state.get("urgency_signal") or "unknown")
+    )
+
+    t0 = time.perf_counter()
+    try:
+        raw = _ask_llm(prompt, task_hint="fast")
+        _t("assess_remedy", t0)
+        out = _extract_json(raw)
+        if out and isinstance(out, dict):
+            intake_state["stated_remedy"]  = str(out.get("stated_remedy") or goal).strip()[:300]
+            intake_state["assessed_remedy"] = str(out.get("assessed_remedy") or "").strip()[:400] or None
+            # Store extra remedy signals in a sub-dict for Stage 5 / advocate review
+            intake_state.setdefault("remedy_detail", {}).update({
+                "faster_alternative":  out.get("faster_alternative"),
+                "remedy_gap":          out.get("remedy_gap"),
+                "recommended_lead":    out.get("recommended_lead"),
+            })
+    except Exception as exc:
+        logger.warning("Stage1 remedy assessment failed: %s", exc)
+
+
+# ===========================================================================
+# Internal: indirect vetting question for uncertain facts
+# ===========================================================================
+
+def _get_vetting_question(intake_state: dict, conversation_context: str) -> str | None:
+    """
+    If any known_facts entry has confidence_seed=='uncertain', generate one
+    indirect triangulating question to strengthen that fact.
+
+    Returns the question string, or None if no uncertain facts exist.
+    Only asks about the FIRST uncertain fact found (one vetting question per turn).
+    """
+    uncertain = [
+        f for f in (intake_state.get("known_facts") or [])
+        if isinstance(f, dict) and f.get("confidence_seed") == "uncertain"
+    ]
+    if not uncertain:
+        return None
+
+    target = uncertain[0]
+    t0 = time.perf_counter()
+    prompt = (
+        STAGE1_VETTING_QUESTION_SYSTEM
+        .replace("{uncertain_fact}", str(target.get("fact", "")).strip())
+        .replace("{fact_type}", str(target.get("fact_type", "other")).strip())
+        .replace("{conversation_context}", conversation_context or "(no prior context)")
+    )
+    try:
+        reply = _ask_llm_quality(prompt).strip()
+        _t("get_vetting_question", t0)
+        if reply and len(reply) > 15 and "?" in reply:
+            # Mark the fact as vetting_scheduled so we don't re-ask next turn
+            target["confidence_seed"] = "medium_vetting_asked"
+            return reply
+    except Exception as exc:
+        logger.warning("Stage1 vetting question LLM failed: %s", exc)
+    return None
+
+
+# ===========================================================================
+# Internal: safety-first response (urgency_signal=immediate)
+# ===========================================================================
+
+def _generate_safety_first_response(intake_state: dict) -> str:
+    """Generate an immediate safety-focused reply when risk_flags are present."""
+    t0 = time.perf_counter()
+    risk_flags  = intake_state.get("risk_flags") or []
+    immediate   = intake_state.get("immediate_need") or "unknown"
+    summary     = intake_state.get("issue_summary") or "the client's urgent situation"
+
+    prompt = (
+        STAGE1_SAFETY_FIRST_SYSTEM
+        .replace("{risk_flags}", ", ".join(risk_flags) if risk_flags else "immediate distress")
+        .replace("{immediate_need}", immediate)
+        .replace("{issue_summary}", summary)
+    )
+
+    try:
+        reply = _ask_llm_quality(prompt).strip()
+        _t("generate_safety_first", t0)
+        if reply and len(reply) > 20:
+            return reply
+    except Exception as exc:
+        logger.warning("Stage1 safety-first LLM failed: %s", exc)
+
+    # Deterministic fallback for physical danger
+    return (
+        "I hear you — this sounds serious and I want to make sure you are safe right now. "
+        "If you are in immediate physical danger, please call 112. "
+        "Can you tell me where you are and whether you have somewhere safe to go tonight?"
+    )
+
+
+# ===========================================================================
 # Internal: confirm and follow up
 # ===========================================================================
 
@@ -336,35 +504,35 @@ def _generate_followup(
 
 def _check_readiness(intake_state: dict, conversation_context: str) -> tuple[bool, list[str]]:
     """
-    Ask the LLM whether enough is known to advance to Stage 2.
+    Deterministic readiness gate: Stage 2 opens only when all four anchor
+    fields are populated (non-null, non-'unknown').
+
+    Falls back to an LLM call only to populate missing_critical labels for
+    the caller to surface as the next question — the ready/not-ready decision
+    itself is always deterministic.
 
     Returns (ready: bool, missing_critical: list[str]).
     """
     t0 = time.perf_counter()
 
-    # Fast heuristic first — skip LLM call if obviously not ready
-    turn_count = intake_state.get("turn_count", 0)
-    if turn_count < 2:
-        return False, ["need at least 2 substantive client turns before advancing"]
+    # Deterministic gate — check all four anchor fields
+    missing: list[str] = []
+    if not intake_state.get("issue_summary"):
+        missing.append("what happened — client has not described the core events yet")
+    if not intake_state.get("relationship_to_other_party") or intake_state.get("relationship_to_other_party") == "unknown":
+        missing.append("relationship between client and the other party")
+    if not intake_state.get("client_goal_initial"):
+        missing.append("what the client is seeking or hoping to achieve")
+    if not intake_state.get("timeframe_status") or intake_state.get("timeframe_status") == "unknown":
+        missing.append("when this happened — recent, ongoing, or historical")
 
-    prompt = (
-        STAGE1_READINESS_CHECK_SYSTEM
-        .replace("{intake_state_json}", json.dumps(intake_state, ensure_ascii=False, indent=2))
-        .replace("{conversation_context}", conversation_context or "")
-    )
+    if missing:
+        _t("check_readiness_deterministic", t0)
+        return False, missing
 
-    try:
-        raw = _ask_llm(prompt, task_hint="fast")
-        _t("check_readiness", t0)
-        out = _extract_json(raw)
-        if out and isinstance(out, dict):
-            ready   = bool(out.get("ready_for_stage2", False))
-            missing = [str(x).strip() for x in (out.get("missing_critical") or []) if str(x).strip()]
-            return ready, missing
-    except Exception as exc:
-        logger.warning("Stage1 readiness check LLM failed: %s", exc)
-
-    return False, []
+    # All four anchors present — ready
+    _t("check_readiness_deterministic", t0)
+    return True, []
 
 
 # ===========================================================================
@@ -373,48 +541,163 @@ def _check_readiness(intake_state: dict, conversation_context: str) -> tuple[boo
 
 def _update_known_facts(intake_state: dict, client_message: str) -> None:
     """
-    Append meaningful facts from the client's latest message into known_facts.
-    Keeps the list deduplicated and capped at 12 entries.
+    Extract structured fact objects from the client's latest message and append
+    to known_facts.  Each fact is stored as:
+      {fact, source_turn, fact_type, time_reference, evidence_hook, witness_hook, confidence_seed}
 
-    Uses a lightweight LLM call to extract atomic facts.
+    confidence_seed: "high" (specific, verifiable), "medium" (plausible, no corroboration),
+                     "uncertain" (vague, inconsistent, or unverifiable)
+
+    Capped at 20 entries (up from 12 — structured objects carry more signal per slot).
     """
     t0 = time.perf_counter()
     msg = (client_message or "").strip()
     if not msg:
         return
 
+    turn_num = intake_state.get("turn_count", 1)
+
     prompt = (
-        "Extract 1–4 short, specific facts from the client's message below.\n"
-        "Each fact should be one sentence. Use only what the client said — no inference.\n"
-        "Output ONLY a JSON array of strings: [\"fact 1\", \"fact 2\"]\n\n"
+        "Extract 1–4 specific facts from the client's message below.\n"
+        "For each fact output a JSON object with these exact keys:\n"
+        "  fact            : one clear sentence — only what the client said, no inference\n"
+        "  fact_type       : event|relationship|evidence|action_taken|relief_sought|timeline|other\n"
+        "  time_reference  : specific date/period the client mentioned, or null\n"
+        "  evidence_hook   : type of document/evidence implied (e.g. 'medical report', 'WhatsApp messages', 'FIR'), or null\n"
+        "  witness_hook    : witness implied (e.g. 'neighbour', 'sister', 'co-worker'), or null\n"
+        "  confidence_seed : high|medium|uncertain  (high=specific+verifiable, uncertain=vague/no detail)\n\n"
+        "Output ONLY a JSON array of these objects. No preamble.\n\n"
         f"CLIENT MESSAGE:\n{msg}"
     )
 
-    existing = set(str(f).lower().strip() for f in (intake_state.get("known_facts") or []))
+    # Deduplicate by fact text
+    existing_facts = set(
+        (x.get("fact") if isinstance(x, dict) else str(x)).lower().strip()
+        for x in (intake_state.get("known_facts") or [])
+    )
 
     try:
         raw = _ask_llm(prompt, task_hint="fast")
         _t("update_known_facts", t0)
-        # Extract JSON array
         text = (raw or "").strip()
         start = text.find("[")
         end   = text.rfind("]")
         if start >= 0 and end > start:
-            facts = json.loads(text[start:end + 1])
-            if isinstance(facts, list):
-                for fact in facts:
-                    fact = str(fact).strip()
-                    if fact and fact.lower() not in existing and len(fact) > 10:
-                        existing.add(fact.lower())
-                        intake_state["known_facts"].append(fact)
-                intake_state["known_facts"] = intake_state["known_facts"][:12]
+            extracted = json.loads(text[start:end + 1])
+            if isinstance(extracted, list):
+                for item in extracted:
+                    if not isinstance(item, dict):
+                        continue
+                    fact_text = str(item.get("fact") or "").strip()
+                    if not fact_text or len(fact_text) < 10:
+                        continue
+                    if fact_text.lower() in existing_facts:
+                        continue
+                    existing_facts.add(fact_text.lower())
+                    intake_state["known_facts"].append({
+                        "fact":            fact_text,
+                        "source_turn":     turn_num,
+                        "fact_type":       str(item.get("fact_type") or "other").strip(),
+                        "time_reference":  item.get("time_reference") or None,
+                        "evidence_hook":   item.get("evidence_hook") or None,
+                        "witness_hook":    item.get("witness_hook") or None,
+                        "confidence_seed": str(item.get("confidence_seed") or "medium").strip().lower(),
+                    })
+                intake_state["known_facts"] = intake_state["known_facts"][:20]
     except Exception as exc:
-        logger.warning("Stage1 fact extraction failed: %s", exc)
-        # Fallback: just store the raw message as a single fact entry
+        logger.warning("Stage1 structured fact extraction failed: %s", exc)
+        # Fallback: store as minimal structured entry
         short = msg[:200].rstrip()
-        if short.lower() not in existing:
-            intake_state["known_facts"].append(short)
-            intake_state["known_facts"] = intake_state["known_facts"][:12]
+        if short.lower() not in existing_facts:
+            intake_state["known_facts"].append({
+                "fact":            short,
+                "source_turn":     turn_num,
+                "fact_type":       "other",
+                "time_reference":  None,
+                "evidence_hook":   None,
+                "witness_hook":    None,
+                "confidence_seed": "uncertain",
+            })
+            intake_state["known_facts"] = intake_state["known_facts"][:20]
+
+
+# ===========================================================================
+# Internal: retire answered open_questions
+# ===========================================================================
+
+def _retire_answered_open_questions(intake_state: dict) -> None:
+    """
+    Remove items from open_questions whose topic is now covered by known_facts.
+    Uses the same _COVERAGE_SIGNALS map as _next_question_hint so the two
+    stay in sync — open_questions now reflects only genuinely unresolved gaps.
+    """
+    open_qs = intake_state.get("open_questions") or []
+    if not open_qs:
+        return
+
+    # Build known blob from structured fact objects
+    known_blob = " ".join([
+        (x.get("fact", "") if isinstance(x, dict) else str(x)).lower()
+        for x in (intake_state.get("known_facts") or [])
+    ])
+    # Also include anchor fields so they count as coverage
+    for field in ("issue_summary", "relationship_to_other_party", "timeframe_status", "client_goal_initial"):
+        val = intake_state.get(field) or ""
+        if val and val != "unknown":
+            known_blob += " " + str(val).lower()
+
+    _COVERAGE_SIGNALS: dict[str, tuple[str, ...]] = {
+        "nature and timeline of abuse":      ("abuse", "hit", "beat", "slap", "shout", "threat", "years", "months"),
+        "shared household status":           ("house", "home", "living", "flat", "reside", "stay"),
+        "children":                          ("child", "children", "son", "daughter", "kid"),
+        "evidence":                          ("photo", "message", "whatsapp", "medical", "witness", "record", "fir"),
+        "prior complaints":                  ("fir", "complaint", "police", "report"),
+        "income / financial":                ("income", "salary", "earning", "money", "rupee", "financial"),
+        "immediate safety":                  ("safe", "afraid", "fear", "danger", "risk", "shelter"),
+        "date and type of marriage":         ("married", "marriage", "wedding", "court marriage"),
+        "grounds":                           ("cruelty", "desertion", "divorce", "separation"),
+        "income of both parties":            ("income", "salary", "earning", "job"),
+        "stridhan":                          ("jewellery", "gold", "stridhan", "dowry"),
+        "nature of property":                ("land", "flat", "house", "ancestral", "inherited", "property"),
+        "title documents":                   ("document", "deed", "registered", "patta", "title"),
+        "current possession":                ("possession", "living", "locked", "access"),
+        "offence alleged":                   ("fir", "arrest", "accused", "charge", "offence", "crime"),
+        "fir number":                        ("fir number", "fir no", "case number"),
+        "custody / bail":                    ("bail", "custody", "jail", "remand", "arrested"),
+        "nature of employment":              ("permanent", "contract", "probation", "confirmed", "job type"),
+        "employer type":                     ("government", "private", "psu", "public sector"),
+        "notice / termination order":        ("notice", "termination", "dismissal", "show cause", "chargesheet"),
+        "service duration":                  ("years", "months", "joined", "since", "service period"),
+        "product or service":                ("product", "service", "builder", "bank", "insurance", "telecom"),
+        "deficiency":                        ("defective", "wrong", "not delivered", "damaged", "fraud"),
+        "amount paid":                       ("paid", "amount", "rupee", "lakh", "cost"),
+        "date of accident":                  ("accident", "date", "when"),
+        "injuries":                          ("injured", "injury", "fracture", "surgery", "hospital", "dead", "died"),
+        "vehicle / insurance":               ("vehicle", "car", "bike", "truck", "insurance"),
+        "cheque amount and date":            ("cheque", "amount", "date", "issued"),
+        "dishonour":                         ("bounced", "dishonoured", "returned", "insufficiency"),
+        "demand notice":                     ("notice", "demand notice", "sent notice"),
+        "survey / khasra":                   ("survey", "khasra", "extent", "acres", "area"),
+        "purpose of acquisition":            ("government", "road", "highway", "dam", "project"),
+        "compensation offered":              ("compensation", "amount", "offered", "market value"),
+    }
+
+    still_open = []
+    for q in open_qs:
+        q_low = str(q).lower()
+        covered = False
+        for signal_key, signals in _COVERAGE_SIGNALS.items():
+            if signal_key in q_low or q_low in signal_key:
+                if any(sig in known_blob for sig in signals):
+                    covered = True
+                    break
+        if not covered:
+            still_open.append(q)
+
+    retired = len(open_qs) - len(still_open)
+    if retired:
+        logger.debug("Retired %d answered open_questions; %d remain", retired, len(still_open))
+    intake_state["open_questions"] = still_open
 
 
 # ===========================================================================
@@ -476,27 +759,42 @@ def process_turn(session: dict, user_message: str) -> dict:
     # ── Build conversation context for prompts ───────────────────────────────
     context = _build_context(session, max_turns=6)
 
-    # ── Category detection (run on every turn until confidence=high) ─────────
+    # ── Category detection (soft lock — re-runs until primary confidence=high) ──
     if (
-        intake_state.get("category") is None
+        intake_state.get("primary_issue_cluster") is None
         or intake_state.get("category_confidence") in (None, "low")
     ):
         detected = _detect_category(msg, context)
-        intake_state["category"]            = detected["category"]
-        intake_state["category_confidence"] = detected["confidence"]
-        intake_state["issue_summary"]       = detected.get("issue_summary") or intake_state.get("issue_summary") or ""
-        intake_state["jurisdiction"]        = detected.get("jurisdiction") or intake_state.get("jurisdiction") or "unknown"
-        intake_state["urgency_signal"]      = detected.get("urgency_signal") or intake_state.get("urgency_signal") or "unknown"
-        intake_state["client_role"]         = detected.get("client_role") or intake_state.get("client_role") or "unknown"
-        intake_state["other_party"]         = detected.get("other_party") or intake_state.get("other_party") or "unknown"
+        intake_state["primary_issue_cluster"]    = detected["primary_category"]
+        intake_state["secondary_issue_clusters"] = detected.get("secondary_categories") or []
+        intake_state["category_confidence"]      = detected["confidence"]
+        # Anchor fields — only overwrite if the new value is richer
+        intake_state["issue_summary"]            = detected.get("issue_summary") or intake_state.get("issue_summary") or ""
+        intake_state["jurisdiction"]             = detected.get("jurisdiction") or intake_state.get("jurisdiction") or "unknown"
+        intake_state["urgency_signal"]           = detected.get("urgency_signal") or intake_state.get("urgency_signal") or "unknown"
+        intake_state["risk_flags"]               = detected.get("risk_flags") or intake_state.get("risk_flags") or []
+        intake_state["client_role"]              = detected.get("client_role") or intake_state.get("client_role") or "unknown"
+        intake_state["other_party"]              = detected.get("other_party") or intake_state.get("other_party") or "unknown"
+        intake_state["relationship_to_other_party"] = detected.get("relationship_to_other_party") or intake_state.get("relationship_to_other_party") or "unknown"
+        intake_state["timeframe_status"]         = detected.get("timeframe_status") or intake_state.get("timeframe_status") or "unknown"
+        intake_state["client_goal_initial"]      = detected.get("client_goal_initial") or intake_state.get("client_goal_initial")
+        intake_state["immediate_need"]           = detected.get("immediate_need") or intake_state.get("immediate_need") or "unknown"
+        intake_state["emotional_ask"]            = detected.get("emotional_ask") or intake_state.get("emotional_ask") or "unknown"
 
-        # Lock the key_facts_needed checklist for this category
-        cat_cfg = LEGAL_ISSUE_CATEGORIES.get(intake_state["category"], LEGAL_ISSUE_CATEGORIES["general"])
-        intake_state["open_questions"] = list(cat_cfg.get("key_facts_needed", []))
+        # Merge open_questions from primary + secondary categories (deduped)
+        primary_cfg = LEGAL_ISSUE_CATEGORIES.get(intake_state["primary_issue_cluster"], LEGAL_ISSUE_CATEGORIES["general"])
+        merged_questions = list(primary_cfg.get("key_facts_needed", []))
+        for sec_cat in intake_state["secondary_issue_clusters"]:
+            sec_cfg = LEGAL_ISSUE_CATEGORIES.get(sec_cat, {})
+            for kf in sec_cfg.get("key_facts_needed", []):
+                if kf not in merged_questions:
+                    merged_questions.append(kf)
+        intake_state["open_questions"] = merged_questions
 
         logger.info(
-            "Stage1 category locked: %s (confidence=%s, urgency=%s)",
-            intake_state["category"],
+            "Stage1 category (soft lock): primary=%s secondary=%s confidence=%s urgency=%s",
+            intake_state["primary_issue_cluster"],
+            intake_state["secondary_issue_clusters"],
             intake_state["category_confidence"],
             intake_state["urgency_signal"],
         )
@@ -507,8 +805,25 @@ def process_turn(session: dict, user_message: str) -> dict:
     # ── Extract and accumulate facts from client message ─────────────────────
     _update_known_facts(intake_state, msg)
 
-    # ── Generate the AI's reply ───────────────────────────────────────────────
-    reply = _generate_followup(intake_state, msg, context)
+    # ── Retire open_questions that are now answered ───────────────────────────
+    _retire_answered_open_questions(intake_state)
+
+    # ── Remedy assessment (runs once client_goal_initial is known) ────────────
+    if intake_state.get("client_goal_initial") and not intake_state.get("assessed_remedy"):
+        _assess_remedy(intake_state)
+
+    # ── Generate the AI's reply ──────────────────────────────────────────────
+    # Priority order:
+    #   1. Emergency triage (risk flags / immediate urgency)
+    #   2. Indirect vetting (uncertain facts need corroboration — only after turn 2)
+    #   3. Normal follow-up (next open question from checklist)
+    if intake_state.get("urgency_signal") == "immediate" or intake_state.get("risk_flags"):
+        reply = _generate_safety_first_response(intake_state)
+    elif intake_state.get("turn_count", 0) >= 2:
+        vetting_q = _get_vetting_question(intake_state, context)
+        reply = vetting_q if vetting_q else _generate_followup(intake_state, msg, context)
+    else:
+        reply = _generate_followup(intake_state, msg, context)
 
     # ── Readiness check — decide whether to advance to Stage 2 ───────────────
     ready, missing = _check_readiness(intake_state, context)
@@ -522,9 +837,10 @@ def process_turn(session: dict, user_message: str) -> dict:
                 existing_open.add(item.lower())
 
     logger.info(
-        "Stage1 turn %d complete | category=%s | facts=%d | ready=%s | urgency=%s",
+        "Stage1 turn %d complete | primary=%s | secondary=%s | facts=%d | ready=%s | urgency=%s",
         intake_state["turn_count"],
-        intake_state.get("category"),
+        intake_state.get("primary_issue_cluster"),
+        intake_state.get("secondary_issue_clusters"),
         len(intake_state.get("known_facts") or []),
         ready,
         intake_state.get("urgency_signal"),
@@ -544,8 +860,9 @@ def process_turn(session: dict, user_message: str) -> dict:
 
 def get_category_framework(category: str) -> dict:
     """
-    Return the locked bare-act + procedural framework for a detected category.
+    Return the bare-act + procedural framework for a detected category.
     Used by Stage 2 to seed its structured deep-dive.
+    Pass primary_issue_cluster; call once per secondary cluster and merge if needed.
     """
     return dict(LEGAL_ISSUE_CATEGORIES.get(category, LEGAL_ISSUE_CATEGORIES["general"]))
 
@@ -560,3 +877,77 @@ def new_session() -> dict:
         "history":      [],
         "intake_state": _fresh_state(),
     }
+
+
+# ===========================================================================
+# Public: generate_pre_draft_summary
+# ===========================================================================
+
+def generate_pre_draft_summary(
+    intake_state: Optional[dict] = None,
+    facts_summary: str = "",
+) -> str:
+    """
+    Generate a 3–5 sentence pre-draft summary to show the client immediately
+    before the full legal draft is produced.
+
+    Works with or without a full intake_state: falls back gracefully to the
+    plain facts_summary string when Stage 1 state is not available.
+
+    Returns a plain-text summary ending with
+    "I'll now prepare your full legal analysis and draft."
+    """
+    state = intake_state or {}
+    primary = state.get("primary_issue_cluster") or "your legal matter"
+
+    # Build facts string from known_facts structured objects when not supplied
+    if not facts_summary:
+        known = state.get("known_facts") or []
+        facts_summary = "; ".join(
+            (f.get("fact") if isinstance(f, dict) else str(f))
+            for f in known[:8]
+        ).strip() or state.get("issue_summary") or "situation as described"
+
+    # Evidence hooks — deduplicated list of implied evidence types
+    evidence_hooks = [
+        f.get("evidence_hook")
+        for f in (state.get("known_facts") or [])
+        if isinstance(f, dict) and f.get("evidence_hook")
+    ]
+    evidence_summary = ", ".join(dict.fromkeys(filter(None, evidence_hooks))) or "none noted"
+
+    # Remedy fields — from _assess_remedy output stored in intake_state
+    remedy_block = state.get("assessed_remedy") or {}
+    stated_remedy    = state.get("stated_remedy") or "not stated"
+    assessed_remedy  = remedy_block.get("assessed_remedy") or state.get("client_goal_initial") or "under review"
+    recommended_lead = remedy_block.get("recommended_lead") or "to be determined"
+    faster_alt       = remedy_block.get("faster_alternative") or "none identified"
+    urgency          = state.get("urgency_signal") or "normal"
+
+    prompt = (
+        PRE_DRAFT_SUMMARY_SYSTEM
+        .replace("{primary_category}",  str(primary))
+        .replace("{facts_summary}",     str(facts_summary)[:800])
+        .replace("{evidence_summary}",  str(evidence_summary))
+        .replace("{stated_remedy}",     str(stated_remedy))
+        .replace("{assessed_remedy}",   str(assessed_remedy))
+        .replace("{recommended_lead}",  str(recommended_lead))
+        .replace("{faster_alternative}", str(faster_alt))
+        .replace("{urgency_signal}",    str(urgency))
+    )
+
+    try:
+        t0 = time.perf_counter()
+        reply = _ask_llm_quality(prompt).strip()
+        _t("generate_pre_draft_summary", t0)
+        if reply and len(reply) > 30:
+            return reply
+    except Exception as exc:
+        logger.warning("Pre-draft summary LLM failed: %s", exc)
+
+    # Deterministic fallback — always ends with the required closing line
+    return (
+        f"I've carefully noted everything you've shared about {primary}. "
+        "The facts and evidence on record give us a solid foundation to proceed. "
+        "I'll now prepare your full legal analysis and draft."
+    )

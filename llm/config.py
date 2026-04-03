@@ -5,9 +5,9 @@ Ollama model configuration — single source for all LLM operations.
 import os
 
 # LLM provider selection:
-# - "ollama" (default): local Ollama models
-# - "openai": API-backed models (e.g. gpt-5-mini)
-LLM_PROVIDER = os.environ.get("LLM_PROVIDER", "ollama").strip().lower() or "ollama"
+# - "openai" (default): API-backed models via OpenAI
+# - "ollama": local Ollama/Qwen models (only active when explicitly selected in UI)
+LLM_PROVIDER = os.environ.get("LLM_PROVIDER", "openai").strip().lower() or "openai"
 
 # Default model — legal analysis (thinking mode).
 OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "qwen3:8b").strip() or "qwen3:8b"
@@ -27,8 +27,13 @@ try:
 except ValueError:
     LONG_CONTEXT_THRESHOLD = 60000
 
-# CrewAI agents use default model (format: ollama/model_name)
-CREWAI_LLM = f"ollama/{OLLAMA_MODEL}"
+# CrewAI agents use the active provider's default model.
+# OpenAI format: "openai/gpt-4o-mini" — Ollama format: "ollama/qwen3:8b"
+CREWAI_LLM = (
+    f"openai/{os.environ.get('OPENAI_MODEL', 'gpt-4o-mini').strip() or 'gpt-4o-mini'}"
+    if LLM_PROVIDER == "openai"
+    else f"ollama/{OLLAMA_MODEL}"
+)
 
 OLLAMA_KEEP_ALIVE = os.environ.get("OLLAMA_KEEP_ALIVE", "12h").strip() or "12h"
 

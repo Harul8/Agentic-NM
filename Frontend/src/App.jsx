@@ -422,8 +422,8 @@ const ChatComposer = memo(function ChatComposer({
           onChange={(e) => onModelChange(e.target.value)}
           disabled={loading}
         >
-          <option value="qwen">Qwen</option>
           <option value="openai">OpenAI</option>
+          <option value="qwen">Qwen</option>
         </select>
       </div>
       {showDisclaimer && (
@@ -589,7 +589,7 @@ function App() {
 
   // Manual mode selection: "legal_opinion" (default), "legal_research", "general"
   const [chatMode, setChatMode] = useState("legal_opinion");
-  const [selectedModel, setSelectedModel] = useState("qwen");
+  const [selectedModel, setSelectedModel] = useState("openai");
 
   // Bottom pane: single accordion (Eval | Architecture | Updates Tracker). Default: minimal strip at bottom; can extend up to 75% of viewport.
   const [bottomExpandedSection, setBottomExpandedSection] = useState(null); // "eval" | "architecture" | "updates" | null

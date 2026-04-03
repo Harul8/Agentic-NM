@@ -18,6 +18,7 @@ import hashlib
 
 from llm.ollama_client import ask_llm
 from services.fact_collector import get_next_question_or_complete, is_stop_signal
+from services.legal_opinion_intake import generate_pre_draft_summary
 from services.memory_guard import guard_activity
 from services.runtime_warmup import kickoff_runtime_warmup, kickoff_ollama_warmup_if_qwen
 from services.response_generator_v2 import (
@@ -560,9 +561,18 @@ def process_chat(
                 current_message=current_message,
             )
             _log_step("fact_collection ANALYSIS_READY_ACK", (time.perf_counter() - t_pipeline_start) * 1000)
+            # Generate pre-draft summary using any available intake_state from workflow_state
+            intake_state = (workflow_state or {}).get("intakeState") or None
+            try:
+                pre_draft_msg = generate_pre_draft_summary(
+                    intake_state=intake_state,
+                    facts_summary=merged_facts,
+                )
+            except Exception:
+                pre_draft_msg = ""
             return {
                 "phase": "response_generation",
-                "message": "",
+                "message": pre_draft_msg,
                 "facts_summary": merged_facts,
                 "intent": "legal_opinion",
                 "document_types": "acts_only",

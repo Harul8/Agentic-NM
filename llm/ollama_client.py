@@ -49,13 +49,43 @@ from llm.config import (
 )
 
 logger = logging.getLogger(__name__)
-OPENAI_ANALYSIS_SWITCH_INPUT_TOKENS = 6000
-OPENAI_INPUT_TOKEN_LIMIT = 10000
-OPENAI_OUTPUT_TOKEN_LIMIT = 5000
+# Switch from fast→analysis model when input exceeds this (tokens).
+# Sits above the fast-call ceiling so intake calls always stay on the fast model.
+OPENAI_ANALYSIS_SWITCH_INPUT_TOKENS = 10000
+
+# ---------------------------------------------------------------------------
+# Per-call token limits — derived from worst-case content budget:
+#
+#   Quality calls (draft generation):
+#     Retrieval content  : 3 bare-act sections × 5 disputes × ~430 tok  = 6 430 tok
+#                        + 3 case laws         × 5 disputes × ~430 tok  = 6 430 tok
+#     Prompt overhead    : system prompt + facts summary + labels        ≈ 1 500 tok
+#     Total input ceiling                                               ≈ 14 360 tok
+#     → OPENAI_INPUT_TOKEN_LIMIT = 25 000  (≈74 % buffer — generous headroom for
+#       longer system prompts, full conversation history, and multi-stage intake state)
+#
+#     Output             : full structured draft across 5 disputes       ≈ 3 000–4 500 tok
+#     → OPENAI_OUTPUT_TOKEN_LIMIT = 7 000  (≈56 % buffer)
+#
+#   Fast calls (intake / vetting / category detection):
+#     Input              : system prompt + conv tail + intake-state JSON ≈ 1 500–2 000 tok
+#     → OPENAI_FAST_INPUT_TOKEN_LIMIT = 5 000  (≈2.5× buffer — covers longer
+#       structured fact objects and pre-draft summary prompts)
+#
+#     Output             : next question / JSON response                 ≈ 80–150 tok
+#     → OPENAI_FAST_OUTPUT_TOKEN_LIMIT = 800   (≈5× buffer)
+#
+#   Section/case char cap (enforced in response_generator_v2.py):
+#     MAX_SECTIONS_PER_DISPUTE_FOR_OPINION = 3, MAX_CASE_LAWS_PER_DISPUTE = 3
+#     Each chunk truncated to 1 500 chars before being placed in prompt.
+# ---------------------------------------------------------------------------
+OPENAI_INPUT_TOKEN_LIMIT = 25000
+OPENAI_OUTPUT_TOKEN_LIMIT = 7000
 OPENAI_FAST_INPUT_TOKEN_LIMIT = 5000
-OPENAI_FAST_OUTPUT_TOKEN_LIMIT = 2000
+OPENAI_FAST_OUTPUT_TOKEN_LIMIT = 1000
+# Hourly budget — 500 k input / 500 k output supports ~30+ full sessions/hr
 OPENAI_HOURLY_INPUT_TOKEN_LIMIT = 500000
-OPENAI_HOURLY_OUTPUT_TOKEN_LIMIT = 5000
+OPENAI_HOURLY_OUTPUT_TOKEN_LIMIT = 100000
 
 _session_lock = threading.Lock()
 _session = None
