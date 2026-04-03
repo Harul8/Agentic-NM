@@ -1,8 +1,25 @@
 """
-Legal Opinion Intake - Stage 1: Opening + Issue Identification.
+Legal Opinion Intake — Stage 1: Opening + Issue Identification
 
-Stage 1 keeps the client-facing experience warm and natural while building
-the hidden structured intake state that later stages consume.
+Handles the very first phase of the fully autonomous legal opinion workflow:
+
+  Turn 0  : AI sends a warm opening — no question, just an invitation to speak.
+  Turn 1+ : Client shares their situation. AI:
+              a) Detects the legal category (domestic_violence / property / etc.)
+              b) Locks the relevant bare acts + procedural checklist
+              c) Confirms the category subtly (no legal labels) and asks the
+                 single most important missing fact.
+  Readiness: After each turn, checks whether enough is known to advance to
+              Stage 2 (structured category-specific deep-dive).
+
+Public API
+----------
+  generate_opening()                     → str   (first message to client)
+  process_turn(session, user_message)    → dict  {reply, intake_state, advance_to_stage2}
+
+Session state is a plain dict (caller owns persistence).
+Import this module from the API endpoint / chat handler that deals with
+legal opinion requests — do NOT import from fact_collector.py for this path.
 """
 
 from __future__ import annotations
@@ -13,28 +30,39 @@ import logging
 import os
 import re
 import time
+from typing import Optional
 
 logger = logging.getLogger(__name__)
 
+# ---------------------------------------------------------------------------
+# Lazy imports — avoid circular imports at module load time
+# ---------------------------------------------------------------------------
 
-def _ask_llm(prompt: str, task_hint: str = "fast", model_override: str | None = None) -> str:
+def _ask_llm(prompt: str, task_hint: str = "fast") -> str:
     from llm.ollama_client import ask_llm
-
-    return ask_llm(prompt, task_hint=task_hint, model=model_override) or ""
-
-
-def _ask_llm_quality(prompt: str, model_override: str | None = None) -> str:
-    return _ask_llm(prompt, task_hint="quality", model_override=model_override)
+    return ask_llm(prompt, task_hint=task_hint) or ""
 
 
-from prompts.advocate_prompts import (  # noqa: E402
-    ISSUE_CATEGORY_DETECT_SYSTEM,
-    LEGAL_ISSUE_CATEGORIES,
+def _ask_llm_quality(prompt: str) -> str:
+    return _ask_llm(prompt, task_hint="quality")
+
+
+# ---------------------------------------------------------------------------
+# Prompt imports
+# ---------------------------------------------------------------------------
+
+from prompts.advocate_prompts import (
     LEGAL_OPINION_OPENING_SYSTEM,
+    ISSUE_CATEGORY_DETECT_SYSTEM,
     STAGE1_CONFIRM_AND_FOLLOWUP_SYSTEM,
-    STAGE1_INTAKE_STATE_SCHEMA,
     STAGE1_READINESS_CHECK_SYSTEM,
+    STAGE1_INTAKE_STATE_SCHEMA,
+    LEGAL_ISSUE_CATEGORIES,
 )
+
+# ---------------------------------------------------------------------------
+# Pipeline timing (optional debug)
+# ---------------------------------------------------------------------------
 
 _TIMING = os.environ.get("PIPELINE_TIMING", "").lower() in ("1", "true", "yes")
 
@@ -44,8 +72,14 @@ def _t(label: str, t0: float) -> None:
         logger.info("PIPELINE_TIMING stage1.%s: %.0f ms", label, (time.perf_counter() - t0) * 1000)
 
 
+# ---------------------------------------------------------------------------
+# JSON extraction helper
+# ---------------------------------------------------------------------------
+
 def _extract_json(text: str) -> dict | None:
+    """Extract the first JSON object from text that may contain markdown / reasoning."""
     text = (text or "").strip()
+    # Strip markdown fences
     if "```" in text:
         for part in text.split("```"):
             part = part.strip()
@@ -55,10 +89,10 @@ def _extract_json(text: str) -> dict | None:
                 text = part
                 break
     start = text.find("{")
-    end = text.rfind("}")
+    end   = text.rfind("}")
     if start >= 0 and end > start:
         try:
-            return json.loads(text[start : end + 1])
+            return json.loads(text[start:end + 1])
         except json.JSONDecodeError:
             pass
     try:
@@ -67,71 +101,73 @@ def _extract_json(text: str) -> dict | None:
         return None
 
 
+# ---------------------------------------------------------------------------
+# Conversation context builder (compact, for prompt injection)
+# ---------------------------------------------------------------------------
+
 def _build_context(session: dict, max_turns: int = 6, max_chars: int = 260) -> str:
+    """Build a compact conversation history block for prompt injection."""
     history = session.get("history", [])
     lines: list[str] = []
     for turn in history[-max_turns:]:
-        role = "Client" if turn.get("role") == "user" else "Counsel"
+        role    = "Client" if turn.get("role") == "user" else "Counsel"
         content = (turn.get("content") or "").strip().replace("\n", " ")
         if len(content) > max_chars:
-            content = content[:max_chars].rstrip() + "..."
+            content = content[:max_chars].rstrip() + "…"
         if content:
             lines.append(f"{role}: {content}")
     return "\n".join(lines)
 
 
+# ---------------------------------------------------------------------------
+# Fresh intake state factory
+# ---------------------------------------------------------------------------
+
 def _fresh_state() -> dict:
     return copy.deepcopy(STAGE1_INTAKE_STATE_SCHEMA)
 
 
-def _normalize_timeframe_label(text: str) -> str:
-    low = (text or "").strip().lower()
-    if low in {"recent", "ongoing", "historical", "unknown"}:
-        return low
-    if any(w in low for w in ("today", "now", "currently", "ongoing", "still", "continuing")):
-        return "ongoing"
-    if any(w in low for w in ("yesterday", "last week", "recent", "few days", "this month")):
-        return "recent"
-    if any(w in low for w in ("years", "months ago", "long back", "earlier", "historical", "old")):
-        return "historical"
-    return "unknown"
+# ===========================================================================
+# Public: generate_opening
+# ===========================================================================
 
+def generate_opening() -> str:
+    """
+    Generate the AI's very first message to a new client.
 
-def _dedupe_keep_order(values: list[str], cap: int | None = None) -> list[str]:
-    out: list[str] = []
-    seen: set[str] = set()
-    for value in values or []:
-        item = str(value).strip()
-        key = item.lower()
-        if not item or key in seen:
-            continue
-        seen.add(key)
-        out.append(item)
-        if cap and len(out) >= cap:
-            break
-    return out
-
-
-def generate_opening(model_override: str | None = None) -> str:
+    Always LLM-generated for warmth and variation.
+    Falls back to a safe static message if the LLM fails.
+    """
     t0 = time.perf_counter()
     try:
-        reply = _ask_llm(
-            LEGAL_OPINION_OPENING_SYSTEM, task_hint="quality", model_override=model_override
-        ).strip()
+        reply = _ask_llm(LEGAL_OPINION_OPENING_SYSTEM, task_hint="quality").strip()
         _t("generate_opening", t0)
         if reply and len(reply) > 20:
             return reply
     except Exception as exc:
         logger.warning("Stage1 opening LLM failed: %s", exc)
 
+    # Static fallback — warm but not robotic
     return (
         "Whatever you're going through, I'm here and I'm listening. "
-        "Take your time and share what's on your mind - there's no wrong way to start."
+        "Take your time and share what's on your mind — there's no wrong way to start."
     )
 
 
-def _detect_category(client_message: str, conversation_context: str, model_override: str | None = None) -> dict:
+# ===========================================================================
+# Internal: category detection
+# ===========================================================================
+
+def _detect_category(client_message: str, conversation_context: str) -> dict:
+    """
+    Run the LLM category classifier on the client's message.
+
+    Returns a dict with keys: category, confidence, issue_summary,
+    jurisdiction_hint, urgency_signal, client_role, other_party.
+    Falls back to 'general' on failure.
+    """
     t0 = time.perf_counter()
+
     prompt = (
         ISSUE_CATEGORY_DETECT_SYSTEM
         + "\n\nCONVERSATION SO FAR:\n"
@@ -140,26 +176,24 @@ def _detect_category(client_message: str, conversation_context: str, model_overr
         + (client_message or "").strip()
     )
 
-    default = {
+    _DEFAULT = {
         "category": "general",
-        "secondary_categories": [],
         "confidence": "low",
         "issue_summary": "",
-        "jurisdiction": "unknown",
+        "jurisdiction_hint": "unknown",
         "urgency_signal": "unknown",
         "client_role": "unknown",
         "other_party": "unknown",
-        "relationship_to_other_party": "unknown",
-        "risk_flags": [],
     }
 
     try:
-        raw = _ask_llm(prompt, task_hint="fast", model_override=model_override)
+        raw = _ask_llm(prompt, task_hint="fast")
         _t("detect_category", t0)
         out = _extract_json(raw)
         if not out or not isinstance(out, dict):
-            return default
+            return _DEFAULT
 
+        # Validate category
         valid_cats = set(LEGAL_ISSUE_CATEGORIES.keys())
         cat = str(out.get("category") or "general").strip().lower()
         if cat not in valid_cats:
@@ -173,387 +207,292 @@ def _detect_category(client_message: str, conversation_context: str, model_overr
         if urgency not in ("immediate", "near_term", "no_urgency", "unknown"):
             urgency = "unknown"
 
-        secondary = []
-        for item in (out.get("secondary_categories") or []):
-            candidate = str(item).strip().lower()
-            if candidate and candidate in valid_cats and candidate != cat:
-                secondary.append(candidate)
-
-        valid_risks = {
-            "immediate_physical_danger",
-            "child_safety_risk",
-            "medical_emergency",
-            "arrest_or_custody_risk",
-            "same_day_deadline",
-            "housing_lockout",
-            "ongoing_contact_risk",
-        }
-        risk_flags = [
-            str(flag).strip().lower()
-            for flag in (out.get("risk_flags") or [])
-            if str(flag).strip().lower() in valid_risks
-        ]
-
         return {
-            "category": cat,
-            "secondary_categories": _dedupe_keep_order(secondary, cap=2),
-            "confidence": confidence,
-            "issue_summary": str(out.get("issue_summary") or "").strip()[:300],
-            "jurisdiction": str(out.get("jurisdiction_hint") or "unknown").strip(),
-            "urgency_signal": urgency,
-            "client_role": str(out.get("client_role") or "unknown").strip(),
-            "other_party": str(out.get("other_party") or "unknown").strip()[:120],
-            "relationship_to_other_party": str(out.get("relationship_to_other_party") or "unknown").strip()[:80],
-            "risk_flags": _dedupe_keep_order(risk_flags, cap=8),
+            "category":        cat,
+            "confidence":      confidence,
+            "issue_summary":   str(out.get("issue_summary") or "").strip()[:300],
+            "jurisdiction":    str(out.get("jurisdiction_hint") or "unknown").strip(),
+            "urgency_signal":  urgency,
+            "client_role":     str(out.get("client_role") or "unknown").strip(),
+            "other_party":     str(out.get("other_party") or "unknown").strip()[:120],
         }
+
     except Exception as exc:
         logger.warning("Stage1 category detection failed: %s", exc)
-        return default
+        return _DEFAULT
 
 
-def _extract_stage1_updates(client_message: str, intake_state: dict, model_override: str | None = None) -> dict:
-    msg = (client_message or "").strip()
-    if not msg:
-        return {}
+# ===========================================================================
+# Internal: determine next question hint
+# ===========================================================================
 
-    prompt = f"""You are extracting hidden structured intake data from a client's latest message.
+def _next_question_hint(intake_state: dict) -> str:
+    """
+    Given the current intake state, return a plain-language hint for what
+    the AI should ask next. Picks the first still-open critical fact from
+    the category's key_facts_needed list.
+    """
+    category = intake_state.get("category") or "general"
+    cat_cfg  = LEGAL_ISSUE_CATEGORIES.get(category, LEGAL_ISSUE_CATEGORIES["general"])
+    key_facts = cat_cfg.get("key_facts_needed", [])
+    known_blob = " ".join([
+        str(x).lower()
+        for x in (intake_state.get("known_facts") or [])
+    ])
 
-Existing Stage 1 state:
-{json.dumps({
-    "issue_summary": intake_state.get("issue_summary"),
-    "relationship_to_other_party": intake_state.get("relationship_to_other_party"),
-    "timeframe_status": intake_state.get("timeframe_status"),
-    "client_goal_initial": intake_state.get("client_goal_initial"),
-    "emotional_ask": intake_state.get("emotional_ask"),
-    "immediate_need": intake_state.get("immediate_need"),
-}, ensure_ascii=False, indent=2)}
+    # Simple signal map: which key_facts topics are already covered
+    _COVERAGE_SIGNALS: dict[str, tuple[str, ...]] = {
+        "nature and timeline of abuse":          ("abuse", "hit", "beat", "slap", "shout", "threat", "years", "months"),
+        "shared household status":               ("house", "home", "living", "flat", "reside", "stay"),
+        "children":                              ("child", "children", "son", "daughter", "kid"),
+        "evidence":                              ("photo", "message", "whatsapp", "medical", "witness", "record", "fir"),
+        "prior complaints":                      ("fir", "complaint", "police", "report"),
+        "income / financial":                    ("income", "salary", "earning", "money", "rupee", "financial"),
+        "immediate safety":                      ("safe", "afraid", "fear", "danger", "risk", "shelter"),
+        "date and type of marriage":             ("married", "marriage", "wedding", "court marriage"),
+        "grounds":                               ("cruelty", "desertion", "divorce", "separation"),
+        "income of both parties":                ("income", "salary", "earning", "job"),
+        "stridhan":                              ("jewellery", "gold", "stridhan", "dowry"),
+        "nature of property":                    ("land", "flat", "house", "ancestral", "inherited", "property"),
+        "title documents":                       ("document", "deed", "registered", "patta", "title"),
+        "current possession":                    ("possession", "living", "locked", "access"),
+        "offence alleged":                       ("fir", "arrest", "accused", "charge", "offence", "crime"),
+        "fir number":                            ("fir number", "fir no", "case number"),
+        "custody / bail":                        ("bail", "custody", "jail", "remand", "arrested"),
+        "nature of employment":                  ("permanent", "contract", "probation", "confirmed", "job type"),
+        "employer type":                         ("government", "private", "psu", "public sector"),
+        "notice / termination order":            ("notice", "termination", "dismissal", "show cause", "chargesheet"),
+        "service duration":                      ("years", "months", "joined", "since", "service period"),
+        "product or service":                    ("product", "service", "builder", "bank", "insurance", "telecom"),
+        "deficiency":                            ("defective", "wrong", "not delivered", "damaged", "fraud"),
+        "amount paid":                           ("paid", "amount", "rupee", "lakh", "cost"),
+        "date of accident":                      ("accident", "date", "when"),
+        "injuries":                              ("injured", "injury", "fracture", "surgery", "hospital", "dead", "died"),
+        "vehicle / insurance":                   ("vehicle", "car", "bike", "truck", "insurance"),
+        "cheque amount and date":                ("cheque", "amount", "date", "issued"),
+        "dishonour":                             ("bounced", "dishonoured", "returned", "insufficiency"),
+        "demand notice":                         ("notice", "demand notice", "sent notice"),
+        "survey / khasra":                       ("survey", "khasra", "extent", "acres", "area"),
+        "purpose of acquisition":               ("government", "road", "highway", "dam", "project"),
+        "compensation offered":                  ("compensation", "amount", "offered", "market value"),
+    }
 
-Return JSON only:
-{{
-  "facts": [
-    {{
-      "fact": "<short fact stated by the client>",
-      "fact_type": "event|party|relationship|timeframe|goal|emotional_ask|immediate_need|evidence|risk|other",
-      "time_reference": "<exact or rough time if mentioned, else null>",
-      "evidence_hook": "<document/message/medical/witness hook, else null>",
-      "witness_hook": "<who may confirm this, else null>",
-      "confidence_seed": "stated"
-    }}
-  ],
-  "relationship_to_other_party": "<updated relationship label or null>",
-  "timeframe_status": "recent|ongoing|historical|unknown|null",
-  "client_goal_initial": "<practical outcome the client appears to want, else null>",
-  "emotional_ask": "<emotional or expressive ask if different from practical goal, else null>",
-  "immediate_need": "<what they need right now, else null>",
-  "risk_flags": ["<any of: immediate_physical_danger, child_safety_risk, medical_emergency, arrest_or_custody_risk, same_day_deadline, housing_lockout, ongoing_contact_risk>"]
-}}
+    for fact_desc in key_facts:
+        # Find the first fact not yet covered
+        fact_low = fact_desc.lower()
+        covered = False
+        for signal_key, signals in _COVERAGE_SIGNALS.items():
+            if signal_key in fact_low or fact_low in signal_key:
+                if any(sig in known_blob for sig in signals):
+                    covered = True
+                    break
+        if not covered:
+            return f"Ask about: {fact_desc}"
 
-Rules:
-- Use only what the client actually said.
-- Keep facts atomic and short.
-- If a field is not newly supported by the message, return null for that field.
-- If the client states what they want emotionally and practically, separate them.
-- Output valid JSON only.
+    # All key facts seem covered — ask for general confirmation
+    return "Ask whether there is anything else important about the situation they haven't mentioned yet."
 
-Client message:
-{msg}"""
 
-    try:
-        raw = _ask_llm(prompt, task_hint="fast", model_override=model_override)
-        out = _extract_json(raw)
-        if isinstance(out, dict):
-            return out
-    except Exception as exc:
-        logger.warning("Stage1 structured extraction failed: %s", exc)
-    return {}
-
+# ===========================================================================
+# Internal: confirm and follow up
+# ===========================================================================
 
 def _generate_followup(
     intake_state: dict,
     client_message: str,
     conversation_context: str,
-    model_override: str | None = None,
 ) -> str:
+    """
+    Generate the AI's reply after the category is detected:
+    - Reflect back warmly (no legal labels)
+    - Ask the single most important missing fact
+    """
     t0 = time.perf_counter()
-    category = intake_state.get("category") or "general"
-    cat_cfg = LEGAL_ISSUE_CATEGORIES.get(category, LEGAL_ISSUE_CATEGORIES["general"])
-    key_facts = cat_cfg.get("key_facts_needed", [])
-    known_facts = intake_state.get("known_facts") or []
-
-    known_facts_summary = "\n".join(f"- {f}" for f in known_facts[-10:]) if known_facts else "(nothing specific established yet)"
-    category_key_facts = "\n".join(f"- {f}" for f in key_facts) if key_facts else "(general facts needed)"
+    next_hint = _next_question_hint(intake_state)
 
     prompt = (
-        STAGE1_CONFIRM_AND_FOLLOWUP_SYSTEM.replace("{known_facts_summary}", known_facts_summary)
-        .replace("{category_key_facts}", category_key_facts)
+        STAGE1_CONFIRM_AND_FOLLOWUP_SYSTEM
+        .replace("{next_question_hint}", next_hint)
         .replace("{conversation_context}", conversation_context or "(first message)")
         .replace("{client_message}", (client_message or "").strip())
     )
 
     try:
-        reply = _ask_llm_quality(prompt, model_override=model_override).strip()
+        reply = _ask_llm_quality(prompt).strip()
         _t("generate_followup", t0)
         if reply and len(reply) > 20 and "?" in reply:
             return reply
     except Exception as exc:
         logger.warning("Stage1 followup LLM failed: %s", exc)
 
-    return "Thank you for sharing that. Could you tell me a little more so I can fully understand what happened?"
+    # Minimal safe fallback — always ends with a question
+    hint = next_hint.replace("Ask about: ", "").replace("Ask whether ", "")
+    return f"Thank you for sharing that. Could you tell me more about {hint}?"
 
 
-def _highest_priority_risk(intake_state: dict) -> str | None:
-    priority = [
-        "immediate_physical_danger",
-        "child_safety_risk",
-        "medical_emergency",
-        "arrest_or_custody_risk",
-        "same_day_deadline",
-        "housing_lockout",
-        "ongoing_contact_risk",
-    ]
-    flags = set(intake_state.get("risk_flags") or [])
-    for item in priority:
-        if item in flags:
-            return item
-    return None
+# ===========================================================================
+# Internal: Stage 1 readiness check
+# ===========================================================================
 
+def _check_readiness(intake_state: dict, conversation_context: str) -> tuple[bool, list[str]]:
+    """
+    Ask the LLM whether enough is known to advance to Stage 2.
 
-def _generate_triage_reply(intake_state: dict) -> str | None:
-    risk = _highest_priority_risk(intake_state)
-    if not risk and intake_state.get("urgency_signal") != "immediate":
-        return None
-
-    templates = {
-        "immediate_physical_danger": "Your immediate safety matters most right now. Before anything else, are you safe at this moment?",
-        "child_safety_risk": "I’m most concerned about immediate safety right now. Are any children with you currently in danger or without a safe place to stay?",
-        "medical_emergency": "Your wellbeing comes first here. Do you need urgent medical care or help documenting injuries right now?",
-        "arrest_or_custody_risk": "This may need urgent action before we go further. Has the police process already started, or is arrest being threatened right now?",
-        "same_day_deadline": "This sounds time-sensitive, so I want to protect your position first. What is the exact hearing, filing, or deadline you are facing today?",
-        "housing_lockout": "Housing safety comes first here. Are you currently locked out or without a safe place to stay tonight?",
-        "ongoing_contact_risk": "I want to make sure immediate protection is not being missed. Are you still in direct contact with the person causing this problem right now?",
-    }
-    return templates.get(risk) or (
-        "Before we continue with the details, I want to make sure no urgent risk is being missed. What needs immediate attention right now?"
-    )
-
-
-def _check_readiness(intake_state: dict, conversation_context: str, model_override: str | None = None) -> tuple[bool, list[str]]:
+    Returns (ready: bool, missing_critical: list[str]).
+    """
     t0 = time.perf_counter()
+
+    # Fast heuristic first — skip LLM call if obviously not ready
     turn_count = intake_state.get("turn_count", 0)
     if turn_count < 2:
         return False, ["need at least 2 substantive client turns before advancing"]
 
-    missing: list[str] = []
-    if not (intake_state.get("known_facts") or intake_state.get("issue_summary")):
-        missing.append("core events")
-    if not intake_state.get("relationship_to_other_party") or str(intake_state.get("relationship_to_other_party")).strip().lower() == "unknown":
-        missing.append("parties and relationship")
-    if not intake_state.get("client_goal_initial"):
-        missing.append("what the client wants")
-    if _normalize_timeframe_label(str(intake_state.get("timeframe_status") or "")) == "unknown":
-        missing.append("general timeframe")
-    if missing:
-        return False, missing
-
     prompt = (
-        STAGE1_READINESS_CHECK_SYSTEM.replace(
-            "{intake_state_json}", json.dumps(intake_state, ensure_ascii=False, indent=2)
-        ).replace("{conversation_context}", conversation_context or "")
+        STAGE1_READINESS_CHECK_SYSTEM
+        .replace("{intake_state_json}", json.dumps(intake_state, ensure_ascii=False, indent=2))
+        .replace("{conversation_context}", conversation_context or "")
     )
 
     try:
-        raw = _ask_llm(prompt, task_hint="fast", model_override=model_override)
+        raw = _ask_llm(prompt, task_hint="fast")
         _t("check_readiness", t0)
         out = _extract_json(raw)
         if out and isinstance(out, dict):
-            ready = bool(out.get("ready_for_stage2", False))
-            llm_missing = [str(x).strip() for x in (out.get("missing_critical") or []) if str(x).strip()]
-            return ready, llm_missing
+            ready   = bool(out.get("ready_for_stage2", False))
+            missing = [str(x).strip() for x in (out.get("missing_critical") or []) if str(x).strip()]
+            return ready, missing
     except Exception as exc:
         logger.warning("Stage1 readiness check LLM failed: %s", exc)
 
-    return True, []
+    return False, []
 
 
-def _update_known_facts(intake_state: dict, client_message: str, model_override: str | None = None) -> None:
+# ===========================================================================
+# Internal: update known_facts from latest client message
+# ===========================================================================
+
+def _update_known_facts(intake_state: dict, client_message: str) -> None:
+    """
+    Append meaningful facts from the client's latest message into known_facts.
+    Keeps the list deduplicated and capped at 12 entries.
+
+    Uses a lightweight LLM call to extract atomic facts.
+    """
     t0 = time.perf_counter()
     msg = (client_message or "").strip()
     if not msg:
         return
 
+    prompt = (
+        "Extract 1–4 short, specific facts from the client's message below.\n"
+        "Each fact should be one sentence. Use only what the client said — no inference.\n"
+        "Output ONLY a JSON array of strings: [\"fact 1\", \"fact 2\"]\n\n"
+        f"CLIENT MESSAGE:\n{msg}"
+    )
+
     existing = set(str(f).lower().strip() for f in (intake_state.get("known_facts") or []))
-    fact_records = intake_state.setdefault("fact_records", [])
 
     try:
-        extraction = _extract_stage1_updates(msg, intake_state, model_override=model_override)
+        raw = _ask_llm(prompt, task_hint="fast")
         _t("update_known_facts", t0)
-        for item in (extraction.get("facts") or []):
-            if not isinstance(item, dict):
-                continue
-            fact = str(item.get("fact") or "").strip()
-            if not fact or len(fact) <= 8:
-                continue
-            fact_key = fact.lower()
-            if fact_key not in existing:
-                existing.add(fact_key)
-                intake_state.setdefault("known_facts", []).append(fact)
-            if not any(str(r.get("fact") or "").strip().lower() == fact_key for r in fact_records):
-                fact_records.append(
-                    {
-                        "fact": fact,
-                        "source_turn": intake_state.get("turn_count", 0),
-                        "fact_type": str(item.get("fact_type") or "other").strip()[:40],
-                        "time_reference": item.get("time_reference"),
-                        "evidence_hook": item.get("evidence_hook"),
-                        "witness_hook": item.get("witness_hook"),
-                        "confidence_seed": str(item.get("confidence_seed") or "stated").strip()[:20],
-                    }
-                )
-
-        rel = extraction.get("relationship_to_other_party")
-        if rel and str(rel).strip().lower() != "unknown":
-            intake_state["relationship_to_other_party"] = str(rel).strip()[:80]
-
-        timeframe = extraction.get("timeframe_status")
-        if timeframe:
-            intake_state["timeframe_status"] = _normalize_timeframe_label(str(timeframe))
-
-        client_goal = extraction.get("client_goal_initial")
-        if client_goal and not intake_state.get("client_goal_initial"):
-            intake_state["client_goal_initial"] = str(client_goal).strip()[:300]
-
-        emotional_ask = extraction.get("emotional_ask")
-        if emotional_ask and not intake_state.get("emotional_ask"):
-            intake_state["emotional_ask"] = str(emotional_ask).strip()[:300]
-
-        immediate_need = extraction.get("immediate_need")
-        if immediate_need and not intake_state.get("immediate_need"):
-            intake_state["immediate_need"] = str(immediate_need).strip()[:300]
-
-        intake_state["risk_flags"] = _dedupe_keep_order(
-            list(intake_state.get("risk_flags") or []) + list(extraction.get("risk_flags") or []),
-            cap=8,
-        )
-        intake_state["known_facts"] = (intake_state.get("known_facts") or [])[:20]
-        intake_state["fact_records"] = fact_records[:25]
+        # Extract JSON array
+        text = (raw or "").strip()
+        start = text.find("[")
+        end   = text.rfind("]")
+        if start >= 0 and end > start:
+            facts = json.loads(text[start:end + 1])
+            if isinstance(facts, list):
+                for fact in facts:
+                    fact = str(fact).strip()
+                    if fact and fact.lower() not in existing and len(fact) > 10:
+                        existing.add(fact.lower())
+                        intake_state["known_facts"].append(fact)
+                intake_state["known_facts"] = intake_state["known_facts"][:12]
     except Exception as exc:
         logger.warning("Stage1 fact extraction failed: %s", exc)
+        # Fallback: just store the raw message as a single fact entry
         short = msg[:200].rstrip()
         if short.lower() not in existing:
-            intake_state.setdefault("known_facts", []).append(short)
-            intake_state["known_facts"] = intake_state["known_facts"][:20]
+            intake_state["known_facts"].append(short)
+            intake_state["known_facts"] = intake_state["known_facts"][:12]
 
+
+# ===========================================================================
+# Internal: urgency escalation check
+# ===========================================================================
 
 _IMMEDIATE_SIGNALS = (
-    "beaten",
-    "hit",
-    "assault",
-    "arrested",
-    "arrest",
-    "locked out",
-    "lockout",
-    "thrown out",
-    "evict",
-    "evicted",
-    "threatened",
-    "threat",
-    "danger",
-    "hospital",
-    "injury",
-    "injured",
-    "abuse right now",
-    "happening now",
-    "court today",
-    "hearing today",
-    "deadline today",
-    "auction today",
-    "sale today",
-    "running out of time",
+    "beaten", "hit", "assault", "arrested", "arrest", "locked out", "lockout",
+    "thrown out", "evict", "evicted", "threatened", "threat", "danger",
+    "hospital", "injury", "injured", "abuse right now", "happening now",
+    "court today", "hearing today", "deadline today", "auction today",
+    "sale today", "running out of time",
 )
-
-_RISK_KEYWORD_MAP = {
-    "immediate_physical_danger": ("beaten", "hit", "assault", "threatened", "danger", "weapon"),
-    "child_safety_risk": ("child", "children", "minor", "baby"),
-    "medical_emergency": ("hospital", "injury", "injured", "bleeding", "medical"),
-    "arrest_or_custody_risk": ("arrested", "arrest", "custody", "police coming", "police picked"),
-    "same_day_deadline": ("court today", "hearing today", "deadline today", "auction today", "sale today"),
-    "housing_lockout": ("locked out", "lockout", "thrown out", "evict", "evicted", "no place to stay"),
-    "ongoing_contact_risk": ("happening now", "right now", "still with", "still living with"),
-}
 
 
 def _recheck_urgency(intake_state: dict, client_message: str) -> None:
+    """Escalate urgency_signal to 'immediate' if the message contains strong distress signals."""
+    if intake_state.get("urgency_signal") == "immediate":
+        return
     low = (client_message or "").lower()
     if any(sig in low for sig in _IMMEDIATE_SIGNALS):
         intake_state["urgency_signal"] = "immediate"
-    risk_flags = list(intake_state.get("risk_flags") or [])
-    for label, keywords in _RISK_KEYWORD_MAP.items():
-        if any(word in low for word in keywords) and label not in risk_flags:
-            risk_flags.append(label)
-    intake_state["risk_flags"] = risk_flags[:8]
 
 
-def _backfill_stage1_fields(intake_state: dict) -> None:
-    facts_text = " ".join(intake_state.get("known_facts") or []).lower()
-    if not intake_state.get("timeframe_status"):
-        intake_state["timeframe_status"] = _normalize_timeframe_label(facts_text)
-    if not intake_state.get("client_goal_initial"):
-        for marker in ("want ", "need ", "seeking ", "looking for "):
-            idx = facts_text.find(marker)
-            if idx >= 0:
-                intake_state["client_goal_initial"] = facts_text[idx : idx + 180].strip()
-                break
+# ===========================================================================
+# Public: process_turn
+# ===========================================================================
 
+def process_turn(session: dict, user_message: str) -> dict:
+    """
+    Process one client turn in the Stage 1 intake flow.
 
-def _compute_stage1_open_questions(intake_state: dict) -> list[str]:
-    gaps: list[str] = []
-    if not (intake_state.get("known_facts") or intake_state.get("issue_summary")):
-        gaps.append("what happened")
-    if not intake_state.get("relationship_to_other_party") or str(intake_state.get("relationship_to_other_party")).lower() == "unknown":
-        gaps.append("relationship to the other side")
-    if _normalize_timeframe_label(str(intake_state.get("timeframe_status") or "")) == "unknown":
-        gaps.append("rough timeframe")
-    if not intake_state.get("client_goal_initial"):
-        gaps.append("what outcome matters most to the client")
-    if intake_state.get("urgency_signal") == "immediate" and not intake_state.get("immediate_need"):
-        gaps.append("what needs immediate attention")
+    Parameters
+    ----------
+    session : dict
+        Caller-owned session dict. Must contain:
+          - "history": list of {role, content} turns (may be empty)
+          - "intake_state": the running Stage 1 state dict (or None for first turn)
+    user_message : str
+        The client's latest message.
 
-    category = intake_state.get("category") or "general"
-    cat_cfg = LEGAL_ISSUE_CATEGORIES.get(category, LEGAL_ISSUE_CATEGORIES["general"])
-    facts_text = " ".join(intake_state.get("known_facts") or []).lower()
-    for item in cat_cfg.get("key_facts_needed", [])[:6]:
-        tokens = [tok for tok in re.findall(r"[a-zA-Z]{4,}", item.lower()) if tok not in {"what", "their", "from", "with"}]
-        if tokens and not any(tok in facts_text for tok in tokens[:2]):
-            gaps.append(item)
-
-    return _dedupe_keep_order(gaps, cap=10)
-
-
-def process_turn(session: dict, user_message: str, model_override: str | None = None) -> dict:
+    Returns
+    -------
+    dict with keys:
+      - "reply"            : str   — the AI's reply to send to the client
+      - "intake_state"     : dict  — updated intake state
+      - "advance_to_stage2": bool  — True when ready to hand off to Stage 2
+      - "urgency_signal"   : str   — current urgency level
+    """
     msg = (user_message or "").strip()
+    history: list[dict] = session.get("history", [])
+
+    # ── Initialise or load intake state ─────────────────────────────────────
     intake_state: dict = session.get("intake_state") or _fresh_state()
+
+    # Increment turn counter
     intake_state["turn_count"] = intake_state.get("turn_count", 0) + 1
+
+    # ── Build conversation context for prompts ───────────────────────────────
     context = _build_context(session, max_turns=6)
 
-    if intake_state.get("category") is None or intake_state.get("category_confidence") in (None, "low", "medium"):
-        detected = _detect_category(msg, context, model_override=model_override)
-        intake_state["category"] = detected["category"]
-        intake_state["secondary_issue_clusters"] = _dedupe_keep_order(
-            list(detected.get("secondary_categories") or []) + list(intake_state.get("secondary_issue_clusters") or []),
-            cap=2,
-        )
+    # ── Category detection (run on every turn until confidence=high) ─────────
+    if (
+        intake_state.get("category") is None
+        or intake_state.get("category_confidence") in (None, "low")
+    ):
+        detected = _detect_category(msg, context)
+        intake_state["category"]            = detected["category"]
         intake_state["category_confidence"] = detected["confidence"]
-        intake_state["issue_summary"] = detected.get("issue_summary") or intake_state.get("issue_summary") or ""
-        intake_state["jurisdiction"] = detected.get("jurisdiction") or intake_state.get("jurisdiction") or "unknown"
-        intake_state["urgency_signal"] = detected.get("urgency_signal") or intake_state.get("urgency_signal") or "unknown"
-        intake_state["client_role"] = detected.get("client_role") or intake_state.get("client_role") or "unknown"
-        intake_state["other_party"] = detected.get("other_party") or intake_state.get("other_party") or "unknown"
-        if detected.get("relationship_to_other_party") and detected.get("relationship_to_other_party") != "unknown":
-            intake_state["relationship_to_other_party"] = detected.get("relationship_to_other_party")
-        intake_state["risk_flags"] = _dedupe_keep_order(
-            list(intake_state.get("risk_flags") or []) + list(detected.get("risk_flags") or []),
-            cap=8,
-        )
+        intake_state["issue_summary"]       = detected.get("issue_summary") or intake_state.get("issue_summary") or ""
+        intake_state["jurisdiction"]        = detected.get("jurisdiction") or intake_state.get("jurisdiction") or "unknown"
+        intake_state["urgency_signal"]      = detected.get("urgency_signal") or intake_state.get("urgency_signal") or "unknown"
+        intake_state["client_role"]         = detected.get("client_role") or intake_state.get("client_role") or "unknown"
+        intake_state["other_party"]         = detected.get("other_party") or intake_state.get("other_party") or "unknown"
+
+        # Lock the key_facts_needed checklist for this category
+        cat_cfg = LEGAL_ISSUE_CATEGORIES.get(intake_state["category"], LEGAL_ISSUE_CATEGORIES["general"])
+        intake_state["open_questions"] = list(cat_cfg.get("key_facts_needed", []))
 
         logger.info(
             "Stage1 category locked: %s (confidence=%s, urgency=%s)",
@@ -562,22 +501,25 @@ def process_turn(session: dict, user_message: str, model_override: str | None = 
             intake_state["urgency_signal"],
         )
 
+    # ── Urgency recheck (safety net for escalating distress signals) ──────────
     _recheck_urgency(intake_state, msg)
-    _update_known_facts(intake_state, msg, model_override=model_override)
-    _backfill_stage1_fields(intake_state)
-    intake_state["open_questions"] = _compute_stage1_open_questions(intake_state)
 
-    reply = _generate_triage_reply(intake_state) or _generate_followup(
-        intake_state, msg, context, model_override=model_override
-    )
+    # ── Extract and accumulate facts from client message ─────────────────────
+    _update_known_facts(intake_state, msg)
 
-    ready, missing = _check_readiness(intake_state, context, model_override=model_override)
+    # ── Generate the AI's reply ───────────────────────────────────────────────
+    reply = _generate_followup(intake_state, msg, context)
+
+    # ── Readiness check — decide whether to advance to Stage 2 ───────────────
+    ready, missing = _check_readiness(intake_state, context)
     intake_state["ready_for_stage2"] = ready
     if missing:
-        intake_state["open_questions"] = _dedupe_keep_order(
-            list(intake_state.get("open_questions") or []) + list(missing),
-            cap=10,
-        )
+        # Persist the missing items as open questions for Stage 2 handoff
+        existing_open = set(str(x).lower() for x in intake_state.get("open_questions") or [])
+        for item in missing:
+            if item.lower() not in existing_open:
+                intake_state.setdefault("open_questions", []).append(item)
+                existing_open.add(item.lower())
 
     logger.info(
         "Stage1 turn %d complete | category=%s | facts=%d | ready=%s | urgency=%s",
@@ -589,19 +531,32 @@ def process_turn(session: dict, user_message: str, model_override: str | None = 
     )
 
     return {
-        "reply": reply,
-        "intake_state": intake_state,
+        "reply":             reply,
+        "intake_state":      intake_state,
         "advance_to_stage2": ready,
-        "urgency_signal": intake_state.get("urgency_signal", "unknown"),
+        "urgency_signal":    intake_state.get("urgency_signal", "unknown"),
     }
 
 
+# ===========================================================================
+# Public: get_category_framework
+# ===========================================================================
+
 def get_category_framework(category: str) -> dict:
+    """
+    Return the locked bare-act + procedural framework for a detected category.
+    Used by Stage 2 to seed its structured deep-dive.
+    """
     return dict(LEGAL_ISSUE_CATEGORIES.get(category, LEGAL_ISSUE_CATEGORIES["general"]))
 
 
+# ===========================================================================
+# Public: new_session
+# ===========================================================================
+
 def new_session() -> dict:
+    """Create a fresh session dict for a new legal opinion intake."""
     return {
-        "history": [],
+        "history":      [],
         "intake_state": _fresh_state(),
     }

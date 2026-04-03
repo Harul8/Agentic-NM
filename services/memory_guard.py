@@ -19,10 +19,10 @@ logger = logging.getLogger(__name__)
 
 _activity_lock = threading.Lock()
 
-_MIN_AVAILABLE_MB = int(os.environ.get("MEM_GUARD_MIN_AVAILABLE_MB", "3500"))
-_MIN_SWAP_FREE_MB = int(os.environ.get("MEM_GUARD_MIN_SWAP_FREE_MB", "1024"))
-_MAX_RSS_MB = int(os.environ.get("MEM_GUARD_MAX_RSS_MB", "7500"))
-_WAIT_TIMEOUT_SEC = int(os.environ.get("MEM_GUARD_WAIT_TIMEOUT_SEC", "180"))
+_MIN_AVAILABLE_MB = int(os.environ.get("MEM_GUARD_MIN_AVAILABLE_MB", "1400"))
+_MIN_SWAP_FREE_MB = int(os.environ.get("MEM_GUARD_MIN_SWAP_FREE_MB", "256"))
+_MAX_RSS_MB = int(os.environ.get("MEM_GUARD_MAX_RSS_MB", "9000"))
+_WAIT_TIMEOUT_SEC = int(os.environ.get("MEM_GUARD_WAIT_TIMEOUT_SEC", "90"))
 _WAIT_STEP_SEC = float(os.environ.get("MEM_GUARD_WAIT_STEP_SEC", "1.5"))
 
 

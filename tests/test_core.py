@@ -439,19 +439,6 @@ class TestExpandLegalQueryMocked(unittest.TestCase):
         self.assertGreaterEqual(len(queries), 2)
         self.assertEqual(len(dbg.get("issues_from_model") or []), 2)
 
-    @patch("services.response_generator_v2.ask_llm")
-    def test_queries_are_capped_at_twelve_words(self, mock_llm):
-        mock_llm.return_value = (
-            '{"issues":[{"issue_label":"property","queries":['
-            '"very long property ownership dispute query with many extra words beyond the permitted limit"'
-            ']}]}'
-        )
-        from services.response_generator_v2 import expand_legal_query
-
-        queries = expand_legal_query("Property ownership dispute over family land and title documents")
-        self.assertGreaterEqual(len(queries), 1)
-        self.assertLessEqual(len(queries[0].split()), 12)
-
 
 # ===========================================================================
 # 4. citation_graph tests

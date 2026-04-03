@@ -17,11 +17,7 @@ tiktoken
 # Let FastAPI / CrewAI pull a compatible httpx/httpcore/h11 trio
 
 # Vector search & embeddings
-# PyPI `faiss-gpu` is archived at 1.7.2 and provides Linux wheels only up to Python 3.10.
-# For WSL/Linux GPU installs, use Python 3.10 so this marker selects faiss-gpu.
-faiss-gpu==1.7.2; platform_system == "Linux" and python_version < "3.11"
-# Fallback for non-Linux or newer Python versions where faiss-gpu wheels are unavailable.
-faiss-cpu==1.8.0; platform_system != "Linux" or python_version >= "3.11"
+faiss-cpu==1.8.0
 numpy==1.26.4
 sentence-transformers==2.7.0
 huggingface-hub>=0.34,<1.0

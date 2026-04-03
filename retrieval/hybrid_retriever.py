@@ -759,91 +759,22 @@ def load_chunks(chunks_path: str) -> dict:
 # Hybrid Search: FAISS + BM25 + Cross-Encoder Re-Ranking
 # ---------------------------------------------------------------------------
 
-def _trace_basename(path: str) -> str:
-    """Human-readable label from a stored filename (no extension)."""
-    if not path:
-        return ""
-    base = os.path.basename(str(path))
-    if not base:
-        return ""
-    root, _ext = os.path.splitext(base)
-    return (root.replace("_", " ").strip() or base).strip()
-
-
 def _trace_label_chunk(chunk: dict) -> str:
-    """Rich display name for UI traces: Act + section/title, or case + year/court/para, with fallbacks."""
+    """Short display name for UI retrieval traces (bare act section or act summary)."""
     if not isinstance(chunk, dict):
         return ""
-    _max = 280
-
-    def _clip(s: str) -> str:
-        s = (s or "").strip()
-        if len(s) > _max:
-            return s[: _max - 1] + "…"
-        return s
-
-    doc = (chunk.get("doc_type") or "").strip().lower()
-    case_name = (chunk.get("case_name") or "").strip()
-    act_name = (chunk.get("act_name") or "").strip()
-    sec = (chunk.get("section_number") or chunk.get("section") or "").strip()
-    stitle = (chunk.get("section_title") or "").strip()
-    title = (chunk.get("title") or "").strip()
-    year = str(chunk.get("year") or "").strip()
-    court = (chunk.get("court") or "").strip()
-    para = str(chunk.get("paragraph_num") or chunk.get("para_num") or "").strip()
-    ptype = (chunk.get("paragraph_type") or "").strip()
-    cite = (chunk.get("citation") or "").strip()
-    src = (chunk.get("source_file") or chunk.get("source") or "").strip()
-    chunk_id = (chunk.get("chunk_id") or "").strip()
-
-    # Case law (paragraph or case-summary chunks)
-    if doc == "case_law" or (case_name and not act_name):
-        main = case_name or title
-        if not main and src:
-            main = _trace_basename(src)
-        if not main:
-            main = chunk_id or "case chunk"
-        bits = [main]
-        tail: list[str] = []
-        if year:
-            tail.append(year)
-        if cite and len(cite) < 120:
-            tail.append(cite)
-        elif court:
-            tail.append(court[:110] + ("…" if len(court) > 110 else ""))
-        if para:
-            tail.append(f"para {para}")
-        if ptype and ptype.lower() != "unknown":
-            tail.append(ptype)
-        if tail:
-            bits.append(" · ".join(tail))
-        return _clip(" — ".join(bits))
-
-    # Bare acts / act-level summaries
-    if act_name or doc == "bare_act":
-        bits2: list[str] = []
-        if act_name:
-            bits2.append(act_name)
-        elif title:
-            bits2.append(title[:140] + ("…" if len(title) > 140 else ""))
-        if sec:
-            bits2.append(f"§{sec}")
-        if stitle and stitle.lower() not in (act_name or "").lower():
-            bits2.append(stitle[:120] + ("…" if len(stitle) > 120 else ""))
-        if bits2:
-            return _clip(" — ".join(bits2))
-
+    act = (chunk.get("act_name") or "").strip()
+    sec = (chunk.get("section_number") or "").strip()
+    title = (chunk.get("section_title") or chunk.get("title") or "").strip()
+    bits: list[str] = []
+    if act:
+        bits.append(act)
+    if sec:
+        bits.append(f"§{sec}")
     if title:
-        return _clip(title)
-    if case_name:
-        return _clip(case_name)
-    if act_name:
-        return _clip(act_name)
-    if src:
-        return _clip(_trace_basename(src))
-    if chunk_id:
-        return _clip(chunk_id)
-    return "chunk"
+        bits.append(title[:100] + ("…" if len(title) > 100 else ""))
+    name = " — ".join(bits) if bits else (chunk.get("case_name") or "").strip()
+    return name or "chunk"
 
 
 def _trace_rows_by_rank(
@@ -1256,7 +1187,7 @@ def search_bare_acts(query: str, top_k: int = 30, trace: Optional[list] = None) 
                 bm25_index_path=ACT_SUMMARY_BM25_INDEX,
                 faiss_top_k=12,
                 bm25_top_k=12,
-                rerank_top_k=6,
+                rerank_top_k=8,
                 min_rerank_score=0.0,
                 trace=trace,
                 trace_stage="bare_act_act_summary_index",
@@ -1274,7 +1205,7 @@ def search_bare_acts(query: str, top_k: int = 30, trace: Optional[list] = None) 
                     bm25_index_path=BARE_BM25_INDEX,
                     faiss_top_k=24,
                     bm25_top_k=24,
-                    rerank_top_k=min(top_k, 8),
+                    rerank_top_k=min(top_k, 10),
                     min_rerank_score=0.0,
                     allowed_acts=allowed_acts,
                     trace=trace,
@@ -1288,7 +1219,7 @@ def search_bare_acts(query: str, top_k: int = 30, trace: Optional[list] = None) 
                     bm25_index_path=BARE_BM25_INDEX,
                     faiss_top_k=20,
                     bm25_top_k=20,
-                    rerank_top_k=min(top_k, 8),
+                    rerank_top_k=min(top_k, 10),
                     min_rerank_score=0.0,
                     trace=trace,
                     trace_stage="bare_act_section_index",
@@ -1302,7 +1233,7 @@ def search_bare_acts(query: str, top_k: int = 30, trace: Optional[list] = None) 
                 bm25_index_path=BARE_BM25_INDEX,
                 faiss_top_k=20,
                 bm25_top_k=20,
-                rerank_top_k=min(top_k, 8),
+                rerank_top_k=min(top_k, 10),
                 min_rerank_score=0.0,
                 trace=trace,
                 trace_stage="bare_act_section_index_fallback",
@@ -1315,7 +1246,7 @@ def search_bare_acts(query: str, top_k: int = 30, trace: Optional[list] = None) 
             bm25_index_path=BARE_BM25_INDEX,
             faiss_top_k=20,
             bm25_top_k=20,
-            rerank_top_k=min(top_k, 8),
+            rerank_top_k=min(top_k, 10),
             min_rerank_score=0.0,
             trace=trace,
             trace_stage="bare_act_section_index",
@@ -1395,7 +1326,7 @@ def search_case_laws(query: str, top_k: int = 30) -> list:
                 bm25_index_path=CASE_SUMMARY_BM25_INDEX,
                 faiss_top_k=12,
                 bm25_top_k=12,
-                rerank_top_k=6,
+                rerank_top_k=8,
                 min_rerank_score=0.0,
             )
             allowed_cases = frozenset(

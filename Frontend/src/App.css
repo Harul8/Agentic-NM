@@ -793,23 +793,6 @@ body {
   margin-top: 4px;
 }
 
-.progress-display .progress-retrieval-diagnostics {
-  margin-bottom: 12px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.progress-display .progress-retrieval-detail {
-  margin-top: 6px;
-}
-
-.progress-display .progress-retrieved-list {
-  margin: 4px 0 8px;
-  padding-left: 1.1rem;
-  font-size: 0.78rem;
-  line-height: 1.45;
-}
-
 .progress-steps-wrapper {
   /* No fixed height – content expands; scroll via chat container */
 }
@@ -1916,10 +1899,10 @@ details.sidebar-section--active > .sidebar-list-scroll {
 }
 
 .chat-history-group-label {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 600;
   color: #888;
-  text-transform: none;
+  text-transform: uppercase;
   letter-spacing: 0.02em;
   margin-bottom: 4px;
   padding: 0 2px;
@@ -2018,42 +2001,6 @@ details.sidebar-section--active > .sidebar-list-scroll {
 .chat-history-icon-btn--danger:hover {
   color: #c82333;
   background: rgba(220, 53, 69, 0.1);
-}
-
-.chat-history-icon-btn--starred {
-  opacity: 0.9;
-  color: #d4a017;
-}
-
-.chat-history-icon-btn--starred:hover {
-  color: #c19000;
-  background: rgba(212, 160, 23, 0.12);
-}
-
-.entry-router-options {
-  display: flex;
-  gap: 8px;
-  margin-top: 10px;
-  flex-wrap: wrap;
-}
-
-.entry-router-option-btn {
-  border: 1px solid #c8d3ff;
-  background: #f5f8ff;
-  color: #1948b8;
-  border-radius: 999px;
-  padding: 6px 12px;
-  font-size: 0.78rem;
-  cursor: pointer;
-}
-
-.entry-router-option-btn:hover:not(:disabled) {
-  background: #e9efff;
-}
-
-.entry-router-option-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
 }
 
 .chat-history-rename-row {
@@ -3503,6 +3450,8 @@ details.sidebar-section--active > .sidebar-list-scroll {
   padding: 1px 8px;
   white-space: nowrap;
 }
+
+
 
 /* Staged bare-act / precedent guidance */
 .message-staged-guidance {

@@ -393,29 +393,6 @@ def _extract_openai_text(resp) -> str:
                     ).strip()
                     if joined:
                         return joined
-        # OpenAI SDK objects can be rich typed objects (not plain dicts).
-        # Try common attribute shapes so we don't miss final text.
-        for attr in ("text", "value", "output_text"):
-            try:
-                v = getattr(value, attr, None)
-            except Exception:
-                v = None
-            if isinstance(v, str) and v.strip():
-                return v.strip()
-        try:
-            content_attr = getattr(value, "content", None)
-        except Exception:
-            content_attr = None
-        if isinstance(content_attr, str) and content_attr.strip():
-            return content_attr.strip()
-        if isinstance(content_attr, list):
-            joined = " ".join(
-                str(item).strip()
-                for item in content_attr
-                if isinstance(item, str) and item.strip()
-            ).strip()
-            if joined:
-                return joined
         return ""
 
     out = _stringify_text_like(_read(resp, "output_text", ""))
@@ -468,12 +445,6 @@ def _extract_openai_text(resp) -> str:
                         parts.append(txt)
 
     if not parts:
-        # If provider returned an embedded error payload, surface it instead
-        # of failing as "empty response".
-        err_obj = _read(payload, "error", None)
-        err_txt = _stringify_text_like(err_obj)
-        if err_txt:
-            return err_txt
         # Diagnostic metadata only; avoids leaking prompt/response body content.
         try:
             output_items = _read(payload, "output", []) or []
