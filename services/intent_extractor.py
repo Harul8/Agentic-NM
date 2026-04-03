@@ -42,7 +42,7 @@ RULES:
 - Use only what the user said. Do not infer or add examples."""
 
 
-def extract_research_intent(user_message: str, llm_fn=None) -> dict[str, Any]:
+def extract_research_intent(user_message: str, model_override: str | None = None, llm_fn=None) -> dict[str, Any]:
     """
     Extract structured intent from the user's message. Single source of truth for
     model-driven behavior; static/keyword logic used only as fallback when this fails.
@@ -56,7 +56,9 @@ def extract_research_intent(user_message: str, llm_fn=None) -> dict[str, Any]:
     """
     if llm_fn is None:
         from llm.ollama_client import ask_llm
-        llm_fn = lambda prompt: ask_llm(prompt, task_hint="fast")
+
+        def llm_fn(prompt: str) -> str:
+            return ask_llm(prompt, task_hint="fast", model=model_override)
 
     default = {
         "states": [],

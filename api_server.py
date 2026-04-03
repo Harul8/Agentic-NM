@@ -386,7 +386,7 @@ def _normalize_workflow_state(raw_state: Optional[dict], messages: Optional[list
     facts = facts.strip()
 
     stage = (state.get("stage") or "").strip().lower()
-    if stage not in {"await_facts", "interview", "done"}:
+    if stage not in {"entry_router", "await_facts", "interview", "done", "stage1_intake", "stage2_deepdive", "stage3_vetting", "stage4_remedy", "stage5_draft", "stage6_review", "finalized"}:
         stage = "done" if msgs else "await_facts"
 
     current_question = state.get("currentQuestion")
@@ -417,6 +417,31 @@ def _normalize_workflow_state(raw_state: Optional[dict], messages: Optional[list
         last_response_type = ""
     last_response_type = last_response_type.strip()
 
+    # Stage 1 and Stage 2 intake states — passed through opaquely
+    intake_state = state.get("intakeState")
+    if not isinstance(intake_state, dict):
+        intake_state = None
+
+    stage2_state = state.get("stage2State")
+    if not isinstance(stage2_state, dict):
+        stage2_state = None
+
+    stage3_state = state.get("stage3State")
+    if not isinstance(stage3_state, dict):
+        stage3_state = None
+
+    stage4_state = state.get("stage4State")
+    if not isinstance(stage4_state, dict):
+        stage4_state = None
+
+    stage6_state = state.get("stage6State")
+    if not isinstance(stage6_state, dict):
+        stage6_state = None
+
+    entry_state = state.get("entryState")
+    if not isinstance(entry_state, dict):
+        entry_state = None
+
     return {
         "stage": stage,
         "facts": facts,
@@ -425,6 +450,12 @@ def _normalize_workflow_state(raw_state: Optional[dict], messages: Optional[list
         "analysisStage": analysis_stage,
         "factsSummary": facts_summary,
         "lastResponseType": last_response_type,
+        "intakeState": intake_state,
+        "stage2State": stage2_state,
+        "stage3State": stage3_state,
+        "stage4State": stage4_state,
+        "stage6State": stage6_state,
+        "entryState": entry_state,
     }
 
 
@@ -2213,6 +2244,140 @@ async def _stream_sse_queue(queue: Queue, loop):
             yield f"event: token\ndata: {json.dumps(payload)}\n\n"
 
 
+@app.get("/intake/opening")
+def intake_opening(model_override: str | None = None):
+    """Return the AI's warm opening message for Stage 0 entry routing."""
+    from services.entry_router import generate_entry_opening
+    msg = generate_entry_opening(model_override=model_override or None)
+    return {"message": msg}
+
+
+@app.post("/intake/stage5_draft/stream")
+def intake_stage5_draft_stream(request: dict):
+    """
+    SSE endpoint: run Stage 5 draft generation and stream the output.
+
+    Body (JSON):
+      {
+        "stage4_state"   : <the stage4_state dict from Stage 4>,
+        "model_override" : "<optional model string>"
+      }
+
+    SSE events emitted:
+      step   — progress step updates
+      token  — individual draft tokens (for real-time display)
+      result — final JSON payload when complete
+    """
+    from services.legal_draft_stage5 import generate_stage5_draft
+    import queue as _queue
+
+    stage4_state  = request.get("stage4_state") or {}
+    model_override = request.get("model_override") or None
+
+    q: _queue.Queue = _queue.Queue()
+
+    def _step_cb(step: dict):
+        q.put(("step", step))
+
+    def _token_cb(token: str):
+        q.put(("token", {"content": token}))
+
+    def _run():
+        try:
+            result = generate_stage5_draft(
+                stage4_state,
+                model_override=model_override,
+                token_callback=_token_cb,
+                step_callback=_step_cb,
+            )
+            q.put(("result", {
+                "status":            "stage5_draft",
+                "draft_text":        result["draft_text"],
+                "stage5_state":      result["stage5_state"],
+                "document_type":     result["document_type"],
+                "document_type_label": result["document_type_label"],
+                "citations":         result["citations"],
+                "retrieved_bare_acts": [
+                    {
+                        "source": c.get("act_name") or c.get("source"),
+                        "section": c.get("section_number") or c.get("section"),
+                        "subsection": c.get("subsection") or c.get("sub_section") or c.get("clause"),
+                        "section_title": c.get("section_title") or c.get("title"),
+                        "score": c.get("rerank_score"),
+                    }
+                    for c in result["retrieved_bare_acts"][:10]
+                ],
+                "retrieved_case_laws": [
+                    {
+                        "source": c.get("case_name") or c.get("source"),
+                        "year": c.get("year"),
+                        "court": c.get("court"),
+                        "paragraph": c.get("paragraph_num") or c.get("para_num") or c.get("paragraph_id"),
+                        "citation": c.get("citation"),
+                        "score": c.get("rerank_score"),
+                    }
+                    for c in result["retrieved_case_laws"][:8]
+                ],
+            }))
+        except Exception as exc:
+            logger.error("Stage5 draft generation failed: %s", exc, exc_info=True)
+            q.put(("result", {"status": "error", "message": str(exc)}))
+        finally:
+            q.put(("done", None))
+
+    import threading
+    threading.Thread(target=_run, daemon=True).start()
+
+    def _generate():
+        while True:
+            kind, payload = q.get()
+            if kind == "done":
+                break
+            if kind == "result":
+                # Emit as "done" so consumeSSEStream's onDone handler fires
+                yield f"event: done\ndata: {json.dumps(payload, ensure_ascii=False)}\n\n"
+            elif kind == "step":
+                yield f"event: step\ndata: {json.dumps(payload)}\n\n"
+            elif kind == "token":
+                yield f"event: token\ndata: {json.dumps(payload)}\n\n"
+
+    return StreamingResponse(_generate(), media_type="text/event-stream")
+
+
+@app.post("/intake/stage6_opening")
+def intake_stage6_opening(request: dict):
+    """
+    Generate the Stage 6 handover note and initial state.
+
+    Body (JSON):
+      {
+        "stage5_state"   : <stage5_state dict>,
+        "draft_text"     : "<the generated draft text>",
+        "model_override" : "<optional>"
+      }
+    """
+    from services.legal_review_stage6 import generate_stage6_opening, new_stage6_state
+    stage5_state   = request.get("stage5_state") or {}
+    draft_text     = request.get("draft_text") or ""
+    model_override = request.get("model_override") or None
+    s6_state   = new_stage6_state(stage5_state, draft_text)
+    s6_opening = generate_stage6_opening(stage5_state, draft_text, model_override=model_override)
+    return {"message": s6_opening, "stage6_state": s6_state}
+
+
+@app.post("/intake/stage2_opening")
+def intake_stage2_opening(request: dict, model_override: str | None = None):
+    """
+    Generate the Stage 2 transition message and initial state.
+    Body: the Stage 1 intake_state dict.
+    """
+    from services.legal_intake_stage2 import generate_stage2_opening, new_stage2_state
+    stage1_state = request if isinstance(request, dict) else {}
+    s2_state  = new_stage2_state(stage1_state)
+    s2_opening = generate_stage2_opening(stage1_state, model_override=model_override or None)
+    return {"message": s2_opening, "stage2_state": s2_state}
+
+
 @app.post("/chat")
 def chat(request: ChatRequest):
     """
@@ -2418,6 +2583,346 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
 def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, user_id: str, mode: str | None = None, model_override: str | None = None, workflow_state: dict | None = None) -> None:
     """Run the same logic as continue_chat, pushing progress to queue and finally the result."""
     try:
+        ws = workflow_state or {}
+        # ── Stage 0 entry router ──────────────────────────────────────────────
+        if ws.get("stage") == "entry_router":
+            from services.entry_router import process_turn as entry_process_turn
+            from services.legal_opinion_intake import process_turn as s1_process_turn
+
+            queue.put(("step", {"message": "Understanding what you need…", "icon": ""}))
+            session = {
+                "history": [{"role": m["role"], "content": m.get("content", "")} for m in conv],
+                "entry_state": ws.get("entryState"),
+            }
+            outcome = entry_process_turn(session, message, model_override=model_override)
+            route_to = outcome.get("route_to")
+
+            if route_to == "quick_legal_lookup":
+                lookup_query = outcome.get("lookup_query") or message
+                queue.put(("step", {"message": "Pulling relevant legal provisions…", "icon": ""}))
+
+                def progress_callback(progress_snapshot: dict):
+                    queue.put(("progress", progress_snapshot))
+                def step_callback(step_data: dict):
+                    queue.put(("step", step_data))
+                def token_callback(token: str):
+                    queue.put(("token", {"content": token}))
+
+                quick_result = process_chat(
+                    conversation=conv,
+                    current_message=lookup_query,
+                    phase="fact_collection",
+                    facts_summary=None,
+                    progress_callback=progress_callback,
+                    chat_mode="legal_research",
+                    step_callback=step_callback,
+                    token_callback=token_callback,
+                    model_override=model_override,
+                    workflow_state=workflow_state,
+                    search_strategy="local_only",
+                )
+                ui = _map_chat_result_to_ui(quick_result)
+                # If local retrieval found nothing, ask user before web search.
+                retrieved = ui.get("retrieved") or []
+                if not retrieved:
+                    entry_state = outcome.get("entry_state") or {}
+                    entry_state["pending_web_confirmation"] = True
+                    entry_state["lookup_topic"] = lookup_query
+                    queue.put(("result", {
+                        "status": "entry_router",
+                        "message": "I couldn't find strong local results for this topic. Do you want me to search the web for additional legal materials?",
+                        "entry_state": entry_state,
+                        "response_type": "entry_router",
+                        "next_workflow_state": {
+                            "stage": "entry_router",
+                            "entryState": entry_state,
+                        },
+                    }))
+                    return
+                ui["status"] = "entry_router"
+                ui["response_type"] = "quick_lookup"
+                ui["entry_state"] = outcome.get("entry_state")
+                ui["entry_router_message"] = outcome.get("reply")
+                ui["next_workflow_state"] = {
+                    "stage": "entry_router",
+                    "entryState": outcome.get("entry_state"),
+                }
+                queue.put(("result", ui))
+                return
+
+            if route_to == "quick_legal_lookup_web":
+                lookup_query = outcome.get("lookup_query") or message
+                queue.put(("step", {"message": "Searching web-backed legal sources…", "icon": ""}))
+
+                def progress_callback(progress_snapshot: dict):
+                    queue.put(("progress", progress_snapshot))
+                def step_callback(step_data: dict):
+                    queue.put(("step", step_data))
+                def token_callback(token: str):
+                    queue.put(("token", {"content": token}))
+
+                web_result = process_chat(
+                    conversation=conv,
+                    current_message=lookup_query,
+                    phase="fact_collection",
+                    facts_summary=None,
+                    progress_callback=progress_callback,
+                    chat_mode="legal_research",
+                    step_callback=step_callback,
+                    token_callback=token_callback,
+                    model_override=model_override,
+                    workflow_state=workflow_state,
+                    search_strategy="local_then_web",
+                )
+                ui = _map_chat_result_to_ui(web_result)
+                ui["status"] = "entry_router"
+                ui["response_type"] = "quick_lookup_web"
+                ui["entry_state"] = outcome.get("entry_state")
+                ui["entry_router_message"] = outcome.get("reply")
+                ui["next_workflow_state"] = {
+                    "stage": "entry_router",
+                    "entryState": outcome.get("entry_state"),
+                }
+                queue.put(("result", ui))
+                return
+
+            if route_to == "legal_opinion_workflow":
+                s1_session = {
+                    "history": [{"role": m["role"], "content": m.get("content", "")} for m in conv],
+                    "intake_state": ws.get("intakeState"),
+                }
+                s1_out = s1_process_turn(s1_session, message, model_override=model_override)
+                result = {
+                    "status": "stage1_intake",
+                    "message": s1_out["reply"],
+                    "entry_router_message": outcome.get("reply"),
+                    "intake_state": s1_out["intake_state"],
+                    "advance_to_stage2": s1_out["advance_to_stage2"],
+                    "urgency_signal": s1_out["urgency_signal"],
+                    "response_type": "stage1_intake",
+                    "next_workflow_state": {
+                        "stage": "stage1_intake",
+                        "entryState": outcome.get("entry_state"),
+                        "intakeState": s1_out["intake_state"],
+                    },
+                }
+                if s1_out["advance_to_stage2"]:
+                    from services.legal_intake_stage2 import generate_stage2_opening, new_stage2_state
+                    s2_state = new_stage2_state(s1_out["intake_state"])
+                    s2_opening = generate_stage2_opening(s1_out["intake_state"], model_override=model_override)
+                    result["stage2_opening"] = s2_opening
+                    result["stage2_state"] = s2_state
+                    result["next_workflow_state"] = {
+                        "stage": "stage2_deepdive",
+                        "entryState": outcome.get("entry_state"),
+                        "intakeState": s1_out["intake_state"],
+                        "stage2State": s2_state,
+                    }
+                queue.put(("result", result))
+                return
+
+            queue.put(("result", {
+                "status": "entry_router",
+                "message": outcome.get("reply"),
+                "entry_options": outcome.get("entry_options") or [],
+                "entry_state": outcome.get("entry_state"),
+                "response_type": "entry_router",
+                "next_workflow_state": {
+                    "stage": "entry_router",
+                    "entryState": outcome.get("entry_state"),
+                },
+            }))
+            return
+
+        # ── Stage 1 intake routing ────────────────────────────────────────────
+        if ws.get("stage") == "stage1_intake":
+            from services.legal_opinion_intake import process_turn as s1_process_turn
+            queue.put(("step", {"message": "Listening carefully…", "icon": ""}))
+            session = {
+                "history": [{"role": m["role"], "content": m.get("content", "")} for m in conv],
+                "intake_state": ws.get("intakeState"),
+            }
+            outcome = s1_process_turn(session, message, model_override=model_override)
+            result = {
+                "status": "stage1_intake",
+                "message": outcome["reply"],
+                "intake_state": outcome["intake_state"],
+                "advance_to_stage2": outcome["advance_to_stage2"],
+                "urgency_signal": outcome["urgency_signal"],
+                "response_type": "stage1_intake",
+                "next_workflow_state": {
+                    "stage": "stage1_intake",
+                    "intakeState": outcome["intake_state"],
+                },
+            }
+            if outcome["advance_to_stage2"]:
+                # Generate Stage 2 opening + initial state as part of this result
+                from services.legal_intake_stage2 import (
+                    generate_stage2_opening,
+                    new_stage2_state,
+                )
+                s2_state  = new_stage2_state(outcome["intake_state"])
+                s2_opening = generate_stage2_opening(outcome["intake_state"], model_override=model_override)
+                result["stage2_opening"]  = s2_opening
+                result["stage2_state"]    = s2_state
+                result["next_workflow_state"] = {
+                    "stage":       "stage2_deepdive",
+                    "intakeState": outcome["intake_state"],
+                    "stage2State": s2_state,
+                }
+                queue.put(("step", {"message": "Building detailed fact picture", "icon": "✓"}))
+            queue.put(("result", result))
+            return
+
+        # ── Stage 2 deep-dive routing ─────────────────────────────────────────
+        if ws.get("stage") == "stage2_deepdive":
+            from services.legal_intake_stage2 import process_turn as s2_process_turn
+            queue.put(("step", {"message": "Gathering case details…", "icon": ""}))
+            session = {
+                "history": [{"role": m["role"], "content": m.get("content", "")} for m in conv],
+                "stage2_state": ws.get("stage2State"),
+            }
+            outcome = s2_process_turn(session, message, model_override=model_override)
+            result = {
+                "status": "stage2_deepdive",
+                "message": outcome["reply"],
+                "stage2_state": outcome["stage2_state"],
+                "advance_to_stage3": outcome["advance_to_stage3"],
+                "urgency_signal": outcome["urgency_signal"],
+                "response_type": "stage2_deepdive",
+                "next_workflow_state": {
+                    "stage":       "stage2_deepdive",
+                    "intakeState": ws.get("intakeState"),
+                    "stage2State": outcome["stage2_state"],
+                },
+            }
+            if outcome["advance_to_stage3"]:
+                from services.legal_intake_stage3 import (
+                    generate_stage3_opening,
+                    new_stage3_state,
+                )
+                s3_state   = new_stage3_state(outcome["stage2_state"])
+                s3_opening = generate_stage3_opening(outcome["stage2_state"], model_override=model_override)
+                result["stage3_opening"] = s3_opening
+                result["stage3_state"]   = s3_state
+                result["next_workflow_state"] = {
+                    "stage":       "stage3_vetting",
+                    "intakeState": ws.get("intakeState"),
+                    "stage2State": outcome["stage2_state"],
+                    "stage3State": s3_state,
+                }
+                queue.put(("step", {"message": "Moving to case verification", "icon": "✓"}))
+            queue.put(("result", result))
+            return
+
+        # ── Stage 3 indirect vetting routing ──────────────────────────────────
+        if ws.get("stage") == "stage3_vetting":
+            from services.legal_intake_stage3 import process_turn as s3_process_turn
+            queue.put(("step", {"message": "Strengthening your account…", "icon": ""}))
+            session = {
+                "history":      [{"role": m["role"], "content": m.get("content", "")} for m in conv],
+                "stage3_state": ws.get("stage3State"),
+            }
+            outcome = s3_process_turn(session, message, model_override=model_override)
+            result = {
+                "status":           "stage3_vetting",
+                "message":          outcome["reply"],
+                "stage3_state":     outcome["stage3_state"],
+                "advance_to_stage4": outcome["advance_to_stage4"],
+                "urgency_signal":   outcome["urgency_signal"],
+                "response_type":    "stage3_vetting",
+                "next_workflow_state": {
+                    "stage":       "stage3_vetting",
+                    "intakeState": ws.get("intakeState"),
+                    "stage2State": ws.get("stage2State"),
+                    "stage3State": outcome["stage3_state"],
+                },
+            }
+            if outcome["advance_to_stage4"]:
+                from services.legal_intake_stage4 import (
+                    new_stage4_state,
+                    generate_stage4_opening,
+                )
+                queue.put(("step", {"message": "Vetting complete — assessing your legal options", "icon": "✓"}))
+                s4_state = new_stage4_state(outcome["stage3_state"])
+                stage4_opening, analysis = generate_stage4_opening(
+                    outcome["stage3_state"],
+                    model_override=model_override,
+                )
+                s4_state["remedy_analysis"] = analysis
+                # Seed the presented remedies list so confirmation can reference them
+                s4_state["remedies_presented"] = [r["name"] for r in (analysis.get("viable_remedies") or [])]
+                result["stage4_opening"] = stage4_opening
+                result["stage4_state"]   = s4_state
+                result["next_workflow_state"]["stage"]       = "stage4_remedy"
+                result["next_workflow_state"]["stage4State"] = s4_state
+
+            queue.put(("result", result))
+            return
+
+        # ── Stage 4 remedy routing ──────────────────────────────────────────
+        if ws.get("stage") == "stage4_remedy":
+            from services.legal_intake_stage4 import process_turn as s4_process_turn
+            queue.put(("step", {"message": "Confirming your remedy plan…", "icon": ""}))
+            session = {
+                "history":      [{"role": m["role"], "content": m.get("content", "")} for m in conv],
+                "stage4_state": ws.get("stage4State"),
+            }
+            outcome = s4_process_turn(session, message, model_override=model_override)
+            result = {
+                "status":             "stage4_remedy",
+                "message":            outcome["reply"],
+                "stage4_state":       outcome["stage4_state"],
+                "advance_to_stage5":  outcome["advance_to_stage5"],
+                "urgency_signal":     outcome["urgency_signal"],
+                "response_type":      "stage4_remedy",
+                "next_workflow_state": {
+                    "stage":       "stage4_remedy",
+                    "intakeState": ws.get("intakeState"),
+                    "stage2State": ws.get("stage2State"),
+                    "stage3State": ws.get("stage3State"),
+                    "stage4State": outcome["stage4_state"],
+                },
+            }
+            if outcome["advance_to_stage5"]:
+                result["next_workflow_state"]["stage"] = "stage5_draft"
+                queue.put(("step", {"message": "Remedy confirmed — preparing your documents", "icon": "✓"}))
+            queue.put(("result", result))
+            return
+
+        # ── Stage 6 advocate review routing ────────────────────────────────
+        if ws.get("stage") == "stage6_review":
+            from services.legal_review_stage6 import process_turn as s6_process_turn
+            queue.put(("step", {"message": "Processing your review instruction…", "icon": ""}))
+            session = {
+                "history":      [{"role": m["role"], "content": m.get("content", "")} for m in conv],
+                "stage6_state": ws.get("stage6State"),
+            }
+            outcome = s6_process_turn(session, message, model_override=model_override)
+            finalized = bool(outcome.get("finalized"))
+            result = {
+                "status":          "stage6_review",
+                "message":         outcome["reply"],
+                "updated_draft":   outcome["updated_draft"],
+                "stage6_state":    outcome["stage6_state"],
+                "intent":          outcome.get("intent", "qa"),
+                "finalized":       finalized,
+                "response_type":   "stage6_review",
+                "next_workflow_state": {
+                    "stage":       "stage6_review",
+                    "intakeState": ws.get("intakeState"),
+                    "stage2State": ws.get("stage2State"),
+                    "stage3State": ws.get("stage3State"),
+                    "stage4State": ws.get("stage4State"),
+                    "stage6State": outcome["stage6_state"],
+                },
+            }
+            if finalized:
+                result["next_workflow_state"]["stage"] = "finalized"
+                queue.put(("step", {"message": "Document finalised — ready to file", "icon": "✓"}))
+            queue.put(("result", result))
+            return
+
         queue.put(("step", {"message": "Starting analysis of your latest message", "icon": ""}))
         def progress_callback(progress_snapshot: dict):
             queue.put(("progress", progress_snapshot))
@@ -3167,4 +3672,3 @@ async def startup_validation():
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
-

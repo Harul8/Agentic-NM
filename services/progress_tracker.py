@@ -21,6 +21,14 @@ class ProgressTracker:
         self.start_time = time.time()
         self.groups: List[Dict[str, Any]] = []
         self.current_group: Optional[Dict[str, Any]] = None
+        # Persisted in snapshots / final response: query expansion, hybrid traces, retrieved doc labels
+        self.retrieval_diagnostics: Dict[str, Any] = {}
+
+    def update_retrieval_diagnostics(self, patch: Optional[Dict[str, Any]] = None, **kwargs) -> None:
+        """Merge UI-facing retrieval metadata (replaces keys in patch)."""
+        merged = {**(patch or {}), **kwargs}
+        for k, v in merged.items():
+            self.retrieval_diagnostics[k] = copy.deepcopy(v)
 
     def start_group(self, group_name: str, description: str = ""):
         """Start a new progress group (e.g., 'Internal Search', 'Web Search')."""
@@ -133,6 +141,7 @@ class ProgressTracker:
             "start_time": datetime.utcnow().isoformat() + "Z",
             "elapsed_seconds": round(elapsed, 2),
             "groups": self.groups,
+            "retrieval_diagnostics": copy.deepcopy(self.retrieval_diagnostics),
         }
 
     def get_progress_snapshot(self) -> Dict[str, Any]:
@@ -145,6 +154,7 @@ class ProgressTracker:
             "start_time": datetime.utcnow().isoformat() + "Z",
             "elapsed_seconds": round(elapsed, 2),
             "groups": groups,
+            "retrieval_diagnostics": copy.deepcopy(self.retrieval_diagnostics),
         }
 
     def get_elapsed_time(self) -> float:

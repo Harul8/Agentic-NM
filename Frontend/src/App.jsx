@@ -53,6 +53,211 @@ function stripTrailingStepEllipsis(msg) {
   return msg.replace(/\.{1,3}$/, "");
 }
 
+function formatHybridTraceScore(score) {
+  if (score == null || score === "") return "";
+  const n = Number(score);
+  if (!Number.isFinite(n)) return String(score);
+  const abs = Math.abs(n);
+  if (abs >= 1e8 || (Number.isInteger(n) && abs > 1e6)) return String(n);
+  return n.toFixed(4);
+}
+
+function ScoreTable({ title, rows, scoreLabel }) {
+  if (!Array.isArray(rows) || rows.length === 0) return null;
+  return (
+    <div className="retrieval-score-block">
+      <div className="retrieval-score-block-title">
+        {title}
+        {scoreLabel ? <span className="retrieval-score-kind">{scoreLabel}</span> : null}
+      </div>
+      <ul className="retrieval-score-list">
+        {rows.slice(0, 40).map((row, j) => {
+          const label = row.name || row.act_or_case || "—";
+          return (
+            <li key={j}>
+              <span className="retrieval-score-name" title={typeof label === "string" ? label : undefined}>
+                {label}
+              </span>
+              <span className="retrieval-score-val">{formatHybridTraceScore(row.score)}</span>
+            </li>
+          );
+        })}
+        {rows.length > 40 ? <li className="retrieval-score-more">+{rows.length - 40} more</li> : null}
+      </ul>
+    </div>
+  );
+}
+
+function HybridStageDetail({ stage }) {
+  if (!stage || typeof stage !== "object") return null;
+  return (
+    <details className="retrieval-hybrid-stage" open={false}>
+      <summary className="retrieval-hybrid-stage-summary">
+        <span className="retrieval-stage-label">{stage.stage || "stage"}</span>
+        {stage.note ? <span className="retrieval-stage-note">{stage.note}</span> : null}
+      </summary>
+      {stage.query ? <div className="retrieval-subq">Query: {stage.query}</div> : null}
+      <ScoreTable
+        title="FAISS (vector)"
+        rows={stage.faiss}
+        scoreLabel={stage.faiss_score_kind}
+      />
+      <ScoreTable title="BM25" rows={stage.bm25} scoreLabel={stage.bm25_score_kind} />
+      <ScoreTable title="Reranker" rows={stage.rerank} scoreLabel={stage.rerank_score_kind} />
+    </details>
+  );
+}
+
+/** Expandable payload from step_callback.detail (query expansion + bare-act hybrid trace). */
+function StreamingRetrievalDetail({ detail }) {
+  if (!detail || !detail.kind) return null;
+  if (detail.kind === "query_expansion") {
+    return (
+      <details className="streaming-step-detail">
+        <summary className="streaming-step-detail-summary">{"Query expansion — model & final queries"}</summary>
+        <div className="streaming-step-detail-body">
+          {detail.expansion_input_preview ? (
+            <div className="retrieval-facts-preview">
+              <strong>Input excerpt</strong>
+              <pre>{detail.expansion_input_preview}</pre>
+            </div>
+          ) : null}
+          {detail.model_raw_response ? (
+            <div className="retrieval-model-raw">
+              <strong>Raw model response</strong>
+              <pre>{detail.model_raw_response}</pre>
+            </div>
+          ) : null}
+          {Array.isArray(detail.issues_from_model) && detail.issues_from_model.length > 0 ? (
+            <div>
+              <strong>Distinct issues (from model)</strong>
+              {detail.issues_from_model.map((iss, ii) => (
+                <div key={ii} className="retrieval-issue-block">
+                  {iss.issue_label ? (
+                    <div className="retrieval-issue-label">{iss.issue_label}</div>
+                  ) : null}
+                  <ul>
+                    {(iss.queries || []).map((q, qi) => (
+                      <li key={qi}>{q}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          ) : null}
+          {Array.isArray(detail.parsed_queries_from_model) && detail.parsed_queries_from_model.length > 0 ? (
+            <div>
+              <strong>Parsed from model (JSON)</strong>
+              <ul>
+                {detail.parsed_queries_from_model.map((q, i) => (
+                  <li key={i}>{q}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+          {Array.isArray(detail.final_expanded_queries) && detail.final_expanded_queries.length > 0 ? (
+            <div>
+              <strong>Final queries used for retrieval</strong>
+              <ul>
+                {detail.final_expanded_queries.map((q, i) => (
+                  <li key={i}>{q}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+          {Array.isArray(detail.queries_added_after_model) && detail.queries_added_after_model.length > 0 ? (
+            <div className="retrieval-heuristic-note">
+              <strong>Added after model (focus / fallback)</strong>
+              <ul>
+                {detail.queries_added_after_model.map((q, i) => (
+                  <li key={i}>{q}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </div>
+      </details>
+    );
+  }
+  if (detail.kind === "bare_act_hybrid_trace") {
+    const byDispute = detail.by_dispute || {};
+    return (
+      <details className="streaming-step-detail streaming-step-detail--wide">
+        <summary className="streaming-step-detail-summary">{"Bare acts — FAISS / BM25 / rerank (by dispute)"}</summary>
+        <div className="streaming-step-detail-body">
+          {Object.entries(byDispute).map(([did, entries]) => (
+            <div key={did} className="retrieval-dispute-block">
+              <div className="retrieval-dispute-id">Dispute {did}</div>
+              {(entries || []).map((entry, ei) => (
+                <div key={ei} className="retrieval-query-block">
+                  <div className="retrieval-query-line">
+                    <strong>Retrieval query</strong>: {entry.retrieval_query || "—"}
+                    {entry.path ? <span className="retrieval-path-tag">{entry.path}</span> : null}
+                  </div>
+                  {(entry.hybrid_stages || []).map((st, si) => (
+                    <HybridStageDetail key={si} stage={st} />
+                  ))}
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </details>
+    );
+  }
+  return null;
+}
+
+function ProgressRetrievedDocuments({ retrieved_documents: rd }) {
+  if (!rd || typeof rd !== "object") return null;
+  const acts = Array.isArray(rd.bare_acts) ? rd.bare_acts : [];
+  const cases = Array.isArray(rd.case_laws) ? rd.case_laws : [];
+  if (acts.length === 0 && cases.length === 0) return null;
+  return (
+    <details className="streaming-step-detail progress-retrieval-detail">
+      <summary className="streaming-step-detail-summary">Retrieved document names</summary>
+      <div className="streaming-step-detail-body">
+        {acts.length > 0 ? (
+          <div>
+            <strong>Bare acts / sections</strong>
+            <ul className="progress-retrieved-list">
+              {acts.map((name, i) => (
+                <li key={`ba-${i}`}>{name}</li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+        {cases.length > 0 ? (
+          <div>
+            <strong>Case laws</strong>
+            <ul className="progress-retrieved-list">
+              {cases.map((name, i) => (
+                <li key={`cl-${i}`}>{name}</li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+      </div>
+    </details>
+  );
+}
+
+/** Query expansion, hybrid traces, and retrieved labels — lives under Progress tracker only. */
+function ProgressRetrievalDiagnostics({ diagnostics }) {
+  if (!diagnostics || typeof diagnostics !== "object") return null;
+  const qe = diagnostics.query_expansion;
+  const bt = diagnostics.bare_act_hybrid_trace;
+  const rd = diagnostics.retrieved_documents;
+  if (!qe && !bt && !(rd && (rd.bare_acts?.length > 0 || rd.case_laws?.length > 0))) return null;
+  return (
+    <div className="progress-retrieval-diagnostics" role="region" aria-label="Retrieval details">
+      {qe && qe.kind === "query_expansion" ? <StreamingRetrievalDetail detail={qe} /> : null}
+      {bt && bt.kind === "bare_act_hybrid_trace" ? <StreamingRetrievalDetail detail={bt} /> : null}
+      <ProgressRetrievedDocuments retrieved_documents={rd} />
+    </div>
+  );
+}
+
 /** Single CTA below Next steps in bare-act guidance; must not be duplicated in summary body. */
 const JUDICIAL_PRECEDENT_CTA_OFFER =
   "If you want, I can next look for the closest judicial precedents that support these statutory anchors.";
@@ -405,7 +610,7 @@ function App() {
   const [composerResetSignal, setComposerResetSignal] = useState(0);
 
   // New interview state from snippet
-  const [stage, setStage] = useState("await_facts"); // "await_facts" | "interview" | "done"
+  const [stage, setStage] = useState("entry_router"); // "entry_router" | "stage1_intake" | ...
   const [facts, setFacts] = useState("");
   const [currentQuestion, setCurrentQuestion] = useState("");
   const [qaHistory, setQaHistory] = useState([]); // [{question, answer}]
@@ -433,11 +638,12 @@ function App() {
   // Shared SSE handlers for "step" progress and incremental "token" output.
   const handleStep = useCallback((stepPayload) => {
     setStreamingSteps((prev) => {
+      const detail = stepPayload.detail ?? null;
       if (prev.length === 0) {
-        return [{ message: stepPayload.message, icon: stepPayload.icon || "", done: false }];
+        return [{ message: stepPayload.message, icon: stepPayload.icon || "", done: false, detail }];
       }
       const updated = prev.map((s, i) => (i === prev.length - 1 ? { ...s, done: true } : s));
-      return [...updated, { message: stepPayload.message, icon: stepPayload.icon || "", done: false }];
+      return [...updated, { message: stepPayload.message, icon: stepPayload.icon || "", done: false, detail }];
     });
   }, []);
 
@@ -448,6 +654,21 @@ function App() {
   // Manual mode selection: "legal_opinion" (default), "legal_research", "general"
   const [chatMode, setChatMode] = useState("legal_opinion");
   const [selectedModel, setSelectedModel] = useState("qwen");
+
+  // Stage 1 autonomous intake state (persisted across turns until advance_to_stage2)
+  const [intakeState, setIntakeState] = useState(null);
+  // Stage 2 structured deep-dive state (seeded from Stage 1, updated per turn)
+  const [stage2State, setStage2State] = useState(null);
+  // Stage 3 indirect vetting state (seeded from Stage 2, updated per turn)
+  const [stage3State, setStage3State] = useState(null);
+  // Stage 4 remedy understanding state (seeded from Stage 3, updated per turn)
+  const [stage4State, setStage4State] = useState(null);
+  // Stage 5 draft generation state (auto-triggered, no client turns)
+  const [stage5State, setStage5State] = useState(null);
+  // Stage 6 advocate review state
+  const [stage6State, setStage6State] = useState(null);
+  // Stage 0 entry-router state
+  const [entryState, setEntryState] = useState(null);
 
   // Bottom pane: single accordion (Eval | Architecture | Updates Tracker). Default: minimal strip at bottom; can extend up to 75% of viewport.
   const [bottomExpandedSection, setBottomExpandedSection] = useState(null); // "eval" | "architecture" | "updates" | null
@@ -674,12 +895,19 @@ function App() {
       : normalizedMessages.length > 1
       ? "done"
       : "await_facts";
-    const stage = ["await_facts", "interview", "done"].includes(state.stage) ? state.stage : inferredStage;
+    const stage = ["entry_router", "await_facts", "interview", "done", "stage1_intake", "stage2_deepdive", "stage3_vetting", "stage4_remedy", "stage5_draft", "stage6_review", "finalized"].includes(state.stage) ? state.stage : inferredStage;
     const analysisStage = typeof state.analysisStage === "string" && state.analysisStage.trim()
       ? state.analysisStage.trim()
       : (stage === "done" ? "" : "intake");
     const factsSummary = typeof state.factsSummary === "string" ? state.factsSummary.trim() : "";
     const lastResponseType = typeof state.lastResponseType === "string" ? state.lastResponseType.trim() : "";
+    const intakeStateVal = (state.intakeState && typeof state.intakeState === "object") ? state.intakeState : null;
+    const stage2StateVal = (state.stage2State && typeof state.stage2State === "object") ? state.stage2State : null;
+    const stage3StateVal = (state.stage3State && typeof state.stage3State === "object") ? state.stage3State : null;
+    const stage4StateVal = (state.stage4State && typeof state.stage4State === "object") ? state.stage4State : null;
+    const stage5StateVal = (state.stage5State && typeof state.stage5State === "object") ? state.stage5State : null;
+    const stage6StateVal = (state.stage6State && typeof state.stage6State === "object") ? state.stage6State : null;
+    const entryStateVal = (state.entryState && typeof state.entryState === "object") ? state.entryState : null;
     return {
       stage,
       facts: typeof state.facts === "string" && state.facts.trim()
@@ -692,6 +920,13 @@ function App() {
       analysisStage,
       factsSummary,
       lastResponseType,
+      intakeState: intakeStateVal,
+      stage2State: stage2StateVal,
+      stage3State: stage3StateVal,
+      stage4State: stage4StateVal,
+      stage5State: stage5StateVal,
+      stage6State: stage6StateVal,
+      entryState: entryStateVal,
     };
   }, [deriveQaHistoryFromMessages]);
 
@@ -702,6 +937,7 @@ function App() {
       messages: normalizedMessages,
       opinionText: chat?.opinionText || "",
       retrieved: Array.isArray(chat?.retrieved) ? chat.retrieved : [],
+      starred: !!chat?.starred,
       workflowState: normalizeWorkflowState(chat?.workflowState, normalizedMessages),
       createdAt: chat?.createdAt || new Date().toISOString(),
     };
@@ -718,11 +954,18 @@ function App() {
         analysisStage,
         factsSummary: analysisFactsSummary,
         lastResponseType,
+        intakeState,
+        stage2State,
+        stage3State,
+        stage4State,
+        stage5State,
+        stage6State,
+        entryState,
         ...overrides,
       },
       nextMessages,
     );
-  }, [analysisFactsSummary, analysisStage, currentQuestion, facts, lastResponseType, messages, normalizeWorkflowState, qaHistory, stage]);
+  }, [analysisFactsSummary, analysisStage, currentQuestion, facts, intakeState, lastResponseType, messages, normalizeWorkflowState, qaHistory, stage, stage2State, stage3State, stage4State, stage5State, stage6State, entryState]);
 
   const resolveModelUsed = useCallback((data, fallback = "") => {
     if (typeof data?.model_used === "string" && data.model_used.trim()) return data.model_used.trim();
@@ -929,6 +1172,30 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps -- mount only; chats first, then libraries
   }, []);
 
+  // Fetch the Stage 1 opening message on initial mount so the chat starts with an AI greeting
+  useEffect(() => {
+    const token = localStorage.getItem(AUTH_TOKEN_KEY);
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
+    fetch(`${API_BASE}/intake/opening`, { headers })
+      .then((r) => r.ok ? r.json() : null)
+      .then((data) => {
+        if (data?.message) {
+          setMessages([makeAssistantMessage(data.message, {
+            stage: "stage1_intake",
+            responseType: "stage1_intake",
+            modelUsed: "",
+          })]);
+        }
+      })
+      .catch(() => {
+        setMessages([makeAssistantMessage(
+          "Whatever you're going through, I'm here and I'm listening. Take your time — there's no wrong way to start.",
+          { stage: "stage1_intake", responseType: "stage1_intake", modelUsed: "" }
+        )]);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- mount only
+  }, []);
+
   // Persist current chat to backend when it changes (no auth: backend uses anonymous user)
   useEffect(() => {
     const chatId = currentChatIdRef.current;
@@ -1062,6 +1329,161 @@ function App() {
       .catch(() => setUpdatesRows([]));
   }, []);
 
+  // ─────────────────────────────────────────────────────────────────────────
+  // Stage 5 auto-trigger: when stage transitions to "stage5_draft", call
+  // the draft endpoint and stream the document into opinionText.
+  // No client turn is involved — this fires automatically.
+  // ─────────────────────────────────────────────────────────────────────────
+  const stage5DraftTriggeredRef = useRef(false);
+
+  useEffect(() => {
+    if (stage !== "stage5_draft") {
+      stage5DraftTriggeredRef.current = false;
+      return;
+    }
+    if (stage5DraftTriggeredRef.current) return;   // already running or done
+    if (!stage4State) return;                       // no state to draft from
+    stage5DraftTriggeredRef.current = true;
+
+    const token = localStorage.getItem(AUTH_TOKEN_KEY);
+    const headers = {
+      "Content-Type": "application/json",
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+    };
+
+    (async () => {
+      setLoading(true);
+      setStreamingToken("");
+      setStreamingSteps([]);
+      setOpinionText("");
+
+      // Show a message in the chat that drafting has begun
+      setMessages((prev) => [
+        ...prev,
+        makeAssistantMessage(
+          "Your case documents are now being prepared. This may take a moment — I'm pulling the relevant statutes and judgments together.",
+          { stage: "stage5_draft", responseType: "stage5_draft" }
+        ),
+      ]);
+
+      try {
+        const res = await fetch(`${API_BASE}/intake/stage5_draft/stream`, {
+          method: "POST",
+          headers,
+          body: JSON.stringify({
+            stage4_state:   stage4State,
+            model_override: selectedModel === "openai" ? "provider:openai" : "provider:qwen",
+          }),
+        });
+
+        if (!res.ok) {
+          const errData = await res.json().catch(() => ({}));
+          throw new Error(errData.detail || `Draft request failed (${res.status})`);
+        }
+
+        const reader  = res.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer    = "";
+        let draftAcc  = "";
+
+        while (true) {
+          const { value, done } = await reader.read();
+          if (done) break;
+          buffer += decoder.decode(value, { stream: true });
+          const events = buffer.split(/\n\n+/);
+          buffer = events.pop() || "";
+
+          for (const raw of events) {
+            let eventType = "";
+            let dataLine  = "";
+            for (const line of raw.split(/\n/)) {
+              if (line.startsWith("event:")) eventType = line.slice(6).trim();
+              if (line.startsWith("data:"))  dataLine  = line.slice(5).trim();
+            }
+            if (!dataLine) continue;
+            try {
+              const payload = JSON.parse(dataLine);
+              if (eventType === "step") {
+                handleStep(payload);
+              } else if (eventType === "token") {
+                draftAcc += (payload.content || "");
+                setOpinionText(draftAcc);
+                setStreamingToken(draftAcc);
+              } else if (eventType === "done") {
+                // Final payload — update state + advance stage
+                const s5State = payload.stage5_state || null;
+                setStage5State(s5State);
+                setStreamingToken("");
+                setStreamingSteps([]);
+                const finalDraft = payload.draft_text || draftAcc;
+                setOpinionText(finalDraft);
+                // Record the citations in retrieved for the existing citations panel
+                if (Array.isArray(payload.citations) && payload.citations.length > 0) {
+                  setRetrieved(payload.citations.map((c) => ({
+                    type:    c.type,
+                    source:  c.source || c.case_name || c.act_name,
+                    section: c.section || "",
+                    year:    c.year || "",
+                    court:   c.court || "",
+                    score:   c.score || 0,
+                  })));
+                }
+                // Fetch Stage 6 opening + initial state, then transition
+                const docLabel = payload.document_type_label || "Legal document";
+                const authToken = localStorage.getItem(AUTH_TOKEN_KEY);
+                const s6Headers = {
+                  "Content-Type": "application/json",
+                  ...(authToken ? { Authorization: `Bearer ${authToken}` } : {}),
+                };
+                try {
+                  const s6Res = await fetch(`${API_BASE}/intake/stage6_opening`, {
+                    method: "POST",
+                    headers: s6Headers,
+                    body: JSON.stringify({
+                      stage5_state:   s5State || {},
+                      draft_text:     finalDraft,
+                      model_override: selectedModel === "openai" ? "provider:openai" : "provider:qwen",
+                    }),
+                  });
+                  if (s6Res.ok) {
+                    const s6Data = await s6Res.json();
+                    setStage6State(s6Data.stage6_state || null);
+                    setStage("stage6_review");
+                    setMessages((prev) => [
+                      ...prev,
+                      makeAssistantMessage(
+                        s6Data.message || `Your ${docLabel} is ready for advocate review.`,
+                        { stage: "stage6_review", responseType: "stage6_opening" }
+                      ),
+                    ]);
+                  } else {
+                    setStage("stage6_review");
+                    setMessages((prev) => [
+                      ...prev,
+                      makeAssistantMessage(
+                        `Your ${docLabel} has been prepared and is displayed on the right. ` +
+                        "You can now review it, ask questions about any section, request revisions, or mark it as final.",
+                        { stage: "stage6_review", responseType: "stage5_complete" }
+                      ),
+                    ]);
+                  }
+                } catch (_) {
+                  setStage("stage6_review");
+                }
+              }
+            } catch (_) {}
+          }
+        }
+      } catch (err) {
+        console.error("Stage 5 draft stream error:", err);
+        setError("Error generating draft: " + (err.message || "Network or server error"));
+        stage5DraftTriggeredRef.current = false;  // allow retry
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, [stage, stage4State, selectedModel, handleStep, makeAssistantMessage]);  // eslint-disable-line react-hooks/exhaustive-deps
+
   // -------------------------
   // SSE Stream Consumer Helper
   // -------------------------
@@ -1131,7 +1553,7 @@ function App() {
   const handleStartNewCase = () => {
     hasSavedCurrentChatRef.current = false;
     currentChatIdRef.current = null;
-    setStage("await_facts");
+    setStage("entry_router");
     setFacts("");
     setComposerResetSignal((prev) => prev + 1);
     setCurrentQuestion("");
@@ -1142,8 +1564,36 @@ function App() {
     setOpinionText("");
     setRetrieved([]);
     setRawResponse("");
-    setError(""); // Reset existing error
+    setError("");
+    setIntakeState(null);
+    setStage2State(null);
+    setStage3State(null);
+    setStage4State(null);
+    setStage5State(null);
+    setStage6State(null);
+    setEntryState(null);
     setMessages([]);
+    // Fetch the Stage 0 opening message in the background
+    const token = localStorage.getItem(AUTH_TOKEN_KEY);
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
+    fetch(`${API_BASE}/intake/opening?model_override=${encodeURIComponent(selectedModel === "openai" ? "provider:openai" : "provider:qwen")}`, { headers })
+      .then((r) => r.ok ? r.json() : null)
+      .then((data) => {
+        if (data?.message) {
+          setMessages([makeAssistantMessage(data.message, {
+            stage: "entry_router",
+            responseType: "entry_router",
+            modelUsed: "",
+          })]);
+        }
+      })
+      .catch(() => {
+        // Fallback: show a static opening so the chat is never blank
+        setMessages([makeAssistantMessage(
+          "Whatever you're going through, I'm here and I'm listening. Take your time — there's no wrong way to start.",
+          { stage: "entry_router", responseType: "entry_router", modelUsed: "" }
+        )]);
+      });
   };
 
   // Save current conversation to savedChats (for sidebar list and persistence)
@@ -1158,6 +1608,7 @@ function App() {
       messages: msgs || [],
       opinionText: opinion || "",
       retrieved: Array.isArray(retr) ? retr : [],
+      starred: false,
       workflowState: workflowState || buildWorkflowState({ messages: msgs || [] }),
       createdAt: new Date().toISOString(),
     });
@@ -1185,6 +1636,13 @@ function App() {
     setAnalysisStage(workflowState.analysisStage || (workflowState.stage === "done" ? "" : "intake"));
     setAnalysisFactsSummary(workflowState.factsSummary || "");
     setLastResponseType(workflowState.lastResponseType || "");
+    setIntakeState(workflowState.intakeState || null);
+    setStage2State(workflowState.stage2State || null);
+    setStage3State(workflowState.stage3State || null);
+    setStage4State(workflowState.stage4State || null);
+    setStage5State(workflowState.stage5State || null);
+    setStage6State(workflowState.stage6State || null);
+    setEntryState(workflowState.entryState || null);
     hasSavedCurrentChatRef.current = true;
     currentChatIdRef.current = normalizedChat.id;
   };
@@ -1197,7 +1655,7 @@ function App() {
     handleStartNewCase();
   };
 
-  // Group chats by date (Today, Yesterday, This week, or specific date)
+  // Group chats by date (This Week / Older)
   const groupChatsByDate = (chats) => {
     if (!chats.length) return [];
     const now = new Date();
@@ -1207,10 +1665,8 @@ function App() {
     const getLabel = (d) => {
       const dateOnly = new Date(new Date(d).getFullYear(), new Date(d).getMonth(), new Date(d).getDate()).getTime();
       const diffDays = (today - dateOnly) / oneDay;
-      if (diffDays === 0) return "Today";
-      if (diffDays === 1) return "Yesterday";
-      if (diffDays < 7) return "This week";
-      return new Date(d).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+      if (diffDays < 7) return "This Week";
+      return "Older";
     };
     chats.forEach((chat) => {
       const label = getLabel(chat.createdAt);
@@ -1225,7 +1681,13 @@ function App() {
     if (!q) return savedChats;
     return savedChats.filter((c) => (c.title || "").toLowerCase().includes(q));
   }, [savedChats, chatHistoryFilter]);
-  const chatGroups = useMemo(() => groupChatsByDate(filteredSavedChats), [filteredSavedChats]);
+  const chatGroups = useMemo(() => {
+    const starred = filteredSavedChats.filter((c) => !!c.starred);
+    const nonStarred = filteredSavedChats.filter((c) => !c.starred);
+    const grouped = groupChatsByDate(nonStarred);
+    if (!starred.length) return grouped;
+    return [{ groupLabel: "Starred", chats: starred }, ...grouped];
+  }, [filteredSavedChats]);
 
   const startRenamingChat = (chat) => {
     setEditingChatId(chat.id);
@@ -1247,6 +1709,7 @@ function App() {
       const res = await fetch(`${API_BASE}/chats`, { method: "POST", headers, body: JSON.stringify({
         id: chat.id, title: next, messages: chat.messages || [], opinionText: chat.opinionText || "",
         retrieved: chat.retrieved || [], workflowState: chat.workflowState || {}, createdAt: chat.createdAt || new Date().toISOString(),
+        starred: !!chat.starred,
       }) });
       if (res.ok) {
         const listRes = await fetch(`${API_BASE}/chats`, { headers: token ? { Authorization: `Bearer ${token}` } : {} });
@@ -1283,6 +1746,29 @@ function App() {
     } catch (_) {}
     setSavedChats((prev) => prev.filter((c) => String(c.id) !== String(idToRemove)));
     if (wasCurrent) handleStartNewCase();
+  };
+
+  const toggleStarChat = async (chat) => {
+    const token = localStorage.getItem(AUTH_TOKEN_KEY);
+    const nextStarred = !chat.starred;
+    setSavedChats((prev) => prev.map((c) => (c.id == chat.id ? { ...c, starred: nextStarred } : c)));
+    const headers = { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) };
+    try {
+      await fetch(`${API_BASE}/chats`, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({
+          id: chat.id,
+          title: chat.title || "Untitled chat",
+          messages: chat.messages || [],
+          opinionText: chat.opinionText || "",
+          retrieved: chat.retrieved || [],
+          workflowState: chat.workflowState || {},
+          createdAt: chat.createdAt || new Date().toISOString(),
+          starred: nextStarred,
+        }),
+      });
+    } catch (_) {}
   };
 
   const handleQuestionResponse = useCallback((data) => {
@@ -1380,11 +1866,13 @@ function App() {
         messages: [userMsg],
         opinionText: "",
         retrieved: [],
+        starred: false,
         workflowState: {
-          stage: "await_facts",
+          stage,
           facts: raw,
           currentQuestion: "",
           qaHistory: [],
+          intakeState,
         },
         createdAt: new Date().toISOString(),
       });
@@ -1394,6 +1882,440 @@ function App() {
       const token = localStorage.getItem(AUTH_TOKEN_KEY);
       const headers = { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) };
       fetch(`${API_BASE}/chats`, { method: "POST", headers, body: JSON.stringify(chat) }).catch(() => {});
+    }
+
+    // 0) Stage 0 entry router — decide legal opinion vs quick lookup vs general
+    if (stage === "entry_router") {
+      const conversation = buildConversationFromMessages(messages);
+      try {
+        await consumeSSEStream(
+          `${API_BASE}/conversation/continue/stream`,
+          {
+            conversation,
+            message: raw,
+            mode: chatMode,
+            model_override: getModelOverridePayload(),
+            workflowState: buildWorkflowState({ stage: "entry_router" }),
+          },
+          (progressPayload) => {
+            setProgress(progressPayload);
+          },
+          (data) => {
+            setStreamingSteps([]);
+            setStreamingToken("");
+            if (data.status === "entry_router") {
+              const reply = (data.message || "").trim();
+              const nextEntryState = data.entry_state || null;
+              setEntryState(nextEntryState);
+              setMessages((prev) => [
+                ...prev,
+                makeAssistantMessage(reply, {
+                  stage: "entry_router",
+                  responseType: data.response_type || "entry_router",
+                  entryOptions: Array.isArray(data.entry_options) ? data.entry_options : [],
+                  modelUsed: resolveModelUsed(data),
+                  latencyMs: currentTurnLatencyMs(),
+                }),
+              ]);
+              const nextStage = data?.next_workflow_state?.stage;
+              if (nextStage === "stage1_intake") {
+                setStage("stage1_intake");
+                setIntakeState(data.intake_state || null);
+              }
+            } else if (data.status === "stage1_intake") {
+              const entryMsg = (data.entry_router_message || "").trim();
+              const reply = (data.message || "").trim();
+              const nextIntakeState = data.intake_state || null;
+              const advanceToStage2 = !!data.advance_to_stage2;
+              const s2State = data.stage2_state || null;
+              const s2Opening = (data.stage2_opening || "").trim();
+              setIntakeState(nextIntakeState);
+              const combinedStageReply = [entryMsg, reply, advanceToStage2 ? s2Opening : ""].filter(Boolean).join("\n\n");
+              setMessages((prev) => [
+                ...prev,
+                makeAssistantMessage(combinedStageReply, {
+                  stage: advanceToStage2 ? "stage2_deepdive" : "stage1_intake",
+                  responseType: advanceToStage2 ? "stage2_deepdive" : "stage1_intake",
+                  modelUsed: resolveModelUsed(data),
+                  latencyMs: currentTurnLatencyMs(),
+                }),
+              ]);
+              if (advanceToStage2) {
+                setStage2State(s2State);
+                setStage("stage2_deepdive");
+              } else {
+                setStage("stage1_intake");
+              }
+            } else if (data.status === "done") {
+              handleDoneResponse(data);
+            } else if (data.message) {
+              setMessages((prev) => [
+                ...prev,
+                makeAssistantMessage(data.message, {
+                  stage: "entry_router",
+                  responseType: "entry_router",
+                  entryOptions: Array.isArray(data.entry_options) ? data.entry_options : [],
+                  modelUsed: resolveModelUsed(data),
+                  latencyMs: currentTurnLatencyMs(),
+                }),
+              ]);
+            }
+          },
+          handleStep,
+          handleToken,
+        );
+      } catch (err) {
+        console.error("Entry router stream error:", err);
+        setError("Error during routing: " + (err.message || "Network or server error"));
+      } finally {
+        setLoading(false);
+      }
+      return;
+    }
+
+    // 0a) Stage 1 autonomous intake — warm conversational turns before structured fact collection
+    if (stage === "stage1_intake") {
+      const conversation = buildConversationFromMessages(messages);
+      try {
+        await consumeSSEStream(
+          `${API_BASE}/conversation/continue/stream`,
+          {
+            conversation,
+            message: raw,
+            mode: chatMode,
+            model_override: getModelOverridePayload(),
+            workflowState: buildWorkflowState({ stage: "stage1_intake" }),
+          },
+          (progressPayload) => {
+            setProgress(progressPayload);
+          },
+          (data) => {
+            setStreamingSteps([]);
+            setStreamingToken("");
+            if (data.status === "stage1_intake") {
+              const reply = (data.message || "").trim();
+              const nextIntakeState = data.intake_state || null;
+              const advanceToStage2 = !!data.advance_to_stage2;
+              const s2State = data.stage2_state || null;
+              const s2Opening = (data.stage2_opening || "").trim();
+              setIntakeState(nextIntakeState);
+              const combinedStageReply = advanceToStage2 && s2Opening
+                ? [reply, s2Opening].filter(Boolean).join("\n\n")
+                : reply;
+              setMessages((prev) => [
+                ...prev,
+                makeAssistantMessage(combinedStageReply, {
+                  stage: advanceToStage2 ? "stage2_deepdive" : "stage1_intake",
+                  responseType: advanceToStage2 ? "stage2_deepdive" : "stage1_intake",
+                  modelUsed: resolveModelUsed(data),
+                  latencyMs: currentTurnLatencyMs(),
+                }),
+              ]);
+              if (advanceToStage2) {
+                setStage2State(s2State);
+                setStage("stage2_deepdive");
+              }
+            } else if (data.status === "question") {
+              handleQuestionResponse(data);
+            } else if (data.status === "done") {
+              handleDoneResponse(data);
+            } else if (data.message) {
+              setMessages((prev) => [
+                ...prev,
+                makeAssistantMessage(data.message, {
+                  stage: "stage1_intake",
+                  responseType: "stage1_intake",
+                  modelUsed: resolveModelUsed(data),
+                  latencyMs: currentTurnLatencyMs(),
+                }),
+              ]);
+            }
+          },
+          handleStep,
+          handleToken,
+        );
+      } catch (err) {
+        console.error("Stage 1 intake stream error:", err);
+        setError("Error during intake: " + (err.message || "Network or server error"));
+      } finally {
+        setLoading(false);
+      }
+      return;
+    }
+
+    // 0b) Stage 2 structured deep-dive
+    if (stage === "stage2_deepdive") {
+      const conversation = buildConversationFromMessages(messages);
+      try {
+        await consumeSSEStream(
+          `${API_BASE}/conversation/continue/stream`,
+          {
+            conversation,
+            message: raw,
+            mode: chatMode,
+            model_override: getModelOverridePayload(),
+            workflowState: buildWorkflowState({ stage: "stage2_deepdive" }),
+          },
+          (progressPayload) => {
+            setProgress(progressPayload);
+          },
+          (data) => {
+            setStreamingSteps([]);
+            setStreamingToken("");
+            if (data.status === "stage2_deepdive") {
+              const reply           = (data.message || "").trim();
+              const nextStage2State = data.stage2_state || null;
+              const advanceToStage3 = !!data.advance_to_stage3;
+              setStage2State(nextStage2State);
+              setMessages((prev) => [
+                ...prev,
+                makeAssistantMessage(reply, {
+                  stage: "stage2_deepdive",
+                  responseType: "stage2_deepdive",
+                  modelUsed: resolveModelUsed(data),
+                  latencyMs: currentTurnLatencyMs(),
+                }),
+              ]);
+              if (advanceToStage3) {
+                const s3State   = data.stage3_state || null;
+                const s3Opening = (data.stage3_opening || "").trim();
+                setStage3State(s3State);
+                setStage("stage3_vetting");
+                if (s3Opening) {
+                  setMessages((prev) => [
+                    ...prev,
+                    makeAssistantMessage(s3Opening, {
+                      stage: "stage3_vetting",
+                      responseType: "stage3_vetting",
+                      modelUsed: resolveModelUsed(data),
+                    }),
+                  ]);
+                }
+              }
+            } else if (data.status === "question") {
+              handleQuestionResponse(data);
+            } else if (data.status === "done") {
+              handleDoneResponse(data);
+            } else if (data.message) {
+              setMessages((prev) => [
+                ...prev,
+                makeAssistantMessage(data.message, {
+                  stage: "stage2_deepdive",
+                  responseType: "stage2_deepdive",
+                  modelUsed: resolveModelUsed(data),
+                  latencyMs: currentTurnLatencyMs(),
+                }),
+              ]);
+            }
+          },
+          handleStep,
+          handleToken,
+        );
+      } catch (err) {
+        console.error("Stage 2 deep-dive stream error:", err);
+        setError("Error during fact-gathering: " + (err.message || "Network or server error"));
+      } finally {
+        setLoading(false);
+      }
+      return;
+    }
+
+    // 0c) Stage 3 indirect vetting — strengthen the account before assessment
+    if (stage === "stage3_vetting") {
+      const conversation = buildConversationFromMessages(messages);
+      try {
+        await consumeSSEStream(
+          `${API_BASE}/conversation/continue/stream`,
+          {
+            conversation,
+            message: raw,
+            mode: chatMode,
+            model_override: getModelOverridePayload(),
+            workflowState: buildWorkflowState({ stage: "stage3_vetting" }),
+          },
+          (progressPayload) => { setProgress(progressPayload); },
+          (data) => {
+            setStreamingSteps([]);
+            setStreamingToken("");
+            if (data.status === "stage3_vetting") {
+              const reply           = (data.message || "").trim();
+              const nextStage3State = data.stage3_state || null;
+              const advanceToStage4 = !!data.advance_to_stage4;
+              setStage3State(nextStage3State);
+              setMessages((prev) => [
+                ...prev,
+                makeAssistantMessage(reply, {
+                  stage: "stage3_vetting",
+                  responseType: "stage3_vetting",
+                  modelUsed: resolveModelUsed(data),
+                  latencyMs: currentTurnLatencyMs(),
+                }),
+              ]);
+              if (advanceToStage4) {
+                const s4State   = data.stage4_state || null;
+                const s4Opening = (data.stage4_opening || "").trim();
+                setStage4State(s4State);
+                setStage("stage4_remedy");
+                if (s4Opening) {
+                  setMessages((prev) => [
+                    ...prev,
+                    makeAssistantMessage(s4Opening, {
+                      stage: "stage4_remedy",
+                      responseType: "stage4_remedy",
+                      modelUsed: resolveModelUsed(data),
+                    }),
+                  ]);
+                }
+              }
+            } else if (data.status === "done") {
+              handleDoneResponse(data);
+            } else if (data.message) {
+              setMessages((prev) => [
+                ...prev,
+                makeAssistantMessage(data.message, {
+                  stage: "stage3_vetting",
+                  responseType: "stage3_vetting",
+                  modelUsed: resolveModelUsed(data),
+                  latencyMs: currentTurnLatencyMs(),
+                }),
+              ]);
+            }
+          },
+          handleStep,
+          handleToken,
+        );
+      } catch (err) {
+        console.error("Stage 3 vetting stream error:", err);
+        setError("Error during case verification: " + (err.message || "Network or server error"));
+      } finally {
+        setLoading(false);
+      }
+      return;
+    }
+
+    // 0d) Stage 4 remedy understanding — confirm remedy plan before drafting
+    if (stage === "stage4_remedy") {
+      const conversation = buildConversationFromMessages(messages);
+      try {
+        await consumeSSEStream(
+          `${API_BASE}/conversation/continue/stream`,
+          {
+            conversation,
+            message: raw,
+            mode: chatMode,
+            model_override: getModelOverridePayload(),
+            workflowState: buildWorkflowState({ stage: "stage4_remedy" }),
+          },
+          (progressPayload) => { setProgress(progressPayload); },
+          (data) => {
+            setStreamingSteps([]);
+            setStreamingToken("");
+            if (data.status === "stage4_remedy") {
+              const reply           = (data.message || "").trim();
+              const nextStage4State = data.stage4_state || null;
+              const advanceToStage5 = !!data.advance_to_stage5;
+              setStage4State(nextStage4State);
+              setMessages((prev) => [
+                ...prev,
+                makeAssistantMessage(reply, {
+                  stage: "stage4_remedy",
+                  responseType: "stage4_remedy",
+                  modelUsed: resolveModelUsed(data),
+                  latencyMs: currentTurnLatencyMs(),
+                }),
+              ]);
+              if (advanceToStage5) {
+                setStage("stage5_draft");
+              }
+            } else if (data.status === "done") {
+              handleDoneResponse(data);
+            } else if (data.message) {
+              setMessages((prev) => [
+                ...prev,
+                makeAssistantMessage(data.message, {
+                  stage: "stage4_remedy",
+                  responseType: "stage4_remedy",
+                  modelUsed: resolveModelUsed(data),
+                  latencyMs: currentTurnLatencyMs(),
+                }),
+              ]);
+            }
+          },
+          handleStep,
+          handleToken,
+        );
+      } catch (err) {
+        console.error("Stage 4 remedy stream error:", err);
+        setError("Error during remedy assessment: " + (err.message || "Network or server error"));
+      } finally {
+        setLoading(false);
+      }
+      return;
+    }
+
+    // 0e) Stage 6 advocate review — question, revise, research, finalize
+    if (stage === "stage6_review" || stage === "finalized") {
+      const conversation = buildConversationFromMessages(messages);
+      try {
+        await consumeSSEStream(
+          `${API_BASE}/conversation/continue/stream`,
+          {
+            conversation,
+            message: raw,
+            mode: chatMode,
+            model_override: getModelOverridePayload(),
+            workflowState: buildWorkflowState({ stage: "stage6_review" }),
+          },
+          (progressPayload) => { setProgress(progressPayload); },
+          (data) => {
+            setStreamingSteps([]);
+            setStreamingToken("");
+            if (data.status === "stage6_review") {
+              const reply           = (data.message || "").trim();
+              const nextStage6State = data.stage6_state || null;
+              const isFinalized     = !!data.finalized;
+              const updatedDraft    = (data.updated_draft || "").trim();
+              setStage6State(nextStage6State);
+              // If the draft was revised, update opinionText
+              if (updatedDraft && data.intent === "revise") {
+                setOpinionText(updatedDraft);
+              }
+              setMessages((prev) => [
+                ...prev,
+                makeAssistantMessage(reply, {
+                  stage: "stage6_review",
+                  responseType: data.intent || "stage6_review",
+                  modelUsed: resolveModelUsed(data),
+                  latencyMs: currentTurnLatencyMs(),
+                }),
+              ]);
+              if (isFinalized) {
+                setStage("finalized");
+              }
+            } else if (data.status === "done") {
+              handleDoneResponse(data);
+            } else if (data.message) {
+              setMessages((prev) => [
+                ...prev,
+                makeAssistantMessage(data.message, {
+                  stage: "stage6_review",
+                  responseType: "stage6_review",
+                  modelUsed: resolveModelUsed(data),
+                  latencyMs: currentTurnLatencyMs(),
+                }),
+              ]);
+            }
+          },
+          handleStep,
+          handleToken,
+        );
+      } catch (err) {
+        console.error("Stage 6 review stream error:", err);
+        setError("Error during advocate review: " + (err.message || "Network or server error"));
+      } finally {
+        setLoading(false);
+      }
+      return;
     }
 
     // 1) Initial facts (await_facts stage) - use streaming
@@ -1617,11 +2539,19 @@ function App() {
   // -------------------------
   const PROGRESS_TRACKER_KEY = "progress_tracker";
   const ProgressDisplay = ({ progress, expandedGroups, setExpandedGroups, expandKey = PROGRESS_TRACKER_KEY, defaultOpen = true }) => {
-    if (!progress || !progress.groups || progress.groups.length === 0) return null;
+    const rdDiag = progress?.retrieval_diagnostics;
+    const hasDiag =
+      rdDiag &&
+      (rdDiag.query_expansion ||
+        rdDiag.bare_act_hybrid_trace ||
+        (rdDiag.retrieved_documents &&
+          (rdDiag.retrieved_documents.bare_acts?.length > 0 || rdDiag.retrieved_documents.case_laws?.length > 0)));
+    if (!progress || ((!progress.groups || progress.groups.length === 0) && !hasDiag)) return null;
 
     const isExpanded = expandedGroups[expandKey] !== undefined ? expandedGroups[expandKey] : defaultOpen;
-    const allSteps = progress.groups.flatMap((g) => (g ? (g.steps || []).map((s) => ({ ...s, groupName: g.name })) : []));
-    const totalStats = progress.groups.reduce(
+    const groups = progress.groups || [];
+    const allSteps = groups.flatMap((g) => (g ? (g.steps || []).map((s) => ({ ...s, groupName: g.name })) : []));
+    const totalStats = groups.reduce(
       (acc, g) => {
         const s = (g && g.stats) || {};
         acc.searched += s.total_searched || 0;
@@ -1655,13 +2585,14 @@ function App() {
               </span>
             )}
           </summary>
-          <div
+            <div
             className="progress-steps-outer"
             role="region"
             aria-label="Progress steps"
             onMouseDown={(e) => e.stopPropagation()}
             onPointerDown={(e) => e.stopPropagation()}
           >
+            {hasDiag ? <ProgressRetrievalDiagnostics diagnostics={rdDiag} /> : null}
             <div className="progress-steps-wrapper">
               <div className="progress-steps">
                 {allSteps.map((step, stepIdx) => {
@@ -3204,6 +4135,17 @@ function App() {
                                   <div className="chat-history-hover-actions" aria-hidden="true">
                                     <button
                                       type="button"
+                                      onClick={(e) => { e.stopPropagation(); toggleStarChat(chat); }}
+                                      className={`chat-history-icon-btn${chat.starred ? " chat-history-icon-btn--starred" : ""}`}
+                                      title={chat.starred ? "Unstar chat" : "Star chat"}
+                                      aria-label={chat.starred ? "Unstar chat" : "Star chat"}
+                                    >
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.176 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.719c-.783-.57-.38-1.81.588-1.81H7.03a1 1 0 00.95-.69l1.07-3.292z" />
+                                      </svg>
+                                    </button>
+                                    <button
+                                      type="button"
                                       onClick={(e) => { e.stopPropagation(); startRenamingChat(chat); }}
                                       className="chat-history-icon-btn"
                                       title="Rename chat"
@@ -3666,6 +4608,24 @@ function App() {
                               progressExpandKey: msg.id != null ? `pt_${msg.id}` : PROGRESS_TRACKER_KEY,
                               progressDefaultOpen: false,
                             })}
+                            {Array.isArray(msg?.feedbackMeta?.entryOptions) && msg.feedbackMeta.entryOptions.length > 0 && (
+                              <div className="entry-router-options">
+                                {msg.feedbackMeta.entryOptions.map((opt) => (
+                                  <button
+                                    key={opt.id || opt.label}
+                                    type="button"
+                                    className="entry-router-option-btn"
+                                    disabled={loading}
+                                    onClick={() => {
+                                      const text = String(opt?.label || "").trim();
+                                      if (text) handleSubmit(text);
+                                    }}
+                                  >
+                                    {opt.label}
+                                  </button>
+                                ))}
+                              </div>
+                            )}
                             <div className="message-bubble-actions">
                               <button
                                 type="button"

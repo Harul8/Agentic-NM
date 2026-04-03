@@ -1779,7 +1779,7 @@ def _parse_llm_response(response: str, user_message: str) -> dict | None:
         research_intent = None
         try:
             from services.intent_extractor import extract_research_intent
-            research_intent = extract_research_intent(user_message)
+            research_intent = extract_research_intent(user_message, model_override=model_override)
         except Exception as e:
             logger.debug("Intent extraction failed, using fallbacks: %s", e)
 

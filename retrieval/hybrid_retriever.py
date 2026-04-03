@@ -18,7 +18,7 @@ import re
 import threading
 import numpy as np
 import faiss
-from typing import Optional
+from typing import Any, Optional
 
 logger = logging.getLogger(__name__)
 
@@ -759,6 +759,111 @@ def load_chunks(chunks_path: str) -> dict:
 # Hybrid Search: FAISS + BM25 + Cross-Encoder Re-Ranking
 # ---------------------------------------------------------------------------
 
+def _trace_basename(path: str) -> str:
+    """Human-readable label from a stored filename (no extension)."""
+    if not path:
+        return ""
+    base = os.path.basename(str(path))
+    if not base:
+        return ""
+    root, _ext = os.path.splitext(base)
+    return (root.replace("_", " ").strip() or base).strip()
+
+
+def _trace_label_chunk(chunk: dict) -> str:
+    """Rich display name for UI traces: Act + section/title, or case + year/court/para, with fallbacks."""
+    if not isinstance(chunk, dict):
+        return ""
+    _max = 280
+
+    def _clip(s: str) -> str:
+        s = (s or "").strip()
+        if len(s) > _max:
+            return s[: _max - 1] + "…"
+        return s
+
+    doc = (chunk.get("doc_type") or "").strip().lower()
+    case_name = (chunk.get("case_name") or "").strip()
+    act_name = (chunk.get("act_name") or "").strip()
+    sec = (chunk.get("section_number") or chunk.get("section") or "").strip()
+    stitle = (chunk.get("section_title") or "").strip()
+    title = (chunk.get("title") or "").strip()
+    year = str(chunk.get("year") or "").strip()
+    court = (chunk.get("court") or "").strip()
+    para = str(chunk.get("paragraph_num") or chunk.get("para_num") or "").strip()
+    ptype = (chunk.get("paragraph_type") or "").strip()
+    cite = (chunk.get("citation") or "").strip()
+    src = (chunk.get("source_file") or chunk.get("source") or "").strip()
+    chunk_id = (chunk.get("chunk_id") or "").strip()
+
+    # Case law (paragraph or case-summary chunks)
+    if doc == "case_law" or (case_name and not act_name):
+        main = case_name or title
+        if not main and src:
+            main = _trace_basename(src)
+        if not main:
+            main = chunk_id or "case chunk"
+        bits = [main]
+        tail: list[str] = []
+        if year:
+            tail.append(year)
+        if cite and len(cite) < 120:
+            tail.append(cite)
+        elif court:
+            tail.append(court[:110] + ("…" if len(court) > 110 else ""))
+        if para:
+            tail.append(f"para {para}")
+        if ptype and ptype.lower() != "unknown":
+            tail.append(ptype)
+        if tail:
+            bits.append(" · ".join(tail))
+        return _clip(" — ".join(bits))
+
+    # Bare acts / act-level summaries
+    if act_name or doc == "bare_act":
+        bits2: list[str] = []
+        if act_name:
+            bits2.append(act_name)
+        elif title:
+            bits2.append(title[:140] + ("…" if len(title) > 140 else ""))
+        if sec:
+            bits2.append(f"§{sec}")
+        if stitle and stitle.lower() not in (act_name or "").lower():
+            bits2.append(stitle[:120] + ("…" if len(stitle) > 120 else ""))
+        if bits2:
+            return _clip(" — ".join(bits2))
+
+    if title:
+        return _clip(title)
+    if case_name:
+        return _clip(case_name)
+    if act_name:
+        return _clip(act_name)
+    if src:
+        return _clip(_trace_basename(src))
+    if chunk_id:
+        return _clip(chunk_id)
+    return "chunk"
+
+
+def _trace_rows_by_rank(
+    ranked: dict[str, int],
+    scores: dict[str, float],
+    chunks: dict,
+) -> list[dict[str, Any]]:
+    if not ranked:
+        return []
+    keys_sorted = sorted(ranked.keys(), key=lambda k: ranked[k])
+    out: list[dict[str, Any]] = []
+    for k in keys_sorted:
+        ch = chunks.get(k) or {}
+        out.append({
+            "name": _trace_label_chunk(ch),
+            "score": round(float(scores.get(k, 0.0)), 6),
+        })
+    return out
+
+
 def hybrid_search(
     query: str,
     faiss_index_path: str,
@@ -770,6 +875,8 @@ def hybrid_search(
     min_rerank_score: float = 0.0,
     allowed_acts: Optional[frozenset] = None,
     allowed_cases: Optional[frozenset] = None,
+    trace: Optional[list] = None,
+    trace_stage: str = "hybrid",
 ) -> list:
     """
     Four-stage hybrid search:
@@ -784,6 +891,8 @@ def hybrid_search(
 
     allowed_acts: if provided, keep only chunks with act_name in this set (bare-act optimisation).
     allowed_cases: if provided, keep only chunks with case_name in this set (two-tier case-law).
+    trace: if a list, append one dict with FAISS/BM25/rerank diagnostics for the UI.
+    trace_stage: label for this call (e.g. act_summary vs bare_act_sections).
     """
     # Normalise query: expand Indian legal abbreviations before FAISS + BM25
     # e.g. "IPC section 302" → "Indian Penal Code section 302"
@@ -796,7 +905,9 @@ def hybrid_search(
 
     # --- Stage 1: FAISS vector search (ranked) ---
     # faiss_ranked: {chunk_key: rank}  (rank 0 = most similar)
+    # faiss_sim: inner-product similarity (IndexFlatIP + L2-normalized embeddings ≈ cosine)
     faiss_ranked: dict = {}
+    faiss_sim: dict[str, float] = {}
     faiss_index, ok = safe_read_faiss(faiss_index_path)
     using_gpu = False
     if ok and faiss_index and faiss_index_path not in _runtime_mode_logged_for_index:
@@ -828,14 +939,20 @@ def hybrid_search(
                     np.array([query_vec], dtype="float32"), k
                 )
                 for rank, idx in enumerate(indices[0]):
-                    if idx >= 0 and str(idx) in chunks:
-                        faiss_ranked[str(idx)] = rank
+                    if idx < 0:
+                        continue
+                    key = str(int(idx))
+                    if key not in chunks:
+                        continue
+                    faiss_ranked[key] = rank
+                    faiss_sim[key] = float(distances[0][rank])
         except Exception as e:
             logger.error(f"FAISS search failed (gpu_first={using_gpu}): {e}")
 
     # --- Stage 2: BM25 keyword search (ranked) ---
     # bm25_ranked: {chunk_key: rank}  (rank 0 = highest BM25 score)
     bm25_ranked: dict = {}
+    bm25_score_by_key: dict[str, float] = {}
     bm25 = load_bm25_index(bm25_index_path)
     if bm25:
         try:
@@ -844,6 +961,7 @@ def hybrid_search(
                 key = str(doc_idx)
                 if key in chunks:
                     bm25_ranked[key] = rank
+                    bm25_score_by_key[key] = float(score)
         except Exception as e:
             logger.error(f"BM25 search failed: {e}")
 
@@ -855,6 +973,17 @@ def hybrid_search(
     all_keys = set(faiss_ranked) | set(bm25_ranked)
     if not all_keys:
         logger.info("No candidates from either FAISS or BM25")
+        if trace is not None:
+            trace.append({
+                "stage": trace_stage,
+                "query": query[:500],
+                "faiss": _trace_rows_by_rank(faiss_ranked, faiss_sim, chunks),
+                "bm25": _trace_rows_by_rank(bm25_ranked, bm25_score_by_key, chunks),
+                "rerank": [],
+                "faiss_score_kind": "inner_product_cosine_normalized",
+                "bm25_score_kind": "bm25_raw",
+                "note": "no_faiss_bm25_candidates",
+            })
         return []
 
     rrf_scores: dict = {}
@@ -923,6 +1052,28 @@ def hybrid_search(
                 len(filtered_keys), len(all_candidate_keys),
             )
 
+    def _emit_ui_trace(
+        rerank_rows: list[dict[str, Any]],
+        *,
+        note: str | None = None,
+        rerank_score_kind: str = "cross_encoder_plus_boosts",
+    ) -> None:
+        if trace is None:
+            return
+        payload: dict[str, Any] = {
+            "stage": trace_stage,
+            "query": query[:500],
+            "faiss": _trace_rows_by_rank(faiss_ranked, faiss_sim, chunks),
+            "bm25": _trace_rows_by_rank(bm25_ranked, bm25_score_by_key, chunks),
+            "rerank": rerank_rows,
+            "faiss_score_kind": "inner_product_cosine_normalized",
+            "bm25_score_kind": "bm25_raw",
+            "rerank_score_kind": rerank_score_kind,
+        }
+        if note:
+            payload["note"] = note
+        trace.append(payload)
+
     # --- Stage 3: Cross-encoder re-ranking ---
     candidate_chunks = []
     candidate_texts = []
@@ -942,6 +1093,10 @@ def hybrid_search(
         candidate_texts.append(text[:1000])
 
     if not candidate_chunks:
+        _emit_ui_trace(
+            [],
+            note="no_candidates_after_short_text_filter",
+        )
         return []
 
     # Query sections for citation boost (sections_cited already stored in chunk metadata by pipeline)
@@ -1033,6 +1188,14 @@ def hybrid_search(
             f"Re-ranked to {len(results)} results "
             f"(top score: {results[0]['_rerank_score']:.3f})" if results else "Re-ranked to 0 results"
         )
+        rerank_rows = [
+            {
+                "name": _trace_label_chunk(r),
+                "score": round(float(r.get("_rerank_score", 0.0)), 5),
+            }
+            for r in results
+        ]
+        _emit_ui_trace(rerank_rows)
         return results
 
     except Exception as e:
@@ -1054,12 +1217,27 @@ def hybrid_search(
                 chunk["_rerank_score"] = 0.0   # 0.0 = unknown; cross-encoder unavailable (prev bug: used nonexistent "_score" key)
                 chunk["_rerank_fallback"] = True  # flag: cross-encoder was unavailable
                 fallback.append(chunk)
-        return fallback[:rerank_top_k]
+        fb = fallback[:rerank_top_k]
+        rerank_rows = [
+            {
+                "name": _trace_label_chunk(c),
+                "score": round(float(c.get("_rerank_score", 0.0)), 5),
+                "rrf_order": i,
+            }
+            for i, c in enumerate(fb)
+        ]
+        _emit_ui_trace(
+            rerank_rows,
+            note="cross_encoder_unavailable_rrf_order",
+            rerank_score_kind="placeholder_zero_ce_down",
+        )
+        return fb
 
 
-def search_bare_acts(query: str, top_k: int = 30) -> list:
+def search_bare_acts(query: str, top_k: int = 30, trace: Optional[list] = None) -> list:
     """Search bare acts using hybrid retrieval. Returns all relevant sections.
-    When act summary index exists, uses two-tier retrieval: act index → section search within those acts."""
+    When act summary index exists, uses two-tier retrieval: act index → section search within those acts.
+    If ``trace`` is a list, each hybrid_search appends one diagnostic dict (stage-labelled)."""
     from config import (
         BARE_INDEX_V2,
         BARE_CHUNKS_V2,
@@ -1078,8 +1256,10 @@ def search_bare_acts(query: str, top_k: int = 30) -> list:
                 bm25_index_path=ACT_SUMMARY_BM25_INDEX,
                 faiss_top_k=12,
                 bm25_top_k=12,
-                rerank_top_k=8,
+                rerank_top_k=6,
                 min_rerank_score=0.0,
+                trace=trace,
+                trace_stage="bare_act_act_summary_index",
             )
             allowed_acts = frozenset(
                 (r.get("act_name") or "").strip()
@@ -1094,9 +1274,11 @@ def search_bare_acts(query: str, top_k: int = 30) -> list:
                     bm25_index_path=BARE_BM25_INDEX,
                     faiss_top_k=24,
                     bm25_top_k=24,
-                    rerank_top_k=min(top_k, 10),
+                    rerank_top_k=min(top_k, 8),
                     min_rerank_score=0.0,
                     allowed_acts=allowed_acts,
+                    trace=trace,
+                    trace_stage="bare_act_section_index_filtered",
                 )
             else:
                 results = hybrid_search(
@@ -1106,8 +1288,10 @@ def search_bare_acts(query: str, top_k: int = 30) -> list:
                     bm25_index_path=BARE_BM25_INDEX,
                     faiss_top_k=20,
                     bm25_top_k=20,
-                    rerank_top_k=min(top_k, 10),
+                    rerank_top_k=min(top_k, 8),
                     min_rerank_score=0.0,
+                    trace=trace,
+                    trace_stage="bare_act_section_index",
                 )
         except Exception as e:
             logger.warning("Two-tier bare-act search failed, falling back to single-tier: %s", e)
@@ -1118,8 +1302,10 @@ def search_bare_acts(query: str, top_k: int = 30) -> list:
                 bm25_index_path=BARE_BM25_INDEX,
                 faiss_top_k=20,
                 bm25_top_k=20,
-                rerank_top_k=min(top_k, 10),
+                rerank_top_k=min(top_k, 8),
                 min_rerank_score=0.0,
+                trace=trace,
+                trace_stage="bare_act_section_index_fallback",
             )
     else:
         results = hybrid_search(
@@ -1129,8 +1315,10 @@ def search_bare_acts(query: str, top_k: int = 30) -> list:
             bm25_index_path=BARE_BM25_INDEX,
             faiss_top_k=20,
             bm25_top_k=20,
-            rerank_top_k=min(top_k, 10),
+            rerank_top_k=min(top_k, 8),
             min_rerank_score=0.0,
+            trace=trace,
+            trace_stage="bare_act_section_index",
         )
     for r in results:
         r["source_tag"] = "LOCAL_DB"
@@ -1141,6 +1329,7 @@ def search_bare_acts_filtered(
     query: str,
     allowed_acts: frozenset,
     top_k: int = 15,
+    trace: Optional[list] = None,
 ) -> list:
     """
     Act-first variant of search_bare_acts.
@@ -1162,7 +1351,7 @@ def search_bare_acts_filtered(
     """
     from config import BARE_INDEX_V2, BARE_CHUNKS_V2, BARE_BM25_INDEX
     if not allowed_acts:
-        return search_bare_acts(query, top_k)
+        return search_bare_acts(query, top_k, trace=trace)
     results = hybrid_search(
         query=query,
         faiss_index_path=BARE_INDEX_V2,
@@ -1173,6 +1362,8 @@ def search_bare_acts_filtered(
         rerank_top_k=min(top_k, 10),
         min_rerank_score=0.0,
         allowed_acts=allowed_acts,
+        trace=trace,
+        trace_stage="bare_act_section_index_act_filtered",
     )
     for r in results:
         r["source_tag"] = "LOCAL_DB"
@@ -1204,7 +1395,7 @@ def search_case_laws(query: str, top_k: int = 30) -> list:
                 bm25_index_path=CASE_SUMMARY_BM25_INDEX,
                 faiss_top_k=12,
                 bm25_top_k=12,
-                rerank_top_k=8,
+                rerank_top_k=6,
                 min_rerank_score=0.0,
             )
             allowed_cases = frozenset(
@@ -1328,7 +1519,7 @@ def _extract_query_act_mentions(query: str) -> frozenset[str]:
     return frozenset(cleaned)
 
 
-def search_bare_acts_fast(query: str, top_k: int = 6) -> list:
+def search_bare_acts_fast(query: str, top_k: int = 6, trace: Optional[list] = None) -> list:
     """
     Lower-latency bare-act search for interactive chat.
 
@@ -1357,6 +1548,8 @@ def search_bare_acts_fast(query: str, top_k: int = 6) -> list:
                 bm25_top_k=3,
                 rerank_top_k=1,
                 min_rerank_score=0.0,
+                trace=trace,
+                trace_stage="interactive_fast_act_summary",
             )
             allowed_acts = frozenset(
                 (r.get("act_name") or "").strip()
@@ -1378,6 +1571,8 @@ def search_bare_acts_fast(query: str, top_k: int = 6) -> list:
         rerank_top_k=min(top_k, 4),
         min_rerank_score=0.0,
         allowed_acts=allowed_acts,
+        trace=trace,
+        trace_stage="interactive_fast_section_index",
     )
     if allowed_acts:
         best_score = max((float(r.get("_rerank_score", 0) or 0) for r in results), default=-999.0)
@@ -1394,6 +1589,8 @@ def search_bare_acts_fast(query: str, top_k: int = 6) -> list:
                 rerank_top_k=max(min(top_k, 5), 4),
                 min_rerank_score=0.0,
                 allowed_acts=None,
+                trace=trace,
+                trace_stage="interactive_fast_section_index_broadened",
             )
             merged: dict[tuple[str, str], dict] = {}
             for item in list(results) + list(broader):
@@ -1445,7 +1642,9 @@ def search_case_summaries_fast(query: str, top_k: int = 4) -> list:
     return results
 
 
-def search_bare_acts_runtime(query: str, top_k: int = 8, allow_legacy_fallback: bool = True) -> list:
+def search_bare_acts_runtime(
+    query: str, top_k: int = 8, allow_legacy_fallback: bool = True, trace: Optional[list] = None
+) -> list:
     """
     Runtime rescue search for interactive chat.
 
@@ -1469,6 +1668,8 @@ def search_bare_acts_runtime(query: str, top_k: int = 8, allow_legacy_fallback: 
             rerank_top_k=min(max(top_k, 6), 8),
             min_rerank_score=0.0,
             allowed_acts=explicit_query_acts or None,
+            trace=trace,
+            trace_stage="bare_act_runtime_rescue_v2",
         )
         if explicit_query_acts and (not results or len(results) < min(2, max(1, top_k // 2))):
             broader = hybrid_search(
@@ -1481,6 +1682,8 @@ def search_bare_acts_runtime(query: str, top_k: int = 8, allow_legacy_fallback: 
                 rerank_top_k=min(max(top_k, 6), 8),
                 min_rerank_score=0.0,
                 allowed_acts=None,
+                trace=trace,
+                trace_stage="bare_act_runtime_rescue_v2_broad",
             )
             merged: dict[tuple[str, str], dict] = {}
             for item in list(results) + list(broader):
@@ -1672,7 +1875,7 @@ def search_case_laws_legacy(query: str, top_k: int = 15, min_sim: float = 0.40) 
     return results
 
 
-def search_bare_acts_auto(query: str, top_k: int = 30) -> list:
+def search_bare_acts_auto(query: str, top_k: int = 30, trace: Optional[list] = None) -> list:
     """
     Auto-detect v2 or legacy index and search accordingly.
 
@@ -1688,7 +1891,7 @@ def search_bare_acts_auto(query: str, top_k: int = 30) -> list:
     """
     from config import BARE_INDEX_V2
     if os.path.exists(BARE_INDEX_V2):
-        results = search_bare_acts(query, top_k)
+        results = search_bare_acts(query, top_k, trace=trace)
         if not results:
             logger.warning(
                 "search_bare_acts_auto: v2 index found but returned 0 results for this query. "

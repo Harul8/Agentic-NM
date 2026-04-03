@@ -610,6 +610,7 @@ def _build_runtime_rescue_queries(
     facts_summary: str,
     limit: int = 2,
     bare_act_sections: list | None = None,
+    model_override: str | None = None,
 ) -> list[str]:
     """Use model-backed query expansion only as a rescue when the first local pass is thin."""
     queries: list[str] = []
@@ -635,7 +636,7 @@ def _build_runtime_rescue_queries(
             elif act:
                 _add(f"{act} interpretation judgment India")
     try:
-        for query in expand_legal_query(facts_summary)[: max(1, limit + 1)]:
+        for query in expand_legal_query(facts_summary, model_override=model_override)[:12]:
             _add(query[:320])
     except Exception as e:
         logger.debug("Interactive rescue query expansion failed: %s", e)
@@ -1041,199 +1042,34 @@ def _enforce_local_grounding(text: str, bare_acts: list | None) -> str:
     return cleaned
 
 
-# Keywords that identify rent/tenant/eviction disputes for act-preference (ToPA over Contract Act 294A)
-_RENT_EVICTION_KEYWORDS = frozenset({
-    "rent", "tenant", "landlord", "eviction", "lease", "tenancy",
-    "non-payment", "non payment", "arrears", "vacat", "notice to quit",
-    "lease agreement", "rental", "defaulted on rent",
-})
-
-_RENT_DEFAULT_KEYWORDS = frozenset({
-    "non-payment", "non payment", "default", "defaulted", "arrears", "rent due",
-    "rent unpaid", "unpaid rent", "forfeiture", "breach of lease", "termination of lease",
-    "terminated the lease", "notice to quit", "vacate for non payment",
-})
-
-_FORCED_LOCKOUT_KEYWORDS = frozenset({
-    "changed the lock", "changed lock", "locked out", "lockout", "forcible dispossession",
-    "dispossess", "threw me out", "thrown me out", "belongings are still inside",
-    "belongings inside", "no court order", "without court order", "no written notice",
-    "without notice", "sealed the premises", "denied entry",
-})
-
-
-def _is_rent_eviction_dispute(dispute: dict) -> bool:
-    """True if this dispute is about rent, tenancy, eviction, or lease termination."""
-    text = (dispute.get("dispute") or "").lower()
-    keywords = [k.lower() for k in dispute.get("keywords") or []]
-    combined = text + " " + " ".join(keywords)
-    return any(kw in combined for kw in _RENT_EVICTION_KEYWORDS)
-
-
-def _has_rent_default_signal(dispute: dict) -> bool:
-    text = (dispute.get("dispute") or "").lower()
-    keywords = [k.lower() for k in dispute.get("keywords") or []]
-    combined = text + " " + " ".join(keywords)
-    return any(kw in combined for kw in _RENT_DEFAULT_KEYWORDS)
-
-
-def _is_forced_lockout_dispute(dispute: dict) -> bool:
-    text = (dispute.get("dispute") or "").lower()
-    keywords = [k.lower() for k in dispute.get("keywords") or []]
-    combined = text + " " + " ".join(keywords)
-    return any(kw in combined for kw in _FORCED_LOCKOUT_KEYWORDS)
-
-
-def _reorder_bare_acts_for_rent_disputes(bare_acts: list, dispute: dict) -> list:
+def expand_legal_query(
+    facts: str,
+    intent: dict = None,
+    expansion_debug: dict | None = None,
+    model_override: str | None = None,
+) -> list[str]:
     """
-    For rent/eviction disputes: prefer Transfer of Property Act and state rent/eviction acts,
-    demote Indian Contract Act § 294A (Contingent Contracts) since eviction is under ToPA/state law.
-    Returns a new list (same items, reordered); does not change scores.
-    """
-    if not bare_acts or not _is_rent_eviction_dispute(dispute):
-        return bare_acts
+    Convert plain-language facts to legal research queries for hybrid retrieval.
 
-    def _act_priority(ba: dict) -> tuple:
-        act = (ba.get("act_name") or "").strip().lower()
-        sec = (ba.get("section_number") or "").strip().lower()
-        score = ba.get("_rerank_score", 0.0)
-        # Prefer ToPA and state acts with "rent" or "eviction" or "lease" in name
-        if "transfer of property" in act:
-            return (0, -score)   # first group, then by score desc
-        if "rent" in act or "eviction" in act or "lease" in act or "tenancy" in act:
-            return (1, -score)
-        # Demote Contract Act 294A (not the primary remedy for eviction)
-        if "contract act" in act or "indian contract" in act:
-            if sec == "294a" or sec == "294":
-                return (3, -score)   # last group
-        return (2, -score)   # middle
-
-    return sorted(bare_acts, key=_act_priority)
-
-
-def _reorder_bare_acts_for_rent_disputes(bare_acts: list, dispute: dict) -> list:
-    """
-    Backward-compatible hook kept for older call sites.
-
-    The live path is now domain-agnostic: rank by fact alignment rather than by
-    scenario-specific act preferences.
-    """
-    if not bare_acts:
-        return bare_acts
-    dispute_text = (dispute.get("dispute") or "").strip()
-    return _apply_fact_alignment_sort(bare_acts, dispute_text, cap=len(bare_acts))
-
-
-def expand_legal_query(facts: str, intent: dict = None) -> list[str]:
-    """
-    Convert plain-language facts to 1–3 legal research queries (roadmap: multi-query retrieval).
-
-    Returns a list of up to 3 query strings: base (LLM or facts) + optional synonym variant
-    + optional statute-style variant. Callers run hybrid retrieval per query, merge, dedupe, rerank.
+    The model emits distinct legal issues; each issue may contribute up to three
+    queries. There is no fixed global cap on how many issues or total queries.
+    Heuristic fallbacks apply only when the model returns nothing usable.
     """
     from prompts.advocate_prompts import EXPAND_LEGAL_QUERY_SYSTEM, EXPAND_LEGAL_QUERY_INTENT_BLOCK
 
-    # Legal synonym expansion (user phrase → statute-style terms)
-    _SYNONYMS = {
-        "rent": ["rent", "lease payment", "tenancy payment"],
-        "eviction": ["eviction", "recovery of possession"],
-        "threat": ["criminal intimidation", "threat of injury"],
-        "land acquisition": ["compulsory acquisition", "state acquisition"],
-        "tenant": ["tenant", "lessee"],
-        "landlord": ["landlord", "lessor"],
-        "defaulted": ["default in payment"],
-        "not paid": ["default in payment"],
-        "stolen": ["theft"],
-        "cheat": ["cheating", "fraud"],
-    }
-
-    def _add_synonym_variant(text: str) -> str:
-        t = text.lower()
-        for phrase, replacements in _SYNONYMS.items():
-            if phrase in t:
-                for r in replacements:
-                    if r not in t:
-                        return text + " " + r  # append first missing synonym
-        return ""
+    _MAX_QUERIES_PER_ISSUE = 3
+    # Vector/BM25: short key-phrases (prompt targets ~5–10 words); hard cap 12 words + char ceiling
+    _EXPANDED_QUERY_MAX_WORDS = 12
+    _EXPANDED_QUERY_MAX_CHARS = 200
+    _MODEL_RAW_RESPONSE_DEBUG_MAX_CHARS = 2500
 
     def _normalize_fact_query(text: str) -> str:
         cleaned = re.sub(r"\s+", " ", (text or "").strip())
         cleaned = re.sub(r"[\"'`]+", "", cleaned)
-        return cleaned[:300]
-
-    def _build_plain_language_variant(text: str) -> str:
-        low = text.lower()
-        tags: list[str] = []
-        if any(k in low for k in ("husband", "wife", "marriage", "marital", "spouse")):
-            tags.append("domestic violence")
-        if any(k in low for k in ("beat", "beating", "assault", "abuse", "violence", "harass")):
-            tags.append("physical abuse")
-        if any(k in low for k in ("daughter", "son", "child", "children", "minor")):
-            tags.append("child safety")
-        if any(k in low for k in ("maintenance", "support", "living expenses")):
-            tags.append("maintenance")
-        if not tags:
-            return ""
-        return f"{text} {' '.join(tags[:3])}"[:500]
-
-    intent_block = ""
-    if intent and isinstance(intent, dict) and (intent.get("states") or intent.get("domains") or intent.get("topics")):
-        intent_block = EXPAND_LEGAL_QUERY_INTENT_BLOCK.format(intent_json=json.dumps(intent, indent=0))
-
-    queries = []
-    normalized_facts = _normalize_fact_query(facts)
-
-    prompt = f"""{EXPAND_LEGAL_QUERY_SYSTEM}
-{intent_block}
-
-FACTS:
-{facts[:2000]}
-
-Query:"""
-    try:
-        base = ask_llm(prompt, task_hint="fast").strip()[:500]
-        if base:
-            queries.append(base)
-    except Exception:
-        pass
-    if not queries:
-        queries.append(normalized_facts)
-
-    # Variant 2: synonym-expanded
-    syn = _add_synonym_variant(queries[0])
-    existing_lower = [q.lower() for q in queries]
-    if syn and syn.lower() not in existing_lower:
-        queries.append(syn[:500])
-        existing_lower.append(syn.lower())
-
-    if len(queries) < 3:
-        plain_variant = _build_plain_language_variant(normalized_facts)
-        if plain_variant and plain_variant.lower() not in existing_lower:
-            queries.append(plain_variant)
-            existing_lower.append(plain_variant.lower())
-
-    # Variant 3: statute-style (e.g. "default in payment of rent" if "rent not paid")
-    if len(queries) < 3 and "default" not in queries[0].lower() and ("rent" in queries[0].lower() or "payment" in queries[0].lower()):
-        statute_style = queries[0].replace("not paid", "default in payment").replace("did not pay", "default in payment")
-        if statute_style != queries[0] and statute_style.lower() not in existing_lower:
-            queries.append(statute_style[:500])
-
-    return queries[:3]
-
-
-def expand_legal_query(facts: str, intent: dict = None) -> list[str]:
-    """
-    Convert plain-language facts to 1-3 legal research queries.
-
-    Primary path is model-led so retrieval stays fact-sensitive and general across
-    domains. Heuristic fallbacks are only used when the model fails entirely.
-    """
-    from prompts.advocate_prompts import EXPAND_LEGAL_QUERY_SYSTEM, EXPAND_LEGAL_QUERY_INTENT_BLOCK
-
-    def _normalize_fact_query(text: str) -> str:
-        cleaned = re.sub(r"\s+", " ", (text or "").strip())
-        cleaned = re.sub(r"[\"'`]+", "", cleaned)
-        return cleaned[:420]
+        words = cleaned.split()
+        if len(words) > _EXPANDED_QUERY_MAX_WORDS:
+            cleaned = " ".join(words[:_EXPANDED_QUERY_MAX_WORDS])
+        return cleaned[:_EXPANDED_QUERY_MAX_CHARS]
 
     fact_tokens = {
         tok for tok in re.findall(r"[a-zA-Z]{4,}", (facts or "").lower())
@@ -1261,15 +1097,33 @@ def expand_legal_query(facts: str, intent: dict = None) -> list[str]:
             return False
         if (query_text.count("+") >= 1 or query_text.count(";") >= 2) and len(distinct_acts) > 1:
             return False
-        if fact_tokens and len(fact_tokens) >= 5 and overlap < 2 and len(query_tokens) >= 4:
-            return False
+        # Terse key-phrases (≤12 meaningful tokens) need lighter overlap than long queries
+        if fact_tokens and len(fact_tokens) >= 5:
+            nq = len(query_tokens)
+            if nq <= 12:
+                if nq >= 2 and overlap < 1:
+                    return False
+                if nq == 1 and overlap < 1:
+                    return False
+            elif nq >= 4 and overlap < 2:
+                return False
         return True
 
-    def _extract_model_queries(raw: str) -> list[str]:
-        if not raw:
-            return []
-        candidates: list[str] = []
-        candidate_keys: set[str] = set()
+    def _add_query(bucket: list[str], seen: set[str], q: str) -> None:
+        normalized = _normalize_fact_query(q)
+        key = normalized.lower()
+        if not normalized or key in seen or not _is_grounded_query(normalized):
+            return
+        seen.add(key)
+        bucket.append(normalized)
+
+    def _parse_model_expansion(raw: str) -> tuple[list[str], list[dict]]:
+        """Returns (flat_queries_in_order, issues_metadata_for_debug)."""
+        if not (raw or "").strip():
+            return [], []
+        flat: list[str] = []
+        seen_keys: set[str] = set()
+        issues_meta: list[dict] = []
         text = raw.strip()
         possible_chunks = [text]
         match = re.search(r"\{.*\}", text, flags=re.DOTALL)
@@ -1278,32 +1132,58 @@ def expand_legal_query(facts: str, intent: dict = None) -> list[str]:
         for chunk in possible_chunks:
             try:
                 parsed = json.loads(chunk)
-                values = parsed.get("queries") if isinstance(parsed, dict) else parsed if isinstance(parsed, list) else []
-                for value in values or []:
-                    normalized = _normalize_fact_query(str(value))
-                    key = normalized.lower()
-                    if normalized and key not in candidate_keys and _is_grounded_query(normalized):
-                        candidate_keys.add(key)
-                        candidates.append(normalized)
             except Exception:
                 continue
-            if candidates:
-                return candidates[:3]
+            if isinstance(parsed, dict) and isinstance(parsed.get("issues"), list):
+                for item in parsed["issues"]:
+                    if not isinstance(item, dict):
+                        continue
+                    label = (
+                        str(item.get("issue_label") or item.get("label") or item.get("issue") or "").strip()
+                    )
+                    qraw = item.get("queries") or item.get("expanded_queries") or item.get("search_queries")
+                    if not isinstance(qraw, list):
+                        continue
+                    issue_queries: list[str] = []
+                    for value in qraw[:_MAX_QUERIES_PER_ISSUE]:
+                        _add_query(issue_queries, seen_keys, str(value))
+                    for q in issue_queries:
+                        flat.append(q)
+                    if label or issue_queries:
+                        issues_meta.append({"issue_label": label, "queries": issue_queries})
+                if flat:
+                    return flat, issues_meta
+            # Legacy: flat "queries" array (single blob)
+            if isinstance(parsed, dict):
+                values = parsed.get("queries")
+            elif isinstance(parsed, list):
+                values = parsed
+            else:
+                values = []
+            legacy_flat: list[str] = []
+            for value in values or []:
+                _add_query(legacy_flat, seen_keys, str(value))
+            if legacy_flat:
+                issues_meta.append({"issue_label": "", "queries": legacy_flat})
+                return legacy_flat, issues_meta
+
+        # Plain-text fallback: lines / semicolon-separated candidates
+        candidate_keys: set[str] = set()
+        fallback: list[str] = []
         for part in re.split(r"[\r\n]+|;\s*", text):
-            normalized = _normalize_fact_query(part.lstrip("-*0123456789. ").strip())
-            key = normalized.lower()
-            if normalized and key not in candidate_keys and _is_grounded_query(normalized):
-                candidate_keys.add(key)
-                candidates.append(normalized)
-            if len(candidates) >= 3:
-                break
-        return candidates[:3]
+            _add_query(fallback, candidate_keys, part.lstrip("-*0123456789. ").strip())
+        if fallback:
+            issues_meta.append({"issue_label": "", "queries": fallback})
+        return fallback, issues_meta
 
     intent_block = ""
     if intent and isinstance(intent, dict) and (intent.get("states") or intent.get("domains") or intent.get("topics")):
         intent_block = EXPAND_LEGAL_QUERY_INTENT_BLOCK.format(intent_json=json.dumps(intent, indent=0))
 
     queries: list[str] = []
+    raw_model = ""
+    model_parsed: list[str] = []
+    issues_from_model: list[dict] = []
     normalized_facts = _normalize_fact_query(facts)
     focus_query = _normalize_fact_query(_build_focus_fact_text(facts, max_chars=420) or normalized_facts)
 
@@ -1315,21 +1195,26 @@ FACTS:
 
 Return JSON only:"""
     try:
-        queries = _extract_model_queries(ask_llm(prompt, task_hint="fast").strip())
+        raw_model = ask_llm(prompt, task_hint="fast", model=model_override).strip()
+        model_parsed, issues_from_model = _parse_model_expansion(raw_model)
+        queries = list(model_parsed)
     except Exception:
         queries = []
 
     if not queries:
-        queries.append(normalized_facts)
+        seen_fb: set[str] = set()
+        _add_query(queries, seen_fb, normalized_facts)
+        if focus_query and focus_query.lower() not in seen_fb:
+            _add_query(queries, seen_fb, focus_query)
 
-    existing_lower = {q.lower() for q in queries}
-    if focus_query and focus_query.lower() not in existing_lower:
-        queries.append(focus_query)
-        existing_lower.add(focus_query.lower())
-    if normalized_facts and normalized_facts.lower() not in existing_lower:
-        queries.append(normalized_facts)
-
-    return queries[:3]
+    out = list(queries)
+    if expansion_debug is not None:
+        expansion_debug["model_raw_response"] = (raw_model or "")[:_MODEL_RAW_RESPONSE_DEBUG_MAX_CHARS]
+        expansion_debug["issues_from_model"] = list(issues_from_model)
+        expansion_debug["parsed_queries_from_model"] = list(model_parsed)
+        expansion_debug["final_expanded_queries"] = list(out)
+        expansion_debug["queries_added_after_model"] = [q for q in out if q not in model_parsed]
+    return out
 
 
 # ---------------------------------------------------------------------------
@@ -1486,7 +1371,7 @@ def _inject_bns_equivalents(text: str) -> str:
     return text
 
 
-def _build_bare_act_queries(dispute: dict) -> list[str]:
+def _build_bare_act_queries(dispute: dict, expanded_queries: list[str] | None = None) -> list[str]:
     """
     Build 3-5 diverse search queries for bare act retrieval from a single dispute.
 
@@ -1518,6 +1403,11 @@ def _build_bare_act_queries(dispute: dict) -> list[str]:
         if q and norm not in seen:
             seen.add(norm)
             queries.append(q)
+
+    # Q-1: LLM-expanded issue phrases (short, legally focused) — run first for vector/BM25.
+    for eq in (expanded_queries or [])[:24]:
+        if isinstance(eq, str) and eq.strip():
+            _add(eq.strip()[:400])
 
     # Q0: legal_concepts + dispute text — contextual queries that carry the relational
     # domain (e.g. "domestic violence marital cruelty wife husband protection") rather
@@ -1737,16 +1627,15 @@ def _web_search_bare_acts(dispute: dict, full_query: str, round1_queries: list =
 
     if focused:
         # ── Central / Union act queries (always first) ──────────────────────────
-        # These are state-agnostic and will find BNS, BNSS, Transfer of Property Act,
-        # Specific Relief Act, etc. on IndiaCode regardless of which state the dispute is in.
+        # These are state-agnostic and surface major central statutes on IndiaCode
+        # regardless of which state the dispute is in.
         for q in focused[:2]:
             _add_gap(f"{q} India central act")
 
         # ── State-specific queries (supplement, not replacement) ─────────────────
-        # Indian law is layered: central acts apply everywhere, but states may have their
-        # own concurrent legislation (Telangana Land Encroachment Act, Telangana Tenancy Act,
-        # Karnataka Rent Control Act, etc.). We add ONE state-specific query for each
-        # detected state so we capture relevant local legislation alongside central acts.
+        # Indian law is layered: central acts apply everywhere, but states may have
+        # concurrent legislation. We add ONE state-specific query per detected state
+        # so local acts are searched alongside central acts.
         if states:
             for state in states[:2]:   # cap at 2 states in case many were detected
                 state_q = focused[0]   # use the primary angle for state search
@@ -2073,7 +1962,15 @@ def _filter_case_laws_with_llm(dispute: dict, bare_act_sections: list, case_laws
         return case_laws
 
 
-def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list = None, debug: dict | None = None, pending_indexing_list: list = None) -> list:
+def retrieve_bare_acts_for_dispute(
+    dispute: dict,
+    full_query: str,
+    states: list = None,
+    debug: dict | None = None,
+    pending_indexing_list: list = None,
+    bare_act_trace: list | None = None,
+    expanded_legal_queries: list[str] | None = None,
+) -> list:
     """
     Retrieve ALL relevant bare act sections for a single dispute component.
 
@@ -2141,8 +2038,8 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
     # unfiltered. LLM act refinement now runs AFTER cross-encoder retrieval (below)
     # so it can contextually filter whatever the retriever actually surfaced.
 
-    # Build diverse query set
-    queries = _build_bare_act_queries(dispute)
+    # Build diverse query set (expanded issue phrases first)
+    queries = _build_bare_act_queries(dispute, expanded_queries=expanded_legal_queries)
     logger.info(
         "[%s] Bare acts Round 1 — %d queries: %s",
         dispute_id, len(queries), [q[:60] for q in queries],
@@ -2156,9 +2053,17 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
     # top_k=15 per query: with act-filter in place, ~15 candidates after filtering
     # vs ~90 without → significant cross-encoder speedup.
     def _search(q: str) -> list:
+        if bare_act_trace is None:
+            if allowed_acts:
+                return search_bare_acts_filtered(q, allowed_acts, top_k=15)
+            return search_bare_acts_auto(q, top_k=15)
+        stage_trace: list = []
         if allowed_acts:
-            return search_bare_acts_filtered(q, allowed_acts, top_k=15)
-        return search_bare_acts_auto(q, top_k=15)
+            out = search_bare_acts_filtered(q, allowed_acts, top_k=15, trace=stage_trace)
+        else:
+            out = search_bare_acts_auto(q, top_k=15, trace=stage_trace)
+        bare_act_trace.append({"retrieval_query": q, "hybrid_stages": stage_trace})
+        return out
 
     seen_chunk_keys: dict[str, dict] = {}   # chunk_key -> best-scored chunk
     for q in queries:
@@ -2331,7 +2236,9 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
         )
         filtered_local = _filter_bare_acts_with_llm(dispute, local_results, debug)
         return _cap_bare_acts_by_score(
-            _reorder_bare_acts_for_rent_disputes(filtered_local, dispute),
+            _apply_fact_alignment_sort(
+                filtered_local, (dispute.get("dispute") or "").strip(), cap=len(filtered_local)
+            ),
             MAX_SECTIONS_PER_DISPUTE_TOTAL,
         )
 
@@ -2342,7 +2249,9 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
         )
         filtered_local = _filter_bare_acts_with_llm(dispute, local_results, debug)
         return _cap_bare_acts_by_score(
-            _reorder_bare_acts_for_rent_disputes(filtered_local, dispute),
+            _apply_fact_alignment_sort(
+                filtered_local, (dispute.get("dispute") or "").strip(), cap=len(filtered_local)
+            ),
             MAX_SECTIONS_PER_DISPUTE_TOTAL,
         )
 
@@ -2353,7 +2262,9 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
         )
         filtered_local = _filter_bare_acts_with_llm(dispute, local_results, debug)
         return _cap_bare_acts_by_score(
-            _reorder_bare_acts_for_rent_disputes(filtered_local, dispute),
+            _apply_fact_alignment_sort(
+                filtered_local, (dispute.get("dispute") or "").strip(), cap=len(filtered_local)
+            ),
             MAX_SECTIONS_PER_DISPUTE_TOTAL,
         )
 
@@ -2361,7 +2272,9 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
         logger.info("[%s] Bare acts Round 1 returning %d local section(s); no external fallback needed.", dispute_id, len(local_results))
         filtered_local = _filter_bare_acts_with_llm(dispute, local_results, debug)
         return _cap_bare_acts_by_score(
-            _reorder_bare_acts_for_rent_disputes(filtered_local, dispute),
+            _apply_fact_alignment_sort(
+                filtered_local, (dispute.get("dispute") or "").strip(), cap=len(filtered_local)
+            ),
             MAX_SECTIONS_PER_DISPUTE_TOTAL,
         )
 
@@ -2389,7 +2302,11 @@ def _build_case_law_query(dispute_text: str, bare_act_sections: list) -> str:
     return " ".join(parts).strip()[:500] or dispute_text[:300]
 
 
-def _build_fast_case_queries(dispute: dict, bare_act_sections: list) -> list[str]:
+def _build_fast_case_queries(
+    dispute: dict,
+    bare_act_sections: list,
+    expanded_queries: list[str] | None = None,
+) -> list[str]:
     """Small, diverse case-law query set for the fast interactive path."""
     dispute_text = (dispute.get("dispute") or "").strip()
     queries: list[str] = []
@@ -2401,6 +2318,10 @@ def _build_fast_case_queries(dispute: dict, bare_act_sections: list) -> list[str
         if q and key not in seen:
             seen.add(key)
             queries.append(q)
+
+    for eq in (expanded_queries or [])[:12]:
+        if isinstance(eq, str) and eq.strip():
+            _add(f"{eq.strip()[:320]} case law India")
 
     _add(_build_case_law_query(dispute_text, bare_act_sections))
 
@@ -2891,11 +2812,14 @@ def generate_response_v2(
             except Exception:
                 pass
 
-    def _emit_step(message: str, icon: str = ""):
+    def _emit_step(message: str, icon: str = "", detail: dict | None = None):
         """Emit a single clean user-facing step message (separate from ProgressTracker)."""
         if step_callback:
             try:
-                step_callback({"message": message, "icon": icon})
+                payload = {"message": message, "icon": icon}
+                if detail:
+                    payload["detail"] = detail
+                step_callback(payload)
             except Exception:
                 pass
 
@@ -2916,7 +2840,7 @@ def generate_response_v2(
     if not interactive_fast_path:
         try:
             from services.intent_extractor import extract_research_intent
-            research_intent = extract_research_intent(facts_summary)
+            research_intent = extract_research_intent(facts_summary, model_override=model_override)
             if research_intent:
                 _emit_step(
                     "Intent parsed: "
@@ -2930,12 +2854,36 @@ def generate_response_v2(
 
     # Step 1: Query expansion (returns 1–3 queries for multi-query retrieval)
     fast_query_seed = _build_focus_fact_text(facts_summary, max_chars=520) or _strip_chat_window_summary(facts_summary)
+    expansion_debug: dict = {}
     if interactive_fast_path:
-        legal_queries = expand_legal_query(fast_query_seed[:400], intent=research_intent) or [fast_query_seed[:400]]
+        legal_queries = expand_legal_query(
+            fast_query_seed[:400],
+            intent=research_intent,
+            expansion_debug=expansion_debug,
+            model_override=model_override,
+        ) or [
+            fast_query_seed[:400]
+        ]
+        expansion_debug.setdefault("expansion_input_preview", (fast_query_seed[:400] or "").strip())
     else:
-        legal_queries = expand_legal_query(facts_summary, intent=research_intent)
+        legal_queries = expand_legal_query(
+            facts_summary,
+            intent=research_intent,
+            expansion_debug=expansion_debug,
+            model_override=model_override,
+        )
+        expansion_debug.setdefault("expansion_input_preview", (facts_summary[:800] or "").strip())
     legal_query = legal_queries[0] if legal_queries else facts_summary[:300]
     logger.info("Expanded query(s): %s", legal_query[:200] if legal_query else "none")
+    progress.update_retrieval_diagnostics(
+        {
+            "query_expansion": {
+                "kind": "query_expansion",
+                **expansion_debug,
+            }
+        }
+    )
+    _emit_progress()
     _emit_step(
         f"Query expansion complete: {len(legal_queries)} retrieval quer{'y' if len(legal_queries) == 1 else 'ies'}",
         "🔎",
@@ -3034,6 +2982,7 @@ def generate_response_v2(
         _local_pending: list = []
         _local_debug: dict = {}
         _external_results: list = []
+        _bare_hybrid_trace: list = []
 
         _emit_step(f"[{d_id}] Identifying legal provisions...", "📖")
 
@@ -3042,11 +2991,15 @@ def generate_response_v2(
         if retrieve_acts:
             if interactive_fast_path:
                 from retrieval.hybrid_retriever import search_bare_acts_fast, search_bare_acts_runtime
-                queries_ba = (_build_bare_act_queries(dispute) or [d_text or facts_summary[:300]])[:_FAST_BARE_QUERY_LIMIT]
+                queries_ba = (
+                    _build_bare_act_queries(dispute, expanded_queries=legal_queries)
+                    or [d_text or facts_summary[:300]]
+                )[:_FAST_BARE_QUERY_LIMIT]
                 seen_ba: dict = {}
                 for _q_ba in queries_ba:
+                    qt: list = []
                     found_for_query = False
-                    for _ba in search_bare_acts_fast(_q_ba, top_k=_FAST_BARE_TOP_K):
+                    for _ba in search_bare_acts_fast(_q_ba, top_k=_FAST_BARE_TOP_K, trace=qt):
                         _key = (
                             (_ba.get("act_name") or "").strip().lower(),
                             (_ba.get("section_number") or "").strip().lower(),
@@ -3054,6 +3007,9 @@ def generate_response_v2(
                         if _ba.get("_rerank_score", 0) > (seen_ba.get(_key) or {}).get("_rerank_score", -999):
                             seen_ba[_key] = _ba
                             found_for_query = True
+                    _bare_hybrid_trace.append(
+                        {"retrieval_query": _q_ba, "path": "interactive_fast", "hybrid_stages": qt}
+                    )
                     if found_for_query:
                         break
                 raw = list(seen_ba.values())
@@ -3065,15 +3021,25 @@ def generate_response_v2(
                 )
                 if not bare_d:
                     logger.info("[%s] Interactive fast bare-act rescue: broadening local search", d_id)
-                    rescue_queries = _build_runtime_rescue_queries(facts_summary, limit=2, bare_act_sections=bare_d)
+                    rescue_queries = _build_runtime_rescue_queries(
+                        facts_summary, limit=2, bare_act_sections=bare_d, model_override=model_override
+                    )
                     for _q_ba in rescue_queries:
-                        for _ba in search_bare_acts_runtime(_q_ba, top_k=8):
+                        qt2: list = []
+                        for _ba in search_bare_acts_runtime(_q_ba, top_k=8, trace=qt2):
                             _key = (
                                 (_ba.get("act_name") or "").strip().lower(),
                                 (_ba.get("section_number") or "").strip().lower(),
                             )
                             if _ba.get("_rerank_score", 0) > (seen_ba.get(_key) or {}).get("_rerank_score", -999):
                                 seen_ba[_key] = _ba
+                        _bare_hybrid_trace.append(
+                            {
+                                "retrieval_query": _q_ba,
+                                "path": "interactive_runtime_rescue",
+                                "hybrid_stages": qt2,
+                            }
+                        )
                     raw = list(seen_ba.values())
                     bare_d = _select_interactive_grounded_results(
                         raw,
@@ -3097,20 +3063,32 @@ def generate_response_v2(
             elif search_strategy == "local_only":
                 from retrieval.hybrid_retriever import search_bare_acts_auto
                 # Multi-query: run all _build_bare_act_queries and merge by best score per section.
-                queries_ba = _build_bare_act_queries(dispute)
+                queries_ba = _build_bare_act_queries(dispute, expanded_queries=legal_queries)
                 seen_ba: dict = {}
                 for _q_ba in queries_ba:
-                    for _ba in search_bare_acts_auto(_q_ba, top_k=30):
+                    qt: list = []
+                    for _ba in search_bare_acts_auto(_q_ba, top_k=30, trace=qt):
                         _key = (
                             (_ba.get("act_name") or "").strip().lower(),
                             (_ba.get("section_number") or "").strip().lower(),
                         )
                         if _ba.get("_rerank_score", 0) > (seen_ba.get(_key) or {}).get("_rerank_score", -999):
                             seen_ba[_key] = _ba
+                    _bare_hybrid_trace.append(
+                        {"retrieval_query": _q_ba, "path": "local_only_auto", "hybrid_stages": qt}
+                    )
                 raw = list(seen_ba.values())
                 bare_d = [ba for ba in raw if ba.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_bare_act(ba)]
             else:
-                bare_d = retrieve_bare_acts_for_dispute(dispute, facts_summary, states=_states, debug=_local_debug, pending_indexing_list=_local_pending)
+                bare_d = retrieve_bare_acts_for_dispute(
+                    dispute,
+                    facts_summary,
+                    states=_states,
+                    debug=_local_debug,
+                    pending_indexing_list=_local_pending,
+                    bare_act_trace=_bare_hybrid_trace,
+                    expanded_legal_queries=legal_queries,
+                )
                 if not bare_d:
                     _emit_step(f"[{d_id}] No local bare act sections found — checking Indiankanoon fallback...", "🌐")
                     for _r in _web_search_bare_acts(dispute, facts_summary, states=_states, pending_indexing_list=_local_pending):
@@ -3140,7 +3118,7 @@ def generate_response_v2(
             _emit_step(f"[{d_id}] Searching for judicial precedents...", "⚖️")
             if interactive_fast_path:
                 from retrieval.hybrid_retriever import search_case_summaries_fast, search_case_laws_runtime
-                _queries_cl = _build_fast_case_queries(dispute, bare_d)
+                _queries_cl = _build_fast_case_queries(dispute, bare_d, expanded_queries=legal_queries)
                 seen_cl: dict = {}
                 for _q_cl in _queries_cl:
                     for _cl in search_case_summaries_fast(_q_cl, top_k=_FAST_CASE_TOP_K):
@@ -3160,7 +3138,9 @@ def generate_response_v2(
                 case_d = _apply_dispute_case_law_limit(initial_case, num_sections=len(bare_d))
                 if not case_d:
                     logger.info("[%s] Interactive fast case-law rescue: broadening local case search", d_id)
-                    rescue_queries = _build_runtime_rescue_queries(facts_summary, limit=2, bare_act_sections=bare_d)
+                    rescue_queries = _build_runtime_rescue_queries(
+                        facts_summary, limit=2, bare_act_sections=bare_d, model_override=model_override
+                    )
                     for _q_cl in rescue_queries:
                         for _cl in search_case_laws_runtime(_q_cl, top_k=8):
                             _ck = _cl.get("_chunk_key") or (
@@ -3292,7 +3272,7 @@ def generate_response_v2(
             _cl.setdefault("_dispute_label", dispute_label)
             _cl.setdefault("_dispute_text", d_text)
 
-        return {
+        out_dr = {
             "dispute": dispute,
             "bare_acts": bare_d,
             "case_laws": case_d,
@@ -3300,10 +3280,14 @@ def generate_response_v2(
             "_pending": _local_pending,
             "_debug": _local_debug,
         }
+        if _bare_hybrid_trace:
+            out_dr["_bare_hybrid_trace"] = _bare_hybrid_trace
+        return out_dr
 
     # Submit all disputes to the thread pool; collect as each completes.
     progress.start_group("Research", f"Retrieving bare acts and case laws for {len(disputes)} dispute(s)")
     _emit_progress()
+    merged_bare_hybrid_traces: dict[str, list] = {}
     with ThreadPoolExecutor(max_workers=1 if interactive_fast_path else min(len(disputes), 2)) as executor:
         futures = {executor.submit(_retrieve_dispute, d): d for d in disputes}
         for fut in as_completed(futures):
@@ -3312,6 +3296,9 @@ def generate_response_v2(
                 pending_indexing_list.extend(dr.pop("_pending", []))
                 debug_pipeline["per_dispute"].update(dr.pop("_debug", {}))
                 external_fallback_results.extend(dr.pop("external_results", []))
+                _bt = dr.pop("_bare_hybrid_trace", None)
+                if _bt:
+                    merged_bare_hybrid_traces[str(dr.get("dispute", {}).get("id", "?"))] = _bt
                 dispute_results.append(dr)
                 progress.add_step(
                     f"[{dr['dispute'].get('id','?')}] Retrieved {len(dr['bare_acts'])} sections, {len(dr['case_laws'])} judgements",
@@ -3322,6 +3309,16 @@ def generate_response_v2(
                 logger.error("Dispute retrieval failed: %s", exc)
     progress.finish_group()
     _emit_progress()
+    if merged_bare_hybrid_traces:
+        progress.update_retrieval_diagnostics(
+            {
+                "bare_act_hybrid_trace": {
+                    "kind": "bare_act_hybrid_trace",
+                    "by_dispute": merged_bare_hybrid_traces,
+                }
+            }
+        )
+        _emit_progress()
 
     # Step 4: Aggregate + deduplicate across disputes
     all_bare_raw = []
@@ -3548,6 +3545,39 @@ def generate_response_v2(
         _emit_progress()
     except Exception as _dbg_exc:
         logger.debug("Debug pipeline progress group failed: %s", _dbg_exc)
+
+    try:
+        from retrieval.hybrid_retriever import _trace_label_chunk
+
+        def _uniq_doc_labels(chunks: list) -> list[str]:
+            out: list[str] = []
+            seen: set[str] = set()
+            for ch in chunks or []:
+                if not isinstance(ch, dict):
+                    continue
+                lab = (_trace_label_chunk(ch) or "").strip()
+                if not lab or lab == "chunk":
+                    continue
+                key = lab.lower()
+                if key in seen:
+                    continue
+                seen.add(key)
+                out.append(lab)
+                if len(out) >= 120:
+                    break
+            return out
+
+        progress.update_retrieval_diagnostics(
+            {
+                "retrieved_documents": {
+                    "bare_acts": _uniq_doc_labels(all_bare_raw),
+                    "case_laws": _uniq_doc_labels(all_case_raw_div),
+                }
+            }
+        )
+        _emit_progress()
+    except Exception as _rd_exc:
+        logger.debug("Progress retrieved_documents failed: %s", _rd_exc)
 
     return {
         "bare_act_sections": formatted_bare,

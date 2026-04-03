@@ -398,7 +398,7 @@ class TestApplyFlexibleResultLimit(unittest.TestCase):
 
 
 class TestExpandLegalQueryMocked(unittest.TestCase):
-    """expand_legal_query must return 1–3 queries."""
+    """expand_legal_query returns a non-empty list when the model or fallback supplies queries."""
 
     @patch("services.response_generator_v2.ask_llm")
     def test_returns_list_of_queries(self, mock_llm):
@@ -407,7 +407,6 @@ class TestExpandLegalQueryMocked(unittest.TestCase):
         queries = expand_legal_query("Someone beat me up in Hyderabad")
         self.assertIsInstance(queries, list)
         self.assertGreaterEqual(len(queries), 1)
-        self.assertLessEqual(len(queries), 3)
 
     @patch("services.response_generator_v2.ask_llm")
     def test_llm_failure_returns_fallback(self, mock_llm):
@@ -417,6 +416,41 @@ class TestExpandLegalQueryMocked(unittest.TestCase):
         self.assertGreaterEqual(len(queries), 1)
         # Fallback is the raw facts[:300]
         self.assertIn("property dispute", queries[0])
+
+    @patch("services.response_generator_v2.ask_llm")
+    def test_issues_shape_flattens_queries(self, mock_llm):
+        mock_llm.return_value = (
+            '{"issues":['
+            '{"issue_label":"rent default","queries":['
+            '"tenant rent arrears Mumbai lease",'
+            '"landlord recovery unpaid rent"]},'
+            '{"issue_label":"eviction","queries":['
+            '"eviction notice possession Mumbai",'
+            '"lease termination breach tenant"]}'
+            "]}"
+        )
+        from services.response_generator_v2 import expand_legal_query
+        dbg = {}
+        facts = (
+            "My tenant in Mumbai stopped paying rent under the lease; "
+            "landlord wants eviction and recovery of possession."
+        )
+        queries = expand_legal_query(facts, expansion_debug=dbg)
+        self.assertGreaterEqual(len(queries), 2)
+        self.assertEqual(len(dbg.get("issues_from_model") or []), 2)
+
+    @patch("services.response_generator_v2.ask_llm")
+    def test_queries_are_capped_at_twelve_words(self, mock_llm):
+        mock_llm.return_value = (
+            '{"issues":[{"issue_label":"property","queries":['
+            '"very long property ownership dispute query with many extra words beyond the permitted limit"'
+            ']}]}'
+        )
+        from services.response_generator_v2 import expand_legal_query
+
+        queries = expand_legal_query("Property ownership dispute over family land and title documents")
+        self.assertGreaterEqual(len(queries), 1)
+        self.assertLessEqual(len(queries[0].split()), 12)
 
 
 # ===========================================================================

@@ -287,18 +287,19 @@ def _run_search_or_lookup(
     # exclusive selection causes false "No results" responses.
     effective_document_types = (document_types or "").strip().lower() or "both"
     try:
-        resp = generate_response(
-            facts_summary,
-            jurisdiction_state="",
-            intent=intent,
-            result_count=result_count,
-            progress_callback=progress_callback,
-            document_types=effective_document_types,
-            search_strategy=search_strategy,
-            step_callback=step_callback,
-            token_callback=token_callback,
-            model_override=model_override,
-        )
+        with guard_activity(f"search_or_lookup:{intent}:{search_strategy}"):
+            resp = generate_response(
+                facts_summary,
+                jurisdiction_state="",
+                intent=intent,
+                result_count=result_count,
+                progress_callback=progress_callback,
+                document_types=effective_document_types,
+                search_strategy=search_strategy,
+                step_callback=step_callback,
+                token_callback=token_callback,
+                model_override=model_override,
+            )
     except Exception as e:
         logger.error("Research generation failed: %s", e, exc_info=True)
         resp = {
@@ -487,8 +488,8 @@ def process_chat(
                     msg=msg,
                     result_count=None,
                     progress_callback=progress_callback,
-                    # Use local-first retrieval with Indiankanoon fallback only when local retrieval is empty.
-                    search_strategy="local_then_web",
+                    # Default quick lookup is local_only; caller can opt into local_then_web.
+                    search_strategy=(search_strategy or "local_only"),
                     step_callback=step_callback,
                     token_callback=token_callback,
                     model_override=model_override,
