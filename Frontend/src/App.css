@@ -4132,3 +4132,75 @@ details.sidebar-section--active > .sidebar-list-scroll {
   color: var(--text-h);
   margin-bottom: 6px;
 }
+
+/* ── Advocate Review Panel (Item 20) ─────────────────────────────────────── */
+.advocate-review-panel {
+  margin-top: 18px;
+  border: 1px solid rgba(99, 102, 241, 0.22);
+  border-radius: 8px;
+  background: rgba(99, 102, 241, 0.03);
+  overflow: hidden;
+}
+
+.advocate-review-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-h);
+  list-style: none;
+}
+.advocate-review-summary::-webkit-details-marker { display: none; }
+
+.advocate-review-label { font-size: 0.9rem; font-weight: 700; }
+.advocate-review-hint  { font-size: 0.78rem; font-weight: 400; opacity: 0.6; }
+
+.advocate-review-body {
+  padding: 4px 14px 14px;
+  border-top: 1px solid rgba(99, 102, 241, 0.12);
+}
+
+.advocate-review-section { margin-top: 12px; }
+.advocate-review-section-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.55;
+  margin-bottom: 6px;
+}
+
+.advocate-review-dispute { margin-bottom: 10px; }
+.advocate-review-dispute-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-h);
+  margin-bottom: 3px;
+}
+.advocate-review-section-row {
+  font-size: 0.8rem;
+  padding: 2px 0;
+  color: var(--text-body, #374151);
+}
+.advocate-review-act  { font-weight: 600; }
+.advocate-review-sec  { opacity: 0.75; }
+.advocate-review-sec-title { opacity: 0.6; font-style: italic; }
+
+.advocate-review-prayer-list {
+  margin: 0; padding-left: 18px; font-size: 0.85rem;
+}
+.advocate-review-prayer-item { margin-bottom: 4px; line-height: 1.45; }
+.advocate-review-relief { font-weight: 500; }
+.advocate-review-forum { opacity: 0.65; font-size: 0.82rem; }
+.advocate-review-urgent { color: #dc2626; font-size: 0.78rem; margin-left: 4px; }
+
+.advocate-review-docs-list { margin: 0; padding: 0; list-style: none; font-size: 0.84rem; }
+.advocate-review-doc-item { display: flex; align-items: baseline; gap: 5px; padding: 3px 0; }
+.advocate-review-doc-item.doc-essential .doc-name { font-weight: 600; }
+.doc-tick  { font-size: 0.9rem; min-width: 16px; }
+.doc-name  { }
+.doc-purpose { opacity: 0.6; font-size: 0.79rem; }

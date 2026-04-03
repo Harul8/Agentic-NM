@@ -53,6 +53,74 @@ function stripTrailingStepEllipsis(msg) {
   return msg.replace(/\.{1,3}$/, "");
 }
 
+/** Item 20: Advocate-review panel — structured brief alongside the draft. */
+function AdvocateReviewPanel({ data }) {
+  if (!data || typeof data !== "object") return null;
+  const prayer = Array.isArray(data.overall_prayer) ? data.overall_prayer : [];
+  const docs = Array.isArray(data.overall_documents_checklist) ? data.overall_documents_checklist : [];
+  const disputes = Array.isArray(data.disputes) ? data.disputes : [];
+  if (prayer.length === 0 && docs.length === 0 && disputes.length === 0) return null;
+  return (
+    <details className="advocate-review-panel" open={false}>
+      <summary className="advocate-review-summary">
+        <span className="advocate-review-label">⚖ Advocate Brief</span>
+        <span className="advocate-review-hint">Prayer · Documents · Legal Framework</span>
+      </summary>
+      <div className="advocate-review-body">
+        {disputes.length > 0 && (
+          <div className="advocate-review-section">
+            <div className="advocate-review-section-title">Legal Framework</div>
+            {disputes.map((d, i) => (
+              <div key={i} className="advocate-review-dispute">
+                <div className="advocate-review-dispute-label">{d.dispute_label || `Issue ${i + 1}`}</div>
+                {(d.sections || []).map((s, j) => (
+                  <div key={j} className="advocate-review-section-row">
+                    <span className="advocate-review-act">{s.act_name}</span>
+                    {s.section_number && (
+                      <span className="advocate-review-sec"> § {s.section_number}</span>
+                    )}
+                    {s.section_title && (
+                      <span className="advocate-review-sec-title"> — {s.section_title}</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        )}
+        {prayer.length > 0 && (
+          <div className="advocate-review-section">
+            <div className="advocate-review-section-title">Prayer / Relief Sought</div>
+            <ol className="advocate-review-prayer-list">
+              {prayer.map((p, i) => (
+                <li key={i} className="advocate-review-prayer-item">
+                  <span className="advocate-review-relief">{p.relief}</span>
+                  {p.forum && <span className="advocate-review-forum"> — {p.forum}</span>}
+                  {p.urgency === "immediate" && <span className="advocate-review-urgent"> ⚠ Urgent</span>}
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
+        {docs.length > 0 && (
+          <div className="advocate-review-section">
+            <div className="advocate-review-section-title">Documents Checklist</div>
+            <ul className="advocate-review-docs-list">
+              {docs.map((d, i) => (
+                <li key={i} className={`advocate-review-doc-item${d.priority === "essential" ? " doc-essential" : ""}`}>
+                  <span className="doc-tick">{d.priority === "essential" ? "☑" : "☐"}</span>
+                  <span className="doc-name">{d.document}</span>
+                  {d.purpose && <span className="doc-purpose"> — {d.purpose}</span>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </details>
+  );
+}
+
 function ScoreTable({ title, rows, scoreLabel }) {
   if (!Array.isArray(rows) || rows.length === 0) return null;
   return (
@@ -1470,6 +1538,7 @@ function App() {
       retrieved: retr,
       progress: data.progress || null,
       model_used: data.model_used || null,
+      advocate_review: data.advocate_review || null,  // Item 20
     }, {
       stage: "analysis",
       responseType: data.response_type || "legal_opinion",
@@ -3001,6 +3070,7 @@ function App() {
 
       if (responseType === "legal_opinion") {
         const { bareMap, caseMap } = buildCitationMaps(bareActs, caseLaws);
+        const advocateReview = content.advocate_review || null;  // Item 20
         return (
           <div className="message-final-opinion">
             {opinion && (
@@ -3022,6 +3092,8 @@ function App() {
                 )}
               </div>
             )}
+            {/* Item 20: Advocate-review panel — structured brief (prayer, docs, legal framework) */}
+            <AdvocateReviewPanel data={advocateReview} />
             {messageProgress && (
               <ProgressDisplay
                 progress={messageProgress}

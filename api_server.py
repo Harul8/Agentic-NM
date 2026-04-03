@@ -22,6 +22,12 @@ import uvicorn
 
 from agents.Legal_Research.act_case_fusion_agent import fuse_bare_act_and_case_law
 from services.interactive_chat import process_chat
+try:
+    from services.legal_draft_stage5 import build_legal_draft as _build_legal_draft
+    _STAGE5_ENABLED = True
+except Exception as _s5_err:
+    _STAGE5_ENABLED = False
+    _build_legal_draft = None
 from services.response_generator_v2 import generate_response_v2
 from services.response_feedback_store import (
     RESPONSE_FEEDBACK_TAGS,
@@ -1050,7 +1056,33 @@ def _fire_feedback_log_research(result: dict, query: str, session_ref: str = "")
     t.start()
 
 
-def _map_chat_result_to_ui(result: dict) -> dict:
+def _safe_build_advocate_review(
+    bare_act_sections: list,
+    facts_summary: str,
+    intake_state: dict | None = None,
+) -> dict | None:
+    """
+    Build the advocate-review JSON brief from Stage 5.
+    Returns None if Stage 5 is disabled or if it raises.
+    Called only when phase == "done" with a legal_opinion response.
+    """
+    if not _STAGE5_ENABLED or not _build_legal_draft:
+        return None
+    if not bare_act_sections:
+        return None
+    try:
+        result = _build_legal_draft(
+            intake_state=intake_state,
+            bare_act_sections=bare_act_sections,
+            facts_summary=facts_summary or "",
+        )
+        return result.get("advocate_review")
+    except Exception as _ar_err:
+        logger.warning("Stage5 advocate_review build failed: %s", _ar_err)
+        return None
+
+
+def _map_chat_result_to_ui(result: dict, pre_draft_msg: str = "") -> dict:
     """Map process_chat result to the shape the frontend expects (status, next_question, etc.)."""
     phase = result.get("phase")
     response_type = result.get("response_type")  # "search_results", "lookup_results", "legal_opinion"
@@ -1080,21 +1112,20 @@ def _map_chat_result_to_ui(result: dict) -> dict:
         case_laws = resp.get("case_laws") or []
         internet_case_laws = resp.get("internet_case_laws") or []
         all_case_laws = case_laws + internet_case_laws
-        # Combine greeting/acknowledgment with explanation; avoid showing the same content twice
-        greeting = (result.get("message") or "").strip()
+        # Item 19: merge pre-draft summary with explanation.
+        # pre_draft_msg is the Stage 1 closing / Stage 2 opening summary generated
+        # before response_generation ran. Combine: pre_draft → explanation.
+        effective_greeting = pre_draft_msg.strip() or (result.get("message") or "").strip()
         explanation = (resp.get("explanation") or "").strip()
-        if greeting and explanation:
-            # If they are the same or one contains the other, show only once (the longer)
-            if greeting == explanation:
+        if effective_greeting and explanation:
+            if effective_greeting == explanation or effective_greeting in explanation:
                 combined_text = explanation
-            elif greeting in explanation:
-                combined_text = explanation
-            elif explanation in greeting:
-                combined_text = greeting
+            elif explanation in effective_greeting:
+                combined_text = effective_greeting
             else:
-                combined_text = f"{greeting}\n\n{explanation}"
+                combined_text = f"{effective_greeting}\n\n{explanation}"
         else:
-            combined_text = greeting or explanation
+            combined_text = effective_greeting or explanation
         # Ensure we never send an empty or trivial intro (e.g. just "âš–")
         if not combined_text or len(combined_text.strip()) < 20:
             combined_text = "I've prepared an initial response based on the information currently available."
@@ -1102,25 +1133,30 @@ def _map_chat_result_to_ui(result: dict) -> dict:
         # Case laws are now nested under bare_acts[].related_case_laws
         separate_case_laws = []
         if bare_acts and len(bare_acts) > 0:
-            # Check if any bare act has nested case laws
             has_nested_case_laws = any(ba.get("related_case_laws") for ba in bare_acts)
             if not has_nested_case_laws:
-                # Only return separate case_laws if no nested case laws exist
                 separate_case_laws = all_case_laws
-        
+
+        # Item 20: build advocate-review JSON brief from Stage 5
+        advocate_review = _safe_build_advocate_review(
+            bare_act_sections=bare_acts,
+            facts_summary=facts_summary,
+        )
+
         out = {
             "status": "done",
             "response_type": response_type or "legal_opinion",
             "opinion_text": combined_text,
             "bare_acts": bare_acts,
-            "case_laws": separate_case_laws,  # Empty if case laws are nested under bare acts
+            "case_laws": separate_case_laws,
             "next_steps": resp.get("next_steps") or [],
             "next_steps_summary": (resp.get("next_steps_summary") or "").strip(),
             "retrieved": all_case_laws + bare_acts,
-            "progress": resp.get("progress"),  # Include progress tracking data
+            "progress": resp.get("progress"),
             "model_used": get_last_model_used(),
             "analysis_stage": analysis_stage,
             "facts_summary": facts_summary,
+            "advocate_review": advocate_review,  # Item 20: structured brief for UI panel
         }
         return out
     if phase == "done":
@@ -2275,8 +2311,10 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
             chat_mode=mode,
             model_override=model_override,
         )
+        pre_draft_msg = ""
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
-            conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
+            pre_draft_msg = result.get("message", "")  # Item 19: preserve pre-draft summary
+            conv = conv + [{"role": "assistant", "content": pre_draft_msg}]
             result = process_chat(
                 conversation=conv,
                 current_message=result["facts_summary"],
@@ -2293,7 +2331,7 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
         if result.get("phase") == "done":
             increment_query_count(user["id"])
             _fire_feedback_log(result, facts=text, session_ref=str(user.get("id", "")))
-        return _map_chat_result_to_ui(result)
+        return _map_chat_result_to_ui(result, pre_draft_msg=pre_draft_msg)
     except Exception as e:
         return _chat_error_fallback(str(e)[:200])
 
@@ -2335,8 +2373,10 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
             model_override=model_override,
         )
 
+        pre_draft_msg = ""
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
-            conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
+            pre_draft_msg = result.get("message", "")  # Item 19
+            conv = conv + [{"role": "assistant", "content": pre_draft_msg}]
             result = process_chat(
                 conversation=conv,
                 current_message=result["facts_summary"],
@@ -2355,7 +2395,7 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
             increment_query_count(user["id"])
             _fire_feedback_log(result, facts=facts, session_ref=str(user.get("id", "")))
 
-        return _map_chat_result_to_ui(result)
+        return _map_chat_result_to_ui(result, pre_draft_msg=pre_draft_msg)
     except Exception as e:
         return _chat_error_fallback(str(e)[:200])
 
@@ -2391,8 +2431,10 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
             model_override=model_override,
             workflow_state=workflow_state,
         )
+        pre_draft_msg = ""
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
-            conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": result.get("message", "")}]
+            pre_draft_msg = result.get("message", "")  # Item 19
+            conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": pre_draft_msg}]
             result = process_chat(
                 conversation=conv,
                 current_message=result["facts_summary"],
@@ -2410,7 +2452,7 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
         if result.get("phase") == "done":
             increment_query_count(user["id"])
             _fire_feedback_log(result, facts=message, session_ref=str(user.get("id", "")))
-        return _map_chat_result_to_ui(result)
+        return _map_chat_result_to_ui(result, pre_draft_msg=pre_draft_msg)
     except Exception as e:
         return _chat_error_fallback(str(e)[:200])
 
@@ -2438,8 +2480,10 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
             model_override=model_override,
             workflow_state=workflow_state,
         )
+        pre_draft_msg = ""
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
-            conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": result.get("message", "")}]
+            pre_draft_msg = result.get("message", "")  # Item 19
+            conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": pre_draft_msg}]
             result = process_chat(
                 conversation=conv,
                 current_message=result["facts_summary"],
@@ -2460,7 +2504,7 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
         if result.get("phase") == "done":
             increment_query_count(user_id)
             _fire_feedback_log(result, facts=message, session_ref=str(user_id))
-        queue.put(("result", _map_chat_result_to_ui(result)))
+        queue.put(("result", _map_chat_result_to_ui(result, pre_draft_msg=pre_draft_msg)))
     except Exception as e:
         logger.exception("Stream continue_chat failed")
         queue.put(("result", _chat_error_fallback(str(e)[:200])))
@@ -2489,8 +2533,10 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: 
             token_callback=token_callback,
             model_override=model_override,
         )
+        pre_draft_msg = ""
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
-            conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
+            pre_draft_msg = result.get("message", "")  # Item 19
+            conv = conv + [{"role": "assistant", "content": pre_draft_msg}]
             result = process_chat(
                 conversation=conv,
                 current_message=result["facts_summary"],
@@ -2510,7 +2556,7 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: 
         if result.get("phase") == "done":
             increment_query_count(user_id)
             _fire_feedback_log(result, facts=text, session_ref=str(user_id))
-        queue.put(("result", _map_chat_result_to_ui(result)))
+        queue.put(("result", _map_chat_result_to_ui(result, pre_draft_msg=pre_draft_msg)))
     except Exception as e:
         logger.exception("Stream submit_case failed")
         queue.put(("result", _chat_error_fallback(str(e)[:200])))
@@ -2557,8 +2603,10 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
             (time.perf_counter() - t_phase) * 1000,
             f"phase={result.get('phase')}",
         )
+        pre_draft_msg = ""
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
-            conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
+            pre_draft_msg = result.get("message", "")  # Item 19
+            conv = conv + [{"role": "assistant", "content": pre_draft_msg}]
             t_phase = time.perf_counter()
             result = process_chat(
                 conversation=conv,
@@ -2584,7 +2632,7 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
         if result.get("phase") == "done":
             increment_query_count(user_id)
             _fire_feedback_log(result, facts=facts, session_ref=str(user_id))
-        queue.put(("result", _map_chat_result_to_ui(result)))
+        queue.put(("result", _map_chat_result_to_ui(result, pre_draft_msg=pre_draft_msg)))
         _log_pipeline_step(
             "interview_step.total",
             (time.perf_counter() - t_total) * 1000,

@@ -57,15 +57,28 @@ def _get_embedder():
     models (e.g. nlpaueb/legal-bert-base-uncased) fall back to explicit
     Transformer + mean-pooling layers.
     """
-    import torch
+    try:
+        import torch
+    except ImportError as exc:
+        raise RuntimeError(
+            "PyTorch is required to build embeddings for index generation, but it "
+            "is not installed in the current environment.\n\n"
+            "Install the project dependencies first:\n"
+            "  pip install -r requirements.txt\n\n"
+            "If you are using a custom environment, make sure `torch`, "
+            "`torchvision`, and `torchaudio` are installed there before rerunning "
+            "the indexing script."
+        ) from exc
     from sentence_transformers import SentenceTransformer, models
     from config import EMBEDDING_MODEL
-    device = "cuda" if torch.cuda.is_available() else "cpu"
+    on_gpu = torch.cuda.is_available()
+    device = "cuda" if on_gpu else "cpu"
+    if on_gpu:
+        torch.backends.cudnn.benchmark = True
     logger.info(f"Loading embedding model '{EMBEDDING_MODEL}' on {device}")
     try:
         embedder = SentenceTransformer(EMBEDDING_MODEL, device=device)
         _ = embedder.encode("test", convert_to_numpy=True)  # smoke-test
-        return embedder
     except Exception:
         logger.info(
             "Native SentenceTransformer load failed; building with explicit "
@@ -78,9 +91,13 @@ def _get_embedder():
             pooling_mode_cls_token=False,
             pooling_mode_max_tokens=False,
         )
-        return SentenceTransformer(
+        embedder = SentenceTransformer(
             modules=[word_embedding_model, pooling_model], device=device
         )
+    if on_gpu:
+        embedder = embedder.half()
+        logger.info("Embedding model loaded in FP16 on %s", torch.cuda.get_device_name(0))
+    return embedder
 
 
 def build_index(

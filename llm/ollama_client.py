@@ -73,7 +73,14 @@ OPENAI_ANALYSIS_SWITCH_INPUT_TOKENS = 10000
 #       structured fact objects and pre-draft summary prompts)
 #
 #     Output             : next question / JSON response                 ≈ 80–150 tok
-#     → OPENAI_FAST_OUTPUT_TOKEN_LIMIT = 800   (≈5× buffer)
+#     → OPENAI_FAST_OUTPUT_TOKEN_LIMIT = 4 000
+#       NOTE: for Chat Completions, max_completion_tokens is a COMBINED budget for
+#       internal chain-of-thought reasoning tokens AND output text tokens.
+#       Reasoning models (gpt-5-nano, gpt-5-mini, o4-mini, etc.) consume ~500–2 000
+#       reasoning tokens before producing any output.  Setting this too low (e.g. 800)
+#       leaves the model no budget to write the actual response and returns empty content.
+#       4 000 gives ~2 500–3 000 tok of reasoning headroom plus 500–1 000 tok for output
+#       which is sufficient for all fast tasks (query expansion, intake, intent extraction).
 #
 #   Section/case char cap (enforced in response_generator_v2.py):
 #     MAX_SECTIONS_PER_DISPUTE_FOR_OPINION = 3, MAX_CASE_LAWS_PER_DISPUTE = 3
@@ -82,7 +89,7 @@ OPENAI_ANALYSIS_SWITCH_INPUT_TOKENS = 10000
 OPENAI_INPUT_TOKEN_LIMIT = 25000
 OPENAI_OUTPUT_TOKEN_LIMIT = 7000
 OPENAI_FAST_INPUT_TOKEN_LIMIT = 5000
-OPENAI_FAST_OUTPUT_TOKEN_LIMIT = 1000
+OPENAI_FAST_OUTPUT_TOKEN_LIMIT = 4000
 # Hourly budget — 500 k input / 500 k output supports ~30+ full sessions/hr
 OPENAI_HOURLY_INPUT_TOKEN_LIMIT = 500000
 OPENAI_HOURLY_OUTPUT_TOKEN_LIMIT = 100000
@@ -671,29 +678,19 @@ def ask_llm(
             last_exc = None
             for attempt in range(1 + max_retries):
                 try:
-                    request_kwargs = {
-                        "model": model,
-                        "input": prompt,
-                        "timeout": timeout,
-                        "max_output_tokens": max_output_tokens,
-                        # Force plain-text response mode to avoid reasoning-only payloads.
-                        "text": {"format": {"type": "text"}},
-                    }
-                    resp = _get_openai_client().responses.create(
-                        **request_kwargs
+                    # Use Chat Completions API — works with both reasoning models
+                    # (gpt-5-mini, gpt-5-nano, o4-mini, etc.) and standard models.
+                    # The Responses API returns output_types=['reasoning'] only when
+                    # max_output_tokens is too low for reasoning models to complete,
+                    # because the token budget is shared with internal CoT tokens.
+                    # Chat Completions applies max_completion_tokens to output text only.
+                    resp = _get_openai_client().chat.completions.create(
+                        model=model,
+                        messages=[{"role": "user", "content": prompt}],
+                        max_completion_tokens=max_output_tokens,
+                        timeout=timeout,
                     )
                     out = _extract_openai_text(resp)
-                    if not out:
-                        # If no message text came back, make one immediate retry with
-                        # explicit final-answer instruction before failing this attempt.
-                        retry_kwargs = dict(request_kwargs)
-                        retry_kwargs["input"] = (
-                            f"{prompt}\n\n"
-                            "IMPORTANT: Return only the final answer text. "
-                            "Do not return reasoning metadata."
-                        )
-                        resp_retry = _get_openai_client().responses.create(**retry_kwargs)
-                        out = _extract_openai_text(resp_retry)
                     _refund_openai_output_budget(max_output_tokens, _count_tokens(out, chosen) if out else 0)
                     if out:
                         return out
@@ -852,4 +849,4 @@ def check_ollama_health() -> dict:
     except requests.RequestException as e:
         result["error"] = f"Failed to check models: {e}"
 
-    return result
+    return resul
