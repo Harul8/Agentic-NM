@@ -6,6 +6,7 @@ import "./App.css";
 const AUTH_TOKEN_KEY = "nyaymalaw_auth_token";
 const CURRENT_USER_KEY = "nyaymalaw_current_user";
 const CURRENT_USER_NAME_KEY = "nyaymalaw_current_user_name";
+const STARRED_CHATS_KEY = "nyaymalaw_starred_chats";
 
 const RESPONSE_FEEDBACK_TAG_GROUPS = [
   {
@@ -406,19 +407,74 @@ const ChatComposer = memo(function ChatComposer({
   loading,
   placeholder,
   onSubmit,
+  onStop,
   resetSignal,
   showDisclaimer,
   chatMode,
   onChatModeChange,
   selectedModel,
   onModelChange,
+  apiBase,
+  // Queue props
+  messageQueue = [],
+  onQueueDelete,
+  onQueueEdit,
+  queueEditSignal,
 }) {
   const [draft, setDraft] = useState("");
+  const [uploading, setUploading] = useState(false);
   const textareaRef = useRef(null);
+  const fileInputRef = useRef(null);
+  const abortControllerRef = useRef(null);
 
+  const isQueueFull = messageQueue.length >= 2;
+
+  // ── Upload with abort support ──────────────────────────────────────────────
+  const handleCancelUpload = useCallback(() => {
+    abortControllerRef.current?.abort();
+  }, []);
+
+  const handleFileChange = useCallback(async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    e.target.value = "";
+    setUploading(true);
+    const controller = new AbortController();
+    abortControllerRef.current = controller;
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+      const token = localStorage.getItem(AUTH_TOKEN_KEY);
+      const headers = token ? { Authorization: `Bearer ${token}` } : {};
+      const res = await fetch(`${apiBase}/upload-document`, {
+        method: "POST", headers, body: formData,
+        signal: controller.signal,
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        alert(err.detail || "Failed to extract text from document.");
+        return;
+      }
+      const data = await res.json();
+      setDraft(data.text);
+    } catch (err) {
+      if (err.name !== "AbortError") alert("Upload failed. Please try again.");
+      // AbortError = user cancelled — silent
+    } finally {
+      setUploading(false);
+      abortControllerRef.current = null;
+    }
+  }, [apiBase]);
+
+  useEffect(() => { setDraft(""); }, [resetSignal]);
+
+  // When a queue item is pulled back for editing, populate draft
   useEffect(() => {
-    setDraft("");
-  }, [resetSignal]);
+    if (queueEditSignal && queueEditSignal.counter > 0) {
+      setDraft(queueEditSignal.text);
+      setTimeout(() => textareaRef.current?.focus(), 0);
+    }
+  }, [queueEditSignal?.counter]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     const el = textareaRef.current;
@@ -431,12 +487,14 @@ const ChatComposer = memo(function ChatComposer({
     if (!loading && textareaRef.current) textareaRef.current.focus();
   }, [loading]);
 
+  // Submit immediately if idle; queue if processing; block only when queue is full
   const submitDraft = useCallback(() => {
-    const raw = draft ?? "";
-    if (!raw.trim() || loading) return;
+    const raw = (draft ?? "").trim();
+    if (!raw) return;
+    if (loading && isQueueFull) return;
     onSubmit(raw);
     setDraft("");
-  }, [draft, loading, onSubmit]);
+  }, [draft, loading, isQueueFull, onSubmit]);
 
   const handleKeyDown = useCallback((e) => {
     if (e.key === "Enter" && !e.shiftKey) {
@@ -445,55 +503,131 @@ const ChatComposer = memo(function ChatComposer({
     }
   }, [submitDraft]);
 
+  const activePlaceholder = loading && messageQueue.length > 0
+    ? "Type to add to queue…"
+    : placeholder;
+
   return (
     <>
+      {/* Queued messages shown above input while a response is processing */}
+      {messageQueue.length > 0 && (
+        <div className="chat-queue">
+          {messageQueue.map((item, idx) => (
+            <div key={item.id} className="chat-queue-item">
+              <span className="chat-queue-index">{idx + 1}</span>
+              <span className="chat-queue-text">
+                {item.text.length > 72 ? item.text.slice(0, 72) + "…" : item.text}
+              </span>
+              <div className="chat-queue-actions">
+                <button type="button" className="chat-queue-btn"
+                  onClick={() => onQueueEdit?.(item)} title="Pull back to edit">
+                  <svg width="11" height="11" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z"/>
+                  </svg>
+                </button>
+                <button type="button" className="chat-queue-btn chat-queue-btn--delete"
+                  onClick={() => onQueueDelete?.(item.id)} title="Remove from queue">
+                  <svg width="11" height="11" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Card-style composer: textarea on top, footer row below */}
       <div className="chat-input-container">
+        {/* Textarea — never disabled, queue handles backpressure */}
         <textarea
           ref={textareaRef}
           autoFocus
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder={placeholder}
+          placeholder={activePlaceholder}
           className="chat-input"
           rows={1}
-          disabled={loading}
         />
-        <button
-          type="button"
-          onClick={submitDraft}
-          disabled={loading || !draft.trim()}
-          className="chat-send"
-          aria-label="Send message"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 19V5M5 12l7-7 7 7" />
-          </svg>
-        </button>
+
+        {/* Footer row: upload | model select — — — — buttons */}
+        <div className="chat-input-footer">
+          <div className="chat-input-footer-left">
+            {/* Upload button — swaps to cancel while uploading */}
+            {uploading ? (
+              <button type="button" onClick={handleCancelUpload}
+                className="chat-upload-btn chat-upload-btn--stop"
+                aria-label="Cancel upload" title="Cancel upload">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path fillRule="evenodd" clipRule="evenodd"
+                    d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zM8.707 8.707a1 1 0 00-1.414 1.414L10.586 12l-3.293 3.293a1 1 0 001.414 1.414L12 13.414l3.293 3.293a1 1 0 001.414-1.414L13.414 12l3.293-3.293a1 1 0 00-1.414-1.414L12 10.586 8.707 8.707z"/>
+                </svg>
+              </button>
+            ) : (
+              <button type="button" onClick={() => fileInputRef.current?.click()}
+                className="chat-upload-btn"
+                aria-label="Upload document or image"
+                title="Upload PDF, Word doc, or image (JPG, PNG, etc.)">
+                {/* Plus / attachment icon */}
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+              </button>
+            )}
+            <input ref={fileInputRef} type="file"
+              accept=".pdf,.docx,.doc,.jpg,.jpeg,.png,.webp,.tiff,.tif,.bmp"
+              style={{ display: "none" }} onChange={handleFileChange}
+            />
+
+            {/* Model selector — inline in the footer */}
+            <select
+              className="chat-model-select chat-model-select--inline"
+              value={selectedModel}
+              onChange={(e) => onModelChange(e.target.value)}
+            >
+              <option value="openai">OpenAI</option>
+              <option value="qwen">Qwen</option>
+            </select>
+          </div>
+
+          <div className="chat-input-footer-right">
+            {/* Button area — context-sensitive: send / queue+stop / stop */}
+            {loading ? (
+              <>
+                {draft.trim() && !isQueueFull && (
+                  <button type="button" onClick={submitDraft}
+                    className="chat-send chat-send--queue"
+                    aria-label="Add to queue" title="Add to queue">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M12 19V5M5 12l7-7 7 7" />
+                    </svg>
+                    <span className="chat-send-label">Queue</span>
+                  </button>
+                )}
+                <button type="button" onClick={onStop}
+                  className="chat-send chat-send--stop"
+                  aria-label="Stop processing" title="Stop">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                  </svg>
+                </button>
+              </>
+            ) : (
+              <button type="button" onClick={submitDraft}
+                disabled={!draft.trim()}
+                className="chat-send"
+                aria-label="Send message" title="Send">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M12 19V5M5 12l7-7 7 7" />
+                </svg>
+              </button>
+            )}
+          </div>
+        </div>
       </div>
-      <div className="chat-composer-controls">
-        <select
-          id="chat-mode-select"
-          className="chat-model-select"
-          value={chatMode}
-          onChange={(e) => onChatModeChange(e.target.value)}
-          disabled={loading}
-        >
-          <option value="legal_opinion">Legal opinion</option>
-          <option value="legal_research">Legal research</option>
-          <option value="general">General</option>
-        </select>
-        <select
-          id="chat-model-select"
-          className="chat-model-select"
-          value={selectedModel}
-          onChange={(e) => onModelChange(e.target.value)}
-          disabled={loading}
-        >
-          <option value="openai">OpenAI</option>
-          <option value="qwen">Qwen</option>
-        </select>
-      </div>
+
       {showDisclaimer && (
         <p className="chat-disclaimer">Nyaymalaw AI can make mistakes. Consider checking important information.</p>
       )}
@@ -609,6 +743,13 @@ function App() {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false); // Retain existing
   const [error, setError] = useState(""); // Retain existing
+  // Message queue: holds up to 2 messages typed while a response is processing.
+  const [messageQueue, setMessageQueue] = useState([]);
+  const messageQueueRef = useRef([]);
+  const [queueEditSignal, setQueueEditSignal] = useState({ text: "", counter: 0 });
+  const wasLoadingRef = useRef(false);
+  const chatAbortControllerRef = useRef(null); // aborts the active SSE stream
+  const streamingTokenRef = useRef("");        // mirrors streamingToken for abort-commit
   const messagesEndRef = useRef(null);
   const messagesContainerRef = useRef(null);
   const [composerResetSignal, setComposerResetSignal] = useState(0);
@@ -621,6 +762,7 @@ function App() {
   const [analysisStage, setAnalysisStage] = useState("intake");
   const [analysisFactsSummary, setAnalysisFactsSummary] = useState("");
   const [lastResponseType, setLastResponseType] = useState("");
+  const [intakeState, setIntakeState] = useState(null); // Stage 1 structured intake state
   const [opinionText, setOpinionText] = useState("");
   const [retrieved, setRetrieved] = useState([]);
   const [rawResponse, setRawResponse] = useState("");
@@ -652,7 +794,9 @@ function App() {
   }, []);
 
   const handleToken = useCallback((tokenPayload) => {
-    setStreamingToken((prev) => prev + (tokenPayload.content || ""));
+    const tok = tokenPayload.content || "";
+    streamingTokenRef.current += tok;
+    setStreamingToken((prev) => prev + tok);
   }, []);
 
   // Manual mode selection: "legal_opinion" (default), "legal_research", "general"
@@ -774,6 +918,12 @@ function App() {
   const [bareActsFilter, setBareActsFilter] = useState("");
   const [caseLawsFilter, setCaseLawsFilter] = useState("");
   const [chatHistoryFilter, setChatHistoryFilter] = useState("");
+  const [starredChatIds, setStarredChatIds] = useState(() => {
+    try {
+      const saved = localStorage.getItem(STARRED_CHATS_KEY);
+      return new Set(saved ? JSON.parse(saved) : []);
+    } catch { return new Set(); }
+  });
   // In production (e.g. https://nyaymalaw.in) use same origin or VITE_API_BASE; locally use backend on :8000
   const API_BASE =
     import.meta.env.VITE_API_BASE ||
@@ -890,6 +1040,7 @@ function App() {
       : (stage === "done" ? "" : "intake");
     const factsSummary = typeof state.factsSummary === "string" ? state.factsSummary.trim() : "";
     const lastResponseType = typeof state.lastResponseType === "string" ? state.lastResponseType.trim() : "";
+    const intakeState = state.intakeState && typeof state.intakeState === "object" ? state.intakeState : null;
     return {
       stage,
       facts: typeof state.facts === "string" && state.facts.trim()
@@ -902,6 +1053,7 @@ function App() {
       analysisStage,
       factsSummary,
       lastResponseType,
+      intakeState,
     };
   }, [deriveQaHistoryFromMessages]);
 
@@ -928,11 +1080,12 @@ function App() {
         analysisStage,
         factsSummary: analysisFactsSummary,
         lastResponseType,
+        intakeState,
         ...overrides,
       },
       nextMessages,
     );
-  }, [analysisFactsSummary, analysisStage, currentQuestion, facts, lastResponseType, messages, normalizeWorkflowState, qaHistory, stage]);
+  }, [analysisFactsSummary, analysisStage, currentQuestion, facts, intakeState, lastResponseType, messages, normalizeWorkflowState, qaHistory, stage]);
 
   const resolveModelUsed = useCallback((data, fallback = "") => {
     if (typeof data?.model_used === "string" && data.model_used.trim()) return data.model_used.trim();
@@ -1275,11 +1428,12 @@ function App() {
   // -------------------------
   // SSE Stream Consumer Helper
   // -------------------------
-  const consumeSSEStream = async (url, body, onProgress, onDone, onStep, onToken) => {
+  const consumeSSEStream = async (url, body, onProgress, onDone, onStep, onToken, signal) => {
     const res = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
+      signal,
     });
     if (!res.ok) {
       const errData = await res.json().catch(() => ({}));
@@ -1349,11 +1503,13 @@ function App() {
     setAnalysisStage("intake");
     setAnalysisFactsSummary("");
     setLastResponseType("");
+    setIntakeState(null);
     setOpinionText("");
     setRetrieved([]);
     setRawResponse("");
     setError(""); // Reset existing error
     setMessages([]);
+    setMessageQueue([]);
   };
 
   // Save current conversation to savedChats (for sidebar list and persistence)
@@ -1395,6 +1551,7 @@ function App() {
     setAnalysisStage(workflowState.analysisStage || (workflowState.stage === "done" ? "" : "intake"));
     setAnalysisFactsSummary(workflowState.factsSummary || "");
     setLastResponseType(workflowState.lastResponseType || "");
+    setIntakeState(workflowState.intakeState && typeof workflowState.intakeState === "object" ? workflowState.intakeState : null);
     hasSavedCurrentChatRef.current = true;
     currentChatIdRef.current = normalizedChat.id;
   };
@@ -1407,27 +1564,25 @@ function App() {
     handleStartNewCase();
   };
 
-  // Group chats by date (Today, Yesterday, This week, or specific date)
+  // Group chats: Starred (if any) → This Week → Older
   const groupChatsByDate = (chats) => {
     if (!chats.length) return [];
     const now = new Date();
-    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
-    const oneDay = 24 * 60 * 60 * 1000;
-    const groups = new Map();
-    const getLabel = (d) => {
-      const dateOnly = new Date(new Date(d).getFullYear(), new Date(d).getMonth(), new Date(d).getDate()).getTime();
-      const diffDays = (today - dateOnly) / oneDay;
-      if (diffDays === 0) return "Today";
-      if (diffDays === 1) return "Yesterday";
-      if (diffDays < 7) return "This week";
-      return new Date(d).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
-    };
+    const weekAgo = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime() - 7 * 24 * 60 * 60 * 1000;
+    const starred = [];
+    const thisWeek = [];
+    const older = [];
     chats.forEach((chat) => {
-      const label = getLabel(chat.createdAt);
-      if (!groups.has(label)) groups.set(label, []);
-      groups.get(label).push(chat);
+      if (starredChatIds.has(String(chat.id))) { starred.push(chat); return; }
+      const d = new Date(chat.createdAt).getTime();
+      if (d >= weekAgo) thisWeek.push(chat);
+      else older.push(chat);
     });
-    return Array.from(groups.entries()).map(([groupLabel, groupChats]) => ({ groupLabel, chats: groupChats }));
+    const result = [];
+    if (starred.length) result.push({ groupLabel: "Starred", chats: starred });
+    if (thisWeek.length) result.push({ groupLabel: "This week", chats: thisWeek });
+    if (older.length) result.push({ groupLabel: "Older", chats: older });
+    return result;
   };
 
   const filteredSavedChats = useMemo(() => {
@@ -1435,12 +1590,23 @@ function App() {
     if (!q) return savedChats;
     return savedChats.filter((c) => (c.title || "").toLowerCase().includes(q));
   }, [savedChats, chatHistoryFilter]);
-  const chatGroups = useMemo(() => groupChatsByDate(filteredSavedChats), [filteredSavedChats]);
+  const chatGroups = useMemo(() => groupChatsByDate(filteredSavedChats), [filteredSavedChats, starredChatIds]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const startRenamingChat = (chat) => {
     setEditingChatId(chat.id);
     setEditingTitle(chat.title || "");
     setTimeout(() => editInputRef.current?.focus(), 0);
+  };
+
+  const toggleStarChat = (chat, e) => {
+    e.stopPropagation();
+    setStarredChatIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(String(chat.id))) next.delete(String(chat.id));
+      else next.add(String(chat.id));
+      try { localStorage.setItem(STARRED_CHATS_KEY, JSON.stringify([...next])); } catch {}
+      return next;
+    });
   };
 
   const saveRenameChat = async () => {
@@ -1502,6 +1668,8 @@ function App() {
     setAnalysisStage((data.analysis_stage || "").trim() || "intake");
     if (typeof data.facts_summary === "string" && data.facts_summary.trim()) setAnalysisFactsSummary(data.facts_summary.trim());
     setLastResponseType("intake_question");
+    // Persist Stage 1 structured intake state so subsequent turns can continue from where we left off
+    if (data.intake_state && typeof data.intake_state === "object") setIntakeState(data.intake_state);
     setMessages((prev) => [
       ...prev,
       makeAssistantMessage(nextQuestion, {
@@ -1572,9 +1740,14 @@ function App() {
     setExpandedGroups((prev) => ({ ...prev, [PROGRESS_LIVE_KEY]: true }));
     setStreamingSteps([]);
     setStreamingToken("");
+    streamingTokenRef.current = "";
     setElapsedTime(0); // Reset timer
     setComposerResetSignal((prev) => prev + 1);
     turnStartedAtRef.current = Date.now();
+
+    // AbortController for this turn — lets the stop button cancel the SSE stream
+    const abortController = new AbortController();
+    chatAbortControllerRef.current = abortController;
 
     // Keep exact format user typed (spaces, newlines)
     const userMsg = makeUserMessage(raw);
@@ -1614,7 +1787,7 @@ function App() {
       try {
         await consumeSSEStream(
           `${API_BASE}/submit_case/stream`,
-          { text: raw, mode: chatMode, model_override: getModelOverridePayload() },
+          { text: raw, mode: chatMode, model_override: getModelOverridePayload(), workflowState: buildWorkflowState() },
           (progressPayload) => {
             setProgress(progressPayload);
             const groups = progressPayload.groups || [];
@@ -1629,6 +1802,7 @@ function App() {
           (data) => {
             setStreamingSteps([]);
             setStreamingToken("");
+            streamingTokenRef.current = "";
             setRawResponse(JSON.stringify(data, null, 2));
             if (data.status === "question") {
               handleQuestionResponse(data);
@@ -1640,14 +1814,36 @@ function App() {
           },
           handleStep,
           handleToken,
+          abortController.signal,
         );
       } catch (err) {
-        console.error("submit_case stream error:", err);
-        setStreamingSteps([]);
-        setStreamingToken("");
-        setError(err.message || "Error during processing. Please try again.");
-        setRawResponse("Error: " + (err.message || ""));
+        if (err.name === "AbortError") {
+          // User stopped — commit whatever tokens arrived so far as an assistant message
+          const partial = streamingTokenRef.current.trim();
+          if (partial) {
+            setMessages((prev) => [
+              ...prev,
+              makeAssistantMessage(partial + "\n\n*(response stopped)*", {
+                stage: "intake",
+                responseType: "partial",
+                modelUsed: "",
+                latencyMs: currentTurnLatencyMs(),
+              }),
+            ]);
+          }
+          setStreamingSteps([]);
+          setStreamingToken("");
+          streamingTokenRef.current = "";
+        } else {
+          console.error("submit_case stream error:", err);
+          setStreamingSteps([]);
+          setStreamingToken("");
+          streamingTokenRef.current = "";
+          setError(err.message || "Error during processing. Please try again.");
+          setRawResponse("Error: " + (err.message || ""));
+        }
       } finally {
+        chatAbortControllerRef.current = null;
         setLoading(false);
       }
       return;
@@ -1687,6 +1883,7 @@ function App() {
           (data) => {
             setStreamingSteps([]);
             setStreamingToken("");
+            streamingTokenRef.current = "";
             setRawResponse(JSON.stringify(data, null, 2));
             if (data.status === "question") {
               handleQuestionResponse(data);
@@ -1698,12 +1895,32 @@ function App() {
           },
           handleStep,
           handleToken,
+          abortController.signal,
         );
       } catch (err) {
-        console.error("conversation continue stream error:", err);
-        setError("Error during processing: " + (err.message || "Network or server error"));
-        setRawResponse("Error: " + err.message);
+        if (err.name === "AbortError") {
+          const partial = streamingTokenRef.current.trim();
+          if (partial) {
+            setMessages((prev) => [
+              ...prev,
+              makeAssistantMessage(partial + "\n\n*(response stopped)*", {
+                stage: "interview",
+                responseType: "partial",
+                modelUsed: "",
+                latencyMs: currentTurnLatencyMs(),
+              }),
+            ]);
+          }
+          setStreamingSteps([]);
+          setStreamingToken("");
+          streamingTokenRef.current = "";
+        } else {
+          console.error("conversation continue stream error:", err);
+          setError("Error during processing: " + (err.message || "Network or server error"));
+          setRawResponse("Error: " + err.message);
+        }
       } finally {
+        chatAbortControllerRef.current = null;
         setLoading(false);
       }
       return;
@@ -1720,6 +1937,7 @@ function App() {
         setAnalysisStage("intake");
         setAnalysisFactsSummary("");
         setLastResponseType("");
+        setIntakeState(null);
         setOpinionText("");
         setRetrieved([]);
         setRawResponse("");
@@ -1729,7 +1947,7 @@ function App() {
         try {
           await consumeSSEStream(
             `${API_BASE}/submit_case/stream`,
-            { text: raw, mode: chatMode, model_override: getModelOverridePayload() },
+            { text: raw, mode: chatMode, model_override: getModelOverridePayload(), workflowState: buildWorkflowState() },
             (progressPayload) => {
               setProgress(progressPayload);
               const groups = progressPayload.groups || [];
@@ -1744,6 +1962,7 @@ function App() {
             (data) => {
               setStreamingSteps([]);
               setStreamingToken("");
+              streamingTokenRef.current = "";
               setRawResponse(JSON.stringify(data, null, 2));
               if (data.status === "question") {
                 setFacts(raw);
@@ -1757,10 +1976,30 @@ function App() {
             },
             handleStep,
             handleToken,
+            abortController.signal,
           );
         } catch (err) {
-          setError("Error during processing: " + (err.message || "Network or server error"));
+          if (err.name === "AbortError") {
+            const partial = streamingTokenRef.current.trim();
+            if (partial) {
+              setMessages((prev) => [
+                ...prev,
+                makeAssistantMessage(partial + "\n\n*(response stopped)*", {
+                  stage: "intake",
+                  responseType: "partial",
+                  modelUsed: "",
+                  latencyMs: currentTurnLatencyMs(),
+                }),
+              ]);
+            }
+            setStreamingSteps([]);
+            setStreamingToken("");
+            streamingTokenRef.current = "";
+          } else {
+            setError("Error during processing: " + (err.message || "Network or server error"));
+          }
         } finally {
+          chatAbortControllerRef.current = null;
           setLoading(false);
         }
         return;
@@ -1803,28 +2042,91 @@ function App() {
             }
             setStreamingSteps([]);
             setStreamingToken("");
+            streamingTokenRef.current = "";
           },
           handleStep,
           handleToken,
+          abortController.signal,
         );
       } catch (err) {
-        setError("Error continuing chat: " + (err.message || ""));
-        setMessages((prev) => [
-          ...prev,
-          makeAssistantMessage("Sorry, something went wrong. Please try again.", {
-            stage: "system",
-            responseType: "error",
-          }),
-        ]);
+        if (err.name === "AbortError") {
+          const partial = streamingTokenRef.current.trim();
+          if (partial) {
+            setMessages((prev) => [
+              ...prev,
+              makeAssistantMessage(partial + "\n\n*(response stopped)*", {
+                stage: "analysis",
+                responseType: "partial",
+                modelUsed: "",
+                latencyMs: currentTurnLatencyMs(),
+              }),
+            ]);
+          }
+          setStreamingSteps([]);
+          setStreamingToken("");
+          streamingTokenRef.current = "";
+        } else {
+          setError("Error continuing chat: " + (err.message || ""));
+          setMessages((prev) => [
+            ...prev,
+            makeAssistantMessage("Sorry, something went wrong. Please try again.", {
+              stage: "system",
+              responseType: "error",
+            }),
+          ]);
+        }
       } finally {
+        chatAbortControllerRef.current = null;
         setLoading(false);
       }
       return;
     }
   };
 
+  // ── Keep queue ref in sync with state (avoids stale closure in effects) ────
+  useEffect(() => { messageQueueRef.current = messageQueue; }, [messageQueue]);
+
+  // ── Auto-consume queue when a response finishes ───────────────────────────
+  useEffect(() => {
+    if (wasLoadingRef.current === true && loading === false) {
+      if (messageQueueRef.current.length > 0) {
+        const [next, ...rest] = messageQueueRef.current;
+        setMessageQueue(rest);
+        // Small tick to let React flush the loading=false render first
+        setTimeout(() => handleSubmit(next.text), 0);
+      }
+    }
+    wasLoadingRef.current = loading;
+  }, [loading]); // handleSubmit intentionally accessed via closure — not a dep
+
+  // ── Composed submit: queue when busy, submit immediately when idle ─────────
+  const handleComposedSubmit = (text) => {
+    if (!text.trim()) return;
+    if (loading) {
+      if (messageQueueRef.current.length < 2) {
+        setMessageQueue((prev) => [...prev, { id: Date.now(), text }]);
+      }
+    } else {
+      handleSubmit(text);
+    }
+  };
+
+  // Stop the active SSE stream (fires the AbortController)
+  const handleStopProcessing = useCallback(() => {
+    chatAbortControllerRef.current?.abort();
+  }, []);
+
+  const handleQueueEdit = (item) => {
+    setMessageQueue((prev) => prev.filter((i) => i.id !== item.id));
+    setQueueEditSignal((prev) => ({ text: item.text, counter: prev.counter + 1 }));
+  };
+
+  const handleQueueDelete = (id) => {
+    setMessageQueue((prev) => prev.filter((i) => i.id !== id));
+  };
+
   // -------------------------
-  // Progress Display Component â€” single collapsible "Progress tracker" with all steps
+  // Progress Display Component — single collapsible “Progress tracker” with all steps
   // -------------------------
   const PROGRESS_TRACKER_KEY = "progress_tracker";
   const ProgressDisplay = ({ progress, expandedGroups, setExpandedGroups, expandKey = PROGRESS_TRACKER_KEY, defaultOpen = true }) => {
@@ -3384,8 +3686,8 @@ function App() {
                     />
                     <div className="chat-history-groups" onMouseDown={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
                     {chatGroups.map(({ groupLabel, chats }) => (
-                      <div key={groupLabel} className="chat-history-group">
-                        <div className="chat-history-group-label">{groupLabel}</div>
+                      <div key={groupLabel} className={`chat-history-group${groupLabel === "Starred" ? " chat-history-group--starred" : ""}`}>
+                        <div className="chat-history-group-label">{groupLabel === "Starred" ? "★ Starred" : groupLabel}</div>
                         <ul className="chat-history-list">
                           {chats.map((chat) => (
                             <li key={chat.id} className="chat-history-item">
@@ -3416,6 +3718,23 @@ function App() {
                                     {chat.title}
                                   </button>
                                   <div className="chat-history-hover-actions" aria-hidden="true">
+                                    <button
+                                      type="button"
+                                      onClick={(e) => toggleStarChat(chat, e)}
+                                      className={`chat-history-icon-btn${starredChatIds.has(String(chat.id)) ? " chat-history-icon-btn--starred" : ""}`}
+                                      title={starredChatIds.has(String(chat.id)) ? "Unstar" : "Star"}
+                                      aria-label={starredChatIds.has(String(chat.id)) ? "Unstar chat" : "Star chat"}
+                                    >
+                                      {starredChatIds.has(String(chat.id)) ? (
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                          <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clipRule="evenodd" />
+                                        </svg>
+                                      ) : (
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
+                                          <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.601a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5z" />
+                                        </svg>
+                                      )}
+                                    </button>
                                     <button
                                       type="button"
                                       onClick={(e) => { e.stopPropagation(); startRenamingChat(chat); }}
@@ -3779,13 +4098,19 @@ function App() {
                     <ChatComposer
                       loading={loading}
                       placeholder="Describe your case or ask a question"
-                      onSubmit={handleSubmit}
+                      onSubmit={handleComposedSubmit}
                       resetSignal={composerResetSignal}
                       chatMode={chatMode}
                       onChatModeChange={setChatMode}
                       selectedModel={selectedModel}
                       onModelChange={setSelectedModel}
                       showDisclaimer={bottomExpandedSection == null}
+                      apiBase={API_BASE}
+                      onStop={handleStopProcessing}
+                      messageQueue={messageQueue}
+                      onQueueEdit={handleQueueEdit}
+                      onQueueDelete={handleQueueDelete}
+                      queueEditSignal={queueEditSignal}
                     />
                   </div>
               </div>
@@ -4022,13 +4347,19 @@ function App() {
                         ? "Describe your case facts here"
                         : "Type here to start a new case"
                     }
-                    onSubmit={handleSubmit}
+                    onSubmit={handleComposedSubmit}
                     resetSignal={composerResetSignal}
                     chatMode={chatMode}
                     onChatModeChange={setChatMode}
                     selectedModel={selectedModel}
                     onModelChange={setSelectedModel}
                     showDisclaimer={bottomExpandedSection == null}
+                    apiBase={API_BASE}
+                    onStop={handleStopProcessing}
+                    messageQueue={messageQueue}
+                    onQueueEdit={handleQueueEdit}
+                    onQueueDelete={handleQueueDelete}
+                    queueEditSignal={queueEditSignal}
                   />
                 </div>
 

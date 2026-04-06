@@ -886,6 +886,7 @@ def _should_complete_legal_intake(intake_state: dict, conversation_history: list
     facts_present = bool((intake_state.get("facts_summary") or "").strip())
     if stop_requested:
         return facts_present and (user_turns >= 2 or _has_analysis_ready_record(intake_state, conversation_history, user_message))
+    # Hard minimum: never complete on the very first turn before any follow-up.
     if user_turns < 2:
         return False
     if _has_analysis_ready_record(intake_state, conversation_history, user_message):

@@ -18,7 +18,7 @@ import hashlib
 
 from llm.ollama_client import ask_llm
 from services.fact_collector import get_next_question_or_complete, is_stop_signal
-from services.legal_opinion_intake import generate_pre_draft_summary
+from services.legal_opinion_intake import generate_pre_draft_summary, process_turn as _intake_process_turn
 from services.memory_guard import guard_activity
 from services.runtime_warmup import kickoff_runtime_warmup, kickoff_ollama_warmup_if_qwen
 from services.response_generator_v2 import (
@@ -85,17 +85,30 @@ def _ensure_message(msg: str, facts: str, intent: str) -> str:
 
 _ANALYSIS_READY_MARKERS = (
     "say 'proceed'",
-    "add one last important fact",
-    "from the local legal database",
+    "one last",
 )
 
 
-def _build_analysis_ready_prompt(conversation: list) -> str:
+def _build_analysis_ready_prompt(conversation: list, intake_state: dict | None = None) -> str:
+    """
+    Human-feeling handoff message shown when Stage 1 intake is complete.
+    Personalises using intake_state when available; falls back to generic variants.
+    """
+    if intake_state:
+        issue = (intake_state.get("issue_summary") or "").strip()
+        goal = (intake_state.get("client_goal_initial") or "").strip()
+        if issue:
+            short_issue = issue[:110].lower().rstrip(".")
+            return (
+                f"I think I have a clear enough picture now — {short_issue}. "
+                f"If there's one last thing you feel is important for me to know, share it now. "
+                f"Otherwise just say 'proceed' and I'll start working through the applicable laws."
+            )
     idx = len([m for m in (conversation or []) if m.get("role") == "assistant"]) % 3
     opts = (
-        "I can start grounded legal analysis now. If there is one crucial fact still missing, share it now; otherwise say 'proceed' and I will begin with the most relevant local bare-act sections.",
-        "The record is sufficient to move into legal analysis. You may add one final key fact, or say 'proceed' and I will present the strongest local bare-act sections first.",
-        "We can now proceed to grounded analysis on local materials. If you want to add one last important detail, do it now; otherwise say 'proceed' and I will start with the relevant bare-act sections.",
+        "I have a good picture of your situation now. If there is one last important detail I should know, share it — otherwise say 'proceed' and I'll identify the relevant laws.",
+        "I think we have what we need to begin. Feel free to add one last key detail, or say 'proceed' and I'll start working through your options.",
+        "We can begin the analysis now. Add one last point if something important is still missing, or say 'proceed' to start.",
     )
     return opts[idx]
 
@@ -589,15 +602,112 @@ def process_chat(
             logger.info("Detected fresh case opening inside completed chat; re-entering intake with reset conversation")
             conversation = []
 
-        # Default / explicit legal opinion: use fact collector, but force LEGAL
-        # so Gate 1 can never downgrade to GENERALIST when the user chose legal mode.
+        # Explicit legal opinion mode: use the 6-stage legal_opinion_intake.process_turn()
+        # which has a deterministic, model-driven readiness gate (all 4 anchor fields
+        # populated) instead of a hard turn limit.
         force_legal = mode == "legal_opinion"
+
+        if force_legal:
+            t_before_intake = time.perf_counter()
+            session = {
+                "history": conversation,
+                "intake_state": (workflow_state or {}).get("intakeState") or None,
+            }
+            with guard_activity("fact_collection:intake_process_turn"):
+                intake_result = _intake_process_turn(session, current_message)
+            _log_step(
+                "intake_process_turn",
+                (time.perf_counter() - t_before_intake) * 1000,
+                f"advance={intake_result.get('advance_to_stage2')} urgency={intake_result.get('urgency_signal')}",
+            )
+
+            intake_state_out = intake_result.get("intake_state") or {}
+            stop_requested = is_stop_signal(current_message)
+            # "immediate" only — "near_term" means client confirmed safe; allow normal flow
+            urgency_immediate = intake_result.get("urgency_signal") == "immediate"
+
+            if intake_result.get("advance_to_stage2") or stop_requested:
+                # If urgency is immediate, the process_turn reply is a safety-first
+                # response — surface that instead of jumping to the analysis handoff.
+                # The client needs safety guidance before we talk about legal analysis.
+                if urgency_immediate and not stop_requested:
+                    _log_step("fact_collection URGENT (hold analysis-ready)", (time.perf_counter() - t_pipeline_start) * 1000)
+                    return {
+                        "phase": "fact_collection",
+                        "message": intake_result.get("reply") or current_message,
+                        "facts_summary": None,
+                        "intake_state": intake_state_out,
+                        "response": None,
+                        "response_type": None,
+                        "materials_to_confirm": None,
+                        "indexed": False,
+                        "analysis_stage": "intake",
+                    }
+
+                # Intake complete — ask for confirmation before launching analysis
+                if not _analysis_confirmation_already_asked(conversation):
+                    _log_step("fact_collection ANALYSIS_READY (process_turn)", (time.perf_counter() - t_pipeline_start) * 1000)
+                    facts = _build_user_fact_history(conversation, current_message=current_message)
+                    return {
+                        "phase": "fact_collection",
+                        "message": _build_analysis_ready_prompt(conversation, intake_state=intake_state_out),
+                        "facts_summary": facts,
+                        "intake_state": intake_state_out,
+                        "response": None,
+                        "response_type": None,
+                        "materials_to_confirm": None,
+                        "indexed": False,
+                        "analysis_stage": "ready_for_bare_acts",
+                    }
+                # Confirmation already shown — user is responding; go to response_generation
+                facts = _build_user_fact_history(conversation, current_message=current_message)
+                facts = _augment_facts_with_chat_summary(facts, conversation, current_message=current_message)
+                _log_step("fact_collection ADVANCE → response_generation (process_turn)", (time.perf_counter() - t_pipeline_start) * 1000)
+                try:
+                    pre_draft_msg = generate_pre_draft_summary(
+                        intake_state=intake_state_out,
+                        facts_summary=facts,
+                    )
+                except Exception:
+                    pre_draft_msg = ""
+                return {
+                    "phase": "response_generation",
+                    "message": pre_draft_msg,
+                    "facts_summary": facts,
+                    "intake_state": intake_state_out,
+                    "intent": "legal_opinion",
+                    "document_types": "acts_only",
+                    "search_strategy": "local_only",
+                    "result_count": None,
+                    "response": None,
+                    "response_type": None,
+                    "materials_to_confirm": None,
+                    "indexed": False,
+                    "analysis_stage": "bare_acts_only",
+                    "analysis_mode": "bare_acts_only",
+                }
+
+            # Still collecting — return the AI's reply from process_turn
+            _log_step("fact_collection CONTINUE (process_turn)", (time.perf_counter() - t_pipeline_start) * 1000)
+            return {
+                "phase": "fact_collection",
+                "message": intake_result.get("reply") or current_message,
+                "facts_summary": None,
+                "intake_state": intake_state_out,
+                "response": None,
+                "response_type": None,
+                "materials_to_confirm": None,
+                "indexed": False,
+                "analysis_stage": "intake",
+            }
+
+        # Default (non-legal-opinion) mode: use fact collector for intent routing.
         t_before_fact = time.perf_counter()
         with guard_activity("fact_collection:get_next_question_or_complete"):
             result = get_next_question_or_complete(
                 conversation,
                 current_message,
-                force_legal=force_legal,
+                force_legal=False,
                 token_callback=token_callback,
                 model_override=model_override,
             )

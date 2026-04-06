@@ -37,6 +37,10 @@ torchaudio>=2.6,<2.7; platform_system != "Linux"
 # PDF processing (lightweight runtime helpers)
 # Let CrewAI / ingestion stack control pdfplumber version
 pypdf==4.2.0
+# Word document text extraction (upload feature)
+python-docx>=1.1.0
+# PDF page rendering for scanned document OCR (no external binary required)
+pymupdf>=1.24.0
 
 # Web scraping (Ingestion / case law)
 beautifulsoup4==4.12.3

@@ -57,6 +57,8 @@ from prompts.advocate_prompts import (
     STAGE1_CONFIRM_AND_FOLLOWUP_SYSTEM,
     STAGE1_READINESS_CHECK_SYSTEM,
     STAGE1_SAFETY_FIRST_SYSTEM,
+    STAGE1_URGENCY_RECHECK_SYSTEM,
+    STAGE1_URGENCY_FROM_HISTORY_SYSTEM,
     STAGE1_VETTING_QUESTION_SYSTEM,
     STAGE4_REMEDY_ASSESSMENT_SYSTEM,
     PRE_DRAFT_SUMMARY_SYSTEM,
@@ -701,25 +703,77 @@ def _retire_answered_open_questions(intake_state: dict) -> None:
 
 
 # ===========================================================================
-# Internal: urgency escalation check
+# Internal: urgency recheck (model-driven — no keyword lists)
 # ===========================================================================
 
-_IMMEDIATE_SIGNALS = (
-    "beaten", "hit", "assault", "arrested", "arrest", "locked out", "lockout",
-    "thrown out", "evict", "evicted", "threatened", "threat", "danger",
-    "hospital", "injury", "injured", "abuse right now", "happening now",
-    "court today", "hearing today", "deadline today", "auction today",
-    "sale today", "running out of time",
-)
-
-
 def _recheck_urgency(intake_state: dict, client_message: str) -> None:
-    """Escalate urgency_signal to 'immediate' if the message contains strong distress signals."""
-    if intake_state.get("urgency_signal") == "immediate":
+    """
+    Ask the model whether the current message changes the urgency state.
+    Returns one of: "immediate", "near_term", "unchanged".
+    Updates intake_state["urgency_signal"] in-place.
+
+    This replaces brittle keyword matching with semantic reasoning so that
+    any phrasing — across any legal domain or language — is handled correctly.
+    """
+    msg = (client_message or "").strip()
+    if not msg:
         return
-    low = (client_message or "").lower()
-    if any(sig in low for sig in _IMMEDIATE_SIGNALS):
-        intake_state["urgency_signal"] = "immediate"
+
+    current = intake_state.get("urgency_signal", "unknown")
+    prompt = STAGE1_URGENCY_RECHECK_SYSTEM.format(
+        current_urgency=current,
+        client_message=msg,
+    )
+    raw = _ask_llm(prompt, task_hint="fast")
+    data = _extract_json(raw)
+    if not isinstance(data, dict):
+        logger.debug("_recheck_urgency: failed to parse model response")
+        return
+
+    update = data.get("urgency_update", "unchanged")
+    if update in ("immediate", "near_term"):
+        intake_state["urgency_signal"] = update
+        logger.debug(
+            "_recheck_urgency: %s → %s (%s)",
+            current, update, data.get("reason", "")
+        )
+
+
+def _infer_urgency_from_history(session: dict) -> str:
+    """
+    When no persisted intake_state is available, infer the current urgency
+    from the full conversation history in one model call.
+    Returns one of: "immediate", "near_term", "unknown".
+    """
+    history = session.get("history") or []
+    if not history:
+        return "unknown"
+
+    lines = []
+    for m in history:
+        role = m.get("role", "")
+        content = (m.get("content") or "").strip()
+        if not content:
+            continue
+        label = "Client" if role == "user" else "Advocate"
+        lines.append(f"{label}: {content}")
+
+    conversation_text = "\n".join(lines)
+    prompt = STAGE1_URGENCY_FROM_HISTORY_SYSTEM.format(
+        conversation_history=conversation_text
+    )
+    raw = _ask_llm(prompt, task_hint="fast")
+    data = _extract_json(raw)
+    if not isinstance(data, dict):
+        logger.debug("_infer_urgency_from_history: failed to parse model response")
+        return "unknown"
+
+    signal = data.get("urgency_signal", "unknown")
+    logger.debug(
+        "_infer_urgency_from_history: inferred=%s (%s)",
+        signal, data.get("reason", "")
+    )
+    return signal if signal in ("immediate", "near_term") else "unknown"
 
 
 # ===========================================================================
@@ -751,7 +805,26 @@ def process_turn(session: dict, user_message: str) -> dict:
     history: list[dict] = session.get("history", [])
 
     # ── Initialise or load intake state ─────────────────────────────────────
+    had_persisted_state = bool(session.get("intake_state"))
     intake_state: dict = session.get("intake_state") or _fresh_state()
+
+    # When there is no persisted intake_state (e.g. frontend hasn't been
+    # rebuilt yet, or state was lost), seed turn_count from the conversation
+    # history so the turn_count < 2 readiness gate and urgency de-escalation
+    # work correctly regardless of persistence gaps.
+    if not had_persisted_state:
+        history_user_turns = sum(
+            1 for m in (session.get("history") or []) if m.get("role") == "user"
+        )
+        intake_state["turn_count"] = max(history_user_turns, 0)
+
+        # When history exists, ask the model to infer the urgency state from the
+        # full conversation so far — avoids re-escalating on a later message that
+        # describes past events after the client already confirmed they are safe.
+        if history_user_turns > 0:
+            inferred = _infer_urgency_from_history(session)
+            if inferred != "unknown":
+                intake_state["urgency_signal"] = inferred
 
     # Increment turn counter
     intake_state["turn_count"] = intake_state.get("turn_count", 0) + 1
@@ -771,7 +844,13 @@ def process_turn(session: dict, user_message: str) -> dict:
         # Anchor fields — only overwrite if the new value is richer
         intake_state["issue_summary"]            = detected.get("issue_summary") or intake_state.get("issue_summary") or ""
         intake_state["jurisdiction"]             = detected.get("jurisdiction") or intake_state.get("jurisdiction") or "unknown"
-        intake_state["urgency_signal"]           = detected.get("urgency_signal") or intake_state.get("urgency_signal") or "unknown"
+        # Only update urgency from detection when we don't already have a
+        # concrete signal (i.e. it hasn't been set from persisted state or
+        # inferred from earlier turns in the history scan above).
+        # _recheck_urgency() handles escalation/de-escalation from the current
+        # message immediately after this block, so we don't lose safety signals.
+        if not intake_state.get("urgency_signal") or intake_state.get("urgency_signal") == "unknown":
+            intake_state["urgency_signal"] = detected.get("urgency_signal") or "unknown"
         intake_state["risk_flags"]               = detected.get("risk_flags") or intake_state.get("risk_flags") or []
         intake_state["client_role"]              = detected.get("client_role") or intake_state.get("client_role") or "unknown"
         intake_state["other_party"]              = detected.get("other_party") or intake_state.get("other_party") or "unknown"
@@ -817,7 +896,9 @@ def process_turn(session: dict, user_message: str) -> dict:
     #   1. Emergency triage (risk flags / immediate urgency)
     #   2. Indirect vetting (uncertain facts need corroboration — only after turn 2)
     #   3. Normal follow-up (next open question from checklist)
-    if intake_state.get("urgency_signal") == "immediate" or intake_state.get("risk_flags"):
+    # Safety-first response only fires when urgency is still "immediate".
+    # Once de-escalated to "near_term" (client confirmed safe), proceed to normal follow-up.
+    if intake_state.get("urgency_signal") == "immediate":
         reply = _generate_safety_first_response(intake_state)
     elif intake_state.get("turn_count", 0) >= 2:
         vetting_q = _get_vetting_question(intake_state, context)
@@ -826,7 +907,15 @@ def process_turn(session: dict, user_message: str) -> dict:
         reply = _generate_followup(intake_state, msg, context)
 
     # ── Readiness check — decide whether to advance to Stage 2 ───────────────
-    ready, missing = _check_readiness(intake_state, context)
+    # Minimum two substantive exchanges: a single opening message, however
+    # detailed, never gives enough context for grounded legal analysis.
+    # Note: urgency/risk_flags affect the *reply* (safety-first response above)
+    # but do NOT permanently block advancement — after enough turns the client
+    # should still be able to reach analysis even for urgent matters.
+    if intake_state.get("turn_count", 0) < 2:
+        ready, missing = False, []
+    else:
+        ready, missing = _check_readiness(intake_state, context)
     intake_state["ready_for_stage2"] = ready
     if missing:
         # Persist the missing items as open questions for Stage 2 handoff

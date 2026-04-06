@@ -13,7 +13,7 @@ from html import escape as _html_escape
 from queue import Queue, Empty
 from typing import List, Optional
 
-from fastapi import BackgroundTasks, FastAPI, Query, HTTPException, Depends, Header, Request
+from fastapi import BackgroundTasks, FastAPI, Query, HTTPException, Depends, Header, Request, UploadFile, File
 from fastapi.responses import FileResponse, JSONResponse, StreamingResponse, HTMLResponse
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel, Field
@@ -423,6 +423,11 @@ def _normalize_workflow_state(raw_state: Optional[dict], messages: Optional[list
         last_response_type = ""
     last_response_type = last_response_type.strip()
 
+    # Preserve Stage 1 structured intake state (opaque blob — pass through as-is)
+    intake_state = state.get("intakeState")
+    if not isinstance(intake_state, dict):
+        intake_state = None
+
     return {
         "stage": stage,
         "facts": facts,
@@ -431,6 +436,7 @@ def _normalize_workflow_state(raw_state: Optional[dict], messages: Optional[list
         "analysisStage": analysis_stage,
         "factsSummary": facts_summary,
         "lastResponseType": last_response_type,
+        "intakeState": intake_state,
     }
 
 
@@ -653,6 +659,7 @@ class SubmitCaseRequest(BaseModel):
     # chat_mode: "legal_opinion" | "legal_research" | "general" (optional; default router when empty)
     mode: str | None = None
     model_override: str | None = None
+    workflowState: dict = Field(default_factory=dict)
 
 
 class QAPair(BaseModel):
@@ -666,6 +673,7 @@ class InterviewStepRequest(BaseModel):
     qa_history: list[QAPair] = []
     mode: str | None = None      # "legal_opinion" | "legal_research" | "general"
     model_override: str | None = None
+    workflowState: dict = Field(default_factory=dict)
 
 
 class ContinueChatRequest(BaseModel):
@@ -1105,6 +1113,7 @@ def _map_chat_result_to_ui(result: dict, pre_draft_msg: str = "") -> dict:
             "model_used": get_last_model_used(),
             "analysis_stage": analysis_stage,
             "facts_summary": facts_summary,
+            "intake_state": result.get("intake_state") or None,
         }
     if phase == "done" and result.get("response"):
         resp = result["response"]
@@ -2249,6 +2258,111 @@ async def _stream_sse_queue(queue: Queue, loop):
             yield f"event: token\ndata: {json.dumps(payload)}\n\n"
 
 
+@app.post("/upload-document")
+async def upload_document(file: UploadFile = File(...)):
+    """
+    Extract plain text from an uploaded document or image.
+    Supported formats:
+      - Text-based PDF (.pdf)          → pypdf text extraction
+      - Scanned/image-based PDF (.pdf) → pymupdf renders pages → OpenAI Vision OCR
+      - Word document (.docx, .doc)    → python-docx paragraph extraction
+      - Images (.jpg, .jpeg, .png,
+                .webp, .tiff, .bmp)   → OpenAI Vision OCR directly
+
+    Returns {"text": str, "filename": str, "char_count": int, "method": str}.
+    The caller injects the text into the chat composer for review before submitting.
+    """
+    import io, base64
+    from llm.ollama_client import ocr_pages_with_vision
+
+    _IMAGE_EXTS = {"jpg", "jpeg", "png", "webp", "tiff", "tif", "bmp"}
+    _IMAGE_MIME = {
+        "jpg": "image/jpeg", "jpeg": "image/jpeg", "png": "image/png",
+        "webp": "image/webp", "tiff": "image/tiff", "tif": "image/tiff",
+        "bmp": "image/bmp",
+    }
+    # Characters per page below this threshold → treat PDF as scanned
+    _SCANNED_CHARS_THRESHOLD = 80
+
+    filename = (file.filename or "").strip()
+    ext = filename.rsplit(".", 1)[-1].lower() if "." in filename else ""
+    allowed = {"pdf", "docx", "doc"} | _IMAGE_EXTS
+    if ext not in allowed:
+        raise HTTPException(
+            status_code=400,
+            detail=(
+                "Unsupported file type. Accepted: PDF (.pdf), Word (.docx), "
+                "or image (.jpg, .jpeg, .png, .webp, .tiff, .bmp)."
+            ),
+        )
+
+    content = await file.read()
+    text = ""
+    method = "text"
+
+    try:
+        # ── Image files ───────────────────────────────────────────────────────
+        if ext in _IMAGE_EXTS:
+            mime = _IMAGE_MIME.get(ext, "image/png")
+            b64 = base64.b64encode(content).decode()
+            text = ocr_pages_with_vision([(b64, mime)])
+            method = "vision_ocr"
+
+        # ── PDF ───────────────────────────────────────────────────────────────
+        elif ext == "pdf":
+            from pypdf import PdfReader
+            reader = PdfReader(io.BytesIO(content))
+            pages_text = [page.extract_text() or "" for page in reader.pages]
+            extracted = "\n\n".join(p.strip() for p in pages_text if p.strip())
+
+            # Decide if scanned: average chars per page is very low
+            num_pages = max(len(reader.pages), 1)
+            avg_chars = len(extracted) / num_pages
+            if avg_chars >= _SCANNED_CHARS_THRESHOLD:
+                text = extracted
+                method = "text"
+            else:
+                # Render each page to an image and OCR via vision
+                import fitz  # pymupdf
+                doc = fitz.open(stream=content, filetype="pdf")
+                images_b64: list[tuple[str, str]] = []
+                for page in doc:
+                    mat = fitz.Matrix(2.0, 2.0)  # 2× zoom → better OCR accuracy
+                    pix = page.get_pixmap(matrix=mat)
+                    img_bytes = pix.tobytes("png")
+                    images_b64.append((base64.b64encode(img_bytes).decode(), "image/png"))
+                doc.close()
+                text = ocr_pages_with_vision(images_b64)
+                method = "vision_ocr"
+
+        # ── Word document ─────────────────────────────────────────────────────
+        else:
+            import docx as _docx
+            doc = _docx.Document(io.BytesIO(content))
+            paragraphs = [p.text.strip() for p in doc.paragraphs if p.text.strip()]
+            text = "\n\n".join(paragraphs)
+            method = "text"
+
+    except HTTPException:
+        raise
+    except Exception as exc:
+        logger.warning("Document extraction failed for %s: %s", filename, exc)
+        raise HTTPException(
+            status_code=422,
+            detail="Could not extract text from the document. The file may be corrupted or unsupported.",
+        )
+
+    if not text.strip():
+        raise HTTPException(
+            status_code=422,
+            detail=(
+                "No readable text found. For scanned documents this usually means the "
+                "OpenAI Vision API call failed — check your OPENAI_API_KEY and try again."
+            ),
+        )
+    return {"text": text.strip(), "filename": filename, "char_count": len(text), "method": method}
+
+
 @app.post("/chat")
 def chat(request: ChatRequest):
     """
@@ -2302,6 +2416,7 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
             "retrieved": [],
         }
     try:
+        workflow_state = _normalize_workflow_state(request.workflowState)
         conv = [{"role": "user", "content": text}]
         result = process_chat(
             conversation=conv,
@@ -2310,6 +2425,7 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
             facts_summary=None,
             chat_mode=mode,
             model_override=model_override,
+            workflow_state=workflow_state,
         )
         pre_draft_msg = ""
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
@@ -2326,6 +2442,7 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
                 result_count=result.get("result_count"),
                 chat_mode=mode,
                 model_override=model_override,
+                workflow_state=workflow_state,
                 analysis_mode=result.get("analysis_mode"),
             )
         if result.get("phase") == "done":
@@ -2355,6 +2472,7 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
         }
 
     try:
+        workflow_state = _normalize_workflow_state(request.workflowState)
         # Build conversation from interview transcript:
         # - user: overall facts
         # - assistant/user alternation for each Q/A turn
@@ -2371,6 +2489,7 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
             facts_summary=None,
             chat_mode=mode,
             model_override=model_override,
+            workflow_state=workflow_state,
         )
 
         pre_draft_msg = ""
@@ -2388,6 +2507,7 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
                 result_count=result.get("result_count"),
                 chat_mode=mode,
                 model_override=model_override,
+                workflow_state=workflow_state,
                 analysis_mode=result.get("analysis_mode"),
             )
 
@@ -2510,7 +2630,7 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
         queue.put(("result", _chat_error_fallback(str(e)[:200])))
 
 
-def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: str | None = None, model_override: str | None = None) -> None:
+def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: str | None = None, model_override: str | None = None, workflow_state: dict | None = None) -> None:
     """Run submit_case logic with progress streaming."""
     try:
         queue.put(("step", {"message": "Reviewing the facts you shared", "icon": ""}))
@@ -2532,6 +2652,7 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: 
             step_callback=step_callback,
             token_callback=token_callback,
             model_override=model_override,
+            workflow_state=workflow_state,
         )
         pre_draft_msg = ""
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
@@ -2551,6 +2672,7 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: 
                 step_callback=step_callback,
                 token_callback=token_callback,
                 model_override=model_override,
+                workflow_state=workflow_state,
                 analysis_mode=result.get("analysis_mode"),
             )
         if result.get("phase") == "done":
@@ -2562,7 +2684,7 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: 
         queue.put(("result", _chat_error_fallback(str(e)[:200])))
 
 
-def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue, user_id: str, mode: str | None = None, model_override: str | None = None) -> None:
+def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue, user_id: str, mode: str | None = None, model_override: str | None = None, workflow_state: dict | None = None) -> None:
     """Run interview_step logic with progress streaming."""
     try:
         t_total = time.perf_counter()
@@ -2597,6 +2719,7 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
             step_callback=step_callback,
             token_callback=token_callback,
             model_override=model_override,
+            workflow_state=workflow_state,
         )
         _log_pipeline_step(
             "interview_step.process_chat.fact_collection",
@@ -2622,6 +2745,7 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
                 step_callback=step_callback,
                 token_callback=token_callback,
                 model_override=model_override,
+                workflow_state=workflow_state,
                 analysis_mode=result.get("analysis_mode"),
             )
             _log_pipeline_step(
@@ -2658,9 +2782,10 @@ async def submit_case_stream(request: SubmitCaseRequest, user: dict = Depends(_u
     queue = Queue()
     loop = asyncio.get_event_loop()
     user_id = user.get("id", _ANONYMOUS_EMAIL)
+    workflow_state = _normalize_workflow_state(request.workflowState)
 
     def run_in_thread():
-        _run_submit_case_with_progress(text, queue, user_id, mode, model_override)
+        _run_submit_case_with_progress(text, queue, user_id, mode, model_override, workflow_state=workflow_state)
 
     thread = __import__("threading").Thread(target=run_in_thread)
     thread.start()
@@ -2696,9 +2821,10 @@ async def interview_step_stream(request: InterviewStepRequest, user: dict = Depe
     queue = Queue()
     loop = asyncio.get_event_loop()
     user_id = user.get("id", _ANONYMOUS_EMAIL)
+    workflow_state = _normalize_workflow_state(request.workflowState)
 
     def run_in_thread():
-        _run_interview_step_with_progress(facts, qa_history, queue, user_id, mode=mode, model_override=model_override)
+        _run_interview_step_with_progress(facts, qa_history, queue, user_id, mode=mode, model_override=model_override, workflow_state=workflow_state)
 
     thread = __import__("threading").Thread(target=run_in_thread)
     thread.start()

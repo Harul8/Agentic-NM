@@ -1207,11 +1207,52 @@ Return JSON only:"""
         if focus_query and focus_query.lower() not in seen_fb:
             _add_query(queries, seen_fb, focus_query)
 
-    out = list(queries)
+    def _consolidate(qs: list[str]) -> list[str]:
+        """
+        Remove near-duplicate queries using Jaccard token overlap.
+        Two queries are considered duplicates when they share >= 60% of
+        their meaningful tokens (4+ chars, ignoring common stopwords).
+        Earlier queries (higher issue priority) are kept; later near-duplicates
+        are dropped.  Single-token queries are never consolidated away.
+        """
+        _STOP = {"with", "from", "that", "this", "have", "there", "their",
+                 "about", "which", "would", "could", "been", "were", "into"}
+        _JACCARD_THRESHOLD = 0.60
+
+        def _tokens(text: str) -> frozenset[str]:
+            return frozenset(
+                t for t in re.findall(r"[a-zA-Z]{4,}", text.lower())
+                if t not in _STOP
+            )
+
+        kept: list[str] = []
+        kept_tokens: list[frozenset] = []
+        for q in qs:
+            qt = _tokens(q)
+            if not qt:
+                kept.append(q)
+                kept_tokens.append(qt)
+                continue
+            duplicate = False
+            for kt in kept_tokens:
+                if not kt:
+                    continue
+                intersection = len(qt & kt)
+                union = len(qt | kt)
+                if union and intersection / union >= _JACCARD_THRESHOLD:
+                    duplicate = True
+                    break
+            if not duplicate:
+                kept.append(q)
+                kept_tokens.append(qt)
+        return kept
+
+    out = _consolidate(queries)
     if expansion_debug is not None:
         expansion_debug["model_raw_response"] = (raw_model or "")[:_MODEL_RAW_RESPONSE_DEBUG_MAX_CHARS]
         expansion_debug["issues_from_model"] = list(issues_from_model)
         expansion_debug["parsed_queries_from_model"] = list(model_parsed)
+        expansion_debug["consolidated_dropped"] = [q for q in queries if q not in out]
         expansion_debug["final_expanded_queries"] = list(out)
         expansion_debug["queries_added_after_model"] = [q for q in out if q not in model_parsed]
     return out

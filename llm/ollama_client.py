@@ -502,6 +502,59 @@ def _extract_openai_text(resp) -> str:
     return "\n".join(parts).strip()
 
 
+# ---------------------------------------------------------------------------
+# Vision OCR — extract text from images via OpenAI vision model
+# ---------------------------------------------------------------------------
+
+# Separate vision model config: gpt-4o-mini is the cheapest reliable vision model.
+# Override via OPENAI_MODEL_VISION env var if needed.
+_OPENAI_MODEL_VISION = os.environ.get("OPENAI_MODEL_VISION", "gpt-4o-mini").strip() or "gpt-4o-mini"
+_OCR_MAX_TOKENS = 4000  # per page / image
+_OCR_SYSTEM_PROMPT = (
+    "You are a document OCR assistant. Extract ALL text visible in the image exactly as it appears. "
+    "Preserve paragraphs, headings, lists, and tables as plain text. "
+    "Do NOT summarise, interpret, or add any commentary — return only the extracted text."
+)
+
+
+def ocr_pages_with_vision(images_b64: list[tuple[str, str]]) -> str:
+    """
+    OCR a list of images using the OpenAI vision model.
+
+    Args:
+        images_b64: list of (base64_string, media_type) tuples,
+                    e.g. [("iVBOR...", "image/png"), ...]
+
+    Returns:
+        Extracted text from all images joined by double newlines.
+    """
+    import base64 as _b64  # stdlib — already available
+    client = _get_openai_client()
+    pages: list[str] = []
+    for b64_data, media_type in images_b64:
+        try:
+            resp = client.chat.completions.create(
+                model=_OPENAI_MODEL_VISION,
+                messages=[{
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": _OCR_SYSTEM_PROMPT},
+                        {"type": "image_url", "image_url": {
+                            "url": f"data:{media_type};base64,{b64_data}",
+                            "detail": "high",
+                        }},
+                    ],
+                }],
+                max_completion_tokens=_OCR_MAX_TOKENS,
+            )
+            text = (resp.choices[0].message.content or "").strip()
+            if text:
+                pages.append(text)
+        except Exception as exc:
+            logger.warning("Vision OCR failed for one image: %s", exc)
+    return "\n\n".join(pages)
+
+
 import re as _re
 _THINK_BLOCK_RE = _re.compile(r"<think>.*?</think>", _re.DOTALL | _re.IGNORECASE)
 
