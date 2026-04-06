@@ -55,66 +55,112 @@ _runtime_mode_logged_for_index: set[str] = set()
 
 
 # ---------------------------------------------------------------------------
-# Query normalisation — expand Indian legal abbreviations
+# Query normalisation — LLM-driven, with regex fallback
 # ---------------------------------------------------------------------------
-# BM25 scores near-zero when a query says "IPC" but bare-act PDF text reads
-# "Indian Penal Code" throughout.  FAISS also produces weaker embeddings for
-# abbreviations vs. full act names.  This table expands the most common Indian
-# legal abbreviations BEFORE both FAISS encoding and BM25 scoring.
+# The LLM rewrites the query into its fullest canonical form: expands any
+# abbreviation, shorthand, or informal reference it recognises (IPC, RERA,
+# "cheque bounce", "498A case", "420 IPC", etc.).  Results are cached so
+# repeated queries within a session pay zero extra cost.
+#
+# The static regex table below is kept ONLY as a silent fallback in case the
+# LLM call fails (network error, budget exceeded, etc.).
 
-_LEGAL_ABBREV: list = [
-    # New criminal codes (BNS family — must come before shorter patterns)
+_QUERY_NORM_PROMPT = (
+    "You are normalizing an Indian legal search query for vector search over Indian bare acts "
+    "and case laws.\n\n"
+    "Rewrite the query by expanding all legal abbreviations, shorthand, and informal references "
+    "to their full official names. Keep section/article numbers exactly as written. "
+    "Do not add legal analysis or interpretation. Return ONLY the rewritten query — "
+    "no explanation, no preamble.\n\n"
+    "Examples:\n"
+    "  IPC 302           →  Indian Penal Code Section 302 murder\n"
+    "  498A case         →  Section 498A Indian Penal Code cruelty to wife\n"
+    "  cheque bounce     →  dishonour of cheque Negotiable Instruments Act\n"
+    "  RERA complaint    →  Real Estate Regulation and Development Act complaint\n"
+    "  RTI rejected      →  Right to Information Act application rejected\n"
+    "  420 fraud         →  Section 420 Indian Penal Code cheating and dishonesty\n"
+    "  DRT recovery      →  Debt Recovery Tribunal recovery of debts due to banks\n"
+    "  Art 226 petition  →  Article 226 Constitution of India writ petition High Court\n\n"
+    "Query: {query}\n"
+    "Normalized:"
+)
+
+# In-memory cache: normalized query string → expanded string
+_query_norm_cache: dict[str, str] = {}
+_query_norm_cache_lock = threading.Lock()
+
+# Regex table kept purely as fallback when the LLM call fails
+_LEGAL_ABBREV_FALLBACK: list = [
     (re.compile(r'\bBNSS\b', re.IGNORECASE), 'Bharatiya Nagarik Suraksha Sanhita'),
     (re.compile(r'\bBNS\b',  re.IGNORECASE), 'Bharatiya Nyaya Sanhita'),
     (re.compile(r'\bBSA\b',  re.IGNORECASE), 'Bharatiya Sakshya Adhiniyam'),
-    # Old criminal codes
     (re.compile(r'\bCrPC\b', re.IGNORECASE), 'Code of Criminal Procedure'),
     (re.compile(r'\bIPC\b',  re.IGNORECASE), 'Indian Penal Code'),
-    # Civil procedure & evidence
     (re.compile(r'\bCPC\b',  re.IGNORECASE), 'Code of Civil Procedure'),
     (re.compile(r'\bIEA\b',  re.IGNORECASE), 'Indian Evidence Act'),
-    # Property & contract
     (re.compile(r'\bTP\s+Act\b', re.IGNORECASE), 'Transfer of Property Act'),
     (re.compile(r'\bTPA\b',      re.IGNORECASE), 'Transfer of Property Act'),
     (re.compile(r'\bSRA\b',      re.IGNORECASE), 'Specific Relief Act'),
     (re.compile(r'\bICA\b',      re.IGNORECASE), 'Indian Contract Act'),
-    (re.compile(r'\bRA\b',       re.IGNORECASE), 'Registration Act'),
-    # Family law
     (re.compile(r'\bHMA\b', re.IGNORECASE), 'Hindu Marriage Act'),
     (re.compile(r'\bHSA\b', re.IGNORECASE), 'Hindu Succession Act'),
     (re.compile(r'\bHUF\b', re.IGNORECASE), 'Hindu Undivided Family'),
-    # Labour & insolvency
     (re.compile(r'\bID\s+Act\b', re.IGNORECASE), 'Industrial Disputes Act'),
     (re.compile(r'\bIBC\b',  re.IGNORECASE), 'Insolvency and Bankruptcy Code'),
-    # Securities & IP
     (re.compile(r'\bSEBI\b', re.IGNORECASE), 'Securities and Exchange Board of India'),
-    (re.compile(r'\bTMA\b',  re.IGNORECASE), 'Trade Marks Act'),
-    # Cyber / technology
-    (re.compile(r'\bIT\s+Act\b', re.IGNORECASE), 'Information Technology Act'),
-    # Special statutes
     (re.compile(r'\bNDPS\b',     re.IGNORECASE), 'Narcotic Drugs and Psychotropic Substances Act'),
     (re.compile(r'\bPMLA\b',     re.IGNORECASE), 'Prevention of Money Laundering Act'),
     (re.compile(r'\bPOCSO\b',    re.IGNORECASE), 'Protection of Children from Sexual Offences Act'),
     (re.compile(r'\bPC\s+Act\b', re.IGNORECASE), 'Prevention of Corruption Act'),
     (re.compile(r'\bPWDVA\b',    re.IGNORECASE), 'Protection of Women from Domestic Violence Act'),
     (re.compile(r'\bDV\s+Act\b', re.IGNORECASE), 'Protection of Women from Domestic Violence Act'),
-    # State reorganisation
-    (re.compile(r'\bAPROR\b',      re.IGNORECASE), 'Andhra Pradesh Reorganisation Act'),
-    (re.compile(r'\bAP\s+Reorg\b', re.IGNORECASE), 'Andhra Pradesh Reorganisation Act'),
+    (re.compile(r'\bIT\s+Act\b', re.IGNORECASE), 'Information Technology Act'),
 ]
+
+
+def _regex_normalize_fallback(query: str) -> str:
+    """Static regex fallback — used only when the LLM call fails."""
+    for pattern, expansion in _LEGAL_ABBREV_FALLBACK:
+        query = pattern.sub(expansion, query)
+    return query
 
 
 def normalize_legal_query(query: str) -> str:
     """
-    Expand Indian legal abbreviations in a query string.
+    Normalize a legal search query before FAISS embedding and BM25 scoring.
 
-    Called at the start of hybrid_search() so that both the FAISS embedding
-    and the BM25 tokeniser see full act names rather than abbreviations.
-    Example: "IPC section 302" → "Indian Penal Code section 302"
+    Uses an LLM (fast tier) to dynamically expand abbreviations, informal
+    references, and shorthand into their full canonical form.  Falls back to
+    the static regex table if the LLM call fails.  Results are cached in
+    memory so repeated queries in the same server session are free.
     """
-    for pattern, expansion in _LEGAL_ABBREV:
-        query = pattern.sub(expansion, query)
-    return query
+    q = (query or "").strip()
+    if not q:
+        return q
+
+    cache_key = q.lower()
+    cached = _query_norm_cache.get(cache_key)
+    if cached is not None:
+        return cached
+
+    try:
+        from llm.ollama_client import ask_llm
+        prompt = _QUERY_NORM_PROMPT.format(query=q)
+        result = (ask_llm(prompt, task_hint="fast") or "").strip()
+        # Sanity-check: result must be non-empty and not absurdly long
+        if result and len(result) <= max(len(q) * 8, 200):
+            with _query_norm_cache_lock:
+                _query_norm_cache[cache_key] = result
+            logger.debug("Query normalized (LLM): %r → %r", q, result)
+            return result
+        logger.warning("LLM query normalization returned unexpected output; using regex fallback")
+    except Exception as exc:
+        logger.warning("LLM query normalization failed (%s); using regex fallback", exc)
+
+    result = _regex_normalize_fallback(q)
+    with _query_norm_cache_lock:
+        _query_norm_cache[cache_key] = result
+    return result
 
 
 def _get_embedder():

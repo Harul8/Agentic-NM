@@ -1,11 +1,12 @@
 """
-Ollama client — single interface for all LLM calls.
+OpenAI client — single interface for all LLM calls.
 
 Features:
 - Retry with exponential backoff (connection/timeout errors only)
 - Configurable timeout
-- Health check for /health endpoint and startup validation
-- GPU detection (nvidia-smi) and model display names for UI
+- Health check for /health endpoint
+- GPU detection (nvidia-smi)
+- 3-tier OpenAI model system (gpt5mini, gpt51mini, gpt54mini)
 """
 
 import json
@@ -18,28 +19,20 @@ import contextvars
 from contextlib import contextmanager
 from datetime import datetime, timedelta
 
-import requests
-from requests.adapters import HTTPAdapter
 from openai import OpenAI
 import tiktoken
 
 from llm.config import (
-    LLM_PROVIDER,
-    OLLAMA_MODEL,
-    OLLAMA_MODEL_FAST,
-    OLLAMA_MODEL_LONG_CONTEXT,
+    MODEL_TIERS,
+    DEFAULT_TIER,
+    get_tier,
     LONG_CONTEXT_THRESHOLD,
-    OLLAMA_KEEP_ALIVE,
     OLLAMA_TIMEOUT_FAST_SEC,
     OLLAMA_TIMEOUT_DEFAULT_SEC,
     OLLAMA_TIMEOUT_LONG_SEC,
     OLLAMA_RETRIES_FAST,
     OLLAMA_RETRIES_DEFAULT,
     OLLAMA_RETRIES_LONG,
-    OLLAMA_THINK_ENABLED,
-    OLLAMA_MODEL_DISPLAY,
-    OLLAMA_MODEL_FAST_DISPLAY,
-    OLLAMA_MODEL_LONG_CONTEXT_DISPLAY,
     OPENAI_MODEL,
     OPENAI_MODEL_FAST,
     OPENAI_MODEL_LONG_CONTEXT,
@@ -94,11 +87,6 @@ OPENAI_FAST_OUTPUT_TOKEN_LIMIT = 4000
 OPENAI_HOURLY_INPUT_TOKEN_LIMIT = 500000
 OPENAI_HOURLY_OUTPUT_TOKEN_LIMIT = 100000
 
-_session_lock = threading.Lock()
-_session = None
-
-# Thread-local: model name used by the last ask_llm call in this thread (for API to include in response)
-_last_model_used = threading.local()
 _openai_client = None
 _openai_budget_lock = threading.Lock()
 _openai_budget_window_start = datetime.utcnow()
@@ -106,29 +94,10 @@ _openai_hourly_input_used = 0
 _openai_hourly_output_used = 0
 _request_model_override = contextvars.ContextVar("request_model_override", default=None)
 
+# Thread-local: model name used by the last ask_llm call in this thread (for API to include in response)
+_last_model_used = threading.local()
 
-def _is_openai_provider() -> bool:
-    return LLM_PROVIDER == "openai"
-
-
-def _is_openai_request(explicit_model: str | None = None, chosen_model: str | None = None) -> bool:
-    if _is_openai_provider():
-        return True
-    explicit = (explicit_model or "").strip().lower()
-    if explicit in ("provider:openai", "openai"):
-        return True
-    return chosen_model in {OPENAI_MODEL, OPENAI_MODEL_FAST, OPENAI_MODEL_LONG_CONTEXT}
-
-
-def _is_openai_forced(explicit_model: str | None = None, chosen_model: str | None = None) -> bool:
-    """
-    True when this request is explicitly pinned to OpenAI (via provider override
-    or OpenAI model selection), so local-model fallback must never be used.
-    """
-    explicit = (explicit_model or "").strip().lower()
-    if explicit in ("provider:openai", "openai"):
-        return True
-    return chosen_model in {OPENAI_MODEL, OPENAI_MODEL_FAST, OPENAI_MODEL_LONG_CONTEXT}
+RETRY_BACKOFF_BASE = 2  # seconds; doubles each retry (2s, 4s)
 
 
 def _get_openai_client() -> OpenAI:
@@ -136,24 +105,9 @@ def _get_openai_client() -> OpenAI:
     if _openai_client is None:
         key = (os.environ.get("OPENAI_API_KEY") or "").strip()
         if not key:
-            raise RuntimeError("OPENAI_API_KEY is not set while LLM_PROVIDER=openai")
+            raise RuntimeError("OPENAI_API_KEY is not set")
         _openai_client = OpenAI(api_key=key)
     return _openai_client
-
-
-def _trim_prompt_for_context(prompt: str) -> str:
-    """
-    Trim prompt to LONG_CONTEXT_THRESHOLD chars so we always stay on the
-    default model instead of switching to a separate long-context model.
-    """
-    p = prompt or ""
-    if len(p) <= LONG_CONTEXT_THRESHOLD:
-        return p
-    logger.info(
-        "Prompt length %d exceeds %d; trimming for default model",
-        len(p), LONG_CONTEXT_THRESHOLD,
-    )
-    return p[:LONG_CONTEXT_THRESHOLD]
 
 
 def _count_tokens(text: str, model_name: str) -> int:
@@ -216,50 +170,41 @@ def _refund_openai_output_budget(reserved: int, actual: int) -> None:
         _openai_hourly_output_used = max(0, _openai_hourly_output_used - refund)
 
 
-def _get_model_for_prompt(
-    prompt: str,
-    explicit_model: str = None,
-    task_hint: str = None,
-) -> str:
+def _get_model_for_prompt(prompt: str, explicit_model: str = None, task_hint: str = None) -> str:
     """
-    Decide which Ollama model to use for this request. Priority order:
+    Decide which OpenAI model to use for this request. Priority order:
 
-    1. explicit_model — if the caller passed a model name, use it.
-    2. task_hint == "fast" — use the fast intake model when configured.
-    3. Otherwise — use default model (e.g. Qwen 3 8B).
+    1. explicit_model — if the caller passed a model/tier name, use it.
+    2. task_hint == "fast" — use the fast tier model when configured.
+    3. Otherwise — use default tier model.
 
-    Long prompts are trimmed to LONG_CONTEXT_THRESHOLD before request dispatch,
-    so we stay on a single default model for both normal and long requests.
+    Resolves tier keys (e.g. "tier:gpt5mini") to actual model names.
     """
-    # Request-scoped override (set by API flow) so helper calls without explicit_model
-    # still follow the frontend-selected provider/model.
     if not explicit_model:
         explicit_model = _request_model_override.get()
 
+    # Resolve tier key from override string (e.g. "tier:gpt5mini" → "gpt5mini")
+    tier_key = None
     if explicit_model:
-        normalized = explicit_model.strip().lower()
-        if normalized in ("provider:openai", "openai"):
-            if task_hint == "fast":
-                return OPENAI_MODEL_FAST
-            if task_hint == "long_context":
-                return OPENAI_MODEL_LONG_CONTEXT
-            input_tokens = _count_tokens(prompt, OPENAI_MODEL)
-            return OPENAI_MODEL if input_tokens > OPENAI_ANALYSIS_SWITCH_INPUT_TOKENS else OPENAI_MODEL_FAST
-        if normalized in ("provider:qwen", "qwen", "default"):
-            if task_hint == "fast":
-                return OLLAMA_MODEL_FAST
-            return OLLAMA_MODEL
-        return explicit_model
-    if _is_openai_provider():
-        if task_hint == "fast":
-            return OPENAI_MODEL_FAST
-        if task_hint == "long_context":
-            return OPENAI_MODEL_LONG_CONTEXT
-        input_tokens = _count_tokens(prompt, OPENAI_MODEL)
-        return OPENAI_MODEL if input_tokens > OPENAI_ANALYSIS_SWITCH_INPUT_TOKENS else OPENAI_MODEL_FAST
+        s = explicit_model.strip().lower()
+        if s.startswith("tier:"):
+            tier_key = s[5:]
+        elif s in MODEL_TIERS:
+            tier_key = s
+        # Legacy provider strings — default tier
+        elif s in ("provider:openai", "openai"):
+            tier_key = DEFAULT_TIER
+
+    tier = get_tier(tier_key)
+
     if task_hint == "fast":
-        return OLLAMA_MODEL_FAST
-    return OLLAMA_MODEL
+        return tier["fast"]
+    if task_hint == "long_context":
+        return tier["large_context"]
+
+    # Auto-switch to regular model for larger inputs
+    input_tokens = _count_tokens(prompt, tier["regular"])
+    return tier["regular"] if input_tokens > OPENAI_ANALYSIS_SWITCH_INPUT_TOKENS else tier["fast"]
 
 
 @contextmanager
@@ -267,7 +212,7 @@ def use_request_model_override(model_override: str | None):
     """
     Request-scoped model override for all ask_llm() calls in the current context.
     Useful when helper functions don't pass explicit_model but should follow
-    frontend-selected provider/model (e.g. OpenAI).
+    frontend-selected tier (e.g. gpt51mini).
     """
     token = _request_model_override.set(model_override)
     try:
@@ -302,23 +247,12 @@ def get_gpu_info() -> list:
 
 
 def get_display_name_for_model(model_name: str) -> str:
-    """Map internal model name to UI-friendly label (e.g. 'Qwen 2.5 7B')."""
+    """Map internal model name to UI-friendly tier display name."""
     if not model_name:
         return ""
-    if _is_openai_provider():
-        if OPENAI_MODEL in model_name or model_name in OPENAI_MODEL:
-            return OPENAI_MODEL_DISPLAY
-        if OPENAI_MODEL_FAST in model_name or model_name in OPENAI_MODEL_FAST:
-            return OPENAI_MODEL_FAST_DISPLAY
-        if OPENAI_MODEL_LONG_CONTEXT in model_name or model_name in OPENAI_MODEL_LONG_CONTEXT:
-            return OPENAI_MODEL_LONG_CONTEXT_DISPLAY
-        return model_name
-    if OLLAMA_MODEL in model_name or model_name in OLLAMA_MODEL:
-        return OLLAMA_MODEL_DISPLAY
-    if OLLAMA_MODEL_FAST in model_name or model_name in OLLAMA_MODEL_FAST:
-        return OLLAMA_MODEL_FAST_DISPLAY
-    if OLLAMA_MODEL_LONG_CONTEXT in model_name or model_name in OLLAMA_MODEL_LONG_CONTEXT:
-        return OLLAMA_MODEL_LONG_CONTEXT_DISPLAY
+    for tier in MODEL_TIERS.values():
+        if model_name in (tier["fast"], tier["regular"], tier["large_context"]):
+            return tier["display"]
     return model_name
 
 
@@ -329,8 +263,8 @@ def get_model_display_for_prompt(
 ) -> tuple:
     """
     Return (display_name, is_switched) for the model that would be used for this prompt.
-    display_name: e.g. 'Qwen 2.5 7B' or 'Llama 3.1 8B'.
-    is_switched: True when long-context model is used (so UI can show "Switching to X model").
+    display_name: e.g. 'GPT-5 Mini'
+    is_switched: False (always, since we don't have a separate long-context model anymore)
     """
     chosen = _get_model_for_prompt(prompt, explicit_model, task_hint)
     display = get_display_name_for_model(chosen)
@@ -346,57 +280,17 @@ def get_last_model_used() -> str:
     except Exception:
         return ""
 
-OLLAMA_BASE_URL = (os.environ.get("OLLAMA_BASE_URL") or "http://localhost:11434").strip()
-OLLAMA_GENERATE_URL = f"{OLLAMA_BASE_URL}/api/generate"
 
-RETRY_BACKOFF_BASE = 2  # seconds; doubles each retry (2s, 4s)
-
-
-def _get_http_session() -> requests.Session:
-    """Reuse HTTP connections to Ollama so repeated local calls stay cheap."""
-    global _session
-    if _session is None:
-        with _session_lock:
-            if _session is None:
-                session = requests.Session()
-                adapter = HTTPAdapter(pool_connections=8, pool_maxsize=16)
-                session.mount("http://", adapter)
-                session.mount("https://", adapter)
-                _session = session
-    return _session
-
-
-def _resolve_timeout_and_retries(
-    prompt: str,
-    chosen_model: str,
-    task_hint: str = None,
-    timeout: int = None,
-) -> tuple[int, int]:
+def _resolve_timeout_and_retries(prompt: str, chosen_model: str, task_hint: str = None, timeout: int = None) -> tuple[int, int]:
     """Choose task-appropriate timeout and retry policy."""
     if timeout is not None:
-        # If caller overrides timeout, keep retries conservative for fast tasks.
         retries = OLLAMA_RETRIES_FAST if task_hint == "fast" else OLLAMA_RETRIES_DEFAULT
         return timeout, retries
-    if _is_openai_provider():
-        if task_hint == "fast" or chosen_model == OPENAI_MODEL_FAST:
-            return OLLAMA_TIMEOUT_FAST_SEC, OLLAMA_RETRIES_FAST
-        if task_hint == "long_context" or chosen_model == OPENAI_MODEL_LONG_CONTEXT:
-            return OLLAMA_TIMEOUT_LONG_SEC, OLLAMA_RETRIES_LONG
-        return OLLAMA_TIMEOUT_DEFAULT_SEC, OLLAMA_RETRIES_DEFAULT
-    if task_hint == "fast" or chosen_model == OLLAMA_MODEL_FAST:
+    if task_hint == "fast":
         return OLLAMA_TIMEOUT_FAST_SEC, OLLAMA_RETRIES_FAST
+    if task_hint == "long_context":
+        return OLLAMA_TIMEOUT_LONG_SEC, OLLAMA_RETRIES_LONG
     return OLLAMA_TIMEOUT_DEFAULT_SEC, OLLAMA_RETRIES_DEFAULT
-
-
-def _extract_text(data: dict) -> str:
-    """Get generated text from Ollama response. Handles different response shapes."""
-    if not isinstance(data, dict):
-        return ""
-    for key in ("response", "message", "content", "text"):
-        val = data.get(key)
-        if isinstance(val, str) and val.strip():
-            return val
-    return ""
 
 
 def _extract_openai_text(resp) -> str:
@@ -502,120 +396,45 @@ def _extract_openai_text(resp) -> str:
     return "\n".join(parts).strip()
 
 
-# ---------------------------------------------------------------------------
-# Vision OCR — extract text from images via OpenAI vision model
-# ---------------------------------------------------------------------------
-
-# Separate vision model config: gpt-4o-mini is the cheapest reliable vision model.
-# Override via OPENAI_MODEL_VISION env var if needed.
-_OPENAI_MODEL_VISION = os.environ.get("OPENAI_MODEL_VISION", "gpt-4o-mini").strip() or "gpt-4o-mini"
-_OCR_MAX_TOKENS = 4000  # per page / image
-_OCR_SYSTEM_PROMPT = (
-    "You are a document OCR assistant. Extract ALL text visible in the image exactly as it appears. "
-    "Preserve paragraphs, headings, lists, and tables as plain text. "
-    "Do NOT summarise, interpret, or add any commentary — return only the extracted text."
-)
-
-
 def ocr_pages_with_vision(images_b64: list[tuple[str, str]]) -> str:
     """
-    OCR a list of images using the OpenAI vision model.
+    Send base64-encoded images to OpenAI vision API and return combined OCR text.
 
     Args:
-        images_b64: list of (base64_string, media_type) tuples,
-                    e.g. [("iVBOR...", "image/png"), ...]
+        images_b64: List of (base64_data, media_type) tuples, where media_type is
+                    e.g. "image/jpeg", "image/png".
 
     Returns:
-        Extracted text from all images joined by double newlines.
+        Combined OCR text from all images.
     """
-    import base64 as _b64  # stdlib — already available
+    if not images_b64:
+        return ""
+
     client = _get_openai_client()
-    pages: list[str] = []
-    for b64_data, media_type in images_b64:
-        try:
-            resp = client.chat.completions.create(
-                model=_OPENAI_MODEL_VISION,
-                messages=[{
-                    "role": "user",
-                    "content": [
-                        {"type": "text", "text": _OCR_SYSTEM_PROMPT},
-                        {"type": "image_url", "image_url": {
-                            "url": f"data:{media_type};base64,{b64_data}",
-                            "detail": "high",
-                        }},
-                    ],
-                }],
-                max_completion_tokens=_OCR_MAX_TOKENS,
-            )
-            text = (resp.choices[0].message.content or "").strip()
-            if text:
-                pages.append(text)
-        except Exception as exc:
-            logger.warning("Vision OCR failed for one image: %s", exc)
-    return "\n\n".join(pages)
+    content = [
+        {
+            "type": "text",
+            "text": "Extract and return all text from this image. Preserve formatting if possible.",
+        }
+    ]
+    for b64, media_type in images_b64:
+        content.append(
+            {
+                "type": "image_url",
+                "image_url": {"url": f"data:{media_type};base64,{b64}"},
+            }
+        )
 
-
-import re as _re
-_THINK_BLOCK_RE = _re.compile(r"<think>.*?</think>", _re.DOTALL | _re.IGNORECASE)
-
-
-def _strip_think_blocks(text: str) -> str:
-    """
-    Remove Qwen 3 chain-of-thought blocks from the model output.
-
-    Qwen 3 in thinking mode wraps its reasoning in <think>...</think> tags
-    before the actual answer. These blocks are internal reasoning — they must
-    be stripped before the text is used as a reply or passed to the quality gate.
-
-    Ollama may strip these automatically when think=True is set, but we strip
-    defensively in case the raw tokens leak through (e.g. on older Ollama builds).
-    """
-    return _THINK_BLOCK_RE.sub("", text).strip()
-
-
-def _resolve_think(task_hint: str) -> bool | None:
-    """
-    Return the think flag to send to Ollama, or None to omit it entirely.
-
-    Rules:
-    - OLLAMA_THINK_ENABLED=false → None (never send think param; safe for non-Qwen3)
-    - task_hint="fast"           → False (no-think: structured output, low latency)
-    - everything else            → True  (thinking mode: chain-of-thought reasoning)
-    """
-    if not OLLAMA_THINK_ENABLED:
-        return None
-    return task_hint != "fast"
-
-
-def warmup_ollama_model(
-    model: str = None,
-    timeout: int = 180,
-) -> bool:
-    """
-    Warm the configured Ollama model so the first real request avoids model-load latency.
-    Returns True on success, False on failure.
-    """
-    chosen = model or OLLAMA_MODEL
-    payload = {
-        "model": chosen,
-        "prompt": "Reply with exactly: OK",
-        "stream": False,
-        "keep_alive": OLLAMA_KEEP_ALIVE,
-    }
     try:
-        response = _get_http_session().post(OLLAMA_GENERATE_URL, json=payload, timeout=timeout)
-        if not response.ok:
-            logger.warning(
-                "Ollama warmup failed for %s: HTTP %s %s",
-                chosen,
-                response.status_code,
-                (response.text or "").strip()[:200],
-            )
-            return False
-        return True
-    except requests.RequestException as exc:
-        logger.warning("Ollama warmup failed for %s: %s", chosen, exc)
-        return False
+        resp = client.chat.completions.create(
+            model=OPENAI_MODEL,
+            messages=[{"role": "user", "content": content}],
+            max_completion_tokens=2000,
+        )
+        return _extract_openai_text(resp)
+    except Exception as e:
+        logger.error("OCR vision API call failed: %s", e)
+        raise RuntimeError(f"OCR failed: {e}") from e
 
 
 def ask_llm_stream(
@@ -625,9 +444,9 @@ def ask_llm_stream(
     task_hint: str = None,
 ):
     """
-    Stream tokens from Ollama one fragment at a time.
+    Stream tokens from OpenAI one fragment at a time.
 
-    Yields each text fragment (typically 1-4 words) as it is produced by the model.
+    Yields each text fragment as it is produced by the model.
     Use when you want to pipe each token to a UI callback for live display.
 
     Example:
@@ -639,56 +458,16 @@ def ask_llm_stream(
     """
     requested_model = model
     chosen = _get_model_for_prompt(prompt, requested_model, task_hint)
-    use_openai = _is_openai_request(requested_model, chosen)
     try:
         _last_model_used.value = chosen
     except Exception:
         pass
-    timeout, _ = _resolve_timeout_and_retries(prompt, chosen, task_hint, timeout)
-    if use_openai:
-        text = ask_llm(prompt, model=chosen, timeout=timeout, task_hint=task_hint)
-        for i in range(0, len(text), 24):
-            yield text[i:i + 24]
-        return
-    trimmed_prompt = _trim_prompt_for_context(prompt)
-    payload = {
-        "model": chosen,
-        "prompt": trimmed_prompt,
-        "stream": True,
-        "keep_alive": OLLAMA_KEEP_ALIVE,
-    }
-    think = _resolve_think(task_hint)
-    if think is not None:
-        payload["think"] = think
-    try:
-        with _get_http_session().post(
-            OLLAMA_GENERATE_URL, json=payload, stream=True, timeout=timeout
-        ) as response:
-            if not response.ok:
-                err = response.text or "Unknown error"
-                raise RuntimeError(f"Ollama error ({response.status_code}): {err}")
-            in_think_block = False
-            for line in response.iter_lines():
-                if line:
-                    try:
-                        data = json.loads(line)
-                        token = data.get("response", "")
-                        if token:
-                            # Track <think>...</think> blocks inline so we never
-                            # stream reasoning tokens to the UI.
-                            if "<think>" in token:
-                                in_think_block = True
-                            if in_think_block:
-                                if "</think>" in token:
-                                    in_think_block = False
-                            else:
-                                yield token
-                        if data.get("done"):
-                            break
-                    except json.JSONDecodeError:
-                        continue
-    except requests.RequestException as e:
-        raise RuntimeError(f"Ollama streaming failed: {e}") from e
+
+    # For now, call ask_llm and chunk the output since OpenAI streaming
+    # integration can be added later if needed.
+    text = ask_llm(prompt, model=chosen, timeout=timeout, task_hint=task_hint)
+    for i in range(0, len(text), 24):
+        yield text[i:i + 24]
 
 
 def ask_llm(
@@ -696,210 +475,109 @@ def ask_llm(
     model: str = None,
     timeout: int = None,
     task_hint: str = None,
+    system: str = None,
 ) -> str:
     """
-    Send a prompt to Ollama and return the generated text.
+    Send a prompt to OpenAI and return the generated text.
 
-    If model is not specified: uses OLLAMA_MODEL (e.g. Qwen) for normal prompts,
-    and OLLAMA_MODEL_LONG_CONTEXT (e.g. Llama 3.1 8B) when prompt length exceeds
-    LONG_CONTEXT_THRESHOLD or task_hint is "long_context". Retries on connection/timeout only.
+    If model is not specified: uses the default tier's regular model for normal prompts,
+    and the fast model when task_hint is "fast". Retries on connection/timeout only.
+
+    If system is provided it is sent as a system-role message before the user message,
+    giving the model proper behavioral grounding rather than treating instructions as context.
     """
     requested_model = model
     chosen = _get_model_for_prompt(prompt, requested_model, task_hint)
-    use_openai = _is_openai_request(requested_model, chosen)
-    openai_forced = _is_openai_forced(requested_model, chosen)
-    trimmed_prompt = _trim_prompt_for_context(prompt)
     try:
         _last_model_used.value = chosen
     except Exception:
         pass
-    model = chosen
-    if use_openai:
-        prompt = _truncate_openai_input(prompt, chosen, task_hint)
-        _, max_output_tokens = _openai_limits(chosen, task_hint)
-        input_tokens = _count_tokens(prompt, chosen)
-        if not _allow_openai_budget(input_tokens, max_output_tokens):
-            if openai_forced:
-                logger.error("OpenAI hourly limit breached; OpenAI is forced for this request, skipping local fallback")
-                raise RuntimeError("OpenAI hourly budget limit reached for this request")
-            logger.warning("OpenAI hourly limit breached; falling back to Qwen")
-            chosen = _get_model_for_prompt(prompt, "provider:qwen", task_hint)
-            model = chosen
-            use_openai = False
-        else:
-            timeout, max_retries = _resolve_timeout_and_retries(prompt, chosen, task_hint, timeout)
-            last_exc = None
-            for attempt in range(1 + max_retries):
-                try:
-                    # Use Chat Completions API — works with both reasoning models
-                    # (gpt-5-mini, gpt-5-nano, o4-mini, etc.) and standard models.
-                    # The Responses API returns output_types=['reasoning'] only when
-                    # max_output_tokens is too low for reasoning models to complete,
-                    # because the token budget is shared with internal CoT tokens.
-                    # Chat Completions applies max_completion_tokens to output text only.
-                    resp = _get_openai_client().chat.completions.create(
-                        model=model,
-                        messages=[{"role": "user", "content": prompt}],
-                        max_completion_tokens=max_output_tokens,
-                        timeout=timeout,
-                    )
-                    out = _extract_openai_text(resp)
-                    _refund_openai_output_budget(max_output_tokens, _count_tokens(out, chosen) if out else 0)
-                    if out:
-                        return out
-                    raise RuntimeError("Empty response from OpenAI API")
-                except Exception as exc:
-                    last_exc = exc
-                    if attempt < max_retries:
-                        wait = RETRY_BACKOFF_BASE * (2 ** attempt)
-                        logger.warning(
-                            "OpenAI request failed (attempt %d/%d), retrying in %ds: %s",
-                            attempt + 1, 1 + max_retries, wait, exc,
-                        )
-                        time.sleep(wait)
-                    else:
-                        _refund_openai_output_budget(max_output_tokens, 0)
-                        logger.error(
-                            "OpenAI request failed after %d attempts: %s",
-                            1 + max_retries, exc,
-                        )
-            raise RuntimeError(f"OpenAI request failed: {last_exc}")
-    timeout, max_retries = _resolve_timeout_and_retries(trimmed_prompt, chosen, task_hint, timeout)
-    payload = {
-        "model": model,
-        "prompt": trimmed_prompt,
-        "stream": False,
-        "keep_alive": OLLAMA_KEEP_ALIVE,
-    }
-    think = _resolve_think(task_hint)
-    if think is not None:
-        payload["think"] = think
+
+    prompt = _truncate_openai_input(prompt, chosen, task_hint)
+    _, max_output_tokens = _openai_limits(chosen, task_hint)
+    input_tokens = _count_tokens(prompt, chosen)
+
+    if not _allow_openai_budget(input_tokens, max_output_tokens):
+        logger.error("OpenAI hourly budget limit reached")
+        raise RuntimeError("OpenAI hourly budget limit reached for this request")
+
+    timeout, max_retries = _resolve_timeout_and_retries(prompt, chosen, task_hint, timeout)
+    last_exc = None
+
+    # Build message list: optional system role + user message.
+    _messages: list[dict] = []
+    if system:
+        _messages.append({"role": "system", "content": system})
+    _messages.append({"role": "user", "content": prompt})
 
     for attempt in range(1 + max_retries):
         try:
-            response = _get_http_session().post(
-                OLLAMA_GENERATE_URL, json=payload, timeout=timeout
+            # Use Chat Completions API — works with both reasoning models
+            # (gpt-5-mini, gpt-5-nano, o4-mini, etc.) and standard models.
+            resp = _get_openai_client().chat.completions.create(
+                model=chosen,
+                messages=_messages,
+                max_completion_tokens=max_output_tokens,
+                timeout=timeout,
             )
-            break  # success — exit retry loop
-        except (requests.ConnectionError, requests.Timeout) as e:
+            out = _extract_openai_text(resp)
+            _refund_openai_output_budget(max_output_tokens, _count_tokens(out, chosen) if out else 0)
+            if out:
+                return out
+            raise RuntimeError("Empty response from OpenAI API")
+        except Exception as exc:
+            last_exc = exc
             if attempt < max_retries:
                 wait = RETRY_BACKOFF_BASE * (2 ** attempt)
                 logger.warning(
-                    "Ollama request failed (attempt %d/%d), retrying in %ds: %s",
-                    attempt + 1, 1 + max_retries, wait, e,
+                    "OpenAI request failed (attempt %d/%d), retrying in %ds: %s",
+                    attempt + 1, 1 + max_retries, wait, exc,
                 )
                 time.sleep(wait)
             else:
+                _refund_openai_output_budget(max_output_tokens, 0)
                 logger.error(
-                    "Ollama request failed after %d attempts: %s",
-                    1 + max_retries, e,
+                    "OpenAI request failed after %d attempts: %s",
+                    1 + max_retries, exc,
                 )
-                raise RuntimeError(
-                    f"Ollama unreachable after {1 + max_retries} attempts: {e}"
-                ) from e
-        except requests.RequestException as e:
-            # Non-transient error (e.g. invalid URL) — fail immediately
-            raise RuntimeError(f"Ollama request failed: {e}") from e
 
-    # Parse response
-    try:
-        data = response.json() if (response.text and response.text.strip()) else {}
-    except json.JSONDecodeError:
-        data = {}
-
-    if not response.ok:
-        err = data.get("error", response.text or "Unknown error")
-        raise RuntimeError(f"Ollama error ({response.status_code}): {err}")
-
-    if data.get("error"):
-        raise RuntimeError(f"Ollama error: {data['error']}")
-
-    return _strip_think_blocks(_extract_text(data) or "")
-
-
-def _model_available(name: str, model_names: list) -> bool:
-    """True if the given model name is in the list (exact or prefix match)."""
-    return any(
-        name == n or name in n or n.startswith(name)
-        for n in model_names
-    )
+    raise RuntimeError(f"OpenAI request failed: {last_exc}")
 
 
 def check_ollama_health() -> dict:
     """
-    Check Ollama connectivity and model availability.
+    Stub — Ollama removed. Returns OpenAI status for backward compatibility.
 
     Returns:
         {
-            "ollama_reachable": bool,
-            "model_loaded": bool,
+            "ollama_reachable": bool (always True),
+            "model_loaded": bool (always True),
             "model": str,
             "model_display": str,
-            "long_context_model_loaded": bool,
             "long_context_model": str,
             "long_context_model_display": str,
+            "long_context_model_loaded": bool (always True),
             "gpu_names": list[str],
-            "error": str (only if something failed),
+            "provider": "openai",
         }
     """
-    result = {
-        "ollama_reachable": False,
-        "model_loaded": False,
-        "model": OLLAMA_MODEL,
-        "model_display": OLLAMA_MODEL_DISPLAY,
-        "long_context_model": OLLAMA_MODEL_LONG_CONTEXT,
-        "long_context_model_display": OLLAMA_MODEL_LONG_CONTEXT_DISPLAY,
-        "long_context_model_loaded": False,
+    tier = get_tier(None)
+    return {
+        "ollama_reachable": True,
+        "model_loaded": True,
+        "model": tier["regular"],
+        "model_display": tier["display"],
+        "long_context_model": tier["large_context"],
+        "long_context_model_display": tier["display"],
+        "long_context_model_loaded": True,
+        "provider": "openai",
         "gpu_names": get_gpu_info(),
     }
-    if _is_openai_provider():
-        result.update(
-            {
-                "ollama_reachable": True,
-                "model_loaded": True,
-                "model": OPENAI_MODEL,
-                "model_display": OPENAI_MODEL_DISPLAY,
-                "long_context_model": OPENAI_MODEL_LONG_CONTEXT,
-                "long_context_model_display": OPENAI_MODEL_LONG_CONTEXT_DISPLAY,
-                "long_context_model_loaded": True,
-                "provider": "openai",
-            }
-        )
-        return result
 
-    # 1. Check if Ollama is reachable
-    try:
-        resp = _get_http_session().get(OLLAMA_BASE_URL, timeout=5)
-        result["ollama_reachable"] = resp.ok
-    except requests.RequestException as e:
-        result["error"] = f"Ollama not reachable: {e}"
-        return result
 
-    # 2. Check if both models are available
-    try:
-        resp = _get_http_session().get(f"{OLLAMA_BASE_URL}/api/tags", timeout=10)
-        if resp.ok:
-            models = resp.json().get("models", [])
-            model_names = [m.get("name", "") for m in models]
-            result["model_loaded"] = _model_available(OLLAMA_MODEL, model_names)
-            result["long_context_model_loaded"] = _model_available(
-                OLLAMA_MODEL_LONG_CONTEXT, model_names
-            )
-            if not result["model_loaded"]:
-                result["error"] = (
-                    f"Model '{OLLAMA_MODEL}' not found. "
-                    f"Available: {', '.join(model_names[:5]) or 'none'}. "
-                    f"Run: ollama pull {OLLAMA_MODEL}"
-                )
-            elif not result["long_context_model_loaded"]:
-                result["long_context_warning"] = (
-                    f"Long-context model '{OLLAMA_MODEL_LONG_CONTEXT}' not found. "
-                    f"Long prompts will use '{OLLAMA_MODEL}'. "
-                    f"Run: ollama pull {OLLAMA_MODEL_LONG_CONTEXT} to enable auto-switch."
-                )
-        else:
-            result["error"] = f"Failed to list models: HTTP {resp.status_code}"
-    except requests.RequestException as e:
-        result["error"] = f"Failed to check models: {e}"
-
-    return resul
+def warmup_ollama_model(model: str = None, timeout: int = 180) -> bool:
+    """
+    Stub — no warmup needed for OpenAI.
+    Returns True immediately for backward compatibility.
+    """
+    return True

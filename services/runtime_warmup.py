@@ -155,37 +155,9 @@ def kickoff_runtime_warmup(reason: str = "runtime") -> bool:
         return True
 
 
-def kickoff_ollama_warmup_if_qwen(model_override: str | None, reason: str = "first_qwen_message") -> bool:
+def kickoff_ollama_warmup_if_qwen(model_override: str | None = None, reason: str = "") -> bool:
     """
-    Warm Ollama only on-demand when the UI explicitly selects Qwen.
-    Returns True when a new warmup thread was started.
+    Stub — Ollama removed.
+    Returns False immediately for backward compatibility.
     """
-    global _ollama_warmup_started
-    chosen = (model_override or "").strip().lower()
-    if chosen not in ("provider:qwen", "qwen", "default"):
-        return False
-    with _warmup_lock:
-        if _ollama_warmup_started:
-            return False
-        _ollama_warmup_started = True
-
-    def _run():
-        try:
-            from llm.config import OLLAMA_MODEL, OLLAMA_MODEL_FAST
-            from llm.ollama_client import warmup_ollama_model
-            if OLLAMA_MODEL_FAST:
-                warmup_ollama_model(OLLAMA_MODEL_FAST, timeout=120)
-            if OLLAMA_MODEL and OLLAMA_MODEL != OLLAMA_MODEL_FAST:
-                warmup_ollama_model(OLLAMA_MODEL, timeout=420)
-            logger.info("Deferred Ollama warmup completed (%s)", reason)
-        except Exception as e:
-            logger.warning("Deferred Ollama warmup failed (%s): %s", reason, e)
-
-    thread = threading.Thread(
-        target=_run,
-        name=f"nyaymalaw-ollama-warmup-{reason}",
-        daemon=True,
-    )
-    thread.start()
-    logger.info("Started deferred Ollama warmup thread (%s)", reason)
-    return True
+    return False

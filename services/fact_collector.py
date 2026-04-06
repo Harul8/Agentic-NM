@@ -14,7 +14,6 @@ import os
 import re
 import time
 
-from llm.config import OLLAMA_MODEL, OLLAMA_MODEL_FAST
 from llm.ollama_client import ask_llm, set_request_model_override
 from prompts.advocate_prompts import (
     GREETING_PHRASES,
@@ -1331,19 +1330,45 @@ def _run_next_question_from_state(
         "facts_summary": _clean(intake_state.get("facts_summary", "")),
     }, ensure_ascii=False)
     asked_json = json.dumps(asked_questions, ensure_ascii=False)
-    prompt = (
-        f"{NEXT_QUESTION_FROM_STATE_SYSTEM}"
+
+    # Build a short recent-exchange block so the model can see exactly what it
+    # has already said and avoid repeating the same opener or phrasing.
+    recent_exchange_lines = []
+    for m in (conversation_history or [])[-6:]:  # last 3 pairs max
+        role = m.get("role", "")
+        content = _clean((m.get("content") or "").strip())
+        if not content:
+            continue
+        if role == "user":
+            recent_exchange_lines.append(f"Client: {content}")
+        elif role == "assistant":
+            recent_exchange_lines.append(f"Advocate: {content}")
+    recent_exchange_block = (
+        "RECENT EXCHANGE (last few turns — your exact prior wording):\n"
+        + "\n".join(recent_exchange_lines)
+        + "\n"
+    ) if recent_exchange_lines else ""
+
+    # NEXT_QUESTION_FROM_STATE_SYSTEM goes as the system role; all case context
+    # goes as the user message. This gives the behavioral guidance proper weight —
+    # when everything is merged into one user message the model may de-prioritize
+    # the instructions and default to scripted empathy openers.
+    user_prompt = (
         f"{few_shot_block}\n\n"
         f"COMPACT CASE STATE:\n{state_json}\n\n"
         f"QUESTIONS ALREADY ASKED:\n{asked_json}\n\n"
+        f"{recent_exchange_block}\n"
     )
     if feedback.strip():
-        prompt += f"{feedback.strip()}\n\nReturn a fresh, case-specific intake move that fixes the issues above.\n\n"
-    prompt += (
-        f"Output one line of valid JSON only."
-    )
+        user_prompt += f"{feedback.strip()}\n\nReturn a fresh, case-specific intake move that fixes the issues above.\n\n"
+    user_prompt += "Output one line of valid JSON only."
     try:
-        response = ask_llm(prompt, task_hint=task_hint, model=model_override).strip()
+        response = ask_llm(
+            user_prompt,
+            task_hint=task_hint,
+            model=model_override,
+            system=NEXT_QUESTION_FROM_STATE_SYSTEM,
+        ).strip()
         return _parse_llm_response(response, intake_state.get("facts_summary", ""))
     except Exception:
         return None
@@ -2108,15 +2133,17 @@ def get_next_question_or_complete(
         _log_fc_step("legal_intake_complete", (time.perf_counter() - t_start) * 1000)
         return _enrich_facts_summary(_normalize_completion_payload(parsed, user_message), conversation_history, user_message)
 
-    # ── Attempt 1: no-think (fast) ───────────────────────────────────────────
+    # ── Attempt 1: regular model ─────────────────────────────────────────────
     # Philosophy: the model owns the response entirely.
     # No quality gate. No heuristic overrides. If the model returns a valid
     # reply_to_client we use it immediately — no second-guessing.
-    # Attempt 2 (thinking mode) only fires on a hard technical failure:
+    # Attempt 2 (fast retry) only fires on a hard technical failure:
     # the model returned nothing parseable or returned no reply_to_client.
+    # Uses "regular" (not "fast"/nano) because the intake response is the most
+    # user-facing output; the nano model cannot reliably follow nuanced tone guidance.
     t_next = time.perf_counter()
     model_next = _run_next_question_from_state(
-        legal_state, conversation_history, task_hint="fast", model_override=model_override
+        legal_state, conversation_history, task_hint="regular", model_override=model_override
     )
     _log_fc_step(
         "legal_intake_model_next",

@@ -188,53 +188,35 @@ def _find_row(ws, case_id: str) -> Optional[int]:
 
 def _call_llm(prompt: str) -> str:
     """
-    Call the configured LLM for the AI Gate review.
+    Call OpenAI for the AI Gate review.
 
-    Tries (in order):
-      1. Ollama local (OLLAMA_MODEL env var, default qwen3.5:9b)
-      2. OpenAI-compatible endpoint (OPENAI_API_KEY + OPENAI_BASE_URL)
     Returns the raw text content of the response.
     """
-    # ── 1. Ollama ──────────────────────────────────────────────────────────
-    ollama_model = os.environ.get("OLLAMA_MODEL", "qwen3.5:9b")
+    api_key = os.environ.get("OPENAI_API_KEY", "")
+    base_url = os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1")
+    model = os.environ.get("OPENAI_MODEL", "gpt-5-mini")
+    if not api_key:
+        raise RuntimeError(
+            "OPENAI_API_KEY not set. Cannot call OpenAI API."
+        )
     try:
         import requests as _req
         resp = _req.post(
-            "http://localhost:11434/api/generate",
-            json={"model": ollama_model, "prompt": prompt, "stream": False},
+            f"{base_url}/chat/completions",
+            headers={"Authorization": f"Bearer {api_key}"},
+            json={
+                "model": model,
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0.1,
+            },
             timeout=120,
         )
         if resp.ok:
-            return resp.json().get("response", "")
+            return resp.json()["choices"][0]["message"]["content"]
+        raise RuntimeError(f"OpenAI call failed: HTTP {resp.status_code}: {resp.text}")
     except Exception as e:
-        logger.debug("Ollama unavailable (%s), trying next provider", e)
-
-    # ── 2. OpenAI-compatible ──────────────────────────────────────────────
-    api_key = os.environ.get("OPENAI_API_KEY", "")
-    base_url = os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1")
-    model = os.environ.get("OPENAI_MODEL", "gpt-4o-mini")
-    if api_key:
-        try:
-            import requests as _req
-            resp = _req.post(
-                f"{base_url}/chat/completions",
-                headers={"Authorization": f"Bearer {api_key}"},
-                json={
-                    "model": model,
-                    "messages": [{"role": "user", "content": prompt}],
-                    "temperature": 0.1,
-                },
-                timeout=120,
-            )
-            if resp.ok:
-                return resp.json()["choices"][0]["message"]["content"]
-        except Exception as e:
-            logger.error("OpenAI call failed: %s", e)
-
-    raise RuntimeError(
-        "No LLM provider available. Set OLLAMA_MODEL for local Ollama, "
-        "or set OPENAI_API_KEY + OPENAI_BASE_URL for a remote endpoint."
-    )
+        logger.error("OpenAI call failed: %s", e)
+        raise RuntimeError(f"OpenAI call failed: {e}") from e
 
 
 def _parse_json(raw: str) -> dict:

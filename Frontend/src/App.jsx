@@ -581,14 +581,15 @@ const ChatComposer = memo(function ChatComposer({
               style={{ display: "none" }} onChange={handleFileChange}
             />
 
-            {/* Model selector — inline in the footer */}
+            {/* Model tier selector — inline in the footer */}
             <select
               className="chat-model-select chat-model-select--inline"
               value={selectedModel}
               onChange={(e) => onModelChange(e.target.value)}
             >
-              <option value="openai">OpenAI</option>
-              <option value="qwen">Qwen</option>
+              <option value="gpt5mini">GPT-5 Mini</option>
+              <option value="gpt51mini">GPT-5.1 Mini</option>
+              <option value="gpt54mini">GPT-5.4 Mini</option>
             </select>
           </div>
 
@@ -801,7 +802,7 @@ function App() {
 
   // Manual mode selection: "legal_opinion" (default), "legal_research", "general"
   const [chatMode, setChatMode] = useState("legal_opinion");
-  const [selectedModel, setSelectedModel] = useState("openai");
+  const [selectedModel, setSelectedModel] = useState("gpt5mini");
 
   // Bottom pane: single accordion (Eval | Architecture | Updates Tracker). Default: minimal strip at bottom; can extend up to 75% of viewport.
   const [bottomExpandedSection, setBottomExpandedSection] = useState(null); // "eval" | "architecture" | "updates" | null
@@ -1087,15 +1088,20 @@ function App() {
     );
   }, [analysisFactsSummary, analysisStage, currentQuestion, facts, intakeState, lastResponseType, messages, normalizeWorkflowState, qaHistory, stage]);
 
+  const MODEL_TIER_LABELS = {
+    gpt5mini:  "GPT-5 Mini",
+    gpt51mini: "GPT-5.1 Mini",
+    gpt54mini: "GPT-5.4 Mini",
+  };
+
   const resolveModelUsed = useCallback((data, fallback = "") => {
     if (typeof data?.model_used === "string" && data.model_used.trim()) return data.model_used.trim();
     if (fallback) return fallback;
-    if (selectedModel === "openai") return "OpenAI";
-    return "Qwen";
+    return MODEL_TIER_LABELS[selectedModel] || "OpenAI";
   }, [selectedModel]);
 
   const getModelOverridePayload = useCallback(() => (
-    selectedModel === "openai" ? "provider:openai" : "provider:qwen"
+    `tier:${selectedModel}`
   ), [selectedModel]);
 
   const currentTurnLatencyMs = useCallback(() => {

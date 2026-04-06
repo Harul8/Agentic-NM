@@ -34,8 +34,7 @@ from services.response_feedback_store import (
     append_response_feedback,
     feedback_store_path,
 )
-from llm.ollama_client import check_ollama_health, get_last_model_used, warmup_ollama_model
-from llm.config import OLLAMA_MODEL, OLLAMA_MODEL_FAST, OLLAMA_WARM_ANALYSIS_AT_STARTUP
+from llm.ollama_client import check_ollama_health, get_last_model_used
 
 # Feedback logging (non-critical â€” import errors must not crash the server)
 try:
