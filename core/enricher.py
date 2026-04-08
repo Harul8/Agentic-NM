@@ -313,7 +313,7 @@ def add_chunks_to_index(
 
     # Invalidate the signatures cache so the next duplicate check sees fresh data
     try:
-        from platform.dedup import invalidate_signatures_cache
+        from nm_platform.dedup import invalidate_signatures_cache
         invalidate_signatures_cache()
     except Exception:
         pass  # Non-critical; cache will expire naturally via TTL
@@ -684,7 +684,7 @@ def enrich_from_gap_results(
     _dup_check = None
     if not skip_index:
         try:
-            from platform.dedup import (
+            from nm_platform.dedup import (
                 get_existing_signatures,
                 is_duplicate_of_existing as _is_dup_fn,
             )

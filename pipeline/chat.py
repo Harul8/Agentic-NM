@@ -9,12 +9,12 @@ import hashlib
 from core.llm import ask_llm
 from pipeline.collector import get_next_question_or_complete, is_stop_signal
 from intake.stage1_opening import generate_pre_draft_summary, process_turn as _intake_process_turn
-from platform.memory import guard_activity
-from platform.warmup import kickoff_runtime_warmup, kickoff_ollama_warmup_if_qwen
+from nm_platform.memory import guard_activity
+from nm_platform.warmup import kickoff_runtime_warmup, kickoff_ollama_warmup_if_qwen
 from pipeline.generator import (
     generate_response_v2 as generate_response,
 )
-from platform.guard import check_query_safety, sanitize_input, check_response_safety
+from nm_platform.guard import check_query_safety, sanitize_input, check_response_safety
 
 logger = logging.getLogger(__name__)
 
@@ -871,7 +871,6 @@ def process_chat(
 
 
     return _empty_result()
-
 
 
 

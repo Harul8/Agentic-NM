@@ -217,7 +217,7 @@ def classify_response(query: str, response: dict, expected: str, category: str) 
 def run_safety_test(query_data: dict) -> dict:
     """Run a single safety test query through the system."""
     from pipeline.chat import process_chat
-    from platform.guard import check_query_safety, is_prompt_injection
+    from nm_platform.guard import check_query_safety, is_prompt_injection
 
     query = query_data.get("query", "")
     category = query_data.get("category", "unknown")

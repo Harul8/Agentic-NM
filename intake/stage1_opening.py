@@ -30,7 +30,7 @@ def _ask_llm_quality(prompt: str) -> str:
 # Prompt imports
 # ---------------------------------------------------------------------------
 
-from prompts.research import (
+from prompts.intake import (
     LEGAL_OPINION_OPENING_SYSTEM,
     ISSUE_CATEGORY_DETECT_SYSTEM,
     STAGE1_CONFIRM_AND_FOLLOWUP_SYSTEM,
@@ -90,17 +90,87 @@ def _extract_json(text: str) -> dict | None:
 # Conversation context builder (compact, for prompt injection)
 # ---------------------------------------------------------------------------
 
-def _build_context(session: dict, max_turns: int = 6, max_chars: int = 260) -> str:
-    """Build a compact conversation history block for prompt injection."""
+# Characters above which a turn is treated as a document upload rather than
+# a typed message.  800 chars covers the longest realistic typed message;
+# anything above this threshold is almost certainly pasted/extracted document text.
+_DOC_TURN_THRESHOLD = 800
+
+# Max chars to keep from a normal conversational turn
+_CONV_TURN_MAX_CHARS = 800
+
+# Max chars of the *legal summary* carried forward for document turns.
+# The summary is generated once and cached; raw document text is never
+# truncated mid-sentence into the conversation context.
+_DOC_SUMMARY_MAX_CHARS = 500
+
+
+def _summarize_doc_for_intake(raw_text: str) -> str:
+    """
+    Extract legally relevant facts from an uploaded document (FIR, legal notice,
+    medical certificate, WhatsApp export, property deed, etc.) into a compact
+    summary suitable for the intake conversation context.
+
+    Summaries are cached by content hash in session["_doc_summaries"] so the
+    LLM call only happens once per unique document, regardless of how many
+    subsequent turns are built from that session.
+    """
+    prompt = (
+        "A client uploaded a document during a legal intake. "
+        "Extract ONLY the legally relevant facts in a single compact paragraph:\n"
+        "- Key dates, events, parties named\n"
+        "- Amounts, penalties, legal claims or charges mentioned\n"
+        "- Any prior actions taken (complaints filed, notices served, orders issued, bail/custody details)\n"
+        "- Signatures, stamps, or official references that establish authenticity\n\n"
+        "Ignore boilerplate, headers, footers, and irrelevant text.\n"
+        "Output: one paragraph, plain English, under 120 words.\n\n"
+        "DOCUMENT:\n"
+        f"{raw_text[:6000]}"          # cap raw input to avoid runaway cost on huge docs
+    )
+    try:
+        summary = _ask_llm(prompt, task_hint="fast").strip()
+        return summary[:_DOC_SUMMARY_MAX_CHARS] if len(summary) > _DOC_SUMMARY_MAX_CHARS else summary
+    except Exception as exc:
+        logger.warning("Doc summarisation failed: %s", exc)
+        # Graceful fallback: return the first _DOC_SUMMARY_MAX_CHARS of the raw text
+        return raw_text[:_DOC_SUMMARY_MAX_CHARS].rstrip() + "…"
+
+
+def _build_context(session: dict, max_turns: int = 30) -> str:
+    """Build a conversation history block for prompt injection.
+
+    Two separate content limits apply:
+    - Normal conversational turns  → up to _CONV_TURN_MAX_CHARS (800)
+    - Document turns (content > _DOC_TURN_THRESHOLD) → replaced by a
+      legally-focused summary (_DOC_SUMMARY_MAX_CHARS = 500 chars),
+      generated once and cached in session["_doc_summaries"]
+
+    30 turns covers any realistic intake (typical intakes are 8–15 turns).
+    Document summaries are cached by content hash to avoid re-summarising
+    the same file on every subsequent turn.
+    """
     history = session.get("history", [])
+    doc_cache: dict = session.setdefault("_doc_summaries", {})  # hash → summary
+
     lines: list[str] = []
     for turn in history[-max_turns:]:
         role    = "Client" if turn.get("role") == "user" else "Counsel"
         content = (turn.get("content") or "").strip().replace("\n", " ")
-        if len(content) > max_chars:
-            content = content[:max_chars].rstrip() + "…"
-        if content:
+        if not content:
+            continue
+
+        if len(content) > _DOC_TURN_THRESHOLD:
+            # Document turn — use cached summary or generate one
+            import hashlib
+            key = hashlib.md5(content.encode(), usedforsecurity=False).hexdigest()
+            if key not in doc_cache:
+                doc_cache[key] = _summarize_doc_for_intake(content)
+            summary = doc_cache[key]
+            lines.append(f"{role} [uploaded document]: {summary}")
+        else:
+            if len(content) > _CONV_TURN_MAX_CHARS:
+                content = content[:_CONV_TURN_MAX_CHARS].rstrip() + "…"
             lines.append(f"{role}: {content}")
+
     return "\n".join(lines)
 
 
@@ -244,78 +314,6 @@ def _detect_category(client_message: str, conversation_context: str) -> dict:
 # Internal: determine next question hint
 # ===========================================================================
 
-def _next_question_hint(intake_state: dict) -> str:
-    """
-    Given the current intake state, return a plain-language hint for what
-    the AI should ask next. Picks the first still-open critical fact from
-    the category's key_facts_needed list.
-    """
-    category = intake_state.get("primary_issue_cluster") or "general"
-    cat_cfg  = LEGAL_ISSUE_CATEGORIES.get(category, LEGAL_ISSUE_CATEGORIES["general"])
-    # Merge key_facts_needed from secondary clusters so mixed matters are fully covered
-    key_facts = list(cat_cfg.get("key_facts_needed", []))
-    for sec_cat in (intake_state.get("secondary_issue_clusters") or []):
-        sec_cfg = LEGAL_ISSUE_CATEGORIES.get(sec_cat, {})
-        for kf in sec_cfg.get("key_facts_needed", []):
-            if kf not in key_facts:
-                key_facts.append(kf)
-    # Build known blob from fact text regardless of whether facts are strings or dicts
-    known_blob = " ".join([
-        (str(x.get("fact", "")) if isinstance(x, dict) else str(x)).lower()
-        for x in (intake_state.get("known_facts") or [])
-    ])
-
-    # Simple signal map: which key_facts topics are already covered
-    _COVERAGE_SIGNALS: dict[str, tuple[str, ...]] = {
-        "nature and timeline of abuse":          ("abuse", "hit", "beat", "slap", "shout", "threat", "years", "months"),
-        "shared household status":               ("house", "home", "living", "flat", "reside", "stay"),
-        "children":                              ("child", "children", "son", "daughter", "kid"),
-        "evidence":                              ("photo", "message", "whatsapp", "medical", "witness", "record", "fir"),
-        "prior complaints":                      ("fir", "complaint", "police", "report"),
-        "income / financial":                    ("income", "salary", "earning", "money", "rupee", "financial"),
-        "immediate safety":                      ("safe", "afraid", "fear", "danger", "risk", "shelter"),
-        "date and type of marriage":             ("married", "marriage", "wedding", "court marriage"),
-        "grounds":                               ("cruelty", "desertion", "divorce", "separation"),
-        "income of both parties":                ("income", "salary", "earning", "job"),
-        "stridhan":                              ("jewellery", "gold", "stridhan", "dowry"),
-        "nature of property":                    ("land", "flat", "house", "ancestral", "inherited", "property"),
-        "title documents":                       ("document", "deed", "registered", "patta", "title"),
-        "current possession":                    ("possession", "living", "locked", "access"),
-        "offence alleged":                       ("fir", "arrest", "accused", "charge", "offence", "crime"),
-        "fir number":                            ("fir number", "fir no", "case number"),
-        "custody / bail":                        ("bail", "custody", "jail", "remand", "arrested"),
-        "nature of employment":                  ("permanent", "contract", "probation", "confirmed", "job type"),
-        "employer type":                         ("government", "private", "psu", "public sector"),
-        "notice / termination order":            ("notice", "termination", "dismissal", "show cause", "chargesheet"),
-        "service duration":                      ("years", "months", "joined", "since", "service period"),
-        "product or service":                    ("product", "service", "builder", "bank", "insurance", "telecom"),
-        "deficiency":                            ("defective", "wrong", "not delivered", "damaged", "fraud"),
-        "amount paid":                           ("paid", "amount", "rupee", "lakh", "cost"),
-        "date of accident":                      ("accident", "date", "when"),
-        "injuries":                              ("injured", "injury", "fracture", "surgery", "hospital", "dead", "died"),
-        "vehicle / insurance":                   ("vehicle", "car", "bike", "truck", "insurance"),
-        "cheque amount and date":                ("cheque", "amount", "date", "issued"),
-        "dishonour":                             ("bounced", "dishonoured", "returned", "insufficiency"),
-        "demand notice":                         ("notice", "demand notice", "sent notice"),
-        "survey / khasra":                       ("survey", "khasra", "extent", "acres", "area"),
-        "purpose of acquisition":               ("government", "road", "highway", "dam", "project"),
-        "compensation offered":                  ("compensation", "amount", "offered", "market value"),
-    }
-
-    for fact_desc in key_facts:
-        # Find the first fact not yet covered
-        fact_low = fact_desc.lower()
-        covered = False
-        for signal_key, signals in _COVERAGE_SIGNALS.items():
-            if signal_key in fact_low or fact_low in signal_key:
-                if any(sig in known_blob for sig in signals):
-                    covered = True
-                    break
-        if not covered:
-            return f"Ask about: {fact_desc}"
-
-    # All key facts seem covered — ask for general confirmation
-    return "Ask whether there is anything else important about the situation they haven't mentioned yet."
 
 
 # ===========================================================================
@@ -452,18 +450,41 @@ def _generate_followup(
     conversation_context: str,
 ) -> str:
     """
-    Generate the AI's reply after the category is detected:
-    - Reflect back warmly (no legal labels)
-    - Ask the single most important missing fact
+    Generate the AI's reply after the category is detected.
+
+    Passes the full conversation history, the matter category, and a compact
+    summary of anchor facts already established.  The model uses its own
+    professional judgment to decide what to ask next — no hint injection,
+    no topic checklist override.
     """
     t0 = time.perf_counter()
-    next_hint = _next_question_hint(intake_state)
+
+    # Human-readable category label for the prompt
+    primary = intake_state.get("primary_issue_cluster") or "general"
+    cat_cfg = LEGAL_ISSUE_CATEGORIES.get(primary, {})
+    category_label = cat_cfg.get("label", primary.replace("_", " ").title())
+
+    # Compact summary of what's already been established — prevents re-asking
+    # anchor facts the model has already noted, without prescribing what to ask next
+    anchors = {
+        "issue":        intake_state.get("issue_summary"),
+        "relationship": intake_state.get("relationship_to_other_party"),
+        "timeframe":    intake_state.get("timeframe_status"),
+        "goal":         intake_state.get("client_goal_initial"),
+        "urgency":      intake_state.get("urgency_signal"),
+    }
+    established_parts = [
+        f"{k}: {v}" for k, v in anchors.items()
+        if v and v not in ("unknown", "")
+    ]
+    established_facts = "; ".join(established_parts) if established_parts else "none yet — first exchange"
 
     prompt = (
         STAGE1_CONFIRM_AND_FOLLOWUP_SYSTEM
-        .replace("{next_question_hint}", next_hint)
+        .replace("{category}", category_label)
         .replace("{conversation_context}", conversation_context or "(first message)")
         .replace("{client_message}", (client_message or "").strip())
+        .replace("{established_facts}", established_facts)
     )
 
     try:
@@ -474,9 +495,7 @@ def _generate_followup(
     except Exception as exc:
         logger.warning("Stage1 followup LLM failed: %s", exc)
 
-    # Minimal safe fallback — always ends with a question
-    hint = next_hint.replace("Ask about: ", "").replace("Ask whether ", "")
-    return f"Thank you for sharing that. Could you tell me more about {hint}?"
+    return "Could you tell me a bit more about what's been happening?"
 
 
 # ===========================================================================
@@ -602,83 +621,7 @@ def _update_known_facts(intake_state: dict, client_message: str) -> None:
             intake_state["known_facts"] = intake_state["known_facts"][:20]
 
 
-# ===========================================================================
-# Internal: retire answered open_questions
-# ===========================================================================
 
-def _retire_answered_open_questions(intake_state: dict) -> None:
-    """
-    Remove items from open_questions whose topic is now covered by known_facts.
-    Uses the same _COVERAGE_SIGNALS map as _next_question_hint so the two
-    stay in sync — open_questions now reflects only genuinely unresolved gaps.
-    """
-    open_qs = intake_state.get("open_questions") or []
-    if not open_qs:
-        return
-
-    # Build known blob from structured fact objects
-    known_blob = " ".join([
-        (x.get("fact", "") if isinstance(x, dict) else str(x)).lower()
-        for x in (intake_state.get("known_facts") or [])
-    ])
-    # Also include anchor fields so they count as coverage
-    for field in ("issue_summary", "relationship_to_other_party", "timeframe_status", "client_goal_initial"):
-        val = intake_state.get(field) or ""
-        if val and val != "unknown":
-            known_blob += " " + str(val).lower()
-
-    _COVERAGE_SIGNALS: dict[str, tuple[str, ...]] = {
-        "nature and timeline of abuse":      ("abuse", "hit", "beat", "slap", "shout", "threat", "years", "months"),
-        "shared household status":           ("house", "home", "living", "flat", "reside", "stay"),
-        "children":                          ("child", "children", "son", "daughter", "kid"),
-        "evidence":                          ("photo", "message", "whatsapp", "medical", "witness", "record", "fir"),
-        "prior complaints":                  ("fir", "complaint", "police", "report"),
-        "income / financial":                ("income", "salary", "earning", "money", "rupee", "financial"),
-        "immediate safety":                  ("safe", "afraid", "fear", "danger", "risk", "shelter"),
-        "date and type of marriage":         ("married", "marriage", "wedding", "court marriage"),
-        "grounds":                           ("cruelty", "desertion", "divorce", "separation"),
-        "income of both parties":            ("income", "salary", "earning", "job"),
-        "stridhan":                          ("jewellery", "gold", "stridhan", "dowry"),
-        "nature of property":                ("land", "flat", "house", "ancestral", "inherited", "property"),
-        "title documents":                   ("document", "deed", "registered", "patta", "title"),
-        "current possession":                ("possession", "living", "locked", "access"),
-        "offence alleged":                   ("fir", "arrest", "accused", "charge", "offence", "crime"),
-        "fir number":                        ("fir number", "fir no", "case number"),
-        "custody / bail":                    ("bail", "custody", "jail", "remand", "arrested"),
-        "nature of employment":              ("permanent", "contract", "probation", "confirmed", "job type"),
-        "employer type":                     ("government", "private", "psu", "public sector"),
-        "notice / termination order":        ("notice", "termination", "dismissal", "show cause", "chargesheet"),
-        "service duration":                  ("years", "months", "joined", "since", "service period"),
-        "product or service":                ("product", "service", "builder", "bank", "insurance", "telecom"),
-        "deficiency":                        ("defective", "wrong", "not delivered", "damaged", "fraud"),
-        "amount paid":                       ("paid", "amount", "rupee", "lakh", "cost"),
-        "date of accident":                  ("accident", "date", "when"),
-        "injuries":                          ("injured", "injury", "fracture", "surgery", "hospital", "dead", "died"),
-        "vehicle / insurance":               ("vehicle", "car", "bike", "truck", "insurance"),
-        "cheque amount and date":            ("cheque", "amount", "date", "issued"),
-        "dishonour":                         ("bounced", "dishonoured", "returned", "insufficiency"),
-        "demand notice":                     ("notice", "demand notice", "sent notice"),
-        "survey / khasra":                   ("survey", "khasra", "extent", "acres", "area"),
-        "purpose of acquisition":            ("government", "road", "highway", "dam", "project"),
-        "compensation offered":              ("compensation", "amount", "offered", "market value"),
-    }
-
-    still_open = []
-    for q in open_qs:
-        q_low = str(q).lower()
-        covered = False
-        for signal_key, signals in _COVERAGE_SIGNALS.items():
-            if signal_key in q_low or q_low in signal_key:
-                if any(sig in known_blob for sig in signals):
-                    covered = True
-                    break
-        if not covered:
-            still_open.append(q)
-
-    retired = len(open_qs) - len(still_open)
-    if retired:
-        logger.debug("Retired %d answered open_questions; %d remain", retired, len(still_open))
-    intake_state["open_questions"] = still_open
 
 
 # ===========================================================================
@@ -809,7 +752,7 @@ def process_turn(session: dict, user_message: str) -> dict:
     intake_state["turn_count"] = intake_state.get("turn_count", 0) + 1
 
     # ── Build conversation context for prompts ───────────────────────────────
-    context = _build_context(session, max_turns=6)
+    context = _build_context(session)
 
     # ── Category detection (soft lock — re-runs until primary confidence=high) ──
     if (
@@ -861,10 +804,9 @@ def process_turn(session: dict, user_message: str) -> dict:
     _recheck_urgency(intake_state, msg)
 
     # ── Extract and accumulate facts from client message ─────────────────────
+    # known_facts is still built for Stage 2 handoff and vetting logic;
+    # it is no longer used to retire open_questions (the model reads history directly).
     _update_known_facts(intake_state, msg)
-
-    # ── Retire open_questions that are now answered ───────────────────────────
-    _retire_answered_open_questions(intake_state)
 
     # ── Remedy assessment (runs once client_goal_initial is known) ────────────
     if intake_state.get("client_goal_initial") and not intake_state.get("assessed_remedy"):

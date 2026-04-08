@@ -40,7 +40,7 @@ from prompts.research import (
     BARE_ACT_SECTION_RELEVANCE_PROMPT,
     CASE_LAW_RELEVANCE_PROMPT,
 )
-from platform.progress import ProgressTracker
+from nm_platform.progress import ProgressTracker
 
 logger = logging.getLogger(__name__)
 _ENABLE_CITATION_GRAPH_EXPANSION = os.environ.get("ENABLE_CITATION_GRAPH_EXPANSION", "").lower() in ("1", "true", "yes")

@@ -268,7 +268,7 @@ def _init_auth_db():
 _init_auth_db()
 
 # Phase 4: Ensure tier columns exist (idempotent migration)
-from platform.tiers import (
+from nm_platform.tiers import (
     ensure_tier_columns,
     check_query_limit,
     increment_query_count,
@@ -3329,7 +3329,7 @@ async def startup_validation():
     logger.info("CORS origins: %s", _cors_origins)
 
     try:
-        from platform.warmup import kickoff_runtime_warmup
+        from nm_platform.warmup import kickoff_runtime_warmup
         kickoff_runtime_warmup("startup_post_ready")
         logger.info("Startup checks complete; remaining warmups launched in background")
     except Exception as e:
@@ -3340,4 +3340,3 @@ async def startup_validation():
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
-

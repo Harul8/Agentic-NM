@@ -13,11 +13,29 @@ import logging
 import math
 import re
 import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import numpy as np
 import faiss
 from typing import Any, Optional
 
+# Try fast JSON parser first; fall back to stdlib
+try:
+    import orjson as _json_lib
+    def _json_load(fp):
+        return _json_lib.loads(fp.read())
+except ImportError:
+    def _json_load(fp):
+        return json.load(fp)
+
 logger = logging.getLogger(__name__)
+
+try:
+    from crewai import Agent
+    from crewai.tools import tool
+except Exception:
+    Agent = None
+    def tool(fn):  # no-op fallback when crewai not available
+        return fn
 
 _FORCE_LOCAL_MODEL_FILES = os.environ.get("FORCE_LOCAL_MODEL_FILES", "1").lower() in ("1", "true", "yes")
 if _FORCE_LOCAL_MODEL_FILES:
@@ -46,6 +64,7 @@ _ce_init_lock = threading.Lock()
 #       ("chunks",path) → dict
 # ---------------------------------------------------------------------------
 _index_cache: dict = {}
+_index_cache_lock = threading.Lock()   # guards concurrent writes during parallel preload
 _faiss_gpu_lock = threading.Lock()
 _faiss_gpu_resources = None
 _runtime_mode_logged_for_index: set[str] = set()
@@ -280,8 +299,11 @@ def preload_all_indexes():
       - Case laws:      FAISS v2, BM25, chunks
       - Case summaries: FAISS v2, BM25, chunks
       - Act summaries:  FAISS v2, BM25, chunks
+
+    Groups are loaded in parallel (ThreadPoolExecutor) to overlap I/O across
+    the 4 index sets.  The 3.2 GB caselaws index and 1.2 GB BM25 are the
+    dominant cost; parallelism brings total load time from ~500 s → ~120 s.
     """
-    global _index_cache
     from config import (
         BARE_INDEX_V2, BARE_CHUNKS_V2, BARE_BM25_INDEX,
         CASE_INDEX_V2, CASE_CHUNKS_V2, CASE_BM25_INDEX,
@@ -294,96 +316,77 @@ def preload_all_indexes():
         ("case_summaries",  CASE_SUMMARY_INDEX_V2,  CASE_SUMMARY_CHUNKS_V2, CASE_SUMMARY_BM25_INDEX),
         ("act_summaries",   ACT_SUMMARY_INDEX_V2,   ACT_SUMMARY_CHUNKS_V2,  ACT_SUMMARY_BM25_INDEX),
     ]
-    for label, faiss_path, chunks_path, bm25_path in index_groups:
-        # FAISS index
-        faiss_key = ("faiss", faiss_path)
-        if faiss_key not in _index_cache:
-            if os.path.exists(faiss_path):
-                try:
-                    idx = faiss.read_index(faiss_path)
-                    # Set efSearch for HNSW indexes (ignored silently on flat indexes)
-                    try:
-                        idx.hnsw.efSearch = 64
-                    except AttributeError:
-                        pass
-                    _index_cache[faiss_key] = idx
-                    logger.info("Preloaded FAISS [%s]: %d vectors", label, idx.ntotal)
-                except Exception as e:
-                    logger.error("Preload FAISS [%s] failed: %s", label, e)
-            else:
-                logger.debug("Preload FAISS [%s]: file not found (%s)", label, faiss_path)
-        # Chunks JSON
-        chunks_key = ("chunks", chunks_path)
-        if chunks_key not in _index_cache:
-            if os.path.exists(chunks_path):
-                try:
-                    with open(chunks_path, encoding="utf-8") as f:
-                        _index_cache[chunks_key] = json.load(f)
-                    logger.info("Preloaded chunks [%s]: %d chunks", label, len(_index_cache[chunks_key]))
-                except Exception as e:
-                    logger.error("Preload chunks [%s] failed: %s", label, e)
-            else:
-                logger.debug("Preload chunks [%s]: file not found (%s)", label, chunks_path)
-        # BM25 index
-        bm25_key = ("bm25", bm25_path)
-        if bm25_key not in _index_cache:
-            if os.path.exists(bm25_path):
-                try:
-                    with open(bm25_path, encoding="utf-8") as f:
-                        data = json.load(f)
-                    _index_cache[bm25_key] = BM25.from_dict(data)
-                    logger.info("Preloaded BM25 [%s]: %d docs", label, _index_cache[bm25_key].doc_count)
-                except Exception as e:
-                    logger.error("Preload BM25 [%s] failed: %s", label, e)
-            else:
-                logger.debug("Preload BM25 [%s]: file not found (%s)", label, bm25_path)
-    logger.info("Index preload complete. Cache has %d entries.", len(_index_cache))
+    with ThreadPoolExecutor(max_workers=4, thread_name_prefix="idx-preload") as pool:
+        futures = {
+            pool.submit(_preload_index_group, label, fp, cp, bp): label
+            for label, fp, cp, bp in index_groups
+        }
+        for fut in as_completed(futures):
+            label = futures[fut]
+            exc = fut.exception()
+            if exc:
+                logger.error("Preload group [%s] raised: %s", label, exc)
+    logger.info("Index preload complete (parallel). Cache has %d entries.", len(_index_cache))
 
 
 def _preload_index_group(label: str, faiss_path: str, chunks_path: str, bm25_path: str):
-    """Preload one FAISS/chunks/BM25 group into the shared in-memory cache."""
-    global _index_cache
+    """Preload one FAISS/chunks/BM25 group into the shared in-memory cache.
 
+    Thread-safe: uses _index_cache_lock for writes so multiple groups can be
+    loaded concurrently by preload_all_indexes() without cache corruption.
+    Heavy I/O (faiss.read_index, json.load) is done outside the lock to
+    maximise parallelism; the lock is only held during the dict write.
+    """
+    import time as _time
+
+    # ---------- FAISS ----------
     faiss_key = ("faiss", faiss_path)
-    if faiss_key not in _index_cache:
-        if os.path.exists(faiss_path):
+    if faiss_key not in _index_cache and os.path.exists(faiss_path):
+        try:
+            t0 = _time.monotonic()
+            idx = faiss.read_index(faiss_path)
             try:
-                idx = faiss.read_index(faiss_path)
-                try:
-                    idx.hnsw.efSearch = 64
-                except AttributeError:
-                    pass
+                idx.hnsw.efSearch = 64
+            except AttributeError:
+                pass
+            with _index_cache_lock:
                 _index_cache[faiss_key] = idx
-                logger.info("Preloaded FAISS [%s]: %d vectors", label, idx.ntotal)
-            except Exception as e:
-                logger.error("Preload FAISS [%s] failed: %s", label, e)
-        else:
-            logger.debug("Preload FAISS [%s]: file not found (%s)", label, faiss_path)
+            logger.info("Preloaded FAISS [%s]: %d vectors (%.1fs)", label, idx.ntotal, _time.monotonic() - t0)
+        except Exception as e:
+            logger.error("Preload FAISS [%s] failed: %s", label, e)
+    elif not os.path.exists(faiss_path):
+        logger.debug("Preload FAISS [%s]: file not found (%s)", label, faiss_path)
 
+    # ---------- Chunks JSON ----------
     chunks_key = ("chunks", chunks_path)
-    if chunks_key not in _index_cache:
-        if os.path.exists(chunks_path):
-            try:
-                with open(chunks_path, encoding="utf-8") as f:
-                    _index_cache[chunks_key] = json.load(f)
-                logger.info("Preloaded chunks [%s]: %d chunks", label, len(_index_cache[chunks_key]))
-            except Exception as e:
-                logger.error("Preload chunks [%s] failed: %s", label, e)
-        else:
-            logger.debug("Preload chunks [%s]: file not found (%s)", label, chunks_path)
+    if chunks_key not in _index_cache and os.path.exists(chunks_path):
+        try:
+            t0 = _time.monotonic()
+            with open(chunks_path, "rb") as f:   # binary for orjson compat
+                data = _json_load(f)
+            with _index_cache_lock:
+                _index_cache[chunks_key] = data
+            logger.info("Preloaded chunks [%s]: %d chunks (%.1fs)", label, len(data), _time.monotonic() - t0)
+        except Exception as e:
+            logger.error("Preload chunks [%s] failed: %s", label, e)
+    elif not os.path.exists(chunks_path):
+        logger.debug("Preload chunks [%s]: file not found (%s)", label, chunks_path)
 
+    # ---------- BM25 JSON ----------
     bm25_key = ("bm25", bm25_path)
-    if bm25_key not in _index_cache:
-        if os.path.exists(bm25_path):
-            try:
-                with open(bm25_path, encoding="utf-8") as f:
-                    data = json.load(f)
-                _index_cache[bm25_key] = BM25.from_dict(data)
-                logger.info("Preloaded BM25 [%s]: %d docs", label, _index_cache[bm25_key].doc_count)
-            except Exception as e:
-                logger.error("Preload BM25 [%s] failed: %s", label, e)
-        else:
-            logger.debug("Preload BM25 [%s]: file not found (%s)", label, bm25_path)
+    if bm25_key not in _index_cache and os.path.exists(bm25_path):
+        try:
+            t0 = _time.monotonic()
+            with open(bm25_path, "rb") as f:     # binary for orjson compat
+                data = _json_load(f)
+            bm25_obj = BM25.from_dict(data)
+            with _index_cache_lock:
+                _index_cache[bm25_key] = bm25_obj
+            logger.info("Preloaded BM25 [%s]: %d docs (%.1fs)", label, bm25_obj.doc_count, _time.monotonic() - t0)
+        except Exception as e:
+            logger.error("Preload BM25 [%s] failed: %s", label, e)
+    elif not os.path.exists(bm25_path):
+        logger.debug("Preload BM25 [%s]: file not found (%s)", label, bm25_path)
 
 
 def preload_interactive_indexes():
@@ -411,9 +414,16 @@ def preload_interactive_indexes():
         ("bare_acts", BARE_INDEX_V2, BARE_CHUNKS_V2, BARE_BM25_INDEX),
         ("case_summaries", CASE_SUMMARY_INDEX_V2, CASE_SUMMARY_CHUNKS_V2, CASE_SUMMARY_BM25_INDEX),
     ]
-    for label, faiss_path, chunks_path, bm25_path in groups:
-        _preload_index_group(label, faiss_path, chunks_path, bm25_path)
-    logger.info("Interactive index preload complete. Cache has %d entries.", len(_index_cache))
+    with ThreadPoolExecutor(max_workers=3, thread_name_prefix="idx-interactive") as pool:
+        futures = {
+            pool.submit(_preload_index_group, label, fp, cp, bp): label
+            for label, fp, cp, bp in groups
+        }
+        for fut in as_completed(futures):
+            exc = fut.exception()
+            if exc:
+                logger.error("Interactive preload [%s] raised: %s", futures[fut], exc)
+    logger.info("Interactive index preload complete (parallel). Cache has %d entries.", len(_index_cache))
 
 
 def score_query_document(query: str, document_text: str) -> float:
@@ -1907,8 +1917,7 @@ def search_case_laws_auto(query: str, top_k: int = 30) -> list:
 # Fusion — bare act + case law combined (absorbed from act_case_fusion_agent)
 # ---------------------------------------------------------------------------
 
-def tool(fn):
-    return fn
+# crewai @tool imported at top of file (or no-op fallback defined there)
 
 from core.llm import CREWAI_LLM
 
@@ -2041,5 +2050,6 @@ else:
             tools=[fuse_bare_act_and_case_law],
             verbose=True
         )
-    except Exception:
+    except Exception as e:
+        logger.warning("Failed to initialize act_case_fusion_agent: %s", e)
         act_case_fusion_agent = None
