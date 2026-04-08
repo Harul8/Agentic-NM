@@ -22,14 +22,14 @@ if _SCRIPT_DIR not in sys.path:
 
 def _run_legal_research(issue: str) -> dict:
     """Run bare act + case law fusion for a legal issue. Uses existing agents."""
-    from agents.Legal_Research.act_case_fusion_agent import fuse_bare_act_and_case_law
+    from core.retriever import fuse_bare_act_and_case_law
 
     return fuse_bare_act_and_case_law.run(issue=issue)
 
 
 def _run_legal_opinion(facts_summary: str, bare_act_sections: list = None, case_laws: list = None) -> dict:
     """Generate a legal opinion from facts and optional retrieved materials."""
-    from services.response_generator_v2 import generate_response_v2
+    from pipeline.generator import generate_response_v2
 
     confirmed = {}
     if bare_act_sections:

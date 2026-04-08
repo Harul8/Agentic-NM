@@ -1,7 +1,0 @@
-INFO:     127.0.0.1:54665 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53614 - "POST /submit_case/stream HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60184 - "POST /conversation/continue/stream HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53588 - "POST /conversation/continue/stream HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53589 - "POST /conversation/continue/stream HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53590 - "POST /conversation/continue/stream HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53591 - "POST /conversation/continue/stream HTTP/1.1" 200 OK

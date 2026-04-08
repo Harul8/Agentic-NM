@@ -32,7 +32,7 @@ from typing import Optional
 # Feedback logger — optional, mirrors api_server.py pattern
 # ---------------------------------------------------------------------------
 try:
-    from services.feedback_logger import log_interaction as _log_interaction
+    from feedback.logger import log_interaction as _log_interaction
     _FEEDBACK_ENABLED = True
 except Exception as _fb_import_err:
     _log_interaction = None  # type: ignore[assignment]
@@ -168,7 +168,7 @@ def _run_retrieval(query: str, mode: str, top_k: int = 30) -> dict:
     Run retrieval in the specified ablation mode.
     Returns raw results with scores for analysis.
     """
-    from retrieval.hybrid_retriever import (
+    from core.retriever import (
         hybrid_search, search_bare_acts_auto, search_case_laws_auto,
         safe_read_faiss, load_chunks, load_bm25_index, _get_embedder, _get_cross_encoder,
     )
@@ -264,7 +264,7 @@ def _run_retrieval(query: str, mode: str, top_k: int = 30) -> dict:
 
 def _run_quality_filters(raw_results: dict) -> dict:
     """Apply the same quality filters as response_generator_v2."""
-    from services.response_generator_v2 import (
+    from pipeline.generator import (
         MIN_RERANK_SCORE, _is_quality_bare_act, _is_quality_case_law, _case_year_for_sort, MIN_CASE_YEAR,
     )
 
@@ -291,7 +291,7 @@ def _run_quality_filters(raw_results: dict) -> dict:
 
 def _run_full_pipeline(query: str, intent: str, result_count: Optional[int], mode: str) -> dict:
     """Run the complete pipeline (or ablation variant) and capture all intermediate data."""
-    from services.response_generator_v2 import generate_response_v2, expand_legal_query
+    from pipeline.generator import generate_response_v2, expand_legal_query
 
     start_time = time.time()
 

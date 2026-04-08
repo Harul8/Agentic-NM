@@ -20,26 +20,26 @@ from pydantic import BaseModel, Field
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
-from agents.Legal_Research.act_case_fusion_agent import fuse_bare_act_and_case_law
-from services.interactive_chat import process_chat
+from core.retriever import fuse_bare_act_and_case_law
+from pipeline.chat import process_chat
 try:
-    from services.legal_draft_stage5 import build_legal_draft as _build_legal_draft
+    from intake.stage5_draft import build_legal_draft as _build_legal_draft
     _STAGE5_ENABLED = True
 except Exception as _s5_err:
     _STAGE5_ENABLED = False
     _build_legal_draft = None
-from services.response_generator_v2 import generate_response_v2
-from services.response_feedback_store import (
+from pipeline.generator import generate_response_v2
+from feedback.store import (
     RESPONSE_FEEDBACK_TAGS,
     append_response_feedback,
     feedback_store_path,
 )
-from llm.ollama_client import check_ollama_health, get_last_model_used
+from core.llm import check_ollama_health, get_last_model_used
 
 # Feedback logging (non-critical â€” import errors must not crash the server)
 try:
-    from services.feedback_logger import log_interaction as _log_interaction
-    from services.ai_reviewer import run_ai_review as _run_ai_review
+    from feedback.logger import log_interaction as _log_interaction
+    from feedback.reviewer import run_ai_review as _run_ai_review
     _FEEDBACK_ENABLED = True
 except Exception as _fb_import_err:
     _FEEDBACK_ENABLED = False
@@ -268,7 +268,7 @@ def _init_auth_db():
 _init_auth_db()
 
 # Phase 4: Ensure tier columns exist (idempotent migration)
-from services.tier_manager import (
+from platform.tiers import (
     ensure_tier_columns,
     check_query_limit,
     increment_query_count,
@@ -930,7 +930,7 @@ def _chat_error_fallback(detail: str = "") -> dict:
     """Return a safe 200 response when chat processing fails so frontend does not see 500.
     We try to generate a message from the LLM; if that also fails we use a minimal technical note."""
     try:
-        from llm.ollama_client import ask_llm
+        from core.llm import ask_llm
         error_context = f" (Technical detail: {detail})" if detail else ""
         msg = ask_llm(
             f"You are a legal assistant. Something went wrong while processing the user's request.{error_context} "
@@ -2272,7 +2272,7 @@ async def upload_document(file: UploadFile = File(...)):
     The caller injects the text into the chat composer for review before submitting.
     """
     import io, base64
-    from llm.ollama_client import ocr_pages_with_vision
+    from core.llm import ocr_pages_with_vision
 
     _IMAGE_EXTS = {"jpg", "jpeg", "png", "webp", "tiff", "tif", "bmp"}
     _IMAGE_MIME = {
@@ -3329,7 +3329,7 @@ async def startup_validation():
     logger.info("CORS origins: %s", _cors_origins)
 
     try:
-        from services.runtime_warmup import kickoff_runtime_warmup
+        from platform.warmup import kickoff_runtime_warmup
         kickoff_runtime_warmup("startup_post_ready")
         logger.info("Startup checks complete; remaining warmups launched in background")
     except Exception as e:

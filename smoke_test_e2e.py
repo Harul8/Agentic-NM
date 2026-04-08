@@ -69,12 +69,12 @@ def _has_embedded_section_text(text: str) -> bool:
 # ──────────────────────────────────────────────
 section("A–C: Intake layer (fact_collector)")
 
-from services.fact_collector import (
+from pipeline.collector import (
     _is_duplicate_question,
     _assess_model_next_reply,
     _is_role_inverted,
 )
-from training.few_shot_retriever import _rank_examples
+from training.few_shot import _rank_examples
 
 # [A] Few-shot retriever — DV query must not return cheque examples
 dv_query = (
@@ -224,7 +224,7 @@ except Exception as e:
 # ──────────────────────────────────────────────
 section("D: Routing — analysis_mode=bare_acts_only")
 
-from services.interactive_chat import _last_assistant_is_analysis_ready, _build_analysis_ready_prompt
+from pipeline.chat import _last_assistant_is_analysis_ready, _build_analysis_ready_prompt
 
 try:
     ready_msg = _build_analysis_ready_prompt()
@@ -360,7 +360,7 @@ facts_summary = (
 )
 
 try:
-    from services.response_generator_v2 import _generate_bare_act_stage_text
+    from pipeline.generator import _generate_bare_act_stage_text
 
     with mock.patch("services.response_generator_v2.ask_llm", return_value=MOCK_LLM_BARE_ACT_RESPONSE):
         streamed_tokens = []
@@ -429,7 +429,7 @@ except Exception as e:
 section("H: _build_grounded_bare_act_fallback (deterministic fallback)")
 
 try:
-    from services.response_generator_v2 import _build_grounded_bare_act_fallback
+    from pipeline.generator import _build_grounded_bare_act_fallback
     fallback_text = _build_grounded_bare_act_fallback(MOCK_BARE_ACTS, facts_summary=facts_summary)
 
     garbled = _has_embedded_section_text(fallback_text)
@@ -478,7 +478,7 @@ MOCK_CASE_LAWS = [
 ]
 
 try:
-    from services.response_generator_v2 import _build_grounded_interactive_fallback
+    from pipeline.generator import _build_grounded_interactive_fallback
     interactive_fallback = _build_grounded_interactive_fallback(
         facts_summary=facts_summary,
         formatted_bare=MOCK_BARE_ACTS,
@@ -510,7 +510,7 @@ except Exception as e:
 section("J: LLM retry + UI surfacing on timeout")
 
 try:
-    from services.response_generator_v2 import _generate_bare_act_stage_text, _BARE_ACT_LLM_MAX_ATTEMPTS
+    from pipeline.generator import _generate_bare_act_stage_text, _BARE_ACT_LLM_MAX_ATTEMPTS
 
     _state = {"call_count": 0}
     streamed_retry_msgs = []
@@ -591,7 +591,7 @@ except Exception as e:
 # ──────────────────────────────────────────────
 section("L: Deterministic fallback question fixes")
 
-from services.fact_collector import (
+from pipeline.collector import (
     _join_question_fragments,
     _topic_already_answered,
     _build_fallback_next_question,
@@ -730,7 +730,7 @@ except Exception as e:
 # ──────────────────────────────────────────────
 section("M: Quality gate banned fragment precision")
 
-from services.fact_collector import _is_low_quality_next_question
+from pipeline.collector import _is_low_quality_next_question
 
 _QG_STATE = {
     "facts_summary": "Client's husband assaulted her two days ago. FIR filed. Has photos and WhatsApp messages.",

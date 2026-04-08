@@ -176,7 +176,7 @@ def sweep_live(queries_path: str, thresholds: Optional[list] = None) -> dict:
     This is slower but gives raw score data.
     """
     from eval.batch_runner import _run_retrieval, _run_quality_filters
-    from services.response_generator_v2 import expand_legal_query
+    from pipeline.generator import expand_legal_query
 
     with open(queries_path, encoding="utf-8") as f:
         queries = json.load(f)

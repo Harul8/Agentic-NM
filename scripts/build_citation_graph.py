@@ -15,8 +15,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import logging
 from config import CASE_CHUNKS_V2, CITATION_GRAPH_PATH
-from retrieval.hybrid_retriever import load_chunks
-from retrieval.citation_graph import build_citation_graph_from_chunks
+from core.retriever import load_chunks
+from core.citations import build_citation_graph_from_chunks
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)

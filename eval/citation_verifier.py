@@ -117,7 +117,7 @@ def extract_section_citations(text: str) -> list:
 def verify_case_in_local_index(case_name: str) -> dict:
     """Check if a case name exists in the local FAISS/chunks store."""
     from config import CASE_CHUNKS_V2, CASE_CHUNKS
-    from retrieval.hybrid_retriever import load_chunks
+    from core.retriever import load_chunks
 
     result = {"found": False, "source": "local_index", "matches": []}
 
@@ -160,7 +160,7 @@ def verify_case_in_local_index(case_name: str) -> dict:
 def verify_section_in_local_index(act_name: str, section: str) -> dict:
     """Check if a bare act section exists in the local index."""
     from config import BARE_CHUNKS_V2, BARE_CHUNKS
-    from retrieval.hybrid_retriever import load_chunks
+    from core.retriever import load_chunks
 
     result = {"found": False, "source": "local_index", "matches": []}
 

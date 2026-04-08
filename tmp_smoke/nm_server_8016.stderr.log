@@ -1,150 +1,0 @@
-INFO:     Started server process [21352]
-INFO:     Waiting for application startup.
-2026-03-27 23:44:07 | INFO     | nyaymalaw.api | ============================================================
-2026-03-27 23:44:07 | INFO     | nyaymalaw.api | Nyaymalaw API v3.0.0 starting up
-2026-03-27 23:44:07 | INFO     | nyaymalaw.api | ============================================================
-2026-03-27 23:44:07 | INFO     | nyaymalaw.api | Database accessible at C:\Users\rahul\Nyaymalaw-5.0\legal_database\chat_history\app.db
-2026-03-27 23:44:07 | INFO     | nyaymalaw.api | Data root: C:\Users\rahul\Nyaymalaw-5.0\legal_database (BareActs: C:\Users\rahul\Nyaymalaw-5.0\legal_database\raw_data\BareActs)
-2026-03-27 23:44:07 | INFO     | nyaymalaw.api | Vector store at C:\Users\rahul\Nyaymalaw-5.0\legal_database\vector_store (bare_acts: yes, case_summaries: yes)
-2026-03-27 23:44:07 | INFO     | nyaymalaw.api | CORS origins: ['*']
-2026-03-27 23:44:07 | INFO     | training.few_shot_retriever | Loaded 37 few-shot examples from runtime_examples.jsonl
-2026-03-27 23:44:07 | INFO     | services.runtime_warmup | Critical runtime warmup: few-shot examples ready
-2026-03-27 23:44:10 | INFO     | nyaymalaw.api | Critical warmup: fewshot=yes fast_model=yes analysis_model=no elapsed=2.92s
-2026-03-27 23:44:10 | INFO     | services.runtime_warmup | Started runtime warmup thread (startup)
-2026-03-27 23:44:10 | INFO     | nyaymalaw.api | Startup checks complete; targeted runtime warmup launched
-2026-03-27 23:44:10 | INFO     | nyaymalaw.api | ============================================================
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://127.0.0.1:8016 (Press CTRL+C to quit)
-2026-03-27 23:44:10 | INFO     | faiss.loader | Loading faiss with AVX2 support.
-2026-03-27 23:44:10 | INFO     | faiss.loader | Successfully loaded faiss with AVX2 support.
-2026-03-27 23:44:10 | INFO     | retrieval.hybrid_retriever | Preloaded FAISS [act_summaries]: 1705 vectors
-2026-03-27 23:44:10 | INFO     | retrieval.hybrid_retriever | Preloaded chunks [act_summaries]: 1705 chunks
-2026-03-27 23:44:10 | INFO     | retrieval.hybrid_retriever | Preloaded BM25 [act_summaries]: 1705 docs
-2026-03-27 23:44:10 | INFO     | retrieval.hybrid_retriever | Preloaded FAISS [bare_acts]: 80644 vectors
-2026-03-27 23:44:11 | INFO     | retrieval.hybrid_retriever | Preloaded chunks [bare_acts]: 80644 chunks
-2026-03-27 23:44:12 | INFO     | retrieval.hybrid_retriever | Preloaded BM25 [bare_acts]: 80644 docs
-2026-03-27 23:44:12 | INFO     | retrieval.hybrid_retriever | Preloaded FAISS [case_summaries]: 34037 vectors
-2026-03-27 23:44:12 | INFO     | retrieval.hybrid_retriever | Preloaded chunks [case_summaries]: 34037 chunks
-2026-03-27 23:44:13 | INFO     | retrieval.hybrid_retriever | Preloaded BM25 [case_summaries]: 34037 docs
-2026-03-27 23:44:13 | INFO     | retrieval.hybrid_retriever | Interactive index preload complete. Cache has 9 entries.
-2026-03-27 23:44:15 | INFO     | nyaymalaw.api | GET /health \u2192 200 (81ms)
-2026-03-27 23:44:21 | INFO     | retrieval.hybrid_retriever | Loading embedding model 'thenlper/gte-base' on cpu
-2026-03-27 23:44:21 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: thenlper/gte-base
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 14.82it/s]
-2026-03-27 23:44:23 | INFO     | services.runtime_warmup | Interactive warmup: embedding model ready
-2026-03-27 23:44:23 | INFO     | retrieval.hybrid_retriever | Cross-encoder loaded on CPU
-2026-03-27 23:44:23 | INFO     | services.runtime_warmup | Interactive warmup: cross-encoder ready on CPU
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 14.18it/s]
-2026-03-27 23:44:23 | INFO     | retrieval.hybrid_retriever | Hybrid search: 3 FAISS + 3 BM25 \u2192 5 RRF candidates (pool for re-rank)
-2026-03-27 23:44:23 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 33.34it/s]
-2026-03-27 23:44:23 | INFO     | retrieval.hybrid_retriever | Hybrid search: 6 FAISS + 6 BM25 \u2192 6 RRF candidates (pool for re-rank)
-2026-03-27 23:44:23 | INFO     | retrieval.hybrid_retriever | Re-ranked to 2 results (top score: 2.896)
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 32.79it/s]
-2026-03-27 23:44:23 | INFO     | retrieval.hybrid_retriever | Hybrid search: 4 FAISS + 4 BM25 \u2192 6 RRF candidates (pool for re-rank)
-2026-03-27 23:44:24 | INFO     | retrieval.hybrid_retriever | Re-ranked to 2 results (top score: 2.100)
-2026-03-27 23:44:24 | INFO     | services.runtime_warmup | Interactive warmup: retrieval fast path primed
-2026-03-27 23:44:35 | INFO     | services.runtime_warmup | Runtime warmup completed in 25.0 s
-2026-03-27 23:44:39 | INFO     | nyaymalaw.api | POST /submit_case/stream \u2192 200 (14ms)
-2026-03-27 23:44:54 | INFO     | nyaymalaw.api | POST /conversation/continue/stream \u2192 200 (23ms)
-2026-03-27 23:44:57 | INFO     | nyaymalaw.api | POST /conversation/continue/stream \u2192 200 (5ms)
-2026-03-27 23:44:58 | INFO     | services.response_generator_v2 | Expanded query(s): breach of duty of care in road accident , compensation for medical expenses and lost income
-2026-03-27 23:44:58 | INFO     | services.response_generator_v2 | Bare-act query builder [d1]: legal_nature=mixed queries=['I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medical expenses, lost in', 'I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medical expenses, lost in', 'I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. The driver had insurance, I missed six days of work,']
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  9.09it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  9.09it/s]
-2026-03-27 23:44:58 | INFO     | retrieval.hybrid_retriever | Hybrid search: 3 FAISS + 3 BM25 \u2192 5 RRF candidates (pool for re-rank)
-2026-03-27 23:44:58 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 11.67it/s]
-2026-03-27 23:45:01 | INFO     | retrieval.hybrid_retriever | Hybrid search: 6 FAISS + 6 BM25 \u2192 8 RRF candidates (pool for re-rank)
-2026-03-27 23:45:02 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 22.91it/s]
-2026-03-27 23:45:02 | INFO     | retrieval.hybrid_retriever | Hybrid search: 3 FAISS + 3 BM25 \u2192 5 RRF candidates (pool for re-rank)
-2026-03-27 23:45:02 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 14.81it/s]
-2026-03-27 23:45:03 | INFO     | retrieval.hybrid_retriever | Hybrid search: 6 FAISS + 6 BM25 \u2192 8 RRF candidates (pool for re-rank)
-2026-03-27 23:45:04 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 15.87it/s]
-2026-03-27 23:45:04 | INFO     | retrieval.hybrid_retriever | Hybrid search: 3 FAISS + 3 BM25 \u2192 5 RRF candidates (pool for re-rank)
-2026-03-27 23:45:04 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 14.42it/s]
-2026-03-27 23:45:06 | INFO     | retrieval.hybrid_retriever | Hybrid search: 6 FAISS + 6 BM25 \u2192 8 RRF candidates (pool for re-rank)
-2026-03-27 23:45:07 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-2026-03-27 23:45:07 | INFO     | services.response_generator_v2 | [d1] Interactive fast bare-act rescue: broadening local search
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 10.55it/s]
-2026-03-27 23:45:12 | INFO     | retrieval.hybrid_retriever | Hybrid search: 10 FAISS + 10 BM25 \u2192 12 RRF candidates (pool for re-rank)
-2026-03-27 23:45:13 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-2026-03-27 23:45:13 | INFO     | retrieval.hybrid_retriever | Runtime bare-act rescue: broadening to legacy local index for query 'I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medic'
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 24.37it/s]
-2026-03-27 23:45:13 | INFO     | retrieval.hybrid_retriever | Hybrid search: 10 FAISS + 10 BM25 \u2192 12 RRF candidates (pool for re-rank)
-2026-03-27 23:45:14 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-2026-03-27 23:45:14 | INFO     | retrieval.hybrid_retriever | Runtime bare-act rescue: broadening to legacy local index for query '(negligence tort) AND (compensation for personal injury) AND (road traffic accidents in Karnataka) AND (insurance claim)'
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  7.48it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  7.42it/s]
-2026-03-27 23:45:16 | INFO     | retrieval.hybrid_retriever | Hybrid search: 4 FAISS + 4 BM25 \u2192 7 RRF candidates (pool for re-rank)
-2026-03-27 23:45:16 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  6.49it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  6.49it/s]
-2026-03-27 23:45:18 | INFO     | retrieval.hybrid_retriever | Hybrid search: 4 FAISS + 4 BM25 \u2192 7 RRF candidates (pool for re-rank)
-2026-03-27 23:45:18 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-2026-03-27 23:45:18 | INFO     | services.response_generator_v2 | [d1] Interactive fast case-law rescue: broadening local case search
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 11.55it/s]
-2026-03-27 23:45:21 | INFO     | retrieval.hybrid_retriever | Hybrid search: 8 FAISS + 8 BM25 \u2192 12 RRF candidates (pool for re-rank)
-2026-03-27 23:45:22 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-2026-03-27 23:45:24 | ERROR    | retrieval.hybrid_retriever | Failed to load chunks from C:\Users\rahul\Nyaymalaw-5.0\legal_database\vector_store\caselaws_v2_chunks.json: 
-2026-03-27 23:45:24 | WARNING  | retrieval.hybrid_retriever | No chunks found at C:\Users\rahul\Nyaymalaw-5.0\legal_database\vector_store\caselaws_v2_chunks.json
-2026-03-27 23:45:24 | INFO     | retrieval.hybrid_retriever | Runtime case-law rescue: broadening to legacy local index for query 'I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medic'
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 11.15it/s]
-2026-03-27 23:45:25 | INFO     | retrieval.hybrid_retriever | Hybrid search: 8 FAISS + 8 BM25 \u2192 12 RRF candidates (pool for re-rank)
-2026-03-27 23:45:25 | INFO     | retrieval.hybrid_retriever | Re-ranked to 2 results (top score: 0.255)
-2026-03-27 23:45:25 | WARNING  | nyaymalaw.api | Feedback log failed (non-critical): Excel feedback log not found: C:\Users\rahul\Nyaymalaw-5.0\Nyaymalaw_Feedback_Log_v3.xlsx
-2026-03-27 23:45:25 | INFO     | nyaymalaw.api | POST /conversation/continue/stream \u2192 200 (9ms)
-2026-03-27 23:45:30 | INFO     | services.response_generator_v2 | Expanded query(s): rash driving negligence Mysuru
-2026-03-27 23:45:30 | INFO     | services.response_generator_v2 | Bare-act query builder [d1]: legal_nature=mixed queries=['I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medical expenses, lost in', 'I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medical expenses, lost in', 'I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. The driver had insurance, I missed six days of work,']
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 13.10it/s]
-2026-03-27 23:45:30 | INFO     | retrieval.hybrid_retriever | Hybrid search: 3 FAISS + 3 BM25 \u2192 5 RRF candidates (pool for re-rank)
-2026-03-27 23:45:30 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 11.77it/s]
-2026-03-27 23:45:33 | INFO     | retrieval.hybrid_retriever | Hybrid search: 6 FAISS + 6 BM25 \u2192 8 RRF candidates (pool for re-rank)
-2026-03-27 23:45:34 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 22.36it/s]
-2026-03-27 23:45:34 | INFO     | retrieval.hybrid_retriever | Hybrid search: 3 FAISS + 3 BM25 \u2192 5 RRF candidates (pool for re-rank)
-2026-03-27 23:45:34 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 15.88it/s]
-2026-03-27 23:45:35 | INFO     | retrieval.hybrid_retriever | Hybrid search: 6 FAISS + 6 BM25 \u2192 8 RRF candidates (pool for re-rank)
-2026-03-27 23:45:36 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 12.96it/s]
-2026-03-27 23:45:36 | INFO     | retrieval.hybrid_retriever | Hybrid search: 3 FAISS + 3 BM25 \u2192 5 RRF candidates (pool for re-rank)
-2026-03-27 23:45:36 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  9.33it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  9.25it/s]
-2026-03-27 23:45:38 | INFO     | retrieval.hybrid_retriever | Hybrid search: 6 FAISS + 6 BM25 \u2192 8 RRF candidates (pool for re-rank)
-2026-03-27 23:45:38 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-2026-03-27 23:45:38 | INFO     | services.response_generator_v2 | [d1] Interactive fast bare-act rescue: broadening local search
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 10.79it/s]
-2026-03-27 23:45:44 | INFO     | retrieval.hybrid_retriever | Hybrid search: 10 FAISS + 10 BM25 \u2192 12 RRF candidates (pool for re-rank)
-2026-03-27 23:45:44 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-2026-03-27 23:45:44 | INFO     | retrieval.hybrid_retriever | Runtime bare-act rescue: broadening to legacy local index for query 'I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medic'
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 21.35it/s]
-2026-03-27 23:45:46 | INFO     | retrieval.hybrid_retriever | Hybrid search: 10 FAISS + 10 BM25 \u2192 12 RRF candidates (pool for re-rank)
-2026-03-27 23:45:46 | INFO     | retrieval.hybrid_retriever | Act pre-filter (profile): BYPASSED — only 0 candidates after filter (< 5 min); proceeding with all 12 candidates. Check act profile coverage for this query.
-2026-03-27 23:45:46 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 23.47it/s]
-2026-03-27 23:45:48 | INFO     | retrieval.hybrid_retriever | Hybrid search: 10 FAISS + 10 BM25 \u2192 12 RRF candidates (pool for re-rank)
-2026-03-27 23:45:48 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-2026-03-27 23:45:48 | INFO     | retrieval.hybrid_retriever | Runtime bare-act rescue: broadening to legacy local index for query '( Karnataka Road Safety Regulations 2019 ) and ( Motor Vehicles Act 1988 ) breach of duty of care - rash and negligent d'
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  6.23it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  6.19it/s]
-2026-03-27 23:45:50 | INFO     | retrieval.hybrid_retriever | Hybrid search: 4 FAISS + 4 BM25 \u2192 7 RRF candidates (pool for re-rank)
-2026-03-27 23:45:50 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  7.60it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  7.60it/s]
-2026-03-27 23:45:52 | INFO     | retrieval.hybrid_retriever | Hybrid search: 4 FAISS + 4 BM25 \u2192 7 RRF candidates (pool for re-rank)
-2026-03-27 23:45:52 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-2026-03-27 23:45:52 | INFO     | services.response_generator_v2 | [d1] Interactive fast case-law rescue: broadening local case search
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 10.76it/s]
-2026-03-27 23:45:56 | INFO     | retrieval.hybrid_retriever | Hybrid search: 8 FAISS + 8 BM25 \u2192 12 RRF candidates (pool for re-rank)
-2026-03-27 23:45:56 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-2026-03-27 23:45:59 | ERROR    | retrieval.hybrid_retriever | Failed to load chunks from C:\Users\rahul\Nyaymalaw-5.0\legal_database\vector_store\caselaws_v2_chunks.json: 
-2026-03-27 23:45:59 | WARNING  | retrieval.hybrid_retriever | No chunks found at C:\Users\rahul\Nyaymalaw-5.0\legal_database\vector_store\caselaws_v2_chunks.json
-2026-03-27 23:45:59 | INFO     | retrieval.hybrid_retriever | Runtime case-law rescue: broadening to legacy local index for query 'I was injured in a road accident six days ago when a car hit my motorcycle near Mysuru. I want compensation for my medic'
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  9.75it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  9.65it/s]
-2026-03-27 23:46:00 | INFO     | retrieval.hybrid_retriever | Hybrid search: 8 FAISS + 8 BM25 \u2192 12 RRF candidates (pool for re-rank)
-2026-03-27 23:46:00 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-2026-03-27 23:46:02 | ERROR    | retrieval.hybrid_retriever | Failed to load chunks from C:\Users\rahul\Nyaymalaw-5.0\legal_database\vector_store\caselaws_v2_chunks.json: 
-2026-03-27 23:46:02 | WARNING  | retrieval.hybrid_retriever | No chunks found at C:\Users\rahul\Nyaymalaw-5.0\legal_database\vector_store\caselaws_v2_chunks.json
-2026-03-27 23:46:02 | INFO     | retrieval.hybrid_retriever | Runtime case-law rescue: broadening to legacy local index for query 'I was injured in a road accident six days ago when a car hit my motorcycle near ... The driver had insurance, I missed s'
-2026-03-27 23:46:03 | WARNING  | nyaymalaw.api | Feedback log failed (non-critical): Excel feedback log not found: C:\Users\rahul\Nyaymalaw-5.0\Nyaymalaw_Feedback_Log_v3.xlsx

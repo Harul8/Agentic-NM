@@ -38,7 +38,7 @@ from tempfile import TemporaryDirectory
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from Ingestion.build_v2_index import _get_embedder, build_index
+from core.indexer import _get_embedder, build_index
 from config import (
     ACT_SUMMARY_BM25_INDEX,
     ACT_SUMMARY_CHUNKS_V2,
