@@ -76,7 +76,7 @@ def _tool_search_bare_acts(query: str, top_k: int = 5) -> str:
       [{act_name, section_number, section_title, text, score}]
     """
     try:
-        from core.retriever import search_bare_acts_auto
+        from retrieval.retriever import search_bare_acts_auto
         top_k = max(1, min(int(top_k), 20))
         raw = search_bare_acts_auto(query, top_k=top_k)
         results = []
@@ -101,7 +101,7 @@ def _tool_search_case_laws(query: str, jurisdiction: str = "", top_k: int = 5) -
       [{case_name, citation, court, year, paragraph_num, paragraph_type, text, score}]
     """
     try:
-        from core.retriever import search_case_laws_auto
+        from retrieval.retriever import search_case_laws_auto
         top_k = max(1, min(int(top_k), 20))
         search_q = f"{query} {jurisdiction}".strip() if jurisdiction else query
         raw = search_case_laws_auto(search_q, top_k=top_k)
@@ -130,7 +130,7 @@ def _tool_lookup_section(act_name: str, section_number: str) -> str:
     Returns the full verbatim text of every matching sub-chunk.
     """
     try:
-        from core.retriever import search_bare_acts_auto
+        from retrieval.retriever import search_bare_acts_auto
         query = f"{act_name} section {section_number}"
         raw = search_bare_acts_auto(query, top_k=10)
         matches = [
@@ -166,7 +166,7 @@ def _tool_lookup_case(case_name: str, para_num: Optional[str] = None) -> str:
     If para_num is given, filters to that paragraph only.
     """
     try:
-        from core.retriever import search_case_laws_auto
+        from retrieval.retriever import search_case_laws_auto
         raw = search_case_laws_auto(case_name, top_k=20)
 
         # Filter to case name match (partial, case-insensitive)
@@ -214,8 +214,8 @@ def _tool_start_intake(first_message: str = "") -> str:
     """
     try:
         _gc_sessions()
-        from intake.session import new_session, append_turn
-        from intake.stage1_opening import generate_opening, process_turn
+        from agents.intake.session import new_session, append_turn
+        from agents.intake.stage1_opening import generate_opening, process_turn
 
         session = new_session()
         session_id = session["session_id"]
@@ -262,8 +262,8 @@ def _tool_continue_intake(session_id: str, client_message: str) -> str:
         if not msg:
             return json.dumps({"error": "client_message cannot be empty", "session_id": session_id})
 
-        from intake.session import append_turn
-        from intake.stage1_opening import process_turn
+        from agents.intake.session import append_turn
+        from agents.intake.stage1_opening import process_turn
 
         append_turn(session, "user", msg)
         result = process_turn(session, msg)
@@ -341,7 +341,7 @@ def _tool_draft_opinion(session_id: str) -> str:
                 "stage": session.get("stage", "stage1"),
             })
 
-        from intake.stage5_draft import build_draft
+        from agents.intake.stage5_draft import build_draft
         result = build_draft(intake_state, session.get("history", []))
 
         return json.dumps({

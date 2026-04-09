@@ -1,20 +1,30 @@
 """
-pipeline/chat.py — Chat orchestrator.
+pipeline/chat.py — LEGACY orchestrator. Do not add new logic here.
+
+This module is kept for backward compatibility with the existing frontend endpoints:
+  /submit_case, /submit_case/stream
+  /conversation/continue, /conversation/continue/stream
+  /interview_step, /interview_step/stream
+
+All new integrations must use:
+  POST /agent/stream  →  agents.orchestrator.OrchestratorAgent
+
+This file will be removed once the React frontend is migrated to /agent/stream.
 """
 import logging
 import os
 import time
 import hashlib
 
-from core.llm import ask_llm
-from pipeline.collector import get_next_question_or_complete, is_stop_signal
-from intake.stage1_opening import generate_pre_draft_summary, process_turn as _intake_process_turn
-from nm_platform.memory import guard_activity
-from nm_platform.warmup import kickoff_runtime_warmup, kickoff_ollama_warmup_if_qwen
-from pipeline.generator import (
+from platform.llm import ask_llm
+from agents.intake.collector import get_next_question_or_complete, is_stop_signal
+from agents.intake.stage1_opening import generate_pre_draft_summary, process_turn as _intake_process_turn
+from platform.memory import guard_activity
+from platform.warmup import kickoff_runtime_warmup, kickoff_ollama_warmup_if_qwen
+from retrieval.generator import (
     generate_response_v2 as generate_response,
 )
-from nm_platform.guard import check_query_safety, sanitize_input, check_response_safety
+from retrieval.guard import check_query_safety, sanitize_input, check_response_safety
 
 logger = logging.getLogger(__name__)
 
@@ -363,7 +373,7 @@ def _run_generic_chat(
         )
         prompt = f"{GENERIC_CHAT_SYSTEM}\n\nConversation:\n{context}\n\nUser: {current_message}\n\nAssistant:"
         if token_callback:
-            from core.llm import ask_llm_stream
+            from platform.llm import ask_llm_stream
             parts = []
             for tok in ask_llm_stream(prompt, task_hint="fast", model=model_override):
                 token_callback(tok)

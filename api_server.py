@@ -20,26 +20,26 @@ from pydantic import BaseModel, Field
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
-from core.retriever import fuse_bare_act_and_case_law
+from retrieval.retriever import fuse_bare_act_and_case_law
 from pipeline.chat import process_chat
 try:
-    from intake.stage5_draft import build_legal_draft as _build_legal_draft
+    from agents.intake.stage5_draft import build_legal_draft as _build_legal_draft
     _STAGE5_ENABLED = True
 except Exception as _s5_err:
     _STAGE5_ENABLED = False
     _build_legal_draft = None
-from pipeline.generator import generate_response_v2
-from feedback.store import (
+from retrieval.generator import generate_response_v2
+from platform.feedback.store import (
     RESPONSE_FEEDBACK_TAGS,
     append_response_feedback,
     feedback_store_path,
 )
-from core.llm import check_ollama_health, get_last_model_used
+from platform.llm import check_ollama_health, get_last_model_used
 
 # Feedback logging (non-critical â€” import errors must not crash the server)
 try:
-    from feedback.logger import log_interaction as _log_interaction
-    from feedback.reviewer import run_ai_review as _run_ai_review
+    from platform.feedback.logger import log_interaction as _log_interaction
+    from platform.feedback.reviewer import run_ai_review as _run_ai_review
     _FEEDBACK_ENABLED = True
 except Exception as _fb_import_err:
     _FEEDBACK_ENABLED = False
@@ -268,7 +268,7 @@ def _init_auth_db():
 _init_auth_db()
 
 # Phase 4: Ensure tier columns exist (idempotent migration)
-from nm_platform.tiers import (
+from platform.tiers import (
     ensure_tier_columns,
     check_query_limit,
     increment_query_count,
@@ -930,7 +930,7 @@ def _chat_error_fallback(detail: str = "") -> dict:
     """Return a safe 200 response when chat processing fails so frontend does not see 500.
     We try to generate a message from the LLM; if that also fails we use a minimal technical note."""
     try:
-        from core.llm import ask_llm
+        from platform.llm import ask_llm
         error_context = f" (Technical detail: {detail})" if detail else ""
         msg = ask_llm(
             f"You are a legal assistant. Something went wrong while processing the user's request.{error_context} "
@@ -2272,7 +2272,7 @@ async def upload_document(file: UploadFile = File(...)):
     The caller injects the text into the chat composer for review before submitting.
     """
     import io, base64
-    from core.llm import ocr_pages_with_vision
+    from platform.llm import ocr_pages_with_vision
 
     _IMAGE_EXTS = {"jpg", "jpeg", "png", "webp", "tiff", "tif", "bmp"}
     _IMAGE_MIME = {
@@ -2889,6 +2889,86 @@ async def continue_chat_stream(request: ContinueChatRequest, user: dict = Depend
     )
 
 
+# ---------------------------------------------------------------------------
+# Orchestrator Agent endpoint — /agent/stream
+# ---------------------------------------------------------------------------
+# This replaces the hardcoded /conversation/continue/stream two-phase loop.
+# The orchestrator holds all 8 tools and decides dynamically what to do.
+# ---------------------------------------------------------------------------
+
+class AgentRequest(BaseModel):
+    message: str
+    conversation: Optional[List] = Field(default_factory=list)
+    workflowState: Optional[dict] = None
+
+
+@app.post("/agent/stream")
+async def agent_stream(request: AgentRequest, user: dict = Depends(_user_from_token)):
+    """
+    Agentic endpoint. Streams SSE events from the OrchestratorAgent.
+
+    Events:
+      step  — progress label (tool being called)
+      token — streamed text fragment
+      done  — final result payload {reply, workflow_state, intake_state, session_id}
+      error — non-fatal error message
+
+    Replaces /conversation/continue/stream for agentic-mode clients.
+    """
+    _enforce_query_limit(user)
+    message = (request.message or "").strip()
+    if not message:
+        return JSONResponse(status_code=400, content={"detail": "message is required"})
+
+    conv = [
+        {"role": m["role"] if isinstance(m, dict) else m.role,
+         "content": _normalize_content(m["content"] if isinstance(m, dict) else m.content)}
+        for m in (request.conversation or [])
+    ]
+    workflow_state = dict(request.workflowState or {})
+    queue: Queue = Queue()
+    loop = asyncio.get_event_loop()
+
+    def run_in_thread():
+        try:
+            from agents.orchestrator import OrchestratorAgent
+            agent = OrchestratorAgent()
+            for event in agent.run_stream(message, conv, workflow_state):
+                ev_type = event.get("type", "step")
+                if ev_type == "step":
+                    queue.put(("step", {"message": event.get("message", "")}))
+                elif ev_type == "token":
+                    queue.put(("token", {"text": event.get("text", "")}))
+                elif ev_type == "done":
+                    queue.put(("result", event.get("payload", {})))
+                    return
+                elif ev_type == "error":
+                    queue.put(("step", {"message": f"⚠ {event.get('message', 'Error')}"}))
+            # If run_stream ended without a done event
+            queue.put(("result", {"reply": "", "workflow_state": workflow_state}))
+        except Exception as exc:
+            logger.exception("agent_stream worker failed: %s", exc)
+            queue.put(("result", {"reply": "An error occurred. Please try again.", "error": str(exc)}))
+
+    import threading as _threading
+    thread = _threading.Thread(target=run_in_thread, daemon=True)
+    thread.start()
+
+    async def event_generator():
+        async for event in _stream_sse_queue(queue, loop):
+            yield event
+
+    return StreamingResponse(
+        event_generator(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",
+        },
+    )
+
+
 # ---------- Tier / Freemium endpoints ----------
 
 class UpgradeRequest(BaseModel):
@@ -3329,7 +3409,7 @@ async def startup_validation():
     logger.info("CORS origins: %s", _cors_origins)
 
     try:
-        from nm_platform.warmup import kickoff_runtime_warmup
+        from platform.warmup import kickoff_runtime_warmup
         kickoff_runtime_warmup("startup_post_ready")
         logger.info("Startup checks complete; remaining warmups launched in background")
     except Exception as e:
