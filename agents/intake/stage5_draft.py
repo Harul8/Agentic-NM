@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 
 def _ask_llm(prompt: str, task_hint: str = "quality") -> str:
-    from platform.llm import ask_llm
+    from platform_pkg.llm import ask_llm
     return (ask_llm(prompt, task_hint=task_hint) or "").strip()
 
 

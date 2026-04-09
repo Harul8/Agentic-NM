@@ -16,7 +16,7 @@ from config import (
     GOOGLE_DRIVE_BARE_ACTS_FOLDER_URL,
     GOOGLE_DRIVE_CASE_LAWS_FOLDER_URL,
 )
-from platform.llm import (
+from platform_pkg.llm import (
     ask_llm,
     ask_llm_stream,
     get_model_display_for_prompt,
@@ -40,7 +40,7 @@ from prompts.research import (
     BARE_ACT_SECTION_RELEVANCE_PROMPT,
     CASE_LAW_RELEVANCE_PROMPT,
 )
-from platform.progress import ProgressTracker
+from platform_pkg.progress import ProgressTracker
 
 logger = logging.getLogger(__name__)
 _ENABLE_CITATION_GRAPH_EXPANSION = os.environ.get("ENABLE_CITATION_GRAPH_EXPANSION", "1").lower() in ("1", "true", "yes")
@@ -1204,7 +1204,7 @@ def _check_bare_act_sufficiency(dispute_text: str, bare_acts: list, llm_fn=None)
     Defaults to False on any error.
     """
     if llm_fn is None:
-        from platform.llm import ask_llm
+        from platform_pkg.llm import ask_llm
         llm_fn = lambda prompt: ask_llm(prompt, task_hint="fast")
     from prompts.research import BARE_ACT_DISPUTE_SUFFICIENCY_PROMPT
 
@@ -5061,7 +5061,7 @@ def _generate_interactive_fast_opinion(
     few_shot_block = ""
     if _ENABLE_RUNTIME_FEWSHOT:
         try:
-            from platform.training.few_shot import get_opinion_example
+            from platform_pkg.training.few_shot import get_opinion_example
             packed = get_opinion_example(facts_summary)
             if packed:
                 few_shot_block = f"\n\n{packed}\n"
@@ -5120,7 +5120,7 @@ def _generate_structured_opinion_by_dispute(
     few_shot_block = ""
     if _ENABLE_RUNTIME_FEWSHOT:
         try:
-            from platform.training.few_shot import get_opinion_example
+            from platform_pkg.training.few_shot import get_opinion_example
             few_shot_query = "\n".join(part for part in [facts_summary, additional_info] if part).strip()
             packed = get_opinion_example(few_shot_query)
             if packed:
@@ -5221,7 +5221,7 @@ def _generate_legal_opinion(
     few_shot_block = ""
     if _ENABLE_RUNTIME_FEWSHOT:
         try:
-            from platform.training.few_shot import get_opinion_example
+            from platform_pkg.training.few_shot import get_opinion_example
             packed = get_opinion_example(facts)
             if packed:
                 few_shot_block = f"\n\n{packed}\n"

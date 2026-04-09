@@ -7,7 +7,7 @@ import os
 import re
 import time
 
-from platform.llm import ask_llm, set_request_model_override
+from platform_pkg.llm import ask_llm, set_request_model_override
 from prompts.research import (
     GREETING_PHRASES,
     INTAKE_STATE_UPDATE_SYSTEM,
@@ -721,7 +721,7 @@ def _run_compact_intake_state(
     few_shot_block = ""
     if _ENABLE_INTAKE_FEWSHOT:
         try:
-            from platform.training.few_shot import get_intake_state_example_pack
+            from platform_pkg.training.few_shot import get_intake_state_example_pack
             # Use only user turns for example retrieval — assistant intake messages
             # ("do you have any documents?", "have you filed a complaint?") contain generic
             # legal terms that create false lexical overlap with unrelated domain examples.
@@ -771,7 +771,7 @@ def _run_next_question_from_state(
     few_shot_block = ""
     if _ENABLE_INTAKE_FEWSHOT:
         try:
-            from platform.training.few_shot import get_intake_reply_example_pack
+            from platform_pkg.training.few_shot import get_intake_reply_example_pack
             # Use only case facts (facts_summary + known_facts) for retrieval — NOT open_points.
             # Canonical open_points strings ("documents / messages / witnesses currently available",
             # "prior actions already taken", etc.) contain generic legal tokens that create false

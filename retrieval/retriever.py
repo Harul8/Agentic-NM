@@ -160,7 +160,7 @@ def normalize_legal_query(query: str) -> str:
         return cached
 
     try:
-        from platform.llm import ask_llm
+        from platform_pkg.llm import ask_llm
         prompt = _QUERY_NORM_PROMPT.format(query=q)
         result = (ask_llm(prompt, task_hint="fast") or "").strip()
         # Sanity-check: result must be non-empty and not absurdly long
@@ -2028,7 +2028,7 @@ def search_case_laws_auto(query: str, top_k: int = 30) -> list:
 
 # crewai @tool imported at top of file (or no-op fallback defined there)
 
-from platform.llm import CREWAI_LLM
+from platform_pkg.llm import CREWAI_LLM
 
 
 def _search_bare_acts(issue: str, top_k: int = 20) -> list:

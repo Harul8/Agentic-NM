@@ -36,6 +36,20 @@ CASELAW_DIR = os.path.join(LEGAL_DB_RAW_DATA, "CaseLaws")
 # Legacy alias (DATA_ROOT no longer used for vector store / chat / bare acts / case laws)
 DATA_ROOT = LEGAL_DATABASE_DIR
 
+# ---------------------------------------------------------------------------
+# LangSmith tracing (set in .env to enable)
+# ---------------------------------------------------------------------------
+# LANGCHAIN_TRACING_V2=true
+# LANGCHAIN_API_KEY=<your-langsmith-api-key>
+# LANGCHAIN_PROJECT=nyaymalaw   (optional: groups runs in LangSmith UI)
+# LANGCHAIN_ENDPOINT=https://api.smith.langchain.com  (default, rarely needs changing)
+
+LANGSMITH_TRACING   = os.environ.get("LANGCHAIN_TRACING_V2", "false").strip().lower() == "true"
+LANGSMITH_API_KEY   = os.environ.get("LANGCHAIN_API_KEY", "").strip()
+LANGSMITH_PROJECT   = os.environ.get("LANGCHAIN_PROJECT", "nyaymalaw").strip()
+LANGSMITH_ENDPOINT  = os.environ.get("LANGCHAIN_ENDPOINT", "https://api.smith.langchain.com").strip()
+
+# ---------------------------------------------------------------------------
 # Feedback Log workbook — auto-filled by feedback_logger.py after every interaction.
 # Override via FEEDBACK_LOG_PATH env var or set this to an absolute path.
 FEEDBACK_LOG_PATH = os.environ.get(

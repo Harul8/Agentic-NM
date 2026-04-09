@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 
 def _ask_llm(prompt: str, task_hint: str = "fast") -> str:
-    from platform.llm import ask_llm
+    from platform_pkg.llm import ask_llm
     return ask_llm(prompt, task_hint=task_hint) or ""
 
 
@@ -411,7 +411,7 @@ def _get_vetting_question(intake_state: dict, conversation_context: str) -> str 
 def _generate_safety_first_response(intake_state: dict) -> str:
     """Generate an immediate safety-focused reply when risk_flags are present."""
     t0 = time.perf_counter()
-    from platform.llm import ask_llm
+    from platform_pkg.llm import ask_llm
     risk_flags  = intake_state.get("risk_flags") or []
     immediate   = intake_state.get("immediate_need") or "unknown"
     summary     = intake_state.get("issue_summary") or "the client's urgent situation"
@@ -467,7 +467,7 @@ def _generate_followup(
     when the conversation contains client-reported allegations of violence or threats.
     """
     t0 = time.perf_counter()
-    from platform.llm import ask_llm
+    from platform_pkg.llm import ask_llm
 
     # Human-readable category label for the prompt
     primary = intake_state.get("primary_issue_cluster") or "general"

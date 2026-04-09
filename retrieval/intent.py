@@ -50,7 +50,7 @@ def extract_research_intent(user_message: str, model_override: str | None = None
         On failure returns safe defaults.
     """
     if llm_fn is None:
-        from platform.llm import ask_llm
+        from platform_pkg.llm import ask_llm
 
         def llm_fn(prompt: str) -> str:
             return ask_llm(prompt, task_hint="fast", model=model_override)

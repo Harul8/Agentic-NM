@@ -106,6 +106,31 @@ from openai import OpenAI
 import tiktoken
 
 logger = logging.getLogger(__name__)
+
+# ---------------------------------------------------------------------------
+# LangSmith tracing — enabled when LANGCHAIN_TRACING_V2=true is set in .env
+# Must be initialised before any LangChain / LangGraph objects are created.
+# ---------------------------------------------------------------------------
+def _init_langsmith() -> None:
+    from config import (
+        LANGSMITH_TRACING,
+        LANGSMITH_API_KEY,
+        LANGSMITH_PROJECT,
+        LANGSMITH_ENDPOINT,
+    )
+    if not LANGSMITH_TRACING:
+        return
+    if not LANGSMITH_API_KEY:
+        logger.warning("LangSmith tracing enabled but LANGCHAIN_API_KEY is not set — skipping.")
+        return
+    # Propagate env vars so the LangSmith SDK picks them up automatically.
+    os.environ.setdefault("LANGCHAIN_TRACING_V2",  "true")
+    os.environ.setdefault("LANGCHAIN_API_KEY",      LANGSMITH_API_KEY)
+    os.environ.setdefault("LANGCHAIN_PROJECT",      LANGSMITH_PROJECT)
+    os.environ.setdefault("LANGCHAIN_ENDPOINT",     LANGSMITH_ENDPOINT)
+    logger.info("LangSmith tracing enabled — project: %s", LANGSMITH_PROJECT)
+
+_init_langsmith()
 # Switch from fast→analysis model when input exceeds this (tokens).
 # Sits above the fast-call ceiling so intake calls always stay on the fast model.
 OPENAI_ANALYSIS_SWITCH_INPUT_TOKENS = 10000

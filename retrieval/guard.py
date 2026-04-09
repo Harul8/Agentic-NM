@@ -15,7 +15,7 @@ def _llm_is_harmful(text: str) -> bool:
     silently blocks legitimate legal queries.
     """
     try:
-        from platform.llm import ask_llm
+        from platform_pkg.llm import ask_llm
         prompt = (
             "You are a content safety classifier for an Indian legal research assistant.\n"
             "Classify the user message below as harmful or not.\n"

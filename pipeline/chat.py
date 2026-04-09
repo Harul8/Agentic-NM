@@ -7,26 +7,65 @@ This module is kept for backward compatibility with the existing frontend endpoi
   /interview_step, /interview_step/stream
 
 All new integrations must use:
-  POST /agent/stream  →  agents.orchestrator.OrchestratorAgent
+  POST /agent/stream  →  agents.orchestrator.OrchestratorAgent (LangGraph)
 
-This file will be removed once the React frontend is migrated to /agent/stream.
+Migration status
+----------------
+The OrchestratorAgent has been fully migrated to LangGraph (agents/orchestrator.py).
+  - Tool definitions  : agents/tool_registry.py  (@tool decorators, auto-schemas)
+  - Graph state       : agents/state.py           (NyaymalaState TypedDict)
+  - Execution graph   : agents/orchestrator.py    (StateGraph: safety→agent→tools→guard)
+  - Observability     : LangSmith auto-traces every /agent/stream call when
+                        LANGCHAIN_TRACING_V2=true is set in .env
+
+process_chat_agent() below is the thin bridge that lets any code in this module
+delegate a single turn to the LangGraph orchestrator without touching api_server.py.
+
+This file will be removed once the React frontend is fully migrated to /agent/stream.
 """
 import logging
 import os
 import time
 import hashlib
 
-from platform.llm import ask_llm
+from platform_pkg.llm import ask_llm
 from agents.intake.collector import get_next_question_or_complete, is_stop_signal
 from agents.intake.stage1_opening import generate_pre_draft_summary, process_turn as _intake_process_turn
-from platform.memory import guard_activity
-from platform.warmup import kickoff_runtime_warmup, kickoff_ollama_warmup_if_qwen
+from platform_pkg.memory import guard_activity
+from platform_pkg.warmup import kickoff_runtime_warmup, kickoff_ollama_warmup_if_qwen
 from retrieval.generator import (
     generate_response_v2 as generate_response,
 )
 from retrieval.guard import check_query_safety, sanitize_input, check_response_safety
 
 logger = logging.getLogger(__name__)
+
+
+# ---------------------------------------------------------------------------
+# LangGraph bridge — delegates a single turn to the new OrchestratorAgent.
+# Use this instead of process_chat() for any new internal callers.
+# ---------------------------------------------------------------------------
+
+def process_chat_agent(
+    message: str,
+    conversation: list[dict],
+    workflow_state: dict | None = None,
+) -> dict:
+    """
+    Thin bridge to the LangGraph OrchestratorAgent.
+
+    Returns the same result dict shape as process_chat() so callers can
+    switch between the two without changing their own code:
+        {
+            "reply":          str,
+            "workflow_state": dict,
+            "intake_state":   dict | None,
+            "session_id":     str | None,
+            "error":          str | None,
+        }
+    """
+    from agents.orchestrator import OrchestratorAgent
+    return OrchestratorAgent().run(message, conversation, workflow_state)
 
 # Set PIPELINE_TIMING=1 in env to log elapsed ms for each step (debug slow follow-ups)
 _PIPELINE_TIMING = os.environ.get("PIPELINE_TIMING", "").lower() in ("1", "true", "yes")
@@ -373,7 +412,7 @@ def _run_generic_chat(
         )
         prompt = f"{GENERIC_CHAT_SYSTEM}\n\nConversation:\n{context}\n\nUser: {current_message}\n\nAssistant:"
         if token_callback:
-            from platform.llm import ask_llm_stream
+            from platform_pkg.llm import ask_llm_stream
             parts = []
             for tok in ask_llm_stream(prompt, task_hint="fast", model=model_override):
                 token_callback(tok)
@@ -883,6 +922,5 @@ def process_chat(
 
 
     return _empty_result()
-
 
 

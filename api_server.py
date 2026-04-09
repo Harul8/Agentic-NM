@@ -29,17 +29,17 @@ except Exception as _s5_err:
     _STAGE5_ENABLED = False
     _build_legal_draft = None
 from retrieval.generator import generate_response_v2
-from platform.feedback.store import (
+from platform_pkg.feedback.store import (
     RESPONSE_FEEDBACK_TAGS,
     append_response_feedback,
     feedback_store_path,
 )
-from platform.llm import check_ollama_health, get_last_model_used
+from platform_pkg.llm import check_ollama_health, get_last_model_used
 
 # Feedback logging (non-critical â€” import errors must not crash the server)
 try:
-    from platform.feedback.logger import log_interaction as _log_interaction
-    from platform.feedback.reviewer import run_ai_review as _run_ai_review
+    from platform_pkg.feedback.logger import log_interaction as _log_interaction
+    from platform_pkg.feedback.reviewer import run_ai_review as _run_ai_review
     _FEEDBACK_ENABLED = True
 except Exception as _fb_import_err:
     _FEEDBACK_ENABLED = False
@@ -268,7 +268,7 @@ def _init_auth_db():
 _init_auth_db()
 
 # Phase 4: Ensure tier columns exist (idempotent migration)
-from platform.tiers import (
+from platform_pkg.tiers import (
     ensure_tier_columns,
     check_query_limit,
     increment_query_count,
@@ -930,7 +930,7 @@ def _chat_error_fallback(detail: str = "") -> dict:
     """Return a safe 200 response when chat processing fails so frontend does not see 500.
     We try to generate a message from the LLM; if that also fails we use a minimal technical note."""
     try:
-        from platform.llm import ask_llm
+        from platform_pkg.llm import ask_llm
         error_context = f" (Technical detail: {detail})" if detail else ""
         msg = ask_llm(
             f"You are a legal assistant. Something went wrong while processing the user's request.{error_context} "
@@ -2272,7 +2272,7 @@ async def upload_document(file: UploadFile = File(...)):
     The caller injects the text into the chat composer for review before submitting.
     """
     import io, base64
-    from platform.llm import ocr_pages_with_vision
+    from platform_pkg.llm import ocr_pages_with_vision
 
     _IMAGE_EXTS = {"jpg", "jpeg", "png", "webp", "tiff", "tif", "bmp"}
     _IMAGE_MIME = {
@@ -3409,7 +3409,7 @@ async def startup_validation():
     logger.info("CORS origins: %s", _cors_origins)
 
     try:
-        from platform.warmup import kickoff_runtime_warmup
+        from platform_pkg.warmup import kickoff_runtime_warmup
         kickoff_runtime_warmup("startup_post_ready")
         logger.info("Startup checks complete; remaining warmups launched in background")
     except Exception as e:

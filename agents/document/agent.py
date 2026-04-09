@@ -198,7 +198,7 @@ def _llm_extract_facts(text: str, dispute_context: str, doc_type: str) -> dict:
     Returns a dict with document_summary and obligations.
     """
     try:
-        from platform.llm import ask_llm
+        from platform_pkg.llm import ask_llm
         prompt = (
             f"You are analysing a {doc_type.replace('_', ' ')} uploaded by a client seeking legal advice.\n\n"
             f"DISPUTE CONTEXT:\n{dispute_context[:500]}\n\n"

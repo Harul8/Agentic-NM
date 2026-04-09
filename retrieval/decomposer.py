@@ -48,7 +48,7 @@ def decompose_disputes(facts_summary: str, llm_fn=None) -> list:
                     return [dict(d) for d in cached_result]  # return copies
 
     if llm_fn is None:
-        from platform.llm import ask_llm
+        from platform_pkg.llm import ask_llm
         llm_fn = lambda prompt: ask_llm(prompt, task_hint="fast")
 
     from prompts.research import DISPUTE_DECOMPOSITION_PROMPT

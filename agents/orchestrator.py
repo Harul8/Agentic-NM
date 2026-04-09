@@ -1,40 +1,37 @@
 """
-agents/orchestrator.py — LLM-driven orchestrator agent.
+agents/orchestrator.py — LangGraph-powered orchestrator for Nyaymalaw.
 
-Replaces the hardcoded pipeline/chat.py two-phase loop.
+Replaces the hand-rolled tool-use loop in the previous OrchestratorAgent class
+with a proper LangGraph StateGraph.  The graph has four nodes:
 
-The orchestrator holds the full 8-tool set and runs a tool-use loop:
-  1. Send conversation + tools to the LLM
-  2. If the model requests tools: execute them (in parallel when multiple)
-  3. Append tool results, loop back
-  4. When the model produces final text: apply grounding guard, return
+    START
+      │
+      ▼
+  [safety_check]  ── unsafe ──► END
+      │ safe
+      ▼
+    [agent]  ◄──────────────────┐
+      │                         │
+      ├── tool calls ──► [tools]─┘
+      │
+      └── final answer ──► [grounding_guard] ──► END
 
-Key design properties:
-  - Parallel tool execution: research calls (bare acts + case laws) fire concurrently
-  - Session continuity: intake session_id travels in workflow_state across turns
-  - Safety: guard.py checks input before the loop, grounding guard checks draft output
-  - Streaming: run_stream() yields event dicts for the SSE layer in api_server.py
-  - Drop-in: same signature as pipeline/chat.py's process_chat()
+Key properties preserved from the original implementation
+---------------------------------------------------------
+- Parallel tool execution   : LangGraph's ToolNode fires all requested tools
+                              concurrently via its built-in thread pool.
+- Dynamic model selection   : fast vs. regular model chosen per-turn based on
+                              total context size.
+- Safety checks             : input safety_check node + output grounding_guard node.
+- Session continuity        : session_id travels in NyaymalaState; no manual
+                              plumbing through workflow_state dicts.
+- Streaming                 : run_stream() yields the same event dict schema as
+                              before so api_server.py requires no changes.
+- Drop-in compatibility     : OrchestratorAgent.run() / run_stream() signatures
+                              are preserved exactly.
 
-Usage:
-
-    from agents.orchestrator import OrchestratorAgent
-
-    agent = OrchestratorAgent()
-
-    # Blocking
-    result = agent.run(message, conversation, workflow_state)
-    # result = {
-    #     "reply": str,
-    #     "workflow_state": dict,   # updated state to persist
-    #     "intake_state": dict,     # structured facts for frontend
-    #     "session_id": str | None,
-    # }
-
-    # Streaming
-    for event in agent.run_stream(message, conversation, workflow_state):
-        # event = {"type": "step"|"token"|"done"|"error", ...}
-        ...
+LangSmith tracing is automatic — every graph execution appears as a traced run
+in the LangSmith UI when LANGCHAIN_TRACING_V2=true is set in .env.
 """
 
 from __future__ import annotations
@@ -42,16 +39,21 @@ from __future__ import annotations
 import json
 import logging
 import time
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from typing import Generator, Optional
+from typing import Generator, Literal
 
-from agents.tool_registry import TOOL_DEFINITIONS, dispatch_tool
+from langchain_core.messages import AIMessage, HumanMessage, SystemMessage, ToolMessage
+from langchain_openai import ChatOpenAI
+from langgraph.graph import StateGraph, START, END
+from langgraph.prebuilt import ToolNode
+
+from agents.state import NyaymalaState
+from agents.tool_registry import TOOLS
 from retrieval.guard import check_query_safety, sanitize_input, check_response_safety
 
 logger = logging.getLogger("nyaymalaw.orchestrator")
 
 # ---------------------------------------------------------------------------
-# System prompt — the orchestrator's persona and tool-use strategy
+# System prompt
 # ---------------------------------------------------------------------------
 
 _SYSTEM_PROMPT = """You are Nyaymalaw, a senior Indian legal advocate AI.
@@ -78,7 +80,7 @@ Legal opinion request (client has a dispute, wants advice):
   1. Call start_intake with the client's first message OR continue_intake if a session already exists.
   2. Present the AI's reply from the tool. Keep doing this until advance_to_stage2 is true.
   3. When advance_to_stage2 is true, call draft_opinion to produce the structured opinion.
-  4. While intake is underway, you MAY fire research tools in parallel to get a head start — especially if the legal category is already clear from the first message.
+  4. While intake is underway, you MAY fire research tools in parallel to get a head start.
 
 Research request (client wants statutes or case law, no personal dispute):
   Fire search_bare_acts and search_case_laws IN PARALLEL. Synthesize and explain.
@@ -88,7 +90,7 @@ Mixed request (personal dispute + explicit research question):
   Run intake AND research in parallel from the first turn.
 
 PARALLEL TOOL USE
-When you need both bare acts and case laws, request BOTH tools in a single response — the system executes them concurrently. Do not wait for one to finish before calling the other.
+When you need both bare acts and case laws, request BOTH tools in a single response — the system executes them concurrently.
 
 INTAKE CONVERSATION PRINCIPLES
 - Open with brief empathy when the facts call for it.
@@ -101,34 +103,187 @@ INTAKE CONVERSATION PRINCIPLES
 - Never jump to legal conclusions before intake is complete.
 
 GROUNDED FINAL ANSWERS
-All legal analysis must be grounded in tool results. Do not cite law you have not retrieved. If the tools return no relevant material, say so plainly rather than guessing. The final answer should be flowing prose: short fact framing, grounded legal analysis, practical next-step guidance — no rigid heading-heavy templates.
+All legal analysis must be grounded in tool results. Do not cite law you have not retrieved. If the tools return no relevant material, say so plainly rather than guessing.
 
 SESSION CONTINUITY
-The current intake session_id (if any) will be provided in the workflow context below. Always pass the existing session_id to continue_intake rather than calling start_intake again mid-conversation.
+The current intake session_id (if any) will be provided in the workflow context. Always pass the existing session_id to continue_intake rather than calling start_intake again mid-conversation.
 """
+
+# Max recursion rounds (agent + tools counts as 2 per round → 6 rounds = 12 steps)
+_MAX_RECURSION = 12
 
 
 # ---------------------------------------------------------------------------
-# Orchestrator
+# Graph nodes
+# ---------------------------------------------------------------------------
+
+def _safety_check_node(state: NyaymalaState) -> dict:
+    """Sanitize input and run safety + PII checks before touching the LLM."""
+    last_human = next(
+        (m for m in reversed(state["messages"]) if isinstance(m, HumanMessage)),
+        None,
+    )
+    if last_human is None:
+        return {"safe": True, "pii_warning": None}
+
+    text = sanitize_input(last_human.content or "")
+    safety = check_query_safety(text)
+
+    if not safety["safe"]:
+        blocked_reply = AIMessage(content=safety["reason"])
+        return {
+            "messages": [blocked_reply],
+            "safe": False,
+            "pii_warning": None,
+            "final_reply": safety["reason"],
+        }
+
+    return {
+        "safe": True,
+        "pii_warning": safety.get("pii_warning"),
+    }
+
+
+def _agent_node(state: NyaymalaState) -> dict:
+    """
+    Core LLM node.  Selects fast or regular model based on context size,
+    binds all tools, and invokes the model.  Returns the AI message (which
+    may contain tool_calls) for LangGraph to route onward.
+    """
+    from platform_pkg.llm import OPENAI_MODEL, OPENAI_MODEL_FAST
+
+    # Build full message list: system prompt (with session context) + history
+    session_id = state.get("session_id")
+    system_content = _SYSTEM_PROMPT
+    if session_id:
+        system_content += f"\n\nCURRENT INTAKE SESSION: session_id = {session_id!r}. Use continue_intake with this session_id."
+    else:
+        system_content += "\n\nCURRENT INTAKE SESSION: None. Call start_intake to begin a new intake session if the user has a legal dispute."
+
+    messages = [SystemMessage(content=system_content)] + list(state["messages"])
+
+    # Dynamic model selection based on total context size
+    total_chars = sum(len(str(getattr(m, "content", "") or "")) for m in messages)
+    model_name = OPENAI_MODEL if total_chars > 8000 else OPENAI_MODEL_FAST
+
+    llm = ChatOpenAI(model=model_name, max_tokens=4000, timeout=120)
+    llm_with_tools = llm.bind_tools(TOOLS)
+
+    response: AIMessage = llm_with_tools.invoke(messages)
+
+    # Extract updated session_id from any tool results already in state
+    # (will be overwritten properly after tool execution in next cycle)
+    return {"messages": [response]}
+
+
+def _grounding_guard_node(state: NyaymalaState) -> dict:
+    """
+    Post-generation safety check on the LLM's final text output.
+    Replaces the unsafe draft with a neutral fallback if the guard fires.
+    """
+    last_ai = next(
+        (m for m in reversed(state["messages"]) if isinstance(m, AIMessage)),
+        None,
+    )
+    if last_ai is None:
+        return {"final_reply": ""}
+
+    text = last_ai.content or ""
+    safety = check_response_safety(text)
+
+    if not safety["safe"]:
+        logger.warning("Grounding guard rejected orchestrator output")
+        fallback = (
+            "I was unable to produce a fully grounded response for this matter. "
+            "Please rephrase your query or provide additional facts."
+        )
+        return {
+            "messages": [AIMessage(content=fallback)],
+            "final_reply": fallback,
+        }
+
+    # Extract session_id and intake_state from the most recent ToolMessages
+    session_id = state.get("session_id")
+    intake_state = state.get("intake_state")
+
+    for msg in reversed(state["messages"]):
+        if not isinstance(msg, ToolMessage):
+            continue
+        try:
+            data = json.loads(msg.content or "{}")
+            if "session_id" in data and data["session_id"]:
+                session_id = data["session_id"]
+            if "intake_state" in data and data["intake_state"]:
+                intake_state = data["intake_state"]
+        except Exception:
+            pass
+
+    return {
+        "final_reply": text,
+        "session_id": session_id,
+        "intake_state": intake_state,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Routing functions (conditional edges)
+# ---------------------------------------------------------------------------
+
+def _route_after_safety(state: NyaymalaState) -> Literal["agent", "__end__"]:
+    return "agent" if state.get("safe", True) else END
+
+
+def _route_after_agent(state: NyaymalaState) -> Literal["tools", "grounding_guard"]:
+    last_ai = next(
+        (m for m in reversed(state["messages"]) if isinstance(m, AIMessage)),
+        None,
+    )
+    if last_ai and getattr(last_ai, "tool_calls", None):
+        return "tools"
+    return "grounding_guard"
+
+
+# ---------------------------------------------------------------------------
+# Build the graph (compiled once at module import)
+# ---------------------------------------------------------------------------
+
+def _build_graph():
+    tools_node = ToolNode(TOOLS)
+
+    builder = StateGraph(NyaymalaState)
+    builder.add_node("safety_check",    _safety_check_node)
+    builder.add_node("agent",           _agent_node)
+    builder.add_node("tools",           tools_node)
+    builder.add_node("grounding_guard", _grounding_guard_node)
+
+    builder.add_edge(START, "safety_check")
+    builder.add_conditional_edges("safety_check", _route_after_safety,
+                                  {"agent": "agent", END: END})
+    builder.add_conditional_edges("agent", _route_after_agent,
+                                  {"tools": "tools", "grounding_guard": "grounding_guard"})
+    builder.add_edge("tools", "agent")
+    builder.add_edge("grounding_guard", END)
+
+    return builder.compile(recursion_limit=_MAX_RECURSION)
+
+
+_graph = _build_graph()
+
+
+# ---------------------------------------------------------------------------
+# OrchestratorAgent — drop-in replacement with identical public API
 # ---------------------------------------------------------------------------
 
 class OrchestratorAgent:
     """
-    LLM-driven orchestrator that replaces the hardcoded pipeline/chat.py loop.
+    Thin wrapper around the compiled LangGraph so api_server.py and
+    pipeline/chat.py need zero changes.
 
-    The agent runs an OpenAI tool-use loop, executing tools in parallel when
-    the model requests multiple at once, until it produces a final text answer.
+    Public methods
+    --------------
+    run(message, conversation, workflow_state)  → result dict
+    run_stream(message, conversation, workflow_state)  → Generator[event dict]
     """
-
-    MAX_TOOL_ROUNDS = 6        # hard cap on tool-use rounds per request
-    MAX_WORKERS = 4            # max parallel tool threads
-
-    def __init__(self) -> None:
-        pass
-
-    # ------------------------------------------------------------------
-    # Public API
-    # ------------------------------------------------------------------
 
     def run(
         self,
@@ -136,17 +291,13 @@ class OrchestratorAgent:
         conversation: list[dict],
         workflow_state: dict | None = None,
     ) -> dict:
-        """
-        Blocking call. Returns a result dict:
-        {
-            "reply": str,
-            "workflow_state": dict,
-            "intake_state": dict | None,
-            "session_id": str | None,
-            "error": str | None,
+        result = {
+            "reply": "",
+            "workflow_state": workflow_state or {},
+            "intake_state": None,
+            "session_id": None,
+            "error": None,
         }
-        """
-        result = {"reply": "", "workflow_state": workflow_state or {}, "intake_state": None, "session_id": None, "error": None}
         events = list(self.run_stream(message, conversation, workflow_state))
         for ev in events:
             if ev["type"] == "done":
@@ -161,251 +312,116 @@ class OrchestratorAgent:
         conversation: list[dict],
         workflow_state: dict | None = None,
     ) -> Generator[dict, None, None]:
-        """
-        Streaming call. Yields event dicts:
-          {"type": "step",  "message": str}               — progress update
-          {"type": "token", "text": str}                  — streamed text fragment
-          {"type": "done",  "payload": {...}}              — final result
-          {"type": "error", "message": str}               — error (non-fatal if intake reply available)
-        """
         t0 = time.perf_counter()
         workflow_state = dict(workflow_state or {})
-        session_id: str | None = workflow_state.get("intake_session_id")
 
-        # ── 1. Safety check ───────────────────────────────────────────
-        message = sanitize_input(message)
-        safety = check_query_safety(message)
-        if not safety["safe"]:
-            yield {"type": "done", "payload": {
-                "reply": safety["reason"],
-                "workflow_state": workflow_state,
-                "intake_state": None,
-                "session_id": session_id,
-            }}
-            return
+        # Build initial LangGraph state
+        history = self._build_history(conversation)
+        initial_state: NyaymalaState = {
+            "messages": history + [HumanMessage(content=message)],
+            "safe": True,
+            "pii_warning": None,
+            "session_id": workflow_state.get("intake_session_id"),
+            "intake_state": None,
+            "final_reply": None,
+        }
 
-        if safety.get("pii_warning"):
-            yield {"type": "step", "message": safety["pii_warning"]}
-
-        # ── 2. Build the initial message list ─────────────────────────
         yield {"type": "step", "message": "Thinking…"}
-        messages = self._build_messages(message, conversation, session_id)
 
-        # ── 3. Tool-use loop ──────────────────────────────────────────
-        final_text = ""
-        updated_session_id = session_id
-        updated_intake_state: dict | None = None
-        round_count = 0
-
+        final_state: NyaymalaState | None = None
         try:
-            client = self._get_client()
+            for chunk in _graph.stream(initial_state, stream_mode="values"):
+                final_state = chunk
 
-            while round_count < self.MAX_TOOL_ROUNDS:
-                round_count += 1
-                logger.debug("Orchestrator tool-use round %d", round_count)
-
-                response = client.chat.completions.create(
-                    model=self._pick_model(messages),
-                    messages=messages,
-                    tools=TOOL_DEFINITIONS,
-                    tool_choice="auto",
-                    max_completion_tokens=4000,
-                    timeout=120,
+                # Emit progress steps from the latest AI message
+                last_ai = next(
+                    (m for m in reversed(chunk.get("messages", []))
+                     if isinstance(m, AIMessage) and getattr(m, "tool_calls", None)),
+                    None,
                 )
-
-                choice = response.choices[0]
-                finish_reason = choice.finish_reason
-                msg = choice.message
-
-                # Append assistant message to history
-                messages.append(msg.model_dump() if hasattr(msg, "model_dump") else {
-                    "role": "assistant",
-                    "content": msg.content,
-                    "tool_calls": [tc.model_dump() if hasattr(tc, "model_dump") else tc
-                                   for tc in (msg.tool_calls or [])],
-                })
-
-                if finish_reason == "stop" or not msg.tool_calls:
-                    # Model produced its final answer
-                    final_text = (msg.content or "").strip()
-                    break
-
-                # ── Execute all requested tools (in parallel) ─────────
-                tool_calls = msg.tool_calls
-                tool_names = [tc.function.name for tc in tool_calls]
-                yield {"type": "step", "message": self._step_label(tool_names)}
-
-                tool_results = self._execute_tools_parallel(tool_calls)
-
-                # Collect updated session_id and intake_state from results
-                for tool_name, result_json in tool_results.items():
-                    try:
-                        result_data = json.loads(result_json)
-                        if "session_id" in result_data:
-                            updated_session_id = result_data["session_id"]
-                        if "intake_state" in result_data and result_data["intake_state"]:
-                            updated_intake_state = result_data["intake_state"]
-                    except Exception:
-                        pass
-
-                # Append tool result messages
-                for tc in tool_calls:
-                    tid = tc.id
-                    result_json = tool_results.get(tc.function.name, json.dumps({"error": "no result"}))
-                    messages.append({
-                        "role": "tool",
-                        "tool_call_id": tid,
-                        "content": result_json,
-                    })
-
-            else:
-                logger.warning("Orchestrator hit MAX_TOOL_ROUNDS (%d)", self.MAX_TOOL_ROUNDS)
+                if last_ai:
+                    names = [tc["name"] for tc in last_ai.tool_calls]
+                    yield {"type": "step", "message": self._step_label(names)}
 
         except Exception as exc:
-            logger.exception("Orchestrator tool-use loop failed: %s", exc)
+            logger.exception("LangGraph execution failed: %s", exc)
             yield {"type": "error", "message": str(exc)}
-            # Fall through — if we have partial text, still try to return it
 
-        # ── 4. Grounding guard on any draft output ────────────────────
-        if final_text:
-            safety_out = check_response_safety(final_text)
-            if not safety_out["safe"]:
-                logger.warning("Grounding guard rejected orchestrator output")
-                final_text = (
-                    "I was unable to produce a fully grounded response for this matter. "
-                    "Please rephrase your query or provide additional facts."
-                )
+        # Extract final reply and updated state
+        reply = ""
+        session_id = workflow_state.get("intake_session_id")
+        intake_state = None
 
-        # ── 5. Stream tokens + done ───────────────────────────────────
-        if final_text:
+        if final_state:
+            reply = final_state.get("final_reply") or ""
+            if final_state.get("session_id"):
+                session_id = final_state["session_id"]
+            intake_state = final_state.get("intake_state")
+
+            # PII warning as a step event
+            if final_state.get("pii_warning"):
+                yield {"type": "step", "message": final_state["pii_warning"]}
+
+        # Stream reply tokens (true token-level streaming is available via
+        # _graph.astream_events — kept as chunked for sync compatibility)
+        if reply:
             chunk_size = 24
-            for i in range(0, len(final_text), chunk_size):
-                yield {"type": "token", "text": final_text[i:i + chunk_size]}
+            for i in range(0, len(reply), chunk_size):
+                yield {"type": "token", "text": reply[i:i + chunk_size]}
 
-        # Update workflow state
-        if updated_session_id:
-            workflow_state["intake_session_id"] = updated_session_id
+        # Update workflow_state with new session_id
+        if session_id:
+            workflow_state["intake_session_id"] = session_id
 
         elapsed = (time.perf_counter() - t0) * 1000
-        logger.info("Orchestrator completed in %.0f ms (rounds=%d)", elapsed, round_count)
+        logger.info("Orchestrator completed in %.0f ms", elapsed)
 
-        yield {"type": "done", "payload": {
-            "reply": final_text,
-            "workflow_state": workflow_state,
-            "intake_state": updated_intake_state,
-            "session_id": updated_session_id,
-        }}
+        yield {
+            "type": "done",
+            "payload": {
+                "reply": reply,
+                "workflow_state": workflow_state,
+                "intake_state": intake_state,
+                "session_id": session_id,
+            },
+        }
 
     # ------------------------------------------------------------------
-    # Private helpers
+    # Helpers
     # ------------------------------------------------------------------
 
-    def _get_client(self):
-        from platform.llm import _get_openai_client
-        return _get_openai_client()
-
-    def _pick_model(self, messages: list[dict]) -> str:
-        """Choose fast or regular model based on total message length."""
-        from platform.llm import OPENAI_MODEL_FAST, OPENAI_MODEL
-        total_chars = sum(len(str(m.get("content") or "")) for m in messages)
-        # Use regular model once the context grows (intake complete + research)
-        return OPENAI_MODEL if total_chars > 8000 else OPENAI_MODEL_FAST
-
-    def _build_messages(
-        self,
-        message: str,
-        conversation: list[dict],
-        session_id: str | None,
-    ) -> list[dict]:
-        """
-        Build the messages list for the first LLM call.
-
-        Includes:
-          - system prompt (with session context injected)
-          - recent conversation history (last 12 turns)
-          - current user message
-        """
-        # Inject session context into system prompt
-        system = _SYSTEM_PROMPT
-        if session_id:
-            system += f"\n\nCURRENT INTAKE SESSION: session_id = {session_id!r}. Use continue_intake with this session_id."
-        else:
-            system += "\n\nCURRENT INTAKE SESSION: None. Call start_intake to begin a new intake session if the user has a legal dispute."
-
-        msgs: list[dict] = [{"role": "system", "content": system}]
-
-        # Include recent history (last 12 turns, skip system messages)
-        history = [
-            {"role": m["role"], "content": m.get("content") or ""}
-            for m in (conversation or [])[-12:]
-            if m.get("role") in ("user", "assistant") and m.get("content")
-        ]
-        msgs.extend(history)
-
-        # Current message
-        msgs.append({"role": "user", "content": message})
-        return msgs
-
-    def _execute_tools_parallel(self, tool_calls: list) -> dict[str, str]:
-        """
-        Execute all tool calls concurrently.
-        Returns {tool_name: json_result_string}.
-        """
-        results: dict[str, str] = {}
-
-        def _run_one(tc) -> tuple[str, str]:
-            name = tc.function.name
-            try:
-                args = json.loads(tc.function.arguments or "{}")
-            except json.JSONDecodeError:
-                args = {}
-            try:
-                result = dispatch_tool(name, args)
-            except Exception as exc:
-                logger.exception("Tool %r failed: %s", name, exc)
-                result = json.dumps({"error": str(exc), "tool": name})
-            return name, result
-
-        if len(tool_calls) == 1:
-            name, result = _run_one(tool_calls[0])
-            results[name] = result
-        else:
-            with ThreadPoolExecutor(max_workers=min(self.MAX_WORKERS, len(tool_calls))) as executor:
-                futures = {executor.submit(_run_one, tc): tc for tc in tool_calls}
-                for future in as_completed(futures):
-                    try:
-                        name, result = future.result(timeout=60)
-                        results[name] = result
-                    except Exception as exc:
-                        tc = futures[future]
-                        logger.error("Parallel tool %r raised: %s", tc.function.name, exc)
-                        results[tc.function.name] = json.dumps({"error": str(exc)})
-
-        return results
+    def _build_history(self, conversation: list[dict]) -> list:
+        """Convert the raw conversation list to LangChain message objects."""
+        messages = []
+        for m in (conversation or [])[-12:]:
+            role = m.get("role")
+            content = m.get("content") or ""
+            if not content:
+                continue
+            if role == "user":
+                messages.append(HumanMessage(content=content))
+            elif role == "assistant":
+                messages.append(AIMessage(content=content))
+        return messages
 
     def _step_label(self, tool_names: list[str]) -> str:
-        """Generate a human-readable progress label for the set of tools being called."""
         labels = {
-            "search_bare_acts":          "Searching legislation…",
-            "search_case_laws":          "Searching case law…",
-            "lookup_section":            "Looking up statutory section…",
-            "lookup_case":               "Looking up judgment…",
-            "start_intake":              "Starting intake…",
-            "continue_intake":           "Processing your response…",
-            "get_intake_state":          "Reviewing collected facts…",
-            "draft_opinion":             "Drafting legal opinion…",
-            "extract_document_facts":    "Reading your document…",
-            "cross_reference_document":  "Cross-referencing document with your account…",
-            "identify_forum":            "Identifying the right forum…",
-            "check_limitation":          "Checking limitation period…",
+            "search_bare_acts":         "Searching legislation…",
+            "search_case_laws":         "Searching case law…",
+            "lookup_section":           "Looking up statutory section…",
+            "lookup_case":              "Looking up judgment…",
+            "start_intake":             "Starting intake…",
+            "continue_intake":          "Processing your response…",
+            "get_intake_state":         "Reviewing collected facts…",
+            "draft_opinion":            "Drafting legal opinion…",
+            "extract_document_facts":   "Reading your document…",
+            "cross_reference_document": "Cross-referencing document…",
+            "identify_forum":           "Identifying the right forum…",
+            "check_limitation":         "Checking limitation period…",
         }
         if len(tool_names) == 1:
             return labels.get(tool_names[0], f"Running {tool_names[0]}…")
-
-        # Multiple tools in parallel
         is_research = all(n in ("search_bare_acts", "search_case_laws") for n in tool_names)
         if is_research:
             return "Searching legislation and case law in parallel…"
-
-        parts = [labels.get(n, n) for n in tool_names]
-        return " + ".join(parts)
+        return " + ".join(labels.get(n, n) for n in tool_names)
