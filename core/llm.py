@@ -442,6 +442,18 @@ def _extract_openai_text(resp) -> str:
     if not parts:
         # Diagnostic metadata only; avoids leaking prompt/response body content.
         try:
+            # Check for content_filter finish_reason in choices — distinct from other empty responses
+            choices_raw = _read(payload, "choices", []) or []
+            for ch in choices_raw:
+                fr = _read(ch, "finish_reason", None)
+                if fr == "content_filter":
+                    logger.warning(
+                        "OpenAI content_filter: server-side safety policy blocked the response. "
+                        "Consider adding professional framing to the system prompt or paraphrasing "
+                        "sensitive client-reported language before sending."
+                    )
+                    return ""
+
             output_items = _read(payload, "output", []) or []
             output_types = []
             for item in output_items:

@@ -352,11 +352,16 @@ RETRIEVED MATERIALS GROUPED BY DISPUTE:
 
 Use only the retrieved materials above -- do not introduce any act, section, case, or legal rule from memory. The verbatim statutory text is shown separately in the UI; do not repeat long quotations.
 
-In summary_text, explain what the law says about this client's situation -- which provisions are doing the real work, what rights or protections they offer, and where the record is still limited. Prioritise what concretely helps the client (protection, relief, access to remedies) over formal or introductory sections. Do not mention offering judicial precedents (the UI handles that invitation).
+FORMATTING RULES (strictly follow):
+- In summary_text: use markdown formatting. Act names in **bold**. Section numbers as **Section X, Act Name**. Use bullet points for distinct legal points. Use short paragraphs — not one dense block of text.
+- Cite sections specifically: e.g. "**Section 85, Bharatiya Nyaya Sanhita 2023** penalises cruelty by a husband or his relatives" — not vague references.
+- In next_steps: each step title should be a short imperative in **bold**. Keep each step's summary to 2-3 sentences max.
+
+In summary_text, explain what the law says about this situation -- which provisions are doing the real work, what rights or protections they offer, and where the record is still limited. Prioritise what concretely helps (protection, relief, remedies) over formal or introductory sections. Do not mention offering judicial precedents (the UI handles that invitation).
 
 In section_explanations, include only sections that genuinely matter on these facts with a plain explanation of why.
 
-In next_steps, output 2-5 practical steps the client should take, in sensible order. Each step has a short imperative title and a one-paragraph summary of what to do and why. Do not repeat Act names or section numbers already discussed -- refer in general terms.
+In next_steps, output 2-5 practical steps in sensible order. Each step has a short imperative title and a brief (2-3 sentence) summary. Do not repeat Act names or section numbers already discussed.
 
 Return JSON only:
 {{
@@ -425,7 +430,7 @@ Rules:
 - do not invent authorities or overclaim certainty"""
 
 
-STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT = """You are a senior Indian advocate preparing a grounded legal opinion for a client.
+STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT = """You are a senior Indian advocate preparing a grounded legal opinion.
 
 CASE FACTS FROM CLIENT:
 {dispute_facts}
@@ -436,10 +441,16 @@ ADDITIONAL INFORMATION PROVIDED BY CLIENT:
 RETRIEVED LEGAL MATERIALS GROUPED BY DISPUTE:
 {dispute_blocks_text}
 
-Use only the retrieved materials above.
-Do not introduce any act, section, case, or legal rule from memory.
+Use only the retrieved materials above. Do not introduce any act, section, case, or legal rule from memory.
 
-Write a grounded legal opinion using only the retrieved materials above. Cover the main disputes, what position emerges on the present record, and practical next steps. Prefer the strongest materials per dispute rather than citing everything. Do not quote long statutory or judgment text. Tailor the language to the audience -- plain English for lay users, tighter legal language for professionals. Where additional facts would change outcomes, say so. If the record is thin on a point, say so instead of filling gaps from memory."""
+FORMATTING RULES (strictly follow):
+- Use markdown: **bold** for Act names and section numbers, bullet points for distinct legal points, short paragraphs.
+- Cite sections specifically, e.g.: "**Section 85, Bharatiya Nyaya Sanhita 2023** — cruelty by husband or relatives" or "**Section 3, Dowry Prohibition Act 1961** — giving/taking dowry".
+- For case law: cite as **Case Name (Court, Year)** and give one sentence on what it held that matters here.
+- Structure the opinion with clear sub-headings per dispute (e.g. **Criminal Liability**, **Protection Orders**, **Maintenance**).
+- Practical next steps as a numbered list with bold titles.
+
+Write a grounded legal opinion covering the main disputes, what position emerges on the present record, and practical next steps. Prefer the strongest materials per dispute rather than citing everything. Do not quote long statutory or judgment text. Plain English for lay users, tighter legal language for professionals. Where additional facts would change outcomes, say so. If the record is thin on a point, say so instead of filling gaps from memory."""
 
 
 FAST_INTERACTIVE_OPINION_PROMPT = """You are a senior Indian advocate preparing a grounded opinion for an interactive chat.
@@ -455,7 +466,14 @@ LOCAL CASE LAW MATERIALS:
 
 Use only these materials. Do not introduce any act, section, case, or legal rule from memory.
 
-Write a concise, readable opinion grounded in the strongest materials available. Prefer the most directly relevant provisions and cases over citing everything. Do not use headings, bullets, or long quotations. If the record is thin on a point, say so plainly. If only bare acts are available, stay statutory and do not invent precedent."""
+FORMATTING RULES:
+- Use markdown: **bold** for Act names and section numbers, bullet points for distinct legal points.
+- Cite sections specifically: e.g. "**Section 85, Bharatiya Nyaya Sanhita 2023**" not just "the law".
+- For case law: cite as **Case Name (Court, Year)** with one sentence on what it held.
+- Use short paragraphs. Structure with sub-headings if covering more than one issue.
+- Practical steps as a short numbered list with bold titles.
+
+Write a concise, readable opinion grounded in the strongest materials available. Prefer the most directly relevant provisions and cases over citing everything. If the record is thin on a point, say so plainly. If only bare acts are available, stay statutory and do not invent precedent."""
 
 
 # ---------------------------------------------------------------------------
