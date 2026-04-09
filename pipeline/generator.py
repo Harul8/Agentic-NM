@@ -43,10 +43,10 @@ from prompts.research import (
 from nm_platform.progress import ProgressTracker
 
 logger = logging.getLogger(__name__)
-_ENABLE_CITATION_GRAPH_EXPANSION = os.environ.get("ENABLE_CITATION_GRAPH_EXPANSION", "").lower() in ("1", "true", "yes")
+_ENABLE_CITATION_GRAPH_EXPANSION = os.environ.get("ENABLE_CITATION_GRAPH_EXPANSION", "1").lower() in ("1", "true", "yes")
 _ENABLE_CASE_SUMMARY_LLM = os.environ.get("ENABLE_CASE_SUMMARY_LLM", "").lower() in ("1", "true", "yes")
-_ENABLE_BARE_ACT_LLM_FILTER = os.environ.get("ENABLE_BARE_ACT_LLM_FILTER", "").lower() in ("1", "true", "yes")
-_ENABLE_CASE_LAW_LLM_FILTER = os.environ.get("ENABLE_CASE_LAW_LLM_FILTER", "").lower() in ("1", "true", "yes")
+_ENABLE_BARE_ACT_LLM_FILTER = os.environ.get("ENABLE_BARE_ACT_LLM_FILTER", "1").lower() in ("1", "true", "yes")
+_ENABLE_CASE_LAW_LLM_FILTER = os.environ.get("ENABLE_CASE_LAW_LLM_FILTER", "1").lower() in ("1", "true", "yes")
 _ENABLE_RUNTIME_FEWSHOT = os.environ.get("ENABLE_RUNTIME_FEWSHOT", "1").lower() in ("1", "true", "yes")
 _ENABLE_INTERACTIVE_FAST_PATH = os.environ.get("ENABLE_INTERACTIVE_FAST_PATH", "1").lower() in ("1", "true", "yes")
 _ENABLE_INTERACTIVE_FAST_LLM = os.environ.get("ENABLE_INTERACTIVE_FAST_LLM", "0").lower() in ("1", "true", "yes")
@@ -110,121 +110,8 @@ WEB_SEARCH_FALLBACK_MIN_SCORE = 8.0
 # because it is a well-established, heavily-indexed act whose title contains "arms"
 # and whose provisions mention "assault / violence".  BNS 2023 is a much newer
 # addition and only surfaces when queried by its *explicit name*.
-#
-# These sets let us detect which of the three new criminal codes is relevant to a
-# dispute and inject a name-explicit query so IndiaCode can find the right act.
-#   BNS  = Bharatiya Nyaya Sanhita 2023   (substantive — replaces IPC)
-#   BNSS = Bharatiya Nagarik Suraksha Sanhita 2023 (procedure — replaces CrPC)
-#   BSA  = Bharatiya Sakshya Adhiniyam 2023         (evidence  — replaces IEA)
-
-_BNS_KEYWORDS: frozenset = frozenset({
-    "assault", "hurt", "grievous", "battery", "injury", "murder",
-    "culpable homicide", "theft", "robbery", "dacoity", "rioting",
-    "rape", "kidnapping", "abduction", "extortion", "cheating",
-    "fraud", "forgery", "criminal intimidation", "criminal force",
-    "wrongful confinement", "wrongful restraint", "mischief", "trespass",
-    "defamation", "unlawful assembly", "sedition", "waging war",
-    "death", "bodily harm", "physical harm", "beat", "beaten", "attack",
-    "voluntarily", "intentional harm", "criminal liability",
-})
-
-_BNSS_KEYWORDS: frozenset = frozenset({
-    "fir", "first information report", "arrest", "bail", "anticipatory bail",
-    "remand", "chargesheet", "charge sheet", "cognizance", "summons",
-    "warrant", "police custody", "judicial custody", "magistrate",
-    "sessions court", "trial", "complaint", "investigation", "challan",
-    "bailable", "non-bailable", "compoundable",
-})
-
-_BSA_KEYWORDS: frozenset = frozenset({
-    "evidence", "witness", "testimony", "confession", "admission",
-    "documentary evidence", "electronic record", "hearsay", "expert",
-    "examination", "cross examination", "burden of proof", "presumption",
-    "oral evidence", "primary evidence", "secondary evidence",
-})
-
-
-def _detect_new_criminal_codes(dispute_text: str, legal_nature: str) -> dict:
-    """
-    Detect which of the three new 2023 criminal codes apply to this dispute.
-
-    Returns a dict with boolean flags:
-        {"bns": bool, "bnss": bool, "bsa": bool}
-
-    Detection is keyword-based so it stays deterministic (no LLM guessing).
-    Only fires for "criminal" or "both" legal_nature disputes.
-    """
-    result = {"bns": False, "bnss": False, "bsa": False}
-    if legal_nature not in ("criminal", "both"):
-        return result
-    text_lower = dispute_text.lower()
-    result["bns"]  = any(kw in text_lower for kw in _BNS_KEYWORDS)
-    result["bnss"] = any(kw in text_lower for kw in _BNSS_KEYWORDS)
-    result["bsa"]  = any(kw in text_lower for kw in _BSA_KEYWORDS)
-    return result
-
-
-_PROCEDURAL_CRIMINAL_TERMS: frozenset = frozenset({
-    "complaint", "police", "fir", "investigation", "arrest", "custody", "bail",
-    "chargesheet", "charge sheet", "summons", "warrant", "trial", "offence",
-    "accused", "prosecution", "detention", "magistrate",
-})
-
-_PROCEDURAL_CIVIL_TERMS: frozenset = frozenset({
-    "civil", "suit", "injunction", "interim relief", "declaration", "recovery",
-    "damages", "compensation", "specific performance", "partition", "possession",
-    "eviction", "tenancy", "lease", "property", "contract", "agreement",
-    "notice", "decree", "execution", "maintenance", "custody", "residence",
-    "tribunal", "petition",
-})
-
-_PROCEDURAL_EVIDENCE_TERMS: frozenset = frozenset({
-    "evidence", "proof", "prove", "witness", "statement", "document", "documents",
-    "record", "records", "electronic", "digital", "whatsapp", "email", "message",
-    "audio", "video", "photograph", "photo", "medical record", "injury report",
-    "admission", "confession", "presumption", "burden", "signature", "forensic",
-})
-
-
-def _build_dispute_context_text(dispute: dict) -> str:
-    parts = [
-        str(dispute.get("dispute") or ""),
-        " ".join(str(k or "") for k in (dispute.get("keywords") or [])),
-        " ".join(str(k or "") for k in (dispute.get("legal_concepts") or [])),
-        " ".join(str(k or "") for k in (dispute.get("search_angles") or [])),
-    ]
-    return " ".join(part.strip() for part in parts if str(part or "").strip()).lower()
-
-
-def _derive_procedural_companion_acts(dispute: dict) -> list[dict]:
-    """Suggest general procedural/evidentiary companion Acts for one dispute."""
-    legal_nature = str(dispute.get("legal_nature") or "").strip().lower()
-    context = _build_dispute_context_text(dispute)
-    companions: list[dict] = []
-    seen: set[str] = set()
-
-    def _has_any(terms: frozenset) -> bool:
-        return any(term in context for term in terms)
-
-    def _add(act_name: str, reason: str) -> None:
-        key = act_name.strip().lower()
-        if not key or key in seen:
-            return
-        seen.add(key)
-        companions.append({"act_name": act_name, "reason": reason})
-
-    has_criminal_signal = legal_nature in {"criminal", "both"} or _has_any(_PROCEDURAL_CRIMINAL_TERMS)
-    has_civil_signal = legal_nature == "civil" or (_has_any(_PROCEDURAL_CIVIL_TERMS) and legal_nature in {"civil", "both", "mixed", ""})
-    has_evidence_signal = _has_any(_PROCEDURAL_EVIDENCE_TERMS)
-
-    if has_criminal_signal:
-        _add("Bharatiya Nagarik Suraksha Sanhita, 2023", "criminal procedure and immediate process protection")
-    if has_evidence_signal or has_criminal_signal:
-        _add("Bharatiya Sakshya Adhiniyam, 2023", "proof, documents, witnesses, and evidentiary support")
-    if has_civil_signal:
-        _add("Code of Civil Procedure, 1908", "civil court procedure, interim relief, and enforceable process")
-
-    return companions
+# Criminal code injection (BNS/BNSS/BSA) is now driven by the dispute's legal_nature
+# field (set from intake state) rather than keyword matching — see _inject_criminal_code_queries.
 
 
 def _is_quality_bare_act(section: dict) -> bool:
@@ -295,15 +182,7 @@ def _cap_bare_acts_by_score(bare_acts: list, cap: int) -> list:
     return sorted(bare_acts, key=lambda x: x.get("_rerank_score", 0), reverse=True)[:cap]
 
 
-_RE_DISALLOWED_LEGACY_CODES = re.compile(
-    r"\b(?:IPC|Indian Penal Code|CrPC|Code of Criminal Procedure|IEA|Indian Evidence Act)\b",
-    re.IGNORECASE,
-)
 _RE_SECTION_CITATION = re.compile(r"\bsections?\s+([0-9A-Za-z,\sand]+)", re.IGNORECASE)
-_RE_EXPLICIT_LEGAL_REFERENCE = re.compile(
-    r"\b(?:section|sections|article|articles|act|code|rule|rules|bns|bnss|bsa|bharatiya|constitution|hindu marriage act|domestic violence act|juvenile justice)\b",
-    re.IGNORECASE,
-)
 
 
 def _local_only_no_materials_message() -> str:
@@ -326,19 +205,7 @@ def _strip_chat_window_summary(text: str) -> str:
 
 def _normalize_fact_text(text: str) -> str:
     """Collapse repeated whitespace while preserving the user's actual facts."""
-    normalized = " ".join(_strip_chat_window_summary(text).split()).strip()
-    inlaws = " inlaws "
-    typo_fixes = {
-        " inalws ": inlaws,
-        " inlawas ": inlaws,
-        " in laws ": inlaws,
-        " dowary ": " dowry ",
-        " haras ": " harass ",
-    }
-    padded = f" {normalized.lower()} "
-    for wrong, fixed in typo_fixes.items():
-        padded = padded.replace(wrong, fixed)
-    return " ".join(padded.split()).strip()
+    return " ".join(_strip_chat_window_summary(text).split()).strip()
 
 
 def _split_fact_segments(text: str) -> list[str]:
@@ -502,69 +369,131 @@ def _apply_family_consensus_sort(items: list, base_field: str, cap: int | None =
     return rescored[:cap] if cap else rescored
 
 
-def _apply_fact_alignment_sort(items: list, facts_summary: str, cap: int | None = None) -> list:
+def _apply_fact_alignment_sort(items: list, _facts_summary: str, cap: int | None = None) -> list:
     """
-    Re-rank already-retrieved items by combining model score with lexical overlap
-    against the current fact pattern and then applying a generic family-consensus
-    pass so one clearly matching statute family can outrank stray lookalikes.
+    Sort retrieved items by cross-encoder score then apply family-consensus grouping.
+    Lexical overlap arithmetic removed — the cross-encoder already captures relevance.
     """
     if not items:
         return []
-    focus_text = _build_focus_fact_text(facts_summary, max_chars=520)
-    fact_terms = _extract_salient_terms(focus_text, limit=12)
-    if not fact_terms:
-        ranked = sorted(items, key=lambda x: _best_alignment_score(x), reverse=True)
-        return ranked[:cap] if cap else ranked
-
-    leading_segments = _split_fact_segments(focus_text)[:3]
-    rescored: list[dict] = []
     for item in items:
-        title_blob = " ".join(
-            str(item.get(k) or "")
-            for k in ("act_name", "title", "section_title", "case_name", "court")
-        ).lower()
-        body_blob = " ".join(
-            str(item.get(k) or "")
-            for k in ("text", "full_text", "search_text")
-        ).lower()
-        blob = (title_blob + " " + body_blob).strip()
-        overlap = sum(1 for term in fact_terms if term in blob)
-        early_hits = sum(1 for term in fact_terms[:4] if term in blob)
-        title_hits = sum(1 for term in fact_terms[:6] if term in title_blob)
-        phrase_hits = 0
-        for seg in leading_segments:
-            norm = (seg or "").lower().strip()
-            if not norm:
-                continue
-            short = norm[:90]
-            if short and short in body_blob:
-                phrase_hits += 1
-            elif short and short in title_blob:
-                phrase_hits += 1
-        clone = dict(item)
-        base = float(clone.get("_rerank_score", 0) or 0)
-        clone["_fact_alignment_overlap"] = overlap
-        clone["_title_alignment_hits"] = title_hits
-        clone["_fact_alignment_score"] = (
-            base
-            + min(overlap * 0.15, 0.9)
-            + min(early_hits * 0.12, 0.36)
-            + min(title_hits * 0.18, 0.54)
-            + min(phrase_hits * 0.24, 0.48)
-        )
-        rescored.append(clone)
+        if "_fact_alignment_score" not in item:
+            item["_fact_alignment_score"] = float(item.get("_rerank_score", 0) or 0)
+    ranked = _apply_family_consensus_sort(items, "_fact_alignment_score", cap=None)
+    return ranked[:cap] if cap else ranked
 
-    rescored.sort(
-        key=lambda x: (
-            x.get("_fact_alignment_score", 0),
-            x.get("_title_alignment_hits", 0),
-            x.get("_rerank_score", 0),
-            x.get("_fact_alignment_overlap", 0),
-        ),
-        reverse=True,
+
+# ---------------------------------------------------------------------------
+# Intake-state-driven dispute building — replaces the decompose_disputes LLM call.
+# The intake conversation already identified primary + secondary issue clusters;
+# we use those to build the dispute list with category-seeded search angles.
+# ---------------------------------------------------------------------------
+
+_CATEGORY_SEEDS: dict[str, list[str]] = {
+    "domestic_violence": [
+        "domestic violence cruelty wife husband PWDVA protection order",
+        "498A BNS cruelty mental physical harassment matrimonial home",
+    ],
+    "matrimonial": [
+        "divorce maintenance spouse alimony Hindu Marriage Act",
+        "child custody welfare minor guardian",
+    ],
+    "property": [
+        "property dispute title ownership possession injunction",
+        "specific performance sale agreement Transfer of Property Act",
+    ],
+    "criminal": [
+        "FIR complaint cognizable offence bail BNS BNSS",
+        "criminal intimidation threat quash high court",
+    ],
+    "employment": [
+        "wrongful termination reinstatement service matter labour court",
+        "gratuity provident fund dues industrial dispute",
+    ],
+    "consumer": [
+        "consumer complaint deficiency service compensation NCDRC",
+        "unfair trade practice consumer protection redressal forum",
+    ],
+    "motor_accident": [
+        "motor accident claim compensation MACT negligence rash driving",
+        "personal injury insurance liability third party",
+    ],
+    "cheque_dishonour": [
+        "cheque bounce dishonour NI Act section 138 demand notice",
+        "cheque dishonour criminal complaint drawer prosecution",
+    ],
+    "land_acquisition": [
+        "land acquisition compensation market value LARR Act 2013",
+        "solatium annuity enhanced compensation acquisition award",
+    ],
+    "general": [],
+}
+
+_DISPUTE_LEGAL_NATURE: dict[str, str] = {
+    "domestic_violence": "criminal",
+    "criminal": "criminal",
+    "cheque_dishonour": "criminal",
+    "matrimonial": "civil",
+    "property": "civil",
+    "employment": "civil",
+    "consumer": "civil",
+    "motor_accident": "civil",
+    "land_acquisition": "civil",
+    "general": "both",
+}
+
+
+def _category_search_angles(cluster: str, facts_summary: str, max_seeds: int = 2) -> list[str]:
+    """Return search angles for a dispute cluster: facts text + category seeds (no LLM)."""
+    text = (_build_focus_fact_text(facts_summary, max_chars=350) or facts_summary[:350]).strip()
+    seeds = _CATEGORY_SEEDS.get(cluster, [])[:max_seeds]
+    angles = [text] + seeds
+    return list(dict.fromkeys(a for a in angles if a))[:3]
+
+
+def _build_disputes_from_intake_state(intake_state: dict | None, facts_summary: str) -> list:
+    """
+    Build dispute list from intake state clusters — no LLM call.
+
+    Reads primary_issue_cluster + secondary_issue_clusters from the intake state
+    (already populated by Stage 1) and returns one dispute dict per cluster,
+    each with category-seeded search_angles for targeted parallel retrieval.
+
+    Falls back to _single_dispute_fallback when intake state is absent or empty.
+    """
+    from pipeline.decomposer import _single_dispute_fallback
+
+    if not intake_state:
+        return _single_dispute_fallback(facts_summary)
+
+    primary = intake_state.get("primary_issue_cluster")
+    secondaries = intake_state.get("secondary_issue_clusters") or []
+
+    clusters = [primary] + [s for s in secondaries if s and s != primary]
+    clusters = [c for c in clusters if c]
+
+    if not clusters:
+        return _single_dispute_fallback(facts_summary)
+
+    disputes = []
+    for i, cluster in enumerate(clusters[:3]):  # cap at 3 disputes
+        angles = _category_search_angles(cluster, facts_summary)
+        disputes.append({
+            "id": f"d{i + 1}",
+            "dispute": facts_summary[:700],
+            "legal_nature": _DISPUTE_LEGAL_NATURE.get(cluster, "both"),
+            "keywords": [],
+            "legal_concepts": [],
+            "bare_act_hints": [],
+            "search_angles": angles,
+        })
+
+    logger.info(
+        "Disputes from intake state: %d — %s",
+        len(disputes),
+        [f"d{i+1}:{c}" for i, c in enumerate(clusters[:3])],
     )
-    rescored = _apply_family_consensus_sort(rescored, "_fact_alignment_score", cap=None)
-    return rescored[:cap] if cap else rescored
+    return disputes
 
 
 def _build_single_dispute_from_facts(facts_summary: str) -> dict:
@@ -692,19 +621,19 @@ def _align_bare_acts_with_case_support(bare_acts: list, case_laws: list, facts_s
         clone = dict(item)
         act_name = (item.get("act_name") or "").strip().lower()
         sec = str(item.get("section_number") or "").strip().lower()
-        support_hits = 0
-        if act_name and act_name in case_blob:
-            support_hits += 2
-        if sec and re.search(rf"\bsection\s+{re.escape(sec)}\b", case_blob):
-            support_hits += 1
-        clone["_case_support_hits"] = support_hits
-        clone["_case_aligned_score"] = float(clone.get("_fact_alignment_score", clone.get("_rerank_score", 0)) or 0) + (support_hits * 1.25)
+        # Structural presence check — act/section named in case text is a signal
+        # the cases consider this provision relevant; used for tie-breaking only,
+        # not as a multiplier on top of the cross-encoder score.
+        act_mentioned = bool(act_name and act_name in case_blob)
+        sec_mentioned = bool(sec and re.search(rf"\bsection\s+{re.escape(sec)}\b", case_blob))
+        clone["_case_support_hits"] = int(act_mentioned) * 2 + int(sec_mentioned)
+        clone["_case_aligned_score"] = float(clone.get("_fact_alignment_score", clone.get("_rerank_score", 0)) or 0)
         rescored.append(clone)
 
     rescored.sort(
         key=lambda item: (
             item.get("_case_aligned_score", 0),
-            item.get("_fact_alignment_score", 0),
+            item.get("_case_support_hits", 0),
             item.get("_rerank_score", 0),
         ),
         reverse=True,
@@ -713,22 +642,19 @@ def _align_bare_acts_with_case_support(bare_acts: list, case_laws: list, facts_s
     return rescored[:cap]
 
 
-def _align_case_laws_with_statute_support(case_laws: list, bare_acts: list, facts_summary: str, cap: int) -> list:
+def _align_case_laws_with_statute_support(case_laws: list, bare_acts: list, _facts_summary: str, cap: int) -> list:
     """
-    Re-rank case laws using the statute shortlist and factual overlap.
+    Re-rank case laws using the statute shortlist as a structural tie-breaker.
 
-    This is domain-agnostic: cases that clearly discuss the shortlisted Act or
-    sections and still overlap with the fact pattern should beat generic but
-    weakly related precedents.
+    The cross-encoder score is the primary relevance signal. Act/section name
+    presence in the case text is used for tie-breaking only — not as an additive
+    bonus that overrides the model's judgment.
     """
     if not case_laws:
         return []
 
-    fact_terms = set(_extract_salient_terms(facts_summary or "", limit=12))
     act_names = [(ba.get("act_name") or "").strip().lower() for ba in (bare_acts or []) if (ba.get("act_name") or "").strip()]
     section_numbers = [str(ba.get("section_number") or "").strip().lower() for ba in (bare_acts or []) if str(ba.get("section_number") or "").strip()]
-    authority_bonus = {"supreme_court": 0.35, "high_court": 0.18, "tribunal": 0.08}
-    paragraph_bonus = {"ratio": 0.40, "reasoning": 0.28, "order": 0.12, "arguments": 0.08, "facts": -0.08, "unknown": -0.06}
 
     rescored = []
     for item in case_laws:
@@ -739,22 +665,12 @@ def _align_case_laws_with_statute_support(case_laws: list, bare_acts: list, fact
         ).lower()
         act_hits = sum(1 for act_name in act_names[:3] if act_name and act_name in blob)
         section_hits = sum(1 for sec in section_numbers[:3] if sec and re.search(rf"\bsection\s+{re.escape(sec)}\b", blob))
-        fact_overlap = sum(1 for term in fact_terms if term and term in blob)
-        paragraph_type = (item.get("paragraph_type") or "unknown").strip().lower()
-        para_boost = paragraph_bonus.get(paragraph_type, paragraph_bonus["unknown"])
-        para_num_raw = str(item.get("paragraph_num") or "").strip()
-        first_para_penalty = -0.12 if para_num_raw in {"1", "2"} and paragraph_type in {"unknown", "facts"} else 0.0
-        bonus = (act_hits * 0.9) + (section_hits * 0.45) + min(fact_overlap * 0.08, 0.48)
-        bonus += authority_bonus.get((item.get("binding_authority") or "").strip().lower(), 0.0)
-        bonus += para_boost + first_para_penalty
-        clone["_statute_case_support"] = round(bonus, 3)
-        clone["_case_support_score"] = float(clone.get("_rerank_score", 0) or 0) + bonus
-        clone["_paragraph_precision_score"] = clone["_case_support_score"]
+        clone["_statute_case_support"] = act_hits * 2 + section_hits
+        clone["_case_support_score"] = float(clone.get("_rerank_score", 0) or 0)
         rescored.append(clone)
 
     rescored.sort(
         key=lambda item: (
-            item.get("_paragraph_precision_score", 0),
             item.get("_case_support_score", 0),
             item.get("_statute_case_support", 0),
             item.get("_rerank_score", 0),
@@ -1010,27 +926,9 @@ def _build_allowed_section_numbers(bare_acts: list | None) -> set[str]:
     return allowed
 
 
-def _violates_local_grounding(text: str, bare_acts: list | None) -> bool:
-    """Detect unsupported legal citations in model output."""
-    if not (text or "").strip():
-        return False
-    if _RE_DISALLOWED_LEGACY_CODES.search(text):
-        return True
-
-    cited_sections = _extract_cited_section_numbers(text)
-    allowed_sections = _build_allowed_section_numbers(bare_acts)
-    if cited_sections and not allowed_sections:
-        return True
-    return any(sec not in allowed_sections for sec in cited_sections)
-
-
-def _enforce_local_grounding(text: str, bare_acts: list | None) -> str:
-    """Return a strict local-only fallback if the model output cites unsupported law."""
-    cleaned = (text or "").strip()
-    if _violates_local_grounding(cleaned, bare_acts):
-        logger.warning("Blocked unsupported legal citations in generated output; returning local-only fallback")
-        return _local_only_no_materials_message()
-    return cleaned
+def _enforce_local_grounding(text: str, _bare_acts: list | None = None) -> str:
+    """Pass-through — grounding is enforced via prompt instruction, not post-hoc regex."""
+    return (text or "").strip()
 
 
 def expand_legal_query(
@@ -1339,68 +1237,6 @@ def _check_bare_act_sufficiency(dispute_text: str, bare_acts: list, llm_fn=None)
 # Bare act multi-query helpers
 # ---------------------------------------------------------------------------
 
-# ---------------------------------------------------------------------------
-# IPC → BNS / CrPC → BNSS / IEA → BSA translation table
-# Applied at query-build time so searches hit the NEW act names stored in the
-# vector store rather than the old colonial-era names the LLM defaults to.
-# ---------------------------------------------------------------------------
-_OLD_TO_NEW_ACT = {
-    # Criminal substantive
-    "indian penal code":                  "Bharatiya Nyaya Sanhita",
-    "ipc":                                "BNS",
-    "ipc 1860":                           "Bharatiya Nyaya Sanhita 2023",
-    "indian penal code, 1860":            "Bharatiya Nyaya Sanhita (BNS), 2023",
-    "indian penal code 1860":             "Bharatiya Nyaya Sanhita (BNS), 2023",
-    # Criminal procedure
-    "code of criminal procedure":         "Bharatiya Nagarik Suraksha Sanhita",
-    "crpc":                               "BNSS",
-    "crpc, 1973":                         "Bharatiya Nagarik Suraksha Sanhita (BNSS), 2023",
-    "code of criminal procedure, 1973":   "Bharatiya Nagarik Suraksha Sanhita (BNSS), 2023",
-    # Evidence
-    "indian evidence act":                "Bharatiya Sakshya Adhiniyam",
-    "iea":                                "BSA",
-    "indian evidence act, 1872":          "Bharatiya Sakshya Adhiniyam (BSA), 2023",
-}
-
-# IPC section number → BNS section number (most common criminal offences)
-_IPC_SEC_TO_BNS = {
-    "115": "115",   # already BNS
-    "323": "115",   "324": "117",   "325": "117",   "326": "118",
-    "307": "109",   "302": "103",   "304": "105",   "304b": "80",
-    "341": "126",   "342": "127",   "351": "131",   "352": "132",
-    "354": "74",    "376": "64",
-    "378": "303",   "379": "303",   "380": "305",   "381": "306",
-    "406": "316",   "420": "318",   "415": "318",
-    "425": "324",   "426": "324",   "427": "324",   "436": "328",
-    "441": "329",   "447": "329",   "448": "330",   "452": "332",
-    "499": "356",   "500": "356",
-    "503": "351",   "504": "352",   "506": "351",
-}
-
-_RE_IPC_SEC = re.compile(r'\b(?:ipc|i\.p\.c\.?)\s*s(?:ection)?\s*(\d+[a-z]?)\b', re.IGNORECASE)
-_RE_SEC_NUM = re.compile(r'\bsection\s+(\d+[a-z]?)\b', re.IGNORECASE)
-
-
-def _translate_act_hint(hint: str) -> str:
-    """Translate one old-act name string to the new equivalent (or return as-is)."""
-    low = hint.lower().strip()
-    return _OLD_TO_NEW_ACT.get(low, hint)
-
-
-def _inject_bns_equivalents(text: str) -> str:
-    """
-    For a query/hint that contains IPC section references, append BNS equivalents.
-    E.g. "IPC Section 323 assault" → "IPC Section 323 assault BNS Section 115"
-    """
-    additions = []
-    for m in _RE_IPC_SEC.finditer(text):
-        ipc_sec = m.group(1).lower()
-        bns_sec = _IPC_SEC_TO_BNS.get(ipc_sec)
-        if bns_sec:
-            additions.append(f"BNS Section {bns_sec}")
-    if additions:
-        return text + " " + " ".join(additions)
-    return text
 
 
 def _build_bare_act_queries(dispute: dict, expanded_queries: list[str] | None = None) -> list[str]:
@@ -1705,48 +1541,40 @@ def _web_search_bare_acts(dispute: dict, full_query: str, round1_queries: list =
                 logger.info("bare_act_hint query [%d]: %s", insert_pos, hint_q[:100])
                 insert_pos += 1
 
-    # ── Safety-net: new 2023 criminal codes ─────────────────────────────────
-    # BNS / BNSS / BSA replace IPC / CrPC / IEA but IndiaCode generic searches
-    # ("assault India central act") still surface the Arms Act.  If the
-    # decomposer hinted at the new codes (via bare_act_hints), the block above
-    # already handles it.  This block is a keyword-based fallback for the common
-    # case where the LLM still uses old names ("IPC") or no hint was generated.
+    # ── Structural injection: new 2023 criminal codes ────────────────────────
+    # Drive BNS/BNSS/BSA injection from dispute.legal_nature (set by intake state)
+    # rather than keyword matching the dispute text.
     legal_nature = dispute.get("legal_nature", "both")
-    new_codes = _detect_new_criminal_codes(dispute_text, legal_nature)
+    is_criminal = legal_nature in ("criminal", "both")
 
     hints_lower = " ".join(bare_act_hints).lower()
     already_has_bns  = "bharatiya nyaya sanhita"    in hints_lower
     already_has_bnss = "bharatiya nagarik suraksha" in hints_lower
     already_has_bsa  = "bharatiya sakshya"          in hints_lower
 
-    # How many hint queries we prepended (determines insert_pos for safety-net)
     hint_count = min(len(bare_act_hints), 3) if (bare_act_hints and primary_term) else 0
 
-    if new_codes["bns"] and not already_has_bns and primary_term:
+    if is_criminal and not already_has_bns and primary_term:
         bns_q = f"Bharatiya Nyaya Sanhita 2023 {primary_term}"
         if bns_q.lower() not in seen_q:
             web_gaps.insert(hint_count, {"query": bns_q, "type": "bare_act"})
             seen_q.add(bns_q.lower())
-            logger.info("Safety-net BNS query: %s", bns_q[:100])
+            logger.info("BNS query (criminal dispute): %s", bns_q[:100])
 
-    if new_codes["bnss"] and not already_has_bnss and primary_term:
+    if is_criminal and not already_has_bnss and primary_term:
         bnss_q = f"Bharatiya Nagarik Suraksha Sanhita 2023 {primary_term}"
         if bnss_q.lower() not in seen_q:
-            pos = hint_count + (1 if new_codes["bns"] and not already_has_bns else 0)
+            pos = hint_count + (1 if is_criminal and not already_has_bns else 0)
             web_gaps.insert(pos, {"query": bnss_q, "type": "bare_act"})
             seen_q.add(bnss_q.lower())
-            logger.info("Safety-net BNSS query: %s", bnss_q[:100])
+            logger.info("BNSS query (criminal dispute): %s", bnss_q[:100])
 
-    if new_codes["bsa"] and not already_has_bsa and primary_term:
+    if is_criminal and not already_has_bsa and primary_term:
         bsa_q = f"Bharatiya Sakshya Adhiniyam 2023 {primary_term}"
         if bsa_q.lower() not in seen_q:
-            pos = hint_count + sum([
-                new_codes["bns"]  and not already_has_bns,
-                new_codes["bnss"] and not already_has_bnss,
-            ])
-            web_gaps.insert(pos, {"query": bsa_q, "type": "bare_act"})
+            web_gaps.insert(hint_count + 2, {"query": bsa_q, "type": "bare_act"})
             seen_q.add(bsa_q.lower())
-            logger.info("Safety-net BSA query: %s", bsa_q[:100])
+            logger.info("BSA query (criminal dispute): %s", bsa_q[:100])
 
     if not web_gaps:
         web_gaps = [{"query": f"{dispute_text[:180]} India bare act", "type": "bare_act"}]
@@ -2050,11 +1878,9 @@ def retrieve_bare_acts_for_dispute(
     # on which acts apply — a strong signal for targeted tuning of either the
     # decomposer prompts or the act profile vocabulary.
     bare_act_hints = dispute.get("bare_act_hints", [])
-    procedural_companion_acts = _derive_procedural_companion_acts(dispute)
     if debug_entry is not None:
         debug_entry["bm25_acts"] = sorted(list(allowed_acts))
         debug_entry["bare_act_hints"] = list(bare_act_hints)
-        debug_entry["procedural_companion_acts"] = [item.get("act_name") for item in procedural_companion_acts]
     if bare_act_hints and allowed_acts:
         hints_lower = {h.strip().lower() for h in bare_act_hints}
         acts_lower  = {a.strip().lower() for a in allowed_acts}
@@ -2136,12 +1962,6 @@ def retrieve_bare_acts_for_dispute(
 
     for hint in bare_act_hints:
         _add_candidate(str(hint or ""), "hint")
-    for companion in procedural_companion_acts:
-        _add_candidate(
-            str(companion.get("act_name") or ""),
-            "procedural_companion",
-            str(companion.get("reason") or ""),
-        )
     for act_name in sorted(top_acts):
         _add_candidate(act_name, "retrieved")
 
@@ -2803,6 +2623,7 @@ def generate_response_v2(
     token_callback=None,
     model_override: str | None = None,
     analysis_mode: str = "full_opinion",
+    intake_state: dict | None = None,
 ) -> dict:
     """
     Full legal research pipeline — dispute-first approach.
@@ -2967,8 +2788,7 @@ def generate_response_v2(
             words_per_chunk=2,
         )
     else:
-        from pipeline.decomposer import decompose_disputes
-        disputes = decompose_disputes(facts_summary)
+        disputes = _build_disputes_from_intake_state(intake_state, facts_summary)
         labels = [d.get("dispute", "")[:60] for d in disputes]
         logger.info("Disputes identified: %s", labels)
         for _d in disputes[:6]:

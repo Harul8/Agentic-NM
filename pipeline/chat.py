@@ -802,6 +802,7 @@ def process_chat(
         use_search_strategy = _default_search_strategy_for_intent(use_intent, search_strategy)
         use_result_count = result_count
         use_analysis_mode = (analysis_mode or "full_opinion").strip().lower() or "full_opinion"
+        use_intake_state = (workflow_state or {}).get("intakeState") or None
         t_before_gen = time.perf_counter()
         try:
             with guard_activity("response_generation:generate_response"):
@@ -817,6 +818,7 @@ def process_chat(
                     token_callback=token_callback,
                     model_override=model_override,
                     analysis_mode=use_analysis_mode,
+                    intake_state=use_intake_state,
                 )
         except Exception as e:
             logger.error("Response generation failed: %s", e, exc_info=True)

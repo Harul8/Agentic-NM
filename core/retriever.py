@@ -549,14 +549,16 @@ _RE_INTERLOCUTORY_LOCAL = re.compile(
 def _is_final_judgment_chunk(chunk: dict) -> bool:
     """
     Return True if a local case law chunk looks like a final judgment.
-    Checks chunk title + first 1200 chars of text for interlocutory markers.
+
+    Only checks the case title/name — not the body text.
+    Interlocutory markers in the body are common in final judgments that discuss
+    prior interim orders; excluding on body text causes too many false drops.
     """
     title = (chunk.get("case_name") or chunk.get("title") or chunk.get("source") or "")
-    text = (
-        chunk.get("search_text") or chunk.get("full_text") or chunk.get("text") or ""
-    )[:1200]
-    combined = (title + " " + text).lower()
-    return not _RE_INTERLOCUTORY_LOCAL.search(combined)
+    if _RE_INTERLOCUTORY_LOCAL.search(title):
+        logger.debug("interlocutory filter: excluded chunk with title %r", title[:120])
+        return False
+    return True
 
 
 # ---------------------------------------------------------------------------
@@ -1519,8 +1521,66 @@ def search_bare_acts_fast(query: str, top_k: int = 6, trace: Optional[list] = No
         BARE_BM25_INDEX,
     )
 
+    # ── Legal Graph fast path ──────────────────────────────────────────────
+    # If the query contains an explicit section reference (e.g. "IPC Section 302"),
+    # look it up directly in legal.db — zero FAISS, instant answer.
+    try:
+        from core.legal_graph import find_sections_by_query
+        graph_sections = find_sections_by_query(query)
+        if graph_sections:
+            chunks_dict = load_chunks(BARE_CHUNKS_V2)
+            graph_results = []
+            for sec in graph_sections:
+                for cid in (sec.get("chunk_ids") or []):
+                    chunk = chunks_dict.get(str(cid))
+                    if chunk and isinstance(chunk, dict):
+                        c = dict(chunk)
+                        c["source_tag"] = "LOCAL_DB"
+                        c["retrieval_profile"] = "graph_direct"
+                        c["_rerank_score"] = 1.0   # direct match — highest confidence
+                        # Attach cross-referenced sections as context
+                        from core.legal_graph import get_cross_referenced_sections
+                        xrefs = get_cross_referenced_sections(sec["id"], max_results=3)
+                        if xrefs:
+                            c["_graph_cross_refs"] = [
+                                {"section_number": x["section_number"], "act_name": x["act_name"],
+                                 "section_title": x["section_title"], "chunk_ids": x["chunk_ids"]}
+                                for x in xrefs
+                            ]
+                        graph_results.append(c)
+            if graph_results:
+                # Resolve cross-referenced section chunk_ids into actual chunks and
+                # inject them so the caller gets the primary section + related sections
+                # in one call — no extra FAISS pass needed.
+                seen_chunk_ids: set = {str(r.get("chunk_id") or r.get("id") or "") for r in graph_results}
+                xref_chunks: list = []
+                for primary in list(graph_results):
+                    for xref in (primary.get("_graph_cross_refs") or []):
+                        for xcid in (xref.get("chunk_ids") or []):
+                            xcid_str = str(xcid)
+                            if xcid_str and xcid_str not in seen_chunk_ids:
+                                xchunk = chunks_dict.get(xcid_str)
+                                if xchunk and isinstance(xchunk, dict):
+                                    xc = dict(xchunk)
+                                    xc["source_tag"] = "LOCAL_DB"
+                                    xc["retrieval_profile"] = "graph_xref"
+                                    xc["_rerank_score"] = 0.85
+                                    xref_chunks.append(xc)
+                                    seen_chunk_ids.add(xcid_str)
+                graph_results.extend(xref_chunks)
+                logger.debug(
+                    "Legal graph direct hit: %d chunk(s) (%d primary, %d xref) for query '%s'",
+                    len(graph_results), len(graph_results) - len(xref_chunks),
+                    len(xref_chunks), query[:80],
+                )
+                return graph_results[:top_k]
+    except Exception as _graph_err:
+        logger.debug("Legal graph fast path skipped: %s", _graph_err)
+    # ── End legal graph fast path ──────────────────────────────────────────
+
     explicit_query_acts = _extract_query_act_mentions(query)
     allowed_acts = explicit_query_acts or None
+
     if os.path.isfile(ACT_SUMMARY_INDEX_V2) and os.path.isfile(ACT_SUMMARY_CHUNKS_V2):
         try:
             act_results = hybrid_search(
@@ -1623,7 +1683,56 @@ def search_case_summaries_fast(query: str, top_k: int = 4) -> list:
         r["binding_authority"] = r.get("binding_authority") or _binding_authority_from_court(r.get("court"))
         if not r.get("text"):
             r["text"] = (r.get("full_text") or "").strip()
-    return results
+
+    # ── Case-section graph path ────────────────────────────────────────────
+    # When the query has explicit section references, look up cases that have
+    # interpreted those sections via case_section_links in legal.db and add
+    # them to the result set — no FAISS needed for this slice.
+    try:
+        from core.legal_graph import find_sections_by_query, get_cases_interpreting_section
+        graph_sections = find_sections_by_query(query)
+        if graph_sections:
+            chunks_path = CASE_SUMMARY_CHUNKS_V2
+            case_chunks_dict = load_chunks(chunks_path)
+            existing_names = {(r.get("case_name") or "").strip().lower() for r in results}
+            existing_ids = {str(r.get("chunk_id") or r.get("id") or "") for r in results}
+            graph_case_chunks: list = []
+            for sec in graph_sections:
+                for case_info in get_cases_interpreting_section(sec["id"], max_results=5):
+                    case_name = (case_info.get("case_name") or "").strip()
+                    if not case_name or case_name.lower() in existing_names:
+                        continue
+                    # Find matching chunks by case_name in the chunk store
+                    for cid, chunk in case_chunks_dict.items():
+                        if not isinstance(chunk, dict):
+                            continue
+                        if (chunk.get("case_name") or "").strip().lower() != case_name.lower():
+                            continue
+                        cid_str = str(cid)
+                        if cid_str in existing_ids:
+                            continue
+                        c = dict(chunk)
+                        c["source_tag"] = "LOCAL_DB"
+                        c["retrieval_profile"] = "graph_case_section"
+                        c["_rerank_score"] = 0.9   # high confidence: direct section match
+                        c["is_case_summary"] = True
+                        c["binding_authority"] = c.get("binding_authority") or _binding_authority_from_court(c.get("court"))
+                        if not c.get("text"):
+                            c["text"] = (c.get("full_text") or "").strip()
+                        graph_case_chunks.append(c)
+                        existing_ids.add(cid_str)
+                        existing_names.add(case_name.lower())
+                        break  # one chunk per case for summary path
+            if graph_case_chunks:
+                results = results + graph_case_chunks
+                logger.debug(
+                    "Case-section graph path: +%d case(s) from case_section_links", len(graph_case_chunks)
+                )
+    except Exception as _csg_err:
+        logger.debug("Case-section graph path skipped: %s", _csg_err)
+    # ── End case-section graph path ────────────────────────────────────────
+
+    return results[:top_k]
 
 
 def search_bare_acts_runtime(

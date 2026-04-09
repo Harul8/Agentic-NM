@@ -10,218 +10,22 @@ Stage 1 readiness check, and the shared intake state schema.
 # ===========================================================================
 
 # ---------------------------------------------------------------------------
-# Issue category taxonomy
-# Each category maps to the primary bare acts and procedural framework
-# the AI should internally lock when that category is detected.
+# Issue category taxonomy — keys used for routing + validation in code.
+# Labels used for display. The model determines which applies; no need to
+# encode legal knowledge here that the model already has.
 # ---------------------------------------------------------------------------
 
 LEGAL_ISSUE_CATEGORIES = {
-    "domestic_violence": {
-        "label": "Domestic Violence / Matrimonial Cruelty",
-        "primary_acts": [
-            "Protection of Women from Domestic Violence Act, 2005",
-            "Bharatiya Nyaya Sanhita, 2023 (Section 85 — cruelty by husband)",
-            "Dowry Prohibition Act, 1961",
-        ],
-        "procedural_framework": [
-            "Application to Magistrate under PWDVA s.12",
-            "Protection Order (s.18), Residence Order (s.19), Monetary Relief (s.20)",
-            "Interim orders available pending final hearing",
-            "FIR under BNS s.85 (cruelty) / s.86 (dowry death)",
-        ],
-        "key_facts_needed": [
-            "nature and timeline of abuse (physical / mental / economic)",
-            "shared household status",
-            "children — custody and welfare",
-            "evidence: messages, medical reports, witnesses",
-            "prior complaints or FIRs",
-            "income / financial dependence",
-            "immediate safety and shelter position",
-        ],
-    },
-    "matrimonial": {
-        "label": "Matrimonial (Divorce / Maintenance / Custody)",
-        "primary_acts": [
-            "Hindu Marriage Act, 1955",
-            "Hindu Minority and Guardianship Act, 1956",
-            "Hindu Adoption and Maintenance Act, 1956",
-            "Special Marriage Act, 1954",
-            "Muslim Personal Law / Muslim Women (Protection) Act",
-        ],
-        "procedural_framework": [
-            "Petition for divorce / judicial separation / restitution of conjugal rights",
-            "Application for interim maintenance u/s 125 CrPC / s.144 BNSS",
-            "Child custody and guardianship proceedings",
-            "Stridhan recovery",
-        ],
-        "key_facts_needed": [
-            "date and type of marriage, place",
-            "grounds being invoked (cruelty / desertion / adultery / irretrievable breakdown)",
-            "children — ages, current custody arrangement",
-            "income of both parties",
-            "stridhan and matrimonial property position",
-            "any previous proceedings",
-        ],
-    },
-    "property": {
-        "label": "Property Dispute",
-        "primary_acts": [
-            "Transfer of Property Act, 1882",
-            "Registration Act, 1908",
-            "Specific Relief Act, 1963",
-            "Limitation Act, 1963",
-            "Land Acquisition Act, 2013",
-        ],
-        "procedural_framework": [
-            "Civil suit for declaration / injunction / specific performance",
-            "Application for interim stay of dispossession",
-            "Partition suit (co-ownership disputes)",
-        ],
-        "key_facts_needed": [
-            "nature of property (ancestral / self-acquired / joint)",
-            "title documents available",
-            "current possession — who is in possession",
-            "dispute origin and timeline",
-            "prior agreements or registered documents",
-            "encumbrances or mortgages",
-        ],
-    },
-    "criminal": {
-        "label": "Criminal Matter",
-        "primary_acts": [
-            "Bharatiya Nyaya Sanhita, 2023",
-            "Bharatiya Nagarik Suraksha Sanhita, 2023",
-            "Bharatiya Sakshya Adhiniyam, 2023",
-        ],
-        "procedural_framework": [
-            "FIR registration, bail, chargesheet",
-            "Anticipatory bail / regular bail application",
-            "Quashing petition u/s 528 BNSS (formerly s.482 CrPC)",
-            "Private complaint before Magistrate",
-        ],
-        "key_facts_needed": [
-            "offence alleged and which side client is on (accused / complainant / victim)",
-            "FIR number and police station if FIR filed",
-            "current stage (FIR / investigation / charge sheet / trial)",
-            "custody / bail position if accused",
-            "evidence available",
-            "prior criminal history if relevant",
-        ],
-    },
-    "employment": {
-        "label": "Employment / Service Matter",
-        "primary_acts": [
-            "Industrial Disputes Act, 1947",
-            "Shops and Establishments Act (state-specific)",
-            "Payment of Gratuity Act, 1972",
-            "Employees' Provident Funds Act, 1952",
-            "Sexual Harassment of Women at Workplace (POSH) Act, 2013",
-        ],
-        "procedural_framework": [
-            "Conciliation / Labour Court / Industrial Tribunal",
-            "Writ petition to High Court (public sector employees)",
-            "POSH ICC complaint / district officer complaint",
-            "Departmental appeal / representation before employer",
-        ],
-        "key_facts_needed": [
-            "nature of employment (permanent / contract / probation)",
-            "employer type (government / PSU / private)",
-            "act or misconduct alleged",
-            "notice / show cause / termination order details",
-            "service duration and prior disciplinary record",
-            "dues pending (salary / gratuity / PF)",
-        ],
-    },
-    "consumer": {
-        "label": "Consumer / Deficiency of Service",
-        "primary_acts": [
-            "Consumer Protection Act, 2019",
-            "Real Estate (Regulation and Development) Act, 2016 (RERA)",
-        ],
-        "procedural_framework": [
-            "Complaint before District / State / National Consumer Commission",
-            "RERA complaint before state authority",
-            "Forum determined by claim value",
-        ],
-        "key_facts_needed": [
-            "product or service purchased and from whom",
-            "nature of deficiency or unfair trade practice",
-            "amount paid and loss suffered",
-            "documents: invoice, agreement, warranty, correspondence",
-            "prior complaints to seller / service provider",
-        ],
-    },
-    "motor_accident": {
-        "label": "Motor Accident Claim",
-        "primary_acts": [
-            "Motor Vehicles Act, 1988",
-            "Motor Vehicles (Amendment) Act, 2019",
-        ],
-        "procedural_framework": [
-            "Claim before Motor Accident Claims Tribunal (MACT)",
-            "Insurer liability and notional income calculation",
-            "Hit-and-run compensation scheme",
-        ],
-        "key_facts_needed": [
-            "date, place, and manner of accident",
-            "injuries sustained — nature and severity",
-            "vehicle numbers and insurance details",
-            "FIR filed or not",
-            "medical treatment and bills",
-            "income / earning capacity of injured / deceased",
-            "claimants and their relationship to victim",
-        ],
-    },
-    "cheque_dishonour": {
-        "label": "Cheque Dishonour (NI Act)",
-        "primary_acts": [
-            "Negotiable Instruments Act, 1881 (Section 138 — dishonour)",
-        ],
-        "procedural_framework": [
-            "Demand notice within 30 days of dishonour",
-            "Complaint before Magistrate within 15 days of notice period expiry",
-            "Jurisdiction — place of bank / payee / drawer as per SCO ruling",
-        ],
-        "key_facts_needed": [
-            "cheque amount and date",
-            "date of presentation and dishonour",
-            "reason for dishonour (bank return memo)",
-            "demand notice sent — date, mode, acknowledgement",
-            "reply from drawer if any",
-            "underlying transaction / debt for which cheque was given",
-        ],
-    },
-    "land_acquisition": {
-        "label": "Land Acquisition / Compensation",
-        "primary_acts": [
-            "Right to Fair Compensation and Transparency in Land Acquisition Act, 2013",
-        ],
-        "procedural_framework": [
-            "Objections u/s 15 before Social Impact Assessment",
-            "Reference to Land Acquisition Collector for enhanced compensation",
-            "Appeal to High Court",
-        ],
-        "key_facts_needed": [
-            "survey / khasra numbers and extent of land",
-            "purpose of acquisition",
-            "notification under s.11 / award passed",
-            "compensation offered vs. market value",
-            "possession taken or pending",
-            "prior reference or objection filed",
-        ],
-    },
-    "general": {
-        "label": "General / Other Legal Matter",
-        "primary_acts": [],
-        "procedural_framework": [],
-        "key_facts_needed": [
-            "parties involved and their relationship",
-            "what happened (events and timeline)",
-            "what the client wants as an outcome",
-            "documents or evidence available",
-            "prior steps taken",
-        ],
-    },
+    "domestic_violence":  {"label": "Domestic Violence / Matrimonial Cruelty"},
+    "matrimonial":        {"label": "Matrimonial (Divorce / Maintenance / Custody)"},
+    "property":           {"label": "Property Dispute"},
+    "criminal":           {"label": "Criminal Matter"},
+    "employment":         {"label": "Employment / Service Matter"},
+    "consumer":           {"label": "Consumer / Deficiency of Service"},
+    "motor_accident":     {"label": "Motor Accident Claim"},
+    "cheque_dishonour":   {"label": "Cheque Dishonour (NI Act)"},
+    "land_acquisition":   {"label": "Land Acquisition / Compensation"},
+    "general":            {"label": "General / Other Legal Matter"},
 }
 
 
@@ -232,23 +36,11 @@ LEGAL_ISSUE_CATEGORIES = {
 # to speak freely and signals it is listening carefully.
 # ---------------------------------------------------------------------------
 
-LEGAL_OPINION_OPENING_SYSTEM = """You are an experienced Indian legal advocate speaking to a client who has just reached out for help.
+LEGAL_OPINION_OPENING_SYSTEM = """You are a senior Indian advocate. A client has just reached out to you for the first time.
 
-This is your very first reply.
+Open the conversation in a way that puts them at ease and gives them space to tell you what has happened. You are experienced, human, and genuinely interested in what they are going through. Do not mention laws, process, or next steps. Do not identify yourself as an AI or a platform.
 
-Your job is to open the conversation in a calm, human, reassuring way and invite the client to share what has happened in their own words.
-
-Guidelines:
-- Sound like a real person, not customer support
-- Be warm, but not dramatic or overly polished
-- Do not ask a checklist-style question
-- Do not mention laws, legal process, or what you will do next
-- Do not mention that you are an AI, assistant, or platform
-- Avoid stock phrases like "How can I help you today?" or "I'm here to assist"
-
-Write a short opening message that gives the client space to begin speaking freely.
-
-Output only the message."""
+Output only the opening message."""
 
 
 
@@ -258,23 +50,13 @@ Output only the message."""
 # Outputs structured JSON with detected category + context signals.
 # ---------------------------------------------------------------------------
 
-ISSUE_CATEGORY_DETECT_SYSTEM = """You are a senior Indian legal expert classifying a client's legal matter.
+ISSUE_CATEGORY_DETECT_SYSTEM = """You are a senior Indian legal expert. Classify the client's legal matter into one primary category and up to 2 secondary categories if the situation spans multiple areas.
 
-Read the client's message carefully. Identify the PRIMARY category and up to 2 SECONDARY categories if the situation spans multiple legal areas (e.g. domestic violence + maintenance + custody).
+Valid categories: domestic_violence, matrimonial, property, criminal, employment, consumer, motor_accident, cheque_dishonour, land_acquisition, general.
 
-CATEGORIES:
-- domestic_violence     : abuse by spouse/family, protection order, cruelty, dowry harassment
-- matrimonial           : divorce, separation, maintenance, custody, stridhan
-- property              : land/flat/house dispute, title, possession, partition, specific performance
-- criminal              : FIR, arrest, bail, criminal complaint, accused, victim of crime
-- employment            : termination, dismissal, suspension, POSH, salary dues, gratuity, PF
-- consumer              : defective product, service deficiency, builder default, RERA, refund
-- motor_accident        : road accident, injury, death, MACT claim, insurance
-- cheque_dishonour      : cheque bounce, NI Act s.138, demand notice
-- land_acquisition      : government acquisition, compensation, award, land value
-- general               : does not clearly fit any above category
+Where domestic_violence and matrimonial overlap, domestic_violence takes primary. Use "general" only when no other category clearly fits.
 
-OUTPUT ONLY valid JSON, no preamble, no explanation:
+Output JSON only:
 {
   "primary_category": "...",
   "secondary_categories": [],
@@ -286,19 +68,7 @@ OUTPUT ONLY valid JSON, no preamble, no explanation:
   "timeframe_status": "ongoing|recent|historical|unknown",
   "relationship_context": "spouse|family|employer|buyer_seller|landlord_tenant|state_authority|unknown",
   "client_goal_initial": null
-}
-
-
-RULES:
-- primary_category: pick the most urgent / legally significant category
-- secondary_categories: list up to 2 others that clearly apply; empty array if none
-- domestic_violence always takes primary when it co-exists with matrimonial
-- confidence=high only if the primary category is unambiguous
-- issue_summary must reflect only what the client said — no inferences
-- urgency_signal=immediate if risk_flags is non-empty
-- risk_flags: be conservative — only flag what is clearly present in the message
-- client_goal_initial: set to null unless the client EXPLICITLY said what they want (e.g. "I want to file a case", "I want to leave him", "I want bail"); do NOT infer or assume
-- timeframe_status: prefer "unknown" when the client hasn't described timing clearly; "ongoing" only when they explicitly say it is still happening"""
+}"""
 
 
 # ---------------------------------------------------------------------------
@@ -386,25 +156,13 @@ CONVERSATION HISTORY:
 # Replaces the normal follow-up question with immediate safety guidance.
 # ---------------------------------------------------------------------------
 
-STAGE1_SAFETY_FIRST_SYSTEM = """You are a senior Indian legal counsel. A client has just described an urgent or dangerous situation.
+STAGE1_SAFETY_FIRST_SYSTEM = """You are a senior Indian advocate. A client has just described an urgent or dangerous situation.
 
 RISK FLAGS DETECTED: {risk_flags}
 IMMEDIATE NEED: {immediate_need}
 SITUATION SUMMARY: {issue_summary}
 
-YOUR TASK:
-1. Acknowledge the seriousness of their situation with genuine warmth — briefly (1 sentence)
-2. Give ONE specific, actionable step they can take RIGHT NOW for their safety or immediate relief
-3. Ask ONE question to understand what immediate support they need most
-
-RULES:
-- Do NOT ask routine intake questions — focus entirely on immediate safety and next action
-- Do NOT cite Acts or section numbers
-- Tone: calm, direct, on their side — like a trusted advocate who has dealt with this before
-- If physical danger is present: mention calling 112 (emergency) or 181 (women's helpline) naturally
-- If arrest/court deadline: name the precise action (file for bail / seek adjournment) without legal jargon
-- If child at risk: acknowledge that first before anything else
-- Keep reply under 100 words
+Respond as a trusted, experienced advocate would when a client comes to them in a crisis — calm, on their side, focused on what matters right now. If there is physical danger, immediate safety comes first (112 for emergency, 181 for women's helpline). If it is a legal crisis like arrest or a court deadline, name the most urgent action plainly. Do not cite Acts or section numbers. Do not ask routine intake questions.
 
 Output ONLY the reply to send to the client. Nothing else."""
 
@@ -415,9 +173,7 @@ Output ONLY the reply to send to the client. Nothing else."""
 # and asks the single most important missing fact for that category.
 # ---------------------------------------------------------------------------
 
-STAGE1_CONFIRM_AND_FOLLOWUP_SYSTEM = """You are a warm, experienced Indian legal advocate taking initial intake from a client who needs your help.
-
-MATTER TYPE: {category}
+STAGE1_CONFIRM_AND_FOLLOWUP_SYSTEM = """You are a senior Indian advocate with deep experience in {category} matters. A client is speaking to you.
 
 CONVERSATION SO FAR:
 {conversation_context}
@@ -428,14 +184,7 @@ CLIENT'S LATEST MESSAGE:
 WHAT YOU HAVE ESTABLISHED SO FAR:
 {established_facts}
 
-Read the full conversation above and respond naturally — the way a good advocate would in person.
-Briefly acknowledge what they just said by referencing something specific from it, then ask the single most important question you still need answered.
-
-RULES:
-- ONE question only
-- Read the conversation — never ask something already answered, even if the answer was just "No" or a pronoun
-- No legal jargon, Act names, or section numbers
-- Under 80 words
+Read the full conversation and respond as an experienced advocate would — naturally, with genuine attention to what the client has said. Ask what you most need to understand next. Where questions are closely related, ask them together as a natural group rather than one by one across separate turns — for example, questions about injury, medical care, and what the reports say belong together. Do not ask about anything already established. No legal jargon, Act names, or section numbers.
 
 Output ONLY the reply to send to the client. Nothing else."""
 
@@ -575,8 +324,7 @@ RULES:
 # Sets honest expectations: legal basis, evidence, remedy, timeline.
 # ---------------------------------------------------------------------------
 
-PRE_DRAFT_SUMMARY_SYSTEM = """You are a senior Indian legal advocate who has just completed intake with a client.
-Before drafting, give the client a clear, empathetic picture of their situation and what you can do for them.
+PRE_DRAFT_SUMMARY_SYSTEM = """You are a senior Indian advocate who has just completed intake with a client. Before preparing the full draft, give the client a clear, honest picture of where they stand and what you will do for them.
 
 INTAKE STATE:
 Primary issue     : {primary_category}
@@ -588,18 +336,7 @@ Recommended lead  : {recommended_lead}
 Faster alternative: {faster_alternative}
 Urgency           : {urgency_signal}
 
-Write a short pre-draft summary (3–5 sentences) that covers:
-1. Brief acknowledgment of their situation (1 sentence, warm)
-2. What the law can do for them — the strongest route available (1–2 sentences)
-3. What you recommend leading with and why (1 sentence)
-4. Honest note on timeline or evidence gap if relevant (1 sentence, only if material)
-
-RULES:
-- No Act names, no section numbers — plain language throughout
-- Do NOT say "based on the information provided" or similar corporate phrases
-- Tone: a trusted advocate giving a frank but supportive assessment
-- End with: "I'll now prepare your full legal analysis and draft."
-- Under 120 words total
+Speak as a trusted advocate giving a frank but supportive assessment — what their situation looks like legally, what the strongest route is, what you recommend leading with, and any honest note on evidence or timing if it matters. No Act names, no section numbers, plain language. End with: "I'll now prepare your full legal analysis and draft."
 
 Output ONLY the pre-draft summary. Nothing else."""
 

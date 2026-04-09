@@ -288,47 +288,6 @@ def _count_distinct_user_turns(conversation_history: list, user_message: str) ->
     return count
 
 
-_EVIDENCE_HINTS = (
-    "document", "documents", "message", "messages", "whatsapp", "email", "notice",
-    "order", "agreement", "contract", "record", "records", "receipt", "payment",
-    "bank transfer", "photo", "photos", "video", "audio", "medical", "report",
-    "certificate", "witness", "witnesses", "screenshot", "slip", "fir", "complaint",
-)
-
-_PRIOR_ACTION_HINTS = (
-    "complaint", "fir", "police", "lawyer", "advocate", "notice sent", "replied",
-    "representation", "appeal", "application", "petition", "emailed", "wrote",
-    "requested", "asked", "called", "visited", "reported", "medical treatment",
-    "clinic", "hospital",
-)
-
-_STAGE_HINTS = (
-    "today", "yesterday", "notice", "order", "hearing", "auction", "termination",
-    "dismissal", "chargesheet", "charge sheet", "sale notice", "deadline", "summons",
-    "proceeding", "case filed", "complaint filed", "fir", "medical examination",
-    "lock changed", "eviction notice", "show cause", "suspension", "arrest",
-)
-
-_RELIEF_HINTS = (
-    "want", "need", "seeking", "relief", "protection", "custody", "maintenance",
-    "compensation", "injunction", "stay", "access", "release", "bail", "quash",
-    "set aside", "reinstatement", "refund", "possession", "stop", "restrain",
-)
-
-_LOW_SIGNAL_OPEN_POINT_HINTS = (
-    "current situation", "next steps", "more details", "further details", "what happened",
-    "background", "context", "general information", "immediate legal action",
-    "lawyer consultation", "legal strategy",
-)
-
-_CANONICAL_OPEN_POINTS = (
-    "client objective / relief sought",
-    "present urgency / current position",
-    "prior actions already taken",
-    "documents / messages / witnesses currently available",
-    "current stage / notice / immediate trigger",
-)
-
 _OPEN_POINT_SIGNAL_MAP: dict[str, tuple[str, ...]] = {
     "client objective / relief sought": (
         "relief", "want", "need", "seeking", "outcome", "objective", "protection",
@@ -463,99 +422,6 @@ def _append_unique_point(points: list[str], candidate: str) -> None:
     points.append(cand)
 
 
-def _canonicalize_open_point(
-    point: str,
-    *,
-    objective: str,
-    urgency: str,
-    prior_actions: list[str],
-    evidence_present: bool,
-    stage_present: bool,
-) -> str:
-    cleaned = str(point or "").strip()
-    low = cleaned.lower().strip(" .,:;!?")
-    if not low:
-        return ""
-
-    if any(hint in low for hint in _LOW_SIGNAL_OPEN_POINT_HINTS):
-        return ""
-
-    if objective and any(token in low for token in ("objective", "relief", "outcome", "prayer", "remedy")):
-        return ""
-    if urgency not in ("", "unknown") and any(token in low for token in ("urgency", "current position", "immediate position", "safety")):
-        return ""
-    if prior_actions and any(token in low for token in ("prior action", "already taken", "steps taken", "complaint", "police", "lawyer", "advocate")):
-        return ""
-    if evidence_present and any(token in low for token in ("document", "communication", "message", "material", "supporting", "evidence", "witness", "proof", "photo", "record")):
-        return ""
-    if stage_present and any(token in low for token in ("stage", "notice", "trigger", "process", "hearing", "order", "court order")):
-        return ""
-
-    if any(token in low for token in ("want", "need", "seeking", "relief", "remedy", "outcome", "prayer")):
-        return "client objective / relief sought"
-    if any(token in low for token in ("police", "lawyer", "advocate", "complaint", "fir", "emailed", "wrote", "visited", "called", "approached", "representation", "appeal", "petition", "notice sent", "replied")):
-        return "prior actions already taken"
-    if any(token in low for token in ("document", "documents", "message", "messages", "whatsapp", "email", "record", "records", "payment", "bank transfer", "receipt", "photo", "photos", "video", "audio", "medical", "witness", "witnesses", "screenshot", "proof", "agreement", "contract")):
-        return "documents / messages / witnesses currently available"
-    if any(token in low for token in ("notice", "order", "court order", "hearing", "proceeding", "case filed", "complaint filed", "lock changed", "lock", "trigger", "deadline", "termination", "dismissal", "summons", "stage")):
-        return "current stage / notice / immediate trigger"
-    if any(token in low for token in ("access", "entry", "locked out", "lockout", "belongings", "possession", "safety", "urgent", "urgency", "immediate", "right now", "current position", "still inside")):
-        return "present urgency / current position"
-
-    # Question-shaped or legal-conclusion-shaped open points should be mapped to
-    # concrete intake buckets instead of being asked back verbatim.
-    if low.startswith(("is ", "can ", "whether ", "do we know", "what do we know")) or " illegal" in low or " lawful" in low:
-        if any(token in low for token in ("access", "locked out", "lockout", "belongings", "possession")):
-            return "present urgency / current position"
-        if any(token in low for token in ("notice", "order", "court order", "eviction", "formal step")):
-            return "current stage / notice / immediate trigger"
-        if any(token in low for token in ("complaint", "police", "lawyer", "advocate", "step")):
-            return "prior actions already taken"
-        return ""
-
-    return cleaned
-
-
-def _derive_core_open_points(intake_state: dict, conversation_history: list, user_message: str) -> list[str]:
-    points: list[str] = []
-    state_blob = _state_text_blob(intake_state)
-    objective = (intake_state.get("client_objective") or "").strip()
-    urgency = (intake_state.get("urgency_level") or "unknown").strip().lower()
-    prior_actions = [str(x).strip() for x in (intake_state.get("prior_actions_taken") or []) if str(x).strip()]
-    evidence_present = _contains_any_term(state_blob, _EVIDENCE_HINTS)
-    stage_present = _contains_any_term(state_blob, _STAGE_HINTS)
-
-    if not objective and not _contains_any_term(state_blob, _RELIEF_HINTS):
-        _append_unique_point(points, "client objective / relief sought")
-    if urgency in ("", "unknown"):
-        _append_unique_point(points, "present urgency / current position")
-    if not prior_actions and not _contains_any_term(state_blob, _PRIOR_ACTION_HINTS):
-        _append_unique_point(points, "prior actions already taken")
-    if not evidence_present:
-        _append_unique_point(points, "documents / messages / witnesses currently available")
-    if _count_distinct_user_turns(conversation_history, user_message) <= 2 and not stage_present:
-        _append_unique_point(points, "current stage / notice / immediate trigger")
-
-    for point in intake_state.get("open_points", []) or []:
-        cleaned = _canonicalize_open_point(
-            point,
-            objective=objective,
-            urgency=urgency,
-            prior_actions=prior_actions,
-            evidence_present=evidence_present,
-            stage_present=stage_present,
-        )
-        low = cleaned.lower()
-        if not cleaned:
-            continue
-        if any(token in low for token in ("time", "timing", "date", "duration", "frequency", "when exactly")):
-            continue
-        _append_unique_point(points, cleaned)
-        if len(points) >= 5:
-            break
-    return points[:5]
-
-
 def _normalize_legal_intake_state(intake_state: dict | None, conversation_history: list, user_message: str) -> dict:
     state = dict(intake_state or {})
     facts_summary = _combine_user_messages(conversation_history, user_message) or (state.get("facts_summary") or "").strip()
@@ -575,77 +441,11 @@ def _normalize_legal_intake_state(intake_state: dict | None, conversation_histor
         "enough_to_proceed": False,
         "open_points": [],
     }
-    normalized["open_points"] = _derive_core_open_points(normalized | {"open_points": state.get("open_points") or []}, conversation_history, user_message)
+    # Pass the LLM-extracted open_points through directly — the model already knows what is missing.
+    normalized["open_points"] = [str(p).strip() for p in (state.get("open_points") or []) if str(p).strip()][:5]
     return normalized
 
 
-def _topic_already_asked(point: str, asked_questions: list[str]) -> bool:
-    low = (point or "").lower()
-    mapping = {
-        "client objective / relief sought": ("relief", "want", "outcome", "seeking", "what do you want"),
-        "present urgency / current position": ("urgent", "urgency", "current position", "right now", "immediate risk", "safe"),
-        "prior actions already taken": ("already taken", "steps have you already taken", "complaint", "notice sent", "police", "lawyer"),
-        "documents / messages / witnesses currently available": ("document", "message", "photo", "witness", "evidence", "records"),
-        "current stage / notice / immediate trigger": ("notice", "order", "hearing", "deadline", "stage", "what happened today", "trigger"),
-    }
-    signals = mapping.get(low, tuple(token for token in re.split(r"[\s/]+", low) if len(token) > 3))
-    for question in asked_questions or []:
-        q_low = (question or "").lower()
-        if any(signal in q_low for signal in signals):
-            return True
-    return False
-
-
-def _topic_already_answered(point: str, conversation_history: list) -> bool:
-    """
-    Return True if the user has already provided substantive information about this topic
-    in their replies — regardless of whether the question was explicitly asked.
-
-    This prevents the fallback from repeatedly asking about topics the user already addressed
-    (e.g. safety position: "I am living in constant fear" answers "present urgency / current position").
-    """
-    low = (point or "").lower()
-    # Signals that appear in USER replies indicate the topic was addressed
-    answer_signals: dict[str, tuple[str, ...]] = {
-        "client objective / relief sought": (
-            "want", "need", "hope", "wish", "protect", "protection", "stop", "leave",
-            "relief", "outcome", "seeking", "focus on", "priority",
-        ),
-        "present urgency / current position": (
-            "fear", "afraid", "scared", "safe", "unsafe", "living in", "constant",
-            "danger", "risk", "currently", "right now", "at present", "immediate",
-            "still at", "staying at", "returned", "left home", "fled",
-        ),
-        "prior actions already taken": (
-            "filed", "complained", "went to", "called police", "called the police",
-            "fir", "report", "reported", "contacted", "hired", "lawyer", "advocate",
-            "notice", "sent a notice", "already done", "already filed", "applied",
-        ),
-        "documents / messages / witnesses currently available": (
-            "photo", "photos", "picture", "screenshot", "message", "messages",
-            "whatsapp", "text", "email", "video", "recording", "document",
-            "certificate", "report", "witness", "witnesses", "neighbour", "neighbor",
-            "medical", "hospital record", "evidence",
-        ),
-        "current stage / notice / immediate trigger": (
-            "notice", "received a notice", "order", "court date", "hearing",
-            "deadline", "eviction", "served", "today", "yesterday", "last week",
-            "recently", "just happened", "triggered", "started",
-        ),
-    }
-    signals = answer_signals.get(low)
-    if signals is None:
-        # For custom open points, use the point tokens themselves as signals
-        signals = tuple(tok for tok in re.split(r"[\s/]+", low) if len(tok) > 4)
-    if not signals:
-        return False
-    for msg in conversation_history or []:
-        if msg.get("role") != "user":
-            continue
-        content = (msg.get("content") or "").lower()
-        if any(sig in content for sig in signals):
-            return True
-    return False
 
 
 def _question_content_tokens(text: str) -> set[str]:
@@ -692,39 +492,24 @@ def _has_analysis_ready_record(intake_state: dict, conversation_history: list, u
     objective = (intake_state.get("client_objective") or "").strip()
     urgency = (intake_state.get("urgency_level") or "unknown").strip().lower()
     prior_actions = [str(x).strip() for x in (intake_state.get("prior_actions_taken") or []) if str(x).strip()]
-    state_blob = _state_text_blob(intake_state)
-    evidence_present = _contains_any_term(state_blob, _EVIDENCE_HINTS)
-    stage_present = _contains_any_term(state_blob, _STAGE_HINTS)
-    objective_present = bool(objective) or _contains_any_term(state_blob, _RELIEF_HINTS)
     readiness_score = sum((
         user_turns >= 3,
         len(facts_summary) >= 140,
         len(known_facts) >= 3,
-        objective_present,
-        evidence_present,
-        bool(prior_actions) or stage_present,
+        bool(objective),
+        bool(prior_actions),
         urgency not in ("", "unknown"),
     ))
-    if readiness_score < 5:
+    if readiness_score < 4:
         return False
     critical_remaining = _critical_open_points(intake_state)
     if len(critical_remaining) == 0:
         return True
-    if len(critical_remaining) <= 1 and readiness_score >= 6:
-        return True
-    if len(critical_remaining) <= 2 and readiness_score >= 6 and evidence_present and objective_present and user_turns >= 3:
+    if len(critical_remaining) <= 1 and readiness_score >= 5:
         return True
     return False
 
 
-
-
-def _infer_tone_profile(facts_blob: str) -> str:
-    if _contains_any_term(facts_blob, ("assault", "abuse", "injury", "violence", "beat", "harassment", "threat", "medical", "hospital")):
-        return "sensitive"
-    if _contains_any_term(facts_blob, ("lock", "locked out", "lockout", "belongings", "possession", "entry", "access", "evict", "auction", "sale notice", "deadline", "termination", "dismissal", "suspension", "arrest", "detention", "custody", "jail", "demolition", "freeze", "seizure")):
-        return "urgent"
-    return "standard"
 
 
 def _looks_like_legal_professional(*texts: str) -> bool:
@@ -732,135 +517,6 @@ def _looks_like_legal_professional(*texts: str) -> bool:
     return any(hint in blob for hint in _LEGAL_PROFESSIONAL_STYLE_HINTS)
 
 
-def _conversation_variation_index(conversation_history: list, tone_profile: str, missing_points: list[str], professional: bool) -> int:
-    asked_count = len(_extract_asked_questions(conversation_history))
-    signature = f"{tone_profile}|{'|'.join(missing_points[:3])}|{asked_count}|{1 if professional else 0}"
-    return sum(ord(ch) for ch in signature) % 3
-
-
-def _pick_variant(options: tuple[str, ...], index: int) -> str:
-    if not options:
-        return ""
-    return options[index % len(options)]
-
-
-def _infer_position_anchor(facts_blob: str) -> str:
-    if _contains_any_term(facts_blob, ("assault", "abuse", "injury", "violence", "threat", "harassment", "medical", "hospital")):
-        return "your immediate safety and risk position"
-    if _contains_any_term(facts_blob, ("lock", "locked out", "lockout", "entry", "access", "belongings", "possession", "flat", "house", "property")):
-        return "your present access or possession position"
-    if _contains_any_term(facts_blob, ("arrest", "detention", "custody", "jail", "remand")):
-        return "the present custody position"
-    if _contains_any_term(facts_blob, ("employer", "employment", "termination", "dismissal", "suspension", "service", "salary")):
-        return "your current employment position"
-    if _contains_any_term(facts_blob, ("account", "bank", "freeze", "seizure", "attachment")):
-        return "the present control over the account or property"
-    return "the immediate practical position"
-
-
-def _infer_action_channels(facts_blob: str) -> str:
-    if _contains_any_term(facts_blob, ("assault", "abuse", "violence", "police", "fir", "arrest", "detention", "custody", "jail")):
-        return "the police, the other side, any relevant authority, or any lawyer"
-    if _contains_any_term(facts_blob, ("employer", "employment", "termination", "dismissal", "suspension", "department", "service")):
-        return "the employer, department, any authority, or any lawyer"
-    if _contains_any_term(facts_blob, ("landlord", "tenant", "rent", "society", "building")):
-        return "the other side, building or society management, any authority, or any lawyer"
-    return "the other side, any relevant authority, or any lawyer"
-
-
-def _infer_evidence_phrase(facts_blob: str) -> str:
-    if _contains_any_term(facts_blob, ("payment", "rent", "salary", "invoice", "receipt", "bank", "cheque")):
-        return "documents, notices, messages, payment records, photos, recordings, or witness support"
-    if _contains_any_term(facts_blob, ("assault", "abuse", "injury", "violence", "medical", "hospital")):
-        return "documents, messages, photos, medical papers, recordings, or witness support"
-    return "documents, messages, notices, records, photos, recordings, or witness support"
-
-
-def _infer_stage_fragment(facts_blob: str) -> str:
-    if _contains_any_term(facts_blob, ("auction", "sale", "tender", "bid")):
-        return "has any notice, order, sale step, filing, hearing, or deadline already started"
-    if _contains_any_term(facts_blob, ("employer", "termination", "dismissal", "suspension", "department", "service")):
-        return "has any notice, inquiry, order, filing, hearing, or deadline already started"
-    return "has any notice, order, complaint, filing, hearing, or deadline already started"
-
-
-def _build_intake_opening(tone_profile: str, professional: bool, conversation_history: list, missing_points: list[str]) -> str:
-    index = _conversation_variation_index(conversation_history, tone_profile, missing_points, professional)
-    if tone_profile == "sensitive":
-        options = (
-            "I am sorry you are dealing with this.",
-            "I am sorry this has happened.",
-            "I can see this is serious, and I want to understand it carefully.",
-        ) if not professional else (
-            "I understand the seriousness of the situation.",
-            "I can see the matter is serious.",
-            "I understand why this needs careful handling.",
-        )
-        return _pick_variant(options, index)
-    if tone_profile == "urgent":
-        return _pick_variant((
-            "I understand why this feels urgent.",
-            "I can see why this needs immediate clarity.",
-            "I understand why you need a quick and careful assessment here.",
-        ), index)
-    return _pick_variant((
-        "I understand why this is concerning.",
-        "I can see why this needs careful assessment.",
-        "I understand why you want clarity on this.",
-    ), index)
-
-
-def _build_intake_reason(tone_profile: str, missing_points: list[str], professional: bool, conversation_history: list) -> str:
-    low_points = {str(p).strip().lower() for p in (missing_points or []) if str(p).strip()}
-    index = _conversation_variation_index(conversation_history, tone_profile, missing_points, professional)
-    topics: list[str] = []
-    if "present urgency / current position" in low_points:
-        topics.append("the immediate position and urgency")
-    if "documents / messages / witnesses currently available" in low_points:
-        topics.append("what supporting material is currently available")
-    if "prior actions already taken" in low_points:
-        topics.append("what steps have already been taken")
-    if "current stage / notice / immediate trigger" in low_points:
-        topics.append("the current procedural stage")
-    if "client objective / relief sought" in low_points:
-        topics.append("the specific outcome to prioritize")
-
-    if not topics:
-        topics.append("the current position and what can be pursued responsibly")
-
-    if len(topics) == 1:
-        topic_phrase = topics[0]
-    elif len(topics) == 2:
-        topic_phrase = f"{topics[0]} and {topics[1]}"
-    else:
-        topic_phrase = ", ".join(topics[:-1]) + f", and {topics[-1]}"
-
-    lead_opts = (
-        "This helps me understand",
-        "This gives me clarity on",
-        "This lets me evaluate",
-    )
-    tail_opts = (
-        "so I can guide you on the next legally supportable step.",
-        "so I can advise what is realistically supportable right now.",
-        "so I can suggest the most practical next legal move.",
-    )
-    if tone_profile == "sensitive":
-        lead_opts = (
-            "This helps me protect your immediate position by clarifying",
-            "This helps me carefully understand",
-            "This lets me assess",
-        )
-    elif professional:
-        tail_opts = (
-            "so I can advise the strongest supportable route.",
-            "so I can assess supportability before recommending the next step.",
-            "so I can identify the most defensible next action.",
-        )
-
-    lead = _pick_variant(lead_opts, index)
-    tail = _pick_variant(tail_opts, index)
-    return f"{lead} {topic_phrase}, {tail}"
 
 
 def _is_low_information_reply(user_message: str) -> bool:
@@ -1021,178 +677,6 @@ def _question_is_grounded_in_state(reply: str, intake_state: dict) -> bool:
     if len(reply_tokens) <= 2:
         return False
     return False
-
-
-# ---------------------------------------------------------------------------
-# Legacy wrapper — preserved for smoke-test backward compatibility.
-# New code should call _is_hard_reject / _soft_issues directly.
-# ---------------------------------------------------------------------------
-def _is_low_quality_next_question(reply: str) -> bool:
-    """Legacy: True if reply would be a hard reject (empty/no ?/too short) OR has law-citation soft issues."""
-    hard, _ = _is_hard_reject(reply, {})  # role check skipped — no state available
-    if hard:
-        return True
-    # Expose the law-citation soft issues via this legacy path for backward compat
-    low = (reply or "").strip().lower()
-    _GENERIC_OPENERS = (
-        "tell me what happened", "tell me more", "tell me more about",
-        "share your facts", "start from the beginning", "share everything that happened",
-    )
-    if any(low.startswith(p) or f". {p}" in low for p in _GENERIC_OPENERS):
-        return True
-    if re.search(r"\bsection\s+\d", low) or re.search(r"\barticle\s+\d", low):
-        return True
-    _STATUTE_PHRASES = (
-        "landlord and tenant act", "under the act", "under this act",
-        "domestic violence act", "protection of women", "negotiable instruments act",
-    )
-    if any(phrase in low for phrase in _STATUTE_PHRASES):
-        return True
-    _COURT_CITE = re.compile(r"\b(supreme court|high court)\b.*\b(held|ruled|decided|said|observed)\b")
-    if _COURT_CITE.search(low):
-        return True
-    return False
-
-
-def _join_question_fragments(fragments: list[str]) -> str:
-    """Always ask exactly ONE question per fallback turn — never combine multiple fragments."""
-    if not fragments:
-        return ""
-    return f"{fragments[0]}?"
-
-
-def _custom_open_point_to_fragment(point: str) -> str:
-    low = (point or "").strip().lower().rstrip(".")
-    if not low:
-        return ""
-    if low.startswith(("is ", "can ", "whether ", "do we know", "what do we know")) or " illegal" in low or " lawful" in low:
-        return ""
-    if low.startswith("possibility of ") and low.endswith(" claim"):
-        target = low[len("possibility of "):]
-        return f"what facts presently support {target}"
-    if "intent behind" in low:
-        tail = low.split("intent behind", 1)[1].strip()
-        if tail:
-            return f"what explanation, if any, the other side gave about {tail}"
-    if low.startswith("immediacy of "):
-        tail = low[len("immediacy of "):].strip()
-        if tail:
-            return f"whether {tail} is possible right now"
-    if low.startswith("protections against "):
-        tail = low[len("protections against "):].strip()
-        if tail:
-            return f"what immediate protection is needed against {tail}"
-    if low.startswith("available support"):
-        return "what family, local, or institutional support is available to you right now"
-    return ""
-
-
-
-
-def _build_fallback_issue_sentence(intake_state: dict) -> str:
-    """
-    Build a one-sentence plain-language ISSUE framing from facts_summary.
-    Avoid fixed lead-ins to prevent repetitive stock phrasing.
-    Returns empty string if there is not enough information.
-    """
-    facts = (intake_state.get("facts_summary") or "").strip()
-    if not facts or len(facts) < 20:
-        return ""
-    # Truncate to the core of the summary (first sentence or ~120 chars)
-    sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", facts) if s.strip()]
-    core = sentences[0] if sentences else facts[:120]
-    return core if core.endswith(".") else core.rstrip(".") + "."
-
-
-def _build_fallback_next_question(intake_state: dict, conversation_history: list) -> str:
-    asked_questions = _extract_asked_questions(conversation_history)
-    open_points = list(intake_state.get("open_points") or [])
-
-    # Filter to points that are still genuinely open:
-    # skip points whose topic the user has ALREADY ANSWERED in their replies,
-    # or which are canonical catch-all placeholders that were never specific.
-    unanswered_points = []
-    for point in open_points:
-        if _topic_already_answered(point, conversation_history):
-            # User addressed this topic — no need to ask again
-            continue
-        if point in _CANONICAL_OPEN_POINTS:
-            unanswered_points.append(point)
-            continue
-        if not _topic_already_asked(point, asked_questions):
-            unanswered_points.append(point)
-    # If everything was filtered out, fall back to full open_points list
-    # but still respect "already answered" filter to avoid repeating answered topics
-    if not unanswered_points:
-        unanswered_points = [
-            p for p in open_points
-            if not _topic_already_answered(p, conversation_history)
-        ]
-    if not unanswered_points:
-        unanswered_points = open_points
-
-    facts_blob = _state_text_blob(intake_state)
-    tone_profile = _infer_tone_profile(facts_blob)
-    professional = _looks_like_legal_professional(
-        facts_blob,
-        " ".join(asked_questions[-3:]),
-        intake_state.get("facts_summary", ""),
-        intake_state.get("client_objective", ""),
-    )
-    position_anchor = _infer_position_anchor(facts_blob)
-    action_channels = _infer_action_channels(facts_blob)
-    evidence_phrase = _infer_evidence_phrase(facts_blob)
-    stage_fragment = _infer_stage_fragment(facts_blob)
-
-    fragment_map = {
-        "client objective / relief sought": "what immediate result or protection do you want me to focus on first",
-        "present urgency / current position": f"right now, what is the current position on {position_anchor}",
-        "prior actions already taken": f"what steps have you already taken with {action_channels}",
-        "documents / messages / witnesses currently available": f"what {evidence_phrase} can you presently rely on",
-        "current stage / notice / immediate trigger": stage_fragment,
-    }
-    repeat_fragment_map = {
-        "client objective / relief sought": "just to pin this down, what immediate result should I focus on first",
-        "present urgency / current position": f"right now, what is the immediate practical position on {position_anchor}",
-        "prior actions already taken": f"before I assess the next step, what have you already done with {action_channels}",
-        "documents / messages / witnesses currently available": f"which specific parts of that material can you actually rely on right now from the {evidence_phrase}",
-        "current stage / notice / immediate trigger": f"apart from what you have already mentioned, {stage_fragment}",
-    }
-
-    # Build exactly ONE question fragment — never combine multiple
-    chosen_fragment: str = ""
-    for point in unanswered_points:
-        already_asked = _topic_already_asked(point, asked_questions)
-        fragment = repeat_fragment_map.get(point) if already_asked else fragment_map.get(point)
-        if not fragment:
-            fragment = _custom_open_point_to_fragment(point)
-        if fragment:
-            chosen_fragment = fragment
-            break  # Stop after the first valid fragment — one question per turn
-
-    if not chosen_fragment:
-        chosen_fragment = "what immediate result do you want me to focus on first"
-
-    chosen_fragment = chosen_fragment[:1].upper() + chosen_fragment[1:]
-
-    opening = _build_intake_opening(tone_profile, professional, conversation_history, unanswered_points)
-    reason = _build_intake_reason(tone_profile, unanswered_points, professional, conversation_history)
-
-    # Add ISSUE sentence framing (empathy → issue → question) if we have enough facts
-    issue_sentence = _build_fallback_issue_sentence(intake_state)
-    if issue_sentence:
-        return (
-            f"{opening} "
-            f"{issue_sentence} "
-            f"{reason} "
-            f"{_join_question_fragments([chosen_fragment])}"
-        )
-    return (
-        f"{opening} "
-        f"{reason} "
-        f"{_join_question_fragments([chosen_fragment])}"
-    )
-
 
 
 def _needs_more_intake_clarification(intake_state: dict, conversation_history: list, user_message: str) -> bool:
@@ -1362,7 +846,7 @@ def _run_next_question_from_state(
             model=model_override,
             system=NEXT_QUESTION_FROM_STATE_SYSTEM,
         ).strip()
-        return _parse_llm_response(response, intake_state.get("facts_summary", ""))
+        return _parse_llm_response(response, intake_state.get("facts_summary", ""), model_override=model_override)
     except Exception:
         return None
 
@@ -1538,7 +1022,12 @@ def _is_low_value_timing_followup(proposed: str, intake_state: dict, asked_quest
 # ---------------------------------------------------------------------------
 
 def _detect_intent_from_keywords(msg: str, conversation_history: list | None = None) -> str | None:
-    """LLM-based direct intent detection (search/lookup) for routing."""
+    """LLM-based direct intent detection (search/lookup) for routing.
+
+    Returns 'lookup', 'search', or None (= let the intake flow decide).
+    The LLM is the single source of truth here — no deterministic keyword
+    lists, which cannot cover the long tail of phrasings across languages.
+    """
     history_tail = []
     for turn in (conversation_history or [])[-8:]:
         role = (turn.get("role") or "").strip().lower()
@@ -1546,11 +1035,19 @@ def _detect_intent_from_keywords(msg: str, conversation_history: list | None = N
         if role in ("user", "assistant") and content:
             history_tail.append({"role": role, "content": content[:220]})
     prompt = (
-        "Classify the user's latest legal routing intent.\n"
+        "Classify the user's latest message into one routing intent for an Indian legal assistant.\n"
         "Return ONLY JSON: {\"intent\": \"lookup|search|none\"}\n"
-        "- lookup: provision/section/definition/concept-focused request.\n"
-        "- search: precedent/judgment/case-law focused request.\n"
-        "- none: situation/intake narrative or unclear retrieval intent.\n\n"
+        "\n"
+        "INTENT DEFINITIONS:\n"
+        "- lookup: the user is asking for the legal definition, meaning, statutory provision, or\n"
+        "  specific section/concept. This includes any phrasing of 'define X', 'what is X',\n"
+        "  'meaning of X', 'X ka matlab', 'legal definition of X', 'X under which section',\n"
+        "  'what does the law say about X', 'tell me the law on X', 'which Act covers X', etc.\n"
+        "  When in doubt about whether something is lookup vs. none, prefer lookup.\n"
+        "- search: the user is asking for precedents, judgments, case laws, or court decisions.\n"
+        "- none: the user is describing their own legal situation requiring intake and advice\n"
+        "  (e.g. 'my husband beats me', 'my employer fired me', 'I need help with my case').\n"
+        "\n"
         f"Conversation tail: {json.dumps(history_tail, ensure_ascii=False)}\n"
         f"Latest user message: {msg}\n"
     )
@@ -1565,16 +1062,6 @@ def _detect_intent_from_keywords(msg: str, conversation_history: list | None = N
         return None
 
 
-def _detect_search_strategy_from_keywords(msg: str) -> str | None:
-    """Detect explicit user intent to disable the Indiankanoon fallback and stay local-only."""
-    m = msg.lower()
-    local_only_phrases = [
-        "only local", "no web", "don't search internet", "do not search internet",
-        "skip web", "local database only", "local only", "no internet",
-    ]
-    if any(p in m for p in local_only_phrases):
-        return "local_only"
-    return None
 
 
 def _is_short_lookup_style_query(user_message: str, conversation_history: list) -> bool:
@@ -1679,16 +1166,13 @@ def _build_short_lookup_confirmation_question(user_message: str, conversation_hi
 
 def _default_search_strategy_for_intent(
     intent: str | None,
-    user_message: str,
+    _user_message: str,
     requested_strategy: str | None = None,
 ) -> str:
     """
     Keep legal-opinion flows on the fast local-only path unless the user explicitly
     asked for something else. Search/lookup flows retain the broader mixed strategy.
     """
-    keyword_strategy = _detect_search_strategy_from_keywords(user_message)
-    if keyword_strategy:
-        return keyword_strategy
     normalized_intent = (intent or "").strip().lower()
     requested = (requested_strategy or "").strip().lower()
     if normalized_intent == "legal_opinion":
@@ -1730,7 +1214,7 @@ def _extract_result_count(msg: str) -> int | None:
 # LLM response parsing
 # ---------------------------------------------------------------------------
 
-def _parse_llm_response(response: str, user_message: str) -> dict | None:
+def _parse_llm_response(response: str, user_message: str, model_override: str | None = None) -> dict | None:
     """Parse LLM output. Returns None if invalid."""
     out = _extract_json(response)
     if not out or not isinstance(out, dict):
@@ -1828,27 +1312,13 @@ def _parse_llm_response(response: str, user_message: str) -> dict | None:
         if research_intent and research_intent.get("document_types") in ("acts_only", "case_laws_only", "both"):
             document_types = research_intent["document_types"]
         else:
+            # Derive from routing intent — the LLM already classified the request type
             if intent == "lookup":
                 document_types = "acts_only"
             elif intent == "search":
                 document_types = "case_laws_only"
             else:
                 document_types = "both"
-            msg_lower = (user_message or "").lower()
-            acts_only_signals = [
-                "acts enacted by", "enacted by the government", "only acts", "only laws",
-                "state acts", "bare acts only", "no case laws", "don't want any case laws",
-                "don't want case laws", "without case laws", "acts by telangana", "acts by the state",
-                "government of telangana", "indiacode", "all the acts",
-            ]
-            case_laws_only_signals = [
-                "only case laws", "only judgments", "only judgements", "only court",
-                "no acts", "don't want acts", "case laws only", "judgments only",
-            ]
-            if any(s in msg_lower for s in acts_only_signals):
-                document_types = "acts_only"
-            elif any(s in msg_lower for s in case_laws_only_signals):
-                document_types = "case_laws_only"
 
         # search_strategy: from intent first; fallback from routing LLM + keywords.
         # Explicit user phrases ("avoid local", "directly go to web", "web only") always override so we never ignore them.

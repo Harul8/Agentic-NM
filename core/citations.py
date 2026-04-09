@@ -290,6 +290,39 @@ def _case_ids_from_names(case_names: list, graph: dict) -> set:
     return result
 
 
+def get_cases_interpreting_section(section_number: str, act_hint: str = "") -> list[dict]:
+    """
+    Return cases that have interpreted a given section (reverse of interprets edge).
+    Delegates to core.legal_graph which queries legal.db.
+
+    Parameters
+    ----------
+    section_number : str
+        Section or article number, e.g. "302", "21", "498A".
+    act_hint : str
+        Optional act alias or name fragment to narrow results, e.g. "IPC", "Constitution".
+
+    Returns
+    -------
+    list of dicts: [{case_id, case_name, court, year}, ...]
+    """
+    try:
+        from core.legal_graph import lookup_section, get_cases_interpreting_section as _gci
+        sections = lookup_section(section_number, act_hint or None)
+        results = []
+        seen = set()
+        for sec in sections:
+            for case in _gci(sec["id"]):
+                key = case.get("case_id", "")
+                if key and key not in seen:
+                    seen.add(key)
+                    results.append(case)
+        return results
+    except Exception as e:
+        logger.debug("get_cases_interpreting_section failed: %s", e)
+        return []
+
+
 def get_sections_interpreted_by_cases(case_names: list) -> list:
     """
     Return section_ids (e.g. "IPC 302") that any of the given cases interpret.

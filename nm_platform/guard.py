@@ -1,37 +1,38 @@
 """
 platform/guard.py — Content safety, sanitization, prompt injection detection.
 """
+import json
 import logging
 import re
 
 logger = logging.getLogger("nyaymalaw.guard")
 
-# ---------------------------------------------------------------------------
-# 1. Harmful intent patterns — queries seeking help with illegal acts
-# ---------------------------------------------------------------------------
-_HARMFUL_PATTERNS = [
-    # Violence / threats
-    (r"\b(how\s+to\s+)?(kill|murder|poison|assassinate|attack)\s+(someone|a\s+person|my|wife|husband|boss)", "violence"),
-    (r"\bhow\s+to\s+(harm|hurt|injure|torture)\b", "violence"),
-    (r"\b(bomb|explosive|weapon)\s+(make|build|create|assemble)\b", "weapons"),
-    (r"\b(make|build|create)\s+(a\s+)?(bomb|explosive|weapon)\b", "weapons"),
-    # Sexual exploitation / minors
-    (r"\b(child|minor|underage)\s+(marriage|sex|exploit|abuse|porn)\b", "child_safety"),
-    (r"\b(rape|molest|trafficking)\s+(guide|how|tips|method)\b", "exploitation"),
-    # Fraud / forgery
-    (r"\bhow\s+to\s+(forge|fake|counterfeit|fabricate)\s+(document|evidence|signature|currency|will|affidavit)\b", "fraud"),
-    (r"\b(create|make)\s+(fake|forged|false)\s+(id|passport|license|aadhaar|pan\s*card)\b", "identity_fraud"),
-    # Drug manufacturing
-    (r"\bhow\s+to\s+(make|manufacture|produce|synthesize)\s+(drugs|meth|cocaine|heroin|fentanyl)\b", "drugs"),
-    # Hacking / cybercrime
-    (r"\bhow\s+to\s+(hack|breach|crack|phish|ddos)\b", "cybercrime"),
-    # Terrorism
-    (r"\b(plan|execute|carry\s+out)\s+(attack|bombing|terror)\b", "terrorism"),
-    (r"\bjihad\s+(guide|how|manual)\b", "terrorism"),
-]
 
-# Compiled for performance
-_HARMFUL_RE = [(re.compile(p, re.IGNORECASE), label) for p, label in _HARMFUL_PATTERNS]
+def _llm_is_harmful(text: str) -> bool:
+    """
+    Use the LLM to classify whether a query has genuinely harmful intent.
+    Falls back to False (allow) on any error so a classifier failure never
+    silently blocks legitimate legal queries.
+    """
+    try:
+        from core.llm import ask_llm
+        prompt = (
+            "You are a content safety classifier for an Indian legal research assistant.\n"
+            "Classify the user message below as harmful or not.\n"
+            "Return ONLY JSON: {\"harmful\": true/false, \"reason\": \"<5 words max>\"}\n\n"
+            "HARMFUL means the user is explicitly seeking help to commit violence, fraud, drug manufacturing, "
+            "terrorism, child exploitation, or serious cybercrime — NOT legal questions about these topics.\n"
+            "A victim describing abuse, a lawyer researching a crime, or a student asking about criminal law "
+            "is NOT harmful.\n\n"
+            f"User message: {text[:600]}\n"
+        )
+        raw = (ask_llm(prompt, task_hint="fast") or "").strip()
+        if "{" in raw and "}" in raw:
+            raw = raw[raw.find("{"): raw.rfind("}") + 1]
+        data = json.loads(raw)
+        return bool(data.get("harmful", False))
+    except Exception:
+        return False
 
 # ---------------------------------------------------------------------------
 # 2. Prompt injection patterns — attempts to override system prompts
@@ -94,20 +95,19 @@ def check_query_safety(text: str) -> dict:
             "pii_warning": None,
         }
 
-    # Check harmful intent
-    for regex, label in _HARMFUL_RE:
-        if regex.search(cleaned):
-            logger.warning("Harmful query detected (%s): %s", label, cleaned[:100])
-            return {
-                "safe": False,
-                "risk_level": "blocked",
-                "reason": (
-                    "I'm designed to help with legitimate legal research and queries. "
-                    "I cannot assist with requests that may involve harmful or illegal activities. "
-                    "If you have a genuine legal concern, please rephrase your question."
-                ),
-                "pii_warning": None,
-            }
+    # Check harmful intent via LLM classifier
+    if _llm_is_harmful(cleaned):
+        logger.warning("Harmful query detected by LLM classifier: %s", cleaned[:100])
+        return {
+            "safe": False,
+            "risk_level": "blocked",
+            "reason": (
+                "I'm designed to help with legitimate legal research and queries. "
+                "I cannot assist with requests that may involve harmful or illegal activities. "
+                "If you have a genuine legal concern, please rephrase your question."
+            ),
+            "pii_warning": None,
+        }
 
     # Check PII (warn but don't block)
     pii_warnings = []
