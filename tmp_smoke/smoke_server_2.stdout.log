@@ -1,5 +1,0 @@
-INFO:     127.0.0.1:61874 - "GET /chats HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61876 - "POST /submit_case HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53398 - "POST /chats HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53399 - "GET /chats/604418051 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53400 - "POST /conversation/continue HTTP/1.1" 200 OK

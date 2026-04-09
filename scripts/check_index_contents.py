@@ -50,7 +50,7 @@ def show_index_contents(chunks_path: str, label: str) -> None:
 
 def test_query(query: str, top_k: int = 5) -> None:
     """Run a single query against the local bare_acts index and show top results."""
-    from retrieval.hybrid_retriever import search_bare_acts_auto
+    from core.retriever import search_bare_acts_auto
     print(f"  Query: \"{query}\"")
     results = search_bare_acts_auto(query, top_k=top_k)
     if not results:

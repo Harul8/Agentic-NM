@@ -42,7 +42,7 @@ from config import (
     CASE_BM25_INDEX,
     VECTOR_STORE,
 )
-from Ingestion.smart_chunker import (
+from core.chunker import (
     _extract_keywords,
     _safe_id,
     _classify_paragraph_type,
@@ -345,7 +345,7 @@ def patch_chunks(dry_run: bool = False, case_filter: str = "") -> tuple[dict, di
 
 def rebuild_indexes(store: dict) -> None:
     """Re-embed all case law chunks and rebuild FAISS + BM25."""
-    from Ingestion.build_v2_index import _get_embedder, build_index
+    from core.indexer import _get_embedder, build_index
 
     logger.info("Loading embedder for rebuild...")
     embedder = _get_embedder()

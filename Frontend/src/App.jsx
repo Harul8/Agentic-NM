@@ -6,6 +6,7 @@ import "./App.css";
 const AUTH_TOKEN_KEY = "nyaymalaw_auth_token";
 const CURRENT_USER_KEY = "nyaymalaw_current_user";
 const CURRENT_USER_NAME_KEY = "nyaymalaw_current_user_name";
+const STARRED_CHATS_KEY = "nyaymalaw_starred_chats";
 
 const RESPONSE_FEEDBACK_TAG_GROUPS = [
   {
@@ -53,13 +54,72 @@ function stripTrailingStepEllipsis(msg) {
   return msg.replace(/\.{1,3}$/, "");
 }
 
-function formatHybridTraceScore(score) {
-  if (score == null || score === "") return "";
-  const n = Number(score);
-  if (!Number.isFinite(n)) return String(score);
-  const abs = Math.abs(n);
-  if (abs >= 1e8 || (Number.isInteger(n) && abs > 1e6)) return String(n);
-  return n.toFixed(4);
+/** Item 20: Advocate-review panel — structured brief alongside the draft. */
+function AdvocateReviewPanel({ data }) {
+  if (!data || typeof data !== "object") return null;
+  const prayer = Array.isArray(data.overall_prayer) ? data.overall_prayer : [];
+  const docs = Array.isArray(data.overall_documents_checklist) ? data.overall_documents_checklist : [];
+  const disputes = Array.isArray(data.disputes) ? data.disputes : [];
+  if (prayer.length === 0 && docs.length === 0 && disputes.length === 0) return null;
+  return (
+    <details className="advocate-review-panel" open={false}>
+      <summary className="advocate-review-summary">
+        <span className="advocate-review-label">⚖ Advocate Brief</span>
+        <span className="advocate-review-hint">Prayer · Documents · Legal Framework</span>
+      </summary>
+      <div className="advocate-review-body">
+        {disputes.length > 0 && (
+          <div className="advocate-review-section">
+            <div className="advocate-review-section-title">Legal Framework</div>
+            {disputes.map((d, i) => (
+              <div key={i} className="advocate-review-dispute">
+                <div className="advocate-review-dispute-label">{d.dispute_label || `Issue ${i + 1}`}</div>
+                {(d.sections || []).map((s, j) => (
+                  <div key={j} className="advocate-review-section-row">
+                    <span className="advocate-review-act">{s.act_name}</span>
+                    {s.section_number && (
+                      <span className="advocate-review-sec"> § {s.section_number}</span>
+                    )}
+                    {s.section_title && (
+                      <span className="advocate-review-sec-title"> — {s.section_title}</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        )}
+        {prayer.length > 0 && (
+          <div className="advocate-review-section">
+            <div className="advocate-review-section-title">Prayer / Relief Sought</div>
+            <ol className="advocate-review-prayer-list">
+              {prayer.map((p, i) => (
+                <li key={i} className="advocate-review-prayer-item">
+                  <span className="advocate-review-relief">{p.relief}</span>
+                  {p.forum && <span className="advocate-review-forum"> — {p.forum}</span>}
+                  {p.urgency === "immediate" && <span className="advocate-review-urgent"> ⚠ Urgent</span>}
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
+        {docs.length > 0 && (
+          <div className="advocate-review-section">
+            <div className="advocate-review-section-title">Documents Checklist</div>
+            <ul className="advocate-review-docs-list">
+              {docs.map((d, i) => (
+                <li key={i} className={`advocate-review-doc-item${d.priority === "essential" ? " doc-essential" : ""}`}>
+                  <span className="doc-tick">{d.priority === "essential" ? "☑" : "☐"}</span>
+                  <span className="doc-name">{d.document}</span>
+                  {d.purpose && <span className="doc-purpose"> — {d.purpose}</span>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </details>
+  );
 }
 
 function ScoreTable({ title, rows, scoreLabel }) {
@@ -71,17 +131,12 @@ function ScoreTable({ title, rows, scoreLabel }) {
         {scoreLabel ? <span className="retrieval-score-kind">{scoreLabel}</span> : null}
       </div>
       <ul className="retrieval-score-list">
-        {rows.slice(0, 40).map((row, j) => {
-          const label = row.name || row.act_or_case || "—";
-          return (
-            <li key={j}>
-              <span className="retrieval-score-name" title={typeof label === "string" ? label : undefined}>
-                {label}
-              </span>
-              <span className="retrieval-score-val">{formatHybridTraceScore(row.score)}</span>
-            </li>
-          );
-        })}
+        {rows.slice(0, 40).map((row, j) => (
+          <li key={j}>
+            <span className="retrieval-score-name">{row.name || "—"}</span>
+            <span className="retrieval-score-val">{row.score != null ? String(row.score) : ""}</span>
+          </li>
+        ))}
         {rows.length > 40 ? <li className="retrieval-score-more">+{rows.length - 40} more</li> : null}
       </ul>
     </div>
@@ -206,56 +261,6 @@ function StreamingRetrievalDetail({ detail }) {
     );
   }
   return null;
-}
-
-function ProgressRetrievedDocuments({ retrieved_documents: rd }) {
-  if (!rd || typeof rd !== "object") return null;
-  const acts = Array.isArray(rd.bare_acts) ? rd.bare_acts : [];
-  const cases = Array.isArray(rd.case_laws) ? rd.case_laws : [];
-  if (acts.length === 0 && cases.length === 0) return null;
-  return (
-    <details className="streaming-step-detail progress-retrieval-detail">
-      <summary className="streaming-step-detail-summary">Retrieved document names</summary>
-      <div className="streaming-step-detail-body">
-        {acts.length > 0 ? (
-          <div>
-            <strong>Bare acts / sections</strong>
-            <ul className="progress-retrieved-list">
-              {acts.map((name, i) => (
-                <li key={`ba-${i}`}>{name}</li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
-        {cases.length > 0 ? (
-          <div>
-            <strong>Case laws</strong>
-            <ul className="progress-retrieved-list">
-              {cases.map((name, i) => (
-                <li key={`cl-${i}`}>{name}</li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
-      </div>
-    </details>
-  );
-}
-
-/** Query expansion, hybrid traces, and retrieved labels — lives under Progress tracker only. */
-function ProgressRetrievalDiagnostics({ diagnostics }) {
-  if (!diagnostics || typeof diagnostics !== "object") return null;
-  const qe = diagnostics.query_expansion;
-  const bt = diagnostics.bare_act_hybrid_trace;
-  const rd = diagnostics.retrieved_documents;
-  if (!qe && !bt && !(rd && (rd.bare_acts?.length > 0 || rd.case_laws?.length > 0))) return null;
-  return (
-    <div className="progress-retrieval-diagnostics" role="region" aria-label="Retrieval details">
-      {qe && qe.kind === "query_expansion" ? <StreamingRetrievalDetail detail={qe} /> : null}
-      {bt && bt.kind === "bare_act_hybrid_trace" ? <StreamingRetrievalDetail detail={bt} /> : null}
-      <ProgressRetrievedDocuments retrieved_documents={rd} />
-    </div>
-  );
 }
 
 /** Single CTA below Next steps in bare-act guidance; must not be duplicated in summary body. */
@@ -402,19 +407,74 @@ const ChatComposer = memo(function ChatComposer({
   loading,
   placeholder,
   onSubmit,
+  onStop,
   resetSignal,
   showDisclaimer,
   chatMode,
   onChatModeChange,
   selectedModel,
   onModelChange,
+  apiBase,
+  // Queue props
+  messageQueue = [],
+  onQueueDelete,
+  onQueueEdit,
+  queueEditSignal,
 }) {
   const [draft, setDraft] = useState("");
+  const [uploading, setUploading] = useState(false);
   const textareaRef = useRef(null);
+  const fileInputRef = useRef(null);
+  const abortControllerRef = useRef(null);
 
+  const isQueueFull = messageQueue.length >= 2;
+
+  // ── Upload with abort support ──────────────────────────────────────────────
+  const handleCancelUpload = useCallback(() => {
+    abortControllerRef.current?.abort();
+  }, []);
+
+  const handleFileChange = useCallback(async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    e.target.value = "";
+    setUploading(true);
+    const controller = new AbortController();
+    abortControllerRef.current = controller;
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+      const token = localStorage.getItem(AUTH_TOKEN_KEY);
+      const headers = token ? { Authorization: `Bearer ${token}` } : {};
+      const res = await fetch(`${apiBase}/upload-document`, {
+        method: "POST", headers, body: formData,
+        signal: controller.signal,
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        alert(err.detail || "Failed to extract text from document.");
+        return;
+      }
+      const data = await res.json();
+      setDraft(data.text);
+    } catch (err) {
+      if (err.name !== "AbortError") alert("Upload failed. Please try again.");
+      // AbortError = user cancelled — silent
+    } finally {
+      setUploading(false);
+      abortControllerRef.current = null;
+    }
+  }, [apiBase]);
+
+  useEffect(() => { setDraft(""); }, [resetSignal]);
+
+  // When a queue item is pulled back for editing, populate draft
   useEffect(() => {
-    setDraft("");
-  }, [resetSignal]);
+    if (queueEditSignal && queueEditSignal.counter > 0) {
+      setDraft(queueEditSignal.text);
+      setTimeout(() => textareaRef.current?.focus(), 0);
+    }
+  }, [queueEditSignal?.counter]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     const el = textareaRef.current;
@@ -427,12 +487,14 @@ const ChatComposer = memo(function ChatComposer({
     if (!loading && textareaRef.current) textareaRef.current.focus();
   }, [loading]);
 
+  // Submit immediately if idle; queue if processing; block only when queue is full
   const submitDraft = useCallback(() => {
-    const raw = draft ?? "";
-    if (!raw.trim() || loading) return;
+    const raw = (draft ?? "").trim();
+    if (!raw) return;
+    if (loading && isQueueFull) return;
     onSubmit(raw);
     setDraft("");
-  }, [draft, loading, onSubmit]);
+  }, [draft, loading, isQueueFull, onSubmit]);
 
   const handleKeyDown = useCallback((e) => {
     if (e.key === "Enter" && !e.shiftKey) {
@@ -441,55 +503,132 @@ const ChatComposer = memo(function ChatComposer({
     }
   }, [submitDraft]);
 
+  const activePlaceholder = loading && messageQueue.length > 0
+    ? "Type to add to queue…"
+    : placeholder;
+
   return (
     <>
+      {/* Queued messages shown above input while a response is processing */}
+      {messageQueue.length > 0 && (
+        <div className="chat-queue">
+          {messageQueue.map((item, idx) => (
+            <div key={item.id} className="chat-queue-item">
+              <span className="chat-queue-index">{idx + 1}</span>
+              <span className="chat-queue-text">
+                {item.text.length > 72 ? item.text.slice(0, 72) + "…" : item.text}
+              </span>
+              <div className="chat-queue-actions">
+                <button type="button" className="chat-queue-btn"
+                  onClick={() => onQueueEdit?.(item)} title="Pull back to edit">
+                  <svg width="11" height="11" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z"/>
+                  </svg>
+                </button>
+                <button type="button" className="chat-queue-btn chat-queue-btn--delete"
+                  onClick={() => onQueueDelete?.(item.id)} title="Remove from queue">
+                  <svg width="11" height="11" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Card-style composer: textarea on top, footer row below */}
       <div className="chat-input-container">
+        {/* Textarea — never disabled, queue handles backpressure */}
         <textarea
           ref={textareaRef}
           autoFocus
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder={placeholder}
+          placeholder={activePlaceholder}
           className="chat-input"
           rows={1}
-          disabled={loading}
         />
-        <button
-          type="button"
-          onClick={submitDraft}
-          disabled={loading || !draft.trim()}
-          className="chat-send"
-          aria-label="Send message"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 19V5M5 12l7-7 7 7" />
-          </svg>
-        </button>
+
+        {/* Footer row: upload | model select — — — — buttons */}
+        <div className="chat-input-footer">
+          <div className="chat-input-footer-left">
+            {/* Upload button — swaps to cancel while uploading */}
+            {uploading ? (
+              <button type="button" onClick={handleCancelUpload}
+                className="chat-upload-btn chat-upload-btn--stop"
+                aria-label="Cancel upload" title="Cancel upload">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path fillRule="evenodd" clipRule="evenodd"
+                    d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zM8.707 8.707a1 1 0 00-1.414 1.414L10.586 12l-3.293 3.293a1 1 0 001.414 1.414L12 13.414l3.293 3.293a1 1 0 001.414-1.414L13.414 12l3.293-3.293a1 1 0 00-1.414-1.414L12 10.586 8.707 8.707z"/>
+                </svg>
+              </button>
+            ) : (
+              <button type="button" onClick={() => fileInputRef.current?.click()}
+                className="chat-upload-btn"
+                aria-label="Upload document or image"
+                title="Upload PDF, Word doc, or image (JPG, PNG, etc.)">
+                {/* Plus / attachment icon */}
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+              </button>
+            )}
+            <input ref={fileInputRef} type="file"
+              accept=".pdf,.docx,.doc,.jpg,.jpeg,.png,.webp,.tiff,.tif,.bmp"
+              style={{ display: "none" }} onChange={handleFileChange}
+            />
+
+            {/* Model tier selector — inline in the footer */}
+            <select
+              className="chat-model-select chat-model-select--inline"
+              value={selectedModel}
+              onChange={(e) => onModelChange(e.target.value)}
+            >
+              <option value="gpt5mini">GPT-5 Mini</option>
+              <option value="gpt51mini">GPT-5.1 Mini</option>
+              <option value="gpt54mini">GPT-5.4 Mini</option>
+            </select>
+          </div>
+
+          <div className="chat-input-footer-right">
+            {/* Button area — context-sensitive: send / queue+stop / stop */}
+            {loading ? (
+              <>
+                {draft.trim() && !isQueueFull && (
+                  <button type="button" onClick={submitDraft}
+                    className="chat-send chat-send--queue"
+                    aria-label="Add to queue" title="Add to queue">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M12 19V5M5 12l7-7 7 7" />
+                    </svg>
+                    <span className="chat-send-label">Queue</span>
+                  </button>
+                )}
+                <button type="button" onClick={onStop}
+                  className="chat-send chat-send--stop"
+                  aria-label="Stop processing" title="Stop">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                  </svg>
+                </button>
+              </>
+            ) : (
+              <button type="button" onClick={submitDraft}
+                disabled={!draft.trim()}
+                className="chat-send"
+                aria-label="Send message" title="Send">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M12 19V5M5 12l7-7 7 7" />
+                </svg>
+              </button>
+            )}
+          </div>
+        </div>
       </div>
-      <div className="chat-composer-controls">
-        <select
-          id="chat-mode-select"
-          className="chat-model-select"
-          value={chatMode}
-          onChange={(e) => onChatModeChange(e.target.value)}
-          disabled={loading}
-        >
-          <option value="legal_opinion">Legal opinion</option>
-          <option value="legal_research">Legal research</option>
-          <option value="general">General</option>
-        </select>
-        <select
-          id="chat-model-select"
-          className="chat-model-select"
-          value={selectedModel}
-          onChange={(e) => onModelChange(e.target.value)}
-          disabled={loading}
-        >
-          <option value="qwen">Qwen</option>
-          <option value="openai">OpenAI</option>
-        </select>
-      </div>
+
       {showDisclaimer && (
         <p className="chat-disclaimer">Nyaymalaw AI can make mistakes. Consider checking important information.</p>
       )}
@@ -605,18 +744,26 @@ function App() {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false); // Retain existing
   const [error, setError] = useState(""); // Retain existing
+  // Message queue: holds up to 2 messages typed while a response is processing.
+  const [messageQueue, setMessageQueue] = useState([]);
+  const messageQueueRef = useRef([]);
+  const [queueEditSignal, setQueueEditSignal] = useState({ text: "", counter: 0 });
+  const wasLoadingRef = useRef(false);
+  const chatAbortControllerRef = useRef(null); // aborts the active SSE stream
+  const streamingTokenRef = useRef("");        // mirrors streamingToken for abort-commit
   const messagesEndRef = useRef(null);
   const messagesContainerRef = useRef(null);
   const [composerResetSignal, setComposerResetSignal] = useState(0);
 
   // New interview state from snippet
-  const [stage, setStage] = useState("entry_router"); // "entry_router" | "stage1_intake" | ...
+  const [stage, setStage] = useState("await_facts"); // "await_facts" | "interview" | "done"
   const [facts, setFacts] = useState("");
   const [currentQuestion, setCurrentQuestion] = useState("");
   const [qaHistory, setQaHistory] = useState([]); // [{question, answer}]
   const [analysisStage, setAnalysisStage] = useState("intake");
   const [analysisFactsSummary, setAnalysisFactsSummary] = useState("");
   const [lastResponseType, setLastResponseType] = useState("");
+  const [intakeState, setIntakeState] = useState(null); // Stage 1 structured intake state
   const [opinionText, setOpinionText] = useState("");
   const [retrieved, setRetrieved] = useState([]);
   const [rawResponse, setRawResponse] = useState("");
@@ -648,27 +795,14 @@ function App() {
   }, []);
 
   const handleToken = useCallback((tokenPayload) => {
-    setStreamingToken((prev) => prev + (tokenPayload.content || ""));
+    const tok = tokenPayload.content || "";
+    streamingTokenRef.current += tok;
+    setStreamingToken((prev) => prev + tok);
   }, []);
 
   // Manual mode selection: "legal_opinion" (default), "legal_research", "general"
   const [chatMode, setChatMode] = useState("legal_opinion");
-  const [selectedModel, setSelectedModel] = useState("qwen");
-
-  // Stage 1 autonomous intake state (persisted across turns until advance_to_stage2)
-  const [intakeState, setIntakeState] = useState(null);
-  // Stage 2 structured deep-dive state (seeded from Stage 1, updated per turn)
-  const [stage2State, setStage2State] = useState(null);
-  // Stage 3 indirect vetting state (seeded from Stage 2, updated per turn)
-  const [stage3State, setStage3State] = useState(null);
-  // Stage 4 remedy understanding state (seeded from Stage 3, updated per turn)
-  const [stage4State, setStage4State] = useState(null);
-  // Stage 5 draft generation state (auto-triggered, no client turns)
-  const [stage5State, setStage5State] = useState(null);
-  // Stage 6 advocate review state
-  const [stage6State, setStage6State] = useState(null);
-  // Stage 0 entry-router state
-  const [entryState, setEntryState] = useState(null);
+  const [selectedModel, setSelectedModel] = useState("gpt5mini");
 
   // Bottom pane: single accordion (Eval | Architecture | Updates Tracker). Default: minimal strip at bottom; can extend up to 75% of viewport.
   const [bottomExpandedSection, setBottomExpandedSection] = useState(null); // "eval" | "architecture" | "updates" | null
@@ -785,6 +919,12 @@ function App() {
   const [bareActsFilter, setBareActsFilter] = useState("");
   const [caseLawsFilter, setCaseLawsFilter] = useState("");
   const [chatHistoryFilter, setChatHistoryFilter] = useState("");
+  const [starredChatIds, setStarredChatIds] = useState(() => {
+    try {
+      const saved = localStorage.getItem(STARRED_CHATS_KEY);
+      return new Set(saved ? JSON.parse(saved) : []);
+    } catch { return new Set(); }
+  });
   // In production (e.g. https://nyaymalaw.in) use same origin or VITE_API_BASE; locally use backend on :8000
   const API_BASE =
     import.meta.env.VITE_API_BASE ||
@@ -895,19 +1035,13 @@ function App() {
       : normalizedMessages.length > 1
       ? "done"
       : "await_facts";
-    const stage = ["entry_router", "await_facts", "interview", "done", "stage1_intake", "stage2_deepdive", "stage3_vetting", "stage4_remedy", "stage5_draft", "stage6_review", "finalized"].includes(state.stage) ? state.stage : inferredStage;
+    const stage = ["await_facts", "interview", "done"].includes(state.stage) ? state.stage : inferredStage;
     const analysisStage = typeof state.analysisStage === "string" && state.analysisStage.trim()
       ? state.analysisStage.trim()
       : (stage === "done" ? "" : "intake");
     const factsSummary = typeof state.factsSummary === "string" ? state.factsSummary.trim() : "";
     const lastResponseType = typeof state.lastResponseType === "string" ? state.lastResponseType.trim() : "";
-    const intakeStateVal = (state.intakeState && typeof state.intakeState === "object") ? state.intakeState : null;
-    const stage2StateVal = (state.stage2State && typeof state.stage2State === "object") ? state.stage2State : null;
-    const stage3StateVal = (state.stage3State && typeof state.stage3State === "object") ? state.stage3State : null;
-    const stage4StateVal = (state.stage4State && typeof state.stage4State === "object") ? state.stage4State : null;
-    const stage5StateVal = (state.stage5State && typeof state.stage5State === "object") ? state.stage5State : null;
-    const stage6StateVal = (state.stage6State && typeof state.stage6State === "object") ? state.stage6State : null;
-    const entryStateVal = (state.entryState && typeof state.entryState === "object") ? state.entryState : null;
+    const intakeState = state.intakeState && typeof state.intakeState === "object" ? state.intakeState : null;
     return {
       stage,
       facts: typeof state.facts === "string" && state.facts.trim()
@@ -920,13 +1054,7 @@ function App() {
       analysisStage,
       factsSummary,
       lastResponseType,
-      intakeState: intakeStateVal,
-      stage2State: stage2StateVal,
-      stage3State: stage3StateVal,
-      stage4State: stage4StateVal,
-      stage5State: stage5StateVal,
-      stage6State: stage6StateVal,
-      entryState: entryStateVal,
+      intakeState,
     };
   }, [deriveQaHistoryFromMessages]);
 
@@ -937,7 +1065,6 @@ function App() {
       messages: normalizedMessages,
       opinionText: chat?.opinionText || "",
       retrieved: Array.isArray(chat?.retrieved) ? chat.retrieved : [],
-      starred: !!chat?.starred,
       workflowState: normalizeWorkflowState(chat?.workflowState, normalizedMessages),
       createdAt: chat?.createdAt || new Date().toISOString(),
     };
@@ -955,27 +1082,26 @@ function App() {
         factsSummary: analysisFactsSummary,
         lastResponseType,
         intakeState,
-        stage2State,
-        stage3State,
-        stage4State,
-        stage5State,
-        stage6State,
-        entryState,
         ...overrides,
       },
       nextMessages,
     );
-  }, [analysisFactsSummary, analysisStage, currentQuestion, facts, intakeState, lastResponseType, messages, normalizeWorkflowState, qaHistory, stage, stage2State, stage3State, stage4State, stage5State, stage6State, entryState]);
+  }, [analysisFactsSummary, analysisStage, currentQuestion, facts, intakeState, lastResponseType, messages, normalizeWorkflowState, qaHistory, stage]);
+
+  const MODEL_TIER_LABELS = {
+    gpt5mini:  "GPT-5 Mini",
+    gpt51mini: "GPT-5.1 Mini",
+    gpt54mini: "GPT-5.4 Mini",
+  };
 
   const resolveModelUsed = useCallback((data, fallback = "") => {
     if (typeof data?.model_used === "string" && data.model_used.trim()) return data.model_used.trim();
     if (fallback) return fallback;
-    if (selectedModel === "openai") return "OpenAI";
-    return "Qwen";
+    return MODEL_TIER_LABELS[selectedModel] || "OpenAI";
   }, [selectedModel]);
 
   const getModelOverridePayload = useCallback(() => (
-    selectedModel === "openai" ? "provider:openai" : "provider:qwen"
+    `tier:${selectedModel}`
   ), [selectedModel]);
 
   const currentTurnLatencyMs = useCallback(() => {
@@ -1172,30 +1298,6 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps -- mount only; chats first, then libraries
   }, []);
 
-  // Fetch the Stage 1 opening message on initial mount so the chat starts with an AI greeting
-  useEffect(() => {
-    const token = localStorage.getItem(AUTH_TOKEN_KEY);
-    const headers = token ? { Authorization: `Bearer ${token}` } : {};
-    fetch(`${API_BASE}/intake/opening`, { headers })
-      .then((r) => r.ok ? r.json() : null)
-      .then((data) => {
-        if (data?.message) {
-          setMessages([makeAssistantMessage(data.message, {
-            stage: "stage1_intake",
-            responseType: "stage1_intake",
-            modelUsed: "",
-          })]);
-        }
-      })
-      .catch(() => {
-        setMessages([makeAssistantMessage(
-          "Whatever you're going through, I'm here and I'm listening. Take your time — there's no wrong way to start.",
-          { stage: "stage1_intake", responseType: "stage1_intake", modelUsed: "" }
-        )]);
-      });
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- mount only
-  }, []);
-
   // Persist current chat to backend when it changes (no auth: backend uses anonymous user)
   useEffect(() => {
     const chatId = currentChatIdRef.current;
@@ -1329,169 +1431,15 @@ function App() {
       .catch(() => setUpdatesRows([]));
   }, []);
 
-  // ─────────────────────────────────────────────────────────────────────────
-  // Stage 5 auto-trigger: when stage transitions to "stage5_draft", call
-  // the draft endpoint and stream the document into opinionText.
-  // No client turn is involved — this fires automatically.
-  // ─────────────────────────────────────────────────────────────────────────
-  const stage5DraftTriggeredRef = useRef(false);
-
-  useEffect(() => {
-    if (stage !== "stage5_draft") {
-      stage5DraftTriggeredRef.current = false;
-      return;
-    }
-    if (stage5DraftTriggeredRef.current) return;   // already running or done
-    if (!stage4State) return;                       // no state to draft from
-    stage5DraftTriggeredRef.current = true;
-
-    const token = localStorage.getItem(AUTH_TOKEN_KEY);
-    const headers = {
-      "Content-Type": "application/json",
-      ...(token ? { Authorization: `Bearer ${token}` } : {}),
-    };
-
-    (async () => {
-      setLoading(true);
-      setStreamingToken("");
-      setStreamingSteps([]);
-      setOpinionText("");
-
-      // Show a message in the chat that drafting has begun
-      setMessages((prev) => [
-        ...prev,
-        makeAssistantMessage(
-          "Your case documents are now being prepared. This may take a moment — I'm pulling the relevant statutes and judgments together.",
-          { stage: "stage5_draft", responseType: "stage5_draft" }
-        ),
-      ]);
-
-      try {
-        const res = await fetch(`${API_BASE}/intake/stage5_draft/stream`, {
-          method: "POST",
-          headers,
-          body: JSON.stringify({
-            stage4_state:   stage4State,
-            model_override: selectedModel === "openai" ? "provider:openai" : "provider:qwen",
-          }),
-        });
-
-        if (!res.ok) {
-          const errData = await res.json().catch(() => ({}));
-          throw new Error(errData.detail || `Draft request failed (${res.status})`);
-        }
-
-        const reader  = res.body.getReader();
-        const decoder = new TextDecoder();
-        let buffer    = "";
-        let draftAcc  = "";
-
-        while (true) {
-          const { value, done } = await reader.read();
-          if (done) break;
-          buffer += decoder.decode(value, { stream: true });
-          const events = buffer.split(/\n\n+/);
-          buffer = events.pop() || "";
-
-          for (const raw of events) {
-            let eventType = "";
-            let dataLine  = "";
-            for (const line of raw.split(/\n/)) {
-              if (line.startsWith("event:")) eventType = line.slice(6).trim();
-              if (line.startsWith("data:"))  dataLine  = line.slice(5).trim();
-            }
-            if (!dataLine) continue;
-            try {
-              const payload = JSON.parse(dataLine);
-              if (eventType === "step") {
-                handleStep(payload);
-              } else if (eventType === "token") {
-                draftAcc += (payload.content || "");
-                setOpinionText(draftAcc);
-                setStreamingToken(draftAcc);
-              } else if (eventType === "done") {
-                // Final payload — update state + advance stage
-                const s5State = payload.stage5_state || null;
-                setStage5State(s5State);
-                setStreamingToken("");
-                setStreamingSteps([]);
-                const finalDraft = payload.draft_text || draftAcc;
-                setOpinionText(finalDraft);
-                // Record the citations in retrieved for the existing citations panel
-                if (Array.isArray(payload.citations) && payload.citations.length > 0) {
-                  setRetrieved(payload.citations.map((c) => ({
-                    type:    c.type,
-                    source:  c.source || c.case_name || c.act_name,
-                    section: c.section || "",
-                    year:    c.year || "",
-                    court:   c.court || "",
-                    score:   c.score || 0,
-                  })));
-                }
-                // Fetch Stage 6 opening + initial state, then transition
-                const docLabel = payload.document_type_label || "Legal document";
-                const authToken = localStorage.getItem(AUTH_TOKEN_KEY);
-                const s6Headers = {
-                  "Content-Type": "application/json",
-                  ...(authToken ? { Authorization: `Bearer ${authToken}` } : {}),
-                };
-                try {
-                  const s6Res = await fetch(`${API_BASE}/intake/stage6_opening`, {
-                    method: "POST",
-                    headers: s6Headers,
-                    body: JSON.stringify({
-                      stage5_state:   s5State || {},
-                      draft_text:     finalDraft,
-                      model_override: selectedModel === "openai" ? "provider:openai" : "provider:qwen",
-                    }),
-                  });
-                  if (s6Res.ok) {
-                    const s6Data = await s6Res.json();
-                    setStage6State(s6Data.stage6_state || null);
-                    setStage("stage6_review");
-                    setMessages((prev) => [
-                      ...prev,
-                      makeAssistantMessage(
-                        s6Data.message || `Your ${docLabel} is ready for advocate review.`,
-                        { stage: "stage6_review", responseType: "stage6_opening" }
-                      ),
-                    ]);
-                  } else {
-                    setStage("stage6_review");
-                    setMessages((prev) => [
-                      ...prev,
-                      makeAssistantMessage(
-                        `Your ${docLabel} has been prepared and is displayed on the right. ` +
-                        "You can now review it, ask questions about any section, request revisions, or mark it as final.",
-                        { stage: "stage6_review", responseType: "stage5_complete" }
-                      ),
-                    ]);
-                  }
-                } catch (_) {
-                  setStage("stage6_review");
-                }
-              }
-            } catch (_) {}
-          }
-        }
-      } catch (err) {
-        console.error("Stage 5 draft stream error:", err);
-        setError("Error generating draft: " + (err.message || "Network or server error"));
-        stage5DraftTriggeredRef.current = false;  // allow retry
-      } finally {
-        setLoading(false);
-      }
-    })();
-  }, [stage, stage4State, selectedModel, handleStep, makeAssistantMessage]);  // eslint-disable-line react-hooks/exhaustive-deps
-
   // -------------------------
   // SSE Stream Consumer Helper
   // -------------------------
-  const consumeSSEStream = async (url, body, onProgress, onDone, onStep, onToken) => {
+  const consumeSSEStream = async (url, body, onProgress, onDone, onStep, onToken, signal) => {
     const res = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
+      signal,
     });
     if (!res.ok) {
       const errData = await res.json().catch(() => ({}));
@@ -1553,7 +1501,7 @@ function App() {
   const handleStartNewCase = () => {
     hasSavedCurrentChatRef.current = false;
     currentChatIdRef.current = null;
-    setStage("entry_router");
+    setStage("await_facts");
     setFacts("");
     setComposerResetSignal((prev) => prev + 1);
     setCurrentQuestion("");
@@ -1561,39 +1509,13 @@ function App() {
     setAnalysisStage("intake");
     setAnalysisFactsSummary("");
     setLastResponseType("");
+    setIntakeState(null);
     setOpinionText("");
     setRetrieved([]);
     setRawResponse("");
-    setError("");
-    setIntakeState(null);
-    setStage2State(null);
-    setStage3State(null);
-    setStage4State(null);
-    setStage5State(null);
-    setStage6State(null);
-    setEntryState(null);
+    setError(""); // Reset existing error
     setMessages([]);
-    // Fetch the Stage 0 opening message in the background
-    const token = localStorage.getItem(AUTH_TOKEN_KEY);
-    const headers = token ? { Authorization: `Bearer ${token}` } : {};
-    fetch(`${API_BASE}/intake/opening?model_override=${encodeURIComponent(selectedModel === "openai" ? "provider:openai" : "provider:qwen")}`, { headers })
-      .then((r) => r.ok ? r.json() : null)
-      .then((data) => {
-        if (data?.message) {
-          setMessages([makeAssistantMessage(data.message, {
-            stage: "entry_router",
-            responseType: "entry_router",
-            modelUsed: "",
-          })]);
-        }
-      })
-      .catch(() => {
-        // Fallback: show a static opening so the chat is never blank
-        setMessages([makeAssistantMessage(
-          "Whatever you're going through, I'm here and I'm listening. Take your time — there's no wrong way to start.",
-          { stage: "entry_router", responseType: "entry_router", modelUsed: "" }
-        )]);
-      });
+    setMessageQueue([]);
   };
 
   // Save current conversation to savedChats (for sidebar list and persistence)
@@ -1608,7 +1530,6 @@ function App() {
       messages: msgs || [],
       opinionText: opinion || "",
       retrieved: Array.isArray(retr) ? retr : [],
-      starred: false,
       workflowState: workflowState || buildWorkflowState({ messages: msgs || [] }),
       createdAt: new Date().toISOString(),
     });
@@ -1636,13 +1557,7 @@ function App() {
     setAnalysisStage(workflowState.analysisStage || (workflowState.stage === "done" ? "" : "intake"));
     setAnalysisFactsSummary(workflowState.factsSummary || "");
     setLastResponseType(workflowState.lastResponseType || "");
-    setIntakeState(workflowState.intakeState || null);
-    setStage2State(workflowState.stage2State || null);
-    setStage3State(workflowState.stage3State || null);
-    setStage4State(workflowState.stage4State || null);
-    setStage5State(workflowState.stage5State || null);
-    setStage6State(workflowState.stage6State || null);
-    setEntryState(workflowState.entryState || null);
+    setIntakeState(workflowState.intakeState && typeof workflowState.intakeState === "object" ? workflowState.intakeState : null);
     hasSavedCurrentChatRef.current = true;
     currentChatIdRef.current = normalizedChat.id;
   };
@@ -1655,25 +1570,25 @@ function App() {
     handleStartNewCase();
   };
 
-  // Group chats by date (This Week / Older)
+  // Group chats: Starred (if any) → This Week → Older
   const groupChatsByDate = (chats) => {
     if (!chats.length) return [];
     const now = new Date();
-    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
-    const oneDay = 24 * 60 * 60 * 1000;
-    const groups = new Map();
-    const getLabel = (d) => {
-      const dateOnly = new Date(new Date(d).getFullYear(), new Date(d).getMonth(), new Date(d).getDate()).getTime();
-      const diffDays = (today - dateOnly) / oneDay;
-      if (diffDays < 7) return "This Week";
-      return "Older";
-    };
+    const weekAgo = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime() - 7 * 24 * 60 * 60 * 1000;
+    const starred = [];
+    const thisWeek = [];
+    const older = [];
     chats.forEach((chat) => {
-      const label = getLabel(chat.createdAt);
-      if (!groups.has(label)) groups.set(label, []);
-      groups.get(label).push(chat);
+      if (starredChatIds.has(String(chat.id))) { starred.push(chat); return; }
+      const d = new Date(chat.createdAt).getTime();
+      if (d >= weekAgo) thisWeek.push(chat);
+      else older.push(chat);
     });
-    return Array.from(groups.entries()).map(([groupLabel, groupChats]) => ({ groupLabel, chats: groupChats }));
+    const result = [];
+    if (starred.length) result.push({ groupLabel: "Starred", chats: starred });
+    if (thisWeek.length) result.push({ groupLabel: "This week", chats: thisWeek });
+    if (older.length) result.push({ groupLabel: "Older", chats: older });
+    return result;
   };
 
   const filteredSavedChats = useMemo(() => {
@@ -1681,18 +1596,23 @@ function App() {
     if (!q) return savedChats;
     return savedChats.filter((c) => (c.title || "").toLowerCase().includes(q));
   }, [savedChats, chatHistoryFilter]);
-  const chatGroups = useMemo(() => {
-    const starred = filteredSavedChats.filter((c) => !!c.starred);
-    const nonStarred = filteredSavedChats.filter((c) => !c.starred);
-    const grouped = groupChatsByDate(nonStarred);
-    if (!starred.length) return grouped;
-    return [{ groupLabel: "Starred", chats: starred }, ...grouped];
-  }, [filteredSavedChats]);
+  const chatGroups = useMemo(() => groupChatsByDate(filteredSavedChats), [filteredSavedChats, starredChatIds]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const startRenamingChat = (chat) => {
     setEditingChatId(chat.id);
     setEditingTitle(chat.title || "");
     setTimeout(() => editInputRef.current?.focus(), 0);
+  };
+
+  const toggleStarChat = (chat, e) => {
+    e.stopPropagation();
+    setStarredChatIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(String(chat.id))) next.delete(String(chat.id));
+      else next.add(String(chat.id));
+      try { localStorage.setItem(STARRED_CHATS_KEY, JSON.stringify([...next])); } catch {}
+      return next;
+    });
   };
 
   const saveRenameChat = async () => {
@@ -1709,7 +1629,6 @@ function App() {
       const res = await fetch(`${API_BASE}/chats`, { method: "POST", headers, body: JSON.stringify({
         id: chat.id, title: next, messages: chat.messages || [], opinionText: chat.opinionText || "",
         retrieved: chat.retrieved || [], workflowState: chat.workflowState || {}, createdAt: chat.createdAt || new Date().toISOString(),
-        starred: !!chat.starred,
       }) });
       if (res.ok) {
         const listRes = await fetch(`${API_BASE}/chats`, { headers: token ? { Authorization: `Bearer ${token}` } : {} });
@@ -1748,29 +1667,6 @@ function App() {
     if (wasCurrent) handleStartNewCase();
   };
 
-  const toggleStarChat = async (chat) => {
-    const token = localStorage.getItem(AUTH_TOKEN_KEY);
-    const nextStarred = !chat.starred;
-    setSavedChats((prev) => prev.map((c) => (c.id == chat.id ? { ...c, starred: nextStarred } : c)));
-    const headers = { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) };
-    try {
-      await fetch(`${API_BASE}/chats`, {
-        method: "POST",
-        headers,
-        body: JSON.stringify({
-          id: chat.id,
-          title: chat.title || "Untitled chat",
-          messages: chat.messages || [],
-          opinionText: chat.opinionText || "",
-          retrieved: chat.retrieved || [],
-          workflowState: chat.workflowState || {},
-          createdAt: chat.createdAt || new Date().toISOString(),
-          starred: nextStarred,
-        }),
-      });
-    } catch (_) {}
-  };
-
   const handleQuestionResponse = useCallback((data) => {
     const nextQuestion = (data.next_question || data.message || "Please share one more important detail, or say 'proceed' if you want me to identify the applicable bare act sections.").trim();
     setCurrentQuestion(nextQuestion);
@@ -1778,6 +1674,8 @@ function App() {
     setAnalysisStage((data.analysis_stage || "").trim() || "intake");
     if (typeof data.facts_summary === "string" && data.facts_summary.trim()) setAnalysisFactsSummary(data.facts_summary.trim());
     setLastResponseType("intake_question");
+    // Persist Stage 1 structured intake state so subsequent turns can continue from where we left off
+    if (data.intake_state && typeof data.intake_state === "object") setIntakeState(data.intake_state);
     setMessages((prev) => [
       ...prev,
       makeAssistantMessage(nextQuestion, {
@@ -1814,6 +1712,7 @@ function App() {
       retrieved: retr,
       progress: data.progress || null,
       model_used: data.model_used || null,
+      advocate_review: data.advocate_review || null,  // Item 20
     }, {
       stage: "analysis",
       responseType: data.response_type || "legal_opinion",
@@ -1847,9 +1746,14 @@ function App() {
     setExpandedGroups((prev) => ({ ...prev, [PROGRESS_LIVE_KEY]: true }));
     setStreamingSteps([]);
     setStreamingToken("");
+    streamingTokenRef.current = "";
     setElapsedTime(0); // Reset timer
     setComposerResetSignal((prev) => prev + 1);
     turnStartedAtRef.current = Date.now();
+
+    // AbortController for this turn — lets the stop button cancel the SSE stream
+    const abortController = new AbortController();
+    chatAbortControllerRef.current = abortController;
 
     // Keep exact format user typed (spaces, newlines)
     const userMsg = makeUserMessage(raw);
@@ -1866,13 +1770,11 @@ function App() {
         messages: [userMsg],
         opinionText: "",
         retrieved: [],
-        starred: false,
         workflowState: {
-          stage,
+          stage: "await_facts",
           facts: raw,
           currentQuestion: "",
           qaHistory: [],
-          intakeState,
         },
         createdAt: new Date().toISOString(),
       });
@@ -1884,440 +1786,6 @@ function App() {
       fetch(`${API_BASE}/chats`, { method: "POST", headers, body: JSON.stringify(chat) }).catch(() => {});
     }
 
-    // 0) Stage 0 entry router — decide legal opinion vs quick lookup vs general
-    if (stage === "entry_router") {
-      const conversation = buildConversationFromMessages(messages);
-      try {
-        await consumeSSEStream(
-          `${API_BASE}/conversation/continue/stream`,
-          {
-            conversation,
-            message: raw,
-            mode: chatMode,
-            model_override: getModelOverridePayload(),
-            workflowState: buildWorkflowState({ stage: "entry_router" }),
-          },
-          (progressPayload) => {
-            setProgress(progressPayload);
-          },
-          (data) => {
-            setStreamingSteps([]);
-            setStreamingToken("");
-            if (data.status === "entry_router") {
-              const reply = (data.message || "").trim();
-              const nextEntryState = data.entry_state || null;
-              setEntryState(nextEntryState);
-              setMessages((prev) => [
-                ...prev,
-                makeAssistantMessage(reply, {
-                  stage: "entry_router",
-                  responseType: data.response_type || "entry_router",
-                  entryOptions: Array.isArray(data.entry_options) ? data.entry_options : [],
-                  modelUsed: resolveModelUsed(data),
-                  latencyMs: currentTurnLatencyMs(),
-                }),
-              ]);
-              const nextStage = data?.next_workflow_state?.stage;
-              if (nextStage === "stage1_intake") {
-                setStage("stage1_intake");
-                setIntakeState(data.intake_state || null);
-              }
-            } else if (data.status === "stage1_intake") {
-              const entryMsg = (data.entry_router_message || "").trim();
-              const reply = (data.message || "").trim();
-              const nextIntakeState = data.intake_state || null;
-              const advanceToStage2 = !!data.advance_to_stage2;
-              const s2State = data.stage2_state || null;
-              const s2Opening = (data.stage2_opening || "").trim();
-              setIntakeState(nextIntakeState);
-              const combinedStageReply = [entryMsg, reply, advanceToStage2 ? s2Opening : ""].filter(Boolean).join("\n\n");
-              setMessages((prev) => [
-                ...prev,
-                makeAssistantMessage(combinedStageReply, {
-                  stage: advanceToStage2 ? "stage2_deepdive" : "stage1_intake",
-                  responseType: advanceToStage2 ? "stage2_deepdive" : "stage1_intake",
-                  modelUsed: resolveModelUsed(data),
-                  latencyMs: currentTurnLatencyMs(),
-                }),
-              ]);
-              if (advanceToStage2) {
-                setStage2State(s2State);
-                setStage("stage2_deepdive");
-              } else {
-                setStage("stage1_intake");
-              }
-            } else if (data.status === "done") {
-              handleDoneResponse(data);
-            } else if (data.message) {
-              setMessages((prev) => [
-                ...prev,
-                makeAssistantMessage(data.message, {
-                  stage: "entry_router",
-                  responseType: "entry_router",
-                  entryOptions: Array.isArray(data.entry_options) ? data.entry_options : [],
-                  modelUsed: resolveModelUsed(data),
-                  latencyMs: currentTurnLatencyMs(),
-                }),
-              ]);
-            }
-          },
-          handleStep,
-          handleToken,
-        );
-      } catch (err) {
-        console.error("Entry router stream error:", err);
-        setError("Error during routing: " + (err.message || "Network or server error"));
-      } finally {
-        setLoading(false);
-      }
-      return;
-    }
-
-    // 0a) Stage 1 autonomous intake — warm conversational turns before structured fact collection
-    if (stage === "stage1_intake") {
-      const conversation = buildConversationFromMessages(messages);
-      try {
-        await consumeSSEStream(
-          `${API_BASE}/conversation/continue/stream`,
-          {
-            conversation,
-            message: raw,
-            mode: chatMode,
-            model_override: getModelOverridePayload(),
-            workflowState: buildWorkflowState({ stage: "stage1_intake" }),
-          },
-          (progressPayload) => {
-            setProgress(progressPayload);
-          },
-          (data) => {
-            setStreamingSteps([]);
-            setStreamingToken("");
-            if (data.status === "stage1_intake") {
-              const reply = (data.message || "").trim();
-              const nextIntakeState = data.intake_state || null;
-              const advanceToStage2 = !!data.advance_to_stage2;
-              const s2State = data.stage2_state || null;
-              const s2Opening = (data.stage2_opening || "").trim();
-              setIntakeState(nextIntakeState);
-              const combinedStageReply = advanceToStage2 && s2Opening
-                ? [reply, s2Opening].filter(Boolean).join("\n\n")
-                : reply;
-              setMessages((prev) => [
-                ...prev,
-                makeAssistantMessage(combinedStageReply, {
-                  stage: advanceToStage2 ? "stage2_deepdive" : "stage1_intake",
-                  responseType: advanceToStage2 ? "stage2_deepdive" : "stage1_intake",
-                  modelUsed: resolveModelUsed(data),
-                  latencyMs: currentTurnLatencyMs(),
-                }),
-              ]);
-              if (advanceToStage2) {
-                setStage2State(s2State);
-                setStage("stage2_deepdive");
-              }
-            } else if (data.status === "question") {
-              handleQuestionResponse(data);
-            } else if (data.status === "done") {
-              handleDoneResponse(data);
-            } else if (data.message) {
-              setMessages((prev) => [
-                ...prev,
-                makeAssistantMessage(data.message, {
-                  stage: "stage1_intake",
-                  responseType: "stage1_intake",
-                  modelUsed: resolveModelUsed(data),
-                  latencyMs: currentTurnLatencyMs(),
-                }),
-              ]);
-            }
-          },
-          handleStep,
-          handleToken,
-        );
-      } catch (err) {
-        console.error("Stage 1 intake stream error:", err);
-        setError("Error during intake: " + (err.message || "Network or server error"));
-      } finally {
-        setLoading(false);
-      }
-      return;
-    }
-
-    // 0b) Stage 2 structured deep-dive
-    if (stage === "stage2_deepdive") {
-      const conversation = buildConversationFromMessages(messages);
-      try {
-        await consumeSSEStream(
-          `${API_BASE}/conversation/continue/stream`,
-          {
-            conversation,
-            message: raw,
-            mode: chatMode,
-            model_override: getModelOverridePayload(),
-            workflowState: buildWorkflowState({ stage: "stage2_deepdive" }),
-          },
-          (progressPayload) => {
-            setProgress(progressPayload);
-          },
-          (data) => {
-            setStreamingSteps([]);
-            setStreamingToken("");
-            if (data.status === "stage2_deepdive") {
-              const reply           = (data.message || "").trim();
-              const nextStage2State = data.stage2_state || null;
-              const advanceToStage3 = !!data.advance_to_stage3;
-              setStage2State(nextStage2State);
-              setMessages((prev) => [
-                ...prev,
-                makeAssistantMessage(reply, {
-                  stage: "stage2_deepdive",
-                  responseType: "stage2_deepdive",
-                  modelUsed: resolveModelUsed(data),
-                  latencyMs: currentTurnLatencyMs(),
-                }),
-              ]);
-              if (advanceToStage3) {
-                const s3State   = data.stage3_state || null;
-                const s3Opening = (data.stage3_opening || "").trim();
-                setStage3State(s3State);
-                setStage("stage3_vetting");
-                if (s3Opening) {
-                  setMessages((prev) => [
-                    ...prev,
-                    makeAssistantMessage(s3Opening, {
-                      stage: "stage3_vetting",
-                      responseType: "stage3_vetting",
-                      modelUsed: resolveModelUsed(data),
-                    }),
-                  ]);
-                }
-              }
-            } else if (data.status === "question") {
-              handleQuestionResponse(data);
-            } else if (data.status === "done") {
-              handleDoneResponse(data);
-            } else if (data.message) {
-              setMessages((prev) => [
-                ...prev,
-                makeAssistantMessage(data.message, {
-                  stage: "stage2_deepdive",
-                  responseType: "stage2_deepdive",
-                  modelUsed: resolveModelUsed(data),
-                  latencyMs: currentTurnLatencyMs(),
-                }),
-              ]);
-            }
-          },
-          handleStep,
-          handleToken,
-        );
-      } catch (err) {
-        console.error("Stage 2 deep-dive stream error:", err);
-        setError("Error during fact-gathering: " + (err.message || "Network or server error"));
-      } finally {
-        setLoading(false);
-      }
-      return;
-    }
-
-    // 0c) Stage 3 indirect vetting — strengthen the account before assessment
-    if (stage === "stage3_vetting") {
-      const conversation = buildConversationFromMessages(messages);
-      try {
-        await consumeSSEStream(
-          `${API_BASE}/conversation/continue/stream`,
-          {
-            conversation,
-            message: raw,
-            mode: chatMode,
-            model_override: getModelOverridePayload(),
-            workflowState: buildWorkflowState({ stage: "stage3_vetting" }),
-          },
-          (progressPayload) => { setProgress(progressPayload); },
-          (data) => {
-            setStreamingSteps([]);
-            setStreamingToken("");
-            if (data.status === "stage3_vetting") {
-              const reply           = (data.message || "").trim();
-              const nextStage3State = data.stage3_state || null;
-              const advanceToStage4 = !!data.advance_to_stage4;
-              setStage3State(nextStage3State);
-              setMessages((prev) => [
-                ...prev,
-                makeAssistantMessage(reply, {
-                  stage: "stage3_vetting",
-                  responseType: "stage3_vetting",
-                  modelUsed: resolveModelUsed(data),
-                  latencyMs: currentTurnLatencyMs(),
-                }),
-              ]);
-              if (advanceToStage4) {
-                const s4State   = data.stage4_state || null;
-                const s4Opening = (data.stage4_opening || "").trim();
-                setStage4State(s4State);
-                setStage("stage4_remedy");
-                if (s4Opening) {
-                  setMessages((prev) => [
-                    ...prev,
-                    makeAssistantMessage(s4Opening, {
-                      stage: "stage4_remedy",
-                      responseType: "stage4_remedy",
-                      modelUsed: resolveModelUsed(data),
-                    }),
-                  ]);
-                }
-              }
-            } else if (data.status === "done") {
-              handleDoneResponse(data);
-            } else if (data.message) {
-              setMessages((prev) => [
-                ...prev,
-                makeAssistantMessage(data.message, {
-                  stage: "stage3_vetting",
-                  responseType: "stage3_vetting",
-                  modelUsed: resolveModelUsed(data),
-                  latencyMs: currentTurnLatencyMs(),
-                }),
-              ]);
-            }
-          },
-          handleStep,
-          handleToken,
-        );
-      } catch (err) {
-        console.error("Stage 3 vetting stream error:", err);
-        setError("Error during case verification: " + (err.message || "Network or server error"));
-      } finally {
-        setLoading(false);
-      }
-      return;
-    }
-
-    // 0d) Stage 4 remedy understanding — confirm remedy plan before drafting
-    if (stage === "stage4_remedy") {
-      const conversation = buildConversationFromMessages(messages);
-      try {
-        await consumeSSEStream(
-          `${API_BASE}/conversation/continue/stream`,
-          {
-            conversation,
-            message: raw,
-            mode: chatMode,
-            model_override: getModelOverridePayload(),
-            workflowState: buildWorkflowState({ stage: "stage4_remedy" }),
-          },
-          (progressPayload) => { setProgress(progressPayload); },
-          (data) => {
-            setStreamingSteps([]);
-            setStreamingToken("");
-            if (data.status === "stage4_remedy") {
-              const reply           = (data.message || "").trim();
-              const nextStage4State = data.stage4_state || null;
-              const advanceToStage5 = !!data.advance_to_stage5;
-              setStage4State(nextStage4State);
-              setMessages((prev) => [
-                ...prev,
-                makeAssistantMessage(reply, {
-                  stage: "stage4_remedy",
-                  responseType: "stage4_remedy",
-                  modelUsed: resolveModelUsed(data),
-                  latencyMs: currentTurnLatencyMs(),
-                }),
-              ]);
-              if (advanceToStage5) {
-                setStage("stage5_draft");
-              }
-            } else if (data.status === "done") {
-              handleDoneResponse(data);
-            } else if (data.message) {
-              setMessages((prev) => [
-                ...prev,
-                makeAssistantMessage(data.message, {
-                  stage: "stage4_remedy",
-                  responseType: "stage4_remedy",
-                  modelUsed: resolveModelUsed(data),
-                  latencyMs: currentTurnLatencyMs(),
-                }),
-              ]);
-            }
-          },
-          handleStep,
-          handleToken,
-        );
-      } catch (err) {
-        console.error("Stage 4 remedy stream error:", err);
-        setError("Error during remedy assessment: " + (err.message || "Network or server error"));
-      } finally {
-        setLoading(false);
-      }
-      return;
-    }
-
-    // 0e) Stage 6 advocate review — question, revise, research, finalize
-    if (stage === "stage6_review" || stage === "finalized") {
-      const conversation = buildConversationFromMessages(messages);
-      try {
-        await consumeSSEStream(
-          `${API_BASE}/conversation/continue/stream`,
-          {
-            conversation,
-            message: raw,
-            mode: chatMode,
-            model_override: getModelOverridePayload(),
-            workflowState: buildWorkflowState({ stage: "stage6_review" }),
-          },
-          (progressPayload) => { setProgress(progressPayload); },
-          (data) => {
-            setStreamingSteps([]);
-            setStreamingToken("");
-            if (data.status === "stage6_review") {
-              const reply           = (data.message || "").trim();
-              const nextStage6State = data.stage6_state || null;
-              const isFinalized     = !!data.finalized;
-              const updatedDraft    = (data.updated_draft || "").trim();
-              setStage6State(nextStage6State);
-              // If the draft was revised, update opinionText
-              if (updatedDraft && data.intent === "revise") {
-                setOpinionText(updatedDraft);
-              }
-              setMessages((prev) => [
-                ...prev,
-                makeAssistantMessage(reply, {
-                  stage: "stage6_review",
-                  responseType: data.intent || "stage6_review",
-                  modelUsed: resolveModelUsed(data),
-                  latencyMs: currentTurnLatencyMs(),
-                }),
-              ]);
-              if (isFinalized) {
-                setStage("finalized");
-              }
-            } else if (data.status === "done") {
-              handleDoneResponse(data);
-            } else if (data.message) {
-              setMessages((prev) => [
-                ...prev,
-                makeAssistantMessage(data.message, {
-                  stage: "stage6_review",
-                  responseType: "stage6_review",
-                  modelUsed: resolveModelUsed(data),
-                  latencyMs: currentTurnLatencyMs(),
-                }),
-              ]);
-            }
-          },
-          handleStep,
-          handleToken,
-        );
-      } catch (err) {
-        console.error("Stage 6 review stream error:", err);
-        setError("Error during advocate review: " + (err.message || "Network or server error"));
-      } finally {
-        setLoading(false);
-      }
-      return;
-    }
-
     // 1) Initial facts (await_facts stage) - use streaming
     if (stage === "await_facts") {
       setFacts(raw); // Store initial facts (format preserved)
@@ -2325,7 +1793,7 @@ function App() {
       try {
         await consumeSSEStream(
           `${API_BASE}/submit_case/stream`,
-          { text: raw, mode: chatMode, model_override: getModelOverridePayload() },
+          { text: raw, mode: chatMode, model_override: getModelOverridePayload(), workflowState: buildWorkflowState() },
           (progressPayload) => {
             setProgress(progressPayload);
             const groups = progressPayload.groups || [];
@@ -2340,6 +1808,7 @@ function App() {
           (data) => {
             setStreamingSteps([]);
             setStreamingToken("");
+            streamingTokenRef.current = "";
             setRawResponse(JSON.stringify(data, null, 2));
             if (data.status === "question") {
               handleQuestionResponse(data);
@@ -2351,14 +1820,36 @@ function App() {
           },
           handleStep,
           handleToken,
+          abortController.signal,
         );
       } catch (err) {
-        console.error("submit_case stream error:", err);
-        setStreamingSteps([]);
-        setStreamingToken("");
-        setError(err.message || "Error during processing. Please try again.");
-        setRawResponse("Error: " + (err.message || ""));
+        if (err.name === "AbortError") {
+          // User stopped — commit whatever tokens arrived so far as an assistant message
+          const partial = streamingTokenRef.current.trim();
+          if (partial) {
+            setMessages((prev) => [
+              ...prev,
+              makeAssistantMessage(partial + "\n\n*(response stopped)*", {
+                stage: "intake",
+                responseType: "partial",
+                modelUsed: "",
+                latencyMs: currentTurnLatencyMs(),
+              }),
+            ]);
+          }
+          setStreamingSteps([]);
+          setStreamingToken("");
+          streamingTokenRef.current = "";
+        } else {
+          console.error("submit_case stream error:", err);
+          setStreamingSteps([]);
+          setStreamingToken("");
+          streamingTokenRef.current = "";
+          setError(err.message || "Error during processing. Please try again.");
+          setRawResponse("Error: " + (err.message || ""));
+        }
       } finally {
+        chatAbortControllerRef.current = null;
         setLoading(false);
       }
       return;
@@ -2398,6 +1889,7 @@ function App() {
           (data) => {
             setStreamingSteps([]);
             setStreamingToken("");
+            streamingTokenRef.current = "";
             setRawResponse(JSON.stringify(data, null, 2));
             if (data.status === "question") {
               handleQuestionResponse(data);
@@ -2409,12 +1901,32 @@ function App() {
           },
           handleStep,
           handleToken,
+          abortController.signal,
         );
       } catch (err) {
-        console.error("conversation continue stream error:", err);
-        setError("Error during processing: " + (err.message || "Network or server error"));
-        setRawResponse("Error: " + err.message);
+        if (err.name === "AbortError") {
+          const partial = streamingTokenRef.current.trim();
+          if (partial) {
+            setMessages((prev) => [
+              ...prev,
+              makeAssistantMessage(partial + "\n\n*(response stopped)*", {
+                stage: "interview",
+                responseType: "partial",
+                modelUsed: "",
+                latencyMs: currentTurnLatencyMs(),
+              }),
+            ]);
+          }
+          setStreamingSteps([]);
+          setStreamingToken("");
+          streamingTokenRef.current = "";
+        } else {
+          console.error("conversation continue stream error:", err);
+          setError("Error during processing: " + (err.message || "Network or server error"));
+          setRawResponse("Error: " + err.message);
+        }
       } finally {
+        chatAbortControllerRef.current = null;
         setLoading(false);
       }
       return;
@@ -2431,6 +1943,7 @@ function App() {
         setAnalysisStage("intake");
         setAnalysisFactsSummary("");
         setLastResponseType("");
+        setIntakeState(null);
         setOpinionText("");
         setRetrieved([]);
         setRawResponse("");
@@ -2440,7 +1953,7 @@ function App() {
         try {
           await consumeSSEStream(
             `${API_BASE}/submit_case/stream`,
-            { text: raw, mode: chatMode, model_override: getModelOverridePayload() },
+            { text: raw, mode: chatMode, model_override: getModelOverridePayload(), workflowState: buildWorkflowState() },
             (progressPayload) => {
               setProgress(progressPayload);
               const groups = progressPayload.groups || [];
@@ -2455,6 +1968,7 @@ function App() {
             (data) => {
               setStreamingSteps([]);
               setStreamingToken("");
+              streamingTokenRef.current = "";
               setRawResponse(JSON.stringify(data, null, 2));
               if (data.status === "question") {
                 setFacts(raw);
@@ -2468,10 +1982,30 @@ function App() {
             },
             handleStep,
             handleToken,
+            abortController.signal,
           );
         } catch (err) {
-          setError("Error during processing: " + (err.message || "Network or server error"));
+          if (err.name === "AbortError") {
+            const partial = streamingTokenRef.current.trim();
+            if (partial) {
+              setMessages((prev) => [
+                ...prev,
+                makeAssistantMessage(partial + "\n\n*(response stopped)*", {
+                  stage: "intake",
+                  responseType: "partial",
+                  modelUsed: "",
+                  latencyMs: currentTurnLatencyMs(),
+                }),
+              ]);
+            }
+            setStreamingSteps([]);
+            setStreamingToken("");
+            streamingTokenRef.current = "";
+          } else {
+            setError("Error during processing: " + (err.message || "Network or server error"));
+          }
         } finally {
+          chatAbortControllerRef.current = null;
           setLoading(false);
         }
         return;
@@ -2514,44 +2048,99 @@ function App() {
             }
             setStreamingSteps([]);
             setStreamingToken("");
+            streamingTokenRef.current = "";
           },
           handleStep,
           handleToken,
+          abortController.signal,
         );
       } catch (err) {
-        setError("Error continuing chat: " + (err.message || ""));
-        setMessages((prev) => [
-          ...prev,
-          makeAssistantMessage("Sorry, something went wrong. Please try again.", {
-            stage: "system",
-            responseType: "error",
-          }),
-        ]);
+        if (err.name === "AbortError") {
+          const partial = streamingTokenRef.current.trim();
+          if (partial) {
+            setMessages((prev) => [
+              ...prev,
+              makeAssistantMessage(partial + "\n\n*(response stopped)*", {
+                stage: "analysis",
+                responseType: "partial",
+                modelUsed: "",
+                latencyMs: currentTurnLatencyMs(),
+              }),
+            ]);
+          }
+          setStreamingSteps([]);
+          setStreamingToken("");
+          streamingTokenRef.current = "";
+        } else {
+          setError("Error continuing chat: " + (err.message || ""));
+          setMessages((prev) => [
+            ...prev,
+            makeAssistantMessage("Sorry, something went wrong. Please try again.", {
+              stage: "system",
+              responseType: "error",
+            }),
+          ]);
+        }
       } finally {
+        chatAbortControllerRef.current = null;
         setLoading(false);
       }
       return;
     }
   };
 
+  // ── Keep queue ref in sync with state (avoids stale closure in effects) ────
+  useEffect(() => { messageQueueRef.current = messageQueue; }, [messageQueue]);
+
+  // ── Auto-consume queue when a response finishes ───────────────────────────
+  useEffect(() => {
+    if (wasLoadingRef.current === true && loading === false) {
+      if (messageQueueRef.current.length > 0) {
+        const [next, ...rest] = messageQueueRef.current;
+        setMessageQueue(rest);
+        // Small tick to let React flush the loading=false render first
+        setTimeout(() => handleSubmit(next.text), 0);
+      }
+    }
+    wasLoadingRef.current = loading;
+  }, [loading]); // handleSubmit intentionally accessed via closure — not a dep
+
+  // ── Composed submit: queue when busy, submit immediately when idle ─────────
+  const handleComposedSubmit = (text) => {
+    if (!text.trim()) return;
+    if (loading) {
+      if (messageQueueRef.current.length < 2) {
+        setMessageQueue((prev) => [...prev, { id: Date.now(), text }]);
+      }
+    } else {
+      handleSubmit(text);
+    }
+  };
+
+  // Stop the active SSE stream (fires the AbortController)
+  const handleStopProcessing = useCallback(() => {
+    chatAbortControllerRef.current?.abort();
+  }, []);
+
+  const handleQueueEdit = (item) => {
+    setMessageQueue((prev) => prev.filter((i) => i.id !== item.id));
+    setQueueEditSignal((prev) => ({ text: item.text, counter: prev.counter + 1 }));
+  };
+
+  const handleQueueDelete = (id) => {
+    setMessageQueue((prev) => prev.filter((i) => i.id !== id));
+  };
+
   // -------------------------
-  // Progress Display Component â€” single collapsible "Progress tracker" with all steps
+  // Progress Display Component — single collapsible “Progress tracker” with all steps
   // -------------------------
   const PROGRESS_TRACKER_KEY = "progress_tracker";
   const ProgressDisplay = ({ progress, expandedGroups, setExpandedGroups, expandKey = PROGRESS_TRACKER_KEY, defaultOpen = true }) => {
-    const rdDiag = progress?.retrieval_diagnostics;
-    const hasDiag =
-      rdDiag &&
-      (rdDiag.query_expansion ||
-        rdDiag.bare_act_hybrid_trace ||
-        (rdDiag.retrieved_documents &&
-          (rdDiag.retrieved_documents.bare_acts?.length > 0 || rdDiag.retrieved_documents.case_laws?.length > 0)));
-    if (!progress || ((!progress.groups || progress.groups.length === 0) && !hasDiag)) return null;
+    if (!progress || !progress.groups || progress.groups.length === 0) return null;
 
     const isExpanded = expandedGroups[expandKey] !== undefined ? expandedGroups[expandKey] : defaultOpen;
-    const groups = progress.groups || [];
-    const allSteps = groups.flatMap((g) => (g ? (g.steps || []).map((s) => ({ ...s, groupName: g.name })) : []));
-    const totalStats = groups.reduce(
+    const allSteps = progress.groups.flatMap((g) => (g ? (g.steps || []).map((s) => ({ ...s, groupName: g.name })) : []));
+    const totalStats = progress.groups.reduce(
       (acc, g) => {
         const s = (g && g.stats) || {};
         acc.searched += s.total_searched || 0;
@@ -2585,14 +2174,13 @@ function App() {
               </span>
             )}
           </summary>
-            <div
+          <div
             className="progress-steps-outer"
             role="region"
             aria-label="Progress steps"
             onMouseDown={(e) => e.stopPropagation()}
             onPointerDown={(e) => e.stopPropagation()}
           >
-            {hasDiag ? <ProgressRetrievalDiagnostics diagnostics={rdDiag} /> : null}
             <div className="progress-steps-wrapper">
               <div className="progress-steps">
                 {allSteps.map((step, stepIdx) => {
@@ -3790,6 +3378,7 @@ function App() {
 
       if (responseType === "legal_opinion") {
         const { bareMap, caseMap } = buildCitationMaps(bareActs, caseLaws);
+        const advocateReview = content.advocate_review || null;  // Item 20
         return (
           <div className="message-final-opinion">
             {opinion && (
@@ -3811,6 +3400,8 @@ function App() {
                 )}
               </div>
             )}
+            {/* Item 20: Advocate-review panel — structured brief (prayer, docs, legal framework) */}
+            <AdvocateReviewPanel data={advocateReview} />
             {messageProgress && (
               <ProgressDisplay
                 progress={messageProgress}
@@ -4101,8 +3692,8 @@ function App() {
                     />
                     <div className="chat-history-groups" onMouseDown={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
                     {chatGroups.map(({ groupLabel, chats }) => (
-                      <div key={groupLabel} className="chat-history-group">
-                        <div className="chat-history-group-label">{groupLabel}</div>
+                      <div key={groupLabel} className={`chat-history-group${groupLabel === "Starred" ? " chat-history-group--starred" : ""}`}>
+                        <div className="chat-history-group-label">{groupLabel === "Starred" ? "★ Starred" : groupLabel}</div>
                         <ul className="chat-history-list">
                           {chats.map((chat) => (
                             <li key={chat.id} className="chat-history-item">
@@ -4135,14 +3726,20 @@ function App() {
                                   <div className="chat-history-hover-actions" aria-hidden="true">
                                     <button
                                       type="button"
-                                      onClick={(e) => { e.stopPropagation(); toggleStarChat(chat); }}
-                                      className={`chat-history-icon-btn${chat.starred ? " chat-history-icon-btn--starred" : ""}`}
-                                      title={chat.starred ? "Unstar chat" : "Star chat"}
-                                      aria-label={chat.starred ? "Unstar chat" : "Star chat"}
+                                      onClick={(e) => toggleStarChat(chat, e)}
+                                      className={`chat-history-icon-btn${starredChatIds.has(String(chat.id)) ? " chat-history-icon-btn--starred" : ""}`}
+                                      title={starredChatIds.has(String(chat.id)) ? "Unstar" : "Star"}
+                                      aria-label={starredChatIds.has(String(chat.id)) ? "Unstar chat" : "Star chat"}
                                     >
-                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.176 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.719c-.783-.57-.38-1.81.588-1.81H7.03a1 1 0 00.95-.69l1.07-3.292z" />
-                                      </svg>
+                                      {starredChatIds.has(String(chat.id)) ? (
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                          <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clipRule="evenodd" />
+                                        </svg>
+                                      ) : (
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
+                                          <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.601a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5z" />
+                                        </svg>
+                                      )}
                                     </button>
                                     <button
                                       type="button"
@@ -4507,13 +4104,19 @@ function App() {
                     <ChatComposer
                       loading={loading}
                       placeholder="Describe your case or ask a question"
-                      onSubmit={handleSubmit}
+                      onSubmit={handleComposedSubmit}
                       resetSignal={composerResetSignal}
                       chatMode={chatMode}
                       onChatModeChange={setChatMode}
                       selectedModel={selectedModel}
                       onModelChange={setSelectedModel}
                       showDisclaimer={bottomExpandedSection == null}
+                      apiBase={API_BASE}
+                      onStop={handleStopProcessing}
+                      messageQueue={messageQueue}
+                      onQueueEdit={handleQueueEdit}
+                      onQueueDelete={handleQueueDelete}
+                      queueEditSignal={queueEditSignal}
                     />
                   </div>
               </div>
@@ -4608,24 +4211,6 @@ function App() {
                               progressExpandKey: msg.id != null ? `pt_${msg.id}` : PROGRESS_TRACKER_KEY,
                               progressDefaultOpen: false,
                             })}
-                            {Array.isArray(msg?.feedbackMeta?.entryOptions) && msg.feedbackMeta.entryOptions.length > 0 && (
-                              <div className="entry-router-options">
-                                {msg.feedbackMeta.entryOptions.map((opt) => (
-                                  <button
-                                    key={opt.id || opt.label}
-                                    type="button"
-                                    className="entry-router-option-btn"
-                                    disabled={loading}
-                                    onClick={() => {
-                                      const text = String(opt?.label || "").trim();
-                                      if (text) handleSubmit(text);
-                                    }}
-                                  >
-                                    {opt.label}
-                                  </button>
-                                ))}
-                              </div>
-                            )}
                             <div className="message-bubble-actions">
                               <button
                                 type="button"
@@ -4704,6 +4289,7 @@ function App() {
                                     s.message
                                   )}
                                 </span>
+                                {s.detail ? <StreamingRetrievalDetail detail={s.detail} /> : null}
                               </div>
                             );
                           })}
@@ -4767,13 +4353,19 @@ function App() {
                         ? "Describe your case facts here"
                         : "Type here to start a new case"
                     }
-                    onSubmit={handleSubmit}
+                    onSubmit={handleComposedSubmit}
                     resetSignal={composerResetSignal}
                     chatMode={chatMode}
                     onChatModeChange={setChatMode}
                     selectedModel={selectedModel}
                     onModelChange={setSelectedModel}
                     showDisclaimer={bottomExpandedSection == null}
+                    apiBase={API_BASE}
+                    onStop={handleStopProcessing}
+                    messageQueue={messageQueue}
+                    onQueueEdit={handleQueueEdit}
+                    onQueueDelete={handleQueueDelete}
+                    queueEditSignal={queueEditSignal}
                   />
                 </div>
 

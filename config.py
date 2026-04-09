@@ -83,6 +83,10 @@ ACT_PROFILES_BM25  = os.path.join(VECTOR_STORE, "act_profiles_bm25.json")   # BM
 # Citation graph: case → interprets → section, case → cites → case. Built from CASE_CHUNKS_V2.
 CITATION_GRAPH_PATH = os.path.join(VECTOR_STORE, "citation_graph.json")
 
+# Legal knowledge graph: Act → Chapter → Section hierarchy + Section cross-references.
+# Built by scripts/build_legal_graph.py from BARE_CHUNKS_V2 + CASE_CHUNKS_V2.
+LEGAL_GRAPH_DB = os.path.join(VECTOR_STORE, "legal.db")
+
 # Web references table (articles/news that aren't primary sources)
 WEB_REFERENCES_DB = os.path.join(DATA_ROOT, "web_references.json")
 

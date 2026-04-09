@@ -1,503 +1,193 @@
-Nyaymalaw Architecture
-Current runtime architecture as of 2026-03-27
-
-This document describes the current production-oriented architecture in the
-C:\Users\rahul\Nyaymalaw-5.0 workspace. It replaces older notes that mixed
-historical flows with planned redesigns.
-
-Primary source files:
-- api_server.py
-- Frontend\src\App.jsx
-- services\interactive_chat.py
-- services\fact_collector.py
-- services\response_generator_v2.py
-- services\runtime_warmup.py
-- retrieval\hybrid_retriever.py
-- training\few_shot_retriever.py
+Nyaymalaw Agentic Architecture
+Current runtime architecture as of 2026-04-09
 
 ==============================================================================
-1. System Goals
+1. Overview
 ==============================================================================
 
-Nyaymalaw runs a local-first legal chat system with:
-- streaming responses over SSE
-- structured fact collection before legal analysis
-- analysis-ready handoff that supports either "proceed" or one last material fact
-- grounded local retrieval from the vector store
-- deterministic fallback behavior when generation is weak or grounding fails
-- resumable chat state for mid-intake save and restore
+Nyaymalaw is a local-first Indian legal AI system. The agentic architecture
+replaces the old two-phase hardcoded loop (fact_collection → response_generation)
+with an LLM-driven orchestrator that holds a full tool set and decides
+dynamically what to do: intake, research, verification, or all at once.
 
-The main product behavior is:
-1. collect enough facts to understand the dispute
-2. ask another clustered question if needed
-3. once ready, move to grounded legal analysis
-4. stream progress and text so the experience feels live
+The core shift:
+  OLD: pipeline/chat.py   → hardcoded phase transitions
+  NEW: agents/orchestrator.py → LLM tool-use loop, parallel execution
 
 ==============================================================================
-1A. Conversation Principles
+2. Folder Structure  (5 clean folders aligned to the 5-layer stack)
 ==============================================================================
 
-Nyaymalaw should behave like a calm senior advocate doing real intake, not like
-a chatbot form and not like a law lecture.
+  Frontend/               ← Layer 1 — User Interface
+    src/App.jsx           ← React UI (SSE consumer)
 
-Intake style:
-- begin with brief empathy or acknowledgment when the facts call for it
-- identify the issue in plain human language
-- explain why the next details matter
-- ask 2 to 3 closely related questions together when they belong to one factual
-  theme
-- avoid scattered or abstract questionnaires
-- move the case forward in small, meaningful factual clusters
+  agents/                 ← Layers 2 + 3 — Orchestrator + Specialist Agents
+    orchestrator.py       ← Main LLM-driven orchestrator
+    tool_registry.py      ← All 12 tools in OpenAI function-calling format
+    intake/               ← Intake specialist agent
+      session.py          ← In-memory session store
+      stage1_opening.py   ← Intake conversation logic
+      stage5_draft.py     ← Structured draft builder
+      collector.py        ← Adaptive fact collection
+    document/             ← Document specialist agent
+      agent.py            ← Extracts structured facts from uploaded documents
+    forum/                ← Forum specialist agent
+      agent.py            ← Identifies correct Indian forum, checks limitation
+    verification/         ← Verification specialist agent
+      agent.py            ← Post-draft citation + evidence + limitation checks
 
-What the intake should quietly assess:
-- whether the factual account is internally coherent
-- whether supporting material exists and what it currently proves
-- whether the requested relief is presently supportable
-- whether the urgency is real and what immediate posture exists
+  retrieval/              ← Layer 4 — Retrieval & Grounding
+    retriever.py          ← Hybrid retrieval (FAISS + BM25 + RRF + reranker)
+    guard.py              ← Input safety + grounding guard (critical safety layer)
+    generator.py          ← Full response generation pipeline
+    decomposer.py         ← Breaks composite queries into dispute components
+    intent.py             ← Intent extraction from user messages
+    chunker.py            ← Text chunking for ingestion
+    citations.py          ← Citation graph utilities
+    enricher.py           ← Data enrichment
+    indexer.py            ← Vector store index building
+    legal_graph.py        ← Legal knowledge graph
 
-How that assessment should sound:
-- never accuse the user of dishonesty
-- never ask legal-conclusion questions back to the user
-- prefer language such as:
-  - these details will help me assess urgency
-  - this will help me understand what can be properly supported on the record
-  - I want to be careful not to overstate or understate the matter
+  platform/               ← Layer 5 — Memory, State & Platform Utilities
+    llm.py                ← OpenAI client, model tiers, token budgeting
+    memory.py             ← Memory pressure monitoring
+    warmup.py             ← Runtime warmup (FAISS + BM25 + embedder preload)
+    progress.py           ← SSE progress tracking
+    tiers.py              ← User tiers / freemium
+    dedup.py              ← Deduplication utilities
+    feedback/             ← Feedback logging and review
+      logger.py, reviewer.py, store.py, pipeline.py
+    training/             ← Runtime few-shot layer
+      few_shot.py
+      runtime_fewshot/runtime_examples.jsonl
 
-Audience behavior:
-- lay users should get plain English with minimal jargon
-- legal professionals may get tighter legal phrasing, but still structured and clear
+  ── Root files ────────────────────────────────────────────────────────────
+  api_server.py           ← FastAPI server, SSE endpoints
+  mcp_server.py           ← MCP server (exposes tools to Claude Desktop etc.)
+  config.py               ← Configuration (paths, env)
+  requirements.txt        ← Runtime dependencies
 
-What intake should not do:
-- cite statutes or case law from memory
-- ask the user to repeat the whole story
-- jump to final advice too early
-- keep looping on the same unresolved point in awkward phrasing
-- close randomly before the critical facts, evidence posture, and current stage
-  are sufficiently clear
+  ── Legacy (remove once frontend migrates to /agent/stream) ──────────────
+  pipeline/chat.py        ← LEGACY: backward-compat shim for old endpoints
 
-Meaningful completion:
-- the intake should close only when the system has enough to move responsibly
-  into grounded legal analysis
-- if the user cannot add more on one final narrow point but the factual record is
-  otherwise strong, the system may proceed rather than loop indefinitely
-
-Final answer style:
-- short fact framing
-- grounded legal analysis
-- practical next-step guidance
-- flowing prose, not heading-heavy templated output
-
-==============================================================================
-2. Top-Level Runtime Flow
-==============================================================================
-
-Frontend
-  -> /submit_case/stream for the first user message
-  -> /conversation/continue/stream for every later user turn
-  -> /chats and /chats/{id} for save/load
-
-Backend
-  -> api_server.py receives the request
-  -> services.interactive_chat.process_chat() orchestrates the phase
-  -> services.fact_collector decides:
-     - ask another intake question
-     - or hand off to analysis
-  -> services.response_generator_v2.generate_response() performs local retrieval
-     and builds the final grounded opinion
-
-The active architecture is a two-phase loop:
-
-1. fact_collection
-2. response_generation
+  ── Other ─────────────────────────────────────────────────────────────────
+  prompts/                ← Prompt templates (research.py, intake.py)
+  legal_database/         ← Legal data (bare acts + case laws)
+  eval/                   ← Evaluation suite (not runtime)
+  scripts/                ← Index management utilities (not runtime)
+  tests/                  ← Test suite
 
 ==============================================================================
-3. Current Request Lifecycle
+3. The 5-Layer Stack
 ==============================================================================
 
-3.1 New legal case
+  Layer 1 — User Interface  [Frontend/]
+    React frontend → /agent/stream (agentic) or legacy /conversation/continue/stream
+    Claude Desktop / VS Code → mcp_server.py (stdio or SSE)
 
-User sends the first message.
+  Layer 2 — Orchestrator Agent  [agents/orchestrator.py]
+    LLM with 12 tools. Runs tool-use loop until final answer.
+    Parallel execution: search_bare_acts + search_case_laws fire concurrently.
+    Streams step/token/done events via SSE.
 
-Frontend:
-- POST /submit_case/stream
+  Layer 3 — Specialist Agents  [agents/intake/, agents/document/, agents/forum/, agents/verification/]
+    Intake Agent      : start_intake → continue_intake → draft_opinion
+    Research Agent    : search_bare_acts, search_case_laws, lookup_section, lookup_case
+    Document Agent    : extract_document_facts, cross_reference_document
+    Forum Agent       : identify_forum, check_limitation
+    Verification Agent: runs after draft_opinion (citation check, evidence gap, limitation)
 
-Backend:
-- api_server.py creates an SSE queue and worker thread
-- process_chat(..., phase="fact_collection")
-- fact_collector extracts a compact intake state
-- system either:
-  - returns the next clustered question
-  - or marks the matter analysis-ready
+  Layer 4 — Retrieval & Grounding  [retrieval/]
+    FAISS semantic search + BM25 lexical search
+    Reciprocal-rank fusion + cross-encoder reranking
+    Grounding guard rejects drafts that cite unsupported law
 
-If more facts are needed:
-- frontend displays the next question
-- workflow state remains in interview mode
-
-If enough facts exist:
-- backend returns the analysis-ready handoff prompt
-- user may either say "proceed" or add one last material fact
-
-3.2 Follow-up user turns
-
-Frontend:
-- POST /conversation/continue/stream
-
-Backend:
-- full conversation is passed into process_chat()
-- the system no longer relies on the old qa_history-only interview protocol
-- the same full-conversation path is used for both intake and post-intake turns
-
-3.3 Analysis-ready handoff
-
-This is a critical path.
-
-If the immediately previous assistant turn is the analysis-ready prompt:
-- the user does not re-enter intake
-- the next user message is treated as either:
-  - a confirmation to proceed
-  - or one last material fact
-
-The current implementation:
-- builds facts from the actual user-history turns
-- preserves the latest material fact in the analysis seed
-- bypasses the old failure mode where the last fact was clipped or treated as a
-  fresh case opening
-
-3.4 Final grounded opinion
-
-Backend switches to:
-- phase="response_generation"
-
-Then:
-- generate_response() performs local retrieval
-- local bare acts and case materials are formatted
-- a grounded final answer is produced
-- if draft generation fails grounding, the system falls back to a deterministic
-  grounded response rather than a misleading empty result
+  Layer 5 — Memory & State  [platform/]
+    Session memory: agents/intake/session.py + SQLite (api_server.py)
+    Workflow state: persisted in chat records (stage, facts, session_id)
+    LLM client, token budgeting, warmup, feedback logging, few-shot examples
 
 ==============================================================================
-4. Frontend Architecture
+4. Active API Endpoints
 ==============================================================================
 
-Primary UI file:
-- Frontend\src\App.jsx
+  POST /agent/stream           ← PRIMARY agentic endpoint (new)
+    Request:  { message, conversation, workflowState }
+    Response: SSE stream → step | token | done events
 
-The frontend currently maintains:
-- messages
-- workflow stage
-- facts
-- currentQuestion
-- qaHistory
-- retrieved materials
-- opinion text
+  POST /submit_case/stream     ← Legacy (uses pipeline/chat.py)
+  POST /conversation/continue/stream  ← Legacy (uses pipeline/chat.py)
 
-Important current behavior:
-- the frontend uses streaming endpoints for live UX
-- the frontend saves workflow state, not just final messages
-- saved chats can now resume mid-intake rather than always reopening as "done"
-
-Displayed final answer shape:
-- main opinion text is shown as flowing prose
-- supporting bare acts and case laws are shown separately
-
-Implication for prompting:
-- final opinions should be concise narrative analysis
-- prompts should not depend on rigid visible section headings
+  Tool server (MCP):
+    python mcp_server.py               (stdio — Claude Desktop / VS Code)
+    python mcp_server.py --transport sse --port 8010  (SSE — Cowork / HTTP)
 
 ==============================================================================
-5. API Server Architecture
+5. The 12 MCP Tools
 ==============================================================================
 
-Primary file:
-- api_server.py
+  Research:
+    search_bare_acts(query, top_k)
+    search_case_laws(query, jurisdiction, top_k)
+    lookup_section(act_name, section_number)
+    lookup_case(case_name, para_num)
 
-Main responsibilities:
-- request parsing
-- auth/user dependency
-- SSE event streaming
-- worker-thread orchestration
-- chat persistence
-- workflow state persistence
+  Intake:
+    start_intake(first_message)
+    continue_intake(session_id, client_message)
+    get_intake_state(session_id)
+    draft_opinion(session_id)
 
-Active streaming endpoints:
-- POST /submit_case/stream
-- POST /conversation/continue/stream
+  Document:
+    extract_document_facts(file_text, dispute_context)
+    cross_reference_document(document_facts_json, intake_state)
 
-Legacy endpoints still exist for compatibility:
-- /submit_case
-- /interview_step
-- /interview_step/stream
-- /conversation/continue
-
-The active frontend path should be considered:
-- /submit_case/stream
-- /conversation/continue/stream
-
-SSE behavior:
-- immediate step events
-- progress snapshots
-- token events during drafting
-- heartbeat comments
-- final done payload
-
-This is what makes the app feel real-time even when retrieval and drafting take
-several seconds.
+  Forum:
+    identify_forum(intake_state_json)
+    check_limitation(dispute_type, key_dates)
 
 ==============================================================================
-6. Chat Orchestrator
+6. Conversation Principles (unchanged from v5.0)
 ==============================================================================
 
-Primary file:
-- services\interactive_chat.py
-
-This is the central runtime controller.
-
-Main responsibilities:
-- sanitize and safety-check user input
-- choose fact_collection or response_generation behavior
-- route general chat away from legal analysis
-- preserve context across turns
-- handle the analysis-ready branch correctly
-
-Important current rules:
-- legal_opinion mode keeps the system on the legal path
-- once the assistant has asked the analysis-ready prompt, the next user turn
-  goes directly into response_generation
-- "one last fact" is merged into the final facts summary rather than ignored
-
-Current helper concepts:
-- analysis-ready detection
-- new-case detection
-- user fact-history reconstruction
-- chat-window summary augmentation
-
-The biggest recent improvement in this file was:
-- analysis-ready acknowledgment is processed before fresh-case detection
-- base facts are rebuilt from user turns, not from assistant summaries
+Nyaymalaw behaves like a calm senior advocate doing real intake:
+  - Opens with empathy when the facts call for it
+  - Identifies the issue in plain human language
+  - Asks 2-3 closely related questions per cluster
+  - Tracks urgency, prior actions, evidence posture, relief posture
+  - Never cites law from memory — uses retrieval tools only
+  - Final answer: short fact framing, grounded legal analysis, practical next steps
 
 ==============================================================================
-7. Intake Engine
+7. Pending Migration
 ==============================================================================
 
-Primary file:
-- services\fact_collector.py
+  1. React frontend: add /agent/stream as the primary call path.
+     Once done, /submit_case/stream and /conversation/continue/stream
+     and pipeline/chat.py can be removed.
 
-The intake engine is responsible for:
-- compact state extraction
-- legal vs generic routing
-- next-question selection
-- completion gating
+  2. Verification agent: wire into draft_opinion result in orchestrator
+     so every opinion is automatically verified before streaming.
 
-Current design intent:
-- one intake brain
-- one next-question brain
-- one completion rule
-- then a predictable handoff into grounded analysis
+  3. Add extract_document_facts + cross_reference_document + identify_forum
+     + check_limitation to mcp_server.py's _build_server() so Claude Desktop
+     clients can call them directly.
 
-Current intake behavior:
-- asks 2 to 3 closely related questions within one factual theme
-- tracks urgency, prior actions, evidence posture, and relief posture
-- avoids restarting the case mid-stream
-- filters noisy open points and low-quality questions
-
-Completion behavior:
-- complete when the normalized legal state is actually ready
-- or when the user explicitly chooses to stop and enough facts exist
-
-What the intake engine should not do:
-- cite law from memory
-- jump into final advice too early
-- ask the same question repeatedly
-- downgrade an ongoing legal matter into greeting or generic chat
+  4. Cross-session case memory (SQLite-backed, keyed by dispute fingerprint).
 
 ==============================================================================
-8. Response Generation
-==============================================================================
-
-Primary file:
-- services\response_generator_v2.py
-
-This module handles:
-- local retrieval
-- dispute construction for the fast path
-- local grounding
-- final opinion drafting
-- deterministic fallback when needed
-
-8.1 Interactive fast path
-
-The active legal-opinion experience defaults toward a fast local path:
-- local retrieval only
-- warmed indexes and models
-- compact grounded drafting
-- streaming token output
-
-The fast path now includes:
-- focused fact compression that preserves late facts
-- generic fact-alignment reranking of retrieved materials
-- local-only rescue search if the first fast retrieval is empty
-- safer grounded fallback when model output is rejected by the grounding guard
-
-8.2 What is generalized vs what is heuristic
-
-Generalized improvements:
-- preserve first facts plus latest material fact
-- score retrieved materials against the actual fact pattern
-- retry broader local retrieval before giving up
-- degrade to grounded fallback instead of false "no materials"
-
-Heuristic boosts still exist:
-- some dispute-pattern boosts for known failure modes
-- for example, landlord lockout and rent-default are separated so the fast path
-  does not over-collapse every tenancy dispute into rent arrears logic
-
-The architecture should be read as:
-- general retrieval path first
-- targeted heuristics only as secondary boosts
-
-8.3 Grounding guard
-
-Generated text is checked against locally retrieved materials.
-
-If the draft cites unsupported law:
-- the answer is rejected
-- the system now falls back to a deterministic grounded response based on local
-  materials instead of incorrectly pretending nothing was found
-
-==============================================================================
-9. Retrieval Architecture
-==============================================================================
-
-Primary file:
-- retrieval\hybrid_retriever.py
-
-The retrieval stack is local-first:
-- FAISS semantic search
-- BM25 lexical search
-- reciprocal-rank fusion
-- cross-encoder reranking
-
-Current fast-path optimizations:
-- preloaded indexes
-- preloaded embedder
-- preloaded reranker
-- smaller candidate pools for interactive chat
-- lower-latency fast search helpers:
-  - search_bare_acts_fast()
-  - search_case_summaries_fast()
-
-The runtime also supports broader local search helpers as a second chance when
-fast retrieval comes back thin.
-
-==============================================================================
-10. Runtime Few-Shot Layer
-==============================================================================
-
-Primary files:
-- training\few_shot_retriever.py
-- training\runtime_fewshot\runtime_examples.jsonl
-
-This is now a runtime few-shot layer, not a training-only artifact.
-
-Design:
-- prompts stay light
-- examples live outside the prompt strings
-- runtime retrieves a small curated pack of high-quality examples
-
-Used for:
-- intake state extraction
-- next-question behavior
-- final opinion style
-
-Important note:
-- runtime few-shot retrieval should point only to the curated runtime pack
-- it should not scan the full fine-tuning corpus during live requests
-
-==============================================================================
-11. Runtime Warmup
-==============================================================================
-
-Primary file:
-- services\runtime_warmup.py
-
-Warmup preloads:
-- FAISS and BM25 indexes
-- embedder
-- reranker
-- few-shot runtime pack
-
-This is essential for:
-- single-digit-second response targets
-- immediate streaming activity on first request
-
-==============================================================================
-12. Persistence and State
-==============================================================================
-
-Chat persistence lives in:
-- SQLite app database
-- api_server.py persistence helpers
-
-Saved state includes:
-- messages
-- opinion text
-- retrieved materials
-- workflow state
-
-Workflow state currently includes:
-- stage
-- facts
-- current question
-- qa history
-
-This enables:
-- save mid-intake
-- reload later
-- continue from the same question
-
-==============================================================================
-13. Current Production Expectations
-==============================================================================
-
-Expected behavior:
-- first streamed feedback should appear almost immediately
-- intake follow-up turns should feel live
-- final opinion turns should usually stay in single-digit seconds
-
-Current practical target:
-- immediate SSE step activity
-- fast legal-opinion path around high single-digit seconds in local runs
-
-==============================================================================
-14. Known Residual Quality Areas
-==============================================================================
-
-The system is materially better than the historical flow, but these remain the
-main quality levers:
-
-1. Intake quality
-- some edge cases can still drift or ask an awkward next cluster
-
-2. Retrieval relevance for niche possession / lockout disputes
-- local materials are grounded, but not always as sharp as the fact pattern
-
-3. Draft quality under grounding constraints
-- some model drafts still over-cite or cite unsupported sections, forcing a
-  deterministic fallback
-
-These are quality improvements, not architecture blockers.
-
-==============================================================================
-15. Source of Truth
+8. Source of Truth
 ==============================================================================
 
 When this document and the code diverge, treat the code as authoritative.
 
-Most important runtime files:
-- C:\Users\rahul\Nyaymalaw-5.0\api_server.py
-- C:\Users\rahul\Nyaymalaw-5.0\Frontend\src\App.jsx
-- C:\Users\rahul\Nyaymalaw-5.0\services\interactive_chat.py
-- C:\Users\rahul\Nyaymalaw-5.0\services\fact_collector.py
-- C:\Users\rahul\Nyaymalaw-5.0\services\response_generator_v2.py
-- C:\Users\rahul\Nyaymalaw-5.0\retrieval\hybrid_retriever.py
-- C:\Users\rahul\Nyaymalaw-5.0\training\few_shot_retriever.py
+Primary runtime files:
+  agents/orchestrator.py
+  agents/tool_registry.py
+  agents/intake/stage1_opening.py
+  agents/intake/stage5_draft.py
+  retrieval/retriever.py
+  retrieval/guard.py
+  platform/llm.py
+  mcp_server.py
+  api_server.py

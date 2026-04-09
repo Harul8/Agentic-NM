@@ -669,12 +669,7 @@ body {
 }
 
 .chat-composer-controls {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 10px;
-  margin-top: 8px;
-  margin-bottom: 6px;
+  display: none; /* replaced by in-card footer row */
 }
 
 .chat-model-select {
@@ -791,23 +786,6 @@ body {
 /* No scrollbar – collapsible content flows naturally; parent chat scrolls */
 .progress-steps-outer {
   margin-top: 4px;
-}
-
-.progress-display .progress-retrieval-diagnostics {
-  margin-bottom: 12px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.progress-display .progress-retrieval-detail {
-  margin-top: 6px;
-}
-
-.progress-display .progress-retrieved-list {
-  margin: 4px 0 8px;
-  padding-left: 1.1rem;
-  font-size: 0.78rem;
-  line-height: 1.45;
 }
 
 .progress-steps-wrapper {
@@ -980,88 +958,275 @@ body {
   text-align: center;
 }
 
-/* Input area - ChatGPT style fixed bottom (disclaimer stays in chat window, above eval pane) */
+/* ── Input area ─────────────────────────────────────────────────────────── */
 .chat-input-wrapper {
   flex-shrink: 0;
-  padding: 16px 24px 4px;
+  padding: 12px 20px 8px;
   background: var(--bg);
-  border-top: 1px solid var(--border);
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
 }
 
-
+/* Card-style composer container */
 .chat-input-container {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 14px 10px 18px;
+  flex-direction: column;
+  gap: 0;
+  padding: 12px 14px 10px 16px;
   background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.05);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .chat-input-container:focus-within {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 2px var(--accent-bg);
+  border-color: rgba(0, 0, 0, 0.16);
+  box-shadow: 0 3px 16px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
 }
 
+/* Textarea — full-width, no border, inside card */
 .chat-input {
   flex: 1;
-  padding: 8px 0;
+  width: 100%;
+  padding: 2px 0 8px;
   font-size: var(--chat-user-text-size);
   font-family: var(--sans);
-  color: #000;
-  background: #fff;
+  color: #111;
+  background: transparent;
   border: none;
   outline: none;
   resize: none;
-  min-height: 24px;
+  min-height: 28px;
   max-height: 200px;
+  line-height: 1.5;
+  box-sizing: border-box;
 }
 
 .chat-input::placeholder {
-  color: #666;
+  color: #a1a1aa;
 }
 
-.chat-input:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+/* Footer row inside the card */
+.chat-input-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2px;
 }
 
-.chat-send {
+.chat-input-footer-left {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chat-input-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Upload / attachment button (now a + icon in footer) */
+.chat-upload-btn {
   flex-shrink: 0;
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #9ca3af;
+  background: transparent;
+  color: #71717a;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+  padding: 0;
+}
+
+.chat-upload-btn:hover {
+  color: #374151;
+  background: #f4f4f5;
+}
+
+/* Send button — circular, lives in footer */
+.chat-send {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #18181b;
   color: #fff;
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  transition: background 0.2s, opacity 0.2s;
-  align-self: flex-end;
-  opacity: 0;
-  transition: opacity 0.15s ease;
-}
-
-/* Show send icon only when hovering on the input container or when focused (typing) */
-.chat-input-container:hover .chat-send,
-.chat-input-container:focus-within .chat-send {
+  transition: background 0.15s, opacity 0.15s;
   opacity: 1;
 }
 
 .chat-send:hover:not(:disabled) {
-  background: #6b7280;
+  background: #3f3f46;
 }
 
 .chat-send:disabled {
-  opacity: 0.5;
+  opacity: 0.25;
+  cursor: default;
+}
+
+/* Stop button — red filled, always visible */
+.chat-send--stop {
+  background: #ef4444;
+  opacity: 1 !important;
+}
+.chat-send--stop:hover {
+  background: #dc2626;
+}
+
+/* Queue button — pill with label, outlined */
+.chat-send--queue {
+  width: auto;
+  border-radius: 20px;
+  padding: 0 12px 0 8px;
+  gap: 5px;
+  background: transparent;
+  color: #52525b;
+  border: 1.5px solid #d4d4d8;
+  opacity: 1 !important;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+.chat-send--queue:hover {
+  background: #f4f4f5;
+  border-color: #a1a1aa;
+  color: #18181b;
+}
+.chat-send-label {
+  line-height: 1;
+}
+
+/* Inline model selector inside the footer */
+.chat-model-select--inline {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background: transparent;
+  color: #71717a;
+  font-size: 0.8rem;
+  font-family: var(--sans);
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 8px;
+  transition: background 0.15s, color 0.15s;
+  line-height: 1.2;
+}
+.chat-model-select--inline:hover {
+  background: #f4f4f5;
+  color: #18181b;
+}
+.chat-model-select--inline:focus {
+  outline: none;
+  background: #f4f4f5;
+}
+
+.chat-upload-btn:disabled {
+  opacity: 0.4;
   cursor: not-allowed;
+}
+
+/* Stop/cancel state while a file is uploading */
+.chat-upload-btn--stop {
+  color: #ef4444;
+}
+.chat-upload-btn--stop:hover {
+  color: #dc2626;
+  background: rgba(239, 68, 68, 0.08);
+}
+
+/* ── Message queue (above the input, shown while processing) ────────────── */
+.chat-queue {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 4px 2px;
+}
+
+.chat-queue-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px 5px 8px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  color: #6b7280;
+  line-height: 1.3;
+}
+
+.chat-queue-index {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #d1d5db;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-queue-text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #374151;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.chat-queue-actions {
+  flex-shrink: 0;
+  display: flex;
+  gap: 2px;
+}
+
+.chat-queue-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s, background 0.15s;
+}
+
+.chat-queue-btn:hover {
+  color: #374151;
+  background: #e5e7eb;
+}
+
+.chat-queue-btn--delete:hover {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 0.8s linear infinite;
 }
 
 .chat-disclaimer {
@@ -1916,10 +2081,10 @@ details.sidebar-section--active > .sidebar-list-scroll {
 }
 
 .chat-history-group-label {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 600;
   color: #888;
-  text-transform: none;
+  text-transform: uppercase;
   letter-spacing: 0.02em;
   margin-bottom: 4px;
   padding: 0 2px;
@@ -2020,40 +2185,20 @@ details.sidebar-section--active > .sidebar-list-scroll {
   background: rgba(220, 53, 69, 0.1);
 }
 
+/* Starred star button — always gold, always visible */
 .chat-history-icon-btn--starred {
-  opacity: 0.9;
-  color: #d4a017;
+  color: #f59e0b !important;
+  opacity: 1 !important;
 }
 
 .chat-history-icon-btn--starred:hover {
-  color: #c19000;
-  background: rgba(212, 160, 23, 0.12);
+  color: #d97706 !important;
+  background: rgba(245, 158, 11, 0.1);
 }
 
-.entry-router-options {
-  display: flex;
-  gap: 8px;
-  margin-top: 10px;
-  flex-wrap: wrap;
-}
-
-.entry-router-option-btn {
-  border: 1px solid #c8d3ff;
-  background: #f5f8ff;
-  color: #1948b8;
-  border-radius: 999px;
-  padding: 6px 12px;
-  font-size: 0.78rem;
-  cursor: pointer;
-}
-
-.entry-router-option-btn:hover:not(:disabled) {
-  background: #e9efff;
-}
-
-.entry-router-option-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+/* Starred group header — slightly gold tint */
+.chat-history-group--starred .chat-history-group-label {
+  color: #d97706;
 }
 
 .chat-history-rename-row {
@@ -2160,12 +2305,11 @@ details.sidebar-section--active > .sidebar-list-scroll {
 }
 
 .chat-center-input-wrapper .chat-input-container {
-  padding: 15px 18px 15px 22px;
-  min-height: 56px;
+  padding: 14px 14px 10px 16px;
 }
 
 .chat-center-input-wrapper .chat-input {
-  min-height: 36px;
+  min-height: 40px;
   max-height: 300px;
 }
 
@@ -3504,6 +3648,8 @@ details.sidebar-section--active > .sidebar-list-scroll {
   white-space: nowrap;
 }
 
+
+
 /* Staged bare-act / precedent guidance */
 .message-staged-guidance {
   width: 100%;
@@ -4183,3 +4329,75 @@ details.sidebar-section--active > .sidebar-list-scroll {
   color: var(--text-h);
   margin-bottom: 6px;
 }
+
+/* ── Advocate Review Panel (Item 20) ─────────────────────────────────────── */
+.advocate-review-panel {
+  margin-top: 18px;
+  border: 1px solid rgba(99, 102, 241, 0.22);
+  border-radius: 8px;
+  background: rgba(99, 102, 241, 0.03);
+  overflow: hidden;
+}
+
+.advocate-review-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-h);
+  list-style: none;
+}
+.advocate-review-summary::-webkit-details-marker { display: none; }
+
+.advocate-review-label { font-size: 0.9rem; font-weight: 700; }
+.advocate-review-hint  { font-size: 0.78rem; font-weight: 400; opacity: 0.6; }
+
+.advocate-review-body {
+  padding: 4px 14px 14px;
+  border-top: 1px solid rgba(99, 102, 241, 0.12);
+}
+
+.advocate-review-section { margin-top: 12px; }
+.advocate-review-section-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.55;
+  margin-bottom: 6px;
+}
+
+.advocate-review-dispute { margin-bottom: 10px; }
+.advocate-review-dispute-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-h);
+  margin-bottom: 3px;
+}
+.advocate-review-section-row {
+  font-size: 0.8rem;
+  padding: 2px 0;
+  color: var(--text-body, #374151);
+}
+.advocate-review-act  { font-weight: 600; }
+.advocate-review-sec  { opacity: 0.75; }
+.advocate-review-sec-title { opacity: 0.6; font-style: italic; }
+
+.advocate-review-prayer-list {
+  margin: 0; padding-left: 18px; font-size: 0.85rem;
+}
+.advocate-review-prayer-item { margin-bottom: 4px; line-height: 1.45; }
+.advocate-review-relief { font-weight: 500; }
+.advocate-review-forum { opacity: 0.65; font-size: 0.82rem; }
+.advocate-review-urgent { color: #dc2626; font-size: 0.78rem; margin-left: 4px; }
+
+.advocate-review-docs-list { margin: 0; padding: 0; list-style: none; font-size: 0.84rem; }
+.advocate-review-doc-item { display: flex; align-items: baseline; gap: 5px; padding: 3px 0; }
+.advocate-review-doc-item.doc-essential .doc-name { font-weight: 600; }
+.doc-tick  { font-size: 0.9rem; min-width: 16px; }
+.doc-name  { }
+.doc-purpose { opacity: 0.6; font-size: 0.79rem; }

@@ -79,7 +79,7 @@ def _feedback_tags_for_test(test_id: int) -> list[str]:
 
 def _run_intake(conversation: list, user_message: str) -> dict:
     """Call the fact collector and return the parsed result dict."""
-    from services.fact_collector import get_next_question_or_complete
+    from pipeline.collector import get_next_question_or_complete
     return get_next_question_or_complete(conversation, user_message)
 
 

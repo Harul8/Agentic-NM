@@ -101,7 +101,7 @@ TEST_QUERIES = [
 ]
 
 try:
-    from retrieval.hybrid_retriever import search_bare_acts_auto
+    from core.retriever import search_bare_acts_auto
     print("  Running 5 test queries …\n")
     for label, query in TEST_QUERIES:
         results = search_bare_acts_auto(query, top_k=3)

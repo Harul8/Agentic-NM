@@ -13,28 +13,33 @@ from html import escape as _html_escape
 from queue import Queue, Empty
 from typing import List, Optional
 
-from fastapi import BackgroundTasks, FastAPI, Query, HTTPException, Depends, Header, Request
+from fastapi import BackgroundTasks, FastAPI, Query, HTTPException, Depends, Header, Request, UploadFile, File
 from fastapi.responses import FileResponse, JSONResponse, StreamingResponse, HTMLResponse
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel, Field
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
-from agents.Legal_Research.act_case_fusion_agent import fuse_bare_act_and_case_law
-from services.interactive_chat import process_chat
-from services.response_generator_v2 import generate_response_v2
-from services.response_feedback_store import (
+from retrieval.retriever import fuse_bare_act_and_case_law
+from pipeline.chat import process_chat
+try:
+    from agents.intake.stage5_draft import build_legal_draft as _build_legal_draft
+    _STAGE5_ENABLED = True
+except Exception as _s5_err:
+    _STAGE5_ENABLED = False
+    _build_legal_draft = None
+from retrieval.generator import generate_response_v2
+from platform.feedback.store import (
     RESPONSE_FEEDBACK_TAGS,
     append_response_feedback,
     feedback_store_path,
 )
-from llm.ollama_client import check_ollama_health, get_last_model_used, warmup_ollama_model
-from llm.config import OLLAMA_MODEL, OLLAMA_MODEL_FAST, OLLAMA_WARM_ANALYSIS_AT_STARTUP
+from platform.llm import check_ollama_health, get_last_model_used
 
 # Feedback logging (non-critical â€” import errors must not crash the server)
 try:
-    from services.feedback_logger import log_interaction as _log_interaction
-    from services.ai_reviewer import run_ai_review as _run_ai_review
+    from platform.feedback.logger import log_interaction as _log_interaction
+    from platform.feedback.reviewer import run_ai_review as _run_ai_review
     _FEEDBACK_ENABLED = True
 except Exception as _fb_import_err:
     _FEEDBACK_ENABLED = False
@@ -263,7 +268,7 @@ def _init_auth_db():
 _init_auth_db()
 
 # Phase 4: Ensure tier columns exist (idempotent migration)
-from services.tier_manager import (
+from platform.tiers import (
     ensure_tier_columns,
     check_query_limit,
     increment_query_count,
@@ -386,7 +391,7 @@ def _normalize_workflow_state(raw_state: Optional[dict], messages: Optional[list
     facts = facts.strip()
 
     stage = (state.get("stage") or "").strip().lower()
-    if stage not in {"entry_router", "await_facts", "interview", "done", "stage1_intake", "stage2_deepdive", "stage3_vetting", "stage4_remedy", "stage5_draft", "stage6_review", "finalized"}:
+    if stage not in {"await_facts", "interview", "done"}:
         stage = "done" if msgs else "await_facts"
 
     current_question = state.get("currentQuestion")
@@ -417,30 +422,10 @@ def _normalize_workflow_state(raw_state: Optional[dict], messages: Optional[list
         last_response_type = ""
     last_response_type = last_response_type.strip()
 
-    # Stage 1 and Stage 2 intake states — passed through opaquely
+    # Preserve Stage 1 structured intake state (opaque blob — pass through as-is)
     intake_state = state.get("intakeState")
     if not isinstance(intake_state, dict):
         intake_state = None
-
-    stage2_state = state.get("stage2State")
-    if not isinstance(stage2_state, dict):
-        stage2_state = None
-
-    stage3_state = state.get("stage3State")
-    if not isinstance(stage3_state, dict):
-        stage3_state = None
-
-    stage4_state = state.get("stage4State")
-    if not isinstance(stage4_state, dict):
-        stage4_state = None
-
-    stage6_state = state.get("stage6State")
-    if not isinstance(stage6_state, dict):
-        stage6_state = None
-
-    entry_state = state.get("entryState")
-    if not isinstance(entry_state, dict):
-        entry_state = None
 
     return {
         "stage": stage,
@@ -451,11 +436,6 @@ def _normalize_workflow_state(raw_state: Optional[dict], messages: Optional[list
         "factsSummary": facts_summary,
         "lastResponseType": last_response_type,
         "intakeState": intake_state,
-        "stage2State": stage2_state,
-        "stage3State": stage3_state,
-        "stage4State": stage4_state,
-        "stage6State": stage6_state,
-        "entryState": entry_state,
     }
 
 
@@ -678,6 +658,7 @@ class SubmitCaseRequest(BaseModel):
     # chat_mode: "legal_opinion" | "legal_research" | "general" (optional; default router when empty)
     mode: str | None = None
     model_override: str | None = None
+    workflowState: dict = Field(default_factory=dict)
 
 
 class QAPair(BaseModel):
@@ -691,6 +672,7 @@ class InterviewStepRequest(BaseModel):
     qa_history: list[QAPair] = []
     mode: str | None = None      # "legal_opinion" | "legal_research" | "general"
     model_override: str | None = None
+    workflowState: dict = Field(default_factory=dict)
 
 
 class ContinueChatRequest(BaseModel):
@@ -948,7 +930,7 @@ def _chat_error_fallback(detail: str = "") -> dict:
     """Return a safe 200 response when chat processing fails so frontend does not see 500.
     We try to generate a message from the LLM; if that also fails we use a minimal technical note."""
     try:
-        from llm.ollama_client import ask_llm
+        from platform.llm import ask_llm
         error_context = f" (Technical detail: {detail})" if detail else ""
         msg = ask_llm(
             f"You are a legal assistant. Something went wrong while processing the user's request.{error_context} "
@@ -1081,7 +1063,33 @@ def _fire_feedback_log_research(result: dict, query: str, session_ref: str = "")
     t.start()
 
 
-def _map_chat_result_to_ui(result: dict) -> dict:
+def _safe_build_advocate_review(
+    bare_act_sections: list,
+    facts_summary: str,
+    intake_state: dict | None = None,
+) -> dict | None:
+    """
+    Build the advocate-review JSON brief from Stage 5.
+    Returns None if Stage 5 is disabled or if it raises.
+    Called only when phase == "done" with a legal_opinion response.
+    """
+    if not _STAGE5_ENABLED or not _build_legal_draft:
+        return None
+    if not bare_act_sections:
+        return None
+    try:
+        result = _build_legal_draft(
+            intake_state=intake_state,
+            bare_act_sections=bare_act_sections,
+            facts_summary=facts_summary or "",
+        )
+        return result.get("advocate_review")
+    except Exception as _ar_err:
+        logger.warning("Stage5 advocate_review build failed: %s", _ar_err)
+        return None
+
+
+def _map_chat_result_to_ui(result: dict, pre_draft_msg: str = "") -> dict:
     """Map process_chat result to the shape the frontend expects (status, next_question, etc.)."""
     phase = result.get("phase")
     response_type = result.get("response_type")  # "search_results", "lookup_results", "legal_opinion"
@@ -1104,6 +1112,7 @@ def _map_chat_result_to_ui(result: dict) -> dict:
             "model_used": get_last_model_used(),
             "analysis_stage": analysis_stage,
             "facts_summary": facts_summary,
+            "intake_state": result.get("intake_state") or None,
         }
     if phase == "done" and result.get("response"):
         resp = result["response"]
@@ -1111,21 +1120,20 @@ def _map_chat_result_to_ui(result: dict) -> dict:
         case_laws = resp.get("case_laws") or []
         internet_case_laws = resp.get("internet_case_laws") or []
         all_case_laws = case_laws + internet_case_laws
-        # Combine greeting/acknowledgment with explanation; avoid showing the same content twice
-        greeting = (result.get("message") or "").strip()
+        # Item 19: merge pre-draft summary with explanation.
+        # pre_draft_msg is the Stage 1 closing / Stage 2 opening summary generated
+        # before response_generation ran. Combine: pre_draft → explanation.
+        effective_greeting = pre_draft_msg.strip() or (result.get("message") or "").strip()
         explanation = (resp.get("explanation") or "").strip()
-        if greeting and explanation:
-            # If they are the same or one contains the other, show only once (the longer)
-            if greeting == explanation:
+        if effective_greeting and explanation:
+            if effective_greeting == explanation or effective_greeting in explanation:
                 combined_text = explanation
-            elif greeting in explanation:
-                combined_text = explanation
-            elif explanation in greeting:
-                combined_text = greeting
+            elif explanation in effective_greeting:
+                combined_text = effective_greeting
             else:
-                combined_text = f"{greeting}\n\n{explanation}"
+                combined_text = f"{effective_greeting}\n\n{explanation}"
         else:
-            combined_text = greeting or explanation
+            combined_text = effective_greeting or explanation
         # Ensure we never send an empty or trivial intro (e.g. just "âš–")
         if not combined_text or len(combined_text.strip()) < 20:
             combined_text = "I've prepared an initial response based on the information currently available."
@@ -1133,25 +1141,30 @@ def _map_chat_result_to_ui(result: dict) -> dict:
         # Case laws are now nested under bare_acts[].related_case_laws
         separate_case_laws = []
         if bare_acts and len(bare_acts) > 0:
-            # Check if any bare act has nested case laws
             has_nested_case_laws = any(ba.get("related_case_laws") for ba in bare_acts)
             if not has_nested_case_laws:
-                # Only return separate case_laws if no nested case laws exist
                 separate_case_laws = all_case_laws
-        
+
+        # Item 20: build advocate-review JSON brief from Stage 5
+        advocate_review = _safe_build_advocate_review(
+            bare_act_sections=bare_acts,
+            facts_summary=facts_summary,
+        )
+
         out = {
             "status": "done",
             "response_type": response_type or "legal_opinion",
             "opinion_text": combined_text,
             "bare_acts": bare_acts,
-            "case_laws": separate_case_laws,  # Empty if case laws are nested under bare acts
+            "case_laws": separate_case_laws,
             "next_steps": resp.get("next_steps") or [],
             "next_steps_summary": (resp.get("next_steps_summary") or "").strip(),
             "retrieved": all_case_laws + bare_acts,
-            "progress": resp.get("progress"),  # Include progress tracking data
+            "progress": resp.get("progress"),
             "model_used": get_last_model_used(),
             "analysis_stage": analysis_stage,
             "facts_summary": facts_summary,
+            "advocate_review": advocate_review,  # Item 20: structured brief for UI panel
         }
         return out
     if phase == "done":
@@ -2244,138 +2257,109 @@ async def _stream_sse_queue(queue: Queue, loop):
             yield f"event: token\ndata: {json.dumps(payload)}\n\n"
 
 
-@app.get("/intake/opening")
-def intake_opening(model_override: str | None = None):
-    """Return the AI's warm opening message for Stage 0 entry routing."""
-    from services.entry_router import generate_entry_opening
-    msg = generate_entry_opening(model_override=model_override or None)
-    return {"message": msg}
-
-
-@app.post("/intake/stage5_draft/stream")
-def intake_stage5_draft_stream(request: dict):
+@app.post("/upload-document")
+async def upload_document(file: UploadFile = File(...)):
     """
-    SSE endpoint: run Stage 5 draft generation and stream the output.
+    Extract plain text from an uploaded document or image.
+    Supported formats:
+      - Text-based PDF (.pdf)          → pypdf text extraction
+      - Scanned/image-based PDF (.pdf) → pymupdf renders pages → OpenAI Vision OCR
+      - Word document (.docx, .doc)    → python-docx paragraph extraction
+      - Images (.jpg, .jpeg, .png,
+                .webp, .tiff, .bmp)   → OpenAI Vision OCR directly
 
-    Body (JSON):
-      {
-        "stage4_state"   : <the stage4_state dict from Stage 4>,
-        "model_override" : "<optional model string>"
-      }
-
-    SSE events emitted:
-      step   — progress step updates
-      token  — individual draft tokens (for real-time display)
-      result — final JSON payload when complete
+    Returns {"text": str, "filename": str, "char_count": int, "method": str}.
+    The caller injects the text into the chat composer for review before submitting.
     """
-    from services.legal_draft_stage5 import generate_stage5_draft
-    import queue as _queue
+    import io, base64
+    from platform.llm import ocr_pages_with_vision
 
-    stage4_state  = request.get("stage4_state") or {}
-    model_override = request.get("model_override") or None
+    _IMAGE_EXTS = {"jpg", "jpeg", "png", "webp", "tiff", "tif", "bmp"}
+    _IMAGE_MIME = {
+        "jpg": "image/jpeg", "jpeg": "image/jpeg", "png": "image/png",
+        "webp": "image/webp", "tiff": "image/tiff", "tif": "image/tiff",
+        "bmp": "image/bmp",
+    }
+    # Characters per page below this threshold → treat PDF as scanned
+    _SCANNED_CHARS_THRESHOLD = 80
 
-    q: _queue.Queue = _queue.Queue()
+    filename = (file.filename or "").strip()
+    ext = filename.rsplit(".", 1)[-1].lower() if "." in filename else ""
+    allowed = {"pdf", "docx", "doc"} | _IMAGE_EXTS
+    if ext not in allowed:
+        raise HTTPException(
+            status_code=400,
+            detail=(
+                "Unsupported file type. Accepted: PDF (.pdf), Word (.docx), "
+                "or image (.jpg, .jpeg, .png, .webp, .tiff, .bmp)."
+            ),
+        )
 
-    def _step_cb(step: dict):
-        q.put(("step", step))
+    content = await file.read()
+    text = ""
+    method = "text"
 
-    def _token_cb(token: str):
-        q.put(("token", {"content": token}))
+    try:
+        # ── Image files ───────────────────────────────────────────────────────
+        if ext in _IMAGE_EXTS:
+            mime = _IMAGE_MIME.get(ext, "image/png")
+            b64 = base64.b64encode(content).decode()
+            text = ocr_pages_with_vision([(b64, mime)])
+            method = "vision_ocr"
 
-    def _run():
-        try:
-            result = generate_stage5_draft(
-                stage4_state,
-                model_override=model_override,
-                token_callback=_token_cb,
-                step_callback=_step_cb,
-            )
-            q.put(("result", {
-                "status":            "stage5_draft",
-                "draft_text":        result["draft_text"],
-                "stage5_state":      result["stage5_state"],
-                "document_type":     result["document_type"],
-                "document_type_label": result["document_type_label"],
-                "citations":         result["citations"],
-                "retrieved_bare_acts": [
-                    {
-                        "source": c.get("act_name") or c.get("source"),
-                        "section": c.get("section_number") or c.get("section"),
-                        "subsection": c.get("subsection") or c.get("sub_section") or c.get("clause"),
-                        "section_title": c.get("section_title") or c.get("title"),
-                        "score": c.get("rerank_score"),
-                    }
-                    for c in result["retrieved_bare_acts"][:10]
-                ],
-                "retrieved_case_laws": [
-                    {
-                        "source": c.get("case_name") or c.get("source"),
-                        "year": c.get("year"),
-                        "court": c.get("court"),
-                        "paragraph": c.get("paragraph_num") or c.get("para_num") or c.get("paragraph_id"),
-                        "citation": c.get("citation"),
-                        "score": c.get("rerank_score"),
-                    }
-                    for c in result["retrieved_case_laws"][:8]
-                ],
-            }))
-        except Exception as exc:
-            logger.error("Stage5 draft generation failed: %s", exc, exc_info=True)
-            q.put(("result", {"status": "error", "message": str(exc)}))
-        finally:
-            q.put(("done", None))
+        # ── PDF ───────────────────────────────────────────────────────────────
+        elif ext == "pdf":
+            from pypdf import PdfReader
+            reader = PdfReader(io.BytesIO(content))
+            pages_text = [page.extract_text() or "" for page in reader.pages]
+            extracted = "\n\n".join(p.strip() for p in pages_text if p.strip())
 
-    import threading
-    threading.Thread(target=_run, daemon=True).start()
+            # Decide if scanned: average chars per page is very low
+            num_pages = max(len(reader.pages), 1)
+            avg_chars = len(extracted) / num_pages
+            if avg_chars >= _SCANNED_CHARS_THRESHOLD:
+                text = extracted
+                method = "text"
+            else:
+                # Render each page to an image and OCR via vision
+                import fitz  # pymupdf
+                doc = fitz.open(stream=content, filetype="pdf")
+                images_b64: list[tuple[str, str]] = []
+                for page in doc:
+                    mat = fitz.Matrix(2.0, 2.0)  # 2× zoom → better OCR accuracy
+                    pix = page.get_pixmap(matrix=mat)
+                    img_bytes = pix.tobytes("png")
+                    images_b64.append((base64.b64encode(img_bytes).decode(), "image/png"))
+                doc.close()
+                text = ocr_pages_with_vision(images_b64)
+                method = "vision_ocr"
 
-    def _generate():
-        while True:
-            kind, payload = q.get()
-            if kind == "done":
-                break
-            if kind == "result":
-                # Emit as "done" so consumeSSEStream's onDone handler fires
-                yield f"event: done\ndata: {json.dumps(payload, ensure_ascii=False)}\n\n"
-            elif kind == "step":
-                yield f"event: step\ndata: {json.dumps(payload)}\n\n"
-            elif kind == "token":
-                yield f"event: token\ndata: {json.dumps(payload)}\n\n"
+        # ── Word document ─────────────────────────────────────────────────────
+        else:
+            import docx as _docx
+            doc = _docx.Document(io.BytesIO(content))
+            paragraphs = [p.text.strip() for p in doc.paragraphs if p.text.strip()]
+            text = "\n\n".join(paragraphs)
+            method = "text"
 
-    return StreamingResponse(_generate(), media_type="text/event-stream")
+    except HTTPException:
+        raise
+    except Exception as exc:
+        logger.warning("Document extraction failed for %s: %s", filename, exc)
+        raise HTTPException(
+            status_code=422,
+            detail="Could not extract text from the document. The file may be corrupted or unsupported.",
+        )
 
-
-@app.post("/intake/stage6_opening")
-def intake_stage6_opening(request: dict):
-    """
-    Generate the Stage 6 handover note and initial state.
-
-    Body (JSON):
-      {
-        "stage5_state"   : <stage5_state dict>,
-        "draft_text"     : "<the generated draft text>",
-        "model_override" : "<optional>"
-      }
-    """
-    from services.legal_review_stage6 import generate_stage6_opening, new_stage6_state
-    stage5_state   = request.get("stage5_state") or {}
-    draft_text     = request.get("draft_text") or ""
-    model_override = request.get("model_override") or None
-    s6_state   = new_stage6_state(stage5_state, draft_text)
-    s6_opening = generate_stage6_opening(stage5_state, draft_text, model_override=model_override)
-    return {"message": s6_opening, "stage6_state": s6_state}
-
-
-@app.post("/intake/stage2_opening")
-def intake_stage2_opening(request: dict, model_override: str | None = None):
-    """
-    Generate the Stage 2 transition message and initial state.
-    Body: the Stage 1 intake_state dict.
-    """
-    from services.legal_intake_stage2 import generate_stage2_opening, new_stage2_state
-    stage1_state = request if isinstance(request, dict) else {}
-    s2_state  = new_stage2_state(stage1_state)
-    s2_opening = generate_stage2_opening(stage1_state, model_override=model_override or None)
-    return {"message": s2_opening, "stage2_state": s2_state}
+    if not text.strip():
+        raise HTTPException(
+            status_code=422,
+            detail=(
+                "No readable text found. For scanned documents this usually means the "
+                "OpenAI Vision API call failed — check your OPENAI_API_KEY and try again."
+            ),
+        )
+    return {"text": text.strip(), "filename": filename, "char_count": len(text), "method": method}
 
 
 @app.post("/chat")
@@ -2431,6 +2415,7 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
             "retrieved": [],
         }
     try:
+        workflow_state = _normalize_workflow_state(request.workflowState)
         conv = [{"role": "user", "content": text}]
         result = process_chat(
             conversation=conv,
@@ -2439,9 +2424,12 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
             facts_summary=None,
             chat_mode=mode,
             model_override=model_override,
+            workflow_state=workflow_state,
         )
+        pre_draft_msg = ""
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
-            conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
+            pre_draft_msg = result.get("message", "")  # Item 19: preserve pre-draft summary
+            conv = conv + [{"role": "assistant", "content": pre_draft_msg}]
             result = process_chat(
                 conversation=conv,
                 current_message=result["facts_summary"],
@@ -2453,12 +2441,13 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
                 result_count=result.get("result_count"),
                 chat_mode=mode,
                 model_override=model_override,
+                workflow_state=workflow_state,
                 analysis_mode=result.get("analysis_mode"),
             )
         if result.get("phase") == "done":
             increment_query_count(user["id"])
             _fire_feedback_log(result, facts=text, session_ref=str(user.get("id", "")))
-        return _map_chat_result_to_ui(result)
+        return _map_chat_result_to_ui(result, pre_draft_msg=pre_draft_msg)
     except Exception as e:
         return _chat_error_fallback(str(e)[:200])
 
@@ -2482,6 +2471,7 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
         }
 
     try:
+        workflow_state = _normalize_workflow_state(request.workflowState)
         # Build conversation from interview transcript:
         # - user: overall facts
         # - assistant/user alternation for each Q/A turn
@@ -2498,10 +2488,13 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
             facts_summary=None,
             chat_mode=mode,
             model_override=model_override,
+            workflow_state=workflow_state,
         )
 
+        pre_draft_msg = ""
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
-            conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
+            pre_draft_msg = result.get("message", "")  # Item 19
+            conv = conv + [{"role": "assistant", "content": pre_draft_msg}]
             result = process_chat(
                 conversation=conv,
                 current_message=result["facts_summary"],
@@ -2513,6 +2506,7 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
                 result_count=result.get("result_count"),
                 chat_mode=mode,
                 model_override=model_override,
+                workflow_state=workflow_state,
                 analysis_mode=result.get("analysis_mode"),
             )
 
@@ -2520,7 +2514,7 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
             increment_query_count(user["id"])
             _fire_feedback_log(result, facts=facts, session_ref=str(user.get("id", "")))
 
-        return _map_chat_result_to_ui(result)
+        return _map_chat_result_to_ui(result, pre_draft_msg=pre_draft_msg)
     except Exception as e:
         return _chat_error_fallback(str(e)[:200])
 
@@ -2556,8 +2550,10 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
             model_override=model_override,
             workflow_state=workflow_state,
         )
+        pre_draft_msg = ""
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
-            conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": result.get("message", "")}]
+            pre_draft_msg = result.get("message", "")  # Item 19
+            conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": pre_draft_msg}]
             result = process_chat(
                 conversation=conv,
                 current_message=result["facts_summary"],
@@ -2575,7 +2571,7 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
         if result.get("phase") == "done":
             increment_query_count(user["id"])
             _fire_feedback_log(result, facts=message, session_ref=str(user.get("id", "")))
-        return _map_chat_result_to_ui(result)
+        return _map_chat_result_to_ui(result, pre_draft_msg=pre_draft_msg)
     except Exception as e:
         return _chat_error_fallback(str(e)[:200])
 
@@ -2583,346 +2579,6 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
 def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, user_id: str, mode: str | None = None, model_override: str | None = None, workflow_state: dict | None = None) -> None:
     """Run the same logic as continue_chat, pushing progress to queue and finally the result."""
     try:
-        ws = workflow_state or {}
-        # ── Stage 0 entry router ──────────────────────────────────────────────
-        if ws.get("stage") == "entry_router":
-            from services.entry_router import process_turn as entry_process_turn
-            from services.legal_opinion_intake import process_turn as s1_process_turn
-
-            queue.put(("step", {"message": "Understanding what you need…", "icon": ""}))
-            session = {
-                "history": [{"role": m["role"], "content": m.get("content", "")} for m in conv],
-                "entry_state": ws.get("entryState"),
-            }
-            outcome = entry_process_turn(session, message, model_override=model_override)
-            route_to = outcome.get("route_to")
-
-            if route_to == "quick_legal_lookup":
-                lookup_query = outcome.get("lookup_query") or message
-                queue.put(("step", {"message": "Pulling relevant legal provisions…", "icon": ""}))
-
-                def progress_callback(progress_snapshot: dict):
-                    queue.put(("progress", progress_snapshot))
-                def step_callback(step_data: dict):
-                    queue.put(("step", step_data))
-                def token_callback(token: str):
-                    queue.put(("token", {"content": token}))
-
-                quick_result = process_chat(
-                    conversation=conv,
-                    current_message=lookup_query,
-                    phase="fact_collection",
-                    facts_summary=None,
-                    progress_callback=progress_callback,
-                    chat_mode="legal_research",
-                    step_callback=step_callback,
-                    token_callback=token_callback,
-                    model_override=model_override,
-                    workflow_state=workflow_state,
-                    search_strategy="local_only",
-                )
-                ui = _map_chat_result_to_ui(quick_result)
-                # If local retrieval found nothing, ask user before web search.
-                retrieved = ui.get("retrieved") or []
-                if not retrieved:
-                    entry_state = outcome.get("entry_state") or {}
-                    entry_state["pending_web_confirmation"] = True
-                    entry_state["lookup_topic"] = lookup_query
-                    queue.put(("result", {
-                        "status": "entry_router",
-                        "message": "I couldn't find strong local results for this topic. Do you want me to search the web for additional legal materials?",
-                        "entry_state": entry_state,
-                        "response_type": "entry_router",
-                        "next_workflow_state": {
-                            "stage": "entry_router",
-                            "entryState": entry_state,
-                        },
-                    }))
-                    return
-                ui["status"] = "entry_router"
-                ui["response_type"] = "quick_lookup"
-                ui["entry_state"] = outcome.get("entry_state")
-                ui["entry_router_message"] = outcome.get("reply")
-                ui["next_workflow_state"] = {
-                    "stage": "entry_router",
-                    "entryState": outcome.get("entry_state"),
-                }
-                queue.put(("result", ui))
-                return
-
-            if route_to == "quick_legal_lookup_web":
-                lookup_query = outcome.get("lookup_query") or message
-                queue.put(("step", {"message": "Searching web-backed legal sources…", "icon": ""}))
-
-                def progress_callback(progress_snapshot: dict):
-                    queue.put(("progress", progress_snapshot))
-                def step_callback(step_data: dict):
-                    queue.put(("step", step_data))
-                def token_callback(token: str):
-                    queue.put(("token", {"content": token}))
-
-                web_result = process_chat(
-                    conversation=conv,
-                    current_message=lookup_query,
-                    phase="fact_collection",
-                    facts_summary=None,
-                    progress_callback=progress_callback,
-                    chat_mode="legal_research",
-                    step_callback=step_callback,
-                    token_callback=token_callback,
-                    model_override=model_override,
-                    workflow_state=workflow_state,
-                    search_strategy="local_then_web",
-                )
-                ui = _map_chat_result_to_ui(web_result)
-                ui["status"] = "entry_router"
-                ui["response_type"] = "quick_lookup_web"
-                ui["entry_state"] = outcome.get("entry_state")
-                ui["entry_router_message"] = outcome.get("reply")
-                ui["next_workflow_state"] = {
-                    "stage": "entry_router",
-                    "entryState": outcome.get("entry_state"),
-                }
-                queue.put(("result", ui))
-                return
-
-            if route_to == "legal_opinion_workflow":
-                s1_session = {
-                    "history": [{"role": m["role"], "content": m.get("content", "")} for m in conv],
-                    "intake_state": ws.get("intakeState"),
-                }
-                s1_out = s1_process_turn(s1_session, message, model_override=model_override)
-                result = {
-                    "status": "stage1_intake",
-                    "message": s1_out["reply"],
-                    "entry_router_message": outcome.get("reply"),
-                    "intake_state": s1_out["intake_state"],
-                    "advance_to_stage2": s1_out["advance_to_stage2"],
-                    "urgency_signal": s1_out["urgency_signal"],
-                    "response_type": "stage1_intake",
-                    "next_workflow_state": {
-                        "stage": "stage1_intake",
-                        "entryState": outcome.get("entry_state"),
-                        "intakeState": s1_out["intake_state"],
-                    },
-                }
-                if s1_out["advance_to_stage2"]:
-                    from services.legal_intake_stage2 import generate_stage2_opening, new_stage2_state
-                    s2_state = new_stage2_state(s1_out["intake_state"])
-                    s2_opening = generate_stage2_opening(s1_out["intake_state"], model_override=model_override)
-                    result["stage2_opening"] = s2_opening
-                    result["stage2_state"] = s2_state
-                    result["next_workflow_state"] = {
-                        "stage": "stage2_deepdive",
-                        "entryState": outcome.get("entry_state"),
-                        "intakeState": s1_out["intake_state"],
-                        "stage2State": s2_state,
-                    }
-                queue.put(("result", result))
-                return
-
-            queue.put(("result", {
-                "status": "entry_router",
-                "message": outcome.get("reply"),
-                "entry_options": outcome.get("entry_options") or [],
-                "entry_state": outcome.get("entry_state"),
-                "response_type": "entry_router",
-                "next_workflow_state": {
-                    "stage": "entry_router",
-                    "entryState": outcome.get("entry_state"),
-                },
-            }))
-            return
-
-        # ── Stage 1 intake routing ────────────────────────────────────────────
-        if ws.get("stage") == "stage1_intake":
-            from services.legal_opinion_intake import process_turn as s1_process_turn
-            queue.put(("step", {"message": "Listening carefully…", "icon": ""}))
-            session = {
-                "history": [{"role": m["role"], "content": m.get("content", "")} for m in conv],
-                "intake_state": ws.get("intakeState"),
-            }
-            outcome = s1_process_turn(session, message, model_override=model_override)
-            result = {
-                "status": "stage1_intake",
-                "message": outcome["reply"],
-                "intake_state": outcome["intake_state"],
-                "advance_to_stage2": outcome["advance_to_stage2"],
-                "urgency_signal": outcome["urgency_signal"],
-                "response_type": "stage1_intake",
-                "next_workflow_state": {
-                    "stage": "stage1_intake",
-                    "intakeState": outcome["intake_state"],
-                },
-            }
-            if outcome["advance_to_stage2"]:
-                # Generate Stage 2 opening + initial state as part of this result
-                from services.legal_intake_stage2 import (
-                    generate_stage2_opening,
-                    new_stage2_state,
-                )
-                s2_state  = new_stage2_state(outcome["intake_state"])
-                s2_opening = generate_stage2_opening(outcome["intake_state"], model_override=model_override)
-                result["stage2_opening"]  = s2_opening
-                result["stage2_state"]    = s2_state
-                result["next_workflow_state"] = {
-                    "stage":       "stage2_deepdive",
-                    "intakeState": outcome["intake_state"],
-                    "stage2State": s2_state,
-                }
-                queue.put(("step", {"message": "Building detailed fact picture", "icon": "✓"}))
-            queue.put(("result", result))
-            return
-
-        # ── Stage 2 deep-dive routing ─────────────────────────────────────────
-        if ws.get("stage") == "stage2_deepdive":
-            from services.legal_intake_stage2 import process_turn as s2_process_turn
-            queue.put(("step", {"message": "Gathering case details…", "icon": ""}))
-            session = {
-                "history": [{"role": m["role"], "content": m.get("content", "")} for m in conv],
-                "stage2_state": ws.get("stage2State"),
-            }
-            outcome = s2_process_turn(session, message, model_override=model_override)
-            result = {
-                "status": "stage2_deepdive",
-                "message": outcome["reply"],
-                "stage2_state": outcome["stage2_state"],
-                "advance_to_stage3": outcome["advance_to_stage3"],
-                "urgency_signal": outcome["urgency_signal"],
-                "response_type": "stage2_deepdive",
-                "next_workflow_state": {
-                    "stage":       "stage2_deepdive",
-                    "intakeState": ws.get("intakeState"),
-                    "stage2State": outcome["stage2_state"],
-                },
-            }
-            if outcome["advance_to_stage3"]:
-                from services.legal_intake_stage3 import (
-                    generate_stage3_opening,
-                    new_stage3_state,
-                )
-                s3_state   = new_stage3_state(outcome["stage2_state"])
-                s3_opening = generate_stage3_opening(outcome["stage2_state"], model_override=model_override)
-                result["stage3_opening"] = s3_opening
-                result["stage3_state"]   = s3_state
-                result["next_workflow_state"] = {
-                    "stage":       "stage3_vetting",
-                    "intakeState": ws.get("intakeState"),
-                    "stage2State": outcome["stage2_state"],
-                    "stage3State": s3_state,
-                }
-                queue.put(("step", {"message": "Moving to case verification", "icon": "✓"}))
-            queue.put(("result", result))
-            return
-
-        # ── Stage 3 indirect vetting routing ──────────────────────────────────
-        if ws.get("stage") == "stage3_vetting":
-            from services.legal_intake_stage3 import process_turn as s3_process_turn
-            queue.put(("step", {"message": "Strengthening your account…", "icon": ""}))
-            session = {
-                "history":      [{"role": m["role"], "content": m.get("content", "")} for m in conv],
-                "stage3_state": ws.get("stage3State"),
-            }
-            outcome = s3_process_turn(session, message, model_override=model_override)
-            result = {
-                "status":           "stage3_vetting",
-                "message":          outcome["reply"],
-                "stage3_state":     outcome["stage3_state"],
-                "advance_to_stage4": outcome["advance_to_stage4"],
-                "urgency_signal":   outcome["urgency_signal"],
-                "response_type":    "stage3_vetting",
-                "next_workflow_state": {
-                    "stage":       "stage3_vetting",
-                    "intakeState": ws.get("intakeState"),
-                    "stage2State": ws.get("stage2State"),
-                    "stage3State": outcome["stage3_state"],
-                },
-            }
-            if outcome["advance_to_stage4"]:
-                from services.legal_intake_stage4 import (
-                    new_stage4_state,
-                    generate_stage4_opening,
-                )
-                queue.put(("step", {"message": "Vetting complete — assessing your legal options", "icon": "✓"}))
-                s4_state = new_stage4_state(outcome["stage3_state"])
-                stage4_opening, analysis = generate_stage4_opening(
-                    outcome["stage3_state"],
-                    model_override=model_override,
-                )
-                s4_state["remedy_analysis"] = analysis
-                # Seed the presented remedies list so confirmation can reference them
-                s4_state["remedies_presented"] = [r["name"] for r in (analysis.get("viable_remedies") or [])]
-                result["stage4_opening"] = stage4_opening
-                result["stage4_state"]   = s4_state
-                result["next_workflow_state"]["stage"]       = "stage4_remedy"
-                result["next_workflow_state"]["stage4State"] = s4_state
-
-            queue.put(("result", result))
-            return
-
-        # ── Stage 4 remedy routing ──────────────────────────────────────────
-        if ws.get("stage") == "stage4_remedy":
-            from services.legal_intake_stage4 import process_turn as s4_process_turn
-            queue.put(("step", {"message": "Confirming your remedy plan…", "icon": ""}))
-            session = {
-                "history":      [{"role": m["role"], "content": m.get("content", "")} for m in conv],
-                "stage4_state": ws.get("stage4State"),
-            }
-            outcome = s4_process_turn(session, message, model_override=model_override)
-            result = {
-                "status":             "stage4_remedy",
-                "message":            outcome["reply"],
-                "stage4_state":       outcome["stage4_state"],
-                "advance_to_stage5":  outcome["advance_to_stage5"],
-                "urgency_signal":     outcome["urgency_signal"],
-                "response_type":      "stage4_remedy",
-                "next_workflow_state": {
-                    "stage":       "stage4_remedy",
-                    "intakeState": ws.get("intakeState"),
-                    "stage2State": ws.get("stage2State"),
-                    "stage3State": ws.get("stage3State"),
-                    "stage4State": outcome["stage4_state"],
-                },
-            }
-            if outcome["advance_to_stage5"]:
-                result["next_workflow_state"]["stage"] = "stage5_draft"
-                queue.put(("step", {"message": "Remedy confirmed — preparing your documents", "icon": "✓"}))
-            queue.put(("result", result))
-            return
-
-        # ── Stage 6 advocate review routing ────────────────────────────────
-        if ws.get("stage") == "stage6_review":
-            from services.legal_review_stage6 import process_turn as s6_process_turn
-            queue.put(("step", {"message": "Processing your review instruction…", "icon": ""}))
-            session = {
-                "history":      [{"role": m["role"], "content": m.get("content", "")} for m in conv],
-                "stage6_state": ws.get("stage6State"),
-            }
-            outcome = s6_process_turn(session, message, model_override=model_override)
-            finalized = bool(outcome.get("finalized"))
-            result = {
-                "status":          "stage6_review",
-                "message":         outcome["reply"],
-                "updated_draft":   outcome["updated_draft"],
-                "stage6_state":    outcome["stage6_state"],
-                "intent":          outcome.get("intent", "qa"),
-                "finalized":       finalized,
-                "response_type":   "stage6_review",
-                "next_workflow_state": {
-                    "stage":       "stage6_review",
-                    "intakeState": ws.get("intakeState"),
-                    "stage2State": ws.get("stage2State"),
-                    "stage3State": ws.get("stage3State"),
-                    "stage4State": ws.get("stage4State"),
-                    "stage6State": outcome["stage6_state"],
-                },
-            }
-            if finalized:
-                result["next_workflow_state"]["stage"] = "finalized"
-                queue.put(("step", {"message": "Document finalised — ready to file", "icon": "✓"}))
-            queue.put(("result", result))
-            return
-
         queue.put(("step", {"message": "Starting analysis of your latest message", "icon": ""}))
         def progress_callback(progress_snapshot: dict):
             queue.put(("progress", progress_snapshot))
@@ -2943,8 +2599,10 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
             model_override=model_override,
             workflow_state=workflow_state,
         )
+        pre_draft_msg = ""
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
-            conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": result.get("message", "")}]
+            pre_draft_msg = result.get("message", "")  # Item 19
+            conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": pre_draft_msg}]
             result = process_chat(
                 conversation=conv,
                 current_message=result["facts_summary"],
@@ -2965,13 +2623,13 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
         if result.get("phase") == "done":
             increment_query_count(user_id)
             _fire_feedback_log(result, facts=message, session_ref=str(user_id))
-        queue.put(("result", _map_chat_result_to_ui(result)))
+        queue.put(("result", _map_chat_result_to_ui(result, pre_draft_msg=pre_draft_msg)))
     except Exception as e:
         logger.exception("Stream continue_chat failed")
         queue.put(("result", _chat_error_fallback(str(e)[:200])))
 
 
-def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: str | None = None, model_override: str | None = None) -> None:
+def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: str | None = None, model_override: str | None = None, workflow_state: dict | None = None) -> None:
     """Run submit_case logic with progress streaming."""
     try:
         queue.put(("step", {"message": "Reviewing the facts you shared", "icon": ""}))
@@ -2993,9 +2651,12 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: 
             step_callback=step_callback,
             token_callback=token_callback,
             model_override=model_override,
+            workflow_state=workflow_state,
         )
+        pre_draft_msg = ""
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
-            conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
+            pre_draft_msg = result.get("message", "")  # Item 19
+            conv = conv + [{"role": "assistant", "content": pre_draft_msg}]
             result = process_chat(
                 conversation=conv,
                 current_message=result["facts_summary"],
@@ -3010,18 +2671,19 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: 
                 step_callback=step_callback,
                 token_callback=token_callback,
                 model_override=model_override,
+                workflow_state=workflow_state,
                 analysis_mode=result.get("analysis_mode"),
             )
         if result.get("phase") == "done":
             increment_query_count(user_id)
             _fire_feedback_log(result, facts=text, session_ref=str(user_id))
-        queue.put(("result", _map_chat_result_to_ui(result)))
+        queue.put(("result", _map_chat_result_to_ui(result, pre_draft_msg=pre_draft_msg)))
     except Exception as e:
         logger.exception("Stream submit_case failed")
         queue.put(("result", _chat_error_fallback(str(e)[:200])))
 
 
-def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue, user_id: str, mode: str | None = None, model_override: str | None = None) -> None:
+def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue, user_id: str, mode: str | None = None, model_override: str | None = None, workflow_state: dict | None = None) -> None:
     """Run interview_step logic with progress streaming."""
     try:
         t_total = time.perf_counter()
@@ -3056,14 +2718,17 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
             step_callback=step_callback,
             token_callback=token_callback,
             model_override=model_override,
+            workflow_state=workflow_state,
         )
         _log_pipeline_step(
             "interview_step.process_chat.fact_collection",
             (time.perf_counter() - t_phase) * 1000,
             f"phase={result.get('phase')}",
         )
+        pre_draft_msg = ""
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
-            conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
+            pre_draft_msg = result.get("message", "")  # Item 19
+            conv = conv + [{"role": "assistant", "content": pre_draft_msg}]
             t_phase = time.perf_counter()
             result = process_chat(
                 conversation=conv,
@@ -3079,6 +2744,7 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
                 step_callback=step_callback,
                 token_callback=token_callback,
                 model_override=model_override,
+                workflow_state=workflow_state,
                 analysis_mode=result.get("analysis_mode"),
             )
             _log_pipeline_step(
@@ -3089,7 +2755,7 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
         if result.get("phase") == "done":
             increment_query_count(user_id)
             _fire_feedback_log(result, facts=facts, session_ref=str(user_id))
-        queue.put(("result", _map_chat_result_to_ui(result)))
+        queue.put(("result", _map_chat_result_to_ui(result, pre_draft_msg=pre_draft_msg)))
         _log_pipeline_step(
             "interview_step.total",
             (time.perf_counter() - t_total) * 1000,
@@ -3115,9 +2781,10 @@ async def submit_case_stream(request: SubmitCaseRequest, user: dict = Depends(_u
     queue = Queue()
     loop = asyncio.get_event_loop()
     user_id = user.get("id", _ANONYMOUS_EMAIL)
+    workflow_state = _normalize_workflow_state(request.workflowState)
 
     def run_in_thread():
-        _run_submit_case_with_progress(text, queue, user_id, mode, model_override)
+        _run_submit_case_with_progress(text, queue, user_id, mode, model_override, workflow_state=workflow_state)
 
     thread = __import__("threading").Thread(target=run_in_thread)
     thread.start()
@@ -3153,9 +2820,10 @@ async def interview_step_stream(request: InterviewStepRequest, user: dict = Depe
     queue = Queue()
     loop = asyncio.get_event_loop()
     user_id = user.get("id", _ANONYMOUS_EMAIL)
+    workflow_state = _normalize_workflow_state(request.workflowState)
 
     def run_in_thread():
-        _run_interview_step_with_progress(facts, qa_history, queue, user_id, mode=mode, model_override=model_override)
+        _run_interview_step_with_progress(facts, qa_history, queue, user_id, mode=mode, model_override=model_override, workflow_state=workflow_state)
 
     thread = __import__("threading").Thread(target=run_in_thread)
     thread.start()
@@ -3204,6 +2872,86 @@ async def continue_chat_stream(request: ContinueChatRequest, user: dict = Depend
         _run_continue_chat_with_progress(conv, message, queue, user_id, mode, model_override, workflow_state)
 
     thread = __import__("threading").Thread(target=run_in_thread)
+    thread.start()
+
+    async def event_generator():
+        async for event in _stream_sse_queue(queue, loop):
+            yield event
+
+    return StreamingResponse(
+        event_generator(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",
+        },
+    )
+
+
+# ---------------------------------------------------------------------------
+# Orchestrator Agent endpoint — /agent/stream
+# ---------------------------------------------------------------------------
+# This replaces the hardcoded /conversation/continue/stream two-phase loop.
+# The orchestrator holds all 8 tools and decides dynamically what to do.
+# ---------------------------------------------------------------------------
+
+class AgentRequest(BaseModel):
+    message: str
+    conversation: Optional[List] = Field(default_factory=list)
+    workflowState: Optional[dict] = None
+
+
+@app.post("/agent/stream")
+async def agent_stream(request: AgentRequest, user: dict = Depends(_user_from_token)):
+    """
+    Agentic endpoint. Streams SSE events from the OrchestratorAgent.
+
+    Events:
+      step  — progress label (tool being called)
+      token — streamed text fragment
+      done  — final result payload {reply, workflow_state, intake_state, session_id}
+      error — non-fatal error message
+
+    Replaces /conversation/continue/stream for agentic-mode clients.
+    """
+    _enforce_query_limit(user)
+    message = (request.message or "").strip()
+    if not message:
+        return JSONResponse(status_code=400, content={"detail": "message is required"})
+
+    conv = [
+        {"role": m["role"] if isinstance(m, dict) else m.role,
+         "content": _normalize_content(m["content"] if isinstance(m, dict) else m.content)}
+        for m in (request.conversation or [])
+    ]
+    workflow_state = dict(request.workflowState or {})
+    queue: Queue = Queue()
+    loop = asyncio.get_event_loop()
+
+    def run_in_thread():
+        try:
+            from agents.orchestrator import OrchestratorAgent
+            agent = OrchestratorAgent()
+            for event in agent.run_stream(message, conv, workflow_state):
+                ev_type = event.get("type", "step")
+                if ev_type == "step":
+                    queue.put(("step", {"message": event.get("message", "")}))
+                elif ev_type == "token":
+                    queue.put(("token", {"text": event.get("text", "")}))
+                elif ev_type == "done":
+                    queue.put(("result", event.get("payload", {})))
+                    return
+                elif ev_type == "error":
+                    queue.put(("step", {"message": f"⚠ {event.get('message', 'Error')}"}))
+            # If run_stream ended without a done event
+            queue.put(("result", {"reply": "", "workflow_state": workflow_state}))
+        except Exception as exc:
+            logger.exception("agent_stream worker failed: %s", exc)
+            queue.put(("result", {"reply": "An error occurred. Please try again.", "error": str(exc)}))
+
+    import threading as _threading
+    thread = _threading.Thread(target=run_in_thread, daemon=True)
     thread.start()
 
     async def event_generator():
@@ -3661,7 +3409,7 @@ async def startup_validation():
     logger.info("CORS origins: %s", _cors_origins)
 
     try:
-        from services.runtime_warmup import kickoff_runtime_warmup
+        from platform.warmup import kickoff_runtime_warmup
         kickoff_runtime_warmup("startup_post_ready")
         logger.info("Startup checks complete; remaining warmups launched in background")
     except Exception as e:

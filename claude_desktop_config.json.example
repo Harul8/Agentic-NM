@@ -1,0 +1,20 @@
+{
+  "_comment": [
+    "Copy the 'nyaymalaw' entry into your Claude Desktop config file.",
+    "",
+    "Windows : %APPDATA%\\Claude\\claude_desktop_config.json",
+    "Mac     : ~/Library/Application Support/Claude/claude_desktop_config.json",
+    "",
+    "If the file already has an 'mcpServers' key, just add 'nyaymalaw' inside it.",
+    "Replace C:\\path\\to\\NM_API-1.0 with the actual folder path on your machine."
+  ],
+  "mcpServers": {
+    "nyaymalaw": {
+      "command": "python",
+      "args": ["C:\\path\\to\\NM_API-1.0\\mcp_server.py"],
+      "env": {
+        "OPENAI_API_KEY": "sk-your-key-here"
+      }
+    }
+  }
+}

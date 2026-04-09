@@ -35,7 +35,7 @@ from config import (
     BARE_BM25_INDEX,
     VECTOR_STORE,
 )
-from Ingestion.smart_chunker import (
+from core.chunker import (
     _SECTION_PATTERNS,
     _strip_bare_act_editorial_noise,
     _extract_keywords,
@@ -569,7 +569,7 @@ def patch_chunks(dry_run: bool = False) -> dict:
 
 def rebuild_indexes(store: dict) -> None:
     """Re-embed all chunks from the patched store and rebuild FAISS + BM25."""
-    from Ingestion.build_v2_index import _get_embedder, build_index
+    from core.indexer import _get_embedder, build_index
     import numpy as np
 
     logger.info("Loading embedder for rebuild...")

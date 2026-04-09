@@ -1,68 +1,0 @@
-INFO:     Started server process [46124]
-INFO:     Waiting for application startup.
-2026-03-27 22:43:55 | INFO     | nyaymalaw.api | ============================================================
-2026-03-27 22:43:55 | INFO     | nyaymalaw.api | Nyaymalaw API v3.0.0 starting up
-2026-03-27 22:43:55 | INFO     | nyaymalaw.api | ============================================================
-2026-03-27 22:43:55 | INFO     | nyaymalaw.api | Database accessible at C:\Users\rahul\Nyaymalaw-5.0\legal_database\chat_history\app.db
-2026-03-27 22:43:55 | INFO     | nyaymalaw.api | Data root: C:\Users\rahul\Nyaymalaw-5.0\legal_database (BareActs: C:\Users\rahul\Nyaymalaw-5.0\legal_database\raw_data\BareActs)
-2026-03-27 22:43:55 | INFO     | nyaymalaw.api | Vector store at C:\Users\rahul\Nyaymalaw-5.0\legal_database\vector_store (bare_acts: yes, case_summaries: yes)
-2026-03-27 22:43:55 | INFO     | nyaymalaw.api | CORS origins: ['*']
-2026-03-27 22:43:55 | INFO     | services.runtime_warmup | Started runtime warmup thread (startup)
-2026-03-27 22:43:55 | INFO     | nyaymalaw.api | Startup checks complete; targeted runtime warmup launched
-2026-03-27 22:43:55 | INFO     | nyaymalaw.api | ============================================================
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://127.0.0.1:8007 (Press CTRL+C to quit)
-2026-03-27 22:43:55 | INFO     | faiss.loader | Loading faiss with AVX2 support.
-2026-03-27 22:43:55 | INFO     | faiss.loader | Successfully loaded faiss with AVX2 support.
-2026-03-27 22:43:55 | INFO     | retrieval.hybrid_retriever | Preloaded FAISS [act_summaries]: 1705 vectors
-2026-03-27 22:43:55 | INFO     | retrieval.hybrid_retriever | Preloaded chunks [act_summaries]: 1705 chunks
-2026-03-27 22:43:55 | INFO     | retrieval.hybrid_retriever | Preloaded BM25 [act_summaries]: 1705 docs
-2026-03-27 22:43:55 | INFO     | nyaymalaw.api | GET /openapi.json \u2192 200 (17ms)
-2026-03-27 22:43:55 | INFO     | retrieval.hybrid_retriever | Preloaded FAISS [bare_acts]: 80644 vectors
-2026-03-27 22:43:56 | INFO     | retrieval.hybrid_retriever | Preloaded chunks [bare_acts]: 80644 chunks
-2026-03-27 22:43:58 | INFO     | retrieval.hybrid_retriever | Preloaded BM25 [bare_acts]: 80644 docs
-2026-03-27 22:43:58 | INFO     | retrieval.hybrid_retriever | Preloaded FAISS [case_summaries]: 34037 vectors
-2026-03-27 22:43:58 | INFO     | retrieval.hybrid_retriever | Preloaded chunks [case_summaries]: 34037 chunks
-2026-03-27 22:43:59 | INFO     | retrieval.hybrid_retriever | Preloaded BM25 [case_summaries]: 34037 docs
-2026-03-27 22:43:59 | INFO     | retrieval.hybrid_retriever | Interactive index preload complete. Cache has 9 entries.
-2026-03-27 22:44:07 | INFO     | retrieval.hybrid_retriever | Loading embedding model 'thenlper/gte-base' on cpu
-2026-03-27 22:44:07 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: thenlper/gte-base
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 26.74it/s]
-2026-03-27 22:44:08 | INFO     | services.runtime_warmup | Interactive warmup: embedding model ready
-2026-03-27 22:44:08 | INFO     | retrieval.hybrid_retriever | Cross-encoder loaded on CPU
-2026-03-27 22:44:08 | INFO     | services.runtime_warmup | Interactive warmup: cross-encoder ready on CPU
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 23.67it/s]
-2026-03-27 22:44:08 | INFO     | retrieval.hybrid_retriever | Hybrid search: 3 FAISS + 3 BM25 \u2192 5 RRF candidates (pool for re-rank)
-2026-03-27 22:44:08 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 34.23it/s]
-2026-03-27 22:44:08 | INFO     | retrieval.hybrid_retriever | Hybrid search: 6 FAISS + 6 BM25 \u2192 6 RRF candidates (pool for re-rank)
-2026-03-27 22:44:09 | INFO     | retrieval.hybrid_retriever | Re-ranked to 2 results (top score: 2.896)
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 33.21it/s]
-2026-03-27 22:44:09 | INFO     | retrieval.hybrid_retriever | Hybrid search: 4 FAISS + 4 BM25 \u2192 6 RRF candidates (pool for re-rank)
-2026-03-27 22:44:09 | INFO     | retrieval.hybrid_retriever | Re-ranked to 2 results (top score: 2.100)
-2026-03-27 22:44:09 | INFO     | services.runtime_warmup | Interactive warmup: retrieval fast path primed
-2026-03-27 22:44:09 | INFO     | training.few_shot_retriever | Loaded 37 few-shot examples from runtime_examples.jsonl
-2026-03-27 22:44:09 | INFO     | services.runtime_warmup | Interactive warmup: few-shot examples ready
-2026-03-27 22:44:23 | INFO     | nyaymalaw.api | POST /submit_case/stream \u2192 200 (11ms)
-2026-03-27 22:44:26 | INFO     | services.runtime_warmup | Runtime warmup completed in 30.4 s
-2026-03-27 22:44:43 | INFO     | nyaymalaw.api | POST /conversation/continue/stream \u2192 200 (7ms)
-2026-03-27 22:45:01 | INFO     | nyaymalaw.api | POST /conversation/continue/stream \u2192 200 (5ms)
-2026-03-27 22:45:10 | INFO     | nyaymalaw.api | POST /conversation/continue/stream \u2192 200 (6ms)
-2026-03-27 22:45:19 | INFO     | services.response_generator_v2 | Expanded query(s): (Karnataka) Compensation for road accident injuries, lost income, and property damage under MVA Act, 2019
-2026-03-27 22:45:19 | INFO     | services.response_generator_v2 | Bare-act query builder [d1]: legal_nature=mixed queries=['(Karnataka) Compensation for road accident injuries, lost income, and property damage under MVA Act, 2019 Procedure to claim compensation fo', '(Karnataka) Compensation for road accident injuries, lost income, and property damage under MVA Act, 2019 Procedure to claim compensation fo', 'karnataka compensation road accident injuries lost']
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 13.79it/s]
-2026-03-27 22:45:20 | INFO     | retrieval.hybrid_retriever | Hybrid search: 3 FAISS + 3 BM25 \u2192 5 RRF candidates (pool for re-rank)
-2026-03-27 22:45:20 | INFO     | retrieval.hybrid_retriever | Re-ranked to 1 results (top score: 7.036)
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 12.16it/s]
-2026-03-27 22:45:22 | INFO     | retrieval.hybrid_retriever | Hybrid search: 6 FAISS + 6 BM25 \u2192 8 RRF candidates (pool for re-rank)
-2026-03-27 22:45:22 | INFO     | retrieval.hybrid_retriever | Act pre-filter (profile): BYPASSED — only 0 candidates after filter (< 5 min); proceeding with all 8 candidates. Check act profile coverage for this query.
-2026-03-27 22:45:22 | INFO     | retrieval.hybrid_retriever | Re-ranked to 4 results (top score: 6.909)
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  9.79it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  9.79it/s]
-2026-03-27 22:45:23 | INFO     | retrieval.hybrid_retriever | Hybrid search: 4 FAISS + 4 BM25 \u2192 7 RRF candidates (pool for re-rank)
-2026-03-27 22:45:24 | INFO     | retrieval.hybrid_retriever | Re-ranked to 3 results (top score: 3.337)
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 28.62it/s]
-2026-03-27 22:45:24 | INFO     | retrieval.hybrid_retriever | Hybrid search: 4 FAISS + 4 BM25 \u2192 7 RRF candidates (pool for re-rank)
-2026-03-27 22:45:24 | INFO     | retrieval.hybrid_retriever | Re-ranked to 0 results
-2026-03-27 22:45:24 | INFO     | services.response_generator_v2 | Matched 2 case laws to 4 bare act sections via dispute-tag + text matching (0 cross-encoder calls; replaced O(sections×case_laws) scoring)
-2026-03-27 22:45:24 | WARNING  | services.response_generator_v2 | Blocked unsupported legal citations in generated output; returning local-only fallback
-2026-03-27 22:45:24 | WARNING  | nyaymalaw.api | Feedback log failed (non-critical): Excel feedback log not found: C:\Users\rahul\Nyaymalaw-5.0\Nyaymalaw_Feedback_Log_v3.xlsx

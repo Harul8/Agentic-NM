@@ -1,6 +1,0 @@
-INFO:     127.0.0.1:61561 - "GET /openapi.json HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59837 - "POST /submit_case/stream HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55847 - "POST /submit_case/stream HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56019 - "POST /conversation/continue/stream HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56113 - "POST /conversation/continue/stream HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56114 - "POST /conversation/continue/stream HTTP/1.1" 200 OK

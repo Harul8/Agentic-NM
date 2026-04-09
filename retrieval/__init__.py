@@ -1,1 +1,1 @@
-# Retrieval package — hybrid search, sufficiency analysis, tiered internet search, auto-enrichment
+"""retrieval — Layer 4: Retrieval, grounding, and research pipeline."""

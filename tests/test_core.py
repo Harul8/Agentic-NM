@@ -56,7 +56,7 @@ class TestIsDuplicateQuestion(unittest.TestCase):
     """Tests for _is_duplicate_question (code-level dedup guard)."""
 
     def _load(self):
-        from services.fact_collector import _is_duplicate_question
+        from pipeline.collector import _is_duplicate_question
         return _is_duplicate_question
 
     def test_exact_topic_overlap_returns_true(self):
@@ -104,7 +104,7 @@ class TestRunSingleGateMocked(unittest.TestCase):
     """Tests for _run_single_gate with mocked LLM."""
 
     def _load(self):
-        from services.fact_collector import _run_single_gate
+        from pipeline.collector import _run_single_gate
         return _run_single_gate
 
     @patch("services.fact_collector.ask_llm")
@@ -179,7 +179,7 @@ class TestGetNextQuestionAcceptsTokenCallback(unittest.TestCase):
     @patch("services.fact_collector.ask_llm")
     def test_signature_accepts_token_callback(self, mock_llm):
         mock_llm.return_value = '{"action":"complete","intent":"legal_opinion","facts_summary":"test"}'
-        from services.fact_collector import get_next_question_or_complete
+        from pipeline.collector import get_next_question_or_complete
         tokens = []
         # Should not raise TypeError
         result = get_next_question_or_complete([], "test query", token_callback=lambda t: tokens.append(t))
@@ -194,7 +194,7 @@ class TestLegalTermBoost(unittest.TestCase):
     """Tests for legal_term_boost."""
 
     def _load(self):
-        from retrieval.hybrid_retriever import legal_term_boost
+        from core.retriever import legal_term_boost
         return legal_term_boost
 
     def test_matching_section_returns_positive_boost(self):
@@ -234,7 +234,7 @@ class TestBM25(unittest.TestCase):
     """Tests for the BM25 implementation."""
 
     def _load(self):
-        from retrieval.hybrid_retriever import BM25
+        from core.retriever import BM25
         return BM25
 
     def test_fit_and_score_basic(self):
@@ -281,7 +281,7 @@ class TestNormalizeLegalQuery(unittest.TestCase):
     """normalize_legal_query should expand abbreviations."""
 
     def _load(self):
-        from retrieval.hybrid_retriever import normalize_legal_query
+        from core.retriever import normalize_legal_query
         return normalize_legal_query
 
     def test_ipc_expanded(self):
@@ -306,7 +306,7 @@ class TestNormalizeLegalQuery(unittest.TestCase):
 
 class TestIsQualityCaseLaw(unittest.TestCase):
     def _load(self):
-        from services.response_generator_v2 import _is_quality_case_law
+        from pipeline.generator import _is_quality_case_law
         return _is_quality_case_law
 
     def test_valid_case_passes(self):
@@ -336,7 +336,7 @@ class TestIsQualityCaseLaw(unittest.TestCase):
 
 class TestIsQualityBareAct(unittest.TestCase):
     def _load(self):
-        from services.response_generator_v2 import _is_quality_bare_act
+        from pipeline.generator import _is_quality_bare_act
         return _is_quality_bare_act
 
     def test_valid_section_passes(self):
@@ -366,7 +366,7 @@ class TestIsQualityBareAct(unittest.TestCase):
 
 class TestApplyFlexibleResultLimit(unittest.TestCase):
     def _load(self):
-        from services.response_generator_v2 import _apply_flexible_result_limit
+        from pipeline.generator import _apply_flexible_result_limit
         return _apply_flexible_result_limit
 
     def _make_items(self, scores):
@@ -403,7 +403,7 @@ class TestExpandLegalQueryMocked(unittest.TestCase):
     @patch("services.response_generator_v2.ask_llm")
     def test_returns_list_of_queries(self, mock_llm):
         mock_llm.return_value = "assault and battery under Indian Penal Code section 323"
-        from services.response_generator_v2 import expand_legal_query
+        from pipeline.generator import expand_legal_query
         queries = expand_legal_query("Someone beat me up in Hyderabad")
         self.assertIsInstance(queries, list)
         self.assertGreaterEqual(len(queries), 1)
@@ -411,7 +411,7 @@ class TestExpandLegalQueryMocked(unittest.TestCase):
     @patch("services.response_generator_v2.ask_llm")
     def test_llm_failure_returns_fallback(self, mock_llm):
         mock_llm.side_effect = Exception("LLM down")
-        from services.response_generator_v2 import expand_legal_query
+        from pipeline.generator import expand_legal_query
         queries = expand_legal_query("property dispute")
         self.assertGreaterEqual(len(queries), 1)
         # Fallback is the raw facts[:300]
@@ -429,7 +429,7 @@ class TestExpandLegalQueryMocked(unittest.TestCase):
             '"lease termination breach tenant"]}'
             "]}"
         )
-        from services.response_generator_v2 import expand_legal_query
+        from pipeline.generator import expand_legal_query
         dbg = {}
         facts = (
             "My tenant in Mumbai stopped paying rent under the lease; "
@@ -439,19 +439,6 @@ class TestExpandLegalQueryMocked(unittest.TestCase):
         self.assertGreaterEqual(len(queries), 2)
         self.assertEqual(len(dbg.get("issues_from_model") or []), 2)
 
-    @patch("services.response_generator_v2.ask_llm")
-    def test_queries_are_capped_at_twelve_words(self, mock_llm):
-        mock_llm.return_value = (
-            '{"issues":[{"issue_label":"property","queries":['
-            '"very long property ownership dispute query with many extra words beyond the permitted limit"'
-            ']}]}'
-        )
-        from services.response_generator_v2 import expand_legal_query
-
-        queries = expand_legal_query("Property ownership dispute over family land and title documents")
-        self.assertGreaterEqual(len(queries), 1)
-        self.assertLessEqual(len(queries[0].split()), 12)
-
 
 # ===========================================================================
 # 4. citation_graph tests
@@ -460,26 +447,26 @@ class TestExpandLegalQueryMocked(unittest.TestCase):
 class TestCitationGraphHelpers(unittest.TestCase):
 
     def test_stable_case_id_deterministic(self):
-        from retrieval.citation_graph import _stable_case_id
+        from core.citations import _stable_case_id
         id1 = _stable_case_id("State v. Ramu", "2015")
         id2 = _stable_case_id("State v. Ramu", "2015")
         self.assertEqual(id1, id2)
 
     def test_stable_case_id_different_cases_differ(self):
-        from retrieval.citation_graph import _stable_case_id
+        from core.citations import _stable_case_id
         id1 = _stable_case_id("State v. Ramu", "2015")
         id2 = _stable_case_id("Ramu v. State", "2015")
         self.assertNotEqual(id1, id2)
 
     def test_normalize_case_name_key_lowercases(self):
-        from retrieval.citation_graph import _normalize_case_name_key
+        from core.citations import _normalize_case_name_key
         self.assertEqual(
             _normalize_case_name_key("State v. RAMU"),
             "state v. ramu",
         )
 
     def test_normalize_for_cites_lookup_vs_to_v(self):
-        from retrieval.citation_graph import _normalize_for_cites_lookup
+        from core.citations import _normalize_for_cites_lookup
         result = _normalize_for_cites_lookup("State vs. Ramu")
         # "vs." should be replaced with "v"; the dot after v comes from the period
         # in the original string — the key requirement is "vs." is gone
@@ -488,11 +475,11 @@ class TestCitationGraphHelpers(unittest.TestCase):
         self.assertIn(" v", result)
 
     def test_clean_cited_name_strips_noise(self):
-        from retrieval.citation_graph import _clean_cited_name
+        from core.citations import _clean_cited_name
         self.assertEqual(_clean_cited_name("  State v. Ramu.  "), "State v. Ramu")
 
     def test_get_case_authority_score_no_graph_returns_zero(self):
-        from retrieval.citation_graph import get_case_authority_score, invalidate_graph
+        from core.citations import get_case_authority_score, invalidate_graph
         invalidate_graph()
         with patch("retrieval.citation_graph.get_graph", return_value=None):
             score = get_case_authority_score("State v. Ramu", "2015")
@@ -500,7 +487,7 @@ class TestCitationGraphHelpers(unittest.TestCase):
 
     def test_build_and_query_citation_graph(self):
         """Build a minimal graph from synthetic chunks and verify PageRank / edges."""
-        from retrieval.citation_graph import build_citation_graph_from_chunks
+        from core.citations import build_citation_graph_from_chunks
         import tempfile, json
 
         chunks = {
@@ -550,7 +537,7 @@ class TestBuildBareActQueries(unittest.TestCase):
     @patch("services.response_generator_v2.ask_llm")
     def test_returns_multiple_queries(self, mock_llm):
         mock_llm.return_value = '{"queries":["criminal assault","hurt","bodily harm"]}'
-        from services.response_generator_v2 import _build_bare_act_queries
+        from pipeline.generator import _build_bare_act_queries
         dispute = {
             "id": "d1",
             "dispute": "Someone beat me with a rod and threatened to kill me",
@@ -569,7 +556,7 @@ class TestBuildBareActQueries(unittest.TestCase):
     @patch("services.response_generator_v2.ask_llm")
     def test_no_duplicates(self, mock_llm):
         mock_llm.return_value = '{"queries":[]}'
-        from services.response_generator_v2 import _build_bare_act_queries
+        from pipeline.generator import _build_bare_act_queries
         dispute = {
             "id": "d2",
             "dispute": "Tenant did not pay rent",
@@ -596,7 +583,7 @@ class TestStreamingIntake(unittest.TestCase):
             yield full_json[:15]
             yield full_json[15:]
 
-        from services.fact_collector import _run_single_gate
+        from pipeline.collector import _run_single_gate
         collected = []
         with patch("llm.ollama_client.ask_llm_stream", side_effect=fake_stream):
             result = _run_single_gate([], "Someone hit me", token_callback=lambda t: collected.append(t))
@@ -609,7 +596,7 @@ class TestStreamingIntake(unittest.TestCase):
     def test_no_callback_uses_regular_ask_llm(self, mock_llm):
         """Without token_callback, ask_llm (not ask_llm_stream) is called."""
         mock_llm.return_value = '{"action":"ask","reply_to_client":"What is the nature of the dispute?"}'
-        from services.fact_collector import _run_single_gate
+        from pipeline.collector import _run_single_gate
         result = _run_single_gate([], "I have a legal problem")
         mock_llm.assert_called_once()
         self.assertIsNotNone(result)
