@@ -12,6 +12,12 @@ from typing import Optional
 
 logger = logging.getLogger(__name__)
 
+from agents.intake.casefile import (
+    apply_fact_audit,
+    ensure_case_file_structure,
+    set_pipeline_layer,
+)
+
 # ---------------------------------------------------------------------------
 # Lazy imports — avoid circular imports at module load time
 # ---------------------------------------------------------------------------
@@ -33,11 +39,14 @@ from prompts.intake import (
     LEGAL_OPINION_OPENING_SYSTEM,
     ISSUE_CATEGORY_DETECT_SYSTEM,
     STAGE1_CONFIRM_AND_FOLLOWUP_SYSTEM,
+    STAGE1_INITIAL_DETAILS_REQUEST_SYSTEM,
+    STAGE1_GAP_REVIEW_SYSTEM,
     STAGE1_SAFETY_FIRST_SYSTEM,
     STAGE1_URGENCY_RECHECK_SYSTEM,
     STAGE1_URGENCY_FROM_HISTORY_SYSTEM,
     STAGE1_VETTING_QUESTION_SYSTEM,
     STAGE4_REMEDY_ASSESSMENT_SYSTEM,
+    CASE_FILE_REFRESH_SYSTEM,
     PRE_DRAFT_SUMMARY_SYSTEM,
     STAGE1_INTAKE_STATE_SCHEMA,
     LEGAL_ISSUE_CATEGORIES,
@@ -178,6 +187,248 @@ def _build_context(session: dict, max_turns: int = 30) -> str:
 
 def _fresh_state() -> dict:
     return copy.deepcopy(STAGE1_INTAKE_STATE_SCHEMA)
+
+
+def _merge_anchor_fields(intake_state: dict, updates: dict | None) -> None:
+    """Merge anchor fields from an LLM-produced intake update without wiping established values."""
+    if not isinstance(updates, dict):
+        return
+
+    summary = str(updates.get("issue_summary") or "").strip()
+    if summary:
+        intake_state["issue_summary"] = summary[:500]
+        intake_state["latest_intake_summary"] = intake_state["issue_summary"]
+
+    relationship = str(updates.get("relationship_to_other_party") or "").strip()
+    if relationship and relationship.lower() != "unknown":
+        intake_state["relationship_to_other_party"] = relationship[:160]
+
+    timeframe = str(updates.get("timeframe_status") or "").strip().lower()
+    if timeframe in ("ongoing", "recent", "historical"):
+        intake_state["timeframe_status"] = timeframe
+
+    goal = str(updates.get("client_goal_initial") or "").strip()
+    if goal and goal.lower() not in ("unknown", "null", "none"):
+        intake_state["client_goal_initial"] = goal[:240]
+
+
+def _extract_json_list(text: str) -> list:
+    """Extract the first JSON array from text that may contain markdown or stray prose."""
+    text = (text or "").strip()
+    if "```" in text:
+        for part in text.split("```"):
+            part = part.strip()
+            if part.startswith("json"):
+                part = part[4:].strip()
+            if "[" in part and "]" in part:
+                text = part
+                break
+    start = text.find("[")
+    end = text.rfind("]")
+    if start >= 0 and end > start:
+        try:
+            return json.loads(text[start:end + 1])
+        except json.JSONDecodeError:
+            return []
+    try:
+        data = json.loads(text)
+        return data if isinstance(data, list) else []
+    except json.JSONDecodeError:
+        return []
+
+
+def _refresh_case_file(intake_state: dict, conversation_context: str) -> None:
+    """
+    Build or refresh the canonical case_file from the transcript and structured facts.
+    """
+    known_facts = intake_state.get("known_facts") or []
+    facts_lines = []
+    for fact in known_facts[:12]:
+        if isinstance(fact, dict):
+            fact_text = str(fact.get("fact") or "").strip()
+            if fact_text:
+                facts_lines.append(f"- {fact_text}")
+    facts_summary = "\n".join(facts_lines) or "- No structured facts captured yet"
+    structured_facts = []
+    for fact in known_facts[:15]:
+        if not isinstance(fact, dict):
+            continue
+        fact_text = str(fact.get("fact") or "").strip()
+        if not fact_text:
+            continue
+        structured_facts.append({
+            "fact": fact_text,
+            "fact_type": fact.get("fact_type"),
+            "time_reference": fact.get("time_reference"),
+            "evidence_hook": fact.get("evidence_hook"),
+            "witness_hook": fact.get("witness_hook"),
+            "confidence_seed": fact.get("confidence_seed"),
+        })
+
+    state_summary = {
+        "issue_summary": intake_state.get("issue_summary"),
+        "relationship_to_other_party": intake_state.get("relationship_to_other_party"),
+        "timeframe_status": intake_state.get("timeframe_status"),
+        "client_goal_initial": intake_state.get("client_goal_initial"),
+        "urgency_signal": intake_state.get("urgency_signal"),
+        "detail_groups_requested": intake_state.get("detail_groups_requested") or [],
+        "missing_detail_groups": intake_state.get("missing_detail_groups") or [],
+        "assessed_remedy": intake_state.get("assessed_remedy"),
+    }
+
+    prompt = (
+        CASE_FILE_REFRESH_SYSTEM
+        .replace("{conversation_context}", conversation_context or "(first message)")
+        .replace("{facts_summary}", facts_summary)
+        .replace("{structured_facts}", json.dumps(structured_facts, ensure_ascii=False, indent=2))
+        .replace("{state_summary}", json.dumps(state_summary, ensure_ascii=False, indent=2))
+    )
+
+    case_file = ensure_case_file_structure(
+        intake_state.get("case_file") or copy.deepcopy((STAGE1_INTAKE_STATE_SCHEMA.get("case_file") or {}))
+    )
+    case_file["summary"] = intake_state.get("latest_intake_summary") or intake_state.get("issue_summary")
+
+    try:
+        raw = _ask_llm(prompt, task_hint="quality")
+        data = _extract_json(raw)
+        if isinstance(data, dict):
+            case_file["summary"] = str(data.get("summary") or case_file.get("summary") or "").strip()[:600] or None
+            immediate_concerns = [
+                str(x).strip()
+                for x in (data.get("immediate_concerns") or [])
+                if str(x).strip()
+            ]
+            case_file["immediate_concerns"] = immediate_concerns[:6]
+
+            for key in ("case_theory", "evidence_posture", "risk_map", "timeline", "procedural_posture"):
+                if isinstance(data.get(key), dict):
+                    case_file[key] = data[key]
+
+            raw_timeline = data.get("timeline") or {}
+            if isinstance(raw_timeline, dict):
+                events = []
+                for item in (raw_timeline.get("events") or []):
+                    if not isinstance(item, dict):
+                        continue
+                    event = str(item.get("event") or "").strip()
+                    if not event:
+                        continue
+                    materials = [
+                        str(x).strip()
+                        for x in (item.get("supporting_materials") or [])
+                        if str(x).strip()
+                    ]
+                    events.append({
+                        "date_or_period": str(item.get("date_or_period") or "").strip()[:120] or None,
+                        "event": event[:260],
+                        "significance": str(item.get("significance") or "").strip()[:220] or None,
+                        "supporting_materials": materials[:4],
+                    })
+                case_file["timeline"] = {
+                    "events": events[:8],
+                    "latest_material_event": str(raw_timeline.get("latest_material_event") or "").strip()[:260] or None,
+                    "timeline_gaps": [
+                        str(x).strip()
+                        for x in (raw_timeline.get("timeline_gaps") or [])
+                        if str(x).strip()
+                    ][:5],
+                }
+
+            raw_posture = data.get("procedural_posture") or {}
+            if isinstance(raw_posture, dict):
+                case_file["procedural_posture"] = {
+                    "current_stage": str(raw_posture.get("current_stage") or "").strip()[:120] or None,
+                    "steps_already_taken": [
+                        str(x).strip()
+                        for x in (raw_posture.get("steps_already_taken") or [])
+                        if str(x).strip()
+                    ][:6],
+                    "current_forum_or_authority": str(raw_posture.get("current_forum_or_authority") or "").strip()[:160] or None,
+                    "next_deadline_or_trigger": str(raw_posture.get("next_deadline_or_trigger") or "").strip()[:220] or None,
+                    "limitation_notes": [
+                        str(x).strip()
+                        for x in (raw_posture.get("limitation_notes") or [])
+                        if str(x).strip()
+                    ][:4],
+                }
+
+            fact_proof_matrix = []
+            for item in (data.get("fact_proof_matrix") or []):
+                if not isinstance(item, dict):
+                    continue
+                fact_text = str(item.get("fact") or "").strip()
+                if not fact_text:
+                    continue
+                support_status = str(item.get("support_status") or "asserted-only").strip().lower()
+                if support_status not in ("document-backed", "witness-backed", "partly-supported", "asserted-only"):
+                    support_status = "asserted-only"
+                materials = [
+                    str(x).strip()
+                    for x in (item.get("supporting_materials") or [])
+                    if str(x).strip()
+                ]
+                witnesses = [
+                    str(x).strip()
+                    for x in (item.get("witness_support") or [])
+                    if str(x).strip()
+                ]
+                fact_proof_matrix.append({
+                    "fact": fact_text[:260],
+                    "support_status": support_status,
+                    "supporting_materials": materials[:5],
+                    "witness_support": witnesses[:4],
+                    "proof_gap": str(item.get("proof_gap") or "").strip()[:260] or None,
+                })
+            case_file["fact_proof_matrix"] = fact_proof_matrix
+
+            missing_proof = []
+            for item in (data.get("missing_proof_recommendations") or []):
+                if not isinstance(item, dict):
+                    continue
+                point = str(item.get("point") or "").strip()
+                if not point:
+                    continue
+                missing_proof.append({
+                    "point": point[:260],
+                    "why_it_matters": str(item.get("why_it_matters") or "").strip()[:280] or None,
+                    "best_source": str(item.get("best_source") or "").strip()[:220] or None,
+                })
+            case_file["missing_proof_recommendations"] = missing_proof
+
+            contradictions = []
+            for item in (data.get("contradictions") or []):
+                if not isinstance(item, dict):
+                    continue
+                issue = str(item.get("issue") or "").strip()
+                if not issue:
+                    continue
+                severity = str(item.get("severity") or "low").strip().lower()
+                if severity not in ("low", "medium", "high"):
+                    severity = "low"
+                contradictions.append({
+                    "issue": issue[:240],
+                    "severity": severity,
+                    "note": str(item.get("note") or "").strip()[:300] or None,
+                })
+            case_file["contradictions"] = contradictions
+    except Exception as exc:
+        logger.warning("Case file refresh failed: %s", exc)
+
+    case_file = apply_fact_audit(
+        case_file,
+        known_facts,
+        note=(
+            "Case theory, evidence posture, timeline, and risk map are model-generated chamber summaries "
+            "derived from the transcript and structured facts."
+        ),
+    )
+    case_file = set_pipeline_layer(case_file, "intake", "complete", "Structured intake facts and grouped client inputs captured.")
+    case_file = set_pipeline_layer(case_file, "case_framing", "complete", "Canonical case file refreshed from transcript and structured facts.")
+    case_file = set_pipeline_layer(case_file, "research", "pending", "Research packets are added during draft generation.")
+    case_file = set_pipeline_layer(case_file, "opinion", "pending", "Client-facing and chamber-note outputs are generated during drafting.")
+    case_file = set_pipeline_layer(case_file, "action", "pending", "Action drafting readiness is assessed during draft generation.")
+    intake_state["case_file"] = case_file
 
 
 # ===========================================================================
@@ -446,6 +697,174 @@ def _generate_safety_first_response(intake_state: dict) -> str:
 
 
 # ===========================================================================
+# Internal: compact intake orchestration helpers
+# ===========================================================================
+
+def _build_established_facts(intake_state: dict) -> str:
+    """Build a compact text summary of the main state already established."""
+    anchors = {
+        "issue": intake_state.get("issue_summary"),
+        "relationship": intake_state.get("relationship_to_other_party"),
+        "timeframe": intake_state.get("timeframe_status"),
+        "goal": intake_state.get("client_goal_initial"),
+        "urgency": intake_state.get("urgency_signal"),
+    }
+    established_parts = [
+        f"{k}: {v}" for k, v in anchors.items()
+        if v and v not in ("unknown", "", None)
+    ]
+    detail_groups = intake_state.get("detail_groups_requested") or []
+    if detail_groups:
+        established_parts.append("detail groups requested: " + " | ".join(str(x) for x in detail_groups[:8]))
+    missing_groups = intake_state.get("missing_detail_groups") or []
+    if missing_groups:
+        established_parts.append("remaining gaps: " + " | ".join(str(x) for x in missing_groups[:8]))
+    return "; ".join(established_parts) if established_parts else "none established yet"
+
+
+def _generate_initial_detail_request(
+    intake_state: dict,
+    client_message: str,
+    conversation_context: str,
+) -> str:
+    """Generate the first grouped request for all material intake details."""
+    t0 = time.perf_counter()
+    from platform_pkg.llm import ask_llm
+
+    primary = intake_state.get("primary_issue_cluster") or "general"
+    cat_cfg = LEGAL_ISSUE_CATEGORIES.get(primary, {})
+    category_label = cat_cfg.get("label", primary.replace("_", " ").title())
+
+    prompt = (
+        STAGE1_INITIAL_DETAILS_REQUEST_SYSTEM
+        .replace("{conversation_context}", conversation_context or "(first message)")
+        .replace("{client_message}", (client_message or "").strip())
+        .replace("{established_facts}", _build_established_facts(intake_state))
+        .replace("{category}", category_label)
+    )
+
+    system_framing = (
+        "You are a senior Indian advocate on a professional legal advisory platform. "
+        "The client may be describing abuse, crime, threats, family disputes, commercial disputes, "
+        "or any other legal problem. Respond as a lawyer conducting concise, high-signal intake. "
+        "Do not refuse merely because the user describes illegal acts or harm; this is legal intake."
+    )
+
+    try:
+        raw = ask_llm(prompt, task_hint="quality", system=system_framing).strip()
+        _t("initial_detail_request", t0)
+        data = _extract_json(raw)
+        if isinstance(data, dict):
+            _merge_anchor_fields(intake_state, data)
+            detail_groups = [
+                str(x).strip() for x in (data.get("detail_groups_requested") or [])
+                if str(x).strip()
+            ][:8]
+            intake_state["detail_groups_requested"] = detail_groups
+            intake_state["open_questions"] = list(detail_groups)
+            intake_state["missing_detail_groups"] = []
+            intake_state["followup_questions"] = []
+            intake_state["detail_request_issued"] = True
+            intake_state["analysis_ready"] = False
+            reply = str(data.get("reply") or "").strip()
+            if reply:
+                return reply
+    except Exception as exc:
+        logger.warning("Stage1 initial detail request LLM failed: %s", exc)
+
+    intake_state["detail_request_issued"] = True
+    intake_state["analysis_ready"] = False
+    fallback_groups = [
+        "A brief timeline of what happened and the latest important event",
+        "Who the other people or entities are and how they are connected to you",
+        "What documents, messages, photos, notices, reports, or other evidence you already have",
+        "What steps have already been taken, if any, with police, court, employer, bank, authority, or the other side",
+        "What result you want most urgently and any deadlines or immediate concerns",
+    ]
+    intake_state["detail_groups_requested"] = fallback_groups
+    intake_state["open_questions"] = list(fallback_groups)
+    return (
+        "I’ve gone through what you shared. Give me a little time to work out which details matter most for your case, "
+        "then please send whatever you can on these points:\n"
+        "- A brief timeline of what happened and the latest important event\n"
+        "- Who the other people or entities are and how they are connected to you\n"
+        "- What documents, messages, photos, notices, reports, or other evidence you already have\n"
+        "- What steps have already been taken, if any, with police, court, employer, bank, authority, or the other side\n"
+        "- What result you want most urgently and any deadlines or immediate concerns"
+    )
+
+
+def _generate_gap_review(
+    intake_state: dict,
+    client_message: str,
+    conversation_context: str,
+) -> tuple[str, bool]:
+    """Review the bundled client response and decide whether intake is ready for analysis."""
+    t0 = time.perf_counter()
+    from platform_pkg.llm import ask_llm
+
+    prompt = (
+        STAGE1_GAP_REVIEW_SYSTEM
+        .replace("{conversation_context}", conversation_context or "(first message)")
+        .replace("{client_message}", (client_message or "").strip())
+        .replace(
+            "{detail_groups_requested}",
+            "\n".join(f"- {item}" for item in (intake_state.get("detail_groups_requested") or [])) or "(none recorded)"
+        )
+        .replace("{established_facts}", _build_established_facts(intake_state))
+    )
+
+    system_framing = (
+        "You are a senior Indian advocate on a professional legal advisory platform. "
+        "Your task is to run a compact, practical legal intake review. "
+        "Trust the whole conversation. Only ask what is truly still missing. "
+        "If the facts are sufficient for grounded legal analysis, say so and move on."
+    )
+
+    try:
+        raw = ask_llm(prompt, task_hint="quality", system=system_framing).strip()
+        _t("gap_review", t0)
+        data = _extract_json(raw)
+        if isinstance(data, dict):
+            _merge_anchor_fields(intake_state, data)
+            missing_groups = [
+                str(x).strip() for x in (data.get("missing_detail_groups") or [])
+                if str(x).strip()
+            ][:8]
+            followups = [
+                str(x).strip() for x in (data.get("followup_questions") or [])
+                if str(x).strip()
+            ][:3]
+            enough = bool(data.get("enough_for_analysis", False))
+            intake_state["missing_detail_groups"] = missing_groups
+            intake_state["followup_questions"] = followups
+            intake_state["open_questions"] = list(missing_groups)
+            intake_state["analysis_ready"] = enough
+            reply = str(data.get("reply") or "").strip()
+            if reply:
+                return reply, enough
+    except Exception as exc:
+        logger.warning("Stage1 gap review LLM failed: %s", exc)
+
+    intake_state["missing_detail_groups"] = []
+    intake_state["followup_questions"] = []
+    intake_state["open_questions"] = []
+    intake_state["analysis_ready"] = True
+    return "On the present record, I have enough to move into the legal analysis now.", True
+
+
+def _check_analysis_readiness(intake_state: dict) -> tuple[bool, list[str]]:
+    """Readiness check for the compact intake flow."""
+    if intake_state.get("analysis_ready"):
+        return True, []
+    missing = [
+        str(x).strip() for x in (intake_state.get("missing_detail_groups") or [])
+        if str(x).strip()
+    ]
+    return False, missing
+
+
+# ===========================================================================
 # Internal: confirm and follow up
 # ===========================================================================
 
@@ -583,7 +1002,8 @@ def _update_known_facts(intake_state: dict, client_message: str) -> None:
     """
     Extract structured fact objects from the client's latest message and append
     to known_facts.  Each fact is stored as:
-      {fact, source_turn, fact_type, time_reference, evidence_hook, witness_hook, confidence_seed}
+      {fact, source_turn, source_type, source_detail, fact_type, time_reference,
+       evidence_hook, witness_hook, confidence_seed}
 
     confidence_seed: "high" (specific, verifiable), "medium" (plausible, no corroboration),
                      "uncertain" (vague, inconsistent, or unverifiable)
@@ -619,31 +1039,29 @@ def _update_known_facts(intake_state: dict, client_message: str) -> None:
     try:
         raw = _ask_llm(prompt, task_hint="fast")
         _t("update_known_facts", t0)
-        text = (raw or "").strip()
-        start = text.find("[")
-        end   = text.rfind("]")
-        if start >= 0 and end > start:
-            extracted = json.loads(text[start:end + 1])
-            if isinstance(extracted, list):
-                for item in extracted:
-                    if not isinstance(item, dict):
-                        continue
-                    fact_text = str(item.get("fact") or "").strip()
-                    if not fact_text or len(fact_text) < 10:
-                        continue
-                    if fact_text.lower() in existing_facts:
-                        continue
-                    existing_facts.add(fact_text.lower())
-                    intake_state["known_facts"].append({
-                        "fact":            fact_text,
-                        "source_turn":     turn_num,
-                        "fact_type":       str(item.get("fact_type") or "other").strip(),
-                        "time_reference":  item.get("time_reference") or None,
-                        "evidence_hook":   item.get("evidence_hook") or None,
-                        "witness_hook":    item.get("witness_hook") or None,
-                        "confidence_seed": str(item.get("confidence_seed") or "medium").strip().lower(),
-                    })
-                intake_state["known_facts"] = intake_state["known_facts"][:20]
+        extracted = _extract_json_list(raw)
+        if isinstance(extracted, list):
+            for item in extracted:
+                if not isinstance(item, dict):
+                    continue
+                fact_text = str(item.get("fact") or "").strip()
+                if not fact_text or len(fact_text) < 10:
+                    continue
+                if fact_text.lower() in existing_facts:
+                    continue
+                existing_facts.add(fact_text.lower())
+                intake_state["known_facts"].append({
+                    "fact":            fact_text,
+                    "source_turn":     turn_num,
+                    "source_type":     "user_statement",
+                    "source_detail":   f"user_turn_{turn_num}",
+                    "fact_type":       str(item.get("fact_type") or "other").strip(),
+                    "time_reference":  item.get("time_reference") or None,
+                    "evidence_hook":   item.get("evidence_hook") or None,
+                    "witness_hook":    item.get("witness_hook") or None,
+                    "confidence_seed": str(item.get("confidence_seed") or "medium").strip().lower(),
+                })
+            intake_state["known_facts"] = intake_state["known_facts"][:20]
     except Exception as exc:
         logger.warning("Stage1 structured fact extraction failed: %s", exc)
         # Fallback: store as minimal structured entry
@@ -652,6 +1070,8 @@ def _update_known_facts(intake_state: dict, client_message: str) -> None:
             intake_state["known_facts"].append({
                 "fact":            short,
                 "source_turn":     turn_num,
+                "source_type":     "user_statement",
+                "source_detail":   f"user_turn_{turn_num}",
                 "fact_type":       "other",
                 "time_reference":  None,
                 "evidence_hook":   None,
@@ -859,11 +1279,13 @@ def process_turn(session: dict, user_message: str) -> dict:
     # Once de-escalated to "near_term" (client confirmed safe), proceed to normal follow-up.
     if intake_state.get("urgency_signal") == "immediate":
         reply = _generate_safety_first_response(intake_state)
-    elif intake_state.get("turn_count", 0) >= 2:
-        vetting_q = _get_vetting_question(intake_state, context)
-        reply = vetting_q if vetting_q else _generate_followup(intake_state, msg, context)
+        ready, missing = False, []
+    elif not intake_state.get("detail_request_issued"):
+        reply = _generate_initial_detail_request(intake_state, msg, context)
+        ready, missing = False, []
     else:
-        reply = _generate_followup(intake_state, msg, context)
+        reply, _ = _generate_gap_review(intake_state, msg, context)
+        ready, missing = _check_analysis_readiness(intake_state)
 
     # ── Readiness check — decide whether to advance to Stage 2 ───────────────
     # Minimum two substantive exchanges: a single opening message, however
@@ -871,10 +1293,8 @@ def process_turn(session: dict, user_message: str) -> dict:
     # Note: urgency/risk_flags affect the *reply* (safety-first response above)
     # but do NOT permanently block advancement — after enough turns the client
     # should still be able to reach analysis even for urgent matters.
-    if intake_state.get("turn_count", 0) < 2:
+    if intake_state.get("urgency_signal") == "immediate" or not intake_state.get("detail_request_issued"):
         ready, missing = False, []
-    else:
-        ready, missing = _check_readiness(intake_state, context)
     intake_state["ready_for_stage2"] = ready
     if missing:
         # Persist the missing items as open questions for Stage 2 handoff
@@ -883,6 +1303,8 @@ def process_turn(session: dict, user_message: str) -> dict:
             if item.lower() not in existing_open:
                 intake_state.setdefault("open_questions", []).append(item)
                 existing_open.add(item.lower())
+
+    _refresh_case_file(intake_state, context)
 
     logger.info(
         "Stage1 turn %d complete | primary=%s | secondary=%s | facts=%d | ready=%s | urgency=%s",
@@ -965,9 +1387,9 @@ def generate_pre_draft_summary(
     evidence_summary = ", ".join(dict.fromkeys(filter(None, evidence_hooks))) or "none noted"
 
     # Remedy fields — from _assess_remedy output stored in intake_state
-    remedy_block = state.get("assessed_remedy") or {}
+    remedy_block = state.get("remedy_detail") or {}
     stated_remedy    = state.get("stated_remedy") or "not stated"
-    assessed_remedy  = remedy_block.get("assessed_remedy") or state.get("client_goal_initial") or "under review"
+    assessed_remedy  = state.get("assessed_remedy") or state.get("client_goal_initial") or "under review"
     recommended_lead = remedy_block.get("recommended_lead") or "to be determined"
     faster_alt       = remedy_block.get("faster_alternative") or "none identified"
     urgency          = state.get("urgency_signal") or "normal"

@@ -2,6 +2,7 @@
 
 # LangChain / LangGraph / LangSmith
 langgraph>=0.2.0
+langgraph-checkpoint-sqlite>=0.1.0
 langchain>=0.2.0
 langchain-openai>=0.1.0
 langchain-community>=0.2.0

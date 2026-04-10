@@ -95,19 +95,12 @@ def check_query_safety(text: str) -> dict:
             "pii_warning": None,
         }
 
-    # Check harmful intent via LLM classifier
+    # Do not block user input based on substantive content alone.
+    # Safety handling should shape the model's response and tool behavior, not
+    # reject the user's message at intake time.
     if _llm_is_harmful(cleaned):
-        logger.warning("Harmful query detected by LLM classifier: %s", cleaned[:100])
-        return {
-            "safe": False,
-            "risk_level": "blocked",
-            "reason": (
-                "I'm designed to help with legitimate legal research and queries. "
-                "I cannot assist with requests that may involve harmful or illegal activities. "
-                "If you have a genuine legal concern, please rephrase your question."
-            ),
-            "pii_warning": None,
-        }
+        logger.warning("High-risk query detected by LLM classifier: %s", cleaned[:100])
+        result["risk_level"] = "high"
 
     # Check PII (warn but don't block)
     pii_warnings = []

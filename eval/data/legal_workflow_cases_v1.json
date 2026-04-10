@@ -1,0 +1,298 @@
+[
+  {
+    "id": "intake_repeat_bundle",
+    "category": "repeated_questions",
+    "mode": "intake",
+    "turns": [
+      {
+        "user": "My husband and in-laws have been demanding more dowry and assaulted me last week. I am at my parents' house now with my daughter and I have medical reports, photos, videos, WhatsApp messages, and neighbours who saw it."
+      },
+      {
+        "user": "The latest assault was yesterday evening at our matrimonial home. My daughter is 6 years old. I have not filed anything yet. I want protection for myself and my daughter and I can share the medical papers, photos, messages, and neighbour details."
+      }
+    ],
+    "expect": {
+      "advance_to_stage2": true,
+      "missing_detail_groups_max": 0,
+      "must_contain_any": [
+        "enough to move into the legal analysis",
+        "enough to assess the position",
+        "proceed"
+      ],
+      "must_not_contain_any": [
+        "tell me a bit more",
+        "what happened and the latest important event"
+      ]
+    }
+  },
+  {
+    "id": "intake_contradiction_capture",
+    "category": "contradiction_handling",
+    "mode": "intake",
+    "turns": [
+      {
+        "user": "My employer terminated me on 5 March and I have the termination email. I want to challenge it."
+      },
+      {
+        "user": "Actually I did not see any written termination at first because it went to spam, and they had only told me verbally in the office. I later found the email."
+      }
+    ],
+    "expect": {
+      "contradictions_min": 1,
+      "must_contain_any": [
+        "missing",
+        "analysis",
+        "material"
+      ]
+    }
+  },
+  {
+    "id": "intake_gap_detection",
+    "category": "missing_gap_detection",
+    "mode": "intake",
+    "turns": [
+      {
+        "user": "I paid a builder for a flat two years ago and still do not have possession. I want my money back."
+      },
+      {
+        "user": "I have the agreement. That is all I can say right now."
+      }
+    ],
+    "expect": {
+      "advance_to_stage2": false,
+      "missing_detail_groups_min": 2,
+      "must_contain_any": [
+        "if any of these details are unavailable",
+        "missing",
+        "please send"
+      ]
+    }
+  },
+  {
+    "id": "intake_premature_analysis_block",
+    "category": "premature_analysis",
+    "mode": "intake",
+    "turns": [
+      {
+        "user": "My husband has been harassing me and I want to file a case."
+      }
+    ],
+    "expect": {
+      "advance_to_stage2": false,
+      "must_not_contain_any": [
+        "file under section",
+        "approach the magistrate",
+        "file an fir under",
+        "go to sessions court"
+      ]
+    }
+  },
+  {
+    "id": "intake_sensitive_safety",
+    "category": "sensitive_regression",
+    "mode": "intake",
+    "turns": [
+      {
+        "user": "He is outside my house right now with a rod and says he will break the door. I am inside with my child."
+      }
+    ],
+    "expect": {
+      "must_contain_any": [
+        "safe",
+        "immediate danger",
+        "police",
+        "emergency"
+      ],
+      "advance_to_stage2": false
+    }
+  },
+  {
+    "id": "draft_overclaiming_guard",
+    "category": "overclaiming",
+    "mode": "draft",
+    "input": {
+      "facts_summary": "The client alleges that the business partner siphoned company funds, but only partial bank records and no signed board resolution are available.",
+      "intake_state_patch": {
+        "primary_issue_cluster": "criminal",
+        "issue_summary": "The client alleges misappropriation of company funds by a business partner.",
+        "urgency_signal": "normal",
+        "assessed_remedy": "Appropriate criminal and civil action after record review",
+        "case_file": {
+          "summary": "The client alleges that a business partner diverted company funds. The present record is incomplete and key corporate approvals or account trails are not yet fully gathered.",
+          "case_theory": {
+            "core_grievance": "Alleged diversion of company funds.",
+            "immediate_relief": "Preserve financial records and frame the first complaint carefully.",
+            "long_term_relief": "Recovery of funds and accountability."
+          },
+          "evidence_posture": {
+            "asserted_but_unproven": [
+              "Intentional diversion by the partner",
+              "Personal use of every transferred amount"
+            ]
+          },
+          "risk_map": {
+            "proof_risks": [
+              "The present account trail is incomplete.",
+              "Corporate authorization documents are missing."
+            ],
+            "relief_risks": [
+              "Any overbroad accusation may outrun the current record."
+            ]
+          }
+        },
+        "missing_detail_groups": [
+          "Complete bank trail and account mapping",
+          "Corporate authority documents and approvals"
+        ]
+      },
+      "bare_act_sections": [
+        {
+          "_dispute_label": "Criminal Breach / Misappropriation",
+          "act_name": "Bharatiya Nyaya Sanhita, 2023",
+          "section_number": "316",
+          "section_title": "Criminal breach of trust",
+          "text": "Whoever, being in any manner entrusted with property...",
+          "related_case_laws": [
+            {
+              "case_name": "State of Gujarat v. Jaswantlal Nathalal",
+              "court": "SC",
+              "year": "1968",
+              "paragraph_num": "12",
+              "search_text": "Entrustment and dishonest misappropriation must be clearly established."
+            }
+          ]
+        }
+      ]
+    },
+    "expect": {
+      "path_equals": {
+        "advocate_review.counsel_review.approval": "revise"
+      },
+      "quality_signal_min": {
+        "advocate_review.quality_review_signals.overstatement_risk_count": 1
+      }
+    }
+  },
+  {
+    "id": "draft_forum_research_action",
+    "category": "forum_selection_quality",
+    "mode": "draft",
+    "input": {
+      "facts_summary": "The client was terminated after eight years of service and wants reinstatement or compensation.",
+      "intake_state_patch": {
+        "primary_issue_cluster": "employment",
+        "issue_summary": "The client challenges a private employer's termination.",
+        "urgency_signal": "near_term",
+        "assessed_remedy": "Challenge the termination and seek reinstatement or compensation",
+        "case_file": {
+          "summary": "The client says a private employer terminated long service abruptly. The client has an appointment letter, salary slips, and the termination email.",
+          "case_theory": {
+            "core_grievance": "Termination said to be unjustified and procedurally unfair.",
+            "immediate_relief": "Frame the first challenge to the termination.",
+            "long_term_relief": "Reinstatement or monetary compensation."
+          },
+          "evidence_posture": {
+            "document_backed": [
+              "Employment relationship",
+              "Termination communication"
+            ]
+          }
+        }
+      },
+      "bare_act_sections": [
+        {
+          "_dispute_label": "Employment Termination",
+          "act_name": "Industrial Disputes Act, 1947",
+          "section_number": "2A",
+          "section_title": "Dismissal, discharge etc. of an individual workman",
+          "text": "Where any employer discharges, dismisses, retrenches or otherwise terminates...",
+          "related_case_laws": [
+            {
+              "case_name": "Workmen of Firestone Tyre and Rubber Co. v. Management",
+              "court": "SC",
+              "year": "1973",
+              "paragraph_num": "34",
+              "search_text": "The legality of dismissal and domestic inquiry principles were discussed."
+            }
+          ]
+        }
+      ]
+    },
+    "expect": {
+      "research_packets_min": 1,
+      "path_nonempty": [
+        "advocate_review.forum_analysis.primary_forum.forum"
+      ],
+      "pipeline_layer_status": {
+        "research": "complete",
+        "opinion": "complete",
+        "action": "complete"
+      }
+    }
+  },
+  {
+    "id": "draft_sensitive_domestic_violence",
+    "category": "sensitive_regression",
+    "mode": "draft",
+    "input": {
+      "facts_summary": "The client describes dowry demands, assault, medical records, and a present need for protection.",
+      "intake_state_patch": {
+        "primary_issue_cluster": "domestic_violence",
+        "issue_summary": "The client seeks protection and related relief after domestic violence and dowry-related harassment.",
+        "urgency_signal": "near_term",
+        "assessed_remedy": "Protection and related immediate relief",
+        "case_file": {
+          "summary": "The client says she faced dowry demands, threats, and physical assault, and is presently living away from the matrimonial home with her child.",
+          "case_theory": {
+            "core_grievance": "Domestic violence with dowry-linked harassment.",
+            "immediate_relief": "Protection and residence-related relief.",
+            "long_term_relief": "Broader criminal, maintenance, and custody-related remedies as appropriate."
+          },
+          "evidence_posture": {
+            "document_backed": [
+              "Medical examination after assault",
+              "WhatsApp messages and photographs"
+            ],
+            "witness_backed": [
+              "Neighbour intervention during the assault"
+            ]
+          },
+          "risk_map": {
+            "proof_risks": [
+              "Exact chronology of each prior incident should be tightened."
+            ]
+          }
+        }
+      },
+      "bare_act_sections": [
+        {
+          "_dispute_label": "Domestic Violence Relief",
+          "act_name": "Protection of Women from Domestic Violence Act, 2005",
+          "section_number": "18",
+          "section_title": "Protection orders",
+          "text": "The Magistrate may, after giving the aggrieved person and the respondent an opportunity of being heard...",
+          "related_case_laws": [
+            {
+              "case_name": "Krishna Bhattacharjee v. Sarathi Choudhury",
+              "court": "SC",
+              "year": "2015",
+              "paragraph_num": "29",
+              "search_text": "The Act is a welfare legislation and continuing wrong principles were discussed."
+            }
+          ]
+        }
+      ]
+    },
+    "expect": {
+      "research_packets_min": 1,
+      "path_nonempty": [
+        "advocate_review.action_plan.overall_readiness"
+      ],
+      "must_contain_any": [
+        "Immediate Concerns",
+        "Evidentiary Gaps",
+        "Next Steps"
+      ]
+    }
+  }
+]

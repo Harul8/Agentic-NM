@@ -7,7 +7,8 @@ signatures and docstrings, so there is nothing to maintain manually.
 
 Tool groups
 -----------
-Research  : search_bare_acts, search_case_laws, lookup_section, lookup_case
+Research  : search_bare_acts, search_case_laws, lookup_section, lookup_case,
+            expand_precedents, get_cases_for_section
 Document  : extract_document_facts, cross_reference_document
 Forum     : identify_forum, check_limitation
 Intake    : start_intake, continue_intake, get_intake_state, draft_opinion
@@ -102,6 +103,49 @@ def lookup_case(case_name: str, para_num: str = "") -> str:
     return _tool_lookup_case(case_name, para_num)
 
 
+@tool
+def expand_precedents(case_names: list[str], direction: str = "both") -> str:
+    """
+    Walk the citation graph to find cases related to a set of seed case names.
+
+    Use after lookup_case or search_case_laws to deepen precedent research and
+    discover high-authority related judgments without running additional FAISS searches.
+
+    Returns cases the seeds cite (authorities they relied on), cases that cite the
+    seeds (how they've been followed or distinguished), high-PageRank neighbours,
+    and the statutory sections those precedents interpret.
+
+    Args:
+        case_names: List of seed case names (full or partial, e.g. ['Indra Sarma v. V.K.V. Sarma']).
+        direction:  Which direction to traverse the graph:
+                    'cited_by' — authorities the seeds relied on;
+                    'citing'   — cases that later cite the seeds;
+                    'both'     — union of both directions (default).
+    """
+    from mcp_server import _tool_expand_precedents
+    return _tool_expand_precedents(case_names, direction)
+
+
+@tool
+def get_cases_for_section(section_number: str, act_hint: str = "") -> str:
+    """
+    Query the citation graph for all cases that have interpreted or applied a
+    specific statutory section. Returns case_id, case_name, court, and year.
+
+    Use this when you already know the section and want to find supporting case law
+    without a full FAISS search. Complements lookup_section (which returns the
+    verbatim statutory text) and search_case_laws (open-ended discovery).
+
+    Args:
+        section_number: Section number as a string (e.g. '18', '138', '85').
+        act_hint:       Optional act name or abbreviation to narrow results
+                        (e.g. 'PWDVA', 'Negotiable Instruments Act', 'BNS').
+                        Leave blank to search across all acts.
+    """
+    from mcp_server import _tool_get_cases_for_section
+    return _tool_get_cases_for_section(section_number, act_hint)
+
+
 # ---------------------------------------------------------------------------
 # Document agent tools
 # ---------------------------------------------------------------------------
@@ -112,17 +156,22 @@ def extract_document_facts(file_text: str, dispute_context: str = "") -> str:
     Extract structured facts from an uploaded legal document (rent agreement,
     legal notice, court order, FIR, employment letter, cheque, etc.).
 
-    Pass the plain text of the document (already extracted by /upload-document).
-    Returns parties, dates, amounts, legal references, obligations, and a summary.
+    Routes through a 3-stage LangGraph subgraph: classify → extract → END.
+    Returns document_type, parties, dates, amounts, legal_references, obligations,
+    a plain-English document_summary, and raw_facts ready for intake injection.
+
     Use this when the user has uploaded a document to enrich the intake session.
 
     Args:
         file_text:        Plain text of the uploaded document (from OCR or text extraction).
         dispute_context:  Brief description of the dispute from the intake session
-                          (optional but improves accuracy).
+                          (optional but improves accuracy of LLM extraction step).
     """
-    from agents.document.agent import extract_document_facts as _impl
-    return _impl(file_text, dispute_context)
+    import json
+    from agents.document.graph import run_document_analysis
+    result = run_document_analysis(file_text, dispute_context=dispute_context)
+    # Return the extracted_facts JSON string (already JSON from subgraph)
+    return result.get("extracted_facts") or json.dumps({"error": "Extraction failed"})
 
 
 @tool
@@ -151,6 +200,7 @@ def identify_forum(intake_state_json: str) -> str:
     """
     Identify the correct Indian legal forum for the dispute based on the intake state.
 
+    Routes through a LangGraph forum subgraph: identify_forum → (if dates) check_limitation.
     Returns primary and alternative forum recommendations with jurisdiction notes,
     typical relief available, pecuniary limits, and urgency assessment.
     Use this after intake is complete and before or during draft_opinion.
@@ -158,8 +208,10 @@ def identify_forum(intake_state_json: str) -> str:
     Args:
         intake_state_json: JSON string of the intake state (from get_intake_state).
     """
-    from agents.forum.agent import identify_forum as _impl
-    return _impl(intake_state_json)
+    import json
+    from agents.forum.graph import run_forum_analysis
+    result = run_forum_analysis(intake_state_json)
+    return result.get("forum_result") or json.dumps({"error": "Forum identification failed"})
 
 
 @tool
@@ -243,11 +295,12 @@ def draft_opinion(session_id: str) -> str:
     """
     Generate the full structured legal opinion draft from a completed intake session.
 
-    Returns formatted_draft (markdown with Statement of Facts, Legal Framework,
-    Case Law Support, Prayer/Relief, Documents Checklist) and advocate_review
-    (structured JSON brief).
+    Returns formatted_draft (client-facing markdown opinion) and advocate_review
+    (structured JSON brief containing the chamber-note view, issue-wise research
+    packets, and action-drafting readiness plan).
     Call this only after advance_to_stage2 was true or get_intake_state shows
     meaningful known_facts. Do NOT call on a fresh or near-empty session.
+    After calling this, the draft awaits advocate review via advocate_review.
 
     Args:
         session_id: The session_id returned by start_intake.
@@ -256,21 +309,70 @@ def draft_opinion(session_id: str) -> str:
     return _tool_draft_opinion(session_id)
 
 
+@tool
+def advocate_review(session_id: str, approved: bool, notes: str = "") -> str:
+    """
+    Submit the advocate's review decision for a generated draft.
+
+    This is the Advocate-in-the-Loop gate before the draft is delivered to the client.
+    The advocate reads the draft from draft_opinion and then calls this tool to:
+      - Accept the draft as-is (approved=True), OR
+      - Request revisions (approved=False, notes="revision instructions").
+
+    When approved, the session summary is saved to cross-session user memory.
+    When rejected, the notes are injected into the next draft generation pass.
+
+    Args:
+        session_id: The session_id from start_intake.
+        approved:   True to accept the draft; False to request revisions.
+        notes:      Revision instructions for the LLM (required when approved=False).
+    """
+    from mcp_server import _tool_advocate_review
+    return _tool_advocate_review(session_id, approved, notes)
+
+
+@tool
+def get_session_history(session_id: str) -> str:
+    """
+    Time-travel: return a summary of every checkpoint stored for this intake session.
+
+    Uses LangGraph's get_state_history() to list all saved checkpoints, most recent
+    first. Each entry shows: turn_count, legal category, urgency, facts collected,
+    and whether the advocate has approved the draft at that point.
+
+    Use this for the advocate review panel to replay the intake step by step, or to
+    audit what information was collected and when.
+
+    Args:
+        session_id: The session_id from start_intake.
+    """
+    from mcp_server import _tool_get_session_history
+    return _tool_get_session_history(session_id)
+
+
 # ---------------------------------------------------------------------------
 # Tool list — passed to LangGraph ToolNode and LLM.bind_tools()
 # ---------------------------------------------------------------------------
 
 TOOLS: list = [
+    # Research
     search_bare_acts,
     search_case_laws,
     lookup_section,
     lookup_case,
+    expand_precedents,
+    get_cases_for_section,
+    # Document
     extract_document_facts,
     cross_reference_document,
+    # Forum
     identify_forum,
     check_limitation,
+    # Intake
     start_intake,
     continue_intake,
     get_intake_state,
     draft_opinion,
+    advocate_review,
+    get_session_history,
 ]

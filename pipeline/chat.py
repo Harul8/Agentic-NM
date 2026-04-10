@@ -135,19 +135,20 @@ def _build_analysis_ready_prompt(conversation: list, intake_state: dict | None =
     """
     if intake_state:
         issue = (intake_state.get("issue_summary") or "").strip()
-        goal = (intake_state.get("client_goal_initial") or "").strip()
-        if issue:
-            short_issue = issue[:110].lower().rstrip(".")
+        case_summary = str(((intake_state.get("case_file") or {}).get("summary") or "")).strip()
+        lead = case_summary or issue
+        if lead:
+            short_issue = lead[:140].rstrip(".")
             return (
-                f"I think I have a clear enough picture now — {short_issue}. "
-                f"If there's one last thing you feel is important for me to know, share it now. "
-                f"Otherwise just say 'proceed' and I'll start working through the applicable laws."
+                f"On the present record, I have enough to assess the position — {short_issue}. "
+                f"If there is one last material fact or document I should account for, share it now. "
+                f"Otherwise just say 'proceed' and I'll prepare the legal position, likely routes, and immediate next steps."
             )
     idx = len([m for m in (conversation or []) if m.get("role") == "assistant"]) % 3
     opts = (
-        "I have a good picture of your situation now. If there is one last important detail I should know, share it — otherwise say 'proceed' and I'll identify the relevant laws.",
-        "I think we have what we need to begin. Feel free to add one last key detail, or say 'proceed' and I'll start working through your options.",
-        "We can begin the analysis now. Add one last point if something important is still missing, or say 'proceed' to start.",
+        "On the present record, I have enough to begin. If there is one last material detail or document I should consider, share it now — otherwise say 'proceed' and I'll set out the legal position and next steps.",
+        "I have enough to assess the matter as it presently stands. Feel free to add one last material point, or say 'proceed' and I'll start framing the likely legal routes.",
+        "The record is now sufficient for a measured analysis. Add one last material detail if needed, or say 'proceed' and I'll prepare the legal position, risks, and next steps.",
     )
     return opts[idx]
 

@@ -219,10 +219,32 @@ _LIMITATION_DATA = {
 
 def _score_forums(intake_state: dict) -> list[tuple[float, dict]]:
     """Score all forums against the intake state. Returns sorted (score, forum) list."""
-    category = (intake_state.get("category") or "").lower()
-    issue_summary = (intake_state.get("issue_summary") or "").lower()
-    known_facts = " ".join(str(f) for f in (intake_state.get("known_facts") or [])).lower()
-    combined = f"{category} {issue_summary} {known_facts}"
+    category = (
+        intake_state.get("category")
+        or intake_state.get("primary_issue_cluster")
+        or ""
+    )
+    category = str(category).lower()
+    issue_summary = str(intake_state.get("issue_summary") or "").lower()
+    known_fact_parts = []
+    for fact in (intake_state.get("known_facts") or []):
+        if isinstance(fact, dict):
+            known_fact_parts.append(str(fact.get("fact") or ""))
+        else:
+            known_fact_parts.append(str(fact))
+    known_facts = " ".join(known_fact_parts).lower()
+    case_file = intake_state.get("case_file") or {}
+    case_summary = str(case_file.get("summary") or "").lower()
+    relief_hint = " ".join(
+        str(x or "")
+        for x in [
+            (case_file.get("case_theory") or {}).get("immediate_relief"),
+            (case_file.get("case_theory") or {}).get("long_term_relief"),
+            intake_state.get("assessed_remedy"),
+            intake_state.get("client_goal_initial"),
+        ]
+    ).lower()
+    combined = f"{category} {issue_summary} {known_facts} {case_summary} {relief_hint}"
 
     scored = []
     for forum in _FORUM_RULES:
@@ -295,7 +317,7 @@ def identify_forum(intake_state_json: str) -> str:
             "primary_forum": recommendations[0] if recommendations else None,
             "alternative_forum": recommendations[1] if len(recommendations) > 1 else None,
             "urgency_note": urgency_note,
-            "category_detected": intake_state.get("category", ""),
+            "category_detected": intake_state.get("category") or intake_state.get("primary_issue_cluster", ""),
             "all_forums_considered": len(_FORUM_RULES),
         }
         logger.info(

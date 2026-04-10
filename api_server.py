@@ -3,6 +3,7 @@ import os
 import json
 import sqlite3
 import hashlib
+import bcrypt as _bcrypt
 import logging
 import secrets
 import re
@@ -201,7 +202,23 @@ _bareacts_library_cache: dict[str, list[dict]] | None = None
 
 
 def _hash_password(password: str) -> str:
-    return hashlib.sha256(password.encode("utf-8")).hexdigest()
+    """Hash a password using bcrypt (salted, with work factor 12)."""
+    return _bcrypt.hashpw(password.encode("utf-8"), _bcrypt.gensalt(rounds=12)).decode("utf-8")
+
+
+def _check_password(password: str, stored_hash: str) -> bool:
+    """Verify a plaintext password against a stored bcrypt hash.
+    Also handles legacy SHA-256 hashes (hex strings) so existing accounts
+    continue to work — they will be re-hashed to bcrypt on next successful login.
+    """
+    # Legacy SHA-256: hex string, 64 chars, no $2b$ prefix
+    if not stored_hash.startswith("$2"):
+        legacy_hash = hashlib.sha256(password.encode("utf-8")).hexdigest()
+        return secrets.compare_digest(legacy_hash, stored_hash)
+    try:
+        return _bcrypt.checkpw(password.encode("utf-8"), stored_hash.encode("utf-8"))
+    except Exception:
+        return False
 
 
 def _get_db():
@@ -310,6 +327,36 @@ def _user_from_token(credentials: Optional[HTTPAuthorizationCredentials] = Depen
             # Invalid or expired token: fall back to anonymous so app works without re-login
             logger.debug("Invalid or expired token; using anonymous user")
             return _anonymous_user()
+        return {"id": row["id"], "email": row["email"], "name": row["name"]}
+    finally:
+        conn.close()
+
+
+def _require_auth(credentials: Optional[HTTPAuthorizationCredentials] = Depends(security)) -> dict:
+    """Strict auth dependency — raises HTTP 401 if token is missing or invalid.
+    Use on any endpoint that must NOT be accessible anonymously.
+    """
+    if not credentials or not (credentials.credentials or "").strip():
+        raise HTTPException(
+            status_code=401,
+            detail="Authentication required. Please log in.",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    token = credentials.credentials.strip()
+    conn = _get_db()
+    try:
+        row = conn.execute(
+            "SELECT u.id, u.email, u.name FROM users u "
+            "JOIN sessions s ON s.user_id = u.id "
+            "WHERE s.token = ? AND u.email != ?",
+            (token, _ANONYMOUS_EMAIL),
+        ).fetchone()
+        if not row:
+            raise HTTPException(
+                status_code=401,
+                detail="Invalid or expired token. Please log in again.",
+                headers={"WWW-Authenticate": "Bearer"},
+            )
         return {"id": row["id"], "email": row["email"], "name": row["name"]}
     finally:
         conn.close()
@@ -488,15 +535,23 @@ def auth_login(req: LoginRequest):
     password = (req.password or "").strip()
     if not email or not password:
         raise HTTPException(status_code=400, detail="Email and password required")
-    password_hash = _hash_password(password)
     conn = _get_db()
     try:
         row = conn.execute(
-            "SELECT id, email, name FROM users WHERE email = ? AND password_hash = ?",
-            (email, password_hash),
+            "SELECT id, email, name, password_hash FROM users WHERE email = ?",
+            (email,),
         ).fetchone()
-        if not row:
+        # Use constant-time check to prevent timing attacks; also handles legacy SHA-256
+        if not row or not _check_password(password, row["password_hash"]):
             raise HTTPException(status_code=401, detail="Incorrect email or password")
+        # Transparently upgrade legacy SHA-256 hash to bcrypt on successful login
+        if not row["password_hash"].startswith("$2"):
+            new_hash = _hash_password(password)
+            conn.execute(
+                "UPDATE users SET password_hash = ? WHERE id = ?",
+                (new_hash, row["id"]),
+            )
+            logger.info("Upgraded password hash to bcrypt for user id=%s", row["id"])
         token = secrets.token_urlsafe(32)
         conn.execute("INSERT INTO sessions (user_id, token) VALUES (?, ?)", (row["id"], token))
         conn.commit()
@@ -510,7 +565,7 @@ def auth_login(req: LoginRequest):
 
 
 @app.get("/chats")
-def chats_list(user: dict = Depends(_user_from_token)):
+def chats_list(user: dict = Depends(_require_auth)):
     conn = _get_db()
     try:
         rows = conn.execute(
@@ -548,7 +603,7 @@ def _coerce_chat_id(v):
 
 
 @app.post("/chats")
-def chats_upsert(payload: ChatPayload, user: dict = Depends(_user_from_token)):
+def chats_upsert(payload: ChatPayload, user: dict = Depends(_require_auth)):
     """Create or update a chat. If id is provided and exists for this user, update; else create with id or new id."""
     title = (payload.title or "").strip() or "Untitled chat"
     messages = payload.messages if isinstance(payload.messages, list) else []
@@ -587,7 +642,7 @@ def chats_upsert(payload: ChatPayload, user: dict = Depends(_user_from_token)):
 
 
 @app.get("/chats/{chat_id}")
-def chat_get(chat_id: int, user: dict = Depends(_user_from_token)):
+def chat_get(chat_id: int, user: dict = Depends(_require_auth)):
     conn = _get_db()
     try:
         row = conn.execute(
@@ -614,7 +669,7 @@ def chat_get(chat_id: int, user: dict = Depends(_user_from_token)):
 
 
 @app.delete("/chats/{chat_id}")
-def chat_delete(chat_id: str, user: dict = Depends(_user_from_token)):
+def chat_delete(chat_id: str, user: dict = Depends(_require_auth)):
     """Remove a chat from the user's history."""
     try:
         id_val = int(chat_id.strip())
@@ -2399,7 +2454,7 @@ def chat(request: ChatRequest):
 
 
 @app.post("/submit_case")
-def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_token)):
+def submit_case(request: SubmitCaseRequest, user: dict = Depends(_require_auth)):
     """
     Initial case submission (await_facts). Frontend sends { text }.
     Returns status + next_question | opinion_text so the UI can continue the flow.
@@ -2453,7 +2508,7 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
 
 
 @app.post("/interview_step")
-def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_from_token)):
+def interview_step(request: InterviewStepRequest, user: dict = Depends(_require_auth)):
     """
     Follow-up answer in interview. Frontend sends { facts, qa_history } (qa_history includes the latest answer).
     Returns same shape as submit_case for consistent UI handling.
@@ -2520,7 +2575,7 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
 
 
 @app.post("/conversation/continue")
-def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_token)):
+def continue_chat(request: ContinueChatRequest, user: dict = Depends(_require_auth)):
     """
     Continue a conversation from chat history. Sends full conversation + new message
     so the LLM has full context. Returns same shape as submit_case / interview_step.
@@ -2767,7 +2822,7 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
 
 
 @app.post("/submit_case/stream")
-async def submit_case_stream(request: SubmitCaseRequest, user: dict = Depends(_user_from_token)):
+async def submit_case_stream(request: SubmitCaseRequest, user: dict = Depends(_require_auth)):
     """Same as /submit_case but streams progress via Server-Sent Events."""
     _enforce_query_limit(user)
     text = (request.text or "").strip()
@@ -2805,7 +2860,7 @@ async def submit_case_stream(request: SubmitCaseRequest, user: dict = Depends(_u
 
 
 @app.post("/interview_step/stream")
-async def interview_step_stream(request: InterviewStepRequest, user: dict = Depends(_user_from_token)):
+async def interview_step_stream(request: InterviewStepRequest, user: dict = Depends(_require_auth)):
     """Same as /interview_step but streams progress via Server-Sent Events."""
     _enforce_query_limit(user)
     facts = request.facts or ""
@@ -2844,7 +2899,7 @@ async def interview_step_stream(request: InterviewStepRequest, user: dict = Depe
 
 
 @app.post("/conversation/continue/stream")
-async def continue_chat_stream(request: ContinueChatRequest, user: dict = Depends(_user_from_token)):
+async def continue_chat_stream(request: ContinueChatRequest, user: dict = Depends(_require_auth)):
     """
     Same as /conversation/continue but streams progress via Server-Sent Events.
     Events: "progress" (progress snapshot JSON), "done" (final UI result JSON).
@@ -2903,7 +2958,7 @@ class AgentRequest(BaseModel):
 
 
 @app.post("/agent/stream")
-async def agent_stream(request: AgentRequest, user: dict = Depends(_user_from_token)):
+async def agent_stream(request: AgentRequest, user: dict = Depends(_require_auth)):
     """
     Agentic endpoint. Streams SSE events from the OrchestratorAgent.
 
@@ -3169,7 +3224,7 @@ def docs_architecture():
 # ---------------------------------------------------------------------------
 
 @app.post("/feedback/review/{case_id}")
-def feedback_review(case_id: str, user: dict = Depends(_user_from_token)):
+def feedback_review(case_id: str, user: dict = Depends(_require_auth)):
     """
     Trigger AI Gate review for a logged interaction.
 
@@ -3297,7 +3352,7 @@ def response_feedback_taxonomy():
 
 
 @app.post("/feedback/response")
-def submit_response_feedback(request: ResponseFeedbackRequest, user: dict = Depends(_user_from_token)):
+def submit_response_feedback(request: ResponseFeedbackRequest, user: dict = Depends(_require_auth)):
     message_id = (request.message_id or "").strip()
     rating = (request.rating or "").strip().lower()
     assistant_text = (request.assistant_text or "").strip()

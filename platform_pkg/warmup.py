@@ -69,7 +69,7 @@ def run_critical_runtime_warmup(reason: str = "startup") -> dict:
             return status
 
         try:
-            from platform.training.few_shot import preload_examples
+            from platform_pkg.training.few_shot import preload_examples
 
             try:
                 preload_examples()

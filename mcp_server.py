@@ -72,12 +72,50 @@ def _gc_sessions() -> None:
 def _tool_search_bare_acts(query: str, top_k: int = 5) -> str:
     """
     search_bare_acts implementation.
+
+    Entity-aware routing:
+      1. extract_legal_entities() scans the query for explicit act/section refs.
+      2. For each entity found, lookup_section() fetches the verbatim text directly
+         from the structured DB — faster and more precise than FAISS.
+      3. If no entities are found (or the entity lookup returns nothing), fall through
+         to the FAISS + BM25 hybrid search as before.
+
     Returns sections formatted for model consumption:
-      [{act_name, section_number, section_title, text, score}]
+      [{act_name, section_number, section_title, text, score, source}]
     """
     try:
         from retrieval.retriever import search_bare_acts_auto
         top_k = max(1, min(int(top_k), 20))
+
+        # ── Stage 1: entity-aware direct lookup ──────────────────────────────
+        entity_results: list[dict] = []
+        try:
+            from retrieval.legal_graph import extract_legal_entities, lookup_section as _lookup_sec
+            entities = extract_legal_entities(query)
+            for ent in entities:
+                sec_rows = _lookup_sec(
+                    ent.get("section_number", ""),
+                    ent.get("act_hint", ""),
+                )
+                for row in (sec_rows or []):
+                    entity_results.append({
+                        "act_name":       row.get("act_name", ent.get("act_hint", "")),
+                        "section_number": row.get("section_number", ent.get("section_number", "")),
+                        "section_title":  row.get("section_title", ""),
+                        "text":           (row.get("text") or row.get("full_text") or "")[:2000],
+                        "score":          1.0,       # direct-lookup — treat as top score
+                        "source":         "entity_lookup",
+                    })
+        except Exception:
+            logger.debug("entity routing unavailable — falling back to FAISS", exc_info=True)
+
+        if entity_results:
+            return json.dumps(
+                {"query": query, "results": entity_results, "routing": "entity_lookup"},
+                ensure_ascii=False, indent=2,
+            )
+
+        # ── Stage 2: FAISS + BM25 hybrid fallback ────────────────────────────
         raw = search_bare_acts_auto(query, top_k=top_k)
         results = []
         for r in raw:
@@ -87,8 +125,9 @@ def _tool_search_bare_acts(query: str, top_k: int = 5) -> str:
                 "section_title":  r.get("section_title", ""),
                 "text":           (r.get("text") or r.get("full_text") or "")[:2000],
                 "score":          round(float(r.get("rerank_score", 0) or 0), 4),
+                "source":         "faiss_hybrid",
             })
-        return json.dumps({"query": query, "results": results}, ensure_ascii=False, indent=2)
+        return json.dumps({"query": query, "results": results, "routing": "faiss_hybrid"}, ensure_ascii=False, indent=2)
     except Exception as exc:
         logger.exception("search_bare_acts failed")
         return json.dumps({"error": str(exc), "query": query})
@@ -205,40 +244,19 @@ def _tool_lookup_case(case_name: str, para_num: Optional[str] = None) -> str:
         return json.dumps({"error": str(exc), "case_name": case_name})
 
 
-def _tool_start_intake(first_message: str = "") -> str:
+def _tool_start_intake(first_message: str = "", user_id: str = "") -> str:
     """
-    start_intake implementation.
-    Creates a new legal opinion intake session.
-    If first_message is provided, processes it as the client's first turn.
-    Returns session_id + AI reply + current intake_state.
+    start_intake implementation — backed by LangGraph intake subgraph.
+
+    Creates a new SQLite-checkpointed intake session.  If first_message is
+    provided it is processed immediately (category detection + fact extraction
+    run in parallel).  Returns session_id + AI reply + current intake_state.
+    user_id (optional) — links this session to the cross-session memory store.
     """
     try:
-        _gc_sessions()
-        from agents.intake.session import new_session, append_turn
-        from agents.intake.stage1_opening import generate_opening, process_turn
-
-        session = new_session()
-        session_id = session["session_id"]
-
-        if first_message and first_message.strip():
-            # Client sent a message with start — process it immediately
-            append_turn(session, "user", first_message.strip())
-            result = process_turn(session, first_message.strip())
-            reply = result["reply"]
-            append_turn(session, "assistant", reply)
-            session["intake_state"] = result["intake_state"]
-        else:
-            # No message yet — send the warm opening
-            reply = generate_opening()
-            append_turn(session, "assistant", reply)
-
-        _SESSIONS[session_id] = session
-        return json.dumps({
-            "session_id":    session_id,
-            "reply":         reply,
-            "stage":         session.get("stage", "stage1"),
-            "intake_state":  session.get("intake_state", {}),
-        }, ensure_ascii=False, indent=2)
+        from agents.intake.graph import start_intake_session
+        result = start_intake_session(first_message or "", user_id=user_id or "")
+        return json.dumps(result, ensure_ascii=False, indent=2)
     except Exception as exc:
         logger.exception("start_intake failed")
         return json.dumps({"error": str(exc)})
@@ -246,46 +264,20 @@ def _tool_start_intake(first_message: str = "") -> str:
 
 def _tool_continue_intake(session_id: str, client_message: str) -> str:
     """
-    continue_intake implementation.
-    Passes the client's next message to the active intake session.
-    Returns the AI's next reply, updated intake_state, and whether to advance stage.
+    continue_intake implementation — backed by LangGraph intake subgraph.
+
+    Resumes the checkpointed intake session with the client's next message.
+    Category detection + fact extraction run in parallel inside the graph.
+    Returns the AI's next reply, updated intake_state, and stage-advance flag.
     """
     try:
-        if session_id not in _SESSIONS:
-            return json.dumps({
-                "error": f"Session '{session_id}' not found. Call start_intake first.",
-                "session_id": session_id,
-            })
-
-        session = _SESSIONS[session_id]
         msg = (client_message or "").strip()
         if not msg:
             return json.dumps({"error": "client_message cannot be empty", "session_id": session_id})
 
-        from agents.intake.session import append_turn
-        from agents.intake.stage1_opening import process_turn
-
-        append_turn(session, "user", msg)
-        result = process_turn(session, msg)
-
-        reply = result["reply"]
-        append_turn(session, "assistant", reply)
-        session["intake_state"] = result["intake_state"]
-
-        if result.get("advance_to_stage2"):
-            session["stage"] = "stage2"
-
-        session["updated_at"] = time.time()
-        _SESSIONS[session_id] = session
-
-        return json.dumps({
-            "session_id":        session_id,
-            "reply":             reply,
-            "stage":             session.get("stage", "stage1"),
-            "advance_to_stage2": result.get("advance_to_stage2", False),
-            "urgency_signal":    result.get("urgency_signal", "unknown"),
-            "intake_state":      session.get("intake_state", {}),
-        }, ensure_ascii=False, indent=2)
+        from agents.intake.graph import continue_intake_session
+        result = continue_intake_session(session_id, msg)
+        return json.dumps(result, ensure_ascii=False, indent=2)
     except Exception as exc:
         logger.exception("continue_intake failed")
         return json.dumps({"error": str(exc), "session_id": session_id})
@@ -293,25 +285,13 @@ def _tool_continue_intake(session_id: str, client_message: str) -> str:
 
 def _tool_get_intake_state(session_id: str) -> str:
     """
-    get_intake_state implementation.
-    Returns the current structured intake state for a session.
-    Useful for the advocate review panel to inspect collected facts.
+    get_intake_state implementation — reads directly from the LangGraph checkpointer.
+    No LLM call.  Returns structured intake state for the advocate review panel.
     """
     try:
-        if session_id not in _SESSIONS:
-            return json.dumps({
-                "error": f"Session '{session_id}' not found.",
-                "session_id": session_id,
-            })
-        session = _SESSIONS[session_id]
-        return json.dumps({
-            "session_id":   session_id,
-            "stage":        session.get("stage", "stage1"),
-            "intake_state": session.get("intake_state", {}),
-            "turn_count":   len([t for t in session.get("history", []) if t.get("role") == "user"]),
-            "category":     (session.get("intake_state") or {}).get("category"),
-            "urgency":      (session.get("intake_state") or {}).get("urgency_signal"),
-        }, ensure_ascii=False, indent=2)
+        from agents.intake.graph import get_intake_session_state
+        result = get_intake_session_state(session_id)
+        return json.dumps(result, ensure_ascii=False, indent=2)
     except Exception as exc:
         logger.exception("get_intake_state failed")
         return json.dumps({"error": str(exc), "session_id": session_id})
@@ -319,39 +299,160 @@ def _tool_get_intake_state(session_id: str) -> str:
 
 def _tool_draft_opinion(session_id: str) -> str:
     """
-    draft_opinion implementation.
-    Triggers Stage 5 draft generation from a completed intake session.
-    Returns formatted_draft (markdown) + advocate_review (structured JSON brief).
-    The advocate_review is the brief shown in the senior advocate review panel.
+    draft_opinion implementation — reads from the LangGraph checkpointer.
+    Returns formatted_draft (client-facing markdown) + advocate_review
+    (structured JSON brief with chamber-note, research packets, and action plan).
     """
     try:
-        if session_id not in _SESSIONS:
-            return json.dumps({
-                "error": f"Session '{session_id}' not found. Run intake first.",
-                "session_id": session_id,
-            })
-
-        session = _SESSIONS[session_id]
-        intake_state = session.get("intake_state") or {}
-
-        if not intake_state.get("known_facts"):
-            return json.dumps({
-                "error": "Intake not complete — no facts collected yet. Continue the intake conversation.",
-                "session_id": session_id,
-                "stage": session.get("stage", "stage1"),
-            })
-
-        from agents.intake.stage5_draft import build_draft
-        result = build_draft(intake_state, session.get("history", []))
-
-        return json.dumps({
-            "session_id":      session_id,
-            "formatted_draft": result.get("formatted_draft", ""),
-            "advocate_review": result.get("advocate_review", {}),
-        }, ensure_ascii=False, indent=2)
+        from agents.intake.graph import get_draft_from_session
+        result = get_draft_from_session(session_id)
+        return json.dumps(result, ensure_ascii=False, indent=2)
     except Exception as exc:
         logger.exception("draft_opinion failed")
         return json.dumps({"error": str(exc), "session_id": session_id})
+
+
+def _tool_advocate_review(session_id: str, approved: bool, notes: str = "") -> str:
+    """
+    advocate_review implementation — resumes the intake graph's advocate_review node.
+
+    Submits the advocate's decision on a generated draft:
+      approved=True  → draft accepted; session summary saved to user memory.
+      approved=False → draft rejected; revision notes injected into next draft.
+    """
+    try:
+        from agents.intake.graph import advocate_review_session
+        result = advocate_review_session(session_id, approved=bool(approved), notes=notes or "")
+        return json.dumps(result, ensure_ascii=False, indent=2)
+    except Exception as exc:
+        logger.exception("advocate_review failed")
+        return json.dumps({"error": str(exc), "session_id": session_id})
+
+
+def _tool_get_session_history(session_id: str) -> str:
+    """
+    get_session_history implementation — time-travel via LangGraph checkpoints.
+
+    Returns a list of checkpoint summaries for the session (most recent first).
+    Each entry includes: checkpoint_index, turn_count, category, urgency,
+    facts_count, advocate_approved, and a reply_preview.
+    """
+    try:
+        from agents.intake.graph import get_session_history
+        history = get_session_history(session_id)
+        return json.dumps(
+            {"session_id": session_id, "checkpoints": history},
+            ensure_ascii=False, indent=2,
+        )
+    except Exception as exc:
+        logger.exception("get_session_history failed")
+        return json.dumps({"error": str(exc), "session_id": session_id})
+
+
+def _tool_expand_precedents(case_names: list[str], direction: str = "both") -> str:
+    """
+    expand_precedents implementation.
+
+    Walks the citation graph to find cases that are closely related to the
+    provided seed case names:
+      - "cited_by"  : cases that the seeds cite (authorities they relied on)
+      - "citing"    : cases that cite the seeds (how they've been followed/distinguished)
+      - "both"      : union of the above two sets  (default)
+
+    Also calls expand_case_names_by_precedent() to surface the highest-authority
+    precedents connected to the seeds via PageRank.
+
+    Returns:
+      {
+        seeds:            [...],
+        cited_by:         [{case_id, case_name}],   # authorities relied on by seeds
+        citing:           [{case_id, case_name}],   # cases that cite the seeds
+        high_authority:   [{case_name}],             # top PageRank neighbours
+        sections_touched: [{section_number, act}],  # sections interpreted by precedents
+      }
+    """
+    try:
+        from retrieval.citations import (
+            get_cases_cited_by,
+            get_cases_citing,
+            expand_case_names_by_precedent,
+        )
+
+        direction = direction.lower()
+        cited_by_raw: list[tuple] = []
+        citing_raw:   list[tuple] = []
+
+        if direction in ("cited_by", "both"):
+            cited_by_raw = get_cases_cited_by(case_names) or []
+        if direction in ("citing", "both"):
+            citing_raw = get_cases_citing(case_names) or []
+
+        extra_names, sections_touched = expand_case_names_by_precedent(case_names)
+
+        def _pair_to_dict(pair: tuple) -> dict:
+            if isinstance(pair, (list, tuple)) and len(pair) >= 2:
+                return {"case_id": pair[0], "case_name": pair[1]}
+            return {"case_name": str(pair)}
+
+        return json.dumps(
+            {
+                "seeds":            case_names,
+                "cited_by":         [_pair_to_dict(p) for p in cited_by_raw],
+                "citing":           [_pair_to_dict(p) for p in citing_raw],
+                "high_authority":   [{"case_name": n} for n in (extra_names or [])],
+                "sections_touched": sections_touched or [],
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+    except Exception as exc:
+        logger.exception("expand_precedents failed")
+        return json.dumps({"error": str(exc), "case_names": case_names})
+
+
+def _tool_get_cases_for_section(section_number: str, act_hint: str = "") -> str:
+    """
+    get_cases_for_section implementation.
+
+    Queries the citation graph for all case law that has been recorded as
+    interpreting or applying the given statutory section.
+
+    Returns:
+      {
+        section_number: "...",
+        act_hint:       "...",
+        cases:          [{case_id, case_name, court, year}],
+      }
+    """
+    try:
+        from retrieval.citations import get_cases_interpreting_section
+
+        cases_raw = get_cases_interpreting_section(section_number, act_hint) or []
+
+        cases = []
+        for row in cases_raw:
+            if isinstance(row, dict):
+                cases.append({
+                    "case_id":   row.get("case_id", ""),
+                    "case_name": row.get("case_name", ""),
+                    "court":     row.get("court", ""),
+                    "year":      row.get("year", ""),
+                })
+            else:
+                cases.append({"case_name": str(row)})
+
+        return json.dumps(
+            {
+                "section_number": section_number,
+                "act_hint":       act_hint,
+                "cases":          cases,
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+    except Exception as exc:
+        logger.exception("get_cases_for_section failed")
+        return json.dumps({"error": str(exc), "section_number": section_number, "act_hint": act_hint})
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -435,12 +536,14 @@ def _build_server(port: int = 8010) -> "FastMCP":
             "Creates a session and returns an opening message for the client. "
             "Optionally pass the client's first message to process it immediately. "
             "Returns session_id — pass this to continue_intake for every subsequent turn. "
+            "Pass user_id to link this session to the cross-session memory store "
+            "so prior context is surfaced in future sessions. "
             "Use this ONLY to begin a fresh legal opinion workflow, not for research queries."
         )
     )
-    def start_intake(first_message: str = "") -> str:
+    def start_intake(first_message: str = "", user_id: str = "") -> str:
         """Begin a new legal opinion intake. Returns session_id + opening reply."""
-        return _tool_start_intake(first_message)
+        return _tool_start_intake(first_message, user_id=user_id)
 
     # ── 6. continue_intake ────────────────────────────────────────────────────
     @app.tool(
@@ -473,10 +576,9 @@ def _build_server(port: int = 8010) -> "FastMCP":
     @app.tool(
         description=(
             "Generate the full structured legal opinion draft from a completed intake session. "
-            "Returns two outputs: formatted_draft (markdown document with Statement of Facts, "
-            "Legal Framework with verbatim statutory text, Case Law Support with exact paragraph "
-            "numbers, Prayer/Relief, and Documents Checklist) and advocate_review (structured JSON "
-            "brief for the senior advocate review panel). "
+            "Returns two outputs: formatted_draft (client-facing markdown opinion) and "
+            "advocate_review (structured JSON brief with the chamber-note view, issue-wise "
+            "research packets, and action-drafting readiness plan for the senior advocate panel). "
             "Call this only after the intake is sufficiently complete (advance_to_stage2 was true "
             "or get_intake_state shows meaningful known_facts). "
             "Do NOT call this on a fresh or near-empty session."
@@ -485,6 +587,64 @@ def _build_server(port: int = 8010) -> "FastMCP":
     def draft_opinion(session_id: str) -> str:
         """Generate structured legal opinion draft from a completed intake session."""
         return _tool_draft_opinion(session_id)
+
+    # ── 9. expand_precedents ─────────────────────────────────────────────────
+    @app.tool(
+        description=(
+            "Walk the citation graph to find cases related to the given seed case names. "
+            "Returns cases the seeds cite (authorities relied on), cases that cite the seeds "
+            "(how they've been followed or distinguished), high-authority PageRank neighbours, "
+            "and the statutory sections those precedents interpret. "
+            "Use after lookup_case or search_case_laws to deepen precedent research. "
+            "direction: 'cited_by' | 'citing' | 'both' (default)."
+        )
+    )
+    def expand_precedents(case_names: list[str], direction: str = "both") -> str:
+        """Expand a set of case names into a web of related precedents via the citation graph."""
+        return _tool_expand_precedents(case_names, direction)
+
+    # ── 10. get_cases_for_section ─────────────────────────────────────────────
+    @app.tool(
+        description=(
+            "Query the citation graph for all cases recorded as interpreting or applying "
+            "a specific statutory section. Returns case_id, case_name, court, and year. "
+            "Use when you know the section and want the case law that has applied it. "
+            "Complement with lookup_section to get the verbatim text of the section itself."
+        )
+    )
+    def get_cases_for_section(section_number: str, act_hint: str = "") -> str:
+        """Return all cases in the citation graph that interpret a given statutory section."""
+        return _tool_get_cases_for_section(section_number, act_hint)
+
+    # ── 11. advocate_review ───────────────────────────────────────────────────
+    @app.tool(
+        description=(
+            "Submit the advocate's review decision for a generated draft. "
+            "This is the Advocate-in-the-Loop gate: the draft waits for approval before "
+            "being delivered to the client. "
+            "approved=True accepts the draft and saves the session to user memory. "
+            "approved=False with revision notes triggers a re-draft incorporating the feedback. "
+            "Call this after draft_opinion returns a draft and before surfacing it to the client."
+        )
+    )
+    def advocate_review(session_id: str, approved: bool, notes: str = "") -> str:
+        """Submit advocate approval or revision request for a generated draft."""
+        return _tool_advocate_review(session_id, approved, notes)
+
+    # ── 12. get_session_history ───────────────────────────────────────────────
+    @app.tool(
+        description=(
+            "Time-travel: return a checkpoint-by-checkpoint history of an intake session. "
+            "Each checkpoint captures the state at a specific point in the conversation: "
+            "turn count, legal category, urgency level, facts collected, and advocacy status. "
+            "Use for the advocate review panel to audit the intake progression, "
+            "or to identify the exact point where a key fact was collected. "
+            "Does not advance the session or call any LLM."
+        )
+    )
+    def get_session_history(session_id: str) -> str:
+        """Return checkpoint summaries for all saved states of an intake session."""
+        return _tool_get_session_history(session_id)
 
     return app
 

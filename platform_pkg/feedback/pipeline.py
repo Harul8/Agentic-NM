@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Any
 
 from config import LEGAL_DB_CHAT_HISTORY
-from platform.feedback.store import feedback_store_path
+from platform_pkg.feedback.store import feedback_store_path
 
 logger = logging.getLogger(__name__)
 

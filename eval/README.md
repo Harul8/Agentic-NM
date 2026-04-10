@@ -39,6 +39,9 @@ python -m eval.generate_figures --results-dir eval/results/ --out eval/figures/
 
 # 8. Generate annotation template for advocates
 python -m eval.annotator_agreement --generate-template eval/data/queries_v2.json --out eval/data/annotation_template.json
+
+# 9. Run workflow evals for intake + draft quality
+python -m eval.legal_workflow_eval --cases eval/data/legal_workflow_cases_v1.json --out eval/results/workflow/
 ```
 
 ---
@@ -52,6 +55,7 @@ eval/
   retrieval_metrics.py      # Precision@k, Recall@k, MRR, nDCG@k, AUC
   safety_runner.py          # Adversarial query testing (30 queries, 6 categories)
   citation_verifier.py      # Hallucinated citation detection
+  legal_workflow_eval.py    # Intake + draft workflow quality regressions
   threshold_sweep.py        # Optimal rerank score analysis
   annotator_agreement.py    # Cohen's Kappa, Krippendorff's Alpha
   generate_figures.py       # Publication-quality charts
@@ -59,6 +63,7 @@ eval/
   data/
     queries_v2.json             # 40 domain queries with gold annotations (GoI + Telangana acts)
     safety_queries_v2.json      # 30 adversarial queries across 6 safety categories
+    legal_workflow_cases_v1.json # Workflow regressions for intake and advocate-style draft quality
     system_versions.txt         # Versions snapshot for reproducibility
   results/                  # Batch run outputs
     safety/                 # Safety test reports
