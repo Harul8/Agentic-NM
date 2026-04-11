@@ -416,7 +416,7 @@ const ChatComposer = memo(function ChatComposer({
   selectedModel,
   onModelChange,
   apiBase,
-  canUploadDocuments = false,
+  canUploadDocuments = true,
   onRequireAuth,
   // Queue props
   messageQueue = [],
@@ -442,10 +442,6 @@ const ChatComposer = memo(function ChatComposer({
     if (!file) return;
     e.target.value = "";
     const token = localStorage.getItem(AUTH_TOKEN_KEY);
-    if (!token) {
-      onRequireAuth?.("Please log in or create an account to upload documents.");
-      return;
-    }
     setUploading(true);
     const controller = new AbortController();
     abortControllerRef.current = controller;
@@ -458,7 +454,7 @@ const ChatComposer = memo(function ChatComposer({
         signal: controller.signal,
       });
       if (!res.ok) {
-        if (res.status === 401) {
+        if (res.status === 401 && token) {
           onRequireAuth?.("Your session has expired. Please log in again to upload documents.");
           return;
         }
@@ -578,16 +574,10 @@ const ChatComposer = memo(function ChatComposer({
             ) : (
               <button
                 type="button"
-                onClick={() => {
-                  if (!canUploadDocuments) {
-                    onRequireAuth?.("Please log in or sign up to upload documents.");
-                    return;
-                  }
-                  fileInputRef.current?.click();
-                }}
+                onClick={() => fileInputRef.current?.click()}
                 className="chat-upload-btn"
                 aria-label="Upload document or image"
-                title={canUploadDocuments ? "Upload PDF, Word doc, or image (JPG, PNG, etc.)" : "Log in to upload PDF, Word docs, or images"}>
+                title="Upload PDF, Word doc, or image (JPG, PNG, etc.)">
                 {/* Plus / attachment icon */}
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <line x1="12" y1="5" x2="12" y2="19" />
@@ -4086,15 +4076,15 @@ function App() {
                 </summary>
                 {!isAuthenticated && (
                   <div className="chat-history-auth-callout">
-                    <div className="chat-history-auth-title">Sign in to sync chats and upload documents</div>
+                    <div className="chat-history-auth-title">Sign in to sync chats across visits</div>
                     <p className="chat-history-auth-copy">
-                      Guest chat stays available in this session. Log in when you want uploads and saved history across visits.
+                      Guest chat and document uploads stay available in this session. Log in when you want chat history saved to your account.
                     </p>
                     <div className="chat-history-auth-actions">
-                      <button type="button" className="chat-history-auth-btn" onClick={() => promptForAuth("Log in to sync your chat history and unlock uploads.")}>
+                      <button type="button" className="chat-history-auth-btn" onClick={() => promptForAuth("Log in to sync your chat history across visits.")}>
                         Log in
                       </button>
-                      <button type="button" className="chat-history-auth-btn chat-history-auth-btn--secondary" onClick={() => promptForAuth("Create an account to save chats and upload documents.", "signup")}>
+                      <button type="button" className="chat-history-auth-btn chat-history-auth-btn--secondary" onClick={() => promptForAuth("Create an account to save chats to your profile.", "signup")}>
                         Sign up
                       </button>
                     </div>
@@ -4516,10 +4506,10 @@ function App() {
               <div className="header-user-actions">
                 {!isAuthenticated && (
                   <>
-                    <button type="button" onClick={() => promptForAuth("Log in to save chats and upload documents.")} className="header-auth-btn">
+                    <button type="button" onClick={() => promptForAuth("Log in to save chats across visits.")} className="header-auth-btn">
                       Log in
                     </button>
-                    <button type="button" onClick={() => promptForAuth("Create an account to save chats and upload documents.", "signup")} className="header-auth-btn header-auth-btn--primary">
+                    <button type="button" onClick={() => promptForAuth("Create an account to save chats to your profile.", "signup")} className="header-auth-btn header-auth-btn--primary">
                       Sign up
                     </button>
                   </>
@@ -4558,7 +4548,7 @@ function App() {
                       onModelChange={setSelectedModel}
                       showDisclaimer={bottomExpandedSection == null}
                       apiBase={API_BASE}
-                      canUploadDocuments={isAuthenticated}
+                      canUploadDocuments={true}
                       onRequireAuth={promptForAuth}
                       onStop={handleStopProcessing}
                       messageQueue={messageQueue}
@@ -4809,7 +4799,7 @@ function App() {
                     onModelChange={setSelectedModel}
                     showDisclaimer={bottomExpandedSection == null}
                     apiBase={API_BASE}
-                    canUploadDocuments={isAuthenticated}
+                    canUploadDocuments={true}
                     onRequireAuth={promptForAuth}
                     onStop={handleStopProcessing}
                     messageQueue={messageQueue}

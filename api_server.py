@@ -350,8 +350,11 @@ def _user_from_token(credentials: Optional[HTTPAuthorizationCredentials] = Depen
     conn = _get_db()
     try:
         row = conn.execute(
-            "SELECT u.id, u.email, u.name FROM users u JOIN sessions s ON s.user_id = u.id WHERE s.token = ?",
-            (token,),
+            "SELECT u.id, u.email, u.name FROM users u "
+            "JOIN sessions s ON s.user_id = u.id "
+            "WHERE s.token = ? AND u.email != ? "
+            "AND (s.expires_at IS NULL OR datetime(s.expires_at) > datetime('now'))",
+            (token, _ANONYMOUS_EMAIL),
         ).fetchone()
         if not row:
             # Invalid or expired token: fall back to anonymous so app works without re-login
@@ -2384,7 +2387,7 @@ _UPLOAD_MAX_BYTES = 20 * 1024 * 1024  # 20 MB hard cap
 @app.post("/upload-document")
 async def upload_document(
     file: UploadFile = File(...),
-    user: dict = Depends(_require_auth),
+    user: dict = Depends(_user_from_token),
 ):
     """
     Extract plain text from an uploaded document or image.
@@ -2397,7 +2400,7 @@ async def upload_document(
 
     Returns {"text": str, "filename": str, "char_count": int, "method": str}.
     The caller injects the text into the chat composer for review before submitting.
-    Requires authentication. Maximum upload size: 20 MB.
+    Authentication is optional. Maximum upload size: 20 MB.
     """
     import io, base64
     from platform_pkg.llm import ocr_pages_with_vision
@@ -2537,7 +2540,7 @@ def chat(request: ChatRequest):
 
 
 @app.post("/submit_case")
-def submit_case(request: SubmitCaseRequest, user: dict = Depends(_require_auth)):
+def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_token)):
     """
     Initial case submission (await_facts). Frontend sends { text }.
     Returns status + next_question | opinion_text so the UI can continue the flow.
@@ -2591,7 +2594,7 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_require_auth))
 
 
 @app.post("/interview_step")
-def interview_step(request: InterviewStepRequest, user: dict = Depends(_require_auth)):
+def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_from_token)):
     """
     Follow-up answer in interview. Frontend sends { facts, qa_history } (qa_history includes the latest answer).
     Returns same shape as submit_case for consistent UI handling.
@@ -2658,7 +2661,7 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_require_
 
 
 @app.post("/conversation/continue")
-def continue_chat(request: ContinueChatRequest, user: dict = Depends(_require_auth)):
+def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_token)):
     """
     Continue a conversation from chat history. Sends full conversation + new message
     so the LLM has full context. Returns same shape as submit_case / interview_step.
@@ -2905,7 +2908,7 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
 
 
 @app.post("/submit_case/stream")
-async def submit_case_stream(request: SubmitCaseRequest, user: dict = Depends(_require_auth)):
+async def submit_case_stream(request: SubmitCaseRequest, user: dict = Depends(_user_from_token)):
     """Same as /submit_case but streams progress via Server-Sent Events."""
     _enforce_query_limit(user)
     text = (request.text or "").strip()
@@ -2943,7 +2946,7 @@ async def submit_case_stream(request: SubmitCaseRequest, user: dict = Depends(_r
 
 
 @app.post("/interview_step/stream")
-async def interview_step_stream(request: InterviewStepRequest, user: dict = Depends(_require_auth)):
+async def interview_step_stream(request: InterviewStepRequest, user: dict = Depends(_user_from_token)):
     """Same as /interview_step but streams progress via Server-Sent Events."""
     _enforce_query_limit(user)
     facts = request.facts or ""
@@ -2982,7 +2985,7 @@ async def interview_step_stream(request: InterviewStepRequest, user: dict = Depe
 
 
 @app.post("/conversation/continue/stream")
-async def continue_chat_stream(request: ContinueChatRequest, user: dict = Depends(_require_auth)):
+async def continue_chat_stream(request: ContinueChatRequest, user: dict = Depends(_user_from_token)):
     """
     Same as /conversation/continue but streams progress via Server-Sent Events.
     Events: "progress" (progress snapshot JSON), "done" (final UI result JSON).
@@ -3041,7 +3044,7 @@ class AgentRequest(BaseModel):
 
 
 @app.post("/agent/stream")
-async def agent_stream(request: AgentRequest, user: dict = Depends(_require_auth)):
+async def agent_stream(request: AgentRequest, user: dict = Depends(_user_from_token)):
     """
     Agentic endpoint. Streams SSE events from the OrchestratorAgent.
 

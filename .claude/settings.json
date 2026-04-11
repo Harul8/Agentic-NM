@@ -3,20 +3,20 @@
     "PostToolUse": [
       {
         "matcher": "Edit|Write|Bash",
-        "command": "code-review-graph update --skip-flows",
-        "timeout": 5000
+        "command": "wsl.exe bash \"/mnt/c/Users/rahul/Agentic NM/crg_update.sh\"",
+        "timeout": 20000
       }
     ],
     "SessionStart": [
       {
-        "command": "code-review-graph status",
-        "timeout": 3000
+        "command": "wsl.exe bash \"/mnt/c/Users/rahul/Agentic NM/crg_status.sh\"",
+        "timeout": 15000
       }
     ],
     "PreCommit": [
       {
-        "command": "code-review-graph detect-changes --brief",
-        "timeout": 10000
+        "command": "wsl.exe bash \"/mnt/c/Users/rahul/Agentic NM/crg_detect_changes.sh\"",
+        "timeout": 30000
       }
     ]
   }
