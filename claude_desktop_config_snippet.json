@@ -9,10 +9,12 @@
       ]
     },
     "code-review-graph": {
-      "command": "wsl.exe",
+      "command": "uvx",
       "args": [
-        "bash",
-        "/mnt/c/Users/rahul/Agentic NM/start_crg.sh"
+        "code-review-graph",
+        "serve",
+        "--repo",
+        "C:\\Users\\rahul\\Agentic NM"
       ]
     }
   }

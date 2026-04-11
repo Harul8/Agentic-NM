@@ -1,4 +1,4 @@
-import { memo, useState, useRef, useEffect, useMemo, useCallback } from "react";
+﻿import { memo, useState, useRef, useEffect, useMemo, useCallback } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import "./App.css";
@@ -8,6 +8,20 @@ const CURRENT_USER_KEY = "nyaymalaw_current_user";
 const CURRENT_USER_NAME_KEY = "nyaymalaw_current_user_name";
 const STARRED_CHATS_KEY = "nyaymalaw_starred_chats";
 const GUEST_USER_LABEL = "Guest";
+const CHAT_STARTERS = [
+  {
+    title: "Assess maintainability",
+    text: "I want to assess whether my matter is legally maintainable. Help me identify the correct forum, core issues, and missing facts.",
+  },
+  {
+    title: "Draft a legal notice",
+    text: "Help me prepare a grounded legal notice. I will share the facts, timeline, parties involved, and what relief I want.",
+  },
+  {
+    title: "Find supporting precedents",
+    text: "I want the closest precedents and statutory provisions that support my position. Please start by asking the key factual questions.",
+  },
+];
 
 const RESPONSE_FEEDBACK_TAG_GROUPS = [
   {
@@ -53,6 +67,85 @@ const RESPONSE_FEEDBACK_TAG_GROUPS = [
 function stripTrailingStepEllipsis(msg) {
   if (typeof msg !== "string") return msg;
   return msg.replace(/\.{1,3}$/, "");
+}
+
+function truncateInline(value, limit = 160) {
+  const text = String(value || "").replace(/\s+/g, " ").trim();
+  if (!text) return "";
+  return text.length > limit ? `${text.slice(0, limit - 3)}...` : text;
+}
+
+function formatCountLabel(count, singular, plural = `${singular}s`) {
+  return `${count} ${count === 1 ? singular : plural}`;
+}
+
+function getWorkflowStageMeta(stage) {
+  if (stage === "interview") {
+    return {
+      label: "Fact intake in progress",
+      tone: "active",
+      description: "The workspace is gathering the missing facts needed for grounded legal analysis.",
+    };
+  }
+  if (stage === "done") {
+    return {
+      label: "Research and drafting",
+      tone: "ready",
+      description: "Facts are captured. The workspace is oriented toward authorities, reasoning, and drafting.",
+    };
+  }
+  return {
+    label: "Awaiting matter facts",
+    tone: "pending",
+    description: "Start with parties, forum, timeline, documents, and the relief you want.",
+  };
+}
+
+function getResponseMeta(responseType, bareActsCount, caseLawsCount, nextStepsCount) {
+  switch (responseType) {
+    case "bare_act_guidance":
+      return {
+        kicker: "Grounded statutory view",
+        title: "Applicable statutory anchors",
+        summary: "Sections are organized for legal issue spotting and next-action planning.",
+        chips: [
+          formatCountLabel(bareActsCount, "statute", "statutes"),
+          formatCountLabel(nextStepsCount, "next step"),
+        ],
+      };
+    case "precedent_support":
+      return {
+        kicker: "Precedent review",
+        title: "Supporting judicial authorities",
+        summary: "Relevant judgments are surfaced with the passages most likely to help your position.",
+        chips: [
+          formatCountLabel(caseLawsCount, "precedent"),
+          formatCountLabel(bareActsCount, "linked statute", "linked statutes"),
+        ],
+      };
+    case "search_results":
+    case "lookup_results":
+      return {
+        kicker: "Research note",
+        title: "Grounded authority search",
+        summary: "This answer combines explanatory text with supporting authorities and source links.",
+        chips: [
+          formatCountLabel(bareActsCount, "statute", "statutes"),
+          formatCountLabel(caseLawsCount, "case"),
+        ],
+      };
+    case "legal_opinion":
+    default:
+      return {
+        kicker: "Draft legal view",
+        title: "Structured legal opinion",
+        summary: "Use this as a draft analysis and verify the cited authorities before relying on it.",
+        chips: [
+          formatCountLabel(bareActsCount, "statute", "statutes"),
+          formatCountLabel(caseLawsCount, "case"),
+        ],
+      };
+  }
 }
 
 /** Item 20: Advocate-review panel — structured brief alongside the draft. */
@@ -296,17 +389,17 @@ function parseOpinionWithQuotes(opinion) {
   };
   while (i < lines.length) {
     const line = lines[i];
-    if (/^â”Œâ”€+â”\s*$/.test(line)) {
+    if (/^\u250C\u2500+\u2510\s*$/.test(line)) {
       flushNormal();
       const start = i;
       i += 1;
       const quoteLines = [];
-      while (i < lines.length && /^â”‚\s*(.*)$/.test(lines[i])) {
-        const m = lines[i].match(/^â”‚\s*(.*)$/);
+      while (i < lines.length && /^\u2502\s*(.*)$/.test(lines[i])) {
+        const m = lines[i].match(/^\u2502\s*(.*)$/);
         quoteLines.push((m[1] || "").trimEnd());
         i += 1;
       }
-      if (i < lines.length && /^â””â”€+â”˜\s*$/.test(lines[i])) {
+      if (i < lines.length && /^\u2514\u2500+\u2518\s*$/.test(lines[i])) {
         i += 1;
         segments.push({ type: "quote", text: quoteLines.join("\n") });
       } else {
@@ -334,10 +427,10 @@ function buildCitationMaps(bareActs, caseLaws) {
     const sec = String(ba.section_number ?? "").trim();
     const url = ba.url || ba.source_url || "";
     if (!url) return;
-    const key = `${normalize(act)}Â§${sec}`;
+    const key = `${normalize(act)}\u00A7${sec}`;
     if (!bareMap.has(key)) bareMap.set(key, url);
     if (act && sec) {
-      const key2 = `${normalize(act)}, Â§ ${sec}`;
+      const key2 = `${normalize(act)}, \u00A7 ${sec}`;
       if (!bareMap.has(key2)) bareMap.set(key2, url);
     }
   }
@@ -370,19 +463,19 @@ function linkifyOpinionSegment(text, bareMap, caseMap) {
     const inner = m[1].trim();
     if (lastEnd < m.index) parts.push(text.slice(lastEnd, m.index));
 
-    const isBare = /Â§/.test(inner);
+    const isBare = /\u00A7/.test(inner);
     const isCaseSig = /^[a-f0-9]{32,}$/i.test(inner);
     let url = null;
     if (isBare) {
       const norm = inner.toLowerCase().replace(/\s+/g, " ").trim();
-      url = bareMap.get(norm) ?? bareMap.get(norm.replace(/\s*Â§\s*/, "Â§"));
-      if (!url && inner.includes("Â§")) {
-        const secMatch = inner.match(/Â§\s*(\d+[A-Za-z]*)/);
-        const actPart = inner.replace(/\s*Â§\s*\d+[A-Za-z]*\s*[â€”\-â€“].*$/, "").replace(/^the\s+/i, "").trim();
+      url = bareMap.get(norm) ?? bareMap.get(norm.replace(/\s*\u00A7\s*/, "\u00A7"));
+      if (!url && inner.includes("\u00A7")) {
+        const secMatch = inner.match(/\u00A7\s*(\d+[A-Za-z]*)/);
+        const actPart = inner.replace(/\s*\u00A7\s*\d+[A-Za-z]*\s*[\u2014\-\u2013].*$/, "").replace(/^the\s+/i, "").trim();
         const actNorm = actPart.replace(/\s*,\s*(\d{4})\s*$/, " $1").toLowerCase().replace(/\s+/g, " ").trim();
         if (secMatch && actNorm) {
-          url = bareMap.get(`${actNorm}Â§${secMatch[1]}`);
-          if (!url) url = bareMap.get(actNorm + "Â§" + secMatch[1]);
+          url = bareMap.get(`${actNorm}\u00A7${secMatch[1]}`);
+          if (!url) url = bareMap.get(actNorm + "\u00A7" + secMatch[1]);
         }
       }
     }
@@ -423,6 +516,7 @@ const ChatComposer = memo(function ChatComposer({
   onQueueDelete,
   onQueueEdit,
   queueEditSignal,
+  externalDraftSignal,
 }) {
   const [draft, setDraft] = useState("");
   const [uploading, setUploading] = useState(false);
@@ -484,6 +578,13 @@ const ChatComposer = memo(function ChatComposer({
   }, [queueEditSignal?.counter]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
+    if (externalDraftSignal && externalDraftSignal.counter > 0) {
+      setDraft(externalDraftSignal.text);
+      setTimeout(() => textareaRef.current?.focus(), 0);
+    }
+  }, [externalDraftSignal?.counter]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
     const el = textareaRef.current;
     if (!el) return;
     el.style.height = "24px";
@@ -511,7 +612,7 @@ const ChatComposer = memo(function ChatComposer({
   }, [submitDraft]);
 
   const activePlaceholder = loading && messageQueue.length > 0
-    ? "Type to add to queue…"
+    ? "Type to add to queue..."
     : placeholder;
 
   return (
@@ -523,7 +624,7 @@ const ChatComposer = memo(function ChatComposer({
             <div key={item.id} className="chat-queue-item">
               <span className="chat-queue-index">{idx + 1}</span>
               <span className="chat-queue-text">
-                {item.text.length > 72 ? item.text.slice(0, 72) + "…" : item.text}
+                {item.text.length > 72 ? item.text.slice(0, 72) + "..." : item.text}
               </span>
               <div className="chat-queue-actions">
                 <button type="button" className="chat-queue-btn"
@@ -639,7 +740,7 @@ const ChatComposer = memo(function ChatComposer({
       </div>
 
       {showDisclaimer && (
-        <p className="chat-disclaimer">Nyaymalaw AI can make mistakes. Consider checking important information.</p>
+        <p className="chat-disclaimer">Drafts may be incomplete or wrong. Verify the forum, limitation, and cited authorities before relying on them.</p>
       )}
     </>
   );
@@ -652,11 +753,29 @@ function LandingPage({ onLogin, onSignup, onGuest }) {
   return (
     <div className="landing-page">
       <div className="landing-card">
+        <div className="landing-eyebrow">AI legal workspace for Indian law</div>
         <div className="landing-logo">
           <span className="landing-logo-icon">⚖</span>
-          <span className="landing-logo-text">NyaymalaW</span>
+          <span className="landing-logo-text">Nyaymalaw</span>
         </div>
-        <p className="landing-tagline">Your AI legal assistant for Indian law</p>
+        <h1 className="landing-title">Move from scattered facts to grounded legal work product.</h1>
+        <p className="landing-tagline">
+          Intake facts, review statutory anchors, surface precedents, and prepare a structured draft in one workspace.
+        </p>
+        <div className="landing-highlights">
+          <div className="landing-highlight">
+            <span className="landing-highlight-label">Built for</span>
+            <span className="landing-highlight-value">Matter intake and legal research</span>
+          </div>
+          <div className="landing-highlight">
+            <span className="landing-highlight-label">Outputs</span>
+            <span className="landing-highlight-value">Issues, authorities, next steps, draft opinion</span>
+          </div>
+          <div className="landing-highlight">
+            <span className="landing-highlight-label">Trust posture</span>
+            <span className="landing-highlight-value">Grounded answers with source-aware review</span>
+          </div>
+        </div>
         <div className="landing-actions">
           <button className="landing-btn landing-btn--primary" onClick={onLogin}>
             Log in
@@ -669,7 +788,7 @@ function LandingPage({ onLogin, onSignup, onGuest }) {
           </button>
         </div>
         <p className="landing-guest-note">
-          Guest sessions are not saved. Sign up to keep your history.
+          Guest sessions stay local to this browser. Create an account when you want your matters and chat history saved.
         </p>
       </div>
     </div>
@@ -707,7 +826,7 @@ const AuthModal = memo(function AuthModal({
             </h2>
           </div>
           <button type="button" className="auth-modal-close" onClick={onClose} aria-label="Close">
-            x
+            {"\u00D7"}
           </button>
         </div>
 
@@ -1037,6 +1156,7 @@ function App() {
   const LEFT_COLUMN_MAX_WIDTH = LEFT_COLUMN_BASE_WIDTH * 1.5;
   const [leftColumnWidth, setLeftColumnWidth] = useState(LEFT_COLUMN_DEFAULT_WIDTH);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [externalDraftSignal, setExternalDraftSignal] = useState({ text: "", counter: 0 });
 
   const applyAuthSession = useCallback((tokenValue, user) => {
     const nextToken = (tokenValue || "").trim();
@@ -1336,6 +1456,10 @@ function App() {
       nextMessages,
     );
   }, [analysisFactsSummary, analysisStage, currentQuestion, facts, intakeState, lastResponseType, messages, normalizeWorkflowState, qaHistory, stage]);
+
+  const primeComposer = useCallback((text) => {
+    setExternalDraftSignal((prev) => ({ text, counter: prev.counter + 1 }));
+  }, []);
 
   const syncCurrentChatToBackend = useCallback(async (tokenValue) => {
     const trimmedToken = String(tokenValue || "").trim();
@@ -1874,7 +1998,7 @@ function App() {
       `Chat ${new Date().toLocaleString()}`;
     const chat = normalizeSavedChat({
       id: Date.now(),
-      title: title.length > 50 ? title.slice(0, 50) + "â€¦" : title,
+      title: title.length > 50 ? title.slice(0, 50) + "..." : title,
       messages: msgs || [],
       opinionText: opinion || "",
       retrieved: Array.isArray(retr) ? retr : [],
@@ -2115,7 +2239,7 @@ function App() {
 
     if (isFirstMessage) {
       const chatId = Date.now();
-      const title = raw.trim().length > 50 ? raw.trim().slice(0, 50) + "â€¦" : raw.trim();
+      const title = raw.trim().length > 50 ? raw.trim().slice(0, 50) + "..." : raw.trim();
       const chat = normalizeSavedChat({
         id: chatId,
         title,
@@ -2562,7 +2686,7 @@ function App() {
                           <span className="progress-step-already-label">{alreadyTitles.length} already in library:</span>
                           <ul className="progress-step-already-list">
                             {alreadyTitles.slice(0, 20).map((t, i) => (
-                              <li key={i} title={t}>{t.length > 50 ? t.slice(0, 50) + "â€¦" : t}</li>
+                              <li key={i} title={t}>{t.length > 50 ? t.slice(0, 50) + "..." : t}</li>
                             ))}
                             {alreadyTitles.length > 20 && (
                               <li className="progress-step-already-more">+{alreadyTitles.length - 20} more</li>
@@ -2646,7 +2770,7 @@ function App() {
       const headers = ["metric", ...statKeys];
       const rows = Object.entries(data).map(([metric, stats]) => [
         metric,
-        ...statKeys.map((k) => (stats && stats[k] != null) ? (typeof stats[k] === "number" ? Number(stats[k]).toFixed(4) : String(stats[k])) : "â€”"),
+        ...statKeys.map((k) => (stats && stats[k] != null) ? (typeof stats[k] === "number" ? Number(stats[k]).toFixed(4) : String(stats[k])) : "-"),
       ]);
       return (
         <div className="eval-table-block">
@@ -2659,7 +2783,7 @@ function App() {
                   <tr key={metric}>
                     <td className="eval-metric-name">{metric}</td>
                     {statKeys.map((k) => (
-                      <td key={k}>{(stats && stats[k] != null) ? (typeof stats[k] === "number" ? Number(stats[k]).toFixed(4) : String(stats[k])) : "â€”"}</td>
+                      <td key={k}>{(stats && stats[k] != null) ? (typeof stats[k] === "number" ? Number(stats[k]).toFixed(4) : String(stats[k])) : "-"}</td>
                     ))}
                   </tr>
                 ))}
@@ -2693,7 +2817,7 @@ function App() {
         const row = data[rk] || {};
         return [rk, ...colKeys.map((k) => {
           const v = row[k];
-          return v != null ? (typeof v === "number" ? (Number.isInteger(v) ? String(v) : Number(v).toFixed(4)) : String(v)) : "â€”";
+          return v != null ? (typeof v === "number" ? (Number.isInteger(v) ? String(v) : Number(v).toFixed(4)) : String(v)) : "-";
         })];
       });
       return (
@@ -2710,7 +2834,7 @@ function App() {
                       <td className="eval-metric-name">{rk}</td>
                       {colKeys.map((k) => {
                         const v = row[k];
-                        const disp = v != null ? (typeof v === "number" ? (Number.isInteger(v) ? String(v) : Number(v).toFixed(4)) : String(v)) : "â€”";
+                        const disp = v != null ? (typeof v === "number" ? (Number.isInteger(v) ? String(v) : Number(v).toFixed(4)) : String(v)) : "-";
                         return <td key={k}>{disp}</td>;
                       })}
                     </tr>
@@ -2777,7 +2901,7 @@ function App() {
       const headers = keys;
       const rows = flattened.map((row) => keys.map((k) => {
         const v = row[k];
-        return v == null ? "" : typeof v === "string" && v.length > 150 ? v.slice(0, 150) + "â€¦" : String(v);
+        return v == null ? "" : typeof v === "string" && v.length > 150 ? v.slice(0, 150) + "..." : String(v);
       }));
       return (
         <div className="eval-table-block">
@@ -2790,7 +2914,7 @@ function App() {
                   <tr key={i}>
                     {keys.map((k) => {
                       const v = row[k];
-                      const s = v == null ? "" : typeof v === "string" && v.length > 150 ? v.slice(0, 150) + "â€¦" : String(v);
+                      const s = v == null ? "" : typeof v === "string" && v.length > 150 ? v.slice(0, 150) + "..." : String(v);
                       return <td key={k}>{s}</td>;
                     })}
                   </tr>
@@ -2884,7 +3008,7 @@ function App() {
             ))}
           </div>
         )}
-        {evalLoading && <p className="eval-loading">Loadingâ€¦</p>}
+        {evalLoading && <p className="eval-loading">Loading...</p>}
         {evalLoaded && !evalLoading && (
           <div className="eval-content">
             <h4 className="eval-file-title">{evalLoaded.path}</h4>
@@ -2929,7 +3053,7 @@ function App() {
         Architecture
       </summary>
       <div className="architecture-section-body">
-        {architectureLoading && <p className="architecture-loading">Loadingâ€¦</p>}
+        {architectureLoading && <p className="architecture-loading">Loading...</p>}
         {!architectureLoading && architectureContent && (
           <div className="architecture-content">
             <ReactMarkdown rehypePlugins={[rehypeRaw]}>{architectureContent}</ReactMarkdown>
@@ -3082,7 +3206,7 @@ function App() {
     const progressExpandKey = options.progressExpandKey ?? PROGRESS_TRACKER_KEY;
     const progressDefaultOpen = options.progressDefaultOpen !== undefined ? options.progressDefaultOpen : false;
     if (content == null) return null;
-    const trimDots = (s) => (s || "").replace(/\n+\.\.\.\s*$/, " â€¦").replace(/\n+$/, "");
+    const trimDots = (s) => (s || "").replace(/\n+\.\.\.\s*$/, " ...").replace(/\n+$/, "");
     if (typeof content === "string") {
       return <p className="message-text">{trimDots(content)}</p>;
     }
@@ -3103,6 +3227,25 @@ function App() {
       const nextSteps = content.next_steps || [];
       const nextStepsSummaryRaw = typeof content.next_steps_summary === "string" ? content.next_steps_summary : "";
       const messageProgress = content.progress || null;
+      const responseMeta = getResponseMeta(responseType, bareActs.length, caseLaws.length, nextSteps.length);
+
+      const renderResponseFrame = (body, extraClass = "") => (
+        <div className={`response-frame ${extraClass}`.trim()}>
+          <div className="response-frame-header">
+            <div>
+              <div className="response-frame-kicker">{responseMeta.kicker}</div>
+              <div className="response-frame-title">{responseMeta.title}</div>
+              <p className="response-frame-summary">{responseMeta.summary}</p>
+            </div>
+            <div className="response-frame-chips">
+              {responseMeta.chips.filter(Boolean).map((chip) => (
+                <span key={chip} className="response-frame-chip">{chip}</span>
+              ))}
+            </div>
+          </div>
+          {body}
+        </div>
+      );
 
       const cleanResultText = (rawText, isVerbatim = false) => {
         const value = typeof rawText === "string" ? rawText : "";
@@ -3631,7 +3774,7 @@ function App() {
       };
 
       if (responseType === "search_results" || responseType === "lookup_results") {
-        return (
+        return renderResponseFrame(
           <div className="message-final-opinion message-search-results conversational-response">
             {opinion && (
               <div className="conversational-summary-block">
@@ -3662,7 +3805,8 @@ function App() {
                 defaultOpen={progressDefaultOpen}
               />
             )}
-          </div>
+          </div>,
+          "message-final-opinion--framed"
         );
       }
 
@@ -3671,7 +3815,7 @@ function App() {
         const verbatimRows = flattenBareActGuidanceRows(groups);
         const nextStepsBullets = buildNextStepsBullets(nextStepsSummaryRaw, nextSteps);
         const opinionDisplay = stripJudicialPrecedentCtaLines(opinion);
-        return (
+        return renderResponseFrame(
           <div className="message-final-opinion message-staged-guidance">
             {opinionDisplay && (
               <div className="conversational-summary-block stage-summary-block bare-act-guidance-summary">
@@ -3696,13 +3840,14 @@ function App() {
                 defaultOpen={progressDefaultOpen}
               />
             )}
-          </div>
+          </div>,
+          "message-final-opinion--framed"
         );
       }
 
       if (responseType === "precedent_support") {
         const precedentRows = dedupePrecedentRows(collectPrecedentHierarchyRows(bareActs, caseLaws));
-        return (
+        return renderResponseFrame(
           <div className="message-final-opinion message-staged-guidance">
             {opinion && (
               <div className="conversational-summary-block stage-summary-block bare-act-guidance-summary">
@@ -3725,14 +3870,15 @@ function App() {
                 defaultOpen={progressDefaultOpen}
               />
             )}
-          </div>
+          </div>,
+          "message-final-opinion--framed"
         );
       }
 
       if (responseType === "legal_opinion") {
         const { bareMap, caseMap } = buildCitationMaps(bareActs, caseLaws);
         const advocateReview = content.advocate_review || null;  // Item 20
-        return (
+        return renderResponseFrame(
           <div className="message-final-opinion">
             {opinion && (
               <div className="opinion-text">
@@ -3764,12 +3910,13 @@ function App() {
                 defaultOpen={progressDefaultOpen}
               />
             )}
-          </div>
+          </div>,
+          "message-final-opinion--framed"
         );
       }
 
       // ---------- other types (generic_chat, etc.): no "Legal Opinion" header, no PDF button ----------
-      return (
+      return renderResponseFrame(
         <div className="message-final-opinion message-search-results conversational-response">
           {opinion && (
             <div className="conversational-summary-block">
@@ -3800,7 +3947,8 @@ function App() {
               defaultOpen={progressDefaultOpen}
             />
           )}
-        </div>
+        </div>,
+        "message-final-opinion--framed"
       );
     }
     if (content.type === "results" && content.parts) {
@@ -3896,7 +4044,7 @@ function App() {
     let lines = trimmedOpinion.split("\n").filter((line) => !/^%+\s*$/.test(line.trim()));
     let endIndex = lines.length;
     for (let i = 0; i < lines.length; i++) {
-      if (/^â”€+$/.test(lines[i].trim())) {
+      if (/^\u2500+$/.test(lines[i].trim())) {
         endIndex = i;
         break;
       }
@@ -3990,6 +4138,19 @@ function App() {
   // 3 columns: Bare Acts (left), Conversation+Input (middle), Final Output (right)
   // -------------------------
 
+  const hasConversation = messages.some((m) => m.role === "user");
+  const stageMeta = getWorkflowStageMeta(stage);
+  const workflowSummary = truncateInline(
+    analysisFactsSummary || currentQuestion || facts || "Start by describing the dispute, parties, timeline, documents, and the relief you want.",
+    180,
+  );
+  const workspaceMetrics = [
+    formatCountLabel(savedChats.length, "matter"),
+    formatCountLabel(bareActs.length, "statute", "statutes"),
+    formatCountLabel(caseLawsList.length, "precedent"),
+    selectedModel.replace(/mini/gi, " Mini").replace(/^gpt/i, "GPT-"),
+  ];
+
   // Show landing page until user logs in or explicitly continues as guest
   if (showLanding) {
     return (
@@ -4048,7 +4209,7 @@ function App() {
                 onClick={handleNewChat}
                 className="chat-history-new-btn"
               >
-                {"+ New chat"}
+                {"+ New matter"}
               </button>
               <button
                 type="button"
@@ -4072,13 +4233,13 @@ function App() {
                 }}
               >
                 <summary className="chat-history-collapsible-summary sidebar-collapsible-summary">
-                  <span>Chat history ({savedChats.length})</span>
+                  <span>Matters ({savedChats.length})</span>
                 </summary>
                 {!isAuthenticated && (
                   <div className="chat-history-auth-callout">
-                    <div className="chat-history-auth-title">Sign in to sync chats across visits</div>
+                    <div className="chat-history-auth-title">Sign in to save matters across visits</div>
                     <p className="chat-history-auth-copy">
-                      Guest chat and document uploads stay available in this session. Log in when you want chat history saved to your account.
+                      Guest chat and document uploads stay available in this session. Log in when you want your matters saved to your account.
                     </p>
                     <div className="chat-history-auth-actions">
                       <button type="button" className="chat-history-auth-btn" onClick={() => promptForAuth("Log in to sync your chat history across visits.")}>
@@ -4094,11 +4255,11 @@ function App() {
                   <>
                     <input
                       type="text"
-                      placeholder="Search chat history..."
+                      placeholder="Search matters..."
                       value={chatHistoryFilter}
                       onChange={(e) => setChatHistoryFilter(e.target.value)}
                       className="sidebar-search-input"
-                      aria-label="Filter chat history"
+                      aria-label="Filter saved matters"
                     />
                     <div className="chat-history-groups" onMouseDown={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
                     {chatGroups.map(({ groupLabel, chats }) => (
@@ -4202,16 +4363,16 @@ function App() {
             >
               <summary className="bare-acts-collapsible-summary sidebar-collapsible-summary">
                 {bareActs.length ? (
-                  <span className="bare-acts-count">Bare Acts Library ({bareActs.length})</span>
-                ) : (
-                  <span>Bare Acts Library</span>
-                )}
+                    <span className="bare-acts-count">Statutes Library ({bareActs.length})</span>
+                  ) : (
+                    <span>Statutes Library</span>
+                  )}
               </summary>
               {bareActs.length ? (
                 <>
                   <input
                     type="text"
-                    placeholder="Search bare acts..."
+                    placeholder="Search statutes..."
                     value={bareActsFilter}
                     onChange={(e) => setBareActsFilter(e.target.value)}
                     className="sidebar-search-input"
@@ -4325,10 +4486,10 @@ function App() {
             >
               <summary className="case-laws-collapsible-summary sidebar-collapsible-summary">
                 {caseLawsList.length ? (
-                  <span className="case-laws-count">Case Laws ({caseLawsList.length})</span>
-                ) : (
-                  <span>Case Laws</span>
-                )}
+                    <span className="case-laws-count">Precedents Library ({caseLawsList.length})</span>
+                  ) : (
+                    <span>Precedents Library</span>
+                  )}
               </summary>
               {caseLawsList.length ? (
                 <>
@@ -4358,11 +4519,11 @@ function App() {
                   </div>
                   <input
                     type="text"
-                    placeholder="Search case laws..."
+                      placeholder="Search precedents..."
                     value={caseLawsFilter}
                     onChange={(e) => setCaseLawsFilter(e.target.value)}
                     className="sidebar-search-input"
-                    aria-label="Filter case laws"
+                      aria-label="Filter precedents"
                   />
                   <div className="sidebar-list-scroll" onMouseDown={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
                     {Array.isArray(caseLawsLibrary) && caseLawsLibrary.length > 0 ? (
@@ -4477,7 +4638,7 @@ function App() {
         )}
 
         {/* RIGHT PANE â€“ Title at top, then chat area */}
-        <div className={`right-content-wrapper${messages.some((m) => m.role === "user") ? " chat-mode" : ""}`}>
+        <div className={`right-content-wrapper${hasConversation ? " chat-mode" : ""}`}>
           {sidebarCollapsed && (
             <button
               type="button"
@@ -4489,19 +4650,22 @@ function App() {
               {"\u203A"}
             </button>
           )}
-          {/* Title at top left of right pane */}
           <div className="right-pane-header">
-            <h1 className="main-title">
-              {"\u2696 Nyaymalaw"}
-            </h1>
-            <div className="header-user">
-              <div className="header-user-text">
-                <span className="header-user-name" title={isAuthenticated ? (currentUserName || currentUser) : GUEST_USER_LABEL}>
-                  {isAuthenticated ? (currentUserName || currentUser) : GUEST_USER_LABEL}
-                </span>
-                <span className="header-email" title={isAuthenticated ? currentUser : "Chat is open without login"}>
-                  {isAuthenticated ? currentUser : "Chat is open without login"}
-                </span>
+            <div className="header-brand">
+              <div className="header-kicker">Nyaymalaw legal workspace</div>
+              <h1 className="main-title">Nyaymalaw</h1>
+              <p className="header-subtitle">{stageMeta.description}</p>
+            </div>
+            <div className="header-side">
+              <div className="header-user">
+                <div className="header-user-text">
+                  <span className="header-user-name" title={isAuthenticated ? (currentUserName || currentUser) : GUEST_USER_LABEL}>
+                    {isAuthenticated ? (currentUserName || currentUser) : GUEST_USER_LABEL}
+                  </span>
+                  <span className="header-email" title={isAuthenticated ? currentUser : "Chat is open without login"}>
+                    {isAuthenticated ? currentUser : "Chat is open without login"}
+                  </span>
+                </div>
               </div>
               <div className="header-user-actions">
                 {!isAuthenticated && (
@@ -4520,26 +4684,60 @@ function App() {
                   </button>
                 )}
                 <button type="button" onClick={handleNewChat} className="header-logout-btn">
-                  New chat
+                  New matter
                 </button>
               </div>
             </div>
           </div>
-            {/* Chat area: center stage (no messages) or conversation + input + disclaimer */}
-            {!messages.some((m) => m.role === "user") ? (
-              /* ChatGPT-style: plain message + single centered text box until first send */
+          <div className="workspace-overview-bar">
+            <div className="workspace-overview-primary">
+              <span className={`workspace-status-badge workspace-status-badge--${stageMeta.tone}`}>{stageMeta.label}</span>
+              <p className="workspace-summary-text">{workflowSummary}</p>
+            </div>
+            <div className="workspace-overview-metrics">
+              {workspaceMetrics.map((metric) => (
+                <span key={metric} className="workspace-metric-chip">{metric}</span>
+              ))}
+            </div>
+          </div>
+            {!hasConversation ? (
               <div className="chat-center-stage">
                 <div className="chat-center-message">
-                  <h2>How can I help you today?</h2>
+                  <div className="chat-center-kicker">Matter intake and legal drafting</div>
+                  <h2>Build a grounded legal brief, not just a chat transcript.</h2>
                   <p>
-                    I'll gather the facts of your legal matter through a few questions, then research
-                    relevant bare acts and case laws for you.
+                    Describe the dispute, upload your papers, or start from a structured legal task. The workspace will collect facts,
+                    surface statutes and precedents, and move toward a draftable outcome.
                   </p>
+                  <div className="chat-start-grid">
+                    {CHAT_STARTERS.map((starter) => (
+                      <button
+                        key={starter.title}
+                        type="button"
+                        className="chat-start-card"
+                        onClick={() => primeComposer(starter.text)}
+                      >
+                        <span className="chat-start-card-title">{starter.title}</span>
+                        <span className="chat-start-card-text">{starter.text}</span>
+                      </button>
+                    ))}
+                  </div>
+                  <div className="chat-center-checklist">
+                    <span className="chat-center-checklist-label">Best starting details</span>
+                    <div className="chat-center-checklist-items">
+                      <span className="chat-center-checklist-chip">Parties</span>
+                      <span className="chat-center-checklist-chip">Timeline</span>
+                      <span className="chat-center-checklist-chip">Forum</span>
+                      <span className="chat-center-checklist-chip">Documents</span>
+                      <span className="chat-center-checklist-chip">Relief sought</span>
+                      <span className="chat-center-checklist-chip">Urgency</span>
+                    </div>
+                  </div>
                 </div>
                   <div className="chat-center-input-wrapper">
                     <ChatComposer
                       loading={loading}
-                      placeholder="Describe your case or ask a question"
+                      placeholder="Describe the matter, upload papers, or start with the relief you want"
                       onSubmit={handleComposedSubmit}
                       resetSignal={composerResetSignal}
                       chatMode={chatMode}
@@ -4555,6 +4753,7 @@ function App() {
                       onQueueEdit={handleQueueEdit}
                       onQueueDelete={handleQueueDelete}
                       queueEditSignal={queueEditSignal}
+                      externalDraftSignal={externalDraftSignal}
                     />
                   </div>
               </div>
@@ -4806,6 +5005,7 @@ function App() {
                     onQueueEdit={handleQueueEdit}
                     onQueueDelete={handleQueueDelete}
                     queueEditSignal={queueEditSignal}
+                    externalDraftSignal={externalDraftSignal}
                   />
                 </div>
 
