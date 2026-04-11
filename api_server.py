@@ -95,11 +95,18 @@ from collections import defaultdict
 
 _RATE_LIMIT_WINDOW = int(os.environ.get("RATE_LIMIT_WINDOW", "60"))   # seconds
 _RATE_LIMIT_MAX = int(os.environ.get("RATE_LIMIT_MAX", "100"))        # requests per window (increased from 30)
-_RATE_LIMIT_ENABLED = os.environ.get("RATE_LIMIT_ENABLED", "false").lower() == "true"  # Disabled by default for development
+_RATE_LIMIT_ENABLED = os.environ.get("RATE_LIMIT_ENABLED", "true").lower() == "true"  # Enabled by default; set to "false" for local dev
 _rate_store: dict[str, list[float]] = defaultdict(list)
 
-# Only rate-limit mutation endpoints (not health, static, etc.)
-_RATE_LIMITED_PATHS = {"/submit_case", "/submit_case/stream", "/interview_step", "/interview_step/stream", "/conversation/continue", "/conversation/continue/stream", "/chat", "/search"}
+# Only rate-limit mutation / LLM-consuming endpoints (not health, static, etc.)
+_RATE_LIMITED_PATHS = {
+    "/submit_case", "/submit_case/stream",
+    "/interview_step", "/interview_step/stream",
+    "/conversation/continue", "/conversation/continue/stream",
+    "/chat", "/search",
+    "/agent/stream",          # H1 fix: orchestrator endpoint included
+    "/upload-document",
+}
 
 # IPs to skip rate limiting (localhost for development)
 _SKIP_RATE_LIMIT_IPS = {"127.0.0.1", "localhost", "::1"}
@@ -170,7 +177,7 @@ async def global_exception_handler(request: Request, exc: Exception):
         status_code=500,
         content={
             "detail": "An internal error occurred. Please try again.",
-            "error_type": type(exc).__name__,
+            # H3 fix: error_type removed — it was leaking internal class names to clients
         },
     )
 
@@ -241,13 +248,15 @@ def _init_auth_db():
                 email TEXT UNIQUE NOT NULL,
                 password_hash TEXT NOT NULL,
                 name TEXT NOT NULL DEFAULT '',
+                phone_number TEXT DEFAULT NULL,
                 created_at TEXT NOT NULL DEFAULT (datetime('now'))
             );
             CREATE TABLE IF NOT EXISTS sessions (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 user_id INTEGER NOT NULL REFERENCES users(id),
                 token TEXT UNIQUE NOT NULL,
-                created_at TEXT NOT NULL DEFAULT (datetime('now'))
+                created_at TEXT NOT NULL DEFAULT (datetime('now')),
+                expires_at TEXT NOT NULL DEFAULT (datetime('now', '+30 days'))
             );
             CREATE TABLE IF NOT EXISTS chats (
                 id INTEGER PRIMARY KEY,
@@ -269,6 +278,27 @@ def _init_auth_db():
             conn.execute(
                 "ALTER TABLE chats ADD COLUMN state_json TEXT NOT NULL DEFAULT '{}'"
             )
+        # H2 migration: add expires_at to sessions if this is an existing DB
+        existing_session_columns = {
+            row[1]
+            for row in conn.execute("PRAGMA table_info(sessions)").fetchall()
+        }
+        if "expires_at" not in existing_session_columns:
+            conn.execute(
+                "ALTER TABLE sessions ADD COLUMN expires_at TEXT NOT NULL "
+                "DEFAULT (datetime('now', '+30 days'))"
+            )
+            conn.execute(
+                "UPDATE sessions SET expires_at = datetime('now', '+30 days') "
+                "WHERE expires_at IS NULL OR expires_at = ''"
+            )
+        # Phone migration: add phone_number to users if this is an existing DB
+        existing_user_columns = {
+            row[1]
+            for row in conn.execute("PRAGMA table_info(users)").fetchall()
+        }
+        if "phone_number" not in existing_user_columns:
+            conn.execute("ALTER TABLE users ADD COLUMN phone_number TEXT DEFAULT NULL")
         conn.commit()
         # Ensure anonymous user exists for no-login access
         cur = conn.execute("SELECT id FROM users WHERE email = ?", (_ANONYMOUS_EMAIL,))
@@ -346,9 +376,11 @@ def _require_auth(credentials: Optional[HTTPAuthorizationCredentials] = Depends(
     conn = _get_db()
     try:
         row = conn.execute(
+            # H2: also check expires_at so stale sessions are rejected
             "SELECT u.id, u.email, u.name FROM users u "
             "JOIN sessions s ON s.user_id = u.id "
-            "WHERE s.token = ? AND u.email != ?",
+            "WHERE s.token = ? AND u.email != ? "
+            "AND (s.expires_at IS NULL OR datetime(s.expires_at) > datetime('now'))",
             (token, _ANONYMOUS_EMAIL),
         ).fetchone()
         if not row:
@@ -404,10 +436,12 @@ class RegisterRequest(BaseModel):
     email: str = ""
     name: str = ""
     password: str = ""
+    phone_number: str = ""          # optional at registration
 
 
 class LoginRequest(BaseModel):
-    email: str = ""
+    email: str = ""                 # email OR phone_number required
+    phone_number: str = ""
     password: str = ""
 
 
@@ -500,6 +534,7 @@ def auth_register(req: RegisterRequest):
     email = (req.email or "").strip().lower()
     name = (req.name or "").strip()
     password = (req.password or "").strip()
+    phone = (req.phone_number or "").strip()
     if not email or not password:
         raise HTTPException(status_code=400, detail="Email and password required")
     if len(password) < 6:
@@ -510,13 +545,16 @@ def auth_register(req: RegisterRequest):
     conn = _get_db()
     try:
         conn.execute(
-            "INSERT INTO users (email, password_hash, name) VALUES (?, ?, ?)",
-            (email, password_hash, name),
+            "INSERT INTO users (email, password_hash, name, phone_number) VALUES (?, ?, ?, ?)",
+            (email, password_hash, name, phone or None),
         )
         conn.commit()
         user_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
         token = secrets.token_urlsafe(32)
-        conn.execute("INSERT INTO sessions (user_id, token) VALUES (?, ?)", (user_id, token))
+        conn.execute(
+            "INSERT INTO sessions (user_id, token, expires_at) VALUES (?, ?, datetime('now', '+30 days'))",
+            (user_id, token),
+        )
         conn.commit()
         return {
             "success": True,
@@ -532,15 +570,23 @@ def auth_register(req: RegisterRequest):
 @app.post("/auth/login")
 def auth_login(req: LoginRequest):
     email = (req.email or "").strip().lower()
+    phone = (req.phone_number or "").strip()
     password = (req.password or "").strip()
-    if not email or not password:
-        raise HTTPException(status_code=400, detail="Email and password required")
+    if not (email or phone) or not password:
+        raise HTTPException(status_code=400, detail="Email (or phone number) and password required")
     conn = _get_db()
     try:
-        row = conn.execute(
-            "SELECT id, email, name, password_hash FROM users WHERE email = ?",
-            (email,),
-        ).fetchone()
+        # Support login via email OR phone number
+        if email:
+            row = conn.execute(
+                "SELECT id, email, name, password_hash FROM users WHERE email = ?",
+                (email,),
+            ).fetchone()
+        else:
+            row = conn.execute(
+                "SELECT id, email, name, password_hash FROM users WHERE phone_number = ?",
+                (phone,),
+            ).fetchone()
         # Use constant-time check to prevent timing attacks; also handles legacy SHA-256
         if not row or not _check_password(password, row["password_hash"]):
             raise HTTPException(status_code=401, detail="Incorrect email or password")
@@ -553,7 +599,11 @@ def auth_login(req: LoginRequest):
             )
             logger.info("Upgraded password hash to bcrypt for user id=%s", row["id"])
         token = secrets.token_urlsafe(32)
-        conn.execute("INSERT INTO sessions (user_id, token) VALUES (?, ?)", (row["id"], token))
+        conn.execute(
+            "INSERT INTO sessions (user_id, token, expires_at) "
+            "VALUES (?, ?, datetime('now', '+30 days'))",
+            (row["id"], token),
+        )
         conn.commit()
         return {
             "success": True,
@@ -562,6 +612,22 @@ def auth_login(req: LoginRequest):
         }
     finally:
         conn.close()
+
+
+@app.post("/auth/logout")
+def auth_logout(credentials: Optional[HTTPAuthorizationCredentials] = Depends(security)):
+    """H2: Invalidate the current session token. Safe to call even if already logged out."""
+    if not credentials or not (credentials.credentials or "").strip():
+        return {"success": True, "detail": "No active session."}
+    token = credentials.credentials.strip()
+    conn = _get_db()
+    try:
+        conn.execute("DELETE FROM sessions WHERE token = ?", (token,))
+        conn.commit()
+        logger.info("Session token invalidated via /auth/logout")
+    finally:
+        conn.close()
+    return {"success": True, "detail": "Logged out successfully."}
 
 
 @app.get("/chats")
@@ -2312,8 +2378,14 @@ async def _stream_sse_queue(queue: Queue, loop):
             yield f"event: token\ndata: {json.dumps(payload)}\n\n"
 
 
+_UPLOAD_MAX_BYTES = 20 * 1024 * 1024  # 20 MB hard cap
+
+
 @app.post("/upload-document")
-async def upload_document(file: UploadFile = File(...)):
+async def upload_document(
+    file: UploadFile = File(...),
+    user: dict = Depends(_require_auth),
+):
     """
     Extract plain text from an uploaded document or image.
     Supported formats:
@@ -2325,6 +2397,7 @@ async def upload_document(file: UploadFile = File(...)):
 
     Returns {"text": str, "filename": str, "char_count": int, "method": str}.
     The caller injects the text into the chat composer for review before submitting.
+    Requires authentication. Maximum upload size: 20 MB.
     """
     import io, base64
     from platform_pkg.llm import ocr_pages_with_vision
@@ -2351,6 +2424,16 @@ async def upload_document(file: UploadFile = File(...)):
         )
 
     content = await file.read()
+
+    # Enforce 20 MB size cap — reject before any parsing
+    if len(content) > _UPLOAD_MAX_BYTES:
+        raise HTTPException(
+            status_code=413,
+            detail=(
+                f"File too large ({len(content) // (1024 * 1024)} MB). "
+                "Maximum upload size is 20 MB."
+            ),
+        )
     text = ""
     method = "text"
 

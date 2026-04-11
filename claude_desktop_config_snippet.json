@@ -1,10 +1,18 @@
 {
+  "_comment": "Paste the contents of 'mcpServers' into your Claude Desktop config at: %APPDATA%\\Claude\\claude_desktop_config.json",
   "mcpServers": {
     "nyaymalaw": {
       "command": "wsl.exe",
       "args": [
         "bash",
         "/mnt/c/Users/rahul/Agentic NM/start_mcp.sh"
+      ]
+    },
+    "code-review-graph": {
+      "command": "wsl.exe",
+      "args": [
+        "bash",
+        "/mnt/c/Users/rahul/Agentic NM/start_crg.sh"
       ]
     }
   }

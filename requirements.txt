@@ -52,3 +52,4 @@ ddgs==9.11.4
 
 # Progress & utilities
 tqdm==4.66.4
+bcrypt>=4.0.0

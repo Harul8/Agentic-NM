@@ -7,6 +7,7 @@ const AUTH_TOKEN_KEY = "nyaymalaw_auth_token";
 const CURRENT_USER_KEY = "nyaymalaw_current_user";
 const CURRENT_USER_NAME_KEY = "nyaymalaw_current_user_name";
 const STARRED_CHATS_KEY = "nyaymalaw_starred_chats";
+const GUEST_USER_LABEL = "Guest";
 
 const RESPONSE_FEEDBACK_TAG_GROUPS = [
   {
@@ -415,6 +416,8 @@ const ChatComposer = memo(function ChatComposer({
   selectedModel,
   onModelChange,
   apiBase,
+  canUploadDocuments = false,
+  onRequireAuth,
   // Queue props
   messageQueue = [],
   onQueueDelete,
@@ -438,19 +441,27 @@ const ChatComposer = memo(function ChatComposer({
     const file = e.target.files?.[0];
     if (!file) return;
     e.target.value = "";
+    const token = localStorage.getItem(AUTH_TOKEN_KEY);
+    if (!token) {
+      onRequireAuth?.("Please log in or create an account to upload documents.");
+      return;
+    }
     setUploading(true);
     const controller = new AbortController();
     abortControllerRef.current = controller;
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const token = localStorage.getItem(AUTH_TOKEN_KEY);
       const headers = token ? { Authorization: `Bearer ${token}` } : {};
       const res = await fetch(`${apiBase}/upload-document`, {
         method: "POST", headers, body: formData,
         signal: controller.signal,
       });
       if (!res.ok) {
+        if (res.status === 401) {
+          onRequireAuth?.("Your session has expired. Please log in again to upload documents.");
+          return;
+        }
         const err = await res.json().catch(() => ({}));
         alert(err.detail || "Failed to extract text from document.");
         return;
@@ -464,7 +475,7 @@ const ChatComposer = memo(function ChatComposer({
       setUploading(false);
       abortControllerRef.current = null;
     }
-  }, [apiBase]);
+  }, [apiBase, onRequireAuth]);
 
   useEffect(() => { setDraft(""); }, [resetSignal]);
 
@@ -565,10 +576,18 @@ const ChatComposer = memo(function ChatComposer({
                 </svg>
               </button>
             ) : (
-              <button type="button" onClick={() => fileInputRef.current?.click()}
+              <button
+                type="button"
+                onClick={() => {
+                  if (!canUploadDocuments) {
+                    onRequireAuth?.("Please log in or sign up to upload documents.");
+                    return;
+                  }
+                  fileInputRef.current?.click();
+                }}
                 className="chat-upload-btn"
                 aria-label="Upload document or image"
-                title="Upload PDF, Word doc, or image (JPG, PNG, etc.)">
+                title={canUploadDocuments ? "Upload PDF, Word doc, or image (JPG, PNG, etc.)" : "Log in to upload PDF, Word docs, or images"}>
                 {/* Plus / attachment icon */}
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <line x1="12" y1="5" x2="12" y2="19" />
@@ -633,6 +652,172 @@ const ChatComposer = memo(function ChatComposer({
         <p className="chat-disclaimer">Nyaymalaw AI can make mistakes. Consider checking important information.</p>
       )}
     </>
+  );
+});
+
+// ---------------------------------------------------
+// LANDING PAGE — shown before login / as guest
+// ---------------------------------------------------
+function LandingPage({ onLogin, onSignup, onGuest }) {
+  return (
+    <div className="landing-page">
+      <div className="landing-card">
+        <div className="landing-logo">
+          <span className="landing-logo-icon">⚖</span>
+          <span className="landing-logo-text">NyaymalaW</span>
+        </div>
+        <p className="landing-tagline">Your AI legal assistant for Indian law</p>
+        <div className="landing-actions">
+          <button className="landing-btn landing-btn--primary" onClick={onLogin}>
+            Log in
+          </button>
+          <button className="landing-btn landing-btn--primary" onClick={onSignup}>
+            Sign up
+          </button>
+          <button className="landing-btn landing-btn--ghost" onClick={onGuest}>
+            Continue as Guest
+          </button>
+        </div>
+        <p className="landing-guest-note">
+          Guest sessions are not saved. Sign up to keep your history.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+const AuthModal = memo(function AuthModal({
+  open,
+  mode,
+  form,
+  error,
+  reason,
+  submitting,
+  onClose,
+  onModeChange,
+  onFieldChange,
+  onSubmit,
+}) {
+  if (!open) return null;
+  const isSignup = mode === "signup";
+  return (
+    <div className="auth-modal-backdrop" role="presentation" onClick={onClose}>
+      <div
+        className="auth-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="auth-modal-title"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="auth-modal-header">
+          <div>
+            <div className="auth-modal-eyebrow">Account access</div>
+            <h2 id="auth-modal-title" className="auth-modal-title">
+              {isSignup ? "Create your account" : "Log in to your account"}
+            </h2>
+          </div>
+          <button type="button" className="auth-modal-close" onClick={onClose} aria-label="Close">
+            x
+          </button>
+        </div>
+
+        {reason ? <p className="auth-modal-reason">{reason}</p> : null}
+
+        <div className="auth-modal-toggle" role="tablist" aria-label="Authentication mode">
+          <button
+            type="button"
+            className={`auth-modal-toggle-btn${!isSignup ? " auth-modal-toggle-btn--active" : ""}`}
+            onClick={() => onModeChange("login")}
+          >
+            Log in
+          </button>
+          <button
+            type="button"
+            className={`auth-modal-toggle-btn${isSignup ? " auth-modal-toggle-btn--active" : ""}`}
+            onClick={() => onModeChange("signup")}
+          >
+            Sign up
+          </button>
+        </div>
+
+        <form className="auth-modal-form" onSubmit={onSubmit}>
+          {/* ── Signup-only fields ── */}
+          {isSignup ? (
+            <label className="auth-field">
+              <span>Full name</span>
+              <input
+                type="text"
+                value={form.name}
+                onChange={(e) => onFieldChange("name", e.target.value)}
+                autoComplete="name"
+                placeholder="Your full name"
+                required
+              />
+            </label>
+          ) : null}
+
+          {/* ── Email (both modes) ── */}
+          <label className="auth-field">
+            <span>{isSignup ? "Email" : "Email or phone number"}</span>
+            <input
+              type={isSignup ? "email" : "text"}
+              value={form.email}
+              onChange={(e) => onFieldChange("email", e.target.value)}
+              autoComplete="email"
+              placeholder={isSignup ? "you@example.com" : "Email or +91-XXXXXXXXXX"}
+            />
+          </label>
+
+          {/* ── Phone (signup only) ── */}
+          {isSignup ? (
+            <label className="auth-field">
+              <span>Phone number <span style={{fontWeight:400,opacity:.6}}>(optional)</span></span>
+              <input
+                type="tel"
+                value={form.phone || ""}
+                onChange={(e) => onFieldChange("phone", e.target.value)}
+                autoComplete="tel"
+                placeholder="+91-XXXXXXXXXX"
+              />
+            </label>
+          ) : null}
+
+          {/* ── Password ── */}
+          <label className="auth-field">
+            <span>Password</span>
+            <input
+              type="password"
+              value={form.password}
+              onChange={(e) => onFieldChange("password", e.target.value)}
+              autoComplete={isSignup ? "new-password" : "current-password"}
+              placeholder={isSignup ? "At least 6 characters" : "Your password"}
+              required
+            />
+          </label>
+
+          {/* ── Confirm password (signup only) ── */}
+          {isSignup ? (
+            <label className="auth-field">
+              <span>Confirm password</span>
+              <input
+                type="password"
+                value={form.confirmPassword || ""}
+                onChange={(e) => onFieldChange("confirmPassword", e.target.value)}
+                autoComplete="new-password"
+                placeholder="Re-enter your password"
+                required
+              />
+            </label>
+          ) : null}
+
+          {error ? <div className="auth-modal-error">{error}</div> : null}
+
+          <button type="submit" className="auth-submit-btn" disabled={submitting}>
+            {submitting ? "Please wait…" : (isSignup ? "Create account" : "Log in")}
+          </button>
+        </form>
+      </div>
+    </div>
   );
 });
 
@@ -726,17 +911,18 @@ const ResponseFeedbackPanel = memo(function ResponseFeedbackPanel({
 // MAIN APP
 // ---------------------------------------------------
 function App() {
-  // -------------------------
-  // Auth disabled: open app without login. User shown as "Guest".
-  // -------------------------
-  const [currentUser, setCurrentUser] = useState("Guest");
-  const [currentUserName, setCurrentUserName] = useState("Guest");
-
-  const handleLogout = () => {
-    setMessages([]);
-    setSavedChats([]);
-    handleStartNewCase();
-  };
+  const [authToken, setAuthToken] = useState("");
+  const [currentUser, setCurrentUser] = useState(GUEST_USER_LABEL);
+  const [currentUserName, setCurrentUserName] = useState(GUEST_USER_LABEL);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [authMode, setAuthMode] = useState("login");
+  const [authForm, setAuthForm] = useState({ name: "", email: "", phone: "", password: "", confirmPassword: "" });
+  const [authError, setAuthError] = useState("");
+  const [authReason, setAuthReason] = useState("");
+  const [authSubmitting, setAuthSubmitting] = useState(false);
+  const isAuthenticated = !!authToken;
+  // Landing page gate — shown on first visit or after logout; bypassed if stored token exists
+  const [showLanding, setShowLanding] = useState(() => !localStorage.getItem(AUTH_TOKEN_KEY));
 
   // -------------------------
   // Chat & Interview state (merged from existing and snippet)
@@ -862,6 +1048,69 @@ function App() {
   const [leftColumnWidth, setLeftColumnWidth] = useState(LEFT_COLUMN_DEFAULT_WIDTH);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
+  const applyAuthSession = useCallback((tokenValue, user) => {
+    const nextToken = (tokenValue || "").trim();
+    const nextEmail = String(user?.email || "").trim();
+    const nextName = String(user?.name || "").trim();
+    if (nextToken) localStorage.setItem(AUTH_TOKEN_KEY, nextToken);
+    else localStorage.removeItem(AUTH_TOKEN_KEY);
+    if (nextEmail) localStorage.setItem(CURRENT_USER_KEY, nextEmail);
+    else localStorage.removeItem(CURRENT_USER_KEY);
+    if (nextName) localStorage.setItem(CURRENT_USER_NAME_KEY, nextName);
+    else localStorage.removeItem(CURRENT_USER_NAME_KEY);
+    setAuthToken(nextToken);
+    setCurrentUser(nextEmail || GUEST_USER_LABEL);
+    setCurrentUserName(nextName || nextEmail || GUEST_USER_LABEL);
+    setShowLanding(false);  // dismiss landing page after successful auth
+  }, []);
+
+  const clearAuthSession = useCallback(() => {
+    localStorage.removeItem(AUTH_TOKEN_KEY);
+    localStorage.removeItem(CURRENT_USER_KEY);
+    localStorage.removeItem(CURRENT_USER_NAME_KEY);
+    setAuthToken("");
+    setCurrentUser(GUEST_USER_LABEL);
+    setCurrentUserName(GUEST_USER_LABEL);
+    setSavedChats([]);
+    setAuthModalOpen(false);
+    setAuthError("");
+    setAuthReason("");
+    setAuthSubmitting(false);
+    setShowLanding(true);  // return to landing page on logout
+  }, []);
+
+  const openAuthModal = useCallback((mode = "login", reason = "") => {
+    setAuthMode(mode);
+    setAuthReason(reason || "");
+    setAuthError("");
+    setAuthSubmitting(false);
+    setAuthForm((prev) => ({
+      name: prev.name || "",
+      email: prev.email || "",
+      phone: prev.phone || "",
+      password: "",
+      confirmPassword: "",
+    }));
+    setAuthModalOpen(true);
+  }, []);
+
+  const closeAuthModal = useCallback(() => {
+    setAuthModalOpen(false);
+    setAuthError("");
+    setAuthReason("");
+    setAuthSubmitting(false);
+    setAuthForm((prev) => ({ ...prev, password: "" }));
+  }, []);
+
+  const handleLogout = useCallback(() => {
+    clearAuthSession();
+  }, [clearAuthSession]);
+
+  const promptForAuth = useCallback((reason, mode = "login") => {
+    if (authToken) clearAuthSession();
+    openAuthModal(mode, reason);
+  }, [authToken, clearAuthSession, openAuthModal]);
+
   const toggleSidebarSection = (section) => {
     setSidebarExpandedSection((prev) => {
       if (section === "chat_history") return "chat_history";
@@ -932,6 +1181,16 @@ function App() {
      (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
       ? "http://127.0.0.1:8000"
       : (typeof window !== "undefined" ? window.location.origin : "http://127.0.0.1:8000"));
+
+  useEffect(() => {
+    const storedToken = localStorage.getItem(AUTH_TOKEN_KEY) || "";
+    const storedEmail = localStorage.getItem(CURRENT_USER_KEY) || "";
+    const storedName = localStorage.getItem(CURRENT_USER_NAME_KEY) || "";
+    if (!storedToken || !storedEmail) return;
+    setAuthToken(storedToken);
+    setCurrentUser(storedEmail);
+    setCurrentUserName(storedName || storedEmail);
+  }, []);
 
   const makeMessageId = useCallback(
     (prefix = "msg") => `${prefix}_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
@@ -1088,6 +1347,89 @@ function App() {
     );
   }, [analysisFactsSummary, analysisStage, currentQuestion, facts, intakeState, lastResponseType, messages, normalizeWorkflowState, qaHistory, stage]);
 
+  const syncCurrentChatToBackend = useCallback(async (tokenValue) => {
+    const trimmedToken = String(tokenValue || "").trim();
+    if (!trimmedToken || currentChatIdRef.current == null || messages.length === 0) return;
+    const headers = {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${trimmedToken}`,
+    };
+    const title = (messages.find((m) => m.role === "user")?.content || "").toString().slice(0, 50) || "Untitled chat";
+    await fetch(`${API_BASE}/chats`, {
+      method: "POST",
+      headers,
+      body: JSON.stringify({
+        id: currentChatIdRef.current,
+        title,
+        messages,
+        opinionText,
+        retrieved,
+        workflowState: buildWorkflowState(),
+        createdAt: new Date().toISOString(),
+      }),
+    }).catch(() => {});
+  }, [API_BASE, buildWorkflowState, messages, opinionText, retrieved]);
+
+  const handleAuthSubmit = useCallback(async (e) => {
+    e.preventDefault();
+    if (authSubmitting) return;
+    const isSignup = authMode === "signup";
+    const email = authForm.email.trim();
+    const phone = (authForm.phone || "").trim();
+    const password = authForm.password;
+    const confirmPassword = (authForm.confirmPassword || "").trim();
+
+    // Validation
+    if (isSignup) {
+      if (!authForm.name.trim() || !email || !password) {
+        setAuthError("Name, email, and password are required.");
+        return;
+      }
+      if (password !== confirmPassword) {
+        setAuthError("Passwords do not match.");
+        return;
+      }
+      if (password.length < 6) {
+        setAuthError("Password must be at least 6 characters.");
+        return;
+      }
+    } else {
+      if ((!email && !phone) || !password) {
+        setAuthError("Email (or phone number) and password are required.");
+        return;
+      }
+    }
+
+    const payload = isSignup
+      ? { name: authForm.name.trim(), email, password, phone_number: phone || undefined }
+      : { email: email || undefined, phone_number: phone || undefined, password };
+    setAuthSubmitting(true);
+    setAuthError("");
+    try {
+      const res = await fetch(`${API_BASE}/auth/${isSignup ? "register" : "login"}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data?.detail || (isSignup ? "Could not create your account." : "Could not log you in."));
+      }
+      const nextToken = String(data?.token || "").trim();
+      const nextUser = data?.user || {};
+      if (!nextToken) throw new Error("Authentication succeeded, but no session token was returned.");
+      await syncCurrentChatToBackend(nextToken);
+      applyAuthSession(nextToken, nextUser);
+      setAuthModalOpen(false);
+      setAuthReason("");
+      setAuthForm((prev) => ({ ...prev, password: "" }));
+    } catch (err) {
+      setAuthError(err?.message || "Authentication failed. Please try again.");
+    } finally {
+      setAuthSubmitting(false);
+    }
+  }, [API_BASE, applyAuthSession, authForm, authMode, authSubmitting, syncCurrentChatToBackend]);
+
   const MODEL_TIER_LABELS = {
     gpt5mini:  "GPT-5 Mini",
     gpt51mini: "GPT-5.1 Mini",
@@ -1136,10 +1478,13 @@ function App() {
 
   const submitResponseFeedback = useCallback(async (msg, index, draft) => {
     if (!msg?.id || !draft?.rating) return;
-    const token = localStorage.getItem(AUTH_TOKEN_KEY);
+    if (!authToken) {
+      promptForAuth("Please log in to save response feedback.");
+      return;
+    }
     const headers = {
       "Content-Type": "application/json",
-      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      Authorization: `Bearer ${authToken}`,
     };
     const previousUser = [...messages]
       .slice(0, index)
@@ -1186,18 +1531,24 @@ function App() {
     } catch (err) {
       setError(err.message || "Could not save feedback");
     }
-  }, [API_BASE, messages, normalizeAssistantText]);
+  }, [API_BASE, authToken, messages, normalizeAssistantText, promptForAuth]);
 
-  // Sidebar data: load chat history first, then bare acts, then case laws (sequential, one mount pass).
   useEffect(() => {
     let cancelled = false;
-
-    const loadSidebarData = async () => {
-      const token = localStorage.getItem(AUTH_TOKEN_KEY);
-      const headers = token ? { Authorization: `Bearer ${token}` } : {};
-
+    const loadSavedChats = async () => {
+      if (!authToken) {
+        if (!cancelled) setSavedChats([]);
+        return;
+      }
       try {
-        const res = await fetch(`${API_BASE}/chats`, { headers });
+        const res = await fetch(`${API_BASE}/chats`, {
+          headers: { Authorization: `Bearer ${authToken}` },
+        });
+        if (res.status === 401) {
+          if (!cancelled) setSavedChats([]);
+          clearAuthSession();
+          return;
+        }
         let data = { chats: [] };
         if (res.ok) {
           const text = await res.text();
@@ -1213,9 +1564,18 @@ function App() {
       } catch {
         if (!cancelled) setSavedChats([]);
       }
+    };
+    loadSavedChats();
+    return () => {
+      cancelled = true;
+    };
+  }, [API_BASE, authToken, clearAuthSession, normalizeSavedChat]);
 
-      if (cancelled) return;
+  // Sidebar library data: bare acts first, then case laws.
+  useEffect(() => {
+    let cancelled = false;
 
+    const loadSidebarData = async () => {
       try {
         const libRes = await fetch(`${API_BASE}/bareacts/library`);
         if (libRes.ok) {
@@ -1295,15 +1655,13 @@ function App() {
     return () => {
       cancelled = true;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- mount only; chats first, then libraries
-  }, []);
+  }, [API_BASE]);
 
-  // Persist current chat to backend when it changes (no auth: backend uses anonymous user)
+  // Persist current chat to backend only for signed-in users.
   useEffect(() => {
     const chatId = currentChatIdRef.current;
-    if (chatId == null || messages.length === 0) return;
-    const token = localStorage.getItem(AUTH_TOKEN_KEY);
-    const headers = { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) };
+    if (!authToken || chatId == null || messages.length === 0) return;
+    const headers = { "Content-Type": "application/json", Authorization: `Bearer ${authToken}` };
     const title = (messages.find((m) => m.role === "user")?.content || "").toString().slice(0, 50);
     fetch(`${API_BASE}/chats`, {
       method: "POST",
@@ -1318,7 +1676,7 @@ function App() {
         createdAt: new Date().toISOString(),
       }),
     }).catch(() => {});
-  }, [API_BASE, buildWorkflowState, messages, opinionText, retrieved]);
+  }, [API_BASE, authToken, buildWorkflowState, messages, opinionText, retrieved]);
 
   // Keep the "current" chat in the list in sync with messages/opinion/retrieved
   useEffect(() => {
@@ -1618,20 +1976,20 @@ function App() {
   const saveRenameChat = async () => {
     if (editingChatId == null) return;
     const next = (editingTitle || "").trim() || "Untitled chat";
-    const token = localStorage.getItem(AUTH_TOKEN_KEY);
     const chat = savedChats.find((c) => c.id == editingChatId);
     setSavedChats((prev) => prev.map((c) => (c.id == editingChatId ? { ...c, title: next } : c)));
     setEditingChatId(null);
     setEditingTitle("");
     if (!chat) return;
-    const headers = { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) };
+    if (!authToken) return;
+    const headers = { "Content-Type": "application/json", Authorization: `Bearer ${authToken}` };
     try {
       const res = await fetch(`${API_BASE}/chats`, { method: "POST", headers, body: JSON.stringify({
         id: chat.id, title: next, messages: chat.messages || [], opinionText: chat.opinionText || "",
         retrieved: chat.retrieved || [], workflowState: chat.workflowState || {}, createdAt: chat.createdAt || new Date().toISOString(),
       }) });
       if (res.ok) {
-        const listRes = await fetch(`${API_BASE}/chats`, { headers: token ? { Authorization: `Bearer ${token}` } : {} });
+        const listRes = await fetch(`${API_BASE}/chats`, { headers: { Authorization: `Bearer ${authToken}` } });
         if (listRes.ok) {
           const data = await listRes.json().catch(() => ({}));
           setSavedChats(Array.isArray(data.chats) ? data.chats.map(normalizeSavedChat) : []);
@@ -1648,9 +2006,13 @@ function App() {
   const handleDeleteChat = async (chat) => {
     const idToRemove = chat.id;
     const idForUrl = typeof idToRemove === "number" ? idToRemove : String(idToRemove).trim();
-    const token = localStorage.getItem(AUTH_TOKEN_KEY);
     const wasCurrent = currentChatIdRef.current == idToRemove;
-    const headers = token ? { Authorization: `Bearer ${token}` } : {};
+    if (!authToken) {
+      setSavedChats((prev) => prev.filter((c) => String(c.id) !== String(idToRemove)));
+      if (wasCurrent) handleStartNewCase();
+      return;
+    }
+    const headers = { Authorization: `Bearer ${authToken}` };
     try {
       const res = await fetch(`${API_BASE}/chats/${encodeURIComponent(idForUrl)}`, { method: "DELETE", headers });
       if (res.ok) {
@@ -1781,9 +2143,10 @@ function App() {
       setSavedChats((prev) => [chat, ...prev]);
       currentChatIdRef.current = chatId;
       hasSavedCurrentChatRef.current = true;
-      const token = localStorage.getItem(AUTH_TOKEN_KEY);
-      const headers = { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) };
-      fetch(`${API_BASE}/chats`, { method: "POST", headers, body: JSON.stringify(chat) }).catch(() => {});
+      if (authToken) {
+        const headers = { "Content-Type": "application/json", Authorization: `Bearer ${authToken}` };
+        fetch(`${API_BASE}/chats`, { method: "POST", headers, body: JSON.stringify(chat) }).catch(() => {});
+      }
     }
 
     // 1) Initial facts (await_facts stage) - use streaming
@@ -3633,9 +3996,50 @@ function App() {
   };
 
   // -------------------------
-  // MAIN APP UI (no login; open directly)
+  // MAIN APP UI
   // 3 columns: Bare Acts (left), Conversation+Input (middle), Final Output (right)
   // -------------------------
+
+  // Show landing page until user logs in or explicitly continues as guest
+  if (showLanding) {
+    return (
+      <>
+        <LandingPage
+          onLogin={() => {
+            openAuthModal("login");
+            setShowLanding(false);
+          }}
+          onSignup={() => {
+            openAuthModal("signup");
+            setShowLanding(false);
+          }}
+          onGuest={() => setShowLanding(false)}
+        />
+        <AuthModal
+          open={authModalOpen}
+          mode={authMode}
+          form={authForm}
+          error={authError}
+          reason={authReason}
+          submitting={authSubmitting}
+          onClose={() => {
+            setAuthModalOpen(false);
+            // If closed without logging in, show landing again
+            if (!authToken) setShowLanding(true);
+          }}
+          onModeChange={(nextMode) => {
+            setAuthMode(nextMode);
+            setAuthError("");
+            setAuthReason("");
+            setAuthForm((prev) => ({ ...prev, password: "", confirmPassword: "" }));
+          }}
+          onFieldChange={(field, value) => setAuthForm((prev) => ({ ...prev, [field]: value }))}
+          onSubmit={handleAuthSubmit}
+        />
+      </>
+    );
+  }
+
   return (
     <div
       className="app-container"
@@ -3680,6 +4084,22 @@ function App() {
                 <summary className="chat-history-collapsible-summary sidebar-collapsible-summary">
                   <span>Chat history ({savedChats.length})</span>
                 </summary>
+                {!isAuthenticated && (
+                  <div className="chat-history-auth-callout">
+                    <div className="chat-history-auth-title">Sign in to sync chats and upload documents</div>
+                    <p className="chat-history-auth-copy">
+                      Guest chat stays available in this session. Log in when you want uploads and saved history across visits.
+                    </p>
+                    <div className="chat-history-auth-actions">
+                      <button type="button" className="chat-history-auth-btn" onClick={() => promptForAuth("Log in to sync your chat history and unlock uploads.")}>
+                        Log in
+                      </button>
+                      <button type="button" className="chat-history-auth-btn chat-history-auth-btn--secondary" onClick={() => promptForAuth("Create an account to save chats and upload documents.", "signup")}>
+                        Sign up
+                      </button>
+                    </div>
+                  </div>
+                )}
                 {savedChats.length > 0 ? (
                   <>
                     <input
@@ -3774,7 +4194,9 @@ function App() {
                     </div>
                   </>
                 ) : (
-                  <p className="chat-history-empty">No previous chats.</p>
+                  <p className="chat-history-empty">
+                    {isAuthenticated ? "No previous chats." : "No synced chats yet. Start chatting now, and sign in whenever you want to save the record."}
+                  </p>
                 )}
               </details>
             </div>
@@ -4083,10 +4505,34 @@ function App() {
               {"\u2696 Nyaymalaw"}
             </h1>
             <div className="header-user">
-              <span className="header-email" title={currentUser || "Guest"}>{currentUser || "Guest"}</span>
-              <button type="button" onClick={handleLogout} className="header-logout-btn">
-                New chat
-              </button>
+              <div className="header-user-text">
+                <span className="header-user-name" title={isAuthenticated ? (currentUserName || currentUser) : GUEST_USER_LABEL}>
+                  {isAuthenticated ? (currentUserName || currentUser) : GUEST_USER_LABEL}
+                </span>
+                <span className="header-email" title={isAuthenticated ? currentUser : "Chat is open without login"}>
+                  {isAuthenticated ? currentUser : "Chat is open without login"}
+                </span>
+              </div>
+              <div className="header-user-actions">
+                {!isAuthenticated && (
+                  <>
+                    <button type="button" onClick={() => promptForAuth("Log in to save chats and upload documents.")} className="header-auth-btn">
+                      Log in
+                    </button>
+                    <button type="button" onClick={() => promptForAuth("Create an account to save chats and upload documents.", "signup")} className="header-auth-btn header-auth-btn--primary">
+                      Sign up
+                    </button>
+                  </>
+                )}
+                {isAuthenticated && (
+                  <button type="button" onClick={handleLogout} className="header-auth-btn">
+                    Log out
+                  </button>
+                )}
+                <button type="button" onClick={handleNewChat} className="header-logout-btn">
+                  New chat
+                </button>
+              </div>
             </div>
           </div>
             {/* Chat area: center stage (no messages) or conversation + input + disclaimer */}
@@ -4112,6 +4558,8 @@ function App() {
                       onModelChange={setSelectedModel}
                       showDisclaimer={bottomExpandedSection == null}
                       apiBase={API_BASE}
+                      canUploadDocuments={isAuthenticated}
+                      onRequireAuth={promptForAuth}
                       onStop={handleStopProcessing}
                       messageQueue={messageQueue}
                       onQueueEdit={handleQueueEdit}
@@ -4361,6 +4809,8 @@ function App() {
                     onModelChange={setSelectedModel}
                     showDisclaimer={bottomExpandedSection == null}
                     apiBase={API_BASE}
+                    canUploadDocuments={isAuthenticated}
+                    onRequireAuth={promptForAuth}
                     onStop={handleStopProcessing}
                     messageQueue={messageQueue}
                     onQueueEdit={handleQueueEdit}
@@ -4401,9 +4851,28 @@ function App() {
         </div>
       </div>
 
+      <AuthModal
+        open={authModalOpen}
+        mode={authMode}
+        form={authForm}
+        error={authError}
+        reason={authReason}
+        submitting={authSubmitting}
+        onClose={closeAuthModal}
+        onModeChange={(nextMode) => {
+          setAuthMode(nextMode);
+          setAuthError("");
+          setAuthReason("");
+          setAuthForm((prev) => ({ ...prev, password: "" }));
+        }}
+        onFieldChange={(field, value) => {
+          setAuthForm((prev) => ({ ...prev, [field]: value }));
+        }}
+        onSubmit={handleAuthSubmit}
+      />
+
     </div>
   );
 }
 
 export default App;
-

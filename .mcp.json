@@ -4,7 +4,9 @@
       "command": "uvx",
       "args": [
         "code-review-graph",
-        "serve"
+        "serve",
+        "--repo",
+        "/mnt/c/Users/rahul/Agentic NM"
       ],
       "type": "stdio"
     }
