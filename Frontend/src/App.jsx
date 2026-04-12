@@ -1,5 +1,6 @@
 ﻿import { memo, useState, useRef, useEffect, useMemo, useCallback } from "react";
 import ReactMarkdown from "react-markdown";
+import { useLayoutEffect } from "react";
 import rehypeRaw from "rehype-raw";
 import "./App.css";
 
@@ -21,6 +22,14 @@ const CHAT_STARTERS = [
     title: "Find supporting precedents",
     text: "I want the closest precedents and statutory provisions that support my position. Please start by asking the key factual questions.",
   },
+];
+
+const INTAKE_DETAIL_ITEMS = [
+  { label: "Parties involved", icon: "👥" },
+  { label: "Key dates", icon: "🗓" },
+  { label: "Urgency / risks", icon: "⚡" },
+  { label: "Documents", icon: "📄" },
+  { label: "Relief sought", icon: "🎯" },
 ];
 
 const RESPONSE_FEEDBACK_TAG_GROUPS = [
@@ -73,6 +82,15 @@ function truncateInline(value, limit = 160) {
   const text = String(value || "").replace(/\s+/g, " ").trim();
   if (!text) return "";
   return text.length > limit ? `${text.slice(0, limit - 3)}...` : text;
+}
+
+function getFirstNameLabel(value) {
+  const text = String(value || "").trim();
+  if (!text) return GUEST_USER_LABEL;
+  const base = text.includes("@") ? text.split("@")[0] : text;
+  const cleaned = base.replace(/[._-]+/g, " ").trim();
+  const firstToken = cleaned.split(/\s+/).filter(Boolean)[0] || GUEST_USER_LABEL;
+  return firstToken.charAt(0).toUpperCase() + firstToken.slice(1);
 }
 
 function formatCountLabel(count, singular, plural = `${singular}s`) {
@@ -146,6 +164,61 @@ function getResponseMeta(responseType, bareActsCount, caseLawsCount, nextStepsCo
         ],
       };
   }
+}
+
+function formatReadableAssistantMarkdown(rawText) {
+  const text = String(rawText || "").replace(/\r\n?/g, "\n").trim();
+  if (!text) return "";
+
+  const normalized = text
+    .replace(/:\s+-\s+/g, ":\n- ")
+    .replace(/\s+-\s+(?=[A-Z][^:\n]{2,80}:)/g, "\n- ")
+    .replace(/\n{3,}/g, "\n\n");
+
+  const blocks = normalized
+    .split(/\n{2,}/)
+    .map((block) => block.trim())
+    .filter(Boolean);
+
+  const hasBulletBlock = blocks.some((block) => /^[-*]\s+/m.test(block));
+
+  const formatBulletLine = (line) => {
+    const cleanLine = String(line || "").replace(/^[-*]\s+/, "").trim();
+    if (!cleanLine) return "";
+    const labelMatch = cleanLine.match(/^([^:]{2,90}):\s*(.+)$/);
+    if (labelMatch) {
+      const label = labelMatch[1].trim();
+      const detail = labelMatch[2].trim();
+      return `- **${label}:** ${detail}`;
+    }
+    return `- ${cleanLine}`;
+  };
+
+  const renderedBlocks = blocks.map((block, index) => {
+    const lines = block.split("\n").map((line) => line.trim()).filter(Boolean);
+    const bulletLines = lines.filter((line) => /^[-*]\s+/.test(line));
+    const isBulletBlock = bulletLines.length > 0 && bulletLines.length === lines.length;
+
+    if (isBulletBlock) {
+      return bulletLines.map(formatBulletLine).filter(Boolean).join("\n");
+    }
+
+    const compact = block.replace(/\s+/g, " ").trim();
+    if (!compact) return "";
+
+    const paragraphMatch = compact.match(/^([^:]{2,90}):\s*(.+)$/);
+    if (paragraphMatch && paragraphMatch[1].split(" ").length <= 7) {
+      return `**${paragraphMatch[1].trim()}:** ${paragraphMatch[2].trim()}`;
+    }
+
+    if (index === 0 && hasBulletBlock && compact.length <= 260) {
+      return `*${compact}*`;
+    }
+
+    return compact;
+  }).filter(Boolean);
+
+  return renderedBlocks.join("\n\n");
 }
 
 /** Item 20: Advocate-review panel — structured brief alongside the draft. */
@@ -526,6 +599,36 @@ const ChatComposer = memo(function ChatComposer({
 
   const isQueueFull = messageQueue.length >= 2;
 
+  const focusComposer = useCallback(() => {
+    const el = textareaRef.current;
+    if (!el) return;
+    try {
+      el.focus({ preventScroll: true });
+    } catch {
+      el.focus();
+    }
+  }, []);
+
+  const resizeComposer = useCallback((element = textareaRef.current) => {
+    const el = element;
+    if (!el) return;
+
+    const computed = window.getComputedStyle(el);
+    const lineHeight = Number.parseFloat(computed.lineHeight) || (Number.parseFloat(computed.fontSize) || 16) * 1.6;
+    const paddingTop = Number.parseFloat(computed.paddingTop) || 0;
+    const paddingBottom = Number.parseFloat(computed.paddingBottom) || 0;
+    const borderTop = Number.parseFloat(computed.borderTopWidth) || 0;
+    const borderBottom = Number.parseFloat(computed.borderBottomWidth) || 0;
+    const verticalInset = paddingTop + paddingBottom + borderTop + borderBottom;
+    const minHeight = Math.ceil(lineHeight + verticalInset);
+    const maxHeight = Math.ceil((lineHeight * 10) + verticalInset);
+
+    el.style.height = "0px";
+    const nextHeight = Math.min(Math.max(el.scrollHeight, minHeight), maxHeight);
+    el.style.height = `${nextHeight}px`;
+    el.style.overflowY = el.scrollHeight > maxHeight ? "auto" : "hidden";
+  }, []);
+
   // ── Upload with abort support ──────────────────────────────────────────────
   const handleCancelUpload = useCallback(() => {
     abortControllerRef.current?.abort();
@@ -573,27 +676,24 @@ const ChatComposer = memo(function ChatComposer({
   useEffect(() => {
     if (queueEditSignal && queueEditSignal.counter > 0) {
       setDraft(queueEditSignal.text);
-      setTimeout(() => textareaRef.current?.focus(), 0);
+      setTimeout(() => focusComposer(), 0);
     }
-  }, [queueEditSignal?.counter]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [focusComposer, queueEditSignal?.counter]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (externalDraftSignal && externalDraftSignal.counter > 0) {
       setDraft(externalDraftSignal.text);
-      setTimeout(() => textareaRef.current?.focus(), 0);
+      setTimeout(() => focusComposer(), 0);
     }
-  }, [externalDraftSignal?.counter]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [externalDraftSignal?.counter, focusComposer]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useLayoutEffect(() => {
+    resizeComposer();
+  }, [draft, resizeComposer]);
 
   useEffect(() => {
-    const el = textareaRef.current;
-    if (!el) return;
-    el.style.height = "24px";
-    el.style.height = `${Math.min(el.scrollHeight, 200)}px`;
-  }, [draft]);
-
-  useEffect(() => {
-    if (!loading && textareaRef.current) textareaRef.current.focus();
-  }, [loading]);
+    if (!loading && textareaRef.current) focusComposer();
+  }, [focusComposer, loading]);
 
   // Submit immediately if idle; queue if processing; block only when queue is full
   const submitDraft = useCallback(() => {
@@ -650,9 +750,11 @@ const ChatComposer = memo(function ChatComposer({
         {/* Textarea — never disabled, queue handles backpressure */}
         <textarea
           ref={textareaRef}
-          autoFocus
           value={draft}
-          onChange={(e) => setDraft(e.target.value)}
+          onChange={(e) => {
+            setDraft(e.target.value);
+            resizeComposer(e.target);
+          }}
           onKeyDown={handleKeyDown}
           placeholder={activePlaceholder}
           className="chat-input"
@@ -711,8 +813,13 @@ const ChatComposer = memo(function ChatComposer({
                   <button type="button" onClick={submitDraft}
                     className="chat-send chat-send--queue"
                     aria-label="Add to queue" title="Add to queue">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M12 19V5M5 12l7-7 7 7" />
+                    {/* Queue icon: three stacked lines with a + indicator */}
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <line x1="3" y1="6" x2="15" y2="6" />
+                      <line x1="3" y1="12" x2="15" y2="12" />
+                      <line x1="3" y1="18" x2="11" y2="18" />
+                      <line x1="18" y1="15" x2="18" y2="21" />
+                      <line x1="15" y1="18" x2="21" y2="18" />
                     </svg>
                     <span className="chat-send-label">Queue</span>
                   </button>
@@ -1457,8 +1564,8 @@ function App() {
     );
   }, [analysisFactsSummary, analysisStage, currentQuestion, facts, intakeState, lastResponseType, messages, normalizeWorkflowState, qaHistory, stage]);
 
-  const primeComposer = useCallback((text) => {
-    setExternalDraftSignal((prev) => ({ text, counter: prev.counter + 1 }));
+  const primeComposer = useCallback(() => {
+    setExternalDraftSignal((prev) => ({ text: "", counter: prev.counter + 1 }));
   }, []);
 
   const syncCurrentChatToBackend = useCallback(async (tokenValue) => {
@@ -3207,11 +3314,20 @@ function App() {
     const progressDefaultOpen = options.progressDefaultOpen !== undefined ? options.progressDefaultOpen : false;
     if (content == null) return null;
     const trimDots = (s) => (s || "").replace(/\n+\.\.\.\s*$/, " ...").replace(/\n+$/, "");
+    const renderReadableText = (text, className = "message-text readable-assistant-text") => {
+      const markdown = formatReadableAssistantMarkdown(trimDots(text));
+      if (!markdown) return null;
+      return (
+        <div className={className}>
+          <ReactMarkdown>{markdown}</ReactMarkdown>
+        </div>
+      );
+    };
     if (typeof content === "string") {
-      return <p className="message-text">{trimDots(content)}</p>;
+      return renderReadableText(content);
     }
     if (content.type === "question") {
-      return <p className="message-text">{trimDots(content.text)}</p>;
+      return renderReadableText(content.text);
     }
     if (content.type === "error") {
       return <p className="message-error">{content.text}</p>;
@@ -3958,7 +4074,7 @@ function App() {
             if (part.type === "explanation") {
               return (
                 <div key={`explanation-${part.text?.slice(0, 30)}`} className="message-explanation">
-                  <p>{part.text}</p>
+                  {renderReadableText(part.text, "message-explanation readable-assistant-text")}
                 </div>
               );
             }
@@ -4139,17 +4255,8 @@ function App() {
   // -------------------------
 
   const hasConversation = messages.some((m) => m.role === "user");
-  const stageMeta = getWorkflowStageMeta(stage);
-  const workflowSummary = truncateInline(
-    analysisFactsSummary || currentQuestion || facts || "Start by describing the dispute, parties, timeline, documents, and the relief you want.",
-    180,
-  );
-  const workspaceMetrics = [
-    formatCountLabel(savedChats.length, "matter"),
-    formatCountLabel(bareActs.length, "statute", "statutes"),
-    formatCountLabel(caseLawsList.length, "precedent"),
-    selectedModel.replace(/mini/gi, " Mini").replace(/^gpt/i, "GPT-"),
-  ];
+  const accountDisplayName = isAuthenticated ? String(currentUserName || currentUser || GUEST_USER_LABEL).trim() : GUEST_USER_LABEL;
+  const accountFirstName = getFirstNameLabel(accountDisplayName);
 
   // Show landing page until user logs in or explicitly continues as guest
   if (showLanding) {
@@ -4652,114 +4759,108 @@ function App() {
           )}
           <div className="right-pane-header">
             <div className="header-brand">
-              <div className="header-kicker">Nyaymalaw legal workspace</div>
+              <span className="header-logo-icon" aria-hidden="true">⚖</span>
               <h1 className="main-title">Nyaymalaw</h1>
-              <p className="header-subtitle">{stageMeta.description}</p>
             </div>
             <div className="header-side">
-              <div className="header-user">
-                <div className="header-user-text">
-                  <span className="header-user-name" title={isAuthenticated ? (currentUserName || currentUser) : GUEST_USER_LABEL}>
-                    {isAuthenticated ? (currentUserName || currentUser) : GUEST_USER_LABEL}
-                  </span>
-                  <span className="header-email" title={isAuthenticated ? currentUser : "Chat is open without login"}>
-                    {isAuthenticated ? currentUser : "Chat is open without login"}
-                  </span>
-                </div>
-              </div>
-              <div className="header-user-actions">
-                {!isAuthenticated && (
-                  <>
-                    <button type="button" onClick={() => promptForAuth("Log in to save chats across visits.")} className="header-auth-btn">
-                      Log in
-                    </button>
-                    <button type="button" onClick={() => promptForAuth("Create an account to save chats to your profile.", "signup")} className="header-auth-btn header-auth-btn--primary">
-                      Sign up
-                    </button>
-                  </>
-                )}
-                {isAuthenticated && (
-                  <button type="button" onClick={handleLogout} className="header-auth-btn">
-                    Log out
+              {!isAuthenticated ? (
+                <div className="header-user-actions">
+                  <button type="button" onClick={() => promptForAuth("Log in to save chats across visits.")} className="header-auth-btn">
+                    Log in
                   </button>
-                )}
-                <button type="button" onClick={handleNewChat} className="header-logout-btn">
-                  New matter
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="workspace-overview-bar">
-            <div className="workspace-overview-primary">
-              <span className={`workspace-status-badge workspace-status-badge--${stageMeta.tone}`}>{stageMeta.label}</span>
-              <p className="workspace-summary-text">{workflowSummary}</p>
-            </div>
-            <div className="workspace-overview-metrics">
-              {workspaceMetrics.map((metric) => (
-                <span key={metric} className="workspace-metric-chip">{metric}</span>
-              ))}
-            </div>
-          </div>
-            {!hasConversation ? (
-              <div className="chat-center-stage">
-                <div className="chat-center-message">
-                  <div className="chat-center-kicker">Matter intake and legal drafting</div>
-                  <h2>Build a grounded legal brief, not just a chat transcript.</h2>
-                  <p>
-                    Describe the dispute, upload your papers, or start from a structured legal task. The workspace will collect facts,
-                    surface statutes and precedents, and move toward a draftable outcome.
-                  </p>
-                  <div className="chat-start-grid">
-                    {CHAT_STARTERS.map((starter) => (
-                      <button
-                        key={starter.title}
-                        type="button"
-                        className="chat-start-card"
-                        onClick={() => primeComposer(starter.text)}
-                      >
-                        <span className="chat-start-card-title">{starter.title}</span>
-                        <span className="chat-start-card-text">{starter.text}</span>
-                      </button>
-                    ))}
-                  </div>
-                  <div className="chat-center-checklist">
-                    <span className="chat-center-checklist-label">Best starting details</span>
-                    <div className="chat-center-checklist-items">
-                      <span className="chat-center-checklist-chip">Parties</span>
-                      <span className="chat-center-checklist-chip">Timeline</span>
-                      <span className="chat-center-checklist-chip">Forum</span>
-                      <span className="chat-center-checklist-chip">Documents</span>
-                      <span className="chat-center-checklist-chip">Relief sought</span>
-                      <span className="chat-center-checklist-chip">Urgency</span>
-                    </div>
-                  </div>
+                  <button type="button" onClick={() => promptForAuth("Create an account to save chats to your profile.", "signup")} className="header-auth-btn header-auth-btn--primary">
+                    Sign up
+                  </button>
                 </div>
-                  <div className="chat-center-input-wrapper">
-                    <ChatComposer
-                      loading={loading}
-                      placeholder="Describe the matter, upload papers, or start with the relief you want"
-                      onSubmit={handleComposedSubmit}
-                      resetSignal={composerResetSignal}
-                      chatMode={chatMode}
-                      onChatModeChange={setChatMode}
-                      selectedModel={selectedModel}
-                      onModelChange={setSelectedModel}
-                      showDisclaimer={bottomExpandedSection == null}
-                      apiBase={API_BASE}
-                      canUploadDocuments={true}
-                      onRequireAuth={promptForAuth}
-                      onStop={handleStopProcessing}
-                      messageQueue={messageQueue}
-                      onQueueEdit={handleQueueEdit}
-                      onQueueDelete={handleQueueDelete}
-                      queueEditSignal={queueEditSignal}
-                      externalDraftSignal={externalDraftSignal}
-                    />
+              ) : (
+                <details className="header-account-menu">
+                  <summary className="header-account-trigger" aria-label="Open account menu">
+                    <span className="header-account-name">{accountFirstName}</span>
+                    <span className="header-account-caret" aria-hidden="true">▾</span>
+                  </summary>
+                  <div className="header-account-panel">
+                    <div className="header-account-label">Account</div>
+                    <div className="header-account-full-name" title={accountDisplayName}>{accountDisplayName}</div>
+                    <div className="header-account-email" title={currentUser}>{currentUser}</div>
+                    <button type="button" onClick={handleLogout} className="header-account-logout">
+                      Log out
+                    </button>
                   </div>
-              </div>
-            ) : (
-              <>
-                <div className="conversation-card">
+                </details>
+              )}
+            </div>
+          </div>
+            <div className="right-pane-body">
+              <div className="chat-workspace-pane">
+                {!hasConversation ? (
+                  <>
+                    <div className="chat-stage-scroll">
+                      <div className="chat-center-stage">
+                        <div className="chat-center-message">
+                          <h2>Build a grounded legal brief, not just a chat transcript.</h2>
+                          <p>
+                            Describe the dispute, upload your papers, or start from a structured legal task. The workspace will collect facts,
+                            surface statutes and precedents, and move toward a draftable outcome.
+                          </p>
+                          <div className="chat-start-grid">
+                            {CHAT_STARTERS.map((starter) => (
+                              <button
+                                key={starter.title}
+                                type="button"
+                                className="chat-start-card"
+                                onClick={primeComposer}
+                              >
+                                <span className="chat-start-card-title">{starter.title}</span>
+                                <span className="chat-start-card-text">{starter.text}</span>
+                              </button>
+                            ))}
+                          </div>
+                          <div className="chat-center-checklist">
+                            <span className="chat-center-checklist-label">Best starting details</span>
+                            <div className="chat-center-checklist-bar">
+                              <div className="chat-center-checklist-line" aria-hidden="true" />
+                              <div className="chat-center-checklist-items">
+                                {INTAKE_DETAIL_ITEMS.map((item) => (
+                                  <div key={item.label} className="chat-center-checklist-item">
+                                    <span className="chat-center-checklist-icon" aria-hidden="true">{item.icon}</span>
+                                    <span className="chat-center-checklist-title">{item.label}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="chat-input-dock">
+                      <div className="chat-center-input-wrapper">
+                        <ChatComposer
+                          loading={loading}
+                          placeholder="Ask me anything LEGAL!"
+                          onSubmit={handleComposedSubmit}
+                          resetSignal={composerResetSignal}
+                          chatMode={chatMode}
+                          onChatModeChange={setChatMode}
+                          selectedModel={selectedModel}
+                          onModelChange={setSelectedModel}
+                          showDisclaimer={true}
+                          apiBase={API_BASE}
+                          canUploadDocuments={true}
+                          onRequireAuth={promptForAuth}
+                          onStop={handleStopProcessing}
+                          messageQueue={messageQueue}
+                          onQueueEdit={handleQueueEdit}
+                          onQueueDelete={handleQueueDelete}
+                          queueEditSignal={queueEditSignal}
+                          externalDraftSignal={externalDraftSignal}
+                        />
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="chat-thread-pane">
+                      <div className="conversation-card">
                   <div
                     ref={messagesContainerRef}
                     className="messages-container"
@@ -4975,70 +5076,67 @@ function App() {
                   </div>
                 )}
 
-                    <div ref={messagesEndRef} />
-                  </div>
-                </div>
-
-                {/* Fixed bottom input when in chat mode */}
-                <div className="chat-input-wrapper">
-                  <ChatComposer
-                    loading={loading}
-                    placeholder={
-                      stage === "interview" && currentQuestion
-                        ? "Type your details here"
-                        : stage === "await_facts"
-                        ? "Describe your case facts here"
-                        : "Type here to start a new case"
-                    }
-                    onSubmit={handleComposedSubmit}
-                    resetSignal={composerResetSignal}
-                    chatMode={chatMode}
-                    onChatModeChange={setChatMode}
-                    selectedModel={selectedModel}
-                    onModelChange={setSelectedModel}
-                    showDisclaimer={bottomExpandedSection == null}
-                    apiBase={API_BASE}
-                    canUploadDocuments={true}
-                    onRequireAuth={promptForAuth}
-                    onStop={handleStopProcessing}
-                    messageQueue={messageQueue}
-                    onQueueEdit={handleQueueEdit}
-                    onQueueDelete={handleQueueDelete}
-                    queueEditSignal={queueEditSignal}
-                    externalDraftSignal={externalDraftSignal}
-                  />
-                </div>
-
-                {error && (
-                  <div className="chat-error">
-                    <span>{"\u26A0"}</span> {error}
-                  </div>
+                        <div ref={messagesEndRef} />
+                      </div>
+                    </div>
+                    </div>
+                    <div className="chat-input-dock">
+                      <div className="chat-input-wrapper">
+                        <ChatComposer
+                          loading={loading}
+                          placeholder="Ask me anything LEGAL!"
+                          onSubmit={handleComposedSubmit}
+                          resetSignal={composerResetSignal}
+                          chatMode={chatMode}
+                          onChatModeChange={setChatMode}
+                          selectedModel={selectedModel}
+                          onModelChange={setSelectedModel}
+                          showDisclaimer={true}
+                          apiBase={API_BASE}
+                          canUploadDocuments={true}
+                          onRequireAuth={promptForAuth}
+                          onStop={handleStopProcessing}
+                          messageQueue={messageQueue}
+                          onQueueEdit={handleQueueEdit}
+                          onQueueDelete={handleQueueDelete}
+                          queueEditSignal={queueEditSignal}
+                          externalDraftSignal={externalDraftSignal}
+                        />
+                      </div>
+                    </div>
+                    {error && (
+                      <div className="chat-error">
+                        <span>{"\u26A0"}</span> {error}
+                      </div>
+                    )}
+                  </>
                 )}
-              </>
-            )}
-
-            {/* Bottom pane: default minimal; drag resizer up to extend up to 75% of window */}
-            <div
-              className={`eval-architecture-pane ${evalPaneHeight <= EVAL_PANE_MIN_HEIGHT ? "eval-pane-collapsed" : ""}`}
-              aria-label="Eval Results and Architecture"
-              style={{
-                height: evalPaneHeight,
-                minHeight: EVAL_PANE_MIN_HEIGHT,
-                maxHeight: `${EVAL_PANE_MAX_VH}vh`,
-              }}
-            >
-              <div
-                className="eval-pane-resizer"
-                onMouseDown={handleEvalPaneResizeMouseDown}
-                role="separator"
-                aria-orientation="horizontal"
-                aria-label="Resize eval pane"
-              />
-              <EvalSection />
-              <ArchitectureSection />
-              <UpdatesTrackerSection />
+              </div>
+              {/* Bottom pane: default minimal; drag resizer up to extend up to 75% of window */}
+              <div className="bottom-tools-region">
+                <div
+                  className={`eval-architecture-pane ${evalPaneHeight <= EVAL_PANE_MIN_HEIGHT ? "eval-pane-collapsed" : ""}`}
+                  aria-label="Eval Results and Architecture"
+                  style={{
+                    height: evalPaneHeight,
+                    minHeight: EVAL_PANE_MIN_HEIGHT,
+                    maxHeight: `${EVAL_PANE_MAX_VH}vh`,
+                  }}
+                >
+                  <div
+                    className="eval-pane-resizer"
+                    onMouseDown={handleEvalPaneResizeMouseDown}
+                    role="separator"
+                    aria-orientation="horizontal"
+                    aria-label="Resize eval pane"
+                  />
+                  <EvalSection />
+                  <ArchitectureSection />
+                  <UpdatesTrackerSection />
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
       </div>
 
       <AuthModal

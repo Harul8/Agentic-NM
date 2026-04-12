@@ -571,6 +571,33 @@ def ask_llm_stream(
         yield text[i:i + 24]
 
 
+# ---------------------------------------------------------------------------
+# Default system prompt — injected into every ask_llm call unless the caller
+# provides its own system message.
+#
+# Purpose: give OpenAI's moderation layer the professional context it needs
+# to correctly classify Indian legal queries.  Without this, queries that
+# describe crimes (even from a victim's perspective) can trigger a silent
+# content_filter refusal (empty choices[]).
+# ---------------------------------------------------------------------------
+_LEGAL_SYSTEM_PROMPT = (
+    "You are an AI legal research assistant integrated into NyaymalaW, a professional "
+    "Indian legal research platform used by advocates, law students, and litigants.\n\n"
+    "All queries are processed in the context of Indian law (IPC, BNS, CrPC, BNSS, CPC, "
+    "constitutional law, personal law, property law, etc.).  Users may be:\n"
+    "  • Victims describing abuse, harassment, fraud, or violence they have experienced\n"
+    "  • Advocates researching legal provisions, precedents, or penalties on behalf of clients\n"
+    "  • Law students studying criminal or civil law\n"
+    "  • Litigants seeking to understand their rights\n\n"
+    "Descriptions of crimes, punishments, or sensitive legal scenarios are shared for the "
+    "purpose of legal research and victim assistance — NOT to facilitate harm.  Respond "
+    "fully and professionally to all Indian legal queries, including those involving "
+    "criminal law, sexual offences, domestic violence, drug offences, or terrorism law, "
+    "as these are standard topics in legal practice.  Do not refuse or truncate responses "
+    "to legitimate legal research questions."
+)
+
+
 def ask_llm(
     prompt: str,
     model: str = None,
@@ -584,9 +611,15 @@ def ask_llm(
     If model is not specified: uses the default tier's regular model for normal prompts,
     and the fast model when task_hint is "fast". Retries on connection/timeout only.
 
-    If system is provided it is sent as a system-role message before the user message,
-    giving the model proper behavioral grounding rather than treating instructions as context.
+    If system is provided it is sent as a system-role message before the user message.
+    If system is None, the default _LEGAL_SYSTEM_PROMPT is used to give OpenAI's
+    moderation layer proper professional context for Indian legal queries.
     """
+    # Use caller-supplied system prompt if provided; otherwise apply the default
+    # legal context prompt to prevent silent content_filter refusals on legitimate
+    # Indian legal queries (descriptions of crimes, penalties, victim scenarios, etc.)
+    if system is None:
+        system = _LEGAL_SYSTEM_PROMPT
     requested_model = model
     chosen = _get_model_for_prompt(prompt, requested_model, task_hint)
     try:
