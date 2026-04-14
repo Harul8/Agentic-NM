@@ -72,6 +72,41 @@ def section_num_in_text(sec_num, text):
     return sn in probe.replace("-", "").replace(" ", "")
 
 
+def expected_embedding_dim(model_name):
+    model = (model_name or "").strip().lower()
+    if not model:
+        return None
+    explicit_dims = {
+        "baai/bge-large-en-v1.5": 1024,
+        "baai/bge-large-zh-v1.5": 1024,
+        "baai/bge-m3": 1024,
+        "baai/bge-base-en-v1.5": 768,
+        "baai/bge-base-zh-v1.5": 768,
+        "thenlper/gte-base": 768,
+        "intfloat/e5-base-v2": 768,
+        "law-ai/inlegalbert": 768,
+        "nlpaueb/legal-bert-base-uncased": 768,
+        "baai/bge-small-en-v1.5": 384,
+        "sentence-transformers/all-minilm-l6-v2": 384,
+    }
+    if model in explicit_dims:
+        return explicit_dims[model]
+    if "bge-large" in model or "bge-m3" in model:
+        return 1024
+    if (
+        "bge-base" in model
+        or "gte-base" in model
+        or "e5-base" in model
+        or "legal-bert" in model
+        or "bert-base" in model
+        or "inlegalbert" in model
+    ):
+        return 768
+    if "bge-small" in model or "minilm" in model or "all-mini" in model:
+        return 384
+    return None
+
+
 # ---------------------------------------------------------------------------
 # 1. Load data
 # ---------------------------------------------------------------------------
@@ -125,16 +160,12 @@ try:
         d = idx.d
         n = idx.ntotal
         print(f"  {label}: {n:,} vectors, dimension={d}")
-        # Infer expected dim from model name
-        if "legal-bert" in EMBEDDING_MODEL.lower() or "bert-base" in EMBEDDING_MODEL.lower():
-            expected = 768
-        elif "minilm" in EMBEDDING_MODEL.lower() or "all-mini" in EMBEDDING_MODEL.lower():
-            expected = 384
-        else:
-            expected = None
+        expected = expected_embedding_dim(EMBEDDING_MODEL)
         if expected:
             match = "✓ MATCH" if d == expected else f"✗ MISMATCH — model expects {expected}-dim"
             print(f"           → vs model ({EMBEDDING_MODEL}): {match}")
+        else:
+            print(f"           → vs model ({EMBEDDING_MODEL}): unknown expected dimension")
 
     check_faiss(BARE_INDEX_V2,  "Bare acts FAISS ")
     check_faiss(CASE_INDEX_V2,  "Case laws FAISS ")
@@ -472,8 +503,8 @@ print(SEP2)
 recs = [
     ("CRITICAL", "Split oversized bare-act sections into sub-chunks",
      "MAX_SECTION_CHARS cap (~4k) in smart_chunker.chunk_bare_act(); sub-chunks share act_name+section_number but get distinct chunk_ids"),
-    ("CRITICAL", "FAISS dim mismatch — rebuild vector store if dim != 768",
-     "python scripts/rebuild_vector_store.py after confirming legal-bert is active"),
+    ("CRITICAL", "FAISS dim mismatch — rebuild vector store if index dim != current model dim",
+     f"Current model is {EMBEDDING_MODEL}; rebuild whenever the FAISS index dimension differs from that model"),
     ("HIGH",     "Deduplicate case-law chunks before indexing",
      "Hash embed_text in process_case_laws_directory(); skip duplicate; saves ~8-10% FAISS/BM25 slots"),
     ("HIGH",     "Fix 'Protection Of Act' and other truncated act names",

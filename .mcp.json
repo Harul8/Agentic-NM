@@ -1,12 +1,10 @@
 {
   "mcpServers": {
     "code-review-graph": {
-      "command": "uvx",
+      "command": "wsl.exe",
       "args": [
-        "code-review-graph",
-        "serve",
-        "--repo",
-        "C:\\Users\\rahul\\Agentic NM"
+        "bash",
+        "/mnt/c/Users/rahul/Agentic NM/start_crg.sh"
       ],
       "type": "stdio"
     }

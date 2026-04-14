@@ -21,8 +21,8 @@ Fall back to Grep/Glob/Read **only** when the graph doesn't cover what you need.
 
 | Tool | Use when |
 |------|----------|
-| `detect_changes_tool` | Reviewing code changes — gives risk-scored analysis |
-| `get_review_context_tool` | Need source snippets for review — token-efficient |
+| `detect_changes_tool` | Reviewing code changes - gives risk-scored analysis |
+| `get_review_context_tool` | Need source snippets for review - token-efficient |
 | `get_impact_radius_tool` | Understanding blast radius of a change |
 | `get_affected_flows_tool` | Finding which execution paths are impacted |
 | `query_graph_tool` | Tracing callers, callees, imports, tests, dependencies |
@@ -43,4 +43,28 @@ Fall back to Grep/Glob/Read **only** when the graph doesn't cover what you need.
 
 ### Graph Stats (as of last build)
 
-- **1 130 nodes** · **14 932 edges** · **201 flows** · version 2.2.2
+- **1 130 nodes** - **14 932 edges** - **201 flows** - version 2.2.2
+
+## Default Chat Behavior
+
+Apply these preferences by default in this repository unless the user explicitly asks otherwise.
+
+### Context Discipline
+
+- Treat the current request as the main source of truth.
+- Use the last two user-assistant exchanges as secondary context when relevant.
+- Ignore older conversation history unless it is explicitly referenced again or is required to avoid a concrete mistake.
+- Do not re-summarize old plans, prior attempts, or unrelated history unless asked.
+
+### Execution Style
+
+- Prefer doing the work over describing the work.
+- Avoid verbose intermediate narration, long progress updates, and detailed step-by-step explanations unless the user asks for them.
+- For code changes, make the change first, then report completion briefly.
+
+### Response Style
+
+- Keep responses short and practical.
+- After completing work, reply with `Done.` followed by a 2-3 line summary of what changed.
+- Do not include long implementation details, patch walkthroughs, or file-by-file change logs unless requested.
+- Ask clarifying questions only when the risk of guessing is meaningful.

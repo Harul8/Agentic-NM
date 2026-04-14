@@ -5,6 +5,7 @@ core/indexer.py — Build and extend FAISS + BM25 indexes from chunks.
 import os
 import sys
 import json
+import argparse
 import logging
 import time
 import shutil
@@ -35,6 +36,61 @@ from retrieval.retriever import BM25, save_bm25_index
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
+
+
+def _load_existing_chunks(path: str) -> list:
+    """
+    Load prebuilt chunk JSON from the vector store as a rebuild fallback.
+
+    Uses ijson streaming when available to keep peak RAM low on large files
+    (e.g. caselaws_v2_chunks.json at 1.7 GB expands to ~8 GB with json.load
+    but only ~2-3 GB with streaming). Falls back to json.load if ijson is
+    not installed.
+    """
+    if not os.path.exists(path):
+        return []
+
+    file_mb = os.path.getsize(path) / 1024 / 1024
+    try:
+        import ijson
+        logger.info("Streaming %s (%.0f MB) via ijson...", path, file_mb)
+        chunks: list = []
+        with open(path, "rb") as f:
+            raw = f.read(64).lstrip()
+            f.seek(0)
+            if raw[:1] == b"{":
+                for _, item in ijson.kvitems(f, ""):
+                    chunks.append(item)
+            else:
+                for item in ijson.items(f, "item"):
+                    chunks.append(item)
+        logger.info("Streamed %d chunks from %s", len(chunks), path)
+        return chunks
+    except ImportError:
+        logger.warning(
+            "ijson not installed (pip install ijson); falling back to json.load "
+            "for %s (%.0f MB) — may use high RAM",
+            path, file_mb,
+        )
+
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
+    if isinstance(data, dict):
+        return list(data.values())
+    if isinstance(data, list):
+        return data
+    logger.warning("Unexpected chunk payload in %s; expected list/dict, got %s", path, type(data).__name__)
+    return []
+
+
+def _resolve_faiss_index_kind(use_gpu: bool) -> str:
+    raw = os.environ.get("NYAYMALAW_FAISS_INDEX_TYPE", "auto").strip().lower()
+    if raw not in {"auto", "flat", "hnsw"}:
+        logger.warning("Unknown NYAYMALAW_FAISS_INDEX_TYPE=%r; falling back to auto", raw)
+        raw = "auto"
+    if raw == "auto":
+        return "flat" if use_gpu else "hnsw"
+    return raw
 
 
 def _get_embedder():
@@ -177,25 +233,11 @@ def build_index(
         "normalize_embeddings": True,
         "show_progress_bar": True,
     }
-    if on_gpu:
-        # fp16 materially improves embedding throughput on most CUDA GPUs.
-        encode_kwargs["precision"] = "float16"
 
     def _encode_once(texts: list, kwargs: dict):
         while True:
             try:
                 return embedder.encode(texts, **kwargs)
-            except ValueError as e:
-                # sentence-transformers 2.7.0 does not support float16 via the
-                # `precision` arg (it is for quantized output modes only).
-                if "Precision float16 is not supported" in str(e) and "precision" in kwargs:
-                    logger.warning(
-                        "encode(precision='float16') unsupported in this "
-                        "sentence-transformers version; retrying without precision override."
-                    )
-                    kwargs.pop("precision", None)
-                    continue
-                raise
             except RuntimeError as e:
                 is_oom = "out of memory" in str(e).lower()
                 cur_bs = int(kwargs["batch_size"])
@@ -293,20 +335,20 @@ def build_index(
     # gives exact cosine search and is fast enough at typical bare-act scales.
     _gpu_count = faiss.get_num_gpus() if hasattr(faiss, "get_num_gpus") else 0
     _use_gpu   = _gpu_count > 0
+    _index_kind = _resolve_faiss_index_kind(_use_gpu)
     if _use_gpu:
         logger.info("FAISS GPU detected (%d device(s)) — building on GPU.", _gpu_count)
     else:
         logger.info("No FAISS GPU detected — building on CPU.")
+    logger.info("FAISS index format selected: %s", _index_kind)
 
     def _make_cpu_index(dim: int) -> faiss.Index:
-        """Create a fresh CPU index. IndexFlatIP on GPU path, HNSW on CPU path."""
-        if _use_gpu:
-            # Exact inner-product search; GPU-compatible
+        """Create a fresh CPU index with the configured persistence format."""
+        if _index_kind == "flat":
             return faiss.IndexFlatIP(dim)
-        else:
-            idx = faiss.IndexHNSWFlat(dim, 32)
-            idx.hnsw.efConstruction = 200
-            return idx
+        idx = faiss.IndexHNSWFlat(dim, 32)
+        idx.hnsw.efConstruction = 200
+        return idx
 
     def _add_to_index(index: faiss.Index, vecs: np.ndarray) -> faiss.Index:
         """Add vectors, offloading to GPU when available."""
@@ -360,7 +402,7 @@ def build_index(
         faiss.write_index(index, faiss_path)
         logger.info(
             "FAISS index saved (%s): %s (%d vectors)",
-            "GPU→FlatIP" if _use_gpu else "CPU→HNSW",
+            "FlatIP" if _index_kind == "flat" else "HNSW",
             faiss_path, index.ntotal,
         )
 
@@ -389,81 +431,115 @@ def build_index(
     logger.info("BM25 stage complete in %.2fs", t_bm25_end - t_bm25_start)
 
 
-def main():
+def main(argv=None):
+    parser = argparse.ArgumentParser(description="Build Nyaymalaw v2 FAISS + BM25 indexes.")
+    parser.add_argument(
+        "--case-laws-only",
+        action="store_true",
+        help="Rebuild only case-law and case-summary indexes.",
+    )
+    parser.add_argument(
+        "--bare-acts-only",
+        action="store_true",
+        help="Rebuild only bare-act and act-summary indexes.",
+    )
+    args = parser.parse_args(argv)
+    if args.case_laws_only and args.bare_acts_only:
+        raise SystemExit("Choose only one of --case-laws-only or --bare-acts-only.")
+
     logger.info("=" * 60)
     logger.info("NYAYMALAW V2 INDEX BUILDER")
     logger.info("=" * 60)
     logger.info(f"Vector Store: {VECTOR_STORE}")
 
-    # Import pipeline chunk loaders here (deferred to avoid circular imports at module level).
-    # These read from the pipeline's JSON output (json_output/caselaws/, json_output/BareActs/)
-    # and produce chunks that are already enriched with paragraph_type, sections_cited,
-    # cited_cases, and have header chunks filtered out.  This is the correct source for indexing.
-    from legal_database.pipeline import _json_to_case_chunks, _json_to_statute_chunks
+    # Preferred source is the pipeline module that generates fresh chunk payloads
+    # from json_output. If that module is unavailable in this checkout, rebuild
+    # from the existing v2 chunk stores so embedding/index regeneration can still run.
+    _json_to_case_chunks = None
+    _json_to_statute_chunks = None
+    try:
+        from legal_database.pipeline import _json_to_case_chunks, _json_to_statute_chunks
+        logger.info("Using legal_database.pipeline chunk loaders")
+    except ModuleNotFoundError:
+        logger.warning(
+            "legal_database.pipeline not available; rebuilding indexes from existing vector-store chunk JSON files"
+        )
 
     embedder = _get_embedder()
 
-    # --- Bare Acts (sections + act summaries) ---
-    logger.info("\n--- BARE ACTS (Section-Level Chunking from JSON output) ---")
-    bare_chunks, act_summary_chunks = _json_to_statute_chunks()
-    if bare_chunks:
-        build_index(bare_chunks, BARE_INDEX_V2, BARE_CHUNKS_V2, BARE_BM25_INDEX, embedder)
-        logger.info("Bare acts: %d section-level chunks indexed", len(bare_chunks))
-        acts = set(c.get("act_name", "") for c in bare_chunks if c.get("act_name"))
-        logger.info("Acts covered: %d", len(acts))
-        for act in sorted(acts):
-            count = sum(1 for c in bare_chunks if c.get("act_name") == act)
-            logger.info("  - %s: %d sections", act, count)
-    else:
-        logger.warning(
-            "No bare act chunks produced. Run the bare acts pipeline first to generate "
-            "JSON output in json_output/BareActs/."
-        )
+    if not args.case_laws_only:
+        # --- Bare Acts (sections + act summaries) ---
+        logger.info("\n--- BARE ACTS (Section-Level Chunking from JSON output) ---")
+        if _json_to_statute_chunks is not None:
+            bare_chunks, act_summary_chunks = _json_to_statute_chunks()
+        else:
+            bare_chunks = _load_existing_chunks(BARE_CHUNKS_V2)
+            act_summary_chunks = _load_existing_chunks(ACT_SUMMARY_CHUNKS_V2)
+        if bare_chunks:
+            build_index(bare_chunks, BARE_INDEX_V2, BARE_CHUNKS_V2, BARE_BM25_INDEX, embedder, resume_embeddings=True)
+            logger.info("Bare acts: %d section-level chunks indexed", len(bare_chunks))
+            acts = set(c.get("act_name", "") for c in bare_chunks if c.get("act_name"))
+            logger.info("Acts covered: %d", len(acts))
+            for act in sorted(acts):
+                count = sum(1 for c in bare_chunks if c.get("act_name") == act)
+                logger.info("  - %s: %d sections", act, count)
+        else:
+            logger.warning(
+                "No bare act chunks produced. Run the bare acts pipeline first to generate "
+                "JSON output in json_output/BareActs/."
+            )
 
-    if act_summary_chunks:
-        build_index(
-            act_summary_chunks,
-            ACT_SUMMARY_INDEX_V2, ACT_SUMMARY_CHUNKS_V2, ACT_SUMMARY_BM25_INDEX,
-            embedder,
-        )
-        logger.info("Act summaries: %d act-level chunks indexed", len(act_summary_chunks))
-    else:
-        logger.warning("No act summary chunks produced.")
+        if act_summary_chunks:
+            build_index(
+                act_summary_chunks,
+                ACT_SUMMARY_INDEX_V2, ACT_SUMMARY_CHUNKS_V2, ACT_SUMMARY_BM25_INDEX,
+                embedder,
+                resume_embeddings=True,
+            )
+            logger.info("Act summaries: %d act-level chunks indexed", len(act_summary_chunks))
+        else:
+            logger.warning("No act summary chunks produced.")
 
-    # --- Case Laws (paragraphs + case summaries) ---
-    logger.info("\n--- CASE LAWS (Paragraph-Level Chunking from JSON output) ---")
-    case_chunks, case_summary_chunks = _json_to_case_chunks()
-    if case_chunks:
-        build_index(case_chunks, CASE_INDEX_V2, CASE_CHUNKS_V2, CASE_BM25_INDEX, embedder)
-        logger.info("Case laws: %d paragraph-level chunks indexed", len(case_chunks))
+    if not args.bare_acts_only:
+        # --- Case Laws (paragraphs + case summaries) ---
+        logger.info("\n--- CASE LAWS (Paragraph-Level Chunking from JSON output) ---")
+        if _json_to_case_chunks is not None:
+            case_chunks, case_summary_chunks = _json_to_case_chunks()
+        else:
+            case_chunks = _load_existing_chunks(CASE_CHUNKS_V2)
+            case_summary_chunks = _load_existing_chunks(CASE_SUMMARY_CHUNKS_V2)
+        if case_chunks:
+            build_index(case_chunks, CASE_INDEX_V2, CASE_CHUNKS_V2, CASE_BM25_INDEX, embedder, resume_embeddings=True)
+            logger.info("Case laws: %d paragraph-level chunks indexed", len(case_chunks))
 
-        # Paragraph type distribution
-        ptypes: dict = {}
-        for c in case_chunks:
-            pt = c.get("paragraph_type", "unknown")
-            ptypes[pt] = ptypes.get(pt, 0) + 1
-        logger.info("Paragraph type distribution: %s", sorted(ptypes.items(), key=lambda x: -x[1]))
+            # Paragraph type distribution
+            ptypes: dict = {}
+            for c in case_chunks:
+                pt = c.get("paragraph_type", "unknown")
+                ptypes[pt] = ptypes.get(pt, 0) + 1
+            logger.info("Paragraph type distribution: %s", sorted(ptypes.items(), key=lambda x: -x[1]))
 
-        cases = set(c.get("case_name", "") for c in case_chunks if c.get("case_name"))
-        logger.info("Cases covered: %d", len(cases))
-        for case in sorted(cases)[:20]:
-            count = sum(1 for c in case_chunks if c.get("case_name") == case)
-            logger.info("  - %s: %d paragraphs", case, count)
-    else:
-        logger.warning(
-            "No case law chunks produced. Run the case law pipeline first to generate "
-            "JSON output in json_output/caselaws/."
-        )
+            cases = set(c.get("case_name", "") for c in case_chunks if c.get("case_name"))
+            logger.info("Cases covered: %d", len(cases))
+            for case in sorted(cases)[:20]:
+                count = sum(1 for c in case_chunks if c.get("case_name") == case)
+                logger.info("  - %s: %d paragraphs", case, count)
+        else:
+            logger.warning(
+                "No case law chunks produced. Run the case law pipeline first to generate "
+                "JSON output in json_output/caselaws/."
+            )
 
-    if case_summary_chunks:
-        build_index(
-            case_summary_chunks,
-            CASE_SUMMARY_INDEX_V2, CASE_SUMMARY_CHUNKS_V2, CASE_SUMMARY_BM25_INDEX,
-            embedder,
-        )
-        logger.info("Case summaries: %d case-level chunks indexed", len(case_summary_chunks))
-    else:
-        logger.warning("No case summary chunks produced.")
+        if case_summary_chunks:
+            build_index(
+                case_summary_chunks,
+                CASE_SUMMARY_INDEX_V2, CASE_SUMMARY_CHUNKS_V2, CASE_SUMMARY_BM25_INDEX,
+                embedder,
+                resume_embeddings=True,
+            )
+            logger.info("Case summaries: %d case-level chunks indexed", len(case_summary_chunks))
+        else:
+            logger.warning("No case summary chunks produced.")
 
     logger.info("\n" + "=" * 60)
     logger.info("V2 INDEX BUILD COMPLETE")

@@ -5113,7 +5113,7 @@ function App() {
                 )}
               </div>
               {/* Bottom pane: default minimal; drag resizer up to extend up to 75% of window */}
-              <div className="bottom-tools-region">
+              <div className={`bottom-tools-region ${evalPaneHeight <= EVAL_PANE_MIN_HEIGHT ? "bottom-tools-region--collapsed" : ""}`}>
                 <div
                   className={`eval-architecture-pane ${evalPaneHeight <= EVAL_PANE_MIN_HEIGHT ? "eval-pane-collapsed" : ""}`}
                   aria-label="Eval Results and Architecture"

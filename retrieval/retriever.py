@@ -68,6 +68,8 @@ _index_cache_lock = threading.Lock()   # guards concurrent writes during paralle
 _faiss_gpu_lock = threading.Lock()
 _faiss_gpu_resources = None
 _runtime_mode_logged_for_index: set[str] = set()
+_faiss_gpu_enabled = os.environ.get("NYAYMALAW_FAISS_GPU", "1").strip().lower() in ("1", "true", "yes")
+_faiss_gpu_disabled_paths: set[str] = set()
 
 
 # ---------------------------------------------------------------------------
@@ -177,6 +179,58 @@ def normalize_legal_query(query: str) -> str:
     with _query_norm_cache_lock:
         _query_norm_cache[cache_key] = result
     return result
+
+
+def _get_query_prefix() -> str:
+    """
+    Return the query-time prefix required by the active embedding model.
+
+    BGE models (BAAI/bge-*) need a prefix prepended to queries at search time
+    but NOT to passages at index time — the asymmetry is intentional and
+    documented by BAAI.  Other models (gte-*, e5-*, mpnet-*) use no prefix.
+    """
+    from config import EMBEDDING_MODEL
+    model_lower = (EMBEDDING_MODEL or "").lower()
+    if "bge" in model_lower and "baai" in model_lower:
+        return "Represent this sentence for searching relevant passages: "
+    return ""
+
+
+def _embed_query(query: str) -> "np.ndarray":
+    """Embed a single query string, applying the model-appropriate prefix."""
+    import numpy as np
+    prefix = _get_query_prefix()
+    embedder = _get_embedder()
+    vec = embedder.encode(
+        prefix + query,
+        convert_to_numpy=True,
+        normalize_embeddings=True,
+    )
+    return vec.astype("float32")
+
+
+def _embed_query_for_index(query: str, index, index_label: str = "FAISS index") -> "np.ndarray | None":
+    """
+    Embed a query and verify it matches the target FAISS index dimension.
+
+    This keeps legacy fallback paths safe after switching embedding models
+    (for example 768-dim -> 1024-dim) without crashing at search time.
+    """
+    from config import EMBEDDING_MODEL
+
+    query_vec = _embed_query(query)
+    vec_dim = int(query_vec.shape[-1]) if getattr(query_vec, "shape", None) else 0
+    index_dim = int(getattr(index, "d", 0) or 0)
+    if vec_dim != index_dim:
+        logger.warning(
+            "Skipping %s due to embedding dimension mismatch: model=%s query_dim=%d index_dim=%d",
+            index_label,
+            EMBEDDING_MODEL,
+            vec_dim,
+            index_dim,
+        )
+        return None
+    return query_vec
 
 
 def _get_embedder():
@@ -752,6 +806,9 @@ def _get_faiss_search_index(index_path: str, cpu_index):
     if cpu_index is None:
         return None, False
 
+    if not _faiss_gpu_enabled or index_path in _faiss_gpu_disabled_paths:
+        return cpu_index, False
+
     # If faiss-gpu is not available (e.g. faiss-cpu wheel), keep CPU path.
     if not hasattr(faiss, "StandardGpuResources") or not hasattr(faiss, "index_cpu_to_gpu"):
         return cpu_index, False
@@ -775,6 +832,7 @@ def _get_faiss_search_index(index_path: str, cpu_index):
             logger.info("FAISS GPU index enabled for %s (%d vectors)", index_path, cpu_index.ntotal)
             return gpu_index, True
         except Exception as e:
+            _faiss_gpu_disabled_paths.add(index_path)
             logger.warning("FAISS GPU fallback to CPU for %s: %s", index_path, e)
             return cpu_index, False
 
@@ -914,10 +972,7 @@ def hybrid_search(
         _runtime_mode_logged_for_index.add(faiss_index_path)
     if ok and faiss_index:
         try:
-            embedder = _get_embedder()
-            query_vec = embedder.encode(
-                query, convert_to_numpy=True, normalize_embeddings=True
-            )
+            query_vec = _embed_query(query)
             search_index, using_gpu = _get_faiss_search_index(faiss_index_path, faiss_index)
             k = min(faiss_top_k, search_index.ntotal)
             if k > 0:
@@ -1220,9 +1275,141 @@ def hybrid_search(
         return fb
 
 
+def _search_within_chunks(
+    query: str,
+    chunk_subset: dict,
+    rerank_top_k: int = 8,
+    bm25_pre_filter_k: int = 30,
+) -> list:
+    """
+    Re-rank a pre-filtered subset of chunks using BM25 + cross-encoder.
+
+    Used as stage-2 search after stage-1 has identified relevant acts/cases.
+    Avoids searching the full FAISS index — subset is loaded directly by caller.
+
+    Strategy:
+    - subset ≤ 100 chunks : cross-encoder directly on all (no BM25 pre-filter)
+    - subset 101–500 chunks: BM25 top-bm25_pre_filter_k, then cross-encoder
+    - subset  > 500 chunks : BM25 top-50, then cross-encoder (stage-1 was too broad)
+    """
+    if not chunk_subset:
+        return []
+
+    try:
+        from config import LEGAL_TERM_BOOST_WEIGHT
+    except Exception:
+        LEGAL_TERM_BOOST_WEIGHT = 0.25
+
+    # Build ordered list of (key, chunk, text) with sufficient content
+    items: list = []
+    for key, chunk in chunk_subset.items():
+        text = (
+            chunk.get("search_text")
+            or chunk.get("full_text")
+            or chunk.get("text")
+            or ""
+        ).strip()
+        if len(text) >= 30:
+            items.append((key, chunk, text))
+
+    if not items:
+        return []
+
+    n = len(items)
+
+    # BM25 pre-filter for larger subsets to keep cross-encoder workload bounded
+    if n > 100:
+        actual_bm25_k = 50 if n > 500 else bm25_pre_filter_k
+        docs = [text for _, _, text in items]
+        bm25_tmp = BM25()
+        bm25_tmp.fit(docs)
+        bm25_results = bm25_tmp.score(query, top_k=actual_bm25_k)
+        items = [items[idx] for idx, _ in bm25_results]
+        logger.debug(
+            "_search_within_chunks: BM25 narrowed %d → %d candidates", n, len(items)
+        )
+
+    # Cross-encoder re-rank
+    pairs = [(query, text[:1000]) for _, _, text in items]
+    try:
+        scores = _predict_cross_encoder(pairs)
+    except Exception as exc:
+        logger.error("_search_within_chunks cross-encoder failed: %s", exc)
+        results = []
+        for key, chunk, text in items[:rerank_top_k]:
+            r = dict(chunk)
+            if not (r.get("text") or "").strip():
+                r["text"] = text
+            r["_chunk_key"] = key
+            r["_rerank_score"] = 0.0
+            r["_rerank_fallback"] = True
+        return results
+
+    scored = []
+    for i, (key, chunk, text) in enumerate(items):
+        ce_score = float(scores[i])
+
+        boost = 0.0
+        if LEGAL_TERM_BOOST_WEIGHT > 0:
+            boost = LEGAL_TERM_BOOST_WEIGHT * legal_term_boost(query, text[:1000])
+
+        para_boost = 0.0
+        if chunk.get("doc_type") == "case_law":
+            pt = (chunk.get("paragraph_type") or "unknown").lower().strip()
+            para_boost = PARAGRAPH_TYPE_BOOST.get(pt, 0.0)
+
+        citation_boost = 0.0
+        if chunk.get("doc_type") == "case_law":
+            cited = chunk.get("sections_cited") or []
+            if cited:
+                query_lower = query.lower()
+                matches = sum(1 for c in cited if c.lower() in query_lower)
+                if matches > 0:
+                    citation_boost = min(SECTIONS_CITED_BOOST * matches, 0.5)
+
+        authority_boost = 0.0
+        pagerank_boost = 0.0
+        if chunk.get("doc_type") == "case_law":
+            binding = (chunk.get("binding_authority") or "unknown").lower().strip()
+            authority_boost = AUTHORITY_BOOST.get(binding, 0.0)
+            try:
+                from retrieval.citations import get_case_authority_score
+                case_name = (chunk.get("case_name") or "").strip()
+                year = str(chunk.get("year") or "").strip()
+                if case_name:
+                    pr = get_case_authority_score(case_name, year)
+                    pagerank_boost = min(pr * 2.0, 0.3)
+            except Exception:
+                pass
+
+        rerank_score = ce_score + boost + para_boost + citation_boost + authority_boost + pagerank_boost
+        result = dict(chunk)
+        if not (result.get("text") or "").strip():
+            result["text"] = text
+        result["_chunk_key"] = key
+        result["_rerank_score"] = rerank_score
+        result["_ce_score"] = ce_score
+        result["_legal_boost"] = boost
+        result["_paragraph_type_boost"] = para_boost
+        result["_sections_cited_boost"] = citation_boost
+        result["_authority_boost"] = authority_boost
+        result["_pagerank_boost"] = pagerank_boost
+        result["_in_faiss"] = False
+        result["_in_bm25"] = n > 100   # True if BM25 pre-filter was applied
+        scored.append(result)
+
+    scored.sort(key=lambda x: x["_rerank_score"], reverse=True)
+    logger.info(
+        "_search_within_chunks: %d candidates → top score %.3f",
+        len(scored), scored[0]["_rerank_score"] if scored else 0.0,
+    )
+    return scored[:rerank_top_k]
+
+
 def search_bare_acts(query: str, top_k: int = 30, trace: Optional[list] = None) -> list:
     """Search bare acts using hybrid retrieval. Returns all relevant sections.
-    When act summary index exists, uses two-tier retrieval: act index → section search within those acts.
+    When act summary index exists, uses two-tier retrieval: act summary index → direct
+    section lookup within matched acts (BM25 + cross-encoder, no FAISS on full corpus).
     If ``trace`` is a list, each hybrid_search appends one diagnostic dict (stage-labelled)."""
     from config import (
         BARE_INDEX_V2,
@@ -1232,7 +1419,9 @@ def search_bare_acts(query: str, top_k: int = 30, trace: Optional[list] = None) 
         ACT_SUMMARY_CHUNKS_V2,
         ACT_SUMMARY_BM25_INDEX,
     )
-    # Two-tier: act summary index → then section search within those acts
+    _STAGE1_MIN_SCORE = 0.10  # below this, stage-1 is uncertain — skip act filter
+
+    # Two-tier: act summary index → direct section lookup within matched acts
     if os.path.isfile(ACT_SUMMARY_INDEX_V2) and os.path.isfile(ACT_SUMMARY_CHUNKS_V2):
         try:
             act_results = hybrid_search(
@@ -1242,30 +1431,61 @@ def search_bare_acts(query: str, top_k: int = 30, trace: Optional[list] = None) 
                 bm25_index_path=ACT_SUMMARY_BM25_INDEX,
                 faiss_top_k=12,
                 bm25_top_k=12,
-                rerank_top_k=8,
+                rerank_top_k=10,
                 min_rerank_score=0.0,
                 trace=trace,
                 trace_stage="bare_act_act_summary_index",
             )
-            allowed_acts = frozenset(
-                (r.get("act_name") or "").strip()
-                for r in act_results
-                if (r.get("act_name") or "").strip()
+            top_act_score = max(
+                (float(r.get("_rerank_score", 0) or 0) for r in act_results), default=0.0
             )
-            if allowed_acts:
-                results = hybrid_search(
-                    query=query,
-                    faiss_index_path=BARE_INDEX_V2,
-                    chunks_path=BARE_CHUNKS_V2,
-                    bm25_index_path=BARE_BM25_INDEX,
-                    faiss_top_k=24,
-                    bm25_top_k=24,
-                    rerank_top_k=min(top_k, 10),
-                    min_rerank_score=0.0,
-                    allowed_acts=allowed_acts,
-                    trace=trace,
-                    trace_stage="bare_act_section_index_filtered",
+            if top_act_score >= _STAGE1_MIN_SCORE:
+                allowed_acts = frozenset(
+                    (r.get("act_name") or "").strip()
+                    for r in act_results
+                    if (r.get("act_name") or "").strip()
                 )
+            else:
+                logger.info(
+                    "Bare-act stage-1 top score %.3f < %.2f — skipping act filter",
+                    top_act_score, _STAGE1_MIN_SCORE,
+                )
+                allowed_acts = frozenset()
+
+            if allowed_acts:
+                # Stage 2: load all sections for matched acts directly, then
+                # BM25 + cross-encoder on that subset (no FAISS on full corpus)
+                all_sections = load_chunks(BARE_CHUNKS_V2)
+                act_subset = {
+                    k: v for k, v in all_sections.items()
+                    if (v.get("act_name") or "").strip() in allowed_acts
+                }
+                logger.info(
+                    "Bare-act stage 2 (direct): %d acts → %d section chunks",
+                    len(allowed_acts), len(act_subset),
+                )
+                results = _search_within_chunks(
+                    query=query,
+                    chunk_subset=act_subset,
+                    rerank_top_k=min(top_k, 10),
+                )
+                if len(results) < 3:
+                    logger.info(
+                        "Bare-act stage 2 direct returned %d results — broadening to full hybrid",
+                        len(results),
+                    )
+                    results = hybrid_search(
+                        query=query,
+                        faiss_index_path=BARE_INDEX_V2,
+                        chunks_path=BARE_CHUNKS_V2,
+                        bm25_index_path=BARE_BM25_INDEX,
+                        faiss_top_k=20,
+                        bm25_top_k=20,
+                        rerank_top_k=min(top_k, 10),
+                        min_rerank_score=0.0,
+                        trace=trace,
+                        trace_stage="bare_act_section_index_broadened",
+                    )
             else:
                 results = hybrid_search(
                     query=query,
@@ -1358,7 +1578,8 @@ def search_bare_acts_filtered(
 
 def search_case_laws(query: str, top_k: int = 30) -> list:
     """Search case laws using hybrid retrieval (P2: filters interlocutory/procedural docs).
-    When case summary index exists, uses two-tier retrieval: case index → paragraph search (ratio prioritised).
+    When case summary index exists, uses two-tier retrieval: case summary index → direct
+    paragraph lookup within matched cases (BM25 + cross-encoder, no FAISS on full corpus).
     """
     from config import (
         CASE_INDEX_V2,
@@ -1368,7 +1589,9 @@ def search_case_laws(query: str, top_k: int = 30) -> list:
         CASE_SUMMARY_CHUNKS_V2,
         CASE_SUMMARY_BM25_INDEX,
     )
-    # Two-tier: case summary index → then paragraph search within those cases
+    _STAGE1_MIN_SCORE = 0.10  # below this, stage-1 is uncertain — skip case filter
+
+    # Two-tier: case summary index → direct paragraph lookup within matched cases
     if (
         os.path.isfile(CASE_SUMMARY_INDEX_V2)
         and os.path.isfile(CASE_SUMMARY_CHUNKS_V2)
@@ -1379,28 +1602,59 @@ def search_case_laws(query: str, top_k: int = 30) -> list:
                 faiss_index_path=CASE_SUMMARY_INDEX_V2,
                 chunks_path=CASE_SUMMARY_CHUNKS_V2,
                 bm25_index_path=CASE_SUMMARY_BM25_INDEX,
-                faiss_top_k=12,
-                bm25_top_k=12,
-                rerank_top_k=8,
+                faiss_top_k=15,
+                bm25_top_k=15,
+                rerank_top_k=15,
                 min_rerank_score=0.0,
             )
-            allowed_cases = frozenset(
-                (r.get("case_name") or "").strip()
-                for r in case_results
-                if (r.get("case_name") or "").strip()
+            top_case_score = max(
+                (float(r.get("_rerank_score", 0) or 0) for r in case_results), default=0.0
             )
-            if allowed_cases:
-                results = hybrid_search(
-                    query=query,
-                    faiss_index_path=CASE_INDEX_V2,
-                    chunks_path=CASE_CHUNKS_V2,
-                    bm25_index_path=CASE_BM25_INDEX,
-                    faiss_top_k=15,
-                    bm25_top_k=15,
-                    rerank_top_k=min(top_k, 6),
-                    min_rerank_score=0.0,
-                    allowed_cases=allowed_cases,
+            if top_case_score >= _STAGE1_MIN_SCORE:
+                allowed_cases = frozenset(
+                    (r.get("case_name") or "").strip()
+                    for r in case_results
+                    if (r.get("case_name") or "").strip()
                 )
+            else:
+                logger.info(
+                    "Case-law stage-1 top score %.3f < %.2f — skipping case filter",
+                    top_case_score, _STAGE1_MIN_SCORE,
+                )
+                allowed_cases = frozenset()
+
+            if allowed_cases:
+                # Stage 2: load all paragraphs for matched cases directly, then
+                # BM25 + cross-encoder on that subset (no FAISS on full 34k corpus)
+                all_case_chunks = load_chunks(CASE_CHUNKS_V2)
+                case_subset = {
+                    k: v for k, v in all_case_chunks.items()
+                    if (v.get("case_name") or "").strip() in allowed_cases
+                }
+                logger.info(
+                    "Case-law stage 2 (direct): %d cases → %d paragraph chunks",
+                    len(allowed_cases), len(case_subset),
+                )
+                results = _search_within_chunks(
+                    query=query,
+                    chunk_subset=case_subset,
+                    rerank_top_k=min(top_k, 6),
+                )
+                if len(results) < 3:
+                    logger.info(
+                        "Case-law stage 2 direct returned %d results — broadening to full hybrid",
+                        len(results),
+                    )
+                    results = hybrid_search(
+                        query=query,
+                        faiss_index_path=CASE_INDEX_V2,
+                        chunks_path=CASE_CHUNKS_V2,
+                        bm25_index_path=CASE_BM25_INDEX,
+                        faiss_top_k=15,
+                        bm25_top_k=15,
+                        rerank_top_k=min(top_k, 6),
+                        min_rerank_score=0.0,
+                    )
             else:
                 results = hybrid_search(
                     query=query,
@@ -1588,9 +1842,9 @@ def search_bare_acts_fast(query: str, top_k: int = 6, trace: Optional[list] = No
                 faiss_index_path=ACT_SUMMARY_INDEX_V2,
                 chunks_path=ACT_SUMMARY_CHUNKS_V2,
                 bm25_index_path=ACT_SUMMARY_BM25_INDEX,
-                faiss_top_k=3,
-                bm25_top_k=3,
-                rerank_top_k=1,
+                faiss_top_k=5,
+                bm25_top_k=5,
+                rerank_top_k=3,
                 min_rerank_score=0.0,
                 trace=trace,
                 trace_stage="interactive_fast_act_summary",
@@ -1841,7 +2095,7 @@ def search_case_laws_runtime(query: str, top_k: int = 8, allow_legacy_fallback: 
             bm25_index_path=CASE_SUMMARY_BM25_INDEX,
             faiss_top_k=18,
             bm25_top_k=18,
-            rerank_top_k=3,
+            rerank_top_k=8,
             min_rerank_score=0.0,
         )
         for r in summary_results:
@@ -1912,8 +2166,9 @@ def search_bare_acts_legacy(query: str, top_k: int = 50, min_sim: float = 0.45) 
     if not chunks:
         return []
 
-    embedder = _get_embedder()
-    query_vec = embedder.encode(query, convert_to_numpy=True, normalize_embeddings=True)
+    query_vec = _embed_query_for_index(query, index, "legacy bare-act index")
+    if query_vec is None:
+        return []
     k = min(top_k, index.ntotal)
     if k <= 0:
         return []
@@ -1945,8 +2200,9 @@ def search_case_laws_legacy(query: str, top_k: int = 15, min_sim: float = 0.40) 
     if not chunks:
         return []
 
-    embedder = _get_embedder()
-    query_vec = embedder.encode(query, convert_to_numpy=True, normalize_embeddings=True)
+    query_vec = _embed_query_for_index(query, index, "legacy case-law index")
+    if query_vec is None:
+        return []
     k = min(top_k, index.ntotal)
     if k <= 0:
         return []

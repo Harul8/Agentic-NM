@@ -113,8 +113,8 @@ CASE_LAW_SUMMARY_INDEX_PATH = os.path.join(DATA_ROOT, "case_law_summary_index.js
 # ---------------------------------------------------------------------------
 # Embedding & re-ranker model names
 # ---------------------------------------------------------------------------
-EMBEDDING_MODEL = "thenlper/gte-base"
-CROSS_ENCODER_MODEL = "cross-encoder/ms-marco-MiniLM-L-12-v2"
+EMBEDDING_MODEL = "BAAI/bge-large-en-v1.5"        # upgraded from gte-base; state-of-the-art retrieval, 1024-dim
+CROSS_ENCODER_MODEL = "BAAI/bge-reranker-base"   # upgraded from ms-marco; stronger on domain-specific legal text
 
 # ---------------------------------------------------------------------------
 # Web search quality improvements (P0-P5)

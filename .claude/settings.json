@@ -3,20 +3,35 @@
     "PostToolUse": [
       {
         "matcher": "Edit|Write|Bash",
-        "command": "wsl.exe bash \"/mnt/c/Users/rahul/Agentic NM/crg_update.sh\"",
-        "timeout": 20000
+        "hooks": [
+          {
+            "type": "command",
+            "command": "wsl.exe bash \"/mnt/c/Users/rahul/Agentic NM/crg_update.sh\"",
+            "timeout": 20000
+          }
+        ]
       }
     ],
     "SessionStart": [
       {
-        "command": "wsl.exe bash \"/mnt/c/Users/rahul/Agentic NM/crg_status.sh\"",
-        "timeout": 15000
+        "hooks": [
+          {
+            "type": "command",
+            "command": "wsl.exe bash \"/mnt/c/Users/rahul/Agentic NM/crg_status.sh\"",
+            "timeout": 15000
+          }
+        ]
       }
     ],
     "PreCommit": [
       {
-        "command": "wsl.exe bash \"/mnt/c/Users/rahul/Agentic NM/crg_detect_changes.sh\"",
-        "timeout": 30000
+        "hooks": [
+          {
+            "type": "command",
+            "command": "wsl.exe bash \"/mnt/c/Users/rahul/Agentic NM/crg_detect_changes.sh\"",
+            "timeout": 30000
+          }
+        ]
       }
     ]
   }
