@@ -5050,6 +5050,7 @@ def _generate_interactive_fast_opinion(
                 "title": cl.get("title", ""),
                 "court": cl.get("court", ""),
                 "year": cl.get("year", ""),
+                "citation": cl.get("citation", ""),
                 "text": (cl.get("text") or "")[:420],
             }
             for cl in local_case[:3]
@@ -5203,20 +5204,20 @@ def _generate_legal_opinion(
     )[:_MAX_JSON_PAYLOAD]
 
     case_text = json.dumps(
-        [{"title": c.get("title"), "text": c.get("text", "")[:_MAX_CASE_TEXT], "source_tag": c.get("source_tag")}
+        [{"title": c.get("title"), "citation": c.get("citation", ""), "court": c.get("court", ""), "year": c.get("year", ""), "text": c.get("text", "")[:_MAX_CASE_TEXT]}
          for c in case_laws[:15]],
         indent=2,
     )[:_MAX_JSON_PAYLOAD]
 
     confidence = sufficiency.get("confidence", "medium")
-    
+
     # Add explicit empty array indicators if needed
     bare_array_note = ""
     case_array_note = ""
     if not has_bare_acts:
-        bare_array_note = "\n⚠️ NOTE: The BARE ACT SECTIONS array above is EMPTY ([]). Do NOT create an 'Applicable Statutory Provisions' section."
+        bare_array_note = "\n NOTE: The BARE ACT SECTIONS array above is EMPTY ([]). Do NOT create an 'Applicable Statutory Provisions' section."
     if not has_case_laws:
-        case_array_note = "\n⚠️ NOTE: The CASE LAWS array above is EMPTY ([]). Do NOT create a 'Relevant Case Law' section."
+        case_array_note = "\n NOTE: The CASE LAWS array above is EMPTY ([]). Do NOT create a 'Relevant Case Law' section."
 
     few_shot_block = ""
     if _ENABLE_RUNTIME_FEWSHOT:
@@ -5243,14 +5244,12 @@ CASE LAWS:
 
 CONFIDENCE LEVEL: {confidence}
 
-IMPORTANT: 
+IMPORTANT:
 - Only cite sources that appear in the arrays above. If an array is empty ([]), do not create that section.
-- For each legal statement that references retrieved materials, tag the citation with its source type:
-  [LOCAL_DB] for materials from our verified database
-  [OFFICIAL] for materials from government sources (legislation: state/central; judgments: courts)
-  [LEGAL_PORTAL] for materials from legal portals
-  [NEWS_REFERENCE] for newspaper articles (context only)
-- If no materials were retrieved (empty arrays), do NOT add any source tags.
+- Do NOT add source tags like [LOCAL_DB] or [OFFICIAL] in the text.
+- Open with a Legal Position paragraph (2-3 sentences) summarising the overall position before the analysis.
+- Use ## markdown headings for each issue area. Use **bold** for Act/section names inline.
+- For case law: cite as **Case Name [Citation] (Court, Year)** where citation is available.
 {few_shot_block}
 Generate the legal analysis:"""
 

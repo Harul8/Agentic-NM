@@ -90,13 +90,19 @@ _QUERY_NORM_PROMPT = (
     "to their full official names. Keep section/article numbers exactly as written. "
     "Do not add legal analysis or interpretation. Return ONLY the rewritten query — "
     "no explanation, no preamble.\n\n"
+    "IMPORTANT — Criminal law transition (in force 1 July 2024):\n"
+    "  IPC   has been REPLACED by Bharatiya Nyaya Sanhita 2023 (BNS).\n"
+    "  CrPC  has been REPLACED by Bharatiya Nagarik Suraksha Sanhita 2023 (BNSS).\n"
+    "  Indian Evidence Act has been REPLACED by Bharatiya Sakshya Adhiniyam 2023 (BSA).\n"
+    "When the query mentions an IPC/CrPC/IEA section, ALSO append the BNS/BNSS/BSA equivalent.\n\n"
     "Examples:\n"
-    "  IPC 302           →  Indian Penal Code Section 302 murder\n"
-    "  498A case         →  Section 498A Indian Penal Code cruelty to wife\n"
-    "  cheque bounce     →  dishonour of cheque Negotiable Instruments Act\n"
+    "  IPC 302           →  IPC Section 302 murder BNS Section 103\n"
+    "  498A case         →  Section 498A IPC cruelty to wife BNS Section 85\n"
+    "  CrPC 438 bail     →  CrPC Section 438 anticipatory bail BNSS Section 482\n"
+    "  cheque bounce     →  dishonour of cheque Negotiable Instruments Act Section 138\n"
     "  RERA complaint    →  Real Estate Regulation and Development Act complaint\n"
     "  RTI rejected      →  Right to Information Act application rejected\n"
-    "  420 fraud         →  Section 420 Indian Penal Code cheating and dishonesty\n"
+    "  420 fraud         →  Section 420 IPC cheating BNS Section 318\n"
     "  DRT recovery      →  Debt Recovery Tribunal recovery of debts due to banks\n"
     "  Art 226 petition  →  Article 226 Constitution of India writ petition High Court\n\n"
     "Query: {query}\n"
@@ -151,6 +157,9 @@ def normalize_legal_query(query: str) -> str:
     references, and shorthand into their full canonical form.  Falls back to
     the static regex table if the LLM call fails.  Results are cached in
     memory so repeated queries in the same server session are free.
+
+    Also appends BNS/BNSS/BSA equivalents for any old IPC/CrPC/IEA section
+    references detected in the query (via act_equivalence.expand_query).
     """
     q = (query or "").strip()
     if not q:
@@ -167,6 +176,12 @@ def normalize_legal_query(query: str) -> str:
         result = (ask_llm(prompt, task_hint="fast") or "").strip()
         # Sanity-check: result must be non-empty and not absurdly long
         if result and len(result) <= max(len(q) * 8, 200):
+            # Append any old-act→new-act expansions not already added by LLM
+            try:
+                from retrieval.act_equivalence import expand_query
+                result = expand_query(result)
+            except Exception:
+                pass
             with _query_norm_cache_lock:
                 _query_norm_cache[cache_key] = result
             logger.debug("Query normalized (LLM): %r → %r", q, result)
@@ -176,6 +191,12 @@ def normalize_legal_query(query: str) -> str:
         logger.warning("LLM query normalization failed (%s); using regex fallback", exc)
 
     result = _regex_normalize_fallback(q)
+    # Apply old-act expansion on regex fallback path too
+    try:
+        from retrieval.act_equivalence import expand_query
+        result = expand_query(result)
+    except Exception:
+        pass
     with _query_norm_cache_lock:
         _query_norm_cache[cache_key] = result
     return result
@@ -1343,6 +1364,7 @@ def _search_within_chunks(
             r["_chunk_key"] = key
             r["_rerank_score"] = 0.0
             r["_rerank_fallback"] = True
+            results.append(r)
         return results
 
     scored = []
@@ -1403,7 +1425,37 @@ def _search_within_chunks(
         "_search_within_chunks: %d candidates → top score %.3f",
         len(scored), scored[0]["_rerank_score"] if scored else 0.0,
     )
-    return scored[:rerank_top_k]
+
+    # Per-act diversity: cap results per act so no single act crowds out others.
+    # Allow up to max_per_act chunks from any one act; always include the top result.
+    max_per_act = max(2, rerank_top_k // 4)
+    per_act_counts: dict = {}
+    diverse: list = []
+    for r in scored:
+        act_key = (r.get("act_name") or r.get("case_name") or "").strip()
+        cnt = per_act_counts.get(act_key, 0)
+        if cnt < max_per_act or len(diverse) < 2:
+            diverse.append(r)
+            per_act_counts[act_key] = cnt + 1
+        if len(diverse) >= rerank_top_k:
+            break
+
+    # If diversity filter left us short, pad with remaining scored items
+    if len(diverse) < rerank_top_k:
+        seen = {id(r) for r in diverse}
+        for r in scored:
+            if id(r) not in seen:
+                diverse.append(r)
+            if len(diverse) >= rerank_top_k:
+                break
+
+    # Re-sort diverse set by score so padding items don't disrupt order
+    diverse.sort(key=lambda x: x["_rerank_score"], reverse=True)
+    logger.debug(
+        "_search_within_chunks: diversity → %d results, acts=%s",
+        len(diverse), list(per_act_counts.keys())[:5],
+    )
+    return diverse
 
 
 def search_bare_acts(query: str, top_k: int = 30, trace: Optional[list] = None) -> list:
@@ -1467,7 +1519,7 @@ def search_bare_acts(query: str, top_k: int = 30, trace: Optional[list] = None) 
                 results = _search_within_chunks(
                     query=query,
                     chunk_subset=act_subset,
-                    rerank_top_k=min(top_k, 10),
+                    rerank_top_k=top_k,
                 )
                 if len(results) < 3:
                     logger.info(
@@ -1481,7 +1533,7 @@ def search_bare_acts(query: str, top_k: int = 30, trace: Optional[list] = None) 
                         bm25_index_path=BARE_BM25_INDEX,
                         faiss_top_k=20,
                         bm25_top_k=20,
-                        rerank_top_k=min(top_k, 10),
+                        rerank_top_k=min(top_k, 20),
                         min_rerank_score=0.0,
                         trace=trace,
                         trace_stage="bare_act_section_index_broadened",
@@ -1494,7 +1546,7 @@ def search_bare_acts(query: str, top_k: int = 30, trace: Optional[list] = None) 
                     bm25_index_path=BARE_BM25_INDEX,
                     faiss_top_k=20,
                     bm25_top_k=20,
-                    rerank_top_k=min(top_k, 10),
+                    rerank_top_k=min(top_k, 20),
                     min_rerank_score=0.0,
                     trace=trace,
                     trace_stage="bare_act_section_index",
@@ -1508,7 +1560,7 @@ def search_bare_acts(query: str, top_k: int = 30, trace: Optional[list] = None) 
                 bm25_index_path=BARE_BM25_INDEX,
                 faiss_top_k=20,
                 bm25_top_k=20,
-                rerank_top_k=min(top_k, 10),
+                rerank_top_k=min(top_k, 20),
                 min_rerank_score=0.0,
                 trace=trace,
                 trace_stage="bare_act_section_index_fallback",
@@ -1521,7 +1573,7 @@ def search_bare_acts(query: str, top_k: int = 30, trace: Optional[list] = None) 
             bm25_index_path=BARE_BM25_INDEX,
             faiss_top_k=20,
             bm25_top_k=20,
-            rerank_top_k=min(top_k, 10),
+            rerank_top_k=min(top_k, 20),
             min_rerank_score=0.0,
             trace=trace,
             trace_stage="bare_act_section_index",
@@ -1565,7 +1617,7 @@ def search_bare_acts_filtered(
         bm25_index_path=BARE_BM25_INDEX,
         faiss_top_k=20,
         bm25_top_k=20,
-        rerank_top_k=min(top_k, 10),
+        rerank_top_k=min(top_k, 20),
         min_rerank_score=0.0,
         allowed_acts=allowed_acts,
         trace=trace,

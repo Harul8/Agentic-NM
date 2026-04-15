@@ -177,11 +177,13 @@ Output JSON only -- no preamble:
 
 BARE_ACT_SECTION_RELEVANCE_PROMPT = """You are a senior Indian advocate helping a retrieval system decide which bare act sections are genuinely relevant for this dispute.
 
+NOTE: These sections were pre-selected by a two-stage retrieval system that already identified the relevant acts at stage 1. They are likely to be relevant. Your job is to remove only clearly off-topic sections — not to aggressively filter.
+
 DISPUTE: {dispute}
 
 CANDIDATE SECTIONS: {sections_json}
 
-Rate each section "high", "medium", or "low" for relevance to this dispute. Prefer a small strong set over many weakly related ones.
+Rate each section "high", "medium", or "low" for relevance to this dispute. Keep "high" and "medium". Drop only "low" (clearly unrelated). Prefer a small strong set over many weakly related ones.
 
 Output JSON only:
 {{"sections": [{{"act_name": "...", "section_number": "...", "relevance": "high|medium|low", "reason": "..."}}]}}"""
@@ -193,13 +195,15 @@ Output JSON only:
 
 CASE_LAW_RELEVANCE_PROMPT = """You are a senior Indian advocate helping a retrieval system select relevant case law for this dispute.
 
+NOTE: These cases were pre-selected by a two-stage retrieval system that already identified relevant cases at stage 1 and then retrieved specific paragraphs from those cases. They are likely to be relevant. Your job is to remove only clearly off-topic cases — not to aggressively filter.
+
 DISPUTE: {dispute}
 
 BARE ACT CONTEXT: {bare_act_context}
 
 CANDIDATE CASES: {cases_json}
 
-Rate each case "high", "medium", or "low" for relevance to this dispute. Prefer fewer, stronger cases over many weak ones.
+Rate each case "high", "medium", or "low" for relevance to this dispute. Keep "high" and "medium". Drop only "low" (clearly off-topic). Prefer fewer, stronger cases over many weak ones.
 
 Output JSON only:
 {{"cases": [{{"case_name": "...", "relevance": "high|medium|low", "reason": "..."}}]}}"""
@@ -215,12 +219,23 @@ Keep 2-4 paragraphs. Be precise and cite paragraph/section numbers if present.""
 
 # Shared anti-hallucination guardrail  --  prepend to all response-generation prompts
 ANTI_HALLUCINATION_GUARDRAIL = """
-ðŸš¨ ANTI-HALLUCINATION GUARDRAIL  --  STRICTLY ENFORCE:
-- Do NOT generate any content not grounded in the retrieved materials below.
-- Every fact, section number, case name, provision, or legal principle you cite MUST appear in the retrieved arrays.
-- Sources allowed: internal vector store, official PDFs (courts, India Code, gazettes), legal portals, newspapers. NO social media.
-- If the arrays are empty ([]), output ONLY the fixed "I don't have any data" message  --  do NOT add general legal knowledge, principles, or analysis.
+ANTI-HALLUCINATION GUARDRAIL -- STRICTLY ENFORCE:
+- The retrieved materials below are pre-filtered for relevance using a two-stage retrieval system. Trust them.
+- Do NOT generate any content not grounded in the retrieved materials.
+- Every section number, case name, provision, or legal principle you cite MUST appear in the retrieved arrays.
+- If the arrays are empty ([]), output ONLY the fixed "I don't have any data" message -- do NOT add general legal knowledge, principles, or analysis.
 - NEVER hallucinate under any circumstances. If data is not in the materials, do not mention it.
+"""
+
+# Injected into prompts wherever case laws citing old acts may appear.
+_OLD_ACTS_TRANSITION_NOTE = """
+OLD ACT → NEW ACT TRANSITION (effective 1 July 2024):
+- IPC has been replaced by Bharatiya Nyaya Sanhita 2023 (BNS).
+- CrPC has been replaced by Bharatiya Nagarik Suraksha Sanhita 2023 (BNSS).
+- Indian Evidence Act has been replaced by Bharatiya Sakshya Adhiniyam 2023 (BSA).
+Case laws decided under old acts (IPC/CrPC/IEA) remain valid precedents for the equivalent BNS/BNSS/BSA provisions — the legislative intent and most provisions are substantially preserved.
+When citing a case that references an old-act section, add a brief parenthetical mapping it to the new equivalent, e.g. "(IPC Section 498A, now BNS Section 85)" or "(CrPC Section 438, now BNSS Section 482)".
+Do NOT refuse to cite old-act cases — they are binding or persuasive precedents unless expressly overruled.
 """
 
 # One judgment summary from top 3 relevant paragraphs (150 -- 200 words, model's own words)
@@ -343,7 +358,7 @@ Return JSON only:
 
 
 BARE_ACT_STAGE_SUMMARY_PROMPT = """You are a senior Indian advocate preparing the first grounded legal response after intake.
-
+""" + _OLD_ACTS_TRANSITION_NOTE + """
 CLIENT FACTS:
 {facts_summary}
 
@@ -359,7 +374,7 @@ FORMATTING RULES (strictly follow):
 
 In summary_text, explain what the law says about this situation -- which provisions are doing the real work, what rights or protections they offer, and where the record is still limited. Prioritise what concretely helps (protection, relief, remedies) over formal or introductory sections. Do not mention offering judicial precedents (the UI handles that invitation).
 
-In section_explanations, include only sections that genuinely matter on these facts with a plain explanation of why.
+In section_explanations, include only sections that genuinely matter. For each, explain specifically HOW it applies to these facts -- not what the section generally says (that text is already shown to the user). Focus on the connection between the provision and the client's situation.
 
 In next_steps, output 2-5 practical steps in sensible order. Each step has a short imperative title and a brief (2-3 sentence) summary. Do not repeat Act names or section numbers already discussed.
 
@@ -385,12 +400,16 @@ Return JSON only:
 
 
 PRECEDENT_STAGE_SUMMARY_PROMPT = """You are a senior Indian advocate. The client has already seen the bare act analysis. Now write the judicial precedent stage.
-
+""" + _OLD_ACTS_TRANSITION_NOTE + """
 CLIENT FACTS: {facts_summary}
 
 RETRIEVED PRECEDENTS: {precedent_extracts_text}
 
-Use only the retrieved precedent cues and facts above -- do not invent cases or holdings. The verbatim excerpts are shown separately in the UI; do not paste long quotes. In summary_text, explain what these judgments collectively indicate for this client's situation -- how courts have approached similar issues, what the extracts show, and where uncertainty remains. In case_explanations, give one entry per judgment with a brief note on why it matters here. The title must match the case name exactly as listed (so the UI can match it).
+Use only the retrieved precedent cues and facts above -- do not invent cases or holdings. The verbatim excerpts are shown separately in the UI; do not paste long quotes.
+
+In summary_text, write flowing prose that weaves case names naturally into the reasoning. Do NOT produce a bullet list of cases. Instead, build a narrative: establish the legal principle first, then introduce each case in the context of the specific point it establishes -- "In [Case Name], the Supreme Court held that..." or "Courts have consistently found that..., as in [Case Name]". Explain what these judgments collectively indicate for this client's situation and where uncertainty remains.
+
+In case_explanations, give one entry per judgment with a brief note on why it matters on these specific facts (not a general case summary). The title must match the case name exactly as listed (so the UI can match it).
 
 Return JSON only:
 {{
@@ -442,15 +461,17 @@ RETRIEVED LEGAL MATERIALS GROUPED BY DISPUTE:
 {dispute_blocks_text}
 
 Use only the retrieved materials above. Do not introduce any act, section, case, or legal rule from memory.
-
+""" + _OLD_ACTS_TRANSITION_NOTE + """
 FORMATTING RULES (strictly follow):
-- Use markdown: **bold** for Act names and section numbers, bullet points for distinct legal points, short paragraphs.
-- Cite sections specifically, e.g.: "**Section 85, Bharatiya Nyaya Sanhita 2023** — cruelty by husband or relatives" or "**Section 3, Dowry Prohibition Act 1961** — giving/taking dowry".
-- For case law: cite as **Case Name (Court, Year)** and give one sentence on what it held that matters here.
-- Structure the opinion with clear sub-headings per dispute (e.g. **Criminal Liability**, **Protection Orders**, **Maintenance**).
-- Practical next steps as a numbered list with bold titles.
+- Open with a **Legal Position** paragraph (2-3 sentences): the overall legal position on the present record. This is the "bottom line" before the analysis.
+- Use ## markdown headings for each dispute area (e.g. ## Criminal Liability, ## Protection Orders, ## Maintenance).
+- Use **bold** for Act names and specific section numbers inline: e.g. "**Section 85, Bharatiya Nyaya Sanhita 2023**".
+- Cite case law as **Case Name [Citation if available] (Court, Year)** — one sentence on what it held that matters here.
+- Use bullet points for distinct legal points within a section. Short paragraphs — not one dense block.
+- Do NOT add source tags like [LOCAL_DB] or [OFFICIAL] in the text.
+- Do NOT repeat the next steps — those are shown separately in the UI.
 
-Write a grounded legal opinion covering the main disputes, what position emerges on the present record, and practical next steps. Prefer the strongest materials per dispute rather than citing everything. Do not quote long statutory or judgment text. Plain English for lay users, tighter legal language for professionals. Where additional facts would change outcomes, say so. If the record is thin on a point, say so instead of filling gaps from memory."""
+Write a grounded legal opinion covering the main disputes and what position emerges on the present record. Prefer the strongest materials per dispute rather than citing everything. Do not quote long statutory or judgment text. Plain English for lay users, tighter legal language for professionals. Where additional facts would change outcomes, say so. If the record is thin on a point, say so instead of filling gaps from memory."""
 
 
 FAST_INTERACTIVE_OPINION_PROMPT = """You are a senior Indian advocate preparing a grounded opinion for an interactive chat.
@@ -465,13 +486,15 @@ LOCAL CASE LAW MATERIALS:
 {case_laws_json}
 
 Use only these materials. Do not introduce any act, section, case, or legal rule from memory.
-
+""" + _OLD_ACTS_TRANSITION_NOTE + """
 FORMATTING RULES:
-- Use markdown: **bold** for Act names and section numbers, bullet points for distinct legal points.
-- Cite sections specifically: e.g. "**Section 85, Bharatiya Nyaya Sanhita 2023**" not just "the law".
-- For case law: cite as **Case Name (Court, Year)** with one sentence on what it held.
-- Use short paragraphs. Structure with sub-headings if covering more than one issue.
-- Practical steps as a short numbered list with bold titles.
+- Open with a **Legal Position** line (1-2 sentences): the overall position on the present record.
+- Use ## markdown headings if covering more than one issue (e.g. ## Statutory Protection, ## Precedents).
+- Use **bold** for Act names and section numbers inline: e.g. "**Section 85, Bharatiya Nyaya Sanhita 2023**".
+- Cite case law as **Case Name [Citation if available] (Court, Year)** with one sentence on what it held.
+- Use bullet points for distinct legal points. Short paragraphs.
+- Do NOT add source tags like [LOCAL_DB] or [OFFICIAL] in the text.
+- Close with a short numbered list of practical steps with bold titles.
 
 Write a concise, readable opinion grounded in the strongest materials available. Prefer the most directly relevant provisions and cases over citing everything. If the record is thin on a point, say so plainly. If only bare acts are available, stay statutory and do not invent precedent."""
 
