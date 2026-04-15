@@ -2624,6 +2624,7 @@ def generate_response_v2(
     model_override: str | None = None,
     analysis_mode: str = "full_opinion",
     intake_state: dict | None = None,
+    retrieval_only: bool = False,
 ) -> dict:
     """
     Full legal research pipeline — dispute-first approach.
@@ -2681,8 +2682,11 @@ def generate_response_v2(
         search_strategy = "local_then_web"
     if search_strategy not in ("local_only", "local_then_web"):
         search_strategy = "local_then_web"
+    # retrieval_only mode always uses full dispute decomposition — the whole point
+    # is to build a high-quality cache, so never take the fast single-dispute path.
     interactive_fast_path = (
-        _ENABLE_INTERACTIVE_FAST_PATH
+        not retrieval_only
+        and _ENABLE_INTERACTIVE_FAST_PATH
         and intent == "legal_opinion"
         and search_strategy == "local_only"
     )
@@ -3215,6 +3219,23 @@ def generate_response_v2(
     formatted_bare, _ = _filter_materials_to_local_db(formatted_bare, None)
     local_dispute_results = _filter_dispute_results_to_local_db(dispute_results)
 
+    # ── retrieval_only early exit ──────────────────────────────────────────────
+    # Return all retrieved and formatted materials WITHOUT running opinion synthesis.
+    # The caller stores this in workflow_state as a session-level retrieval cache.
+    # On Stage 2, generate_legal_opinion_from_cache() uses this to skip re-retrieval.
+    if retrieval_only:
+        _flattened_prelim: list = []
+        for _ba in formatted_bare:
+            _flattened_prelim.extend(_ba.get("related_case_laws", []))
+        return {
+            "retrieval_only": True,
+            "disputes": disputes,
+            "bare_act_sections": formatted_bare,
+            "flattened_case_laws": _flattened_prelim,
+            "local_dispute_results": local_dispute_results,
+        }
+    # ─────────────────────────────────────────────────────────────────────────
+
     if intent == "search" and not formatted_bare and formatted_case:
         limit = max(1, result_count) if result_count else max(FLEXIBLE_MIN_FALLBACK, len(formatted_case))
         formatted_bare = [{
@@ -3452,6 +3473,141 @@ def generate_response_v2(
             for dr in dispute_results
         ],
         "debug_pipeline": debug_pipeline,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Cache-hit synthesis — skip retrieval when preliminary context is available
+# ---------------------------------------------------------------------------
+
+def generate_legal_opinion_from_cache(
+    pre_retrieved_context: dict,
+    facts_summary: str,
+    intent: str = "legal_opinion",
+    analysis_mode: str = "full_opinion",
+    token_callback=None,
+    model_override: str | None = None,
+    step_callback=None,
+    search_strategy: str = "local_only",
+) -> dict:
+    """
+    Generate a legal opinion using pre-retrieved materials from preliminary retrieval.
+
+    Skips all dispute decomposition and retrieval steps — jumps straight to LLM
+    opinion synthesis using the cached formatted_bare / flattened_case_laws /
+    local_dispute_results from a prior retrieval_only=True call.
+
+    Returns the same dict shape as generate_response_v2().
+    """
+    set_request_model_override(model_override)
+    progress = ProgressTracker()
+
+    def _emit_step(message: str, icon: str = ""):
+        if step_callback:
+            try:
+                step_callback({"message": message, "icon": icon})
+            except Exception:
+                pass
+
+    def _emit_progress():
+        if hasattr(progress, "get_progress_snapshot"):
+            pass  # no external callback needed for cache path
+
+    formatted_bare = pre_retrieved_context.get("bare_act_sections") or []
+    flattened_case_laws = pre_retrieved_context.get("flattened_case_laws") or []
+    local_dispute_results = pre_retrieved_context.get("local_dispute_results") or []
+    disputes = pre_retrieved_context.get("disputes") or []
+
+    _emit_step("Using cached legal research from this session...", "⚡")
+
+    has_materials = bool(formatted_bare or flattened_case_laws)
+
+    sufficiency = {
+        "overall_sufficient": bool(formatted_bare),
+        "gaps": [],
+        "aspects": [],
+        "confidence": "medium",
+    }
+    next_steps: list = []
+    next_steps_summary: str = ""
+    explanation = ""
+
+    analysis_mode = (analysis_mode or "full_opinion").strip().lower() or "full_opinion"
+
+    if not has_materials:
+        explanation = _format_no_materials_message(search_strategy, None)
+        _stream_precomposed_text(explanation, token_callback=token_callback)
+    else:
+        _emit_step("Drafting grounded legal opinion from cached materials...", "🧠")
+        if analysis_mode == "bare_acts_only":
+            explanation, formatted_bare, next_steps, next_steps_summary = _generate_bare_act_stage_text(
+                facts_summary,
+                local_dispute_results,
+                formatted_bare,
+                model_override=model_override,
+                token_callback=token_callback,
+            )
+            flattened_case_laws = []
+        elif analysis_mode == "precedents_only":
+            explanation, formatted_bare, flattened_case_laws = _generate_precedent_stage_text(
+                facts_summary,
+                formatted_bare,
+                flattened_case_laws,
+                model_override=model_override,
+                token_callback=token_callback,
+            )
+        else:
+            explanation = _generate_structured_opinion_by_dispute(
+                facts_summary,
+                local_dispute_results,
+                additional_info="",
+                token_callback=token_callback,
+                model_override=model_override,
+            )
+            if not (explanation or "").strip():
+                explanation = _generate_legal_opinion(
+                    facts_summary, formatted_bare, flattened_case_laws,
+                    sufficiency, model_override=model_override,
+                )
+
+        if not (explanation or "").strip():
+            explanation = "I reviewed the strongest local materials and summarized the key provisions and supporting precedents below."
+
+        grounded_explanation = _enforce_local_grounding(explanation, formatted_bare)
+        if grounded_explanation == _local_only_no_materials_message():
+            if formatted_bare or flattened_case_laws:
+                grounded_explanation = _build_grounded_interactive_fallback(
+                    facts_summary, formatted_bare, flattened_case_laws
+                )
+        explanation = grounded_explanation
+
+    sources_used = set()
+    for ba in formatted_bare:
+        sources_used.add(ba.get("source_tag", "LOCAL_DB"))
+        for cl in ba.get("related_case_laws", []):
+            sources_used.add(cl.get("source_tag", "LOCAL_DB"))
+
+    return {
+        "bare_act_sections": formatted_bare,
+        "case_laws": [],
+        "explanation": explanation,
+        "sufficiency": sufficiency,
+        "sources_used": list(sources_used),
+        "internet_case_laws": [],
+        "progress": progress.get_progress(),
+        "indexing_candidates": [],
+        "next_steps": next_steps,
+        "next_steps_summary": next_steps_summary,
+        "dispute_breakdown": [
+            {
+                "dispute_id": dr.get("dispute", {}).get("id") if isinstance(dr.get("dispute"), dict) else None,
+                "dispute": dr.get("dispute", {}).get("dispute") if isinstance(dr.get("dispute"), dict) else str(dr.get("dispute", "")),
+                "bare_acts_count": len(dr.get("bare_acts", [])),
+                "case_laws_count": len(dr.get("case_laws", [])),
+            }
+            for dr in local_dispute_results
+        ],
+        "debug_pipeline": {"disputes": disputes, "per_dispute": {}, "_cache_hit": True},
     }
 
 

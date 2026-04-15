@@ -374,7 +374,12 @@ def _run_stage1_parallel_v2(session: dict, msg: str, intake_state: dict) -> dict
         ready, missing = False, []
     elif not intake_state.get("detail_request_issued"):
         reply = _generate_initial_detail_request(intake_state, msg, context)
-        ready, missing = False, []
+        # Honour the LLM's judgment: if the opening message already contained
+        # enough facts, skip further intake and go straight to analysis.
+        if intake_state.get("analysis_ready"):
+            ready, missing = True, []
+        else:
+            ready, missing = False, []
     else:
         reply, _ = _generate_gap_review(intake_state, msg, context)
         ready, missing = _check_analysis_readiness(intake_state)

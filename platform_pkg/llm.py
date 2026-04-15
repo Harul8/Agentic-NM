@@ -136,42 +136,31 @@ _init_langsmith()
 OPENAI_ANALYSIS_SWITCH_INPUT_TOKENS = 10000
 
 # ---------------------------------------------------------------------------
-# Per-call token limits — derived from worst-case content budget:
+# Per-call token limits:
 #
-#   Quality calls (draft generation):
-#     Retrieval content  : 3 bare-act sections × 5 disputes × ~430 tok  = 6 430 tok
-#                        + 3 case laws         × 5 disputes × ~430 tok  = 6 430 tok
-#     Prompt overhead    : system prompt + facts summary + labels        ≈ 1 500 tok
-#     Total input ceiling                                               ≈ 14 360 tok
-#     → OPENAI_INPUT_TOKEN_LIMIT = 25 000  (≈74 % buffer — generous headroom for
-#       longer system prompts, full conversation history, and multi-stage intake state)
+#   Quality calls (draft generation, gap review, case file, legal opinion):
+#     Input ceiling  : 25 000 tokens (covers retrieval content + full conv history)
+#     Output ceiling : NONE — max_completion_tokens is NOT passed to the API so the
+#                      model can use as many internal chain-of-thought reasoning tokens
+#                      as it needs without crowding out the actual response.
+#     Budget reserve : 16 000 tokens used as a conservative hourly budget reservation
+#                      (actual usage refunded after the call completes).
 #
-#     Output             : full structured draft across 5 disputes       ≈ 3 000–4 500 tok
-#     → OPENAI_OUTPUT_TOKEN_LIMIT = 7 000  (≈56 % buffer)
-#
-#   Fast calls (intake / vetting / category detection):
-#     Input              : system prompt + conv tail + intake-state JSON ≈ 1 500–2 000 tok
-#     → OPENAI_FAST_INPUT_TOKEN_LIMIT = 5 000  (≈2.5× buffer — covers longer
-#       structured fact objects and pre-draft summary prompts)
-#
-#     Output             : next question / JSON response                 ≈ 80–150 tok
-#     → OPENAI_FAST_OUTPUT_TOKEN_LIMIT = 4 000
-#       NOTE: for Chat Completions, max_completion_tokens is a COMBINED budget for
-#       internal chain-of-thought reasoning tokens AND output text tokens.
-#       Reasoning models (gpt-5-nano, gpt-5-mini, o4-mini, etc.) consume ~500–2 000
-#       reasoning tokens before producing any output.  Setting this too low (e.g. 800)
-#       leaves the model no budget to write the actual response and returns empty content.
-#       4 000 gives ~2 500–3 000 tok of reasoning headroom plus 500–1 000 tok for output
-#       which is sufficient for all fast tasks (query expansion, intake, intent extraction).
+#   Fast calls (intake classification, urgency check, fact extraction):
+#     Input ceiling  : 5 000 tokens
+#     Output ceiling : 8 000 tokens — reasoning models (gpt-5-nano, etc.) consume
+#                      ~500–3 000 reasoning tokens before producing output; 8 000
+#                      gives sufficient headroom for reasoning + the small structured
+#                      output these calls need (80–400 tokens of JSON).
 #
 #   Section/case char cap (enforced in response_generator_v2.py):
 #     MAX_SECTIONS_PER_DISPUTE_FOR_OPINION = 3, MAX_CASE_LAWS_PER_DISPUTE = 3
 #     Each chunk truncated to 1 500 chars before being placed in prompt.
 # ---------------------------------------------------------------------------
 OPENAI_INPUT_TOKEN_LIMIT = 25000
-OPENAI_OUTPUT_TOKEN_LIMIT = 7000
+OPENAI_OUTPUT_TOKEN_LIMIT = 16000   # budget reservation only — not sent to API for quality calls
 OPENAI_FAST_INPUT_TOKEN_LIMIT = 5000
-OPENAI_FAST_OUTPUT_TOKEN_LIMIT = 4000
+OPENAI_FAST_OUTPUT_TOKEN_LIMIT = 8000
 # Hourly budget — 500 k input / 500 k output supports ~30+ full sessions/hr
 OPENAI_HOURLY_INPUT_TOKEN_LIMIT = 500000
 OPENAI_HOURLY_OUTPUT_TOKEN_LIMIT = 100000
@@ -208,7 +197,11 @@ def _count_tokens(text: str, model_name: str) -> int:
 
 
 def _openai_limits(chosen_model: str, task_hint: str | None) -> tuple[int, int]:
-    if task_hint == "fast" or chosen_model == OPENAI_MODEL_FAST:
+    # Limits are driven by task_hint (the output contract), NOT by which model
+    # was chosen (model selection is an input-efficiency optimisation and should
+    # not reduce the output budget for a quality call that happens to have a
+    # short prompt and therefore auto-selects the fast model).
+    if task_hint == "fast":
         return OPENAI_FAST_INPUT_TOKEN_LIMIT, OPENAI_FAST_OUTPUT_TOKEN_LIMIT
     return OPENAI_INPUT_TOKEN_LIMIT, OPENAI_OUTPUT_TOKEN_LIMIT
 
@@ -646,14 +639,14 @@ def ask_llm(
 
     for attempt in range(1 + max_retries):
         try:
-            # Use Chat Completions API — works with both reasoning models
-            # (gpt-5-mini, gpt-5-nano, o4-mini, etc.) and standard models.
-            resp = _get_openai_client().chat.completions.create(
-                model=chosen,
-                messages=_messages,
-                max_completion_tokens=max_output_tokens,
-                timeout=timeout,
-            )
+            # Quality calls: do NOT pass max_completion_tokens — this lets reasoning
+            # models use as many internal chain-of-thought tokens as they need without
+            # crowding out the actual response.  Fast calls keep the cap because their
+            # outputs are small and predictable.
+            api_kwargs: dict = {"model": chosen, "messages": _messages, "timeout": timeout}
+            if task_hint == "fast":
+                api_kwargs["max_completion_tokens"] = max_output_tokens
+            resp = _get_openai_client().chat.completions.create(**api_kwargs)
             out = _extract_openai_text(resp)
             _refund_openai_output_budget(max_output_tokens, _count_tokens(out, chosen) if out else 0)
             if out:

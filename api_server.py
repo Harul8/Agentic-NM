@@ -511,6 +511,11 @@ def _normalize_workflow_state(raw_state: Optional[dict], messages: Optional[list
     if not isinstance(intake_state, dict):
         intake_state = None
 
+    # Preserve preliminary retrieval cache (set on Turn 1, used to skip re-retrieval)
+    prelim_retrieval_context = state.get("preliminaryRetrievalContext")
+    if not isinstance(prelim_retrieval_context, dict):
+        prelim_retrieval_context = None
+
     return {
         "stage": stage,
         "facts": facts,
@@ -520,6 +525,7 @@ def _normalize_workflow_state(raw_state: Optional[dict], messages: Optional[list
         "factsSummary": facts_summary,
         "lastResponseType": last_response_type,
         "intakeState": intake_state,
+        "preliminaryRetrievalContext": prelim_retrieval_context,
     }
 
 
@@ -2503,41 +2509,6 @@ async def upload_document(
     return {"text": text.strip(), "filename": filename, "char_count": len(text), "method": method}
 
 
-@app.post("/chat")
-def chat(request: ChatRequest):
-    """
-    Interactive chat endpoint.
-    Phase: fact_collection | response_generation
-    """
-    message = (request.message or "").strip()
-    conv = [
-        {"role": m.role, "content": _normalize_content(m.content)}
-        for m in request.conversation
-    ]
-    result = process_chat(
-        conversation=conv,
-        current_message=request.message,
-        phase=request.phase,
-        facts_summary=request.facts_summary,
-    )
-
-    # If fact collection complete, trigger response generation
-    if result["phase"] == "response_generation" and result.get("facts_summary"):
-        resp_result = process_chat(
-            conversation=conv,
-            current_message=result["facts_summary"],
-            phase="response_generation",
-            facts_summary=result["facts_summary"],
-            intent=result.get("intent", "legal_opinion"),
-            document_types=result.get("document_types", "both"),
-            search_strategy=result.get("search_strategy", "local_then_web"),
-            result_count=result.get("result_count"),
-            analysis_mode=result.get("analysis_mode"),
-        )
-        return resp_result
-
-    return result
-
 
 @app.post("/submit_case")
 def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_token)):
@@ -2570,7 +2541,15 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
         pre_draft_msg = ""
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             pre_draft_msg = result.get("message", "")  # Item 19: preserve pre-draft summary
-            conv = conv + [{"role": "assistant", "content": pre_draft_msg}]
+            if pre_draft_msg.strip():
+                conv = conv + [{"role": "assistant", "content": pre_draft_msg}]
+            # Propagate fresh intake_state so Stage 2 has the pre-detected clusters
+            # and structured facts — used by _build_disputes_from_intake_state.
+            s2_workflow = {
+                **(workflow_state or {}),
+                "intakeState": result.get("intake_state") or (workflow_state or {}).get("intakeState"),
+                "preliminaryRetrievalContext": result.get("preliminary_retrieval_context") or (workflow_state or {}).get("preliminaryRetrievalContext"),
+            }
             result = process_chat(
                 conversation=conv,
                 current_message=result["facts_summary"],
@@ -2582,7 +2561,7 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
                 result_count=result.get("result_count"),
                 chat_mode=mode,
                 model_override=model_override,
-                workflow_state=workflow_state,
+                workflow_state=s2_workflow,
                 analysis_mode=result.get("analysis_mode"),
             )
         if result.get("phase") == "done":
@@ -2636,6 +2615,11 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             pre_draft_msg = result.get("message", "")  # Item 19
             conv = conv + [{"role": "assistant", "content": pre_draft_msg}]
+            s2_workflow = {
+                **(workflow_state or {}),
+                "intakeState": result.get("intake_state") or (workflow_state or {}).get("intakeState"),
+                "preliminaryRetrievalContext": result.get("preliminary_retrieval_context") or (workflow_state or {}).get("preliminaryRetrievalContext"),
+            }
             result = process_chat(
                 conversation=conv,
                 current_message=result["facts_summary"],
@@ -2647,7 +2631,7 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
                 result_count=result.get("result_count"),
                 chat_mode=mode,
                 model_override=model_override,
-                workflow_state=workflow_state,
+                workflow_state=s2_workflow,
                 analysis_mode=result.get("analysis_mode"),
             )
 
@@ -2694,7 +2678,13 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
         pre_draft_msg = ""
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             pre_draft_msg = result.get("message", "")  # Item 19
-            conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": pre_draft_msg}]
+            if pre_draft_msg.strip():
+                conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": pre_draft_msg}]
+            s2_workflow = {
+                **(workflow_state or {}),
+                "intakeState": result.get("intake_state") or (workflow_state or {}).get("intakeState"),
+                "preliminaryRetrievalContext": result.get("preliminary_retrieval_context") or (workflow_state or {}).get("preliminaryRetrievalContext"),
+            }
             result = process_chat(
                 conversation=conv,
                 current_message=result["facts_summary"],
@@ -2706,7 +2696,7 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
                 result_count=result.get("result_count"),
                 chat_mode=mode,
                 model_override=model_override,
-                workflow_state=workflow_state,
+                workflow_state=s2_workflow,
                 analysis_mode=result.get("analysis_mode"),
             )
         if result.get("phase") == "done":
@@ -2743,7 +2733,13 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
         pre_draft_msg = ""
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             pre_draft_msg = result.get("message", "")  # Item 19
-            conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": pre_draft_msg}]
+            if pre_draft_msg.strip():
+                conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": pre_draft_msg}]
+            s2_workflow = {
+                **(workflow_state or {}),
+                "intakeState": result.get("intake_state") or (workflow_state or {}).get("intakeState"),
+                "preliminaryRetrievalContext": result.get("preliminary_retrieval_context") or (workflow_state or {}).get("preliminaryRetrievalContext"),
+            }
             result = process_chat(
                 conversation=conv,
                 current_message=result["facts_summary"],
@@ -2758,7 +2754,7 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
                 step_callback=step_callback,
                 token_callback=token_callback,
                 model_override=model_override,
-                workflow_state=workflow_state,
+                workflow_state=s2_workflow,
                 analysis_mode=result.get("analysis_mode"),
             )
         if result.get("phase") == "done":
@@ -2797,7 +2793,13 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: 
         pre_draft_msg = ""
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             pre_draft_msg = result.get("message", "")  # Item 19
-            conv = conv + [{"role": "assistant", "content": pre_draft_msg}]
+            if pre_draft_msg.strip():
+                conv = conv + [{"role": "assistant", "content": pre_draft_msg}]
+            s2_workflow = {
+                **(workflow_state or {}),
+                "intakeState": result.get("intake_state") or (workflow_state or {}).get("intakeState"),
+                "preliminaryRetrievalContext": result.get("preliminary_retrieval_context") or (workflow_state or {}).get("preliminaryRetrievalContext"),
+            }
             result = process_chat(
                 conversation=conv,
                 current_message=result["facts_summary"],
@@ -2812,7 +2814,7 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: 
                 step_callback=step_callback,
                 token_callback=token_callback,
                 model_override=model_override,
-                workflow_state=workflow_state,
+                workflow_state=s2_workflow,
                 analysis_mode=result.get("analysis_mode"),
             )
         if result.get("phase") == "done":
@@ -2869,7 +2871,13 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
         pre_draft_msg = ""
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             pre_draft_msg = result.get("message", "")  # Item 19
-            conv = conv + [{"role": "assistant", "content": pre_draft_msg}]
+            if pre_draft_msg.strip():
+                conv = conv + [{"role": "assistant", "content": pre_draft_msg}]
+            s2_workflow = {
+                **(workflow_state or {}),
+                "intakeState": result.get("intake_state") or (workflow_state or {}).get("intakeState"),
+                "preliminaryRetrievalContext": result.get("preliminary_retrieval_context") or (workflow_state or {}).get("preliminaryRetrievalContext"),
+            }
             t_phase = time.perf_counter()
             result = process_chat(
                 conversation=conv,
@@ -2885,7 +2893,7 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
                 step_callback=step_callback,
                 token_callback=token_callback,
                 model_override=model_override,
-                workflow_state=workflow_state,
+                workflow_state=s2_workflow,
                 analysis_mode=result.get("analysis_mode"),
             )
             _log_pipeline_step(

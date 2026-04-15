@@ -289,8 +289,17 @@ def _refresh_case_file(intake_state: dict, conversation_context: str) -> None:
     )
     case_file["summary"] = intake_state.get("latest_intake_summary") or intake_state.get("issue_summary")
 
+    _case_file_system = (
+        "You are a senior Indian advocate preparing an internal chamber note on a professional legal platform. "
+        "The intake record below contains client-reported facts about alleged abuse, crimes, threats, and harm — "
+        "provided strictly for internal legal case-file preparation. "
+        "Produce the complete structured JSON case file as instructed. "
+        "Do NOT refuse, truncate, or omit any section based on the nature of the allegations described."
+    )
+
     try:
-        raw = _ask_llm(prompt, task_hint="quality")
+        from platform_pkg.llm import ask_llm as _direct_ask
+        raw = _direct_ask(prompt, task_hint="quality", system=_case_file_system)
         data = _extract_json(raw)
         if isinstance(data, dict):
             case_file["summary"] = str(data.get("summary") or case_file.get("summary") or "").strip()[:600] or None
@@ -701,25 +710,57 @@ def _generate_safety_first_response(intake_state: dict) -> str:
 # ===========================================================================
 
 def _build_established_facts(intake_state: dict) -> str:
-    """Build a compact text summary of the main state already established."""
+    """Build a compact text summary of the main state already established.
+
+    Returns two sections:
+    - ANCHOR FIELDS: high-level structured fields (issue, relationship, etc.)
+    - CONFIRMED FACTS: specific facts extracted from the client's messages
+    - INTAKE PROGRESS: what groups were requested and what is still open
+
+    The explicit confirmed-facts list is the primary guard against the model
+    re-asking information the client already provided.
+    """
+    lines: list[str] = []
+
+    # ── Anchor fields ──────────────────────────────────────────────────────────
     anchors = {
-        "issue": intake_state.get("issue_summary"),
-        "relationship": intake_state.get("relationship_to_other_party"),
-        "timeframe": intake_state.get("timeframe_status"),
-        "goal": intake_state.get("client_goal_initial"),
-        "urgency": intake_state.get("urgency_signal"),
+        "issue":         intake_state.get("issue_summary"),
+        "relationship":  intake_state.get("relationship_to_other_party"),
+        "timeframe":     intake_state.get("timeframe_status"),
+        "goal":          intake_state.get("client_goal_initial"),
+        "urgency":       intake_state.get("urgency_signal"),
+        "jurisdiction":  intake_state.get("jurisdiction"),
     }
-    established_parts = [
+    anchor_parts = [
         f"{k}: {v}" for k, v in anchors.items()
         if v and v not in ("unknown", "", None)
     ]
+    if anchor_parts:
+        lines.append("ANCHOR FIELDS — " + "; ".join(anchor_parts))
+
+    # ── Confirmed facts (specific details already provided by the client) ──────
+    known_facts = intake_state.get("known_facts") or []
+    if known_facts:
+        fact_texts = [
+            (f.get("fact") if isinstance(f, dict) else str(f))
+            for f in known_facts[:20]
+        ]
+        fact_texts = [t.strip() for t in fact_texts if t and t.strip()]
+        if fact_texts:
+            lines.append(
+                "CONFIRMED FACTS (already provided — DO NOT re-ask these):\n"
+                + "\n".join(f"  • {t}" for t in fact_texts)
+            )
+
+    # ── Intake progress ────────────────────────────────────────────────────────
     detail_groups = intake_state.get("detail_groups_requested") or []
     if detail_groups:
-        established_parts.append("detail groups requested: " + " | ".join(str(x) for x in detail_groups[:8]))
+        lines.append("Detail groups requested: " + " | ".join(str(x) for x in detail_groups[:8]))
     missing_groups = intake_state.get("missing_detail_groups") or []
     if missing_groups:
-        established_parts.append("remaining gaps: " + " | ".join(str(x) for x in missing_groups[:8]))
-    return "; ".join(established_parts) if established_parts else "none established yet"
+        lines.append("Still open / not yet answered: " + " | ".join(str(x) for x in missing_groups[:8]))
+
+    return "\n".join(lines) if lines else "none established yet"
 
 
 def _generate_initial_detail_request(
@@ -760,12 +801,13 @@ def _generate_initial_detail_request(
                 str(x).strip() for x in (data.get("detail_groups_requested") or [])
                 if str(x).strip()
             ][:8]
+            enough = bool(data.get("enough_for_analysis", False))
             intake_state["detail_groups_requested"] = detail_groups
-            intake_state["open_questions"] = list(detail_groups)
+            intake_state["open_questions"] = [] if enough else list(detail_groups)
             intake_state["missing_detail_groups"] = []
             intake_state["followup_questions"] = []
             intake_state["detail_request_issued"] = True
-            intake_state["analysis_ready"] = False
+            intake_state["analysis_ready"] = enough
             reply = str(data.get("reply") or "").strip()
             if reply:
                 return reply
@@ -893,43 +935,15 @@ def _generate_followup(
     cat_cfg = LEGAL_ISSUE_CATEGORIES.get(primary, {})
     category_label = cat_cfg.get("label", primary.replace("_", " ").title())
 
-    # Compact summary of what's already been established — prevents re-asking
-    # anchor facts the model has already noted, without prescribing what to ask next
-    anchors = {
-        "issue":        intake_state.get("issue_summary"),
-        "relationship": intake_state.get("relationship_to_other_party"),
-        "timeframe":    intake_state.get("timeframe_status"),
-        "goal":         intake_state.get("client_goal_initial"),
-        "urgency":      intake_state.get("urgency_signal"),
-    }
-    established_parts = [
-        f"{k}: {v}" for k, v in anchors.items()
-        if v and v not in ("unknown", "")
-    ]
-    established_facts = "; ".join(established_parts) if established_parts else "none yet — first exchange"
-
-    # Build a facts-based context summary to reduce verbatim threat language
-    # in the prompt when known_facts are available (avoids content filter on literal quotes).
-    known_facts = intake_state.get("known_facts") or []
-    if known_facts and len(known_facts) >= 2:
-        facts_lines = [
-            (f.get("fact", "") if isinstance(f, dict) else str(f))
-            for f in known_facts[:10]
-        ]
-        facts_summary_block = "FACTS ESTABLISHED (paraphrased from client account):\n" + "\n".join(
-            f"- {line}" for line in facts_lines if line
-        )
-        # Use last 3 turns of raw context only (reduces density of sensitive language)
-        history_lines = (conversation_context or "").split("\n")
-        recent_context = "\n".join(history_lines[-6:])  # ~3 turns (2 lines each)
-        combined_context = facts_summary_block + "\n\nRECENT EXCHANGE:\n" + recent_context
-    else:
-        combined_context = conversation_context or "(first message)"
+    # Use _build_established_facts so the model sees both anchor fields AND the
+    # enumerated list of specific facts already confirmed — the primary guard
+    # against re-asking information the client already provided.
+    established_facts = _build_established_facts(intake_state)
 
     prompt = (
         STAGE1_CONFIRM_AND_FOLLOWUP_SYSTEM
         .replace("{category}", category_label)
-        .replace("{conversation_context}", combined_context)
+        .replace("{conversation_context}", conversation_context or "(first message)")
         .replace("{client_message}", (client_message or "").strip())
         .replace("{established_facts}", established_facts)
     )
@@ -1282,18 +1296,23 @@ def process_turn(session: dict, user_message: str) -> dict:
         ready, missing = False, []
     elif not intake_state.get("detail_request_issued"):
         reply = _generate_initial_detail_request(intake_state, msg, context)
-        ready, missing = False, []
+        # Honour the LLM's judgment: if the opening message already contained
+        # enough facts, skip further intake and go straight to analysis.
+        if intake_state.get("analysis_ready"):
+            ready, missing = True, []
+        else:
+            ready, missing = False, []
     else:
         reply, _ = _generate_gap_review(intake_state, msg, context)
         ready, missing = _check_analysis_readiness(intake_state)
 
-    # ── Readiness check — decide whether to advance to Stage 2 ───────────────
-    # Minimum two substantive exchanges: a single opening message, however
-    # detailed, never gives enough context for grounded legal analysis.
-    # Note: urgency/risk_flags affect the *reply* (safety-first response above)
-    # but do NOT permanently block advancement — after enough turns the client
-    # should still be able to reach analysis even for urgent matters.
-    if intake_state.get("urgency_signal") == "immediate" or not intake_state.get("detail_request_issued"):
+    # ── Readiness check — advance guard ─────────────────────────────────────
+    # Immediate urgency: hold analysis, run safety-first flow first.
+    # detail_request_issued check: if somehow this block is reached before the
+    # initial request was issued, prevent premature advancement.
+    if intake_state.get("urgency_signal") == "immediate":
+        ready, missing = False, []
+    elif not intake_state.get("detail_request_issued"):
         ready, missing = False, []
     intake_state["ready_for_stage2"] = ready
     if missing:

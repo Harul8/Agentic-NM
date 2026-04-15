@@ -30,11 +30,12 @@ import hashlib
 
 from platform_pkg.llm import ask_llm
 from agents.intake.collector import get_next_question_or_complete, is_stop_signal
-from agents.intake.stage1_opening import generate_pre_draft_summary, process_turn as _intake_process_turn
+from agents.intake.stage1_opening import process_turn as _intake_process_turn
 from platform_pkg.memory import guard_activity
 from platform_pkg.warmup import kickoff_runtime_warmup, kickoff_ollama_warmup_if_qwen
 from retrieval.generator import (
     generate_response_v2 as generate_response,
+    generate_legal_opinion_from_cache,
 )
 from retrieval.guard import check_query_safety, sanitize_input, check_response_safety
 
@@ -444,6 +445,41 @@ def _run_generic_chat(
     }
 
 
+def _run_preliminary_retrieval(facts: str, model_override: str | None = None) -> dict | None:
+    """
+    Run full dispute decomposition + retrieval without opinion synthesis.
+
+    Called in parallel with intake on Turn 1 so the retrieval cache is ready
+    before the second client turn.  Uses the full decomposition path
+    (retrieval_only=True forces interactive_fast_path off) so the vocabulary
+    is translated to proper legal terms before searching the index.
+
+    Returns a dict suitable for storage in workflow_state["preliminaryRetrievalContext"],
+    or None if retrieval fails.
+    """
+    try:
+        result = generate_response(
+            facts,
+            jurisdiction_state="",
+            intent="legal_opinion",
+            document_types="both",
+            search_strategy="local_only",
+            model_override=model_override,
+            retrieval_only=True,
+        )
+        if result.get("retrieval_only"):
+            logger.info(
+                "Preliminary retrieval complete: %d sections, %d case laws, %d disputes",
+                len(result.get("bare_act_sections") or []),
+                len(result.get("flattened_case_laws") or []),
+                len(result.get("disputes") or []),
+            )
+            return result
+    except Exception as exc:
+        logger.warning("Preliminary retrieval failed (non-fatal): %s", exc)
+    return None
+
+
 def _empty_result(phase: str = "done", facts_summary: str = None) -> dict:
     """Return a safe empty result dict."""
     return {
@@ -586,26 +622,26 @@ def process_chat(
                     conversation,
                     current_message=current_message,
                 )
-                _log_step("fact_collection BARE_ACT_REFRESH", (time.perf_counter() - t_pipeline_start) * 1000)
+                _log_step("fact_collection BARE_ACT_REFRESH -> grounded_analysis", (time.perf_counter() - t_pipeline_start) * 1000)
                 return {
                     "phase": "response_generation",
                     "message": "",
                     "facts_summary": merged_facts,
                     "intent": "legal_opinion",
-                    "document_types": "acts_only",
+                    "document_types": "both",
                     "search_strategy": "local_only",
                     "result_count": None,
                     "response": None,
                     "response_type": None,
                     "materials_to_confirm": None,
                     "indexed": False,
-                    "analysis_stage": "bare_acts_only",
-                    "analysis_mode": "bare_acts_only",
+                    "analysis_stage": "grounded_analysis",
+                    "analysis_mode": "full_opinion",
                 }
 
-        # If the immediately previous assistant turn was the analysis-ready handoff,
-        # the user is either confirming to proceed or giving one last material fact.
-        # In either case, do not re-enter intake.
+        # If an older chat still contains an analysis-ready handoff, treat the
+        # user's next message as additional facts and move straight to grounded
+        # analysis instead of re-entering intake.
         if _last_assistant_is_analysis_ready(conversation):
             base_facts = _build_user_fact_history(conversation, current_message=current_message)
             merged_facts = _augment_facts_with_chat_summary(
@@ -613,30 +649,21 @@ def process_chat(
                 conversation,
                 current_message=current_message,
             )
-            _log_step("fact_collection ANALYSIS_READY_ACK", (time.perf_counter() - t_pipeline_start) * 1000)
-            # Generate pre-draft summary using any available intake_state from workflow_state
-            intake_state = (workflow_state or {}).get("intakeState") or None
-            try:
-                pre_draft_msg = generate_pre_draft_summary(
-                    intake_state=intake_state,
-                    facts_summary=merged_facts,
-                )
-            except Exception:
-                pre_draft_msg = ""
+            _log_step("fact_collection ANALYSIS_READY_ACK -> grounded_analysis", (time.perf_counter() - t_pipeline_start) * 1000)
             return {
                 "phase": "response_generation",
-                "message": pre_draft_msg,
+                "message": "",
                 "facts_summary": merged_facts,
                 "intent": "legal_opinion",
-                "document_types": "acts_only",
+                "document_types": "both",
                 "search_strategy": "local_only",
                 "result_count": None,
                 "response": None,
                 "response_type": None,
                 "materials_to_confirm": None,
                 "indexed": False,
-                "analysis_stage": "bare_acts_only",
-                "analysis_mode": "bare_acts_only",
+                "analysis_stage": "grounded_analysis",
+                "analysis_mode": "full_opinion",
             }
         if _looks_like_new_case_opening(current_message, conversation):
             logger.info("Detected fresh case opening inside completed chat; re-entering intake with reset conversation")
@@ -648,18 +675,53 @@ def process_chat(
         force_legal = mode == "legal_opinion"
 
         if force_legal:
+            from concurrent.futures import ThreadPoolExecutor as _TPE
+
             t_before_intake = time.perf_counter()
             session = {
                 "history": conversation,
                 "intake_state": (workflow_state or {}).get("intakeState") or None,
             }
-            with guard_activity("fact_collection:intake_process_turn"):
-                intake_result = _intake_process_turn(session, current_message)
-            _log_step(
-                "intake_process_turn",
-                (time.perf_counter() - t_before_intake) * 1000,
-                f"advance={intake_result.get('advance_to_stage2')} urgency={intake_result.get('urgency_signal')}",
-            )
+
+            # Read any retrieval cache stored from a prior turn.
+            prelim_context = (workflow_state or {}).get("preliminaryRetrievalContext") or None
+
+            # On the very first user turn with no cache: run intake + preliminary
+            # retrieval in parallel.  Retrieval uses full dispute decomposition so
+            # queries are translated to proper legal vocabulary before searching the
+            # index.  The result is stored as a session-level cache — subsequent turns
+            # skip the expensive retrieval step entirely.
+            _prior_user_turns = sum(1 for m in (conversation or []) if m.get("role") == "user")
+            _should_prelim = prelim_context is None and _prior_user_turns == 0
+
+            if _should_prelim:
+                def _run_intake_guarded():
+                    with guard_activity("fact_collection:intake_process_turn"):
+                        return _intake_process_turn(session, current_message)
+
+                def _run_prelim_guarded():
+                    with guard_activity("fact_collection:preliminary_retrieval"):
+                        return _run_preliminary_retrieval(current_message, model_override)
+
+                with _TPE(max_workers=2) as _pool:
+                    _intake_fut = _pool.submit(_run_intake_guarded)
+                    _prelim_fut = _pool.submit(_run_prelim_guarded)
+                    intake_result = _intake_fut.result()
+                    prelim_context = _prelim_fut.result()
+
+                _log_step(
+                    "intake_process_turn + preliminary_retrieval (parallel)",
+                    (time.perf_counter() - t_before_intake) * 1000,
+                    f"advance={intake_result.get('advance_to_stage2')} cache={'ok' if prelim_context else 'miss'}",
+                )
+            else:
+                with guard_activity("fact_collection:intake_process_turn"):
+                    intake_result = _intake_process_turn(session, current_message)
+                _log_step(
+                    "intake_process_turn",
+                    (time.perf_counter() - t_before_intake) * 1000,
+                    f"advance={intake_result.get('advance_to_stage2')} urgency={intake_result.get('urgency_signal')} cache={'hit' if prelim_context else 'miss'}",
+                )
 
             intake_state_out = intake_result.get("intake_state") or {}
             stop_requested = is_stop_signal(current_message)
@@ -677,6 +739,7 @@ def process_chat(
                         "message": intake_result.get("reply") or current_message,
                         "facts_summary": None,
                         "intake_state": intake_state_out,
+                        "preliminary_retrieval_context": prelim_context,
                         "response": None,
                         "response_type": None,
                         "materials_to_confirm": None,
@@ -684,56 +747,73 @@ def process_chat(
                         "analysis_stage": "intake",
                     }
 
-                # Intake complete — ask for confirmation before launching analysis
-                if not _analysis_confirmation_already_asked(conversation):
-                    _log_step("fact_collection ANALYSIS_READY (process_turn)", (time.perf_counter() - t_pipeline_start) * 1000)
-                    facts = _build_user_fact_history(conversation, current_message=current_message)
-                    return {
-                        "phase": "fact_collection",
-                        "message": _build_analysis_ready_prompt(conversation, intake_state=intake_state_out),
-                        "facts_summary": facts,
-                        "intake_state": intake_state_out,
-                        "response": None,
-                        "response_type": None,
-                        "materials_to_confirm": None,
-                        "indexed": False,
-                        "analysis_stage": "ready_for_bare_acts",
-                    }
-                # Confirmation already shown — user is responding; go to response_generation
+                # Intake is complete — carry the retrieval cache into Stage 2 so
+                # the response_generation phase can skip re-retrieval.
                 facts = _build_user_fact_history(conversation, current_message=current_message)
                 facts = _augment_facts_with_chat_summary(facts, conversation, current_message=current_message)
-                _log_step("fact_collection ADVANCE → response_generation (process_turn)", (time.perf_counter() - t_pipeline_start) * 1000)
-                try:
-                    pre_draft_msg = generate_pre_draft_summary(
-                        intake_state=intake_state_out,
-                        facts_summary=facts,
-                    )
-                except Exception:
-                    pre_draft_msg = ""
+                _log_step("fact_collection ADVANCE -> grounded_analysis (process_turn)", (time.perf_counter() - t_pipeline_start) * 1000)
                 return {
                     "phase": "response_generation",
-                    "message": pre_draft_msg,
+                    "message": "",
                     "facts_summary": facts,
                     "intake_state": intake_state_out,
+                    "preliminary_retrieval_context": prelim_context,
                     "intent": "legal_opinion",
-                    "document_types": "acts_only",
+                    "document_types": "both",
                     "search_strategy": "local_only",
                     "result_count": None,
                     "response": None,
                     "response_type": None,
                     "materials_to_confirm": None,
                     "indexed": False,
-                    "analysis_stage": "bare_acts_only",
-                    "analysis_mode": "bare_acts_only",
+                    "analysis_stage": "grounded_analysis",
+                    "analysis_mode": "full_opinion",
                 }
 
-            # Still collecting — return the AI's reply from process_turn
+            # Safety gate: if all 4 anchor fields are populated but the model
+            # still returned advance_to_stage2=False (common false negative on
+            # first-turn comprehensive messages), force-advance to Stage 2.
+            _anchors = (
+                str(intake_state_out.get("issue_summary") or "").strip(),
+                str(intake_state_out.get("relationship_to_other_party") or "").strip(),
+                str(intake_state_out.get("timeframe_status") or "").strip(),
+                str(intake_state_out.get("client_goal_initial") or "").strip(),
+            )
+            _all_anchors_present = all(
+                v and v.lower() not in ("unknown", "null", "none", "")
+                for v in _anchors
+            )
+            if _all_anchors_present and not urgency_immediate:
+                _log_step("fact_collection ANCHOR_GATE -> grounded_analysis (all 4 anchors present)", (time.perf_counter() - t_pipeline_start) * 1000)
+                facts = _build_user_fact_history(conversation, current_message=current_message)
+                facts = _augment_facts_with_chat_summary(facts, conversation, current_message=current_message)
+                return {
+                    "phase": "response_generation",
+                    "message": "",
+                    "facts_summary": facts,
+                    "intake_state": intake_state_out,
+                    "preliminary_retrieval_context": prelim_context,
+                    "intent": "legal_opinion",
+                    "document_types": "both",
+                    "search_strategy": "local_only",
+                    "result_count": None,
+                    "response": None,
+                    "response_type": None,
+                    "materials_to_confirm": None,
+                    "indexed": False,
+                    "analysis_stage": "grounded_analysis",
+                    "analysis_mode": "full_opinion",
+                }
+
+            # Still collecting — persist the retrieval cache so the next turn can
+            # use it for law-informed gap questions and eventually skip re-retrieval.
             _log_step("fact_collection CONTINUE (process_turn)", (time.perf_counter() - t_pipeline_start) * 1000)
             return {
                 "phase": "fact_collection",
                 "message": intake_result.get("reply") or current_message,
                 "facts_summary": None,
                 "intake_state": intake_state_out,
+                "preliminary_retrieval_context": prelim_context,
                 "response": None,
                 "response_type": None,
                 "materials_to_confirm": None,
@@ -789,29 +869,16 @@ def process_chat(
                         conversation, current_message, token_callback=token_callback, model_override=model_override
                     )
 
-            # Keep intake fast: once enough facts exist, ask for confirmation to proceed
-            # to full research instead of launching retrieval in the same turn.
-            if not is_stop_signal(current_message) and not _analysis_confirmation_already_asked(conversation):
-                _log_step("fact_collection ANALYSIS_READY", (time.perf_counter() - t_pipeline_start) * 1000)
-                return {
-                    "phase": "fact_collection",
-                    "message": _build_analysis_ready_prompt(conversation),
-                    "facts_summary": facts,
-                    "response": None,
-                    "response_type": None,
-                    "materials_to_confirm": None,
-                    "indexed": False,
-                "analysis_stage": "ready_for_bare_acts",
-                }
-
+            # Once enough facts exist, move directly into grounded analysis
+            # instead of pausing for a confirmation-only turn.
             _log_step(
-                "FACT_COLLECTION â†’ response_generation",
+                "FACT_COLLECTION -> grounded_analysis",
                 (time.perf_counter() - t_pipeline_start) * 1000,
                 f"facts_len={len(facts or '')}",
             )
             return {
                 "phase": "response_generation",
-                "message": result.get("message", ""),
+                "message": "",
                 "facts_summary": facts,
                 "intent": intent,
                 "document_types": result.get("document_types", "both"),
@@ -824,6 +891,8 @@ def process_chat(
                 "response_type": None,
                 "materials_to_confirm": None,
                 "indexed": False,
+                "analysis_stage": "grounded_analysis",
+                "analysis_mode": "full_opinion",
             }
 
         # Still collecting facts — the compact intake path already streamed any tokens.
@@ -853,23 +922,48 @@ def process_chat(
         use_result_count = result_count
         use_analysis_mode = (analysis_mode or "full_opinion").strip().lower() or "full_opinion"
         use_intake_state = (workflow_state or {}).get("intakeState") or None
+
+        # Use session-level retrieval cache when available (set during intake Turn 1).
+        # This skips the expensive dispute decomposition + retrieval step entirely.
+        _prelim_ctx = (workflow_state or {}).get("preliminaryRetrievalContext") or None
+        _cache_eligible = (
+            _prelim_ctx
+            and _prelim_ctx.get("retrieval_only")
+            and use_intent == "legal_opinion"
+            and use_analysis_mode in ("full_opinion", "bare_acts_only", "precedents_only")
+        )
+
         t_before_gen = time.perf_counter()
         try:
-            with guard_activity("response_generation:generate_response"):
-                resp = generate_response(
-                    facts,
-                    jurisdiction_state="",
-                    intent=use_intent,
-                    progress_callback=progress_callback,
-                    document_types=use_document_types,
-                    search_strategy=use_search_strategy,
-                    result_count=use_result_count,
-                    step_callback=step_callback,
-                    token_callback=token_callback,
-                    model_override=model_override,
-                    analysis_mode=use_analysis_mode,
-                    intake_state=use_intake_state,
-                )
+            if _cache_eligible:
+                _log_step("response_generation CACHE HIT — skipping retrieval", 0)
+                with guard_activity("response_generation:generate_response_from_cache"):
+                    resp = generate_legal_opinion_from_cache(
+                        _prelim_ctx,
+                        facts,
+                        intent=use_intent,
+                        analysis_mode=use_analysis_mode,
+                        token_callback=token_callback,
+                        model_override=model_override,
+                        step_callback=step_callback,
+                        search_strategy=use_search_strategy,
+                    )
+            else:
+                with guard_activity("response_generation:generate_response"):
+                    resp = generate_response(
+                        facts,
+                        jurisdiction_state="",
+                        intent=use_intent,
+                        progress_callback=progress_callback,
+                        document_types=use_document_types,
+                        search_strategy=use_search_strategy,
+                        result_count=use_result_count,
+                        step_callback=step_callback,
+                        token_callback=token_callback,
+                        model_override=model_override,
+                        analysis_mode=use_analysis_mode,
+                        intake_state=use_intake_state,
+                    )
         except Exception as e:
             logger.error("Response generation failed: %s", e, exc_info=True)
             return {

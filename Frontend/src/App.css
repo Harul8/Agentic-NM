@@ -30,10 +30,7 @@
 body {
   margin: 0;
   font-family: var(--sans);
-  background:
-    radial-gradient(circle at top left, rgba(157, 123, 47, 0.08), transparent 28%),
-    radial-gradient(circle at top right, rgba(33, 52, 77, 0.08), transparent 24%),
-    linear-gradient(180deg, #f7f2e8 0%, #f2ede3 100%);
+  background: #ffffff;
   color: var(--text);
 }
 
@@ -66,7 +63,7 @@ body {
   flex-direction: column;
   height: 100vh;
   max-height: 100dvh;
-  background: var(--bg);
+  background: #ffffff;
 }
 
 /* Header - ChatGPT style minimal top bar */
@@ -74,7 +71,7 @@ body {
   flex-shrink: 0;
   padding: 12px 20px;
   border-bottom: 1px solid var(--border);
-  background: var(--bg);
+  background: #ffffff;
 }
 
 .chat-header-inner {
@@ -326,7 +323,7 @@ body {
 .message--user .message-bubble {
   max-width: 100%;
   box-sizing: border-box;
-  background: #f1f8fe; /* 50% lighter than #e3f2fd */
+  background: transparent;
   border: none;
   border-radius: 14px;
 }
