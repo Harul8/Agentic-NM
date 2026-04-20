@@ -49,7 +49,7 @@ _ENABLE_BARE_ACT_LLM_FILTER = os.environ.get("ENABLE_BARE_ACT_LLM_FILTER", "1").
 _ENABLE_CASE_LAW_LLM_FILTER = os.environ.get("ENABLE_CASE_LAW_LLM_FILTER", "1").lower() in ("1", "true", "yes")
 _ENABLE_RUNTIME_FEWSHOT = os.environ.get("ENABLE_RUNTIME_FEWSHOT", "1").lower() in ("1", "true", "yes")
 _ENABLE_INTERACTIVE_FAST_PATH = os.environ.get("ENABLE_INTERACTIVE_FAST_PATH", "1").lower() in ("1", "true", "yes")
-_ENABLE_INTERACTIVE_FAST_LLM = os.environ.get("ENABLE_INTERACTIVE_FAST_LLM", "0").lower() in ("1", "true", "yes")
+_ENABLE_INTERACTIVE_FAST_LLM = os.environ.get("ENABLE_INTERACTIVE_FAST_LLM", "1").lower() in ("1", "true", "yes")
 _FAST_BARE_QUERY_LIMIT = 3
 _FAST_CASE_QUERY_LIMIT = 2
 _FAST_BARE_TOP_K = 5
@@ -2610,6 +2610,361 @@ def _distribute_case_laws_across_sections(sections_with_cases: list) -> list:
     return sections
 
 
+# ---------------------------------------------------------------------------
+# Per-dispute retrieval worker — extracted from generate_response_v2 so the
+# outer orchestrator stays readable and this worker can be tested in isolation.
+# ---------------------------------------------------------------------------
+
+def _retrieve_dispute_worker(
+    dispute: dict,
+    *,
+    facts_summary: str,
+    search_strategy: str,
+    legal_queries: list,
+    retrieve_acts: bool,
+    retrieve_case_laws_flag: bool,
+    interactive_fast_path: bool,
+    states: list,
+    emit_step,
+    emit_live_token,
+    model_override: str | None = None,
+) -> dict:
+    """Retrieve bare acts + case laws for one dispute component.
+
+    All context from the outer pipeline is passed explicitly so this function
+    has no closure dependencies and is independently callable/testable.
+    """
+    d_id = dispute.get("id", "?")
+    d_text = dispute.get("dispute", "")
+    _local_pending: list = []
+    _local_debug: dict = {}
+    _external_results: list = []
+    _bare_hybrid_trace: list = []
+
+    emit_step(f"[{d_id}] Identifying legal provisions...", "📖")
+
+    # 3a: Bare acts
+    bare_d = []
+    if retrieve_acts:
+        if interactive_fast_path:
+            from retrieval.retriever import search_bare_acts_fast, search_bare_acts_runtime
+            queries_ba = (
+                _build_bare_act_queries(dispute, expanded_queries=legal_queries)
+                or [d_text or facts_summary[:300]]
+            )[:_FAST_BARE_QUERY_LIMIT]
+            seen_ba: dict = {}
+            for _q_ba in queries_ba:
+                qt: list = []
+                found_for_query = False
+                for _ba in search_bare_acts_fast(_q_ba, top_k=_FAST_BARE_TOP_K, trace=qt):
+                    _key = (
+                        (_ba.get("act_name") or "").strip().lower(),
+                        (_ba.get("section_number") or "").strip().lower(),
+                    )
+                    if _ba.get("_rerank_score", 0) > (seen_ba.get(_key) or {}).get("_rerank_score", -999):
+                        seen_ba[_key] = _ba
+                        found_for_query = True
+                _bare_hybrid_trace.append(
+                    {"retrieval_query": _q_ba, "path": "interactive_fast", "hybrid_stages": qt}
+                )
+                if found_for_query:
+                    break
+            raw = list(seen_ba.values())
+            bare_d = _select_interactive_grounded_results(
+                raw,
+                facts_summary,
+                quality_fn=_is_quality_bare_act,
+                cap=MAX_SECTIONS_PER_DISPUTE_TOTAL,
+            )
+            if not bare_d:
+                logger.info("[%s] Interactive fast bare-act rescue: broadening local search", d_id)
+                rescue_queries = _build_runtime_rescue_queries(
+                    facts_summary, limit=2, bare_act_sections=bare_d, model_override=model_override
+                )
+                for _q_ba in rescue_queries:
+                    qt2: list = []
+                    for _ba in search_bare_acts_runtime(_q_ba, top_k=8, trace=qt2):
+                        _key = (
+                            (_ba.get("act_name") or "").strip().lower(),
+                            (_ba.get("section_number") or "").strip().lower(),
+                        )
+                        if _ba.get("_rerank_score", 0) > (seen_ba.get(_key) or {}).get("_rerank_score", -999):
+                            seen_ba[_key] = _ba
+                    _bare_hybrid_trace.append(
+                        {
+                            "retrieval_query": _q_ba,
+                            "path": "interactive_runtime_rescue",
+                            "hybrid_stages": qt2,
+                        }
+                    )
+                raw = list(seen_ba.values())
+                bare_d = _select_interactive_grounded_results(
+                    raw,
+                    facts_summary,
+                    quality_fn=_is_quality_bare_act,
+                    cap=MAX_SECTIONS_PER_DISPUTE_TOTAL,
+                )
+            if bare_d:
+                bare_d = _apply_fact_alignment_sort(
+                    _filter_bare_acts_with_llm(dispute, bare_d, _local_debug),
+                    facts_summary,
+                    cap=MAX_SECTIONS_PER_DISPUTE_TOTAL,
+                )
+                top_acts = _select_top_acts(bare_d, max_acts=3)
+                if top_acts:
+                    bare_d = _apply_fact_alignment_sort(
+                        [ba for ba in bare_d if (ba.get("act_name") or "").strip() in top_acts],
+                        facts_summary,
+                        cap=MAX_SECTIONS_PER_DISPUTE_TOTAL,
+                    )
+        elif search_strategy == "local_only":
+            from retrieval.retriever import search_bare_acts_auto
+            # Multi-query: run all _build_bare_act_queries and merge by best score per section.
+            queries_ba = _build_bare_act_queries(dispute, expanded_queries=legal_queries)
+            seen_ba: dict = {}
+            for _q_ba in queries_ba:
+                qt: list = []
+                for _ba in search_bare_acts_auto(_q_ba, top_k=30, trace=qt):
+                    _key = (
+                        (_ba.get("act_name") or "").strip().lower(),
+                        (_ba.get("section_number") or "").strip().lower(),
+                    )
+                    if _ba.get("_rerank_score", 0) > (seen_ba.get(_key) or {}).get("_rerank_score", -999):
+                        seen_ba[_key] = _ba
+                _bare_hybrid_trace.append(
+                    {"retrieval_query": _q_ba, "path": "local_only_auto", "hybrid_stages": qt}
+                )
+            raw = list(seen_ba.values())
+            bare_d = [ba for ba in raw if ba.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_bare_act(ba)]
+        else:
+            bare_d = retrieve_bare_acts_for_dispute(
+                dispute,
+                facts_summary,
+                states=states,
+                debug=_local_debug,
+                pending_indexing_list=_local_pending,
+                bare_act_trace=_bare_hybrid_trace,
+                expanded_legal_queries=legal_queries,
+            )
+            if not bare_d:
+                emit_step(f"[{d_id}] No local bare act sections found — checking Indiankanoon fallback...", "🌐")
+                for _r in _web_search_bare_acts(dispute, facts_summary, states=states, pending_indexing_list=_local_pending):
+                    _rr = dict(_r)
+                    _rr["_fallback_kind"] = "bare_act"
+                    _external_results.append(_rr)
+
+        if bare_d:
+            act_names = list(dict.fromkeys(
+                ba.get("act_name") or ba.get("title", "").split(" §")[0]
+                for ba in bare_d if ba.get("act_name") or ba.get("title")
+            ))[:4]
+            acts_str = ", ".join(act_names) if act_names else "legal provisions"
+            emit_step(f"[{d_id}] Found {len(bare_d)} section{'s' if len(bare_d) != 1 else ''} — {acts_str}", "✅")
+            if interactive_fast_path:
+                emit_live_token(
+                    "acts_found",
+                    "I found grounded statutory provisions and I am checking the closest precedents against them. ",
+                    words_per_chunk=2,
+                )
+        else:
+            emit_step(f"[{d_id}] No local bare act sections found", "⚠️")
+
+    # 3b: Case laws
+    case_d = []
+    if retrieve_case_laws_flag:
+        emit_step(f"[{d_id}] Searching for judicial precedents...", "⚖️")
+        if interactive_fast_path:
+            from retrieval.retriever import search_case_summaries_fast, search_case_laws_runtime
+            _queries_cl = _build_fast_case_queries(dispute, bare_d, expanded_queries=legal_queries)
+            seen_cl: dict = {}
+            for _q_cl in _queries_cl:
+                for _cl in search_case_summaries_fast(_q_cl, top_k=_FAST_CASE_TOP_K):
+                    _ck = _cl.get("_chunk_key") or (
+                        (_cl.get("case_name") or "").lower() + "|" + (_cl.get("full_text", "")[:100])
+                    )
+                    if _cl.get("_rerank_score", 0) > (seen_cl.get(_ck) or {}).get("_rerank_score", -999):
+                        seen_cl[_ck] = _cl
+            raw_cl = list(seen_cl.values())
+            initial_case = _select_interactive_grounded_results(
+                raw_cl,
+                facts_summary,
+                quality_fn=_is_quality_case_law,
+                cap=MAX_CASE_LAWS_PER_DISPUTE,
+                min_score=0.0,
+            )
+            case_d = _apply_dispute_case_law_limit(initial_case, num_sections=len(bare_d))
+            if not case_d:
+                logger.info("[%s] Interactive fast case-law rescue: broadening local case search", d_id)
+                rescue_queries = _build_runtime_rescue_queries(
+                    facts_summary, limit=2, bare_act_sections=bare_d, model_override=model_override
+                )
+                for _q_cl in rescue_queries:
+                    for _cl in search_case_laws_runtime(_q_cl, top_k=8):
+                        _ck = _cl.get("_chunk_key") or (
+                            (_cl.get("case_name") or "").lower() + "|" + (_cl.get("full_text", "")[:100])
+                        )
+                        if _cl.get("_rerank_score", 0) > (seen_cl.get(_ck) or {}).get("_rerank_score", -999):
+                            seen_cl[_ck] = _cl
+                raw_cl = list(seen_cl.values())
+                rescued_case = _select_interactive_grounded_results(
+                    raw_cl,
+                    facts_summary,
+                    quality_fn=_is_quality_case_law,
+                    cap=MAX_CASE_LAWS_PER_DISPUTE,
+                )
+                case_d = _apply_dispute_case_law_limit(rescued_case, num_sections=len(bare_d))
+            if case_d:
+                case_d = _apply_dispute_case_law_limit(
+                    _filter_case_laws_with_llm(dispute, bare_d, case_d, _local_debug),
+                    num_sections=len(bare_d),
+                )
+            case_d = _apply_fact_alignment_sort(
+                case_d,
+                facts_summary,
+                cap=max(len(case_d), MAX_CASE_LAWS_PER_DISPUTE),
+            )
+        elif search_strategy == "local_only":
+            from retrieval.retriever import search_case_laws_auto
+            # Multi-query: base dispute query + up to 2 section-anchored queries, merge best per chunk.
+            _q_base = _build_case_law_query(d_text, bare_d)
+            _queries_cl = [_q_base]
+            for _ba in bare_d[:2]:
+                _act = (_ba.get("act_name") or "").strip()
+                _sec = (_ba.get("section_number") or "").strip()
+                if _act and _sec:
+                    _queries_cl.append(f"Section {_sec} {_act} case law interpretation")
+            _queries_cl = list(dict.fromkeys(_queries_cl))[:3]
+            seen_cl: dict = {}
+            for _q_cl in _queries_cl:
+                for _cl in search_case_laws_auto(_q_cl, top_k=20):
+                    _ck = _cl.get("_chunk_key") or (
+                        (_cl.get("case_name") or "").lower() + "|" + (_cl.get("full_text", "")[:100])
+                    )
+                    if _cl.get("_rerank_score", 0) > (seen_cl.get(_ck) or {}).get("_rerank_score", -999):
+                        seen_cl[_ck] = _cl
+            raw_cl = list(seen_cl.values())
+            case_d = _apply_dispute_case_law_limit([cl for cl in raw_cl if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_case_law(cl)])
+        else:
+            case_d = retrieve_case_laws_for_dispute(dispute, bare_d, facts_summary, states=states, debug=_local_debug, pending_indexing_list=_local_pending)
+            if not case_d:
+                for _r in _web_search_case_laws(dispute, bare_d, facts_summary, states=states, pending_indexing_list=_local_pending):
+                    _rr = dict(_r)
+                    _rr["_fallback_kind"] = "case_law"
+                    _external_results.append(_rr)
+
+        if case_d:
+            case_cap = max(len(case_d), MAX_CASE_LAWS_PER_DISPUTE)
+            case_d = _apply_fact_alignment_sort(case_d, facts_summary, cap=case_cap)
+            if bare_d:
+                case_d = _align_case_laws_with_statute_support(case_d, bare_d, facts_summary, cap=case_cap)
+                case_d = _apply_dispute_case_law_limit(case_d, num_sections=len(bare_d))
+                bare_d = _align_bare_acts_with_case_support(
+                    bare_d,
+                    case_d,
+                    facts_summary,
+                    cap=MAX_SECTIONS_PER_DISPUTE_TOTAL,
+                )
+            else:
+                case_d = case_d[:MAX_CASE_LAWS_PER_DISPUTE]
+
+        # Adaptive web fallback: when local_only yields sparse results, supplement
+        # with web search for this dispute rather than returning a thin analysis.
+        # Threshold: fewer than 2 bare act sections AND fewer than 2 case laws.
+        if (
+            search_strategy == "local_only"
+            and not interactive_fast_path
+            and len(bare_d) < 2
+            and len(case_d) < 2
+        ):
+            logger.info(
+                "[%s] Local results sparse (%d acts, %d cases) — escalating to web search",
+                d_id, len(bare_d), len(case_d),
+            )
+            emit_step(f"[{d_id}] Local results sparse — checking online sources...", "🌐")
+            for _r in _web_search_bare_acts(dispute, facts_summary, states=states, pending_indexing_list=_local_pending):
+                _rr = dict(_r)
+                _rr["_fallback_kind"] = "bare_act"
+                _external_results.append(_rr)
+            for _r in _web_search_case_laws(dispute, bare_d, facts_summary, states=states, pending_indexing_list=_local_pending):
+                _rr = dict(_r)
+                _rr["_fallback_kind"] = "case_law"
+                _external_results.append(_rr)
+
+        # Citation graph expansion: boost recall by fetching chunks for cases
+        # that the retrieved cases cite (forward) or that cite them (backward).
+        # Runs after all retrieval paths so it always supplements the best results.
+        if case_d and _ENABLE_CITATION_GRAPH_EXPANSION and not interactive_fast_path:
+            try:
+                from retrieval.citations import (
+                    expand_case_names_by_precedent,
+                    get_chunks_by_case_names,
+                )
+                from retrieval.retriever import load_chunks as _hr_load_chunks
+                from config import CASE_CHUNKS_V2
+                _top_names = [
+                    cl.get("case_name", "")
+                    for cl in case_d
+                    if cl.get("case_name")
+                ]
+                _extra_names, _ = expand_case_names_by_precedent(_top_names, max_extra=8)
+                if _extra_names:
+                    _chunks_dict = _hr_load_chunks(CASE_CHUNKS_V2)
+                    _exp_chunks = get_chunks_by_case_names(_chunks_dict, _extra_names, max_total=6)
+                    if _exp_chunks:
+                        _existing_names = {
+                            (cl.get("case_name") or "").strip().lower()
+                            for cl in case_d
+                        }
+                        _new = [
+                            c for c in _exp_chunks
+                            if (c.get("case_name") or "").strip().lower() not in _existing_names
+                            and _is_quality_case_law(c)
+                        ]
+                        if _new:
+                            logger.info(
+                                "[%s] Citation graph expansion: +%d cases added", d_id, len(_new)
+                            )
+                            case_d = case_d + _new
+            except Exception as _cg_err:
+                logger.debug("[%s] Citation graph expansion skipped: %s", d_id, _cg_err)
+
+        if case_d:
+            sc_count = sum(1 for cl in case_d if "supreme" in (cl.get("court") or cl.get("source") or "").lower())
+            detail = f"including {sc_count} Supreme Court" if sc_count else "from High Courts"
+            emit_step(f"[{d_id}] Found {len(case_d)} judgement{'s' if len(case_d) != 1 else ''} ({detail})", "✅")
+            if interactive_fast_path:
+                emit_live_token(
+                    "cases_found",
+                    "I now have grounded precedent support as well and I am drafting the opinion. ",
+                    words_per_chunk=2,
+                )
+        else:
+            emit_step(f"[{d_id}] No judgements found in local database", "ℹ️")
+
+    # Tag with dispute metadata before returning
+    dispute_label = _short_dispute_label(d_text)
+    for _ba in bare_d:
+        _ba.setdefault("_dispute_id", d_id)
+        _ba.setdefault("_dispute_label", dispute_label)
+        _ba.setdefault("_dispute_text", d_text)
+    for _cl in case_d:
+        _cl.setdefault("_dispute_id", d_id)
+        _cl.setdefault("_dispute_label", dispute_label)
+        _cl.setdefault("_dispute_text", d_text)
+
+    out_dr = {
+        "dispute": dispute,
+        "bare_acts": bare_d,
+        "case_laws": case_d,
+        "external_results": _external_results,
+        "_pending": _local_pending,
+        "_debug": _local_debug,
+    }
+    if _bare_hybrid_trace:
+        out_dr["_bare_hybrid_trace"] = _bare_hybrid_trace
+    return out_dr
+
+
 def generate_response_v2(
     facts_summary: str,
     jurisdiction_state: str = "",
@@ -2832,313 +3187,20 @@ def generate_response_v2(
     }
 
     def _retrieve_dispute(dispute):
-        """Worker: retrieve bare acts + case laws for one dispute component."""
-        d_id = dispute.get("id", "?")
-        d_text = dispute.get("dispute", "")
-        _local_pending: list = []
-        _local_debug: dict = {}
-        _external_results: list = []
-        _bare_hybrid_trace: list = []
-
-        _emit_step(f"[{d_id}] Identifying legal provisions...", "📖")
-
-        # 3a: Bare acts
-        bare_d = []
-        if retrieve_acts:
-            if interactive_fast_path:
-                from retrieval.retriever import search_bare_acts_fast, search_bare_acts_runtime
-                queries_ba = (
-                    _build_bare_act_queries(dispute, expanded_queries=legal_queries)
-                    or [d_text or facts_summary[:300]]
-                )[:_FAST_BARE_QUERY_LIMIT]
-                seen_ba: dict = {}
-                for _q_ba in queries_ba:
-                    qt: list = []
-                    found_for_query = False
-                    for _ba in search_bare_acts_fast(_q_ba, top_k=_FAST_BARE_TOP_K, trace=qt):
-                        _key = (
-                            (_ba.get("act_name") or "").strip().lower(),
-                            (_ba.get("section_number") or "").strip().lower(),
-                        )
-                        if _ba.get("_rerank_score", 0) > (seen_ba.get(_key) or {}).get("_rerank_score", -999):
-                            seen_ba[_key] = _ba
-                            found_for_query = True
-                    _bare_hybrid_trace.append(
-                        {"retrieval_query": _q_ba, "path": "interactive_fast", "hybrid_stages": qt}
-                    )
-                    if found_for_query:
-                        break
-                raw = list(seen_ba.values())
-                bare_d = _select_interactive_grounded_results(
-                    raw,
-                    facts_summary,
-                    quality_fn=_is_quality_bare_act,
-                    cap=MAX_SECTIONS_PER_DISPUTE_TOTAL,
-                )
-                if not bare_d:
-                    logger.info("[%s] Interactive fast bare-act rescue: broadening local search", d_id)
-                    rescue_queries = _build_runtime_rescue_queries(
-                        facts_summary, limit=2, bare_act_sections=bare_d, model_override=model_override
-                    )
-                    for _q_ba in rescue_queries:
-                        qt2: list = []
-                        for _ba in search_bare_acts_runtime(_q_ba, top_k=8, trace=qt2):
-                            _key = (
-                                (_ba.get("act_name") or "").strip().lower(),
-                                (_ba.get("section_number") or "").strip().lower(),
-                            )
-                            if _ba.get("_rerank_score", 0) > (seen_ba.get(_key) or {}).get("_rerank_score", -999):
-                                seen_ba[_key] = _ba
-                        _bare_hybrid_trace.append(
-                            {
-                                "retrieval_query": _q_ba,
-                                "path": "interactive_runtime_rescue",
-                                "hybrid_stages": qt2,
-                            }
-                        )
-                    raw = list(seen_ba.values())
-                    bare_d = _select_interactive_grounded_results(
-                        raw,
-                        facts_summary,
-                        quality_fn=_is_quality_bare_act,
-                        cap=MAX_SECTIONS_PER_DISPUTE_TOTAL,
-                    )
-                if bare_d:
-                    bare_d = _apply_fact_alignment_sort(
-                        _filter_bare_acts_with_llm(dispute, bare_d, _local_debug),
-                        facts_summary,
-                        cap=MAX_SECTIONS_PER_DISPUTE_TOTAL,
-                    )
-                    top_acts = _select_top_acts(bare_d, max_acts=3)
-                    if top_acts:
-                        bare_d = _apply_fact_alignment_sort(
-                            [ba for ba in bare_d if (ba.get("act_name") or "").strip() in top_acts],
-                            facts_summary,
-                            cap=MAX_SECTIONS_PER_DISPUTE_TOTAL,
-                        )
-            elif search_strategy == "local_only":
-                from retrieval.retriever import search_bare_acts_auto
-                # Multi-query: run all _build_bare_act_queries and merge by best score per section.
-                queries_ba = _build_bare_act_queries(dispute, expanded_queries=legal_queries)
-                seen_ba: dict = {}
-                for _q_ba in queries_ba:
-                    qt: list = []
-                    for _ba in search_bare_acts_auto(_q_ba, top_k=30, trace=qt):
-                        _key = (
-                            (_ba.get("act_name") or "").strip().lower(),
-                            (_ba.get("section_number") or "").strip().lower(),
-                        )
-                        if _ba.get("_rerank_score", 0) > (seen_ba.get(_key) or {}).get("_rerank_score", -999):
-                            seen_ba[_key] = _ba
-                    _bare_hybrid_trace.append(
-                        {"retrieval_query": _q_ba, "path": "local_only_auto", "hybrid_stages": qt}
-                    )
-                raw = list(seen_ba.values())
-                bare_d = [ba for ba in raw if ba.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_bare_act(ba)]
-            else:
-                bare_d = retrieve_bare_acts_for_dispute(
-                    dispute,
-                    facts_summary,
-                    states=_states,
-                    debug=_local_debug,
-                    pending_indexing_list=_local_pending,
-                    bare_act_trace=_bare_hybrid_trace,
-                    expanded_legal_queries=legal_queries,
-                )
-                if not bare_d:
-                    _emit_step(f"[{d_id}] No local bare act sections found — checking Indiankanoon fallback...", "🌐")
-                    for _r in _web_search_bare_acts(dispute, facts_summary, states=_states, pending_indexing_list=_local_pending):
-                        _rr = dict(_r)
-                        _rr["_fallback_kind"] = "bare_act"
-                        _external_results.append(_rr)
-
-            if bare_d:
-                act_names = list(dict.fromkeys(
-                    ba.get("act_name") or ba.get("title", "").split(" §")[0]
-                    for ba in bare_d if ba.get("act_name") or ba.get("title")
-                ))[:4]
-                acts_str = ", ".join(act_names) if act_names else "legal provisions"
-                _emit_step(f"[{d_id}] Found {len(bare_d)} section{'s' if len(bare_d) != 1 else ''} — {acts_str}", "✅")
-                if interactive_fast_path:
-                    _emit_live_token(
-                        "acts_found",
-                        "I found grounded statutory provisions and I am checking the closest precedents against them. ",
-                        words_per_chunk=2,
-                    )
-            else:
-                _emit_step(f"[{d_id}] No local bare act sections found", "⚠️")
-
-        # 3b: Case laws
-        case_d = []
-        if retrieve_case_laws_flag:
-            _emit_step(f"[{d_id}] Searching for judicial precedents...", "⚖️")
-            if interactive_fast_path:
-                from retrieval.retriever import search_case_summaries_fast, search_case_laws_runtime
-                _queries_cl = _build_fast_case_queries(dispute, bare_d, expanded_queries=legal_queries)
-                seen_cl: dict = {}
-                for _q_cl in _queries_cl:
-                    for _cl in search_case_summaries_fast(_q_cl, top_k=_FAST_CASE_TOP_K):
-                        _ck = _cl.get("_chunk_key") or (
-                            (_cl.get("case_name") or "").lower() + "|" + (_cl.get("full_text", "")[:100])
-                        )
-                        if _cl.get("_rerank_score", 0) > (seen_cl.get(_ck) or {}).get("_rerank_score", -999):
-                            seen_cl[_ck] = _cl
-                raw_cl = list(seen_cl.values())
-                initial_case = _select_interactive_grounded_results(
-                    raw_cl,
-                    facts_summary,
-                    quality_fn=_is_quality_case_law,
-                    cap=MAX_CASE_LAWS_PER_DISPUTE,
-                    min_score=0.0,
-                )
-                case_d = _apply_dispute_case_law_limit(initial_case, num_sections=len(bare_d))
-                if not case_d:
-                    logger.info("[%s] Interactive fast case-law rescue: broadening local case search", d_id)
-                    rescue_queries = _build_runtime_rescue_queries(
-                        facts_summary, limit=2, bare_act_sections=bare_d, model_override=model_override
-                    )
-                    for _q_cl in rescue_queries:
-                        for _cl in search_case_laws_runtime(_q_cl, top_k=8):
-                            _ck = _cl.get("_chunk_key") or (
-                                (_cl.get("case_name") or "").lower() + "|" + (_cl.get("full_text", "")[:100])
-                            )
-                            if _cl.get("_rerank_score", 0) > (seen_cl.get(_ck) or {}).get("_rerank_score", -999):
-                                seen_cl[_ck] = _cl
-                    raw_cl = list(seen_cl.values())
-                    rescued_case = _select_interactive_grounded_results(
-                        raw_cl,
-                        facts_summary,
-                        quality_fn=_is_quality_case_law,
-                        cap=MAX_CASE_LAWS_PER_DISPUTE,
-                    )
-                    case_d = _apply_dispute_case_law_limit(rescued_case, num_sections=len(bare_d))
-                if case_d:
-                    case_d = _apply_dispute_case_law_limit(
-                        _filter_case_laws_with_llm(dispute, bare_d, case_d, _local_debug),
-                        num_sections=len(bare_d),
-                    )
-                case_d = _apply_fact_alignment_sort(
-                    case_d,
-                    facts_summary,
-                    cap=max(len(case_d), MAX_CASE_LAWS_PER_DISPUTE),
-                )
-            elif search_strategy == "local_only":
-                from retrieval.retriever import search_case_laws_auto
-                # Multi-query: base dispute query + up to 2 section-anchored queries, merge best per chunk.
-                _q_base = _build_case_law_query(d_text, bare_d)
-                _queries_cl = [_q_base]
-                for _ba in bare_d[:2]:
-                    _act = (_ba.get("act_name") or "").strip()
-                    _sec = (_ba.get("section_number") or "").strip()
-                    if _act and _sec:
-                        _queries_cl.append(f"Section {_sec} {_act} case law interpretation")
-                _queries_cl = list(dict.fromkeys(_queries_cl))[:3]
-                seen_cl: dict = {}
-                for _q_cl in _queries_cl:
-                    for _cl in search_case_laws_auto(_q_cl, top_k=20):
-                        _ck = _cl.get("_chunk_key") or (
-                            (_cl.get("case_name") or "").lower() + "|" + (_cl.get("full_text", "")[:100])
-                        )
-                        if _cl.get("_rerank_score", 0) > (seen_cl.get(_ck) or {}).get("_rerank_score", -999):
-                            seen_cl[_ck] = _cl
-                raw_cl = list(seen_cl.values())
-                case_d = _apply_dispute_case_law_limit([cl for cl in raw_cl if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_case_law(cl)])
-            else:
-                case_d = retrieve_case_laws_for_dispute(dispute, bare_d, facts_summary, states=_states, debug=_local_debug, pending_indexing_list=_local_pending)
-                if not case_d:
-                    for _r in _web_search_case_laws(dispute, bare_d, facts_summary, states=_states, pending_indexing_list=_local_pending):
-                        _rr = dict(_r)
-                        _rr["_fallback_kind"] = "case_law"
-                        _external_results.append(_rr)
-
-            if case_d:
-                case_cap = max(len(case_d), MAX_CASE_LAWS_PER_DISPUTE)
-                case_d = _apply_fact_alignment_sort(case_d, facts_summary, cap=case_cap)
-                if bare_d:
-                    case_d = _align_case_laws_with_statute_support(case_d, bare_d, facts_summary, cap=case_cap)
-                    case_d = _apply_dispute_case_law_limit(case_d, num_sections=len(bare_d))
-                    bare_d = _align_bare_acts_with_case_support(
-                        bare_d,
-                        case_d,
-                        facts_summary,
-                        cap=MAX_SECTIONS_PER_DISPUTE_TOTAL,
-                    )
-                else:
-                    case_d = case_d[:MAX_CASE_LAWS_PER_DISPUTE]
-
-            # Citation graph expansion: boost recall by fetching chunks for cases
-            # that the retrieved cases cite (forward) or that cite them (backward).
-            # Runs after all retrieval paths so it always supplements the best results.
-            if case_d and _ENABLE_CITATION_GRAPH_EXPANSION and not interactive_fast_path:
-                try:
-                    from retrieval.citations import (
-                        expand_case_names_by_precedent,
-                        get_chunks_by_case_names,
-                    )
-                    from retrieval.retriever import load_chunks as _hr_load_chunks
-                    from config import CASE_CHUNKS_V2
-                    _top_names = [
-                        cl.get("case_name", "")
-                        for cl in case_d
-                        if cl.get("case_name")
-                    ]
-                    _extra_names, _ = expand_case_names_by_precedent(_top_names, max_extra=8)
-                    if _extra_names:
-                        _chunks_dict = _hr_load_chunks(CASE_CHUNKS_V2)
-                        _exp_chunks = get_chunks_by_case_names(_chunks_dict, _extra_names, max_total=6)
-                        if _exp_chunks:
-                            _existing_names = {
-                                (cl.get("case_name") or "").strip().lower()
-                                for cl in case_d
-                            }
-                            _new = [
-                                c for c in _exp_chunks
-                                if (c.get("case_name") or "").strip().lower() not in _existing_names
-                                and _is_quality_case_law(c)
-                            ]
-                            if _new:
-                                logger.info(
-                                    "[%s] Citation graph expansion: +%d cases added", d_id, len(_new)
-                                )
-                                case_d = case_d + _new
-                except Exception as _cg_err:
-                    logger.debug("[%s] Citation graph expansion skipped: %s", d_id, _cg_err)
-
-            if case_d:
-                sc_count = sum(1 for cl in case_d if "supreme" in (cl.get("court") or cl.get("source") or "").lower())
-                detail = f"including {sc_count} Supreme Court" if sc_count else "from High Courts"
-                _emit_step(f"[{d_id}] Found {len(case_d)} judgement{'s' if len(case_d) != 1 else ''} ({detail})", "✅")
-                if interactive_fast_path:
-                    _emit_live_token(
-                        "cases_found",
-                        "I now have grounded precedent support as well and I am drafting the opinion. ",
-                        words_per_chunk=2,
-                    )
-            else:
-                _emit_step(f"[{d_id}] No judgements found in local database", "ℹ️")
-
-        # Tag with dispute metadata before returning
-        dispute_label = _short_dispute_label(d_text)
-        for _ba in bare_d:
-            _ba.setdefault("_dispute_id", d_id)
-            _ba.setdefault("_dispute_label", dispute_label)
-            _ba.setdefault("_dispute_text", d_text)
-        for _cl in case_d:
-            _cl.setdefault("_dispute_id", d_id)
-            _cl.setdefault("_dispute_label", dispute_label)
-            _cl.setdefault("_dispute_text", d_text)
-
-        out_dr = {
-            "dispute": dispute,
-            "bare_acts": bare_d,
-            "case_laws": case_d,
-            "external_results": _external_results,
-            "_pending": _local_pending,
-            "_debug": _local_debug,
-        }
-        if _bare_hybrid_trace:
-            out_dr["_bare_hybrid_trace"] = _bare_hybrid_trace
-        return out_dr
+        """Thin wrapper: forwards pipeline context to the module-level worker."""
+        return _retrieve_dispute_worker(
+            dispute,
+            facts_summary=facts_summary,
+            search_strategy=search_strategy,
+            legal_queries=legal_queries,
+            retrieve_acts=retrieve_acts,
+            retrieve_case_laws_flag=retrieve_case_laws_flag,
+            interactive_fast_path=interactive_fast_path,
+            states=_states,
+            emit_step=_emit_step,
+            emit_live_token=_emit_live_token,
+            model_override=model_override,
+        )
 
     # Submit all disputes to the thread pool; collect as each completes.
     progress.start_group("Research", f"Retrieving bare acts and case laws for {len(disputes)} dispute(s)")
@@ -5180,11 +5242,7 @@ def _generate_interactive_fast_opinion(
         result = _local_only_no_materials_message()
         _stream_precomposed_text(result, token_callback=token_callback)
         return result
-    if local_bare and not local_case:
-        result = _build_grounded_bare_act_fallback(local_bare, facts_summary=facts_summary)
-        _stream_precomposed_text(result, token_callback=token_callback)
-        return result
-    if not _ENABLE_INTERACTIVE_FAST_LLM or len(local_case) <= 2:
+    if not _ENABLE_INTERACTIVE_FAST_LLM:
         result = _build_grounded_interactive_fallback(facts_summary, local_bare, local_case)
         _stream_precomposed_text(result, token_callback=token_callback)
         return result

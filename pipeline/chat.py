@@ -31,6 +31,8 @@ import hashlib
 from platform_pkg.llm import ask_llm
 from agents.intake.collector import get_next_question_or_complete, is_stop_signal
 from agents.intake.stage1_opening import process_turn as _intake_process_turn
+from agents.intake.schema import anchor_fields_present as _anchor_fields_present
+from pipeline.mode import resolve_pipeline_mode, PipelineMode
 from platform_pkg.memory import guard_activity
 from platform_pkg.warmup import kickoff_runtime_warmup, kickoff_ollama_warmup_if_qwen
 from retrieval.generator import (
@@ -678,13 +680,17 @@ def process_chat(
             from concurrent.futures import ThreadPoolExecutor as _TPE
 
             t_before_intake = time.perf_counter()
-            session = {
-                "history": conversation,
-                "intake_state": (workflow_state or {}).get("intakeState") or None,
-            }
 
             # Read any retrieval cache stored from a prior turn.
             prelim_context = (workflow_state or {}).get("preliminaryRetrievalContext") or None
+
+            session = {
+                "history": conversation,
+                "intake_state": (workflow_state or {}).get("intakeState") or None,
+                # Pass retrieval cache so Turn 2+ gap questions are law-informed.
+                # None on Turn 1 (cache is built in parallel with this turn's intake).
+                "retrieved_context": prelim_context,
+            }
 
             # On the very first user turn with no cache: run intake + preliminary
             # retrieval in parallel.  Retrieval uses full dispute decomposition so
@@ -728,10 +734,27 @@ def process_chat(
             # "immediate" only — "near_term" means client confirmed safe; allow normal flow
             urgency_immediate = intake_result.get("urgency_signal") == "immediate"
 
-            if intake_result.get("advance_to_stage2") or stop_requested:
+            # ── Single transition gate ────────────────────────────────────────────
+            # Anchors are the authoritative signal: all 4 must be populated before
+            # advancing.  The LLM's advance_to_stage2 flag is advisory — it can
+            # trigger early review of anchor completeness, but it cannot advance
+            # without anchor backing (prevents false-positive premature Stage 2).
+            _all_anchors_present = _anchor_fields_present(intake_state_out)
+            llm_advance = bool(intake_result.get("advance_to_stage2"))
+            if llm_advance and not _all_anchors_present:
+                logger.warning(
+                    "Stage1: advance_to_stage2=True but anchors incomplete — holding in fact_collection "
+                    "(issue=%s, relationship=%s, timeframe=%s, goal=%s)",
+                    bool((intake_state_out.get("issue_summary") or "").strip()),
+                    bool((intake_state_out.get("relationship_to_other_party") or "").strip()),
+                    bool((intake_state_out.get("timeframe_status") or "").strip()),
+                    bool((intake_state_out.get("client_goal_initial") or "").strip()),
+                )
+            should_advance = (_all_anchors_present and not urgency_immediate) or stop_requested
+
+            if should_advance:
                 # If urgency is immediate, the process_turn reply is a safety-first
                 # response — surface that instead of jumping to the analysis handoff.
-                # The client needs safety guidance before we talk about legal analysis.
                 if urgency_immediate and not stop_requested:
                     _log_step("fact_collection URGENT (hold analysis-ready)", (time.perf_counter() - t_pipeline_start) * 1000)
                     return {
@@ -747,46 +770,11 @@ def process_chat(
                         "analysis_stage": "intake",
                     }
 
-                # Intake is complete — carry the retrieval cache into Stage 2 so
-                # the response_generation phase can skip re-retrieval.
+                # Intake is complete — carry the retrieval cache into Stage 2.
                 facts = _build_user_fact_history(conversation, current_message=current_message)
                 facts = _augment_facts_with_chat_summary(facts, conversation, current_message=current_message)
-                _log_step("fact_collection ADVANCE -> grounded_analysis (process_turn)", (time.perf_counter() - t_pipeline_start) * 1000)
-                return {
-                    "phase": "response_generation",
-                    "message": "",
-                    "facts_summary": facts,
-                    "intake_state": intake_state_out,
-                    "preliminary_retrieval_context": prelim_context,
-                    "intent": "legal_opinion",
-                    "document_types": "both",
-                    "search_strategy": "local_only",
-                    "result_count": None,
-                    "response": None,
-                    "response_type": None,
-                    "materials_to_confirm": None,
-                    "indexed": False,
-                    "analysis_stage": "grounded_analysis",
-                    "analysis_mode": "full_opinion",
-                }
-
-            # Safety gate: if all 4 anchor fields are populated but the model
-            # still returned advance_to_stage2=False (common false negative on
-            # first-turn comprehensive messages), force-advance to Stage 2.
-            _anchors = (
-                str(intake_state_out.get("issue_summary") or "").strip(),
-                str(intake_state_out.get("relationship_to_other_party") or "").strip(),
-                str(intake_state_out.get("timeframe_status") or "").strip(),
-                str(intake_state_out.get("client_goal_initial") or "").strip(),
-            )
-            _all_anchors_present = all(
-                v and v.lower() not in ("unknown", "null", "none", "")
-                for v in _anchors
-            )
-            if _all_anchors_present and not urgency_immediate:
-                _log_step("fact_collection ANCHOR_GATE -> grounded_analysis (all 4 anchors present)", (time.perf_counter() - t_pipeline_start) * 1000)
-                facts = _build_user_fact_history(conversation, current_message=current_message)
-                facts = _augment_facts_with_chat_summary(facts, conversation, current_message=current_message)
+                gate = "llm+anchors" if llm_advance else "anchors"
+                _log_step(f"fact_collection ADVANCE -> grounded_analysis ({gate})", (time.perf_counter() - t_pipeline_start) * 1000)
                 return {
                     "phase": "response_generation",
                     "message": "",
@@ -916,11 +904,18 @@ def process_chat(
             conversation,
             current_message=current_message,
         )
-        use_intent = intent or "legal_opinion"
+        # Resolve and validate all mode flags through the single authoritative contract.
+        _mode = resolve_pipeline_mode(
+            intent=intent,
+            search_strategy=search_strategy,
+            analysis_mode=analysis_mode,
+        )
+        _log_step(f"response_generation mode: {_mode.summary}", 0)
+        use_intent = _mode.intent
         use_document_types = document_types or "both"
-        use_search_strategy = _default_search_strategy_for_intent(use_intent, search_strategy)
+        use_search_strategy = _mode.search_strategy
         use_result_count = result_count
-        use_analysis_mode = (analysis_mode or "full_opinion").strip().lower() or "full_opinion"
+        use_analysis_mode = _mode.analysis_mode
         use_intake_state = (workflow_state or {}).get("intakeState") or None
 
         # Use session-level retrieval cache when available (set during intake Turn 1).
@@ -929,7 +924,7 @@ def process_chat(
         _cache_eligible = (
             _prelim_ctx
             and _prelim_ctx.get("retrieval_only")
-            and use_intent == "legal_opinion"
+            and _mode.is_opinion()
             and use_analysis_mode in ("full_opinion", "bare_acts_only", "precedents_only")
         )
 

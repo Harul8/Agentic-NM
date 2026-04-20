@@ -186,7 +186,8 @@ def _build_context(session: dict, max_turns: int = 30) -> str:
 # ---------------------------------------------------------------------------
 
 def _fresh_state() -> dict:
-    return copy.deepcopy(STAGE1_INTAKE_STATE_SCHEMA)
+    from agents.intake.schema import make_intake_state
+    return make_intake_state()
 
 
 def _merge_anchor_fields(intake_state: dict, updates: dict | None) -> None:
@@ -763,10 +764,47 @@ def _build_established_facts(intake_state: dict) -> str:
     return "\n".join(lines) if lines else "none established yet"
 
 
+def _build_retrieved_sections_summary(retrieved_context: dict | None) -> str:
+    """
+    Build a compact summary of pre-retrieved act sections for law-informed gap questions.
+    Returns an empty string when no context is available (Turn 1 or retrieval failed).
+    """
+    if not retrieved_context:
+        return ""
+    sections = retrieved_context.get("bare_act_sections") or []
+    if not sections:
+        return ""
+    lines: list[str] = []
+    seen_acts: set[str] = set()
+    for sec in sections:
+        act = ((sec.get("act_name") or "").strip()
+               or sec.get("title", "").split("§")[0].split("Section")[0].strip())
+        sec_num = (sec.get("section_number") or "").strip()
+        if not act:
+            continue
+        entry = f"- {act}" + (f", Section {sec_num}" if sec_num else "")
+        # Deduplicate by act name
+        key = act.lower()
+        if key in seen_acts:
+            continue
+        seen_acts.add(key)
+        lines.append(entry)
+        if len(lines) >= 5:
+            break
+    if not lines:
+        return ""
+    return (
+        "RETRIEVED LEGAL CONTEXT — use these to ask gap questions grounded in what the law requires:\n"
+        + "\n".join(lines)
+        + "\nWhen asking for missing information, briefly explain how it helps establish the relevant legal element — but do NOT cite section numbers in the reply itself."
+    )
+
+
 def _generate_initial_detail_request(
     intake_state: dict,
     client_message: str,
     conversation_context: str,
+    retrieved_context: dict | None = None,
 ) -> str:
     """Generate the first grouped request for all material intake details."""
     t0 = time.perf_counter()
@@ -782,6 +820,7 @@ def _generate_initial_detail_request(
         .replace("{client_message}", (client_message or "").strip())
         .replace("{established_facts}", _build_established_facts(intake_state))
         .replace("{category}", category_label)
+        .replace("{retrieved_sections_context}", _build_retrieved_sections_summary(retrieved_context))
     )
 
     system_framing = (
@@ -836,10 +875,32 @@ def _generate_initial_detail_request(
     )
 
 
+def _build_deferred_questions_context(intake_state: dict) -> str:
+    """
+    Build the deferred-questions injection for the gap review prompt.
+    If the previous round deferred lower-priority questions, remind the model
+    to consider them (and drop any already answered by the latest client message).
+    """
+    deferred = [
+        str(x).strip() for x in (intake_state.get("deferred_questions") or [])
+        if str(x).strip()
+    ]
+    if not deferred:
+        return ""
+    lines = "\n".join(f"- {q}" for q in deferred)
+    return (
+        "DEFERRED FROM PREVIOUS ROUND — lower-priority gaps not yet asked. "
+        "Include any still-missing ones in this turn if the higher-priority questions have now been answered; "
+        "otherwise continue to defer them:\n"
+        + lines
+    )
+
+
 def _generate_gap_review(
     intake_state: dict,
     client_message: str,
     conversation_context: str,
+    retrieved_context: dict | None = None,
 ) -> tuple[str, bool]:
     """Review the bundled client response and decide whether intake is ready for analysis."""
     t0 = time.perf_counter()
@@ -854,6 +915,8 @@ def _generate_gap_review(
             "\n".join(f"- {item}" for item in (intake_state.get("detail_groups_requested") or [])) or "(none recorded)"
         )
         .replace("{established_facts}", _build_established_facts(intake_state))
+        .replace("{retrieved_sections_context}", _build_retrieved_sections_summary(retrieved_context))
+        .replace("{deferred_questions_context}", _build_deferred_questions_context(intake_state))
     )
 
     system_framing = (
@@ -876,10 +939,15 @@ def _generate_gap_review(
             followups = [
                 str(x).strip() for x in (data.get("followup_questions") or [])
                 if str(x).strip()
-            ][:3]
+            ][:4]
+            deferred = [
+                str(x).strip() for x in (data.get("deferred_questions") or [])
+                if str(x).strip()
+            ][:6]
             enough = bool(data.get("enough_for_analysis", False))
             intake_state["missing_detail_groups"] = missing_groups
             intake_state["followup_questions"] = followups
+            intake_state["deferred_questions"] = [] if enough else deferred
             intake_state["open_questions"] = list(missing_groups)
             intake_state["analysis_ready"] = enough
             reply = str(data.get("reply") or "").strip()
@@ -888,11 +956,25 @@ def _generate_gap_review(
     except Exception as exc:
         logger.warning("Stage1 gap review LLM failed: %s", exc)
 
-    intake_state["missing_detail_groups"] = []
-    intake_state["followup_questions"] = []
-    intake_state["open_questions"] = []
-    intake_state["analysis_ready"] = True
-    return "On the present record, I have enough to move into the legal analysis now.", True
+    # JSON parse failed or LLM error: do NOT falsely advance to Stage 2.
+    # Preserve whatever state was set from the last successful gap review and
+    # return a safe nudge question so the session continues collecting facts.
+    logger.warning("Stage1 gap review: could not parse LLM response — holding in fact collection")
+    existing_followups = [
+        str(x).strip() for x in (intake_state.get("followup_questions") or [])
+        if str(x).strip()
+    ]
+    open_qs = [
+        str(x).strip() for x in (intake_state.get("open_questions") or [])
+        if str(x).strip()
+    ]
+    if existing_followups:
+        fallback_reply = f"Could you share a bit more detail on: {existing_followups[0].lower()}?"
+    elif open_qs:
+        fallback_reply = f"Could you tell me more about {open_qs[0].lower()}?"
+    else:
+        fallback_reply = "Could you share a bit more about what happened and what outcome you are hoping for?"
+    return fallback_reply, bool(intake_state.get("analysis_ready", False))
 
 
 def _check_analysis_readiness(intake_state: dict) -> tuple[bool, list[str]]:
@@ -969,43 +1051,6 @@ def _generate_followup(
         logger.warning("Stage1 followup LLM failed: %s", exc)
 
     return "Could you tell me a bit more about what's been happening?"
-
-
-# ===========================================================================
-# Internal: Stage 1 readiness check
-# ===========================================================================
-
-def _check_readiness(intake_state: dict, _conversation_context: str) -> tuple[bool, list[str]]:
-    """
-    Deterministic readiness gate: Stage 2 opens only when all four anchor
-    fields are populated (non-null, non-'unknown').
-
-    Falls back to an LLM call only to populate missing_critical labels for
-    the caller to surface as the next question — the ready/not-ready decision
-    itself is always deterministic.
-
-    Returns (ready: bool, missing_critical: list[str]).
-    """
-    t0 = time.perf_counter()
-
-    # Deterministic gate — check all four anchor fields
-    missing: list[str] = []
-    if not intake_state.get("issue_summary"):
-        missing.append("what happened — client has not described the core events yet")
-    if not intake_state.get("relationship_to_other_party") or intake_state.get("relationship_to_other_party") == "unknown":
-        missing.append("relationship between client and the other party")
-    if not intake_state.get("client_goal_initial"):
-        missing.append("what the client is seeking or hoping to achieve")
-    if not intake_state.get("timeframe_status") or intake_state.get("timeframe_status") == "unknown":
-        missing.append("when this happened — recent, ongoing, or historical")
-
-    if missing:
-        _t("check_readiness_deterministic", t0)
-        return False, missing
-
-    # All four anchors present — ready
-    _t("check_readiness_deterministic", t0)
-    return True, []
 
 
 # ===========================================================================
@@ -1172,6 +1217,67 @@ def _infer_urgency_from_history(session: dict) -> str:
     return signal if signal in ("immediate", "near_term") else "unknown"
 
 
+def _reconstruct_state_from_history(session: dict, intake_state: dict) -> None:
+    """
+    When no persisted intake_state is available but conversation history exists,
+    recover anchor fields from prior turns so the model doesn't re-ask for
+    information the client already provided.
+
+    Only fills fields that are still empty or 'unknown' in intake_state.
+    """
+    history = session.get("history") or []
+    lines = []
+    for m in history:
+        role = m.get("role", "")
+        content = (m.get("content") or "").strip()
+        if not content:
+            continue
+        label = "Client" if role == "user" else "Advocate"
+        lines.append(f"{label}: {content}")
+    if not lines:
+        return
+
+    conversation_text = "\n".join(lines)
+    prompt = (
+        "From the conversation below, extract the following facts if clearly stated by the client. "
+        "Output ONLY a JSON object with exactly these keys:\n"
+        "  issue_summary               : one-sentence summary of the core legal problem, or null\n"
+        "  relationship_to_other_party : how the client is related to the other party "
+        "(e.g. landlord, employer, spouse), or 'unknown'\n"
+        "  timeframe_status            : 'recent' (<3 months), 'ongoing', 'historical' (>1 year), "
+        "or 'unknown'\n"
+        "  client_goal_initial         : what the client wants to achieve (e.g. 'get refund', "
+        "'file FIR'), or null\n"
+        "  jurisdiction                : Indian state or union territory mentioned, or 'unknown'\n"
+        "\nUse null or 'unknown' for anything not clearly stated. No preamble.\n"
+        "\nCONVERSATION:\n" + conversation_text
+    )
+    try:
+        raw = _ask_llm(prompt, task_hint="fast")
+        data = _extract_json(raw)
+        if not isinstance(data, dict):
+            return
+        _ANCHOR_FIELDS = (
+            "issue_summary",
+            "relationship_to_other_party",
+            "timeframe_status",
+            "client_goal_initial",
+            "jurisdiction",
+        )
+        recovered = []
+        for field in _ANCHOR_FIELDS:
+            if intake_state.get(field) and intake_state.get(field) not in ("unknown", ""):
+                continue  # already set — don't overwrite
+            val = data.get(field)
+            if val and str(val).strip() not in ("null", "unknown", "None", ""):
+                intake_state[field] = str(val).strip()
+                recovered.append(field)
+        if recovered:
+            logger.info("_reconstruct_state_from_history: recovered %s", recovered)
+    except Exception as exc:
+        logger.debug("_reconstruct_state_from_history failed: %s", exc)
+
+
 # ===========================================================================
 # Public: process_turn
 # ===========================================================================
@@ -1199,8 +1305,10 @@ def process_turn(session: dict, user_message: str) -> dict:
     """
     msg = (user_message or "").strip()
     # ── Initialise or load intake state ─────────────────────────────────────
+    from agents.intake.schema import coerce_intake_state
     had_persisted_state = bool(session.get("intake_state"))
-    intake_state: dict = session.get("intake_state") or _fresh_state()
+    raw_state = session.get("intake_state")
+    intake_state: dict = coerce_intake_state(raw_state) if raw_state else _fresh_state()
 
     # When there is no persisted intake_state (e.g. frontend hasn't been
     # rebuilt yet, or state was lost), seed turn_count from the conversation
@@ -1219,6 +1327,9 @@ def process_turn(session: dict, user_message: str) -> dict:
             inferred = _infer_urgency_from_history(session)
             if inferred != "unknown":
                 intake_state["urgency_signal"] = inferred
+            # Recover structured anchor fields from prior turns so the model
+            # doesn't re-ask for information the client already provided.
+            _reconstruct_state_from_history(session, intake_state)
 
     # Increment turn counter
     intake_state["turn_count"] = intake_state.get("turn_count", 0) + 1
@@ -1284,6 +1395,11 @@ def process_turn(session: dict, user_message: str) -> dict:
     if intake_state.get("client_goal_initial") and not intake_state.get("assessed_remedy"):
         _assess_remedy(intake_state)
 
+    # ── Retrieve preliminary legal context (available from Turn 2 onwards) ─────
+    # On Turn 1, intake and retrieval run in parallel so retrieved_context is None.
+    # From Turn 2, the prelim cache is available and used to inform gap questions.
+    retrieved_context: dict | None = session.get("retrieved_context") or None
+
     # ── Generate the AI's reply ──────────────────────────────────────────────
     # Priority order:
     #   1. Emergency triage (risk flags / immediate urgency)
@@ -1295,7 +1411,7 @@ def process_turn(session: dict, user_message: str) -> dict:
         reply = _generate_safety_first_response(intake_state)
         ready, missing = False, []
     elif not intake_state.get("detail_request_issued"):
-        reply = _generate_initial_detail_request(intake_state, msg, context)
+        reply = _generate_initial_detail_request(intake_state, msg, context, retrieved_context=retrieved_context)
         # Honour the LLM's judgment: if the opening message already contained
         # enough facts, skip further intake and go straight to analysis.
         if intake_state.get("analysis_ready"):
@@ -1303,7 +1419,7 @@ def process_turn(session: dict, user_message: str) -> dict:
         else:
             ready, missing = False, []
     else:
-        reply, _ = _generate_gap_review(intake_state, msg, context)
+        reply, _ = _generate_gap_review(intake_state, msg, context, retrieved_context=retrieved_context)
         ready, missing = _check_analysis_readiness(intake_state)
 
     # ── Readiness check — advance guard ─────────────────────────────────────

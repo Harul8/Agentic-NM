@@ -208,6 +208,8 @@ CLIENT'S LATEST MESSAGE:
 FACTS ALREADY ESTABLISHED — DO NOT RE-ASK ANY OF THESE:
 {established_facts}
 
+{retrieved_sections_context}
+
 Your job is to prepare the first serious intake reply after hearing the client's initial account or reviewing an uploaded document. If this is not the first message, check the conversation history and established facts above before asking anything.
 
 Return ONLY valid JSON:
@@ -226,7 +228,7 @@ RULES FOR THE CLIENT-FACING REPLY:
 - Respond naturally, as an experienced advocate would in person — do NOT use formulaic openers like "I'm sorry you're going through this" or "I need a little time to work out what details matter". Just respond directly and humanly.
 - Group related missing details into a compact set of bullets (2-4 max). Do not create a long questionnaire.
 - Keep the bullets generalized and fact-driven. Do not rely on templates tied to one legal scenario.
-- Avoid legal jargon, Act names, and section numbers.
+- Avoid legal jargon, Act names, and section numbers in the bullets themselves — but you may briefly explain why a specific piece of information matters if retrieved_sections_context is provided.
 - Do not ask the client to repeat anything already established.
 
 FORMATTING (presentation only — do not let these affect what you say or how many points you make):
@@ -257,6 +259,10 @@ DETAIL GROUPS ALREADY REQUESTED:
 FACTS ALREADY ESTABLISHED — DO NOT RE-ASK ANY OF THESE:
 {established_facts}
 
+{retrieved_sections_context}
+
+{deferred_questions_context}
+
 Before writing your reply, cross-check each potential question against the conversation history and the established facts above. If a detail is already present — even partially — do not ask for it again.
 
 Your job is to review the client's bundled response, decide whether the record is already strong enough for legal analysis, and if not, ask only for the genuinely missing pieces.
@@ -268,22 +274,24 @@ Return ONLY valid JSON:
   "relationship_to_other_party": "<relationship if known, else unknown>",
   "timeframe_status": "ongoing|recent|historical|unknown",
   "client_goal_initial": "<what the client appears to want, or null>",
-  "missing_detail_groups": ["<grouped missing point>", "..."],
+  "missing_detail_groups": ["<grouped missing point being asked NOW>", "..."],
   "followup_questions": ["<short focused follow-up>", "..."],
+  "deferred_questions": ["<lower-priority missing point to ask in a later turn>", "..."],
   "enough_for_analysis": true|false
 }
 
 RULES:
 - Trust the full conversation, not just the latest message.
-- If the record is already strong enough, set missing_detail_groups and followup_questions to empty lists, set enough_for_analysis=true, and make the reply a brief acknowledgement that you have enough to proceed to analysis.
+- If the record is already strong enough, set missing_detail_groups, followup_questions, and deferred_questions to empty lists, set enough_for_analysis=true, and make the reply a brief acknowledgement that you have enough to proceed to analysis.
 - Do NOT use formulaic openers like "I'm sorry you're going through this" or "Thank you for sharing that." Respond directly and naturally, as an experienced advocate would — let the substance of your reply carry the acknowledgement.
 - If important details are still missing, set enough_for_analysis=false and make the reply:
   1. briefly acknowledge what the client shared,
-  2. list only the missing grouped points as bullets,
+  2. list only the missing grouped points as bullets — and if retrieved_sections_context lists applicable law, briefly note why a specific missing piece matters for the relevant provision (one clause, not a lecture),
   3. ask the client to tell you if any of those details are unavailable,
-  4. include no more than 3 short follow-up questions total.
+  4. include no more than 3-4 questions in this turn — prioritise the most critical ones.
+- PRIORITY BATCHING: If more than 4 gaps remain, ask only the 3-4 highest-priority ones now. Put any lower-priority gaps into deferred_questions — they will be asked in the next follow-up turn if still needed. Do not overwhelm the client with a long list.
 - Keep the missing points generalized and grouped; do not turn them into a long checklist.
-- Avoid legal jargon, Act names, and section numbers.
+- Avoid citing Act names or section numbers directly in bullets — say "the applicable law requires" rather than naming the section.
 - Do not ask for details already adequately covered in the conversation.
 
 FORMATTING RULES FOR THE REPLY:
@@ -359,6 +367,7 @@ STAGE1_INTAKE_STATE_SCHEMA = {
     "detail_groups_requested": [],       # grouped information points requested from the client
     "missing_detail_groups": [],         # grouped gaps remaining after reviewing the client bundle
     "followup_questions": [],            # short focused follow-up questions after gap review
+    "deferred_questions": [],            # lower-priority gaps deferred to the next follow-up turn
     "analysis_ready": False,             # set True when intake is sufficient to move to analysis
     "latest_intake_summary": None,       # latest concise matter summary generated during intake
     # --- Canonical case file (senior-advocate framing) ---
